@@ -22,7 +22,7 @@ Once the three parts are retrieved, the audio should be overlayed on the video. 
 
 5. **Uploading**
 
-Now that the video is prepared, upload it to TikTok. I will later provide the account information, including login. This should again be automated using e.g., Playwright.
+Now that the video is prepared, upload it to TikTok. I will later provide the account information, including login. This should again be automated using e.g., Playwright. Note that TikTok already provides a tool for adding subtitles, please turn this on.
 
 6. **Analysis**
 
