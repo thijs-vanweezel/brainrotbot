@@ -1,0 +1,32 @@
+# brainrotbot configuration (step 1: Reddit retrieval + cleaning).
+
+[reddit]
+# Subreddits to pull self/text stories from. These are the classic "brainrot" story sources.
+subreddits = [
+    "AmItheAsshole",
+    "tifu",
+    "confession",
+    "relationship_advice",
+    "stories",
+]
+time_filter = "week"   # one of: hour, day, week, month, year, all
+limit_per_sub = 25     # candidate posts pulled per subreddit before filtering
+
+[selection]
+min_score = 500        # minimum upvotes to be eligible
+allow_nsfw = false     # skip posts flagged over_18 when false
+# Length bounds, derived from a 30-90s target read at ~150 wpm (~2.5 words/sec).
+min_words = 75
+max_words = 350
+top_k = 5              # number of stories to keep per pipeline run
+
+[text]
+prepend_title = true   # use the post title as the spoken hook
+strip_edits = true     # drop "Edit:" / "Update:" trailer lines
+strip_tldr = true      # drop "TL;DR" lines
+
+[paths]
+data_dir = "data"
+stories_subdir = "stories"
+ledger_file = "ledger.jsonl"
+banned_words_file = "resources/banned_words.toml"

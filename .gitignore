@@ -1,0 +1,17 @@
+# Secrets
+.env
+
+# Runtime data / generated artifacts
+data/
+*.mp4
+*.wav
+*.mp3
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+.venv/
