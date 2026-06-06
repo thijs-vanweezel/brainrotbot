@@ -50,6 +50,16 @@ class Settings:
         return self.raw["video"]
 
     @property
+    def edit_opts(self) -> dict:
+        return self.raw.get("edit", {})
+
+    @property
+    def edit_outro_file(self) -> str:
+        """Absolute path to the outro asset, or "" if unset (resolved like banned_words)."""
+        of = self.edit_opts.get("outro_file", "")
+        return str(self._resolve(of)) if of else ""
+
+    @property
     def video_cookies_file(self) -> str:
         """Absolute path to the yt-dlp cookies file, or "" if unset.
 
@@ -85,6 +95,10 @@ class Settings:
     @property
     def video_cache_dir(self) -> Path:
         return self.data_dir / self.raw["paths"]["video_cache_subdir"]
+
+    @property
+    def final_dir(self) -> Path:
+        return self.data_dir / self.raw["paths"]["final_subdir"]
 
     @property
     def ledger_path(self) -> Path:
