@@ -18,6 +18,17 @@ def test_pick_source_empty_pool_raises():
         pick_source([], 0)
 
 
+def test_pick_source_offset_rotates_across_runs():
+    """Two runs starting from different rotation_offsets must visit different sources for
+    the same in-run story index -- otherwise short runs always start at sources[0]."""
+    sources = ["a", "b", "c", "d"]
+    # run #1: ledger empty, first story -> rotation_key = 0 -> 'a'
+    # run #2: ledger has 1 story, first story -> rotation_key = 1 -> 'b'
+    # run #3: ledger has 2 stories, first story -> rotation_key = 2 -> 'c'
+    first_picks = [pick_source(sources, offset + 0) for offset in (0, 1, 2)]
+    assert first_picks == ["a", "b", "c"]
+
+
 # --- _add_background_video: ledger wiring, tested against a fake maker -------------
 
 class _FakeMaker:
