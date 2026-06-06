@@ -41,6 +41,10 @@ class Settings:
     def text_opts(self) -> dict:
         return self.raw["text"]
 
+    @property
+    def tts_opts(self) -> dict:
+        return self.raw["tts"]
+
     def _resolve(self, value: str) -> Path:
         p = Path(value)
         return p if p.is_absolute() else PROJECT_ROOT / p
@@ -52,6 +56,10 @@ class Settings:
     @property
     def stories_dir(self) -> Path:
         return self.data_dir / self.raw["paths"]["stories_subdir"]
+
+    @property
+    def audio_dir(self) -> Path:
+        return self.data_dir / self.raw["paths"]["audio_subdir"]
 
     @property
     def ledger_path(self) -> Path:

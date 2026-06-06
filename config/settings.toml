@@ -25,8 +25,24 @@ prepend_title = true   # use the post title as the spoken hook
 strip_edits = true     # drop "Edit:" / "Update:" trailer lines
 strip_tldr = true      # drop "TL;DR" lines
 
+[tts]
+engine = "kokoro"
+default_lang = "a"     # Kokoro lang_code; 'a' = American English (default for English subs)
+device = "auto"        # auto | cpu | cuda
+speed = 1.0            # narration speed multiplier
+sample_rate = 24000    # Kokoro's native rate; do not change
+
+# Voice pools rotated over per story for A/B testing; chosen voice+lang logged in the ledger.
+# Keyed by Kokoro lang_code. 'a' (English) is required; others used for non-English stories
+# (we plan to translate posts to Japanese 'j' / Chinese 'z' later).
+[tts.voices]
+a = ["af_heart", "af_bella", "am_michael", "am_fenrir"]   # American English
+b = ["bf_emma", "bm_george"]                               # British English
+e = ["ef_dora", "em_alex"]                                 # Spanish
+
 [paths]
 data_dir = "data"
 stories_subdir = "stories"
+audio_subdir = "audio"
 ledger_file = "ledger.jsonl"
 banned_words_file = "resources/banned_words.toml"
