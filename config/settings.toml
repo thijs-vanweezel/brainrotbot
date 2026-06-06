@@ -57,6 +57,8 @@ sources = [
     "https://www.youtube.com/watch?v=G0hstDxy8Gc",   # Train video, 18 mins
     "https://www.youtube.com/watch?v=UurvHfRALY4",   # Train video, 5 mins
     "https://www.youtube.com/watch?v=ceBRUwCk_J8",   # Train video, 10 mins
+    "https://www.youtube.com/watch?v=ZJDn89O_dTI",   # Food video, 4 mins
+    "https://www.youtube.com/watch?v=VAGmUv___iQ",   # Food video, 10 mins
 ]
 max_source_height = 1080   # cap download resolution (keeps cache small)
 width = 1080               # output frame -- TikTok vertical 9:16
@@ -92,7 +94,7 @@ preset = "veryfast"        # libx264 speed/size trade-off
 # concat) gain the same sidechain-duck + amix audio branch. --skip-music turns the whole step
 # off (mux-only then keeps its fast `-c:v copy` audio re-encode-only path).
 music_enabled = true
-music_volume_db = -15            # bed level under the narration (negative = softer)
+music_volume_db = -20            # bed level under the narration (negative = softer)
 music_duck = true                # sidechain-compress the bed when the narration is speaking
 music_catalogue_ttl_days = 7     # re-scrape NCS after this many days (cache freshness only -- not throttling)
 music_catalogue_pages = 3        # how many listing pages to scrape (~21 tracks/page; 3 = plenty of variety)
