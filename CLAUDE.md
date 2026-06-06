@@ -7,7 +7,8 @@ This codebase will be focused on automating TikTok content creation and uploadin
 
 ## Working practices
 
-- **Commit to git frequently.** Commit after every small, independently-useful change (a passing module + its test, a working sub-step) rather than batching everything into one commit at the end of a task. Small, self-contained commits keep history reviewable and make rollback cheap. Each commit message should describe the one useful thing it achieves.
+- **Commit to git frequently.** Commit after every small, independently useful change (a passing module, its test, a working sub-step) rather than batching everything into one commit at the end of a task. Small, self-contained commits keep history reviewable and make rollback cheap. Each commit message should describe the one useful thing it achieves.
+- **Be concise.** When writing code, it is important to implement it concisely and efficiently. I.e., implement the minimum changes necessary. This helps in understanding the changes and reviewing version control. Also, write plentiful information-dense comments.
 
 ## Pipeline spec
 
