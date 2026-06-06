@@ -29,7 +29,7 @@ strip_tldr = true      # drop "TL;DR" lines
 engine = "kokoro"
 default_lang = "a"     # Kokoro lang_code; 'a' = American English (default for English subs)
 device = "auto"        # auto | cpu | cuda
-speed = 1.0            # narration speed multiplier
+speed = 1.15           # narration speed multiplier
 sample_rate = 24000    # Kokoro's native rate; do not change
 
 # Voice pools rotated over per story for A/B testing; chosen voice+lang logged in the ledger.
@@ -40,9 +40,31 @@ a = ["af_heart", "af_bella", "am_michael", "am_fenrir"]   # American English
 b = ["bf_emma", "bm_george"]                               # British English
 e = ["ef_dora", "em_alex"]                                 # Spanish
 
+[video]
+# Curated pool of long gameplay videos. Rotated per story (A/B testing, like the TTS voices)
+# and downloaded + cached once to data/video_cache/ (keyed by URL hash), reused across runs.
+# Replace/extend with your own no-copyright gameplay sources.
+sources = [
+    "https://www.youtube.com/watch?v=n_Dv4JMiwK8",   # Minecraft parkour (no-copyright gameplay)
+    "https://www.youtube.com/watch?v=u7kdVe8q5zs",   # Subway Surfers (no-copyright gameplay)
+    "https://www.youtube.com/watch?v=zCoCOHOYd28",   # Train video 
+]
+max_source_height = 1080   # cap download resolution (keeps cache small)
+width = 1080               # output frame -- TikTok vertical 9:16
+height = 1920
+fps = 30                   # output frame rate
+crf = 23                   # libx264 quality (lower = better/larger)
+preset = "veryfast"        # libx264 speed/size trade-off
+# Motion sampling: score the source's keyframes (downscaled to grayscale) and pick the
+# highest-motion window the length of the narration.
+sample_width = 64          # downscale width  for motion sampling
+sample_height = 36         # downscale height for motion sampling
+
 [paths]
 data_dir = "data"
 stories_subdir = "stories"
 audio_subdir = "audio"
+video_subdir = "video"
+video_cache_subdir = "video_cache"
 ledger_file = "ledger.jsonl"
 banned_words_file = "resources/banned_words.toml"
