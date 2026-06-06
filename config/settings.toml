@@ -8,6 +8,9 @@ subreddits = [
     "confession",
     "relationship_advice",
     "stories",
+    "offmychest",
+    "nosleep",
+    "adultery",
 ]
 time_filter = "week"   # one of: hour, day, week, month, year, all
 limit_per_sub = 25     # candidate posts pulled per subreddit before filtering
@@ -98,6 +101,7 @@ music_volume_db = -20            # bed level under the narration (negative = sof
 music_duck = true                # sidechain-compress the bed when the narration is speaking
 music_catalogue_ttl_days = 7     # re-scrape NCS after this many days (cache freshness only -- not throttling)
 music_catalogue_pages = 3        # how many listing pages to scrape (~21 tracks/page; 3 = plenty of variety)
+music_intro_skip_sec = 5         # floor on the random start offset into the track (NCS intros are often quiet)
 
 [paths]
 data_dir = "data"

@@ -85,6 +85,7 @@ def run(
         outro_duration_sec=edit_opts.get("outro_duration_sec", 4.0),
         music_volume_db=edit_opts.get("music_volume_db", -15.0),
         music_duck=edit_opts.get("music_duck", True),
+        music_intro_skip_sec=float(edit_opts.get("music_intro_skip_sec", 5.0)),
     )
 
     # Scrape the NCS instrumental catalogue once per run (cached by music/ncs.py on disk).
@@ -252,6 +253,10 @@ def _add_final_video(entry: LedgerEntry, story: Story, editor: VideoEditor, sett
             k: meta[k] for k in
             ("has_outro", "has_music", "outro_file", "duration_sec", "width", "height", "fps")
         }
+        # Record the random music window in assets.music so each render is reproducible /
+        # auditable in Step 8 analytics. Only present when music was actually mixed.
+        if meta.get("has_music") and "music" in entry.assets:
+            entry.assets["music"]["start_sec"] = meta["music_start_sec"]
         entry.status = "edit_done"
     except Exception as exc:  # noqa: BLE001 -- one bad edit must not abort the run
         print(f"[brainrotbot] WARNING: final video failed for {story.post_id}: {exc}")

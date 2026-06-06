@@ -22,6 +22,7 @@ videos is still deferred; length is narration + outro (the README's >=1 min is o
 
 from __future__ import annotations
 
+import random
 import re
 from pathlib import Path
 
@@ -44,6 +45,23 @@ def _has_audio(path: Path) -> bool:
     return bool(_AUDIO_STREAM_RE.search(stderr.decode("utf-8", "replace")))
 
 
+def pick_music_start(music_dur: float, target_dur: float, intro_skip_sec: float = 5.0,
+                     rng: random.Random | None = None) -> float:
+    """Random start offset into the music track for the soft bed.
+
+    Mirrors `video/background.py`'s window picker: if the track is at least as long as the
+    needed `target_dur` (narration + outro), pick uniformly in [intro_skip, music_dur-target];
+    the `intro_skip_sec` floor skips NCS's frequent quiet intro/buildup. If the track is too
+    short, start at 0 and rely on -stream_loop to fill -- the loop seam will be audible but
+    that's the only honest option. `rng` is injectable for deterministic tests.
+    """
+    if music_dur <= target_dur + 0.5:
+        return 0.0
+    hi = music_dur - target_dur
+    lo = min(intro_skip_sec, hi)
+    return (rng or random).uniform(lo, hi)
+
+
 class VideoEditor:
     """Combines a background clip + narration (+ optional outro) into the final video.
 
@@ -63,6 +81,7 @@ class VideoEditor:
         audio_sample_rate: int = 44100,
         music_volume_db: float = -15.0,
         music_duck: bool = True,
+        music_intro_skip_sec: float = 5.0,
     ):
         self.width, self.height, self.fps = width, height, fps
         self.crf, self.preset = crf, preset
@@ -74,8 +93,11 @@ class VideoEditor:
         self.audio_sample_rate = audio_sample_rate
         # Step 5 music defaults: bed sits at music_volume_db relative to the narration; if
         # music_duck is on, sidechaincompress further dips it whenever speech is present.
+        # music_intro_skip_sec is the floor on the random start offset into the track --
+        # mirrors video/[video].intro_skip_sec, since NCS tracks usually have a quiet intro.
         self.music_volume_db = music_volume_db
         self.music_duck = music_duck
+        self.music_intro_skip_sec = music_intro_skip_sec
 
     def compose(self, background_path: Path, audio_path: Path, out_path: Path,
                 music_path: Path | None = None) -> dict:
@@ -88,21 +110,41 @@ class VideoEditor:
         ffmpeg = _ffmpeg()
         out_path.parent.mkdir(parents=True, exist_ok=True)
 
+        # Random window into the music track so each video uses a different slice. Mirrors
+        # the video step's random offset. Probe both the music and the *target* (background +
+        # any outro) so we can keep the window from running off the end of the track.
+        music_start = 0.0
+        if music_path is not None:
+            music_dur = probe_duration(music_path)
+            outro_dur = self._outro_duration() if self.outro is not None else 0.0
+            target = probe_duration(background_path) + outro_dur
+            music_start = pick_music_start(music_dur, target, self.music_intro_skip_sec)
+
         if self.outro is None:
-            self._mux_only(ffmpeg, background_path, audio_path, out_path, music_path)
+            self._mux_only(ffmpeg, background_path, audio_path, out_path, music_path, music_start)
         else:
-            self._mux_with_outro(ffmpeg, background_path, audio_path, out_path, music_path)
+            self._mux_with_outro(ffmpeg, background_path, audio_path, out_path, music_path, music_start)
 
         return {
             "path": str(out_path),
             "has_outro": self.outro is not None,
             "has_music": music_path is not None,
+            "music_start_sec": round(music_start, 2) if music_path is not None else None,
             "outro_file": str(self.outro) if self.outro else None,
             "duration_sec": round(probe_duration(out_path), 2),
             "width": self.width,
             "height": self.height,
             "fps": self.fps,
         }
+
+    def _outro_duration(self) -> float:
+        """Length of the outro segment in the final video (image -> configured; video -> real).
+        Hoisted out of `_mux_with_outro` so `compose()` can reuse it for the music window."""
+        if self.outro is None:
+            return 0.0
+        if self.outro.suffix.lower() in _IMAGE_EXTS:
+            return self.outro_duration_sec
+        return probe_duration(self.outro)
 
     def _build_music_branch(self, speech_label: str, music_idx: int) -> tuple[list[str], str]:
         """Filter snippets that mix `[music_idx:a]` softly under `[speech_label]`. Returns
@@ -139,7 +181,7 @@ class VideoEditor:
         return parts, "[a]"
 
     def _mux_only(self, ffmpeg: str, bg: Path, audio: Path, out: Path,
-                  music: Path | None) -> None:
+                  music: Path | None, music_start: float = 0.0) -> None:
         """No outro: copy the already-encoded background and add the narration as AAC.
 
         The narration is resampled to stereo `audio_sample_rate` (Kokoro's WAV is mono/24 kHz,
@@ -164,10 +206,11 @@ class VideoEditor:
         parts = [f"[1:a]aresample={sr},aformat=channel_layouts=stereo[voice]"]
         music_parts, audio_out = self._build_music_branch("[voice]", music_idx=2)
         parts.extend(music_parts)
+        # -ss before -i is the input seek (fast); each loop iteration restarts at this offset.
         _run([
             ffmpeg, "-y", "-hide_banner", "-loglevel", "error",
             "-i", str(bg), "-i", str(audio),
-            "-stream_loop", "-1", "-i", str(music),
+            "-ss", f"{music_start:.3f}", "-stream_loop", "-1", "-i", str(music),
             "-filter_complex", ";".join(parts),
             "-map", "0:v:0", "-map", audio_out,
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
@@ -175,7 +218,7 @@ class VideoEditor:
         ])
 
     def _mux_with_outro(self, ffmpeg: str, bg: Path, audio: Path, out: Path,
-                        music: Path | None) -> None:
+                        music: Path | None, music_start: float = 0.0) -> None:
         """Concat [background+narration] then [outro] in a single re-encoding filter pass.
 
         Both concat segments must share geometry/SAR/fps/pixfmt and audio rate/layout, so each
@@ -220,7 +263,7 @@ class VideoEditor:
             parts.append("[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a_speech]")
             music_parts, audio_label = self._build_music_branch("[a_speech]", music_idx=3)
             parts.extend(music_parts)
-            extra_inputs = ["-stream_loop", "-1", "-i", str(music)]
+            extra_inputs = ["-ss", f"{music_start:.3f}", "-stream_loop", "-1", "-i", str(music)]
         filtergraph = ";".join(parts)
 
         _run([

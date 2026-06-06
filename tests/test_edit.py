@@ -1,5 +1,7 @@
+import random
 from pathlib import Path
 
+from brainrotbot.edit.compose import pick_music_start
 from brainrotbot.models import LedgerEntry, Story
 from brainrotbot.music.ncs import TrackMeta
 from brainrotbot.pipeline import _add_final_video, _add_music_bed
@@ -21,6 +23,7 @@ class _FakeEditor:
             "path": str(out_path),
             "has_outro": True,
             "has_music": music_path is not None,
+            "music_start_sec": 12.34 if music_path is not None else None,
             "outro_file": "resources/outro.mp4",
             "duration_sec": 46.0,
             "width": 1080, "height": 1920, "fps": 30,
@@ -67,14 +70,17 @@ def test_add_final_video_records_assets_and_status(tmp_path):
 
 
 def test_add_final_video_threads_music_path_when_present(tmp_path):
-    """When assets.music_path is set, compose() must receive it (-> has_music in the ledger)."""
+    """When assets.music_path is set, compose() must receive it (-> has_music in the ledger).
+    The random window start gets stamped into assets.music.start_sec for auditability."""
     entry, story = _entry()
     entry.assets["music_path"] = "data/music_cache/track.mp3"
+    entry.assets["music"] = {"track_id": "x", "title": "t"}  # pre-existing from _add_music_bed
     editor = _FakeEditor()
     _add_final_video(entry, story, editor, _FakeSettings(tmp_path))
     # 4th positional in the recorded call is the music path.
     assert editor.calls[0][3] == str(Path("data/music_cache/track.mp3"))
     assert entry.assets["edit"]["has_music"] is True
+    assert entry.assets["music"]["start_sec"] == 12.34
 
 
 def test_add_final_video_skips_without_background(tmp_path):
@@ -137,6 +143,30 @@ def test_add_music_bed_records_track_metadata(tmp_path, monkeypatch):
     assert m["moods"] == ["bright", "energetic"]
     assert m["volume_db"] == -15.0
     assert m["ducked"] is True
+
+
+def test_pick_music_start_random_window_when_track_is_longer():
+    """Music longer than narration -> uniform random in [intro_skip, music_dur - target]."""
+    rng = random.Random(0)
+    starts = {round(pick_music_start(180.0, 60.0, intro_skip_sec=5.0, rng=rng), 2)
+              for _ in range(50)}
+    # Must vary across calls (not always the same value) and stay inside the valid window.
+    assert len(starts) > 1
+    assert all(5.0 <= s <= 120.0 for s in starts)
+
+
+def test_pick_music_start_returns_zero_when_track_is_too_short():
+    """If music isn't even as long as the narration, no random offset is possible -- start at 0
+    and let -stream_loop fill the rest."""
+    assert pick_music_start(30.0, 60.0) == 0.0
+    assert pick_music_start(60.0, 60.0) == 0.0  # equal length -> still 0 (no headroom)
+
+
+def test_pick_music_start_clamps_intro_skip_when_window_is_tight():
+    """If intro_skip exceeds the available window, the floor collapses to the window max
+    so we never sample from an empty range."""
+    # music=65, target=60 -> only 5s headroom; intro_skip=5 is at the boundary -> always 5.
+    assert pick_music_start(65.0, 60.0, intro_skip_sec=5.0, rng=random.Random(0)) == 5.0
 
 
 def test_add_music_bed_swallows_download_failure(tmp_path, monkeypatch):
