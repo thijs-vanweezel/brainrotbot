@@ -25,6 +25,31 @@ def test_strips_edit_and_tldr_lines():
     assert "The story happened." in out
 
 
+def test_strips_reddit_rss_footer():
+    """Reddit RSS tails every self-post with 'submitted by /u/<name>' + '[link] [comments]'.
+    Both lines must be dropped or Kokoro narrates them at the end of the video."""
+    # Verbatim from data/stories/1twj8pj.json: one leading space, then both lines.
+    body = (
+        "The actual story body ends here.\n\n"
+        " submitted by /u/Substantial-Ad4756\n"
+        " [link] [comments]"
+    )
+    out = clean_text("", body, prepend_title=False)
+    assert "submitted by" not in out.lower()
+    assert "/u/" not in out
+    assert "[link]" not in out
+    assert "[comments]" not in out
+    assert out.endswith("The actual story body ends here.")
+
+
+def test_does_not_eat_bare_bracket_link_in_prose():
+    """A standalone '[link]' reference mid-paragraph must survive -- only the
+    footer pattern '[link] [comments]' gets stripped."""
+    body = "I clicked the [link] and nothing happened."
+    out = clean_text("", body, prepend_title=False)
+    assert "[link]" in out
+
+
 def test_prepends_title_as_hook():
     out = clean_text("My crazy day", "Then this happened.", prepend_title=True)
     assert out.startswith("My crazy day")
