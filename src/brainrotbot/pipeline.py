@@ -23,6 +23,7 @@ from .reddit.select import select_stories
 from .text.clean import clean_text
 from .text.filter_words import filter_banned_words
 from .edit.compose import VideoEditor
+from .music.ncs import TrackMeta, discover_instrumental_tracks, download_track, pick_track
 from .tts.synthesize import KokoroSynthesizer, pick_voice
 from .video.background import BackgroundVideoMaker, pick_source
 
@@ -33,6 +34,7 @@ def run(
     skip_tts: bool = False,
     skip_video: bool = False,
     skip_edit: bool = False,
+    skip_music: bool = False,
 ) -> list[LedgerEntry]:
     settings = load_settings(settings_path)
 
@@ -81,7 +83,24 @@ def run(
         preset=edit_opts.get("preset", "veryfast"),
         outro_file=settings.edit_outro_file,
         outro_duration_sec=edit_opts.get("outro_duration_sec", 4.0),
+        music_volume_db=edit_opts.get("music_volume_db", -15.0),
+        music_duck=edit_opts.get("music_duck", True),
     )
+
+    # Scrape the NCS instrumental catalogue once per run (cached by music/ncs.py on disk).
+    # A scrape failure just disables music for this run -- it must never block the pipeline.
+    music_on = (not skip_music) and edit_opts.get("music_enabled", True)
+    music_catalogue: list[TrackMeta] = []
+    if music_on:
+        try:
+            music_catalogue = discover_instrumental_tracks(
+                settings.music_cache_dir,
+                ttl_days=int(edit_opts.get("music_catalogue_ttl_days", 7)),
+                num_pages=int(edit_opts.get("music_catalogue_pages", 3)),
+            )
+            print(f"[brainrotbot] NCS catalogue: {len(music_catalogue)} instrumental tracks.")
+        except Exception as exc:  # noqa: BLE001 -- music is a polish; never abort over it
+            print(f"[brainrotbot] WARNING: NCS catalogue unavailable, continuing without music: {exc}")
 
     settings.stories_dir.mkdir(parents=True, exist_ok=True)
     entries: list[LedgerEntry] = []
@@ -91,6 +110,8 @@ def run(
             _add_audio(entry, story, synth, settings, index)
         if maker is not None:
             _add_background_video(entry, story, maker, settings, index)
+        if music_catalogue:
+            _add_music_bed(entry, story, music_catalogue, settings)
         if editor is not None:
             _add_final_video(entry, story, editor, settings)
         _write_story_file(settings, story, entry)
@@ -103,8 +124,9 @@ def run(
     #   2. text-to-speech    -> entry.assets["audio_path"]        (DONE)
     #   3. background video  -> entry.assets["background_video"]  (DONE)
     #   4. editing           -> entry.assets["final_video"]       (DONE)
-    #   5. upload to TikTok   -> entry.upload[...]
-    #   6. analysis           -> entry.metrics[...] + entry.content_analysis[...]
+    #   5. background music  -> entry.assets["music_path"] + mix  (DONE -- mixed in Step 4 pass)
+    #   6. upload to TikTok  -> entry.upload[...]
+    #   7. analysis          -> entry.metrics[...] + entry.content_analysis[...]
     return entries
 
 
@@ -175,12 +197,42 @@ def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVid
         print(f"[brainrotbot] WARNING: background video failed for {story.post_id}: {exc}")
 
 
+def _add_music_bed(entry: LedgerEntry, story: Story, catalogue: list[TrackMeta], settings) -> None:
+    """Pick a random NCS instrumental track for this story and stash it in the entry.
+
+    The actual mix happens later in `_add_final_video` (compose() reads `music_path`). Per-story
+    randomness is intentional (user spec): every video gets a fresh track, not a deterministic
+    rotation. A failed download is swallowed so the rest of the pipeline still produces a final
+    video -- just without the music bed.
+    """
+    track = pick_track(catalogue)
+    try:
+        mp3 = download_track(track, settings.music_cache_dir)
+        edit_opts = settings.edit_opts
+        entry.assets["music_path"] = str(mp3)
+        entry.assets["music"] = {
+            "track_id": track.track_id,
+            "title": track.title,
+            "artist": track.artist,
+            "genre": track.genre,
+            "moods": track.moods,
+            "page_url": track.page_url,
+            "instrumental_url": track.instrumental_url,
+            "volume_db": edit_opts.get("music_volume_db", -15.0),
+            "ducked": bool(edit_opts.get("music_duck", True)),
+        }
+    except Exception as exc:  # noqa: BLE001 -- a flaky download must not kill the story
+        print(f"[brainrotbot] WARNING: music download failed for {story.post_id} "
+              f"({track.title} / {track.artist}): {exc}")
+
+
 def _add_final_video(entry: LedgerEntry, story: Story, editor: VideoEditor, settings) -> None:
-    """Mux the narration onto the background clip (+ outro) into data/final/<post_id>.mp4.
+    """Mux the narration onto the background clip (+ outro, + music bed) into data/final/<post_id>.mp4.
 
     Needs both prior assets; if either is missing (TTS or background skipped/failed) it warns and
-    leaves final_video null. Resilient like the other steps: any ffmpeg failure is swallowed so
-    one bad story never blocks the rest.
+    leaves final_video null. Music is optional -- if `music_path` is set we hand it to compose()
+    for the soft-bed mix, else compose() runs its original Step 4 paths. Resilient like the other
+    steps: any ffmpeg failure is swallowed so one bad story never blocks the rest.
     """
     background = entry.assets.get("background_video")
     audio = entry.assets.get("audio_path")
@@ -188,12 +240,17 @@ def _add_final_video(entry: LedgerEntry, story: Story, editor: VideoEditor, sett
         print(f"[brainrotbot] WARNING: skipping final video for {story.post_id} "
               f"(background={bool(background)}, audio={bool(audio)}).")
         return
+    music_path = entry.assets.get("music_path")
     out_path = settings.final_dir / f"{story.post_id}.mp4"
     try:
-        meta = editor.compose(Path(background), Path(audio), out_path)
+        meta = editor.compose(
+            Path(background), Path(audio), out_path,
+            music_path=Path(music_path) if music_path else None,
+        )
         entry.assets["final_video"] = meta["path"]
         entry.assets["edit"] = {
-            k: meta[k] for k in ("has_outro", "outro_file", "duration_sec", "width", "height", "fps")
+            k: meta[k] for k in
+            ("has_outro", "has_music", "outro_file", "duration_sec", "width", "height", "fps")
         }
         entry.status = "edit_done"
     except Exception as exc:  # noqa: BLE001 -- one bad edit must not abort the run
@@ -222,10 +279,18 @@ def _print_summary(entries: list[LedgerEntry]) -> None:
         bg = e.assets.get("background")
         video = f" bg={bg['source_id']}@{bg['start_sec']}s" if bg else ""
         edit = e.assets.get("edit")
-        final = f" final={edit['duration_sec']}s" + ("+outro" if edit["has_outro"] else "") if edit else ""
+        final = ""
+        if edit:
+            final = f" final={edit['duration_sec']}s"
+            if edit.get("has_outro"):
+                final += "+outro"
+            if edit.get("has_music"):
+                final += "+music"
+        music = e.assets.get("music")
+        music_tag = f" track={music['genre']}/{music['title']}" if music else ""
         print(
             f"- [{e.source['subreddit']}] feed_rank={e.source['feed_rank']} "
-            f"words={t['word_count']} {narration}{video}{final} "
+            f"words={t['word_count']} {narration}{video}{final}{music_tag} "
             f"replaced={len(t['banned_words_replaced'])}\n"
             f"    {t['title'][:90]}"
         )
@@ -238,9 +303,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--skip-tts", action="store_true", help="Skip text-to-speech (Step 1 only)")
     parser.add_argument("--skip-video", action="store_true", help="Skip background-video retrieval (Step 3)")
     parser.add_argument("--skip-edit", action="store_true", help="Skip editing/final-video assembly (Step 4)")
+    parser.add_argument("--skip-music", action="store_true", help="Skip background-music bed (Step 5)")
     args = parser.parse_args(argv)
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,
-        skip_video=args.skip_video, skip_edit=args.skip_edit)
+        skip_video=args.skip_video, skip_edit=args.skip_edit, skip_music=args.skip_music)
     return 0
 
 
