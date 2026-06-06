@@ -51,6 +51,12 @@ def run(
     selected = select_stories(candidates, selection, seen_ids=seen)
     print(f"[brainrotbot] {len(selected)} stories selected (after filters + dedup).")
 
+    # Cross-run rotation: pick_voice / pick_source are deterministic mod-len pickers, so if we
+    # always reset the rotation key to 0 each run, top-of-pool sources (e.g. the first three
+    # Subway Surfers entries) dominate every short run. Seed the rotation with the count of
+    # ledger-known stories so it advances *across* runs while staying reproducible per story.
+    rotation_offset = len(seen)
+
     # Build one synthesizer for the whole run; the model loads lazily on first use.
     tts_opts = settings.tts_opts
     synth = None if skip_tts else KokoroSynthesizer(
@@ -106,11 +112,12 @@ def run(
     settings.stories_dir.mkdir(parents=True, exist_ok=True)
     entries: list[LedgerEntry] = []
     for index, story in enumerate(selected):
+        rotation_key = rotation_offset + index
         entry = _process_story(story, settings)
         if synth is not None:
-            _add_audio(entry, story, synth, settings, index)
+            _add_audio(entry, story, synth, settings, rotation_key)
         if maker is not None:
-            _add_background_video(entry, story, maker, settings, index)
+            _add_background_video(entry, story, maker, settings, rotation_key)
         if music_catalogue:
             _add_music_bed(entry, story, music_catalogue, settings)
         if editor is not None:

@@ -20,10 +20,12 @@ KOKORO_SAMPLE_RATE = 24000
 
 
 def pick_voice(voices: list[str], index: int) -> str:
-    """Round-robin a story (by its position in the run) over a language's voice pool.
+    """Round-robin a story over a language's voice pool by a caller-supplied rotation key.
 
-    Deterministic so rotation is reproducible and unit-testable; the chosen voice is
-    logged per story to feed the Step 6 A/B analytics on what performs best.
+    Deterministic so rotation is reproducible and unit-testable; the chosen voice is logged
+    per story to feed the Step 6 A/B analytics on what performs best. Caller passes a
+    monotonically-advancing key (historical-ledger-count + in-run index) so rotation
+    advances *across* runs instead of always starting at voices[0] every run.
     """
     if not voices:
         raise ValueError("voice pool is empty")

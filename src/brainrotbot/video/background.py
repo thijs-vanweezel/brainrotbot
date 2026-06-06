@@ -27,10 +27,13 @@ _DURATION_RE = re.compile(r"Duration:\s*(\d+):(\d\d):(\d\d(?:\.\d+)?)")
 
 
 def pick_source(sources: list[str], index: int) -> str:
-    """Round-robin a story (by its position in the run) over the source-video pool.
+    """Round-robin a story over the source-video pool by a caller-supplied rotation key.
 
-    Mirrors tts.pick_voice: deterministic so rotation is reproducible/testable, and the
-    chosen source is logged per story to feed the Step 6 A/B analytics (which background works).
+    Deterministic so rotation is reproducible/testable; the chosen source is logged per story
+    to feed the Step 6 A/B analytics (which background works). Caller is expected to pass a
+    monotonically-advancing key (e.g. historical-ledger-count + in-run index) so the rotation
+    advances *across* runs -- using the bare in-run index would always reset to sources[0],
+    making the top of the pool dominate every short run.
     """
     if not sources:
         raise ValueError("source pool is empty")
