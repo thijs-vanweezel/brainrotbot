@@ -28,8 +28,8 @@ python -m brainrotbot.pipeline
 Output:
 - `data/stories/<post_id>.json` — full record per selected story (raw + cleaned text).
 - `data/audio/<post_id>.wav` — narrated audio (24 kHz), with a rotating voice per story.
-- `data/video/<post_id>.mp4` — silent 9:16 background clip, trimmed to the narration length and
-  cropped to the highest-motion window of the source gameplay.
+- `data/video/<post_id>.mp4` — silent 9:16 background clip, trimmed to the narration length from
+  a random offset in the source gameplay and center-cropped to vertical.
 - `data/video_cache/<hash>.<ext>` — source gameplay videos, downloaded once and reused.
 - `data/ledger.jsonl` — append-only ledger, one line per story. TTS fills `assets.audio_path`
   / `assets.audio` (`status="tts_done"`); Step 3 fills `assets.background_video` / `assets.background`
