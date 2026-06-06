@@ -14,6 +14,15 @@ _EMPHASIS = re.compile(r"(\*\*|\*|__|_|~~|`)")               # markdown emphasis
 _HEADING_QUOTE = re.compile(r"^\s{0,3}([#>]+)\s?", re.MULTILINE)
 _EDIT_LINE = re.compile(r"^\s*(edit|update)\s*\d*\s*[:\-].*$", re.IGNORECASE | re.MULTILINE)
 _TLDR_LINE = re.compile(r"^\s*tl[;,]?\s?dr.*$", re.IGNORECASE | re.MULTILINE)
+# Reddit's RSS <content> always tails the body with two structural lines:
+#   "submitted by /u/<author>" and "[link] [comments]". Both are plain text after
+#   html_to_text(), so nothing else strips them. Match each line independently so
+#   we don't depend on order/spacing between them. False-positive risk in real prose
+#   is essentially nil.
+_REDDIT_RSS_FOOTER = re.compile(
+    r"^\s*(submitted by /?u/\S+|\[link\]\s+\[comments?\])\s*$",
+    re.IGNORECASE | re.MULTILINE,
+)
 _MULTI_NEWLINE = re.compile(r"\n{3,}")
 _MULTI_SPACE = re.compile(r"[ \t]{2,}")
 
@@ -57,11 +66,15 @@ def clean_text(
 ) -> str:
     """Normalize a Reddit post into clean prose.
 
-    Strips markdown, links, edit/TL;DR trailers, and zero-width/control noise, then
-    collapses whitespace. Optionally prepends the title as the spoken hook.
+    Strips Reddit's RSS footer ("submitted by /u/..." + "[link] [comments]"), markdown,
+    links, edit/TL;DR trailers, and zero-width/control noise, then collapses whitespace.
+    Optionally prepends the title as the spoken hook.
     """
     body = raw_body or ""
 
+    # Footer first: it can sit adjacent to a final "Edit:" line, and stripping it before
+    # _EDIT_LINE lets _normalize_whitespace later collapse the gap cleanly.
+    body = _REDDIT_RSS_FOOTER.sub("", body)
     if strip_edits:
         body = _EDIT_LINE.sub("", body)
     if strip_tldr:
