@@ -40,6 +40,70 @@ _HTML_BLOCK_END = re.compile(r"(?i)</(p|div|li|h[1-6]|blockquote|tr)>")
 _HTML_BR = re.compile(r"(?i)<br\s*/?>")
 _HTML_TAG = re.compile(r"<[^>]+>")
 
+# Reddit-isms expanded into full prose before TTS so Kokoro reads "AITA" as words, not letters.
+# Case-sensitive (acronyms are reliably uppercase on Reddit); word-boundary anchored so legit
+# words containing the letters survive (e.g. "drop" -> not expanded as "drOP"). Skipped on
+# purpose: AH (collides with "ah" interjection), ATM (often means cash machine), INFO (common
+# noun), F/M alone (ambiguous outside age/gender form).
+_REDDIT_ABBREVIATIONS = {
+    # AmItheAsshole / TIFU verdicts and tags. AITAH/WIBTAH listed because the regex below sorts
+    # by length so the longer match wins.
+    "AITAH": "Am I the asshole here",
+    "AITA": "Am I the asshole",
+    "WIBTAH": "Would I be the asshole here",
+    "WIBTA": "Would I be the asshole",
+    "YTA": "You're the asshole",
+    "NTA": "Not the asshole",
+    "ESH": "Everyone sucks here",
+    "NAH": "No assholes here",
+    "TIFU": "Today I fucked up",
+    "OP": "the original poster",
+    # Relationship / family shorthand common in r/relationship_advice, r/AITA, etc.
+    "SO": "significant other",
+    "BF": "boyfriend",
+    "GF": "girlfriend",
+    "DH": "husband",
+    "DW": "wife",
+    "DS": "son",
+    "DD": "daughter",
+    "MIL": "mother-in-law",
+    "FIL": "father-in-law",
+    "SIL": "sister-in-law",
+    "BIL": "brother-in-law",
+    "STBXH": "soon-to-be ex-husband",
+    "STBXW": "soon-to-be ex-wife",
+    "STBX": "soon-to-be ex",
+    "SAHM": "stay-at-home mom",
+    "SAHD": "stay-at-home dad",
+    "LO": "little one",
+    # General internet shorthand
+    "IMHO": "in my humble opinion",
+    "IMO": "in my opinion",
+    "TBH": "to be honest",
+    "IRL": "in real life",
+    "IDK": "I don't know",
+    "AFAIK": "as far as I know",
+    "IIRC": "if I recall correctly",
+    "FWIW": "for what it's worth",
+    "ELI5": "explain like I'm five",
+    "FYI": "for your information",
+    "NSFW": "not safe for work",
+    "ASAP": "as soon as possible",
+    "DM": "direct message",
+    "LPT": "life pro tip",
+    "ETA": "edited to add",
+}
+# Single alternation regex, length-descending so AITAH wins over AITA.
+_ABBREV_RE = re.compile(
+    r"\b(" + "|".join(
+        re.escape(k) for k in sorted(_REDDIT_ABBREVIATIONS, key=len, reverse=True)
+    ) + r")\b"
+)
+# "(39F)" / "(F39)" / "(28 m)" age+gender markers -> "39 year old female". Restricted to inside
+# parens because that's the only form where false-positives (e.g. "F35 hours") are impossible.
+_AGE_GENDER_AGE_FIRST = re.compile(r"\((\d{1,2})\s*([MFmf])\)")
+_AGE_GENDER_SEX_FIRST = re.compile(r"\(([MFmf])\s*(\d{1,2})\)")
+
 
 def html_to_text(content: str) -> str:
     """Convert rendered HTML (e.g. RSS self-text) to plain text.
@@ -56,6 +120,20 @@ def html_to_text(content: str) -> str:
     return _normalize_whitespace(text)
 
 
+def expand_reddit_abbreviations(text: str) -> str:
+    """Expand AITA/BF/MIL/(39F)/... into prose so Kokoro narrates words, not letters."""
+    text = _ABBREV_RE.sub(lambda m: _REDDIT_ABBREVIATIONS[m.group(1)], text)
+    text = _AGE_GENDER_AGE_FIRST.sub(
+        lambda m: f"{m.group(1)} year old {'male' if m.group(2).upper() == 'M' else 'female'}",
+        text,
+    )
+    text = _AGE_GENDER_SEX_FIRST.sub(
+        lambda m: f"{m.group(2)} year old {'male' if m.group(1).upper() == 'M' else 'female'}",
+        text,
+    )
+    return text
+
+
 def clean_text(
     title: str,
     raw_body: str,
@@ -67,7 +145,8 @@ def clean_text(
     """Normalize a Reddit post into clean prose.
 
     Strips Reddit's RSS footer ("submitted by /u/..." + "[link] [comments]"), markdown,
-    links, edit/TL;DR trailers, and zero-width/control noise, then collapses whitespace.
+    links, edit/TL;DR trailers, and zero-width/control noise; expands Reddit abbreviations
+    (AITA, BF, MIL, "(39F)", ...) so the TTS reads them as words; collapses whitespace.
     Optionally prepends the title as the spoken hook.
     """
     body = raw_body or ""
@@ -93,7 +172,8 @@ def clean_text(
         hook = _normalize_whitespace(title)
         body = f"{hook}\n\n{body}".strip() if body else hook
 
-    return body.strip()
+    # Expand abbreviations last so it runs on the assembled title+body in one shot.
+    return expand_reddit_abbreviations(body.strip())
 
 
 def _normalize_whitespace(text: str) -> str:

@@ -1,4 +1,4 @@
-from brainrotbot.text.clean import clean_text, html_to_text
+from brainrotbot.text.clean import clean_text, expand_reddit_abbreviations, html_to_text
 
 
 def test_strips_markdown_links_and_urls():
@@ -48,6 +48,53 @@ def test_does_not_eat_bare_bracket_link_in_prose():
     body = "I clicked the [link] and nothing happened."
     out = clean_text("", body, prepend_title=False)
     assert "[link]" in out
+
+
+# --- Reddit abbreviation expansion (so Kokoro narrates words, not letters) ------
+
+def test_expands_aita_family_of_acronyms():
+    """Sub-verdict acronyms must expand to prose. AITAH (5 chars) wins over AITA (4)."""
+    assert expand_reddit_abbreviations("AITA for asking?") == "Am I the asshole for asking?"
+    assert expand_reddit_abbreviations("AITAH?") == "Am I the asshole here?"
+    assert expand_reddit_abbreviations("Verdict: NTA, but ESH a bit") == \
+        "Verdict: Not the asshole, but Everyone sucks here a bit"
+
+
+def test_expands_relationship_shorthand():
+    out = expand_reddit_abbreviations("My BF told my MIL that his SIL is lying.")
+    assert "boyfriend" in out and "mother-in-law" in out and "sister-in-law" in out
+    assert "BF" not in out and "MIL" not in out and "SIL" not in out
+
+
+def test_abbreviation_expansion_respects_word_boundaries():
+    """'drop' contains 'OP' but must not expand; lowercase 'so'/'bf' are real English."""
+    out = expand_reddit_abbreviations("I dropped the ball; so it's bf time.")
+    # OP inside 'drop' / 'dropped' is not a standalone word -> untouched.
+    assert "dropped" in out
+    # Lowercase tokens are not Reddit acronyms -> untouched.
+    assert " so " in out
+    assert " bf " in out
+
+
+def test_expands_age_gender_markers_in_parens():
+    """(39F) -> '39 year old female'; (M28) -> '28 year old male'. Outside parens we don't
+    expand because 'F35 hours' would be a false positive."""
+    out = expand_reddit_abbreviations("I (39F) and my BF (38M) went riding.")
+    assert "39 year old female" in out
+    assert "38 year old male" in out
+    assert "(F39)" not in out and "(38M)" not in out
+    # And the leading-letter form:
+    assert "32 year old female" in expand_reddit_abbreviations("(F32)")
+    # Bare "F35" should NOT be expanded -- only the parens form is safe.
+    assert "F35" in expand_reddit_abbreviations("I worked F35 hours.")
+
+
+def test_clean_text_expands_in_title_and_body():
+    """clean_text() applies the expansion to the assembled hook+body in one pass."""
+    out = clean_text("AITA for ignoring my MIL?", "My BF said it was fine.", prepend_title=True)
+    assert out.startswith("Am I the asshole for ignoring my mother-in-law?")
+    assert "boyfriend" in out
+    assert "AITA" not in out and "MIL" not in out and "BF" not in out
 
 
 def test_prepends_title_as_hook():
