@@ -89,13 +89,17 @@ class VideoEditor:
     def _mux_only(self, ffmpeg: str, bg: Path, audio: Path, out: Path) -> None:
         """No outro: copy the already-encoded background and add the narration as AAC.
 
-        -shortest guards against tiny length drift; the clip is already cut to the narration.
+        The narration is resampled to stereo `audio_sample_rate` (Kokoro's WAV is mono/24 kHz,
+        which many players -- and TikTok -- render as *silent*), not stream-copied. -shortest
+        guards against tiny length drift (the clip is already cut to the narration); +faststart
+        moves the moov atom up front for clean web/preview playback.
         """
         _run([
             ffmpeg, "-y", "-hide_banner", "-loglevel", "error",
             "-i", str(bg), "-i", str(audio),
-            "-map", "0:v:0", "-map", "1:a:0",
-            "-c:v", "copy", "-c:a", "aac", "-shortest", str(out),
+            "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy",
+            "-c:a", "aac", "-b:a", "192k", "-ar", str(self.audio_sample_rate), "-ac", "2",
+            "-movflags", "+faststart", "-shortest", str(out),
         ])
 
     def _mux_with_outro(self, ffmpeg: str, bg: Path, audio: Path, out: Path) -> None:
@@ -138,5 +142,6 @@ class VideoEditor:
             "-i", str(bg), "-i", str(audio), *outro_in,
             "-filter_complex", filtergraph, "-map", "[v]", "-map", "[a]",
             "-c:v", "libx264", "-crf", str(self.crf), "-preset", self.preset,
-            "-pix_fmt", "yuv420p", "-c:a", "aac", str(out),
+            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
+            "-movflags", "+faststart", str(out),
         ])
