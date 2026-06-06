@@ -72,7 +72,7 @@ intro_skip_sec = 5
 #                          like "Get cookies.txt LOCALLY"). Most reliable on Windows. Wins if set.
 #   cookies_from_browser-- "" (off) | "edge" | "chrome" | "firefox" | "brave". Reads the browser's
 #                          cookie DB directly, but the browser must be CLOSED (it locks the DB).
-cookies_file = ""
+cookies_file = "./yt_cookies.txt"
 cookies_from_browser = "edge"
 
 [paths]
