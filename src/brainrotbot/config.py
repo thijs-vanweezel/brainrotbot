@@ -45,6 +45,10 @@ class Settings:
     def tts_opts(self) -> dict:
         return self.raw["tts"]
 
+    @property
+    def video_opts(self) -> dict:
+        return self.raw["video"]
+
     def _resolve(self, value: str) -> Path:
         p = Path(value)
         return p if p.is_absolute() else PROJECT_ROOT / p
@@ -60,6 +64,14 @@ class Settings:
     @property
     def audio_dir(self) -> Path:
         return self.data_dir / self.raw["paths"]["audio_subdir"]
+
+    @property
+    def video_dir(self) -> Path:
+        return self.data_dir / self.raw["paths"]["video_subdir"]
+
+    @property
+    def video_cache_dir(self) -> Path:
+        return self.data_dir / self.raw["paths"]["video_cache_subdir"]
 
     @property
     def ledger_path(self) -> Path:

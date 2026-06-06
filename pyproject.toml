@@ -23,6 +23,13 @@ tts = [
     "misaki[ja]>=0.9",
     "misaki[zh]>=0.9",
 ]
+# Step 3 (background video). yt-dlp sources clips; imageio-ffmpeg bundles a static ffmpeg
+# (no system install / no conda-forge Windows DLL issues); numpy scores per-frame motion.
+video = [
+    "yt-dlp>=2024.0",
+    "imageio-ffmpeg>=0.5",
+    "numpy>=1.24",
+]
 
 [project.scripts]
 brainrotbot = "brainrotbot.pipeline:main"
