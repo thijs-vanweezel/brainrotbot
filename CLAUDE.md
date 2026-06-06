@@ -3,7 +3,8 @@ This codebase will be focused on automating TikTok content creation and uploadin
 ## Status (what's built)
 
 - **Step 1 — DONE**: Reddit retrieval (RSS) + text cleaning + analytics ledger. Output: per-story JSON in `data/stories/` + append-only `data/ledger.jsonl`. `LedgerEntry` already reserves `assets`/`upload`/`metrics`/`content_analysis` fields for later steps.
-- **Steps 2-6 — NOT STARTED**: TTS, background video, editing, upload, analysis. The numbered sections below are the spec/intent, not status. Each step slots into `pipeline.run()`; `run.bat` stays the stable single entry point.
+- **Step 2 — DONE**: Text-to-speech via **Kokoro-82M** (`src/brainrotbot/tts/`). Narrates each story's cleaned text to `data/audio/<post_id>.wav` (24 kHz), rotating a per-language voice pool (A/B testing) and recording voice/lang/duration in `assets.audio` + `assets.audio_path`; sets `status="tts_done"`. Config in `[tts]` (settings.toml). Requires the `tts` extra: `pip install -e ".[tts]"` (kokoro, soundfile, numpy, misaki[ja]/[zh] — the last two are pre-installed for planned JP/ZH post translation). Manual prereq: install the Windows **espeak-ng** binary (OOV G2P fallback). Use `--skip-tts` to run Step 1 alone.
+- **Steps 3-6 — NOT STARTED**: background video, editing, upload, analysis. The numbered sections below are the spec/intent, not status. Each step slots into `pipeline.run()`; `run.bat` stays the stable single entry point.
 
 ## Working practices
 
