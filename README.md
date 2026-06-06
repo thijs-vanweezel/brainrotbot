@@ -4,9 +4,10 @@ My personal bot for automating TikTok "brainrot" content. Goal (see `CLAUDE.md`)
 Reddit story → clean text → text-to-speech → background video → edit → upload → analyze,
 all driven by **one command**.
 
-**Status: Steps 1-3 done** — Reddit story retrieval + text cleaning + the analytics ledger,
-text-to-speech narration (Kokoro-82M) to `data/audio/<post_id>.wav`, and a background gameplay
-clip (`data/video/<post_id>.mp4`) trimmed to the narration and cropped to vertical 9:16.
+**Status: Steps 1-4 done** — Reddit story retrieval + text cleaning + the analytics ledger,
+text-to-speech narration (Kokoro-82M) to `data/audio/<post_id>.wav`, a background gameplay
+clip (`data/video/<post_id>.mp4`) trimmed to the narration and cropped to vertical 9:16, and the
+edit that muxes the narration onto that clip and appends an outro to `data/final/<post_id>.mp4`.
 
 ## Run the bot
 
@@ -15,8 +16,9 @@ run.bat
 ```
 
 Double-click `run.bat`, or run it from a terminal (extra args pass through, e.g.
-`run.bat --top-k 3`, `run.bat --skip-tts` for Step 1 only, or `run.bat --skip-video` to skip
-Step 3). It executes the full pipeline in the `brainrotbot312` conda env.
+`run.bat --top-k 3`, `run.bat --skip-tts` for Step 1 only, `run.bat --skip-video` to skip
+Step 3, or `run.bat --skip-edit` to skip Step 4). It executes the full pipeline in the
+`brainrotbot312` conda env.
 
 Equivalent direct invocation:
 
@@ -31,9 +33,12 @@ Output:
 - `data/video/<post_id>.mp4` — silent 9:16 background clip, trimmed to the narration length from
   a random offset in the source gameplay and center-cropped to vertical.
 - `data/video_cache/<hash>.<ext>` — source gameplay videos, downloaded once and reused.
+- `data/final/<post_id>.mp4` — the upload-ready video: narration muxed onto the background, with
+  a standard "follow our page" outro appended (see `[edit].outro_file`).
 - `data/ledger.jsonl` — append-only ledger, one line per story. TTS fills `assets.audio_path`
   / `assets.audio` (`status="tts_done"`); Step 3 fills `assets.background_video` / `assets.background`
-  (`status="video_done"`); later steps (upload, analytics) fill the remaining reserved fields.
+  (`status="video_done"`); Step 4 fills `assets.final_video` / `assets.edit` (`status="edit_done"`);
+  later steps (upload, analytics) fill the remaining reserved fields.
 
 ## One-time setup
 
@@ -62,8 +67,12 @@ the ledger.
 
 ## Configuration
 
-- `config/settings.toml` — subreddits, time window, score/length thresholds, paths.
+- `config/settings.toml` — subreddits, time window, score/length thresholds, paths, and the
+  `[edit]` section (the outro asset + final-render quality).
 - `resources/banned_words.toml` — TikTok-sensitive word → euphemism map (editable data).
+- `[edit].outro_file` (default `resources/outro.mp4`) — a 9:16 clip or image appended as the
+  "follow our page" outro. Drop your own there; set it to `""` (or leave the file absent) and the
+  final video is just the narrated background.
 
 ## Tests
 
