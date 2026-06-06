@@ -75,11 +75,23 @@ intro_skip_sec = 5
 cookies_file = "./yt_cookies.txt"
 cookies_from_browser = "edge"
 
+[edit]
+# Step 4 assembles the final upload-ready video: narration muxed onto the background clip,
+# then a standard "follow our page" outro shot appended. Output: data/final/<post_id>.mp4.
+# Geometry (width/height/fps) is reused from [video] so the outro matches the background frame.
+# Standard outro shot appended after the narration. A 9:16 video or image; "" disables it
+# (final video is then just the narrated background). Resolved relative to the project root.
+outro_file = "resources/outro.mp4"
+outro_duration_sec = 4     # how long an image outro is shown (ignored for video outros)
+crf = 23                   # libx264 quality for the re-encoded final (lower = better/larger)
+preset = "veryfast"        # libx264 speed/size trade-off
+
 [paths]
 data_dir = "data"
 stories_subdir = "stories"
 audio_subdir = "audio"
 video_subdir = "video"
 video_cache_subdir = "video_cache"
+final_subdir = "final"
 ledger_file = "ledger.jsonl"
 banned_words_file = "resources/banned_words.toml"
