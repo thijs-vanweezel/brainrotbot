@@ -106,8 +106,11 @@ def ensure_cached(
         cookie_args = ["--cookies-from-browser", cookies_from_browser]
     else:
         cookie_args = []
+    # YouTube's "n-signature" throttling challenge now needs yt-dlp's external JS solver scripts
+    # (EJS), fetched + cached from GitHub on first use; without them only image formats are offered.
     _run([
         ytdlp, "--no-playlist", "--no-progress", "-f", fmt, *cookie_args,
+        "--remote-components", "ejs:github",
         "--ffmpeg-location", _ffmpeg(), "-o", str(cache_dir / f"{key}.%(ext)s"), url,
     ])
     hit = [p for p in cache_dir.glob(f"{key}.*") if p.suffix != ".part"]

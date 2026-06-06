@@ -49,6 +49,19 @@ class Settings:
     def video_opts(self) -> dict:
         return self.raw["video"]
 
+    @property
+    def video_cookies_file(self) -> str:
+        """Absolute path to the yt-dlp cookies file, or "" if unset.
+
+        A relative path is resolved against the settings file's own directory (config/), so
+        `cookies_file = "./yt_cookies.txt"` finds a cookies.txt sitting next to settings.toml.
+        """
+        cf = self.raw["video"].get("cookies_file", "")
+        if not cf:
+            return ""
+        p = Path(cf)
+        return str(p if p.is_absolute() else (self.settings_path.parent / p).resolve())
+
     def _resolve(self, value: str) -> Path:
         p = Path(value)
         return p if p.is_absolute() else PROJECT_ROOT / p

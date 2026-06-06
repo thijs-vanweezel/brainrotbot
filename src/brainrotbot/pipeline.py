@@ -65,7 +65,7 @@ def run(
         max_source_height=video_opts.get("max_source_height", 1080),
         intro_skip_sec=video_opts.get("intro_skip_sec", 5.0),
         cookies_from_browser=video_opts.get("cookies_from_browser", ""),
-        cookies_file=video_opts.get("cookies_file", ""),
+        cookies_file=settings.video_cookies_file,
     )
 
     settings.stories_dir.mkdir(parents=True, exist_ok=True)
