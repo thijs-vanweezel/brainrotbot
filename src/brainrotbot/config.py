@@ -101,6 +101,12 @@ class Settings:
         return self.data_dir / self.raw["paths"]["final_subdir"]
 
     @property
+    def music_cache_dir(self) -> Path:
+        # Step 5: NCS instrumental MP3s + scraped catalogue. Keyed by track UUID (stable across
+        # runs), so cache hits accumulate naturally even with random per-story picks.
+        return self.data_dir / self.raw["paths"].get("music_cache_subdir", "music_cache")
+
+    @property
     def ledger_path(self) -> Path:
         return self.data_dir / self.raw["paths"]["ledger_file"]
 
