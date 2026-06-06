@@ -73,11 +73,17 @@ def _run(cmd: list[str], *, capture: bool = False, check: bool = True) -> tuple[
     return proc.stdout or b"", proc.stderr or b""
 
 
-def ensure_cached(url: str, cache_dir: Path, *, max_height: int) -> Path:
+def ensure_cached(
+    url: str, cache_dir: Path, *,
+    max_height: int, cookies_from_browser: str = "", cookies_file: str = "",
+) -> Path:
     """Download `url` to the cache once (keyed by URL hash) and return the local file.
 
     Already-cached sources are reused, so the network/disk cost is paid a single time even
     though many stories share the pool. Video-only is fetched (no audio) -- the background is silent.
+    To clear YouTube's anti-bot gate, pass either `cookies_file` (a Netscape cookies.txt, most
+    reliable on Windows) or `cookies_from_browser` (e.g. "edge"/"chrome"; needs the browser closed,
+    as a running browser locks its cookie DB). `cookies_file` wins if both are set.
     """
     cache_dir.mkdir(parents=True, exist_ok=True)
     key = hashlib.sha1(url.encode("utf-8")).hexdigest()[:12]
@@ -91,8 +97,17 @@ def ensure_cached(url: str, cache_dir: Path, *, max_height: int) -> Path:
         f"bestvideo[height<={max_height}][vcodec^=avc1]/bestvideo[height<={max_height}]"
         f"/best[height<={max_height}]/best"
     )
+    # YouTube increasingly gates anonymous downloads behind a "confirm you're not a bot" check;
+    # logged-in cookies clear it. A cookies.txt file is preferred (robust on Windows); else a
+    # browser. Off unless one is configured.
+    if cookies_file:
+        cookie_args = ["--cookies", cookies_file]
+    elif cookies_from_browser:
+        cookie_args = ["--cookies-from-browser", cookies_from_browser]
+    else:
+        cookie_args = []
     _run([
-        ytdlp, "--no-playlist", "--no-progress", "-f", fmt,
+        ytdlp, "--no-playlist", "--no-progress", "-f", fmt, *cookie_args,
         "--ffmpeg-location", _ffmpeg(), "-o", str(cache_dir / f"{key}.%(ext)s"), url,
     ])
     hit = [p for p in cache_dir.glob(f"{key}.*") if p.suffix != ".part"]
@@ -129,10 +144,15 @@ class BackgroundVideoMaker:
         crf: int = 23,
         preset: str = "veryfast",
         max_source_height: int = 1080,
+        intro_skip_sec: float = 5.0,
+        cookies_from_browser: str = "",
+        cookies_file: str = "",
     ):
         self.cache_dir = Path(cache_dir)
         self.width, self.height, self.fps = width, height, fps
         self.crf, self.preset, self.max_source_height = crf, preset, max_source_height
+        self.intro_skip_sec = intro_skip_sec
+        self.cookies_from_browser, self.cookies_file = cookies_from_browser, cookies_file
 
     def make(self, source_url: str, duration_sec: float, out_path: Path) -> dict:
         """Produce a `duration_sec`-long 9:16 clip from `source_url` at `out_path`.
@@ -140,16 +160,21 @@ class BackgroundVideoMaker:
         Returns metadata for the ledger (source, chosen window, geometry).
         """
         ffmpeg = _ffmpeg()
-        src = ensure_cached(source_url, self.cache_dir, max_height=self.max_source_height)
+        src = ensure_cached(
+            source_url, self.cache_dir, max_height=self.max_source_height,
+            cookies_from_browser=self.cookies_from_browser, cookies_file=self.cookies_file,
+        )
         src_dur = probe_duration(src)
 
         # Source too short for the narration -> start at 0 and loop it to fill; else trim a
         # window from a random offset (variety across videos). +0.5s slack avoids a
-        # near-equal-length corner case.
+        # near-equal-length corner case. The window starts no earlier than intro_skip_sec to
+        # avoid the source's intro/title card -- clamped down when the source is barely long enough.
         if src_dur <= duration_sec + 0.5:
             start, looped = 0.0, True
         else:
-            start, looped = random.uniform(0.0, src_dur - duration_sec), False
+            hi = src_dur - duration_sec
+            start, looped = random.uniform(min(self.intro_skip_sec, hi), hi), False
 
         out_path.parent.mkdir(parents=True, exist_ok=True)
         loop_args = ["-stream_loop", "-1"] if looped else []

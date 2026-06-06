@@ -54,7 +54,9 @@ sources = [
     "https://www.youtube.com/watch?v=BXUA2FncVPI",   # Minecraft parkour, 10 mins 
     "https://www.youtube.com/watch?v=5kdkBv1LqbM",   # Minecraft parkour, 10 mins
     "https://www.youtube.com/watch?v=r2TAtdDpg3Y",   # Minecraft parkour, 10 mins
-    "https://www.youtube.com/watch?v=zCoCOHOYd28",   # Train video 
+    "https://www.youtube.com/watch?v=G0hstDxy8Gc",   # Train video, 18 mins
+    "https://www.youtube.com/watch?v=UurvHfRALY4",   # Train video, 5 mins
+    "https://www.youtube.com/watch?v=ceBRUwCk_J8",   # Train video, 10 mins
 ]
 max_source_height = 1080   # cap download resolution (keeps cache small)
 width = 1080               # output frame -- TikTok vertical 9:16
@@ -62,7 +64,16 @@ height = 1920
 fps = 30                   # output frame rate
 crf = 23                   # libx264 quality (lower = better/larger)
 preset = "veryfast"        # libx264 speed/size trade-off
-# A window the length of the narration is trimmed from a random offset in the source.
+# A window the length of the narration is trimmed from a random offset in the source,
+# starting no earlier than intro_skip_sec to skip the source's intro/title card.
+intro_skip_sec = 5
+# Clearing YouTube's "confirm you're not a bot" gate needs logged-in cookies. Two ways:
+#   cookies_file        -- path to a Netscape cookies.txt (export once with a browser extension
+#                          like "Get cookies.txt LOCALLY"). Most reliable on Windows. Wins if set.
+#   cookies_from_browser-- "" (off) | "edge" | "chrome" | "firefox" | "brave". Reads the browser's
+#                          cookie DB directly, but the browser must be CLOSED (it locks the DB).
+cookies_file = ""
+cookies_from_browser = "edge"
 
 [paths]
 data_dir = "data"

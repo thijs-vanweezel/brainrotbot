@@ -45,6 +45,12 @@ Step 3 needs no system ffmpeg: the `video` extra pulls in `yt-dlp` (clip sourcin
 `imageio-ffmpeg`, which bundles a static ffmpeg binary (avoids the conda-forge Windows DLL
 crash). Source gameplay videos are listed in `[video].sources` (`config/settings.toml`).
 
+YouTube downloads need two extra things now: a **JS runtime** (Deno, `conda install -c
+conda-forge deno`) and **logged-in cookies** to clear the "confirm you're not a bot" gate.
+Set `[video].cookies_file` to an exported `cookies.txt` (most reliable on Windows — use a
+browser extension like "Get cookies.txt LOCALLY"), or `cookies_from_browser = "edge"`/`"chrome"`
+with that browser fully closed (a running browser locks its cookie DB).
+
 **No Reddit credentials are needed** — stories are pulled from public RSS feeds
 (`/r/<sub>/top/.rss`). This sidesteps Reddit's API entirely: the anonymous `.json` endpoint
 is now 403-blocked, and the Data API is gated/legacy (steered toward moderation use cases via
