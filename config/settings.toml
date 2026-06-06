@@ -95,6 +95,7 @@ music_enabled = true
 music_volume_db = -15            # bed level under the narration (negative = softer)
 music_duck = true                # sidechain-compress the bed when the narration is speaking
 music_catalogue_ttl_days = 7     # re-scrape NCS after this many days (cache freshness only -- not throttling)
+music_catalogue_pages = 3        # how many listing pages to scrape (~21 tracks/page; 3 = plenty of variety)
 
 [paths]
 data_dir = "data"

@@ -29,6 +29,11 @@ video = [
     "yt-dlp>=2024.0",
     "imageio-ffmpeg>=0.5",
 ]
+# Step 5 (background music). bs4 parses the NCS /music-search listing; requests is already
+# core. Downloads use stdlib urllib so no extra HTTP client is needed at runtime.
+music = [
+    "beautifulsoup4>=4.12",
+]
 
 [project.scripts]
 brainrotbot = "brainrotbot.pipeline:main"
