@@ -60,13 +60,6 @@ The trade-off: RSS exposes the full story text but not upvote/comment counts, so
 uses the feed's own popularity ordering (`feed_rank`) and those numeric fields stay null in
 the ledger.
 
-## Planned
-
-- **Background music** — the editing step (Step 4) should mix a low-volume music bed under the
-  narration (ducked so the voice stays clear). Tracks would come from a curated, copyright-safe
-  pool (rotated per video for A/B testing, like the voices and background sources), with the
-  chosen track logged in the ledger for Step 6 analytics. Not yet implemented.
-
 ## Configuration
 
 - `config/settings.toml` — subreddits, time window, score/length thresholds, paths.

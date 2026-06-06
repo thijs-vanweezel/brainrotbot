@@ -34,6 +34,10 @@ Important here is that the video is trimmed properly, i.e., that only the "impor
 
 Once the three parts are retrieved, the audio should be overlayed on the video. Also, add a standard outro shot showing a call to action to follow our page. If the video is significantly long, add "Follow for part 2/...". Notice, however, that I prefer all videos to be at least one minute, although both shorter and longer videos are tolerated.
 
+5. **Add music**
+
+Technically could have been swapped with the previous step. Anyhow, source copyright-free music and add it softly to the video.
+
 5. **Uploading**
 
 Now that the video is prepared, upload it to TikTok. I will later provide the account information, including login. This should again be automated using e.g., Playwright. Note that TikTok already provides a tool for adding subtitles, please turn this on.
