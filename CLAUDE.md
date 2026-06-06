@@ -38,6 +38,10 @@ Once the three parts are retrieved, the audio should be overlayed on the video. 
 
 Technically could have been swapped with the previous step. Anyhow, source copyright-free music and add it softly to the video.
 
+6. **Add thumbnail**
+
+Less important for the first version. But should probably just be the text of the post title, overlaid on a static unrelated image, e.g., women, cars, real estate, etc. To be selected when uploading the TikTok.
+
 5. **Uploading**
 
 Now that the video is prepared, upload it to TikTok. I will later provide the account information, including login. This should again be automated using e.g., Playwright. Note that TikTok already provides a tool for adding subtitles, please turn this on.
