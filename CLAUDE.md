@@ -1,5 +1,16 @@
 This codebase will be focused on automating TikTok content creation and uploading -- called brainrotbot. Specifically, the goal for the first version is to retrieve interesting stories from Reddit, then to convert this text to speech, to add a background video, and finally to edit the video and to upload it. This is a personal, single-user project (not meant to be cloned/installed by others), and it must run standalone: one command (`run.bat`) turns the bot on and runs the full pipeline end to end. In more detail:
 
+## Status (what's built)
+
+- **Step 1 — DONE**: Reddit retrieval (RSS) + text cleaning + analytics ledger. Output: per-story JSON in `data/stories/` + append-only `data/ledger.jsonl`. `LedgerEntry` already reserves `assets`/`upload`/`metrics`/`content_analysis` fields for later steps.
+- **Steps 2-6 — NOT STARTED**: TTS, background video, editing, upload, analysis. The numbered sections below are the spec/intent, not status. Each step slots into `pipeline.run()`; `run.bat` stays the stable single entry point.
+
+## Working practices
+
+- **Commit to git frequently.** Commit after every small, independently-useful change (a passing module + its test, a working sub-step) rather than batching everything into one commit at the end of a task. Small, self-contained commits keep history reviewable and make rollback cheap. Each commit message should describe the one useful thing it achieves.
+
+## Pipeline spec
+
 1. **Story retrieval from Reddit**
 
 On Reddit, many fascinating, provocative, despicable, or otherwise interesting stories circulate, not only in r/stories, but literally on any sub. The goal here is to find such stories, and retrieve the text. This is done via Reddit's public **RSS feeds** (e.g. `/r/<sub>/top/.rss?t=week`), which need no auth and no app registration and carry the full self-text. (The anonymous `.json` endpoint is now 403-blocked; the Data API is gated/legacy and steered toward moderation use cases; and the Developer Platform / Devvit at developers.reddit.com is for apps hosted *on* Reddit, not external bots -- so none of those are used.) RSS omits upvote/comment counts, so selection uses the feed's popularity ordering. Selection could later be refined using Gemma4-E2B. Use judgement here.
