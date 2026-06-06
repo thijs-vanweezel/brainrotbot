@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from pathlib import Path
 
 from .config import load_settings
 from .ledger import append_entry, existing_post_ids
@@ -21,6 +22,7 @@ from .reddit.fetch import fetch_candidates
 from .reddit.select import select_stories
 from .text.clean import clean_text
 from .text.filter_words import filter_banned_words
+from .edit.compose import VideoEditor
 from .tts.synthesize import KokoroSynthesizer, pick_voice
 from .video.background import BackgroundVideoMaker, pick_source
 
@@ -30,6 +32,7 @@ def run(
     top_k: int | None = None,
     skip_tts: bool = False,
     skip_video: bool = False,
+    skip_edit: bool = False,
 ) -> list[LedgerEntry]:
     settings = load_settings(settings_path)
 
@@ -68,6 +71,18 @@ def run(
         cookies_file=settings.video_cookies_file,
     )
 
+    # Build the editor once; geometry is reused from [video] so the outro matches the background.
+    edit_opts = settings.edit_opts
+    editor = None if skip_edit else VideoEditor(
+        width=video_opts.get("width", 1080),
+        height=video_opts.get("height", 1920),
+        fps=video_opts.get("fps", 30),
+        crf=edit_opts.get("crf", 23),
+        preset=edit_opts.get("preset", "veryfast"),
+        outro_file=settings.edit_outro_file,
+        outro_duration_sec=edit_opts.get("outro_duration_sec", 4.0),
+    )
+
     settings.stories_dir.mkdir(parents=True, exist_ok=True)
     entries: list[LedgerEntry] = []
     for index, story in enumerate(selected):
@@ -76,6 +91,8 @@ def run(
             _add_audio(entry, story, synth, settings, index)
         if maker is not None:
             _add_background_video(entry, story, maker, settings, index)
+        if editor is not None:
+            _add_final_video(entry, story, editor, settings)
         _write_story_file(settings, story, entry)
         append_entry(settings.ledger_path, entry)
         entries.append(entry)
@@ -85,7 +102,7 @@ def run(
     # Future steps consume `entries` here and fill the ledger's assets/upload/metrics:
     #   2. text-to-speech    -> entry.assets["audio_path"]        (DONE)
     #   3. background video  -> entry.assets["background_video"]  (DONE)
-    #   4. editing           -> entry.assets["final_video"]
+    #   4. editing           -> entry.assets["final_video"]       (DONE)
     #   5. upload to TikTok   -> entry.upload[...]
     #   6. analysis           -> entry.metrics[...] + entry.content_analysis[...]
     return entries
@@ -158,6 +175,31 @@ def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVid
         print(f"[brainrotbot] WARNING: background video failed for {story.post_id}: {exc}")
 
 
+def _add_final_video(entry: LedgerEntry, story: Story, editor: VideoEditor, settings) -> None:
+    """Mux the narration onto the background clip (+ outro) into data/final/<post_id>.mp4.
+
+    Needs both prior assets; if either is missing (TTS or background skipped/failed) it warns and
+    leaves final_video null. Resilient like the other steps: any ffmpeg failure is swallowed so
+    one bad story never blocks the rest.
+    """
+    background = entry.assets.get("background_video")
+    audio = entry.assets.get("audio_path")
+    if not background or not audio:
+        print(f"[brainrotbot] WARNING: skipping final video for {story.post_id} "
+              f"(background={bool(background)}, audio={bool(audio)}).")
+        return
+    out_path = settings.final_dir / f"{story.post_id}.mp4"
+    try:
+        meta = editor.compose(Path(background), Path(audio), out_path)
+        entry.assets["final_video"] = meta["path"]
+        entry.assets["edit"] = {
+            k: meta[k] for k in ("has_outro", "outro_file", "duration_sec", "width", "height", "fps")
+        }
+        entry.status = "edit_done"
+    except Exception as exc:  # noqa: BLE001 -- one bad edit must not abort the run
+        print(f"[brainrotbot] WARNING: final video failed for {story.post_id}: {exc}")
+
+
 def _write_story_file(settings, story: Story, entry: LedgerEntry) -> None:
     path = settings.stories_dir / f"{story.post_id}.json"
     with open(path, "w", encoding="utf-8") as f:
@@ -179,9 +221,11 @@ def _print_summary(entries: list[LedgerEntry]) -> None:
         )
         bg = e.assets.get("background")
         video = f" bg={bg['source_id']}@{bg['start_sec']}s" if bg else ""
+        edit = e.assets.get("edit")
+        final = f" final={edit['duration_sec']}s" + ("+outro" if edit["has_outro"] else "") if edit else ""
         print(
             f"- [{e.source['subreddit']}] feed_rank={e.source['feed_rank']} "
-            f"words={t['word_count']} {narration}{video} "
+            f"words={t['word_count']} {narration}{video}{final} "
             f"replaced={len(t['banned_words_replaced'])}\n"
             f"    {t['title'][:90]}"
         )
@@ -193,8 +237,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--top-k", type=int, default=None, help="Override stories kept per run")
     parser.add_argument("--skip-tts", action="store_true", help="Skip text-to-speech (Step 1 only)")
     parser.add_argument("--skip-video", action="store_true", help="Skip background-video retrieval (Step 3)")
+    parser.add_argument("--skip-edit", action="store_true", help="Skip editing/final-video assembly (Step 4)")
     args = parser.parse_args(argv)
-    run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts, skip_video=args.skip_video)
+    run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,
+        skip_video=args.skip_video, skip_edit=args.skip_edit)
     return 0
 
 
