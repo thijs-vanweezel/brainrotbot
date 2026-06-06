@@ -81,10 +81,20 @@ cookies_from_browser = "edge"
 # Geometry (width/height/fps) is reused from [video] so the outro matches the background frame.
 # Standard outro shot appended after the narration. A 9:16 video or image; "" disables it
 # (final video is then just the narrated background). Resolved relative to the project root.
-outro_file = "resources/outro.mp4"
+outro_file = "resources/outrov1.mp4"
 outro_duration_sec = 4     # how long an image outro is shown (ignored for video outros)
 crf = 23                   # libx264 quality for the re-encoded final (lower = better/larger)
 preset = "veryfast"        # libx264 speed/size trade-off
+# Step 5 -- soft background music bed sourced randomly from ncs.io (instrumental versions only).
+# Catalogue is scraped from /music-search?version=Instrumental and cached to disk; each pick
+# downloads /track/download/i_<tid> (always the no-vocals cut). Mixed into the existing compose
+# pass so we don't re-encode the video a second time -- both compose paths (mux-only / outro
+# concat) gain the same sidechain-duck + amix audio branch. --skip-music turns the whole step
+# off (mux-only then keeps its fast `-c:v copy` audio re-encode-only path).
+music_enabled = true
+music_volume_db = -15            # bed level under the narration (negative = softer)
+music_duck = true                # sidechain-compress the bed when the narration is speaking
+music_catalogue_ttl_days = 7     # re-scrape NCS after this many days (cache freshness only -- not throttling)
 
 [paths]
 data_dir = "data"
@@ -93,5 +103,6 @@ audio_subdir = "audio"
 video_subdir = "video"
 video_cache_subdir = "video_cache"
 final_subdir = "final"
+music_cache_subdir = "music_cache"
 ledger_file = "ledger.jsonl"
 banned_words_file = "resources/banned_words.toml"
