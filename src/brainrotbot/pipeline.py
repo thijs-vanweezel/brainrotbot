@@ -63,8 +63,6 @@ def run(
         crf=video_opts.get("crf", 23),
         preset=video_opts.get("preset", "veryfast"),
         max_source_height=video_opts.get("max_source_height", 1080),
-        sample_width=video_opts.get("sample_width", 64),
-        sample_height=video_opts.get("sample_height", 36),
     )
 
     settings.stories_dir.mkdir(parents=True, exist_ok=True)
@@ -138,7 +136,7 @@ def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVid
     """
     audio = entry.assets.get("audio")
     duration = audio["duration_sec"] if audio else entry.text["est_speech_seconds"]
-    sources = settings.video_opts.get("sources") or []
+    sources = [s for s in (settings.video_opts.get("sources") or []) if s]  # drop blank entries
     if not duration or duration <= 0 or not sources:
         print(f"[brainrotbot] WARNING: skipping background video for {story.post_id} "
               f"(duration={duration}, sources={len(sources)}).")
@@ -150,7 +148,7 @@ def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVid
         entry.assets["background_video"] = meta["path"]
         entry.assets["background"] = {
             k: meta[k] for k in
-            ("source_url", "source_id", "start_sec", "duration_sec", "looped", "motion_score", "width", "height", "fps")
+            ("source_url", "source_id", "start_sec", "duration_sec", "looped", "width", "height", "fps")
         }
         entry.status = "video_done"
     except Exception as exc:  # noqa: BLE001 -- one bad source/clip must not abort the run

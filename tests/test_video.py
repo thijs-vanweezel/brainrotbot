@@ -2,7 +2,7 @@ import pytest
 
 from brainrotbot.models import LedgerEntry, Story
 from brainrotbot.pipeline import _add_background_video
-from brainrotbot.video.background import best_window_start, pick_source
+from brainrotbot.video.background import pick_source
 
 
 # --- pick_source: deterministic round-robin over the source pool -----------------
@@ -16,30 +16,6 @@ def test_pick_source_round_robins_and_wraps():
 def test_pick_source_empty_pool_raises():
     with pytest.raises(ValueError):
         pick_source([], 0)
-
-
-# --- best_window_start: highest-motion window selection (pure math) ---------------
-
-def test_best_window_start_finds_peak_window():
-    # Motion spikes at indices 3-4; at 1 fps a 2s window should start there (score 18).
-    motion = [1.0, 1.0, 1.0, 9.0, 9.0, 1.0]
-    start, score = best_window_start(motion, sample_fps=1.0, window_sec=2.0)
-    assert start == 3.0
-    assert score == 18.0
-
-
-def test_best_window_start_respects_sample_fps():
-    # At 2 fps, a 2s window spans 4 samples; the max-sum 4-window starts at sample 2 -> 1.0s.
-    motion = [0.0, 0.0, 5.0, 5.0, 5.0, 5.0, 0.0]
-    start, _ = best_window_start(motion, sample_fps=2.0, window_sec=2.0)
-    assert start == 1.0
-
-
-def test_best_window_start_window_longer_than_clip_returns_zero():
-    motion = [2.0, 3.0]
-    start, score = best_window_start(motion, sample_fps=1.0, window_sec=10.0)
-    assert start == 0.0
-    assert score == 5.0  # whole-clip motion sum
 
 
 # --- _add_background_video: ledger wiring, tested against a fake maker -------------
@@ -60,7 +36,6 @@ class _FakeMaker:
             "start_sec": 4.0,
             "duration_sec": duration_sec,
             "looped": False,
-            "motion_score": 7.5,
             "width": 1080, "height": 1920, "fps": 30,
         }
 
@@ -91,7 +66,7 @@ def test_add_background_video_records_assets_and_status(tmp_path):
     assert entry.status == "video_done"
     assert entry.assets["background_video"].endswith("abc123.mp4")
     assert entry.assets["background"]["source_id"] == "vid123"
-    assert entry.assets["background"]["motion_score"] == 7.5
+    assert entry.assets["background"]["start_sec"] == 4.0
     # Trims to the real narrated duration, and rotates source 0.
     assert maker.calls[0] == ("https://yt/a", 42.0, str(tmp_path / "video" / "abc123.mp4"))
 

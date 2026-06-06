@@ -45,8 +45,15 @@ e = ["ef_dora", "em_alex"]                                 # Spanish
 # and downloaded + cached once to data/video_cache/ (keyed by URL hash), reused across runs.
 # Replace/extend with your own no-copyright gameplay sources.
 sources = [
-    "https://www.youtube.com/watch?v=n_Dv4JMiwK8",   # Minecraft parkour (no-copyright gameplay)
-    "https://www.youtube.com/watch?v=u7kdVe8q5zs",   # Subway Surfers (no-copyright gameplay)
+    "https://www.youtube.com/watch?v=i0M4ARe9v0Y",   # Subway Surfers, 5 mins
+    "https://www.youtube.com/watch?v=Vqvk5wyARtk",   # Subway surfers, 10 mins
+    "https://www.youtube.com/watch?v=pIkYLpWdZXM",   # Subway surfers, 15 mins
+    "https://www.youtube.com/watch?v=9S8mIJjJBzg",   # GTA-V mega ramp, 6 mins 
+    "https://www.youtube.com/watch?v=reeAD8jAReA",   # GTA-V mega ramp, 8 mins
+    "https://www.youtube.com/watch?v=Ieli25pQQEI",   # GTA-V mega ramp, 11 mins
+    "https://www.youtube.com/watch?v=BXUA2FncVPI",   # Minecraft parkour, 10 mins 
+    "https://www.youtube.com/watch?v=5kdkBv1LqbM",   # Minecraft parkour, 10 mins
+    "https://www.youtube.com/watch?v=r2TAtdDpg3Y",   # Minecraft parkour, 10 mins
     "https://www.youtube.com/watch?v=zCoCOHOYd28",   # Train video 
 ]
 max_source_height = 1080   # cap download resolution (keeps cache small)
@@ -55,10 +62,7 @@ height = 1920
 fps = 30                   # output frame rate
 crf = 23                   # libx264 quality (lower = better/larger)
 preset = "veryfast"        # libx264 speed/size trade-off
-# Motion sampling: score the source's keyframes (downscaled to grayscale) and pick the
-# highest-motion window the length of the narration.
-sample_width = 64          # downscale width  for motion sampling
-sample_height = 36         # downscale height for motion sampling
+# A window the length of the narration is trimmed from a random offset in the source.
 
 [paths]
 data_dir = "data"
