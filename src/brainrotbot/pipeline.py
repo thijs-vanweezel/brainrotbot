@@ -21,9 +21,10 @@ from .reddit.fetch import fetch_candidates
 from .reddit.select import select_stories
 from .text.clean import clean_text
 from .text.filter_words import filter_banned_words
+from .tts.synthesize import KokoroSynthesizer, pick_voice
 
 
-def run(settings_path=None, top_k: int | None = None) -> list[LedgerEntry]:
+def run(settings_path=None, top_k: int | None = None, skip_tts: bool = False) -> list[LedgerEntry]:
     settings = load_settings(settings_path)
 
     selection = dict(settings.selection)
@@ -39,10 +40,19 @@ def run(settings_path=None, top_k: int | None = None) -> list[LedgerEntry]:
     selected = select_stories(candidates, selection, seen_ids=seen)
     print(f"[brainrotbot] {len(selected)} stories selected (after filters + dedup).")
 
+    # Build one synthesizer for the whole run; the model loads lazily on first use.
+    tts_opts = settings.tts_opts
+    synth = None if skip_tts else KokoroSynthesizer(
+        device=tts_opts.get("device", "auto"),
+        sample_rate=tts_opts.get("sample_rate", 24000),
+    )
+
     settings.stories_dir.mkdir(parents=True, exist_ok=True)
     entries: list[LedgerEntry] = []
-    for story in selected:
+    for index, story in enumerate(selected):
         entry = _process_story(story, settings)
+        if synth is not None:
+            _add_audio(entry, story, synth, settings, index)
         _write_story_file(settings, story, entry)
         append_entry(settings.ledger_path, entry)
         entries.append(entry)
@@ -50,7 +60,7 @@ def run(settings_path=None, top_k: int | None = None) -> list[LedgerEntry]:
     _print_summary(entries)
 
     # Future steps consume `entries` here and fill the ledger's assets/upload/metrics:
-    #   2. text-to-speech    -> entry.assets["audio_path"]
+    #   2. text-to-speech    -> entry.assets["audio_path"]   (DONE)
     #   3. background video  -> entry.assets["background_video"]
     #   4. editing           -> entry.assets["final_video"]
     #   5. upload to TikTok   -> entry.upload[...]
@@ -71,6 +81,32 @@ def _process_story(story: Story, settings) -> LedgerEntry:
     return LedgerEntry.from_story(story, cleaned, replacements)
 
 
+def _add_audio(entry: LedgerEntry, story: Story, synth: KokoroSynthesizer, settings, index: int) -> None:
+    """Narrate the cleaned story to data/audio/<post_id>.wav and record it in the entry.
+
+    Resilient: a failure (bad text, model error) logs a warning and leaves audio_path null
+    rather than aborting the run, so one bad story never blocks the rest.
+    """
+    tts_opts = settings.tts_opts
+    lang_code = tts_opts.get("default_lang", "a")
+    voices = tts_opts["voices"][lang_code]
+    voice = pick_voice(voices, index)
+    out_path = settings.audio_dir / f"{story.post_id}.wav"
+    try:
+        meta = synth.synthesize(
+            entry.text["cleaned_body"],
+            out_path,
+            voice=voice,
+            lang_code=lang_code,
+            speed=float(tts_opts.get("speed", 1.0)),
+        )
+        entry.assets["audio_path"] = meta["audio_path"]
+        entry.assets["audio"] = {k: meta[k] for k in ("voice", "lang_code", "duration_sec", "sample_rate")}
+        entry.status = "tts_done"
+    except Exception as exc:  # noqa: BLE001 -- keep the pipeline going on any TTS failure
+        print(f"[brainrotbot] WARNING: TTS failed for {story.post_id} ({voice}/{lang_code}): {exc}")
+
+
 def _write_story_file(settings, story: Story, entry: LedgerEntry) -> None:
     path = settings.stories_dir / f"{story.post_id}.json"
     with open(path, "w", encoding="utf-8") as f:
@@ -84,20 +120,27 @@ def _print_summary(entries: list[LedgerEntry]) -> None:
     print("\n=== Selected stories ===")
     for e in entries:
         t = e.text
+        audio = e.assets.get("audio")
+        # Show the real narrated duration/voice when TTS ran, else the word-count estimate.
+        narration = (
+            f"audio={audio['duration_sec']}s voice={audio['voice']}"
+            if audio else f"~{t['est_speech_seconds']}s (no audio)"
+        )
         print(
             f"- [{e.source['subreddit']}] feed_rank={e.source['feed_rank']} "
-            f"words={t['word_count']} ~{t['est_speech_seconds']}s "
+            f"words={t['word_count']} {narration} "
             f"replaced={len(t['banned_words_replaced'])}\n"
             f"    {t['title'][:90]}"
         )
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="brainrotbot", description="Step 1: Reddit retrieval.")
+    parser = argparse.ArgumentParser(prog="brainrotbot", description="Reddit retrieval + TTS.")
     parser.add_argument("--settings", default=None, help="Path to settings.toml")
     parser.add_argument("--top-k", type=int, default=None, help="Override stories kept per run")
+    parser.add_argument("--skip-tts", action="store_true", help="Skip text-to-speech (Step 1 only)")
     args = parser.parse_args(argv)
-    run(settings_path=args.settings, top_k=args.top_k)
+    run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts)
     return 0
 
 
