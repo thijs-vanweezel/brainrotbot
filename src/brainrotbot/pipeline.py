@@ -27,6 +27,8 @@ from .edit.compose import VideoEditor
 from .music.ncs import TrackMeta, discover_instrumental_tracks, download_track, pick_track
 from .thumbnail.generate import ThumbnailMaker
 from .tts.synthesize import KokoroSynthesizer, pick_voice
+from .upload.queue import drain_upload_queue
+from .upload.tiktok import TikTokUploader
 from .video.background import BackgroundVideoMaker, pick_source
 
 
@@ -38,8 +40,19 @@ def run(
     skip_edit: bool = False,
     skip_music: bool = False,
     skip_thumbnail: bool = False,
+    skip_upload: bool = False,
+    upload_only: bool = False,
 ) -> list[LedgerEntry]:
     settings = load_settings(settings_path)
+
+    # Step 7 is a batched queue drain, not an inline per-story step: videos accumulate on disk and
+    # get pushed to TikTok in bursts (cheaper + far less bot-risky than relaunching a browser per
+    # video). --upload-only just flushes whatever is already finished, creating nothing new.
+    upload_enabled = (not skip_upload) and settings.upload_opts.get("enabled", True)
+    batch_size = int(settings.upload_opts.get("batch_size", 30))
+    if upload_only:
+        drain_upload_queue(settings)
+        return []
 
     selection = dict(settings.selection)
     if top_k is not None:
@@ -139,8 +152,17 @@ def run(
         _write_story_file(settings, story, entry)
         append_entry(settings.ledger_path, entry)
         entries.append(entry)
+        # Drain the upload queue every `batch_size` created videos (the "after every N" trigger).
+        if upload_enabled and len(entries) % batch_size == 0:
+            drain_upload_queue(settings)
 
     _print_summary(entries)
+
+    # Final flush: drain whatever is still queued now that the requested top_k is reached (the
+    # "or when the requested count is achieved, whichever is first" trigger). Also sweeps up any
+    # finished-but-unuploaded leftovers from earlier runs.
+    if upload_enabled and entries:
+        drain_upload_queue(settings)
 
     # Future steps consume `entries` here and fill the ledger's assets/upload/metrics:
     #   2. text-to-speech    -> entry.assets["audio_path"]        (DONE)
@@ -148,7 +170,7 @@ def run(
     #   4. editing           -> entry.assets["final_video"]       (DONE)
     #   5. background music  -> entry.assets["music_path"] + mix  (DONE -- mixed in Step 4 pass)
     #   6. thumbnail         -> entry.assets["thumbnail_path"]    (DONE)
-    #   7. upload to TikTok  -> entry.upload[...]
+    #   7. upload to TikTok  -> entry.upload[...]                 (DONE -- batched queue drain)
     #   8. analysis          -> entry.metrics[...] + entry.content_analysis[...]
     return entries
 
@@ -356,10 +378,22 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--skip-edit", action="store_true", help="Skip editing/final-video assembly (Step 4)")
     parser.add_argument("--skip-music", action="store_true", help="Skip background-music bed (Step 5)")
     parser.add_argument("--skip-thumbnail", action="store_true", help="Skip thumbnail generation (Step 6)")
+    parser.add_argument("--skip-upload", action="store_true", help="Skip TikTok upload (Step 7)")
+    parser.add_argument("--upload-only", action="store_true",
+                        help="Don't create anything; just drain the ready-to-upload queue (Step 7)")
+    parser.add_argument("--tiktok-login", action="store_true",
+                        help="One-time: open a browser to log in to TikTok, save the session, and exit")
     args = parser.parse_args(argv)
+
+    # One-time interactive login: open TikTok, let the user sign in, persist the session, then stop.
+    if args.tiktok_login:
+        settings = load_settings(args.settings)
+        TikTokUploader(session_dir=settings.tiktok_session_dir).login()
+        return 0
+
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,
         skip_video=args.skip_video, skip_edit=args.skip_edit, skip_music=args.skip_music,
-        skip_thumbnail=args.skip_thumbnail)
+        skip_thumbnail=args.skip_thumbnail, skip_upload=args.skip_upload, upload_only=args.upload_only)
     return 0
 
 
