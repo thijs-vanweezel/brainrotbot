@@ -123,6 +123,8 @@ def run(
         music_volume_db=edit_opts.get("music_volume_db", -15.0),
         music_duck=edit_opts.get("music_duck", True),
         music_intro_skip_sec=float(edit_opts.get("music_intro_skip_sec", 5.0)),
+        voice_volume_db=float(edit_opts.get("voice_volume_db", 0.0)),
+        output_volume_db=float(edit_opts.get("output_volume_db", 0.0)),
         # libass loads the caption font from the .ttf's directory (Step 4.5 burns the .ass here).
         subtitle_fonts_dir=str(Path(settings.subtitles_font_file).parent) if settings.subtitles_font_file else "",
     )
