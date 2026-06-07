@@ -90,6 +90,11 @@ outro_file = "resources/outro.mp4"
 outro_duration_sec = 4     # how long an image outro is shown (ignored for video outros)
 crf = 23                   # libx264 quality for the re-encoded final (lower = better/larger)
 preset = "veryfast"        # libx264 speed/size trade-off
+# Loudness. voice_volume_db is an absolute boost on the narration alone (also offsets amix's 1/n
+# dip when music is present); output_volume_db is an overall boost on the finished mix, followed by
+# a brick-wall limiter so it can't clip. 0 = unchanged.
+voice_volume_db = 4        # make the spoken narration louder
+output_volume_db = 3       # overall loudness lift at the end (limiter-protected)
 # Step 5 -- soft background music bed sourced randomly from ncs.io (instrumental versions only).
 # Catalogue is scraped from /music-search?version=Instrumental and cached to disk; each pick
 # downloads /track/download/i_<tid> (always the no-vocals cut). Mixed into the existing compose
@@ -97,7 +102,7 @@ preset = "veryfast"        # libx264 speed/size trade-off
 # concat) gain the same sidechain-duck + amix audio branch. --skip-music turns the whole step
 # off (mux-only then keeps its fast `-c:v copy` audio re-encode-only path).
 music_enabled = true
-music_volume_db = -24            # bed level under the narration (negative = softer)
+music_volume_db = -25            # bed level under the narration (negative = softer)
 music_duck = true                # sidechain-compress the bed when the narration is speaking
 music_catalogue_ttl_days = 7     # re-scrape NCS after this many days (cache freshness only -- not throttling)
 music_catalogue_pages = 3        # how many listing pages to scrape (~21 tracks/page; 3 = plenty of variety)
