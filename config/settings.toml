@@ -131,6 +131,11 @@ food = ["gourmet burger", "dessert", "pizza", "snacks", "sushi"]
 # flushes the queue without creating anything new.
 enabled = true
 batch_size = 30                  # drain the ready-queue after this many newly-created videos
+# Auth is by IMPORTED COOKIES, not automated login: TikTok bot-walls the login flow ("maximum
+# attempts reached") regardless of engine/credentials. While logged into TikTok in your normal
+# browser, export tiktok.com cookies with the "Get cookies.txt LOCALLY" extension (the same tool
+# used for yt_cookies.txt) and save next to this file. Verify with `run.bat --tiktok-check`.
+cookies_file = "./tiktok_cookies.txt"
 browser = "firefox"             # playwright engine: chromium | firefox | webkit. Firefox trips
                                  # TikTok's login bot-detection ("maximum attempts reached") less
                                  # than Chromium. After changing this, re-run `run.bat --tiktok-login`
