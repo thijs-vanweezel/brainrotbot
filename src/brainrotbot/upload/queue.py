@@ -19,7 +19,7 @@ from pathlib import Path
 
 from ..ledger import append_entry, iter_entries
 from ..models import LedgerEntry
-from .tiktok import PostFailedError, TikTokUploader
+from .tiktok import PostFailedError, TikTokUploader, UploadRejectedError
 
 # Statuses that mean an upload was already started or finished for this video; scan_ready never
 # re-surfaces these, so we can't double-post. `upload_attempting` is the crash-safety breadcrumb
@@ -151,6 +151,7 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
         set_cover=bool(opts.get("set_cover", True)),
         nav_timeout_sec=float(opts.get("nav_timeout_sec", 120)),
         completion_timeout_sec=float(opts.get("completion_timeout_sec", 300)),
+        post_settle_sec=float(opts.get("post_settle_sec", 30)),
         debug=debug,
         debug_dir=settings.data_dir / "upload_debug",
     )
@@ -210,6 +211,19 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
                 _rewrite_story_file(settings, entry)
                 append_entry(settings.ledger_path, entry)
                 print(f"[brainrotbot] WARNING: Post button did not work for {pid} -- discarded ({exc}).")
+            except UploadRejectedError as exc:
+                # TikTok positively rejected the post (it did NOT go through) -- typically the daily check
+                # limit. We KNOW it didn't post, so revert to the prior status (retriable) and KEEP the
+                # media: scan_ready will re-surface it on a future run (e.g. tomorrow, once the limit
+                # resets). Don't append to the ledger (nothing was posted).
+                entry.status = prev_status
+                _rewrite_story_file(settings, entry)
+                print(f"[brainrotbot] WARNING: post rejected for {pid} ({exc}) -- left retriable, media kept.")
+                if exc.daily_limit:
+                    # The daily cap blocks every remaining video today; stop now and retry next run.
+                    print("[brainrotbot] Daily check limit reached -- aborting drain; "
+                          f"{len(ready) - posted} video(s) stay queued for a future run.")
+                    break
             except Exception as exc:  # noqa: BLE001 -- one bad upload must not abort the batch
                 # Clean failure (not a hard crash): the post didn't go through, so clear the in-flight
                 # marker and let the next run retry. A hard crash skips this and leaves the marker.
