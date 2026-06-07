@@ -92,6 +92,8 @@ class VideoEditor:
         music_volume_db: float = -15.0,
         music_duck: bool = True,
         music_intro_skip_sec: float = 5.0,
+        voice_volume_db: float = 0.0,
+        output_volume_db: float = 0.0,
         subtitle_fonts_dir: str = "",
     ):
         self.width, self.height, self.fps = width, height, fps
@@ -113,6 +115,28 @@ class VideoEditor:
         self.music_volume_db = music_volume_db
         self.music_duck = music_duck
         self.music_intro_skip_sec = music_intro_skip_sec
+        # voice_volume_db is an absolute gain on the narration alone (applied wherever the voice is
+        # normalized, in every path) -- the simplest way to make speech louder, and it also offsets
+        # amix's 1/n attenuation when a music bed is present. output_volume_db is an overall gain on
+        # the *finished* mix (voice + music + outro); it's followed by a brick-wall limiter so a
+        # boost raises loudness without clipping. Both default to 0 (no change).
+        self.voice_volume_db = voice_volume_db
+        self.output_volume_db = output_volume_db
+
+    def _voice_gain(self) -> str:
+        """Chainable filter suffix (leading comma) that boosts the narration, or "" if no boost."""
+        return f",volume={self.voice_volume_db}dB" if self.voice_volume_db else ""
+
+    def _output_gain(self, parts: list[str], label: str) -> str:
+        """Append a final overall-gain + peak-limiter stage to `parts`; return the label to map.
+
+        The limiter (brick-wall at ~0.95 full-scale) keeps a positive overall boost from clipping.
+        No-op when output_volume_db is 0 -- the incoming label is returned unchanged.
+        """
+        if not self.output_volume_db:
+            return label
+        parts.append(f"{label}volume={self.output_volume_db}dB,alimiter=limit=0.95[aout]")
+        return "[aout]"
 
     def _subtitles_filter(self, subtitle_path: Path) -> str:
         """The `subtitles=` filter snippet that burns `subtitle_path`, with fontsdir if configured."""
@@ -180,7 +204,10 @@ class VideoEditor:
         The speech stream is asplit so its tail can drive the sidechain compressor (when
         ducking is on) without being consumed -- amix needs to receive the original speech.
         `duration=first` makes the mixed audio exactly as long as the speech; the looped
-        music tail is discarded.
+        music tail is discarded. `normalize=0` is important: amix's default 1/n normalisation
+        would halve (-6 dB) the narration just because a bed is present -- disabling it keeps the
+        voice at full level (the bed is already soft via music_volume_db, and the output limiter
+        guards peaks), so the voice is as loud with music as without.
         """
         sr = self.audio_sample_rate
         vol = self.music_volume_db
@@ -198,13 +225,13 @@ class VideoEditor:
                 "[bed_raw][a_key]sidechaincompress="
                 "threshold=0.05:ratio=8:attack=5:release=400[bed]"
             )
-            parts.append("[a_mix][bed]amix=inputs=2:duration=first:dropout_transition=0[a]")
+            parts.append("[a_mix][bed]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[a]")
         else:
             parts.append(
                 f"[{music_idx}:a]volume={vol}dB,aresample={sr},"
                 f"aformat=channel_layouts=stereo[bed]"
             )
-            parts.append(f"{speech_label}[bed]amix=inputs=2:duration=first:dropout_transition=0[a]")
+            parts.append(f"{speech_label}[bed]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[a]")
         return parts, "[a]"
 
     def _mux_only(self, ffmpeg: str, bg: Path, audio: Path, out: Path,
@@ -227,10 +254,20 @@ class VideoEditor:
 
         # --- fast path: no music, no captions -> stream-copy the video ---
         if music is None and not sub:
+            # The only audio is the narration, so voice and overall gains both act on it; apply
+            # them via -filter:a (video still stream-copies). With no gains there's no audio filter
+            # at all -- the original fast path. The limiter only follows a positive overall boost.
+            af = []
+            if self.voice_volume_db:
+                af.append(f"volume={self.voice_volume_db}dB")
+            if self.output_volume_db:
+                af.append(f"volume={self.output_volume_db}dB")
+                af.append("alimiter=limit=0.95")
+            af_opt = ["-filter:a", ",".join(af)] if af else []
             _run([
                 ffmpeg, "-y", "-hide_banner", "-loglevel", "error",
                 "-i", str(bg), "-i", str(audio),
-                "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy",
+                "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy", *af_opt,
                 "-c:a", "aac", "-b:a", "192k", "-ar", str(sr), "-ac", "2",
                 "-movflags", "+faststart", "-shortest", str(out),
             ])
@@ -245,18 +282,20 @@ class VideoEditor:
             video_map = "[v]"
 
         inputs = ["-i", str(bg), "-i", str(audio)]
+        audio_codec = ["-c:a", "aac", "-b:a", "192k"]
         if music is None:
-            # Captions only: narration goes straight through as AAC (resampled via output opts).
-            audio_map = "1:a:0"
-            audio_codec = ["-c:a", "aac", "-b:a", "192k", "-ar", str(sr), "-ac", "2"]
+            # Captions only: normalize the narration (+ voice gain) through the graph, no bed.
+            parts.append(f"[1:a]aresample={sr},aformat=channel_layouts=stereo{self._voice_gain()}[voice]")
+            audio_map = "[voice]"
         else:
-            # Music (+ maybe captions): normalize narration then duck+amix the looped bed.
-            parts.append(f"[1:a]aresample={sr},aformat=channel_layouts=stereo[voice]")
+            # Music (+ maybe captions): normalize+boost narration then duck+amix the looped bed.
+            parts.append(f"[1:a]aresample={sr},aformat=channel_layouts=stereo{self._voice_gain()}[voice]")
             music_parts, audio_map = self._build_music_branch("[voice]", music_idx=2)
             parts.extend(music_parts)
             # -ss before -i is the input seek (fast); each loop iteration restarts at this offset.
             inputs += ["-ss", f"{music_start:.3f}", "-stream_loop", "-1", "-i", str(music)]
-            audio_codec = ["-c:a", "aac", "-b:a", "192k"]
+        # Overall boost (+ limiter) on the finished mix, common to both branches.
+        audio_map = self._output_gain(parts, audio_map)
 
         video_codec = (["-c:v", "libx264", "-crf", str(self.crf), "-preset", self.preset,
                         "-pix_fmt", "yuv420p"] if sub else ["-c:v", "copy"])
@@ -298,7 +337,7 @@ class VideoEditor:
         # video (fit-and-pad to the exact frame). aresample/aformat align the audio for concat.
         parts = [
             f"[0:v]{sub_prefix}setsar=1,fps={fps},format=yuv420p[v0]",
-            f"[1:a]aresample={sr},aformat=channel_layouts=stereo[a0]",
+            f"[1:a]aresample={sr},aformat=channel_layouts=stereo{self._voice_gain()}[a0]",
             f"[2:v]scale={w}:{h}:force_original_aspect_ratio=decrease,"
             f"pad={w}:{h}:(ow-iw)/2:(oh-ih)/2,setsar=1,fps={fps},format=yuv420p[v1]",
         ]
@@ -318,6 +357,8 @@ class VideoEditor:
             music_parts, audio_label = self._build_music_branch("[a_speech]", music_idx=3)
             parts.extend(music_parts)
             extra_inputs = ["-ss", f"{music_start:.3f}", "-stream_loop", "-1", "-i", str(music)]
+        # Overall boost (+ limiter) on the finished voice+outro(+music) timeline.
+        audio_label = self._output_gain(parts, audio_label)
         filtergraph = ";".join(parts)
 
         _run([
