@@ -120,9 +120,9 @@ scrim_opacity = 0          # darkened band behind the text (0 = none, 1 = opaque
 # then a random term within it; both land in the ledger (assets.thumbnail) for A/B analysis.
 [thumbnail.search_terms]
 luxury = ["luxury car", "mansion", "real estate", "money", "private jet", "luxury watch"]
-people = ["portrait woman", "fashion model", "man portrait", "beautiful face"]
+people = ["portrait woman", "fashion model", "man portrait", "beautiful face", "sexy woman", "serious woman", "make-up woman"]
 nature = ["landscape", "beach sunset", "mountains", "tropical"]
-food = ["gourmet burger", "dessert", "pizza", "snacks"]
+food = ["gourmet burger", "dessert", "pizza", "snacks", "sushi"]
 
 [paths]
 data_dir = "data"
