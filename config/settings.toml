@@ -28,6 +28,19 @@ prepend_title = true   # use the post title as the spoken hook
 strip_edits = true     # drop "Edit:" / "Update:" trailer lines
 strip_tldr = true      # drop "TL;DR" lines
 
+[censor]
+# TikTok-sensitive words (resources/banned_words.toml) are NOT replaced. The narration speaks the
+# real word, then a loud "blur" SFX is laid over its spoken interval so the word is masked, and the
+# burned-in caption shows the word with its vowels asterisked ("fuck" -> "f*ck"). The blur timing
+# comes from the Step 4.5 forced alignment, so it only runs when subtitles are enabled.
+# --skip-censor disables the audio blur (captions stay masked); enabled=false also disables it.
+enabled = true
+sfx_file = "resources/blur_sfx.mp3"
+gain_db = 0            # extra loudness on the blur SFX (peak-normalized to ~0.95 first; >0 = louder)
+voice_duck_db = -30    # how far the real word is attenuated under the blur (-30 dB ~= inaudible)
+pad_sec = 0.05         # extend the blur slightly past the word edges so consonants are fully covered
+                       # (0 = blur length matches the aligned word exactly)
+
 [tts]
 engine = "kokoro"
 default_lang = "a"     # Kokoro lang_code; 'a' = American English (default for English subs)
@@ -112,7 +125,7 @@ preset = "veryfast"        # libx264 speed/size trade-off
 # Loudness. voice_volume_db is an absolute boost on the narration alone (also offsets amix's 1/n
 # dip when music is present); output_volume_db is an overall boost on the finished mix, followed by
 # a brick-wall limiter so it can't clip. 0 = unchanged.
-voice_volume_db = 4        # make the spoken narration louder
+voice_volume_db = 5        # make the spoken narration louder
 output_volume_db = 3       # overall loudness lift at the end (limiter-protected)
 # Step 5 -- soft background music bed sourced randomly from ncs.io (instrumental versions only).
 # Catalogue is scraped from /music-search?version=Instrumental and cached to disk; each pick
