@@ -108,9 +108,6 @@ music_intro_skip_sec = 5         # floor on the random start offset into the tra
 # overlaid (white bold text + dark stroke on a soft scrim band, no subreddit chrome). Output:
 # data/thumbnail/<post_id>.png, consumed by the upload step. Geometry reuses [video] width/height.
 enabled = true
-# Free Pixabay API key. The env var PIXABAY_API_KEY (from .env, gitignored) overrides this if set;
-# this inline value is the fallback. NOTE: settings.toml is git-tracked, so a key here is committed.
-PIXABAY_API_KEY = "17376527-284228145394ba34556c8c975"
 font_file = "resources/Anton-Regular.ttf"  # falls back to Arial Bold, then PIL default if missing
 font_max_size = 110        # title auto-shrinks from here to fit the text box
 stroke_width = 6           # dark outline around the white title for legibility on any image
@@ -123,6 +120,28 @@ luxury = ["luxury car", "mansion", "real estate", "money", "private jet", "luxur
 people = ["portrait woman", "fashion model", "man portrait", "beautiful face", "sexy woman", "serious woman", "make-up woman"]
 nature = ["landscape", "beach sunset", "mountains", "tropical"]
 food = ["gourmet burger", "dessert", "pizza", "snacks", "sushi"]
+
+[upload]
+# Step 7 -- post finished videos to TikTok by driving the web Studio uploader with Playwright
+# (the official API can't toggle subtitles and forces private-only posts for unaudited apps). Videos
+# are NOT uploaded one-by-one as they're made: the pipeline drains the ready-queue in batches -- after
+# every `batch_size` created videos, or once the requested top_k is reached, whichever comes first.
+# Log in once with `run.bat --tiktok-login` (a Chromium window opens; the session persists in the
+# profile dir below). --skip-upload skips the step; enabled=false also disables it; --upload-only
+# flushes the queue without creating anything new.
+enabled = true
+batch_size = 30                  # drain the ready-queue after this many newly-created videos
+headless = false                 # headed Chromium is far more reliable against TikTok's bot checks
+upload_url = "https://www.tiktok.com/tiktokstudio/upload"
+privacy = "public"               # "public" posts live; anything else leaves visibility as-is
+subtitles = true                 # turn ON TikTok's auto-generated captions in the UI
+set_cover = true                 # best-effort: use the Step 6 thumbnail PNG as the TikTok cover
+caption_template = "{title}"     # caption body; hashtags below are appended
+hashtags = ["#fyp", "#storytime", "#reddit"]
+delete_after_upload = true       # delete this post's final/background/audio/thumbnail once uploaded
+                                 # (keeps the JSON record + shared caches for Step 8 analytics)
+nav_timeout_sec = 120            # per-action Playwright timeout (uploads/processing can be slow)
+session_subdir = "tiktok_profile"  # persistent browser profile under config/ (gitignored)
 
 [paths]
 data_dir = "data"

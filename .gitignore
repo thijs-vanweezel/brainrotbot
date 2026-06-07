@@ -1,6 +1,9 @@
 # Secrets
 .env
 
+# TikTok logged-in browser profile (Step 7 upload session)
+config/tiktok_profile/
+
 # Runtime data / generated artifacts
 data/
 *.mp4
