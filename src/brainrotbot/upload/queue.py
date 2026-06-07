@@ -23,7 +23,9 @@ from .tiktok import TikTokUploader
 
 
 def _post_id(entry: LedgerEntry) -> str:
-    return entry.source.get("post_id", entry.id)
+    # Filenames/JSON are keyed per language variant (Step 1.5 fan-out): `<post_id>_<lang>`.
+    # `post_id` itself stays the base Reddit id (used only for dedup), so prefer `variant_id` here.
+    return entry.source.get("variant_id") or entry.source.get("post_id") or entry.id
 
 
 def scan_ready(settings) -> list[LedgerEntry]:
