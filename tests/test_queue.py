@@ -8,7 +8,9 @@ from types import SimpleNamespace
 
 from brainrotbot.ledger import append_entry
 from brainrotbot.models import LedgerEntry
-from brainrotbot.upload.queue import scan_ready
+from brainrotbot.upload import queue as queue_mod
+from brainrotbot.upload.queue import drain_upload_queue, scan_ready
+from brainrotbot.upload.tiktok import UploadRejectedError
 
 
 def _entry(variant_id: str, *, status: str = "thumbnail_done", tiktok_id=None) -> LedgerEntry:
@@ -78,3 +80,80 @@ def test_sibling_language_variant_not_blocked(tmp_path):
     append_entry(settings.ledger_path, _entry("abc_en", status="upload_done", tiktok_id="123"))
     _write_story(settings, _entry("abc_fr", status="thumbnail_done"), tmp_path)
     assert [e.source["variant_id"] for e in scan_ready(settings)] == ["abc_fr"]
+
+
+# --- drain rejection handling -------------------------------------------------------------------
+
+def _drain_settings(tmp_path):
+    """Full settings stub for drain_upload_queue (scan_ready fields + the bits the drain reads)."""
+    s = _settings(tmp_path)
+    s.upload_opts = {"delete_after_upload": True, "headless": True}
+    s.tiktok_session_dir = tmp_path / "profile"
+    s.tiktok_cookies_file = ""
+    s.data_dir = tmp_path
+    return s
+
+
+class _FakeUploader:
+    """Drop-in for TikTokUploader: a context manager whose upload() replays a scripted outcome list."""
+
+    def __init__(self, outcomes, **_kw):
+        self._outcomes = list(outcomes)
+        self.calls = 0
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+    def upload(self, *_a, **_kw):
+        outcome = self._outcomes[self.calls]
+        self.calls += 1
+        if isinstance(outcome, Exception):
+            raise outcome
+        return outcome
+
+
+def _final_exists(tmp_path, variant_id: str) -> bool:
+    return (tmp_path / f"{variant_id}.mp4").is_file()
+
+
+def _status(settings, variant_id: str) -> str:
+    return json.loads((settings.stories_dir / f"{variant_id}.json").read_text(encoding="utf-8"))["status"]
+
+
+def test_daily_limit_reverts_and_aborts_batch(tmp_path, monkeypatch):
+    """A daily-limit rejection: revert the video (retriable, media kept) AND stop the whole batch."""
+    settings = _drain_settings(tmp_path)
+    _write_story(settings, _entry("a_en", status="thumbnail_done"), tmp_path)
+    _write_story(settings, _entry("b_en", status="thumbnail_done"), tmp_path)
+    fake = _FakeUploader([UploadRejectedError("limit", daily_limit=True)])
+    monkeypatch.setattr(queue_mod, "TikTokUploader", lambda **kw: fake)
+
+    posted = drain_upload_queue(settings)
+
+    assert posted == 0
+    assert fake.calls == 1  # batch aborted after the first (limit) rejection -- b_en never attempted
+    assert _status(settings, "a_en") == "thumbnail_done"  # reverted to prior status (retriable)
+    assert _status(settings, "b_en") == "thumbnail_done"  # untouched
+    assert _final_exists(tmp_path, "a_en") and _final_exists(tmp_path, "b_en")  # media kept for retry
+    assert scan_ready(settings)  # both still surface on the next run
+
+
+def test_non_limit_rejection_reverts_and_continues(tmp_path, monkeypatch):
+    """A non-limit rejection reverts that one video but the batch continues to the next."""
+    settings = _drain_settings(tmp_path)
+    _write_story(settings, _entry("a_en", status="thumbnail_done"), tmp_path)
+    _write_story(settings, _entry("b_en", status="thumbnail_done"), tmp_path)
+    ok = {"url": "https://www.tiktok.com/@x/video/9", "tiktok_id": "9", "posted_at": 1.0,
+          "public": True, "captions_on": True, "cover_set": False}
+    fake = _FakeUploader([UploadRejectedError("oops", daily_limit=False), ok])
+    monkeypatch.setattr(queue_mod, "TikTokUploader", lambda **kw: fake)
+
+    posted = drain_upload_queue(settings)
+
+    assert posted == 1 and fake.calls == 2  # a_en rejected, b_en posted
+    assert _status(settings, "a_en") == "thumbnail_done"  # reverted, retriable
+    assert _final_exists(tmp_path, "a_en")  # rejected video keeps its media
+    assert _status(settings, "b_en") == "upload_done"
