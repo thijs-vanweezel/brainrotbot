@@ -36,17 +36,20 @@ UPLOAD_URL = "https://www.tiktok.com/tiktokstudio/upload"
 CONTENT_URL = "https://www.tiktok.com/tiktokstudio/content"
 LOGIN_URL = "https://www.tiktok.com/login"
 
-# --- Best-effort Studio selectors (subject to change -- see module docstring) --------------------
+# --- Studio selectors. The data-e2e ones were pinned from a real DOM dump (data/upload_debug) and are
+# stable; the rest are best-effort. NOTE: `button:has-text('Post')` is WRONG here -- it also matches the
+# "Posts" sidebar nav, and clicking that navigates away (the "are you sure you want to exit?" modal). Use
+# the data-e2e id. --------------------------------------------------------------------------------------
 _FILE_INPUT = "input[type=file]"                       # hidden file picker on the upload page
 _CAPTION_EDITOR = "div[contenteditable='true']"        # DraftJS caption box
-_POST_BUTTON = "button:has-text('Post')"               # final submit
+_POST_BUTTON = "[data-e2e=post_video_button]"          # the real submit (NOT the "Posts" nav button)
 _REPLACE_BUTTON = "button:has-text('Replace')"         # appears once a video finished processing
 _VIDEO_HREF = "a[href*='/video/']"                     # links that carry a posted video id
 _VIDEO_ID_RE = re.compile(r"/video/(\d+)")
 # A real "the post finished" signal -- only trust these, not the upload page's ambient nav text.
 _POSTED_TEXT = re.compile(r"your video has been (uploaded|posted)|posted to|view profile", re.I)
-# Buttons that may appear in a post-click confirmation/content-check modal (best-effort, click to proceed).
-_CONFIRM_POST = re.compile(r"^(post now|post|continue|got it|confirm)$", re.I)
+# In-page "Are you sure you want to exit?" modal (React, NOT a native dialog) -- its stay/leave buttons.
+_EXIT_CANCEL = re.compile(r"^cancel$", re.I)
 
 
 class TikTokUploader:
@@ -240,39 +243,6 @@ class TikTokUploader:
                 f"{self.cookies_file or '[upload].cookies_file'} (verify with `run.bat --tiktok-check`)"
             )
 
-    def _enable_captions(self, page) -> bool:
-        """Best-effort: turn on TikTok's auto-generated captions toggle. Returns True if flipped.
-
-        The control is a Switch near a 'Captions' label in the Studio side panel; its exact markup
-        shifts between Studio versions, so we try a couple of strategies and never hard-fail.
-        """
-        try:
-            # Some Studio builds hide captions behind a "Show more" / "More options" expander.
-            for label in ("Show more", "More options"):
-                more = page.get_by_text(label, exact=False)
-                if more.count() and more.first.is_visible():
-                    more.first.click()
-                    self._pause()
-                    break
-            switches = page.get_by_role("switch")
-            for i in range(switches.count()):
-                sw = switches.nth(i)
-                name = (sw.get_attribute("aria-label") or "").lower()
-                # Fall back to the nearest text if the switch itself is unlabeled.
-                if "caption" not in name:
-                    try:
-                        name = sw.locator("xpath=ancestor::*[self::label or self::div][1]").inner_text().lower()
-                    except Exception:  # noqa: BLE001
-                        name = name
-                if "caption" in name:
-                    if (sw.get_attribute("aria-checked") or "").lower() != "true":
-                        sw.click()
-                        self._pause()
-                    return True
-        except Exception as exc:  # noqa: BLE001 -- captions are a nice-to-have, never abort over them
-            print(f"[brainrotbot]   (captions toggle not flipped: {exc})")
-        return False
-
     def _set_cover(self, page, cover_path: Path) -> bool:
         """Best-effort custom cover from the Step 6 PNG. Returns True on success."""
         try:
@@ -314,36 +284,34 @@ class TikTokUploader:
         except Exception:  # noqa: BLE001
             pass
 
-    def _confirm_post(self, page) -> None:
-        """Best-effort: clear a post-click confirmation/content-check modal so the post proceeds.
+    def _stay(self, page) -> None:
+        """If TikTok's in-page 'Are you sure you want to exit?' modal appears, click Cancel to stay.
 
-        TikTok sometimes shows a small modal after Post (e.g. content-check / "Post now"). Click its
-        confirm button if one is visible; never hard-fail (the account already enabled content checks).
+        This modal is a React element (not a native dialog, so the page.on('dialog') handler can't catch
+        it). It only shows when something tries to leave the upload page -- we now never navigate until the
+        post is confirmed, but this is a defensive backstop so a stray modal can't strand the post.
         """
         try:
-            self._pause(1.0, 2.0)
-            btn = page.get_by_role("button", name=_CONFIRM_POST)
-            for i in range(btn.count()):
-                if btn.nth(i).is_visible():
-                    btn.nth(i).click()
-                    self._pause()
-                    return
+            btn = page.get_by_role("button", name=_EXIT_CANCEL)
+            if btn.count() and btn.first.is_visible():
+                btn.first.click()
         except Exception:  # noqa: BLE001
             pass
 
     def _await_completion(self, page) -> tuple[str | None, str | None]:
-        """Block until TikTok finishes the content check and the post lands; return (url, id).
+        """Block until the post truly lands; return (url, id), or (None, None) if never confirmed.
 
-        This is the fix for the original bug: we must NOT navigate away or close while the check runs.
-        Poll (up to completion_timeout_sec) for a real "posted" signal -- a redirect to the content
-        manager, a success toast, or a /video/<id> link -- then read the URL. Falls back to opening the
-        content list (now safe, post is done) and grabbing the newest video link. (None, None) if it
-        never confirms -- the caller then treats the upload as unconfirmed and keeps the media.
+        Fix for the original bug: we must NOT navigate away or close while TikTok is still posting (that
+        triggered the exit modal and aborted the post). Poll up to completion_timeout_sec for a real
+        "posted" signal -- a visible /video/ link, a success toast, or a redirect to the content manager --
+        and ONLY navigate to the content list once we're sure the post finished. If it never confirms we
+        return (None, None) WITHOUT navigating, so the caller marks it unconfirmed and keeps the media.
+        (With Content Check Lite OFF this resolves in seconds; with it ON, the check can take ~10 min.)
         """
         deadline = time.time() + self.completion_timeout_sec
+        completed = False
         while time.time() < deadline:
-            # A posted video link on the current (success) screen is the strongest signal.
-            try:
+            try:  # strongest signal: a posted /video/ link is on screen
                 link = page.locator(_VIDEO_HREF)
                 if link.count() and link.first.is_visible():
                     href = link.first.get_attribute("href")
@@ -351,11 +319,14 @@ class TikTokUploader:
                         return self._normalize(href)
             except Exception:  # noqa: BLE001
                 pass
-            # A redirect to the content manager, or an explicit success toast, also means "done".
             if "/content" in page.url or self._has_text(page, _POSTED_TEXT):
+                completed = True
                 break
+            self._stay(page)  # defensive: never let an exit modal abandon the post
             time.sleep(2.0)
-        # Post is finished now -- safe to consult the content list for the newest video's link.
+        if not completed:
+            return None, None  # don't navigate mid-upload (avoids the exit modal) -> caller: unconfirmed
+        # Post landed -- now it's safe to read the newest video's link from the content manager.
         try:
             if "/content" not in page.url:
                 page.goto(CONTENT_URL)
@@ -385,9 +356,10 @@ class TikTokUploader:
     def upload(self, video_path: Path, cover_path: Path | None, caption: str) -> dict:
         """Post one video; return {url, tiktok_id, posted_at, public, captions_on, cover_set}.
 
-        Raises on hard failures (no session, processing never completed, Post never succeeded) so the
-        queue marks the video failed and retries it on the next drain. Cosmetic steps (captions, cover,
-        visibility) degrade quietly.
+        Raises on hard failures (no session, processing never completed) so the queue marks the video
+        failed. Cosmetic steps (cover, visibility) degrade quietly. Subtitles need no action: TikTok now
+        auto-captions every video (American English + Japanese), and removed the upload-time toggle -- so
+        `captions_on` reflects that automatic default rather than a UI click.
         """
         if self._ctx is None:
             raise RuntimeError("TikTokUploader used outside its context manager (`with uploader:`)")
@@ -412,20 +384,19 @@ class TikTokUploader:
         editor.type(caption, delay=15)
         self._pause()
 
-        # 3) Subtitles (requirement #3), 4) custom cover, 5) public visibility -- all best-effort.
-        captions_on = self._enable_captions(page) if self.subtitles else False
+        # 3) Subtitles: nothing to toggle -- TikTok auto-captions every video. 4) cover, 5) visibility.
+        captions_on = self.subtitles  # TikTok auto-captions by default; we just record the intent
         cover_set = bool(cover_path) and self.set_cover and self._set_cover(page, Path(cover_path))
         self._set_public(page)
         self._dump(page, "02_prepost")
 
-        # 6) Post, clear any confirm/content-check modal, then WAIT for the check to finish before we
-        # touch anything (the old code navigated away mid-check and aborted the post).
+        # 6) Click the REAL post button (data-e2e, NOT the "Posts" nav), then wait for the post to land
+        # before touching anything (the old code clicked the nav / navigated away and aborted the post).
         post = page.locator(_POST_BUTTON).first
         post.wait_for(timeout=self.nav_timeout_ms)
         post.click()
         self._dump(page, "03_postclicked")
-        self._confirm_post(page)
-        print("[brainrotbot]   posted; waiting for TikTok's content check to finish ...")
+        print("[brainrotbot]   posted; waiting for it to finish (Content Check Lite, if on, can take ~10 min) ...")
         url, tiktok_id = self._await_completion(page)
         self._dump(page, "04_complete")
         return {
