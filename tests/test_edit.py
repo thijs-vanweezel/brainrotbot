@@ -124,9 +124,8 @@ def _track(tid="abc"):
 
 
 def test_add_music_bed_records_track_metadata(tmp_path, monkeypatch):
-    """Picks a track, downloads it (mocked), and stashes full metadata + mix settings."""
+    """Downloads the pre-picked track (mocked) and stashes full metadata + mix settings."""
     entry, story = _entry()
-    catalogue = [_track("only-one")]
 
     # Stub the network: produce an empty MP3 file at the expected cache path.
     from brainrotbot import pipeline as p
@@ -137,7 +136,8 @@ def test_add_music_bed_records_track_metadata(tmp_path, monkeypatch):
         return out
     monkeypatch.setattr(p, "download_track", _fake_download)
 
-    _add_music_bed(entry, story, catalogue, _FakeSettings(tmp_path))
+    # Step 1.5: the track is pre-picked once per base story and passed in.
+    _add_music_bed(entry, story, _FakeSettings(tmp_path), _track("only-one"))
     assert entry.assets["music_path"].endswith("only-one.mp3")
     m = entry.assets["music"]
     assert m["track_id"] == "only-one"
@@ -177,6 +177,6 @@ def test_add_music_bed_swallows_download_failure(tmp_path, monkeypatch):
     from brainrotbot import pipeline as p
     monkeypatch.setattr(p, "download_track",
                         lambda *a, **k: (_ for _ in ()).throw(RuntimeError("boom")))
-    _add_music_bed(entry, story, [_track()], _FakeSettings(tmp_path))
+    _add_music_bed(entry, story, _FakeSettings(tmp_path), _track())
     assert entry.assets["music_path"] is None
     assert "music" not in entry.assets

@@ -77,11 +77,15 @@ class Translator:
         return self.cache_dir / (self.model_name.replace("/", "__") + f".{self.compute_type}")
 
     def _resolve_device(self) -> str:
-        if self._device and self._device != "auto":
-            return self._device
-        try:  # torch is already in-process via Kokoro; fall back to CPU if anything is off
-            import torch
-            return "cuda" if torch.cuda.is_available() else "cpu"
+        """Pick the CTranslate2 device. `auto` -> CPU: CT2's CUDA needs its own cuBLAS/cuDNN libs
+        (not torch's) which aren't always present, and VRAM is shared with Kokoro/MMS -- int8
+        NLLB-600M is fast on CPU. `cuda` is honored only if CT2 actually sees a CUDA device."""
+        want = (self._device or "auto").lower()
+        if want != "cuda":
+            return "cpu"
+        try:
+            import ctranslate2
+            return "cuda" if ctranslate2.get_cuda_device_count() > 0 else "cpu"
         except Exception:  # noqa: BLE001
             return "cpu"
 
@@ -122,8 +126,9 @@ class Translator:
         )
         out_sentences = []
         for res in results:
-            # hypotheses[0] starts with the target-language token we supplied -- drop it.
-            hyp = res.hypotheses[0][1:]
+            # hypotheses[0] starts with the target-language token we supplied -- drop it. Filter the
+            # rare <unk> NLLB emits for an unmappable char so it's never spoken/printed literally.
+            hyp = [t for t in res.hypotheses[0][1:] if t != "<unk>"]
             out_sentences.append(tok.decode(tok.convert_tokens_to_ids(hyp)))
         joiner = "" if lang in _NO_SPACE_LANGS else " "
         return joiner.join(s.strip() for s in out_sentences if s.strip())
