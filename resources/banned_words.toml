@@ -1,39 +1,22 @@
-# TikTok-sensitive words -> safer euphemisms used by the brainrot community.
-# Matched case-insensitively on whole words; replacement casing follows the original.
-# Edit freely -- this file is data, not code.
+# TikTok-sensitive words. These are NOT replaced: the narration speaks the real word while a blur
+# SFX is laid loudly over its spoken interval (tts/censor.py), and the burned-in caption shows the
+# word with its vowels asterisked ("fuck" -> "f*ck", text/censor.py). Matched whole-word and
+# case-insensitively on each word's alphabetic core (surrounding punctuation is ignored), so list
+# the inflections you care about explicitly ("fuck"/"fucking"/"fucked"). Edit freely -- this is data.
 
-[replacements]
-kill = "unalive"
-killed = "unalived"
-killing = "unaliving"
-kills = "unalives"
-dead = "un-alive"
-death = "un-aliving"
-die = "perish"
-died = "perished"
-dying = "perishing"
-suicide = "self-deletion"
-suicidal = "self-deleting"
-murder = "muurder"
-murdered = "muurdered"
-rape = "grape"
-raped = "graped"
-rapist = "grapist"
-sex = "seggs"
-sexual = "seggsual"
-porn = "corn"
-gun = "pew-pew"
-guns = "pew-pews"
-shoot = "shooot"
-shot = "shoot"
-drugs = "durags"
-cocaine = "snow"
-nazi = "n@zi"
-dick = "dihh"
-penis = "pen*s"
-cock = "co*k"
-boner = "bonner"
-cunt = "cat"
-pussy = "cat"
-vagina = "cat"
-fuck = "duck"
+words = [
+    "kill", "killed", "killing", "kills",
+    "dead", "death", "die", "died", "dying",
+    "suicide", "suicidal",
+    "murder", "murdered", "murderer",
+    "rape", "raped", "rapist",
+    "sex", "sexual",
+    "porn",
+    "gun", "guns", "shoot", "shooting", "shot",
+    "drugs", "cocaine",
+    "nazi",
+    "dick", "penis", "cock", "boner",
+    "cunt", "pussy", "vagina",
+    "fuck", "fucked", "fucking", "fucker", "motherfucker",
+    "shit", "bitch", "slut", "whore",
+]

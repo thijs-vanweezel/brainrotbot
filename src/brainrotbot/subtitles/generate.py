@@ -21,6 +21,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from ..text.censor import is_banned, mask_vowels
+
 # HF model used by ctc-forced-aligner too: a 31-symbol MMS CTC aligner (blank=0, then lowercase
 # latin + apostrophe). Emits ~50 frames/sec; we compute the exact sec/frame per clip.
 _MODEL = "MahmoudAshraf/mms-300m-1130-forced-aligner"
@@ -77,8 +79,13 @@ class SubtitleMaker:
         scale_active: int = 110,
         width: int = 1080,
         height: int = 1920,
+        banned_words: frozenset[str] = frozenset(),
     ):
         self.device = device
+        # Words whose vowels are asterisked on screen ("fuck" -> "f*ck"); their spoken intervals are
+        # also returned by make() so tts/censor.py can lay the blur SFX over them. Alignment itself
+        # is unaffected -- it tokenizes the real (a-z) word, only the *displayed* glyphs change.
+        self.banned_words = banned_words
         self.language = language
         self.max_words_per_cue = max_words_per_cue
         self.max_gap_sec = max_gap_sec
@@ -273,6 +280,8 @@ class SubtitleMaker:
         out = []
         for i, w in enumerate(cue):
             txt = _escape_text(w["text"])
+            if is_banned(txt, self.banned_words):
+                txt = mask_vowels(txt)  # vowels -> '*' for the caption (audio is blurred separately)
             if self.uppercase:
                 txt = txt.upper()
             if i == active:
@@ -326,10 +335,18 @@ class SubtitleMaker:
         words = self._align(Path(audio_path), text)
         cues = self._group(words)
         self._write_ass(cues, Path(out_ass_path))
+        # Spoken intervals of the banned words, so tts/censor.py can lay the blur SFX over exactly
+        # those spans (the blur length thus matches each word). Rounded for a tidy ledger record.
+        banned_intervals = [
+            [round(w["start"], 3), round(w["end"], 3)]
+            for w in words if is_banned(w["text"], self.banned_words)
+        ]
         return {
             "path": str(out_ass_path),
             "num_words": len(words),
             "num_cues": len(cues),
+            "num_masked": len(banned_intervals),
+            "banned_intervals": banned_intervals,
             "backend": "ctc-forced-align",
             "model": _MODEL,
             "language": self.language,
