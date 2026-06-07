@@ -27,10 +27,12 @@ def _post_id(entry: LedgerEntry) -> str:
 
 
 def scan_ready(settings) -> list[LedgerEntry]:
-    """Ready = final video present on disk and not yet uploaded (upload.tiktok_id is None).
+    """Ready = final video present on disk and the post has not been attempted yet.
 
     Reads the per-story JSON (updated in place by each step), which is the authoritative latest state
-    for a post. Sorted oldest-first so the queue drains FIFO.
+    for a post. Skips anything already attempted -- status `upload_done` (succeeded) OR
+    `upload_unconfirmed` (Post was clicked but we couldn't confirm the URL) -- so we never auto-re-post
+    and risk a duplicate; unconfirmed ones are surfaced for manual review instead. Sorted oldest-first.
     """
     stories_dir = settings.stories_dir
     if not stories_dir.is_dir():
@@ -41,8 +43,8 @@ def scan_ready(settings) -> list[LedgerEntry]:
             entry = LedgerEntry.from_dict(json.loads(path.read_text(encoding="utf-8")))
         except Exception:  # noqa: BLE001 -- skip an unreadable/partial story file
             continue
-        if entry.upload.get("tiktok_id"):
-            continue  # already uploaded
+        if entry.upload.get("tiktok_id") or entry.status in ("upload_done", "upload_unconfirmed"):
+            continue  # already uploaded or already attempted -- don't re-post
         final = entry.assets.get("final_video")
         if final and Path(final).is_file():
             ready.append(entry)
@@ -81,13 +83,15 @@ def _cleanup_assets(settings, entry: LedgerEntry) -> list[str]:
     return deleted
 
 
-def drain_upload_queue(settings, *, headless: bool | None = None) -> int:
-    """Upload every ready video to TikTok in one browser session. Returns the number posted.
+def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = False) -> int:
+    """Upload every ready video to TikTok in one browser session. Returns the number confirmed posted.
 
-    Resilient: one video's failure logs a warning and leaves it in the queue (retried next drain) without
-    aborting the batch. A successful post updates entry.upload + status, rewrites the story JSON, appends
-    the updated entry to the ledger (append-only, so Step 8 must dedupe by id taking the latest line), and
-    optionally deletes the post's media.
+    Resilient: one video's failure logs a warning and never aborts the batch. **Confirm-before-commit**:
+    a post counts as done only when a real video URL was captured -- then status=upload_done, the URL is
+    recorded, and (delete_after_upload) the media is deleted. If Post was clicked but no URL came back, the
+    entry is marked `upload_unconfirmed` and its media is KEPT (scan_ready then won't re-post it, so no
+    duplicate). The updated entry is rewritten to the story JSON and re-appended to the append-only ledger
+    (Step 8 dedupes by id, taking the latest line). `debug` dumps the Studio DOM at each milestone.
     """
     ready = scan_ready(settings)
     if not ready:
@@ -99,6 +103,7 @@ def drain_upload_queue(settings, *, headless: bool | None = None) -> int:
     hashtags = [h for h in opts.get("hashtags", []) if h]
     delete_after = bool(opts.get("delete_after_upload", True))
     headless = opts.get("headless", False) if headless is None else headless
+    debug = debug or bool(opts.get("debug", False))
 
     print(f"[brainrotbot] Draining upload queue: {len(ready)} video(s) ready for TikTok.")
     posted = 0
@@ -113,6 +118,9 @@ def drain_upload_queue(settings, *, headless: bool | None = None) -> int:
         subtitles=bool(opts.get("subtitles", True)),
         set_cover=bool(opts.get("set_cover", True)),
         nav_timeout_sec=float(opts.get("nav_timeout_sec", 120)),
+        completion_timeout_sec=float(opts.get("completion_timeout_sec", 300)),
+        debug=debug,
+        debug_dir=settings.data_dir / "upload_debug",
     )
     with uploader:
         for entry in ready:
@@ -125,6 +133,7 @@ def drain_upload_queue(settings, *, headless: bool | None = None) -> int:
                     Path(cover) if cover and Path(cover).is_file() else None,
                     caption,
                 )
+                confirmed = bool(meta["url"] or meta["tiktok_id"])  # a captured URL = proof it posted
                 entry.upload.update(
                     tiktok_id=meta["tiktok_id"],
                     url=meta["url"],
@@ -135,14 +144,20 @@ def drain_upload_queue(settings, *, headless: bool | None = None) -> int:
                     captions_on=meta["captions_on"],
                     cover_set=meta["cover_set"],
                 )
-                entry.status = "upload_done"
-                if delete_after:
-                    entry.upload["assets_deleted"] = _cleanup_assets(settings, entry)
+                if confirmed:
+                    entry.status = "upload_done"
+                    if delete_after:
+                        entry.upload["assets_deleted"] = _cleanup_assets(settings, entry)
+                    posted += 1
+                    print(f"[brainrotbot]   uploaded {pid} -> {meta['url']}")
+                else:
+                    # Post was clicked but never confirmed -- keep the media, don't auto-retry.
+                    entry.status = "upload_unconfirmed"
+                    print(f"[brainrotbot] WARNING: {pid} posted but URL not confirmed -- left as "
+                          f"upload_unconfirmed, media kept. Check TikTok manually.")
                 _rewrite_story_file(settings, entry)
                 append_entry(settings.ledger_path, entry)
-                posted += 1
-                print(f"[brainrotbot]   uploaded {pid} -> {meta['url'] or '(url not captured)'}")
             except Exception as exc:  # noqa: BLE001 -- one bad upload must not abort the batch
                 print(f"[brainrotbot] WARNING: upload failed for {pid}: {exc}")
-    print(f"[brainrotbot] Drain complete: {posted}/{len(ready)} uploaded.")
+    print(f"[brainrotbot] Drain complete: {posted}/{len(ready)} confirmed posted.")
     return posted
