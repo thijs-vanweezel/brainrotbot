@@ -143,6 +143,7 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
                     public=meta["public"],
                     captions_on=meta["captions_on"],
                     cover_set=meta["cover_set"],
+                    content_check_off=meta.get("content_check_off"),
                 )
                 if confirmed:
                     entry.status = "upload_done"
