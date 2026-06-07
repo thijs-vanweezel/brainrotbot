@@ -48,6 +48,10 @@ class Settings:
         return self.raw["tts"]
 
     @property
+    def translation_opts(self) -> dict:
+        return self.raw.get("translation", {})
+
+    @property
     def video_opts(self) -> dict:
         return self.raw["video"]
 
@@ -163,6 +167,11 @@ class Settings:
     @property
     def thumbnail_dir(self) -> Path:
         return self.data_dir / self.raw["paths"].get("thumbnail_subdir", "thumbnail")
+
+    @property
+    def translation_cache_dir(self) -> Path:
+        # Step 1.5: quantized NLLB CTranslate2 model, converted+cached once on first use.
+        return self.data_dir / self.raw["paths"].get("translation_cache_subdir", "translation_cache")
 
     @property
     def thumbnail_cache_dir(self) -> Path:

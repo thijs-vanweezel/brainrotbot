@@ -42,6 +42,14 @@ subtitles = [
     "transformers>=4.40",
     "soxr>=0.3",
 ]
+# Step 1.5 (translation / language fan-out). NLLB-200-distilled-600M runs through CTranslate2
+# (int8-quantized) for fast, deterministic offline translation; transformers (via subtitles) gives
+# the SentencePiece tokenizer + the one-time HF->CT2 conversion. torch comes via the tts extra.
+translation = [
+    "ctranslate2>=4.0",
+    "transformers>=4.40",
+    "sentencepiece>=0.2",
+]
 # Step 6 (thumbnail). Pillow composites the post title onto a downloaded background image.
 # Pixabay search uses `requests` (core); the image download uses stdlib urllib (like music).
 thumbnail = [
