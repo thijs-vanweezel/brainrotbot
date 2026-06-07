@@ -103,8 +103,26 @@ music_catalogue_ttl_days = 7     # re-scrape NCS after this many days (cache fre
 music_catalogue_pages = 3        # how many listing pages to scrape (~21 tracks/page; 3 = plenty of variety)
 music_intro_skip_sec = 5         # floor on the random start offset into the track (NCS intros are often quiet)
 
-[thumbnail] # I just added this api key, feel free to do with it what you need to.
+[thumbnail]
+# Step 6 -- a 9:16 cover image per video: a random Pixabay background with the post title
+# overlaid (white bold text + dark stroke on a soft scrim band, no subreddit chrome). Output:
+# data/thumbnail/<post_id>.png, consumed by the upload step. Geometry reuses [video] width/height.
+enabled = true
+# Free Pixabay API key. The env var PIXABAY_API_KEY (from .env, gitignored) overrides this if set;
+# this inline value is the fallback. NOTE: settings.toml is git-tracked, so a key here is committed.
 PIXABAY_API_KEY = "17376527-284228145394ba34556c8c975"
+font_file = "resources/Anton-Regular.ttf"  # falls back to Arial Bold, then PIL default if missing
+font_max_size = 110        # title auto-shrinks from here to fit the text box
+stroke_width = 6           # dark outline around the white title for legibility on any image
+scrim_opacity = 0.35       # darkened band behind the text (0 = none, 1 = opaque)
+
+# Curated background search terms grouped by category. A random category is chosen per story,
+# then a random term within it; both land in the ledger (assets.thumbnail) for A/B analysis.
+[thumbnail.search_terms]
+luxury = ["luxury car", "mansion", "real estate", "money", "private jet", "luxury watch"]
+people = ["portrait woman", "fashion model", "man portrait", "beautiful face"]
+nature = ["landscape", "beach sunset", "mountains", "tropical"]
+food = ["gourmet burger", "dessert", "pizza", "snacks"]
 
 [paths]
 data_dir = "data"
@@ -114,5 +132,7 @@ video_subdir = "video"
 video_cache_subdir = "video_cache"
 final_subdir = "final"
 music_cache_subdir = "music_cache"
+thumbnail_subdir = "thumbnail"
+thumbnail_cache_subdir = "thumbnail_cache"
 ledger_file = "ledger.jsonl"
 banned_words_file = "resources/banned_words.toml"

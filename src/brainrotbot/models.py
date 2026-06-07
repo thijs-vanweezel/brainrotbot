@@ -113,7 +113,8 @@ class LedgerEntry:
                 "banned_words_replaced": [asdict(r) for r in replacements],
             },
             content_analysis={"topic": None, "style": None, "tone": None, "hook_type": None},
-            assets={"audio_path": None, "background_video": None, "final_video": None, "music_path": None},
+            assets={"audio_path": None, "background_video": None, "final_video": None,
+                    "music_path": None, "thumbnail_path": None},
             upload={"tiktok_id": None, "posted_at": None, "caption": None, "hashtags": None},
             metrics={"views": None, "likes": None, "comments": None, "shares": None, "retention": None},
         )
