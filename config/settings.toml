@@ -52,13 +52,15 @@ z = ["zf_xiaoxiao", "zf_xiaobei", "zm_yunxi", "zm_yunyang"]  # Chinese (Mandarin
 # `languages` becomes its own fully-localized post (translated narration + thumbnail + caption),
 # keyed by `<post_id>_<lang>`. "en" is the untouched original (no model load). --skip-translation
 # collapses this back to English-only. The quantized model is converted+cached once on first use.
-# NOTE: zh narration works, but the Step 4.5 caption aligner is latin-only, so Chinese variants
-# get no burned-in captions (degrades gracefully); fr/es captions align fine.
+# Supported targets are limited by Kokoro TTS (lang_codes a/b/e/f/h/i/p/j/z): en, fr, es, it, pt,
+# hi, ja, zh. German is NOT available (Kokoro has no German voice), so it can't be added here.
+# zh is DISABLED for now: narration works, but the Step 4.5 caption aligner is latin-only so Chinese
+# gets no burned-in captions -- re-add "zh" below once an aligner/caption path handles Han text.
 enabled = true
 model = "facebook/nllb-200-distilled-600M"
 device = "auto"                  # auto | cpu | cuda
 compute_type = "int8"           # CTranslate2 quantization (int8 = fast + small)
-languages = ["en", "fr", "es", "zh"]   # variants produced per story (fan-out)
+languages = ["en", "fr", "es"]   # variants produced per story (fan-out); zh disabled (see note)
 
 [video]
 # Curated pool of long gameplay videos. Rotated per story (A/B testing, like the TTS voices)
