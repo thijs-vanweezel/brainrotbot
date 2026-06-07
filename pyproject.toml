@@ -39,6 +39,12 @@ music = [
 thumbnail = [
     "pillow>=10.0",
 ]
+# Step 7 (upload). Playwright drives the TikTok web Studio uploader (toggles subtitles, posts
+# public, sets the cover, reads back the video URL -- none of which the official API supports).
+# After install run once: `playwright install chromium`.
+upload = [
+    "playwright>=1.40",
+]
 
 [project.scripts]
 brainrotbot = "brainrotbot.pipeline:main"

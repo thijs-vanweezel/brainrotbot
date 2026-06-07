@@ -60,6 +60,20 @@ class Settings:
         return self.raw.get("thumbnail", {})
 
     @property
+    def upload_opts(self) -> dict:
+        return self.raw.get("upload", {})
+
+    @property
+    def tiktok_session_dir(self) -> Path:
+        """Persistent Chromium profile holding the logged-in TikTok session (gitignored).
+
+        Resolved next to settings.toml (config/), like the yt-dlp cookies file -- so the default
+        session_subdir = "tiktok_profile" lives at config/tiktok_profile/.
+        """
+        sub = self.upload_opts.get("session_subdir", "tiktok_profile")
+        return (self.settings_path.parent / sub).resolve()
+
+    @property
     def thumbnail_font_file(self) -> str:
         """Absolute path to the title font, or "" if unset (resolved like the outro file)."""
         ff = self.thumbnail_opts.get("font_file", "")
