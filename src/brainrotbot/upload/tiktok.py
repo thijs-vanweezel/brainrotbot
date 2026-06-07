@@ -58,6 +58,17 @@ _SHOW_MORE = re.compile(r"^show more$", re.I)  # expands the advanced settings s
 # is a hidden <input role=switch>, and aria-checked=true (on a child) means the check is ON. A force-click
 # on the input is the only thing that actually flips it (React ignores a programmatic .click() on the root).
 _CHECK_CARD = "Content check lite"
+# After a while of uploading TikTok caps the daily pre-post checks and shows this banner; the toggle then
+# can't be moved, but the post still goes through -- so we just skip the uncheck and post with the check ON.
+_CHECK_LIMIT = re.compile(r"check limit for today|try again tomorrow", re.I)
+
+
+class PostFailedError(RuntimeError):
+    """The Post button could not be clicked (missing/disabled/click rejected).
+
+    Raised so the queue discards this video and moves on instead of stalling the batch -- the post
+    definitely didn't land, so there's nothing to confirm or double-post.
+    """
 
 
 class TikTokUploader:
@@ -325,6 +336,11 @@ class TikTokUploader:
         the check is off (or already was).
         """
         for _ in range(3):
+            # Daily check cap hit: the banner is up and the toggle is frozen ON, but posting still
+            # works -- stop fighting the switch and let upload() click Post with the check left ON.
+            if self._has_text(page, _CHECK_LIMIT):
+                print("[brainrotbot]   (daily check limit reached -- leaving Content Check Lite ON, posting anyway)")
+                return False
             try:
                 card = page.locator(".card").filter(has_text=_CHECK_CARD).last
                 inp = card.locator("input[role=switch]")
@@ -333,6 +349,9 @@ class TikTokUploader:
                     return True  # already off
                 inp.first.click(force=True)  # force-click the hidden input (the only thing React honours)
                 self._pause()
+                if self._has_text(page, _CHECK_LIMIT):  # banner often only pops AFTER you try to flip it
+                    print("[brainrotbot]   (daily check limit reached -- leaving Content Check Lite ON, posting anyway)")
+                    return False
                 if card.locator("[aria-checked='true']").count() == 0:
                     print("[brainrotbot]   Content Check Lite -> OFF")
                 else:
@@ -448,6 +467,27 @@ class TikTokUploader:
         m = _VIDEO_ID_RE.search(href)
         return url, (m.group(1) if m else None)
 
+    def _click_post(self, page) -> None:
+        """Click the real Post button; raise PostFailedError if it can't be clicked.
+
+        With the daily check limit reached the post normally still works, but occasionally the button is
+        dead (never renders, is disabled, or rejects the click). Rather than stall the whole batch on it,
+        we surface PostFailedError so the caller discards this one video and continues.
+        """
+        post = page.locator(_POST_BUTTON).first
+        try:
+            post.wait_for(state="visible", timeout=self.nav_timeout_ms)
+        except Exception as exc:  # noqa: BLE001
+            raise PostFailedError(f"Post button never appeared: {exc}")
+        try:
+            if post.is_disabled():
+                raise PostFailedError("Post button is disabled")
+            post.click(timeout=15000)
+        except PostFailedError:
+            raise
+        except Exception as exc:  # noqa: BLE001 -- a click that won't register is a dead button
+            raise PostFailedError(f"Post button click failed: {exc}")
+
     # --- main entry ------------------------------------------------------------------------------
     def upload(self, video_path: Path, cover_path: Path | None, caption: str) -> dict:
         """Post one video; return {url, tiktok_id, posted_at, public, captions_on, cover_set}.
@@ -497,9 +537,11 @@ class TikTokUploader:
         # 6) Click the REAL post button (data-e2e, NOT the "Posts" nav), then wait for the post to land
         # before touching anything (the old code clicked the nav / navigated away and aborted the post).
         self._close_any_dialog(page)  # never let a leftover modal (e.g. the cover editor) block Post
-        post = page.locator(_POST_BUTTON).first
-        post.wait_for(timeout=self.nav_timeout_ms)
-        post.click()
+        try:
+            self._click_post(page)  # raises PostFailedError -> queue discards this video and moves on
+        except PostFailedError:
+            self._dump(page, "03_postfailed")
+            raise
         self._dump(page, "03_postclicked")
         print("[brainrotbot]   posted; waiting for it to finish (Content Check Lite, if on, can take ~10 min) ...")
         url, tiktok_id = self._await_completion(page)
