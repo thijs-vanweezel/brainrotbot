@@ -34,6 +34,16 @@ _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
 _AUDIO_STREAM_RE = re.compile(r"Stream #\d+:\d+.*: Audio:")
 
 
+def _escape_subtitles_path(path: Path) -> str:
+    """Escape a path for ffmpeg's `subtitles=` filter (Windows-safe).
+
+    The filtergraph parser treats `:` as an option separator and `\\` as an escape, so on Windows a
+    bare `C:\\Users\\...` breaks. Convert backslashes to forward slashes and escape the drive colon;
+    the caller wraps the result in single quotes (`subtitles=filename='...'`).
+    """
+    return str(path).replace("\\", "/").replace(":", "\\:")
+
+
 def _has_audio(path: Path) -> bool:
     """True if the media file has an audio stream, read from ffmpeg's `-i` banner.
 
@@ -82,9 +92,14 @@ class VideoEditor:
         music_volume_db: float = -15.0,
         music_duck: bool = True,
         music_intro_skip_sec: float = 5.0,
+        subtitle_fonts_dir: str = "",
     ):
         self.width, self.height, self.fps = width, height, fps
         self.crf, self.preset = crf, preset
+        # Directory libass loads caption fonts from (Step 4.5). The .ass references the font by
+        # family name (e.g. "Anton"); fontsdir points libass at resources/ so it finds the bundled
+        # Anton-Regular.ttf without relying on a system-wide install. "" -> rely on system fonts.
+        self.subtitle_fonts_dir = subtitle_fonts_dir
         # Resolve the outro once: keep it only if it actually exists, so a stale/blank config
         # path silently degrades to the mux-only path instead of failing every story.
         outro = Path(outro_file) if outro_file else None
@@ -99,13 +114,22 @@ class VideoEditor:
         self.music_duck = music_duck
         self.music_intro_skip_sec = music_intro_skip_sec
 
-    def compose(self, background_path: Path, audio_path: Path, out_path: Path,
-                music_path: Path | None = None) -> dict:
-        """Mux `audio_path` onto `background_path` (+ outro, + music) -> `out_path`.
+    def _subtitles_filter(self, subtitle_path: Path) -> str:
+        """The `subtitles=` filter snippet that burns `subtitle_path`, with fontsdir if configured."""
+        flt = f"subtitles=filename='{_escape_subtitles_path(subtitle_path)}'"
+        if self.subtitle_fonts_dir:
+            flt += f":fontsdir='{_escape_subtitles_path(Path(self.subtitle_fonts_dir))}'"
+        return flt
 
-        `music_path` is optional: when supplied it weaves a soft (-`music_volume_db` dB)
-        instrumental bed through both internal paths; when None the original Step 4 behaviour
-        is preserved (mux-only keeps the `-c:v copy` fast path). Returns ledger meta.
+    def compose(self, background_path: Path, audio_path: Path, out_path: Path,
+                music_path: Path | None = None, subtitle_path: Path | None = None) -> dict:
+        """Mux `audio_path` onto `background_path` (+ outro, + music, + burned-in captions) -> `out_path`.
+
+        `music_path` and `subtitle_path` are both optional. Music weaves a soft (-`music_volume_db`
+        dB) instrumental bed through both internal paths. Captions (Step 4.5) are burned over the
+        narration/background segment only -- never the outro. With no music and no subtitles the
+        mux-only path keeps its `-c:v copy` fast path; burning captions there forces a video
+        re-encode (libass can't draw onto a stream-copied frame). Returns ledger meta.
         """
         ffmpeg = _ffmpeg()
         out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -121,14 +145,17 @@ class VideoEditor:
             music_start = pick_music_start(music_dur, target, self.music_intro_skip_sec)
 
         if self.outro is None:
-            self._mux_only(ffmpeg, background_path, audio_path, out_path, music_path, music_start)
+            self._mux_only(ffmpeg, background_path, audio_path, out_path, music_path, music_start,
+                           subtitle_path)
         else:
-            self._mux_with_outro(ffmpeg, background_path, audio_path, out_path, music_path, music_start)
+            self._mux_with_outro(ffmpeg, background_path, audio_path, out_path, music_path,
+                                 music_start, subtitle_path)
 
         return {
             "path": str(out_path),
             "has_outro": self.outro is not None,
             "has_music": music_path is not None,
+            "has_subtitles": subtitle_path is not None,
             "music_start_sec": round(music_start, 2) if music_path is not None else None,
             "outro_file": str(self.outro) if self.outro else None,
             "duration_sec": round(probe_duration(out_path), 2),
@@ -181,44 +208,68 @@ class VideoEditor:
         return parts, "[a]"
 
     def _mux_only(self, ffmpeg: str, bg: Path, audio: Path, out: Path,
-                  music: Path | None, music_start: float = 0.0) -> None:
-        """No outro: copy the already-encoded background and add the narration as AAC.
+                  music: Path | None, music_start: float = 0.0,
+                  subtitle_path: Path | None = None) -> None:
+        """No outro: add the narration (+ optional music bed, + optional burned-in captions).
 
         The narration is resampled to stereo `audio_sample_rate` (Kokoro's WAV is mono/24 kHz,
         which many players -- and TikTok -- render as *silent*), not stream-copied. -shortest
         guards against tiny length drift (the clip is already cut to the narration); +faststart
-        moves the moov atom up front for clean web/preview playback. With music present we
-        switch to a `filter_complex` amix branch -- video still stream-copies.
+        moves the moov atom up front for clean web/preview playback.
+
+        Four cases: plain mux keeps the fast `-c:v copy` path; music alone adds an audio-only
+        `filter_complex` (video still copies); captions force a libx264 re-encode (libass can't
+        draw onto a copied stream) with a `[0:v]subtitles=...[v]` branch; music + captions share
+        one `filter_complex` carrying both the video and audio branches.
         """
-        if music is None:
+        sr = self.audio_sample_rate
+        sub = subtitle_path is not None
+
+        # --- fast path: no music, no captions -> stream-copy the video ---
+        if music is None and not sub:
             _run([
                 ffmpeg, "-y", "-hide_banner", "-loglevel", "error",
                 "-i", str(bg), "-i", str(audio),
                 "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy",
-                "-c:a", "aac", "-b:a", "192k", "-ar", str(self.audio_sample_rate), "-ac", "2",
+                "-c:a", "aac", "-b:a", "192k", "-ar", str(sr), "-ac", "2",
                 "-movflags", "+faststart", "-shortest", str(out),
             ])
             return
-        # Music path: stream-loop the bed so it tiles, then mix it under the narration. The
-        # narration is normalized first (Kokoro mono/24 kHz -> stereo/44.1 kHz) before feeding
-        # the music branch, so sidechaincompress sees consistent layouts.
-        sr = self.audio_sample_rate
-        parts = [f"[1:a]aresample={sr},aformat=channel_layouts=stereo[voice]"]
-        music_parts, audio_out = self._build_music_branch("[voice]", music_idx=2)
-        parts.extend(music_parts)
-        # -ss before -i is the input seek (fast); each loop iteration restarts at this offset.
+
+        # Build the (optional) video subtitle branch and the audio branch into one filtergraph.
+        parts: list[str] = []
+        video_map = "0:v:0"
+        if sub:
+            parts.append(f"[0:v]{self._subtitles_filter(subtitle_path)},"
+                         f"fps={self.fps},format=yuv420p[v]")
+            video_map = "[v]"
+
+        inputs = ["-i", str(bg), "-i", str(audio)]
+        if music is None:
+            # Captions only: narration goes straight through as AAC (resampled via output opts).
+            audio_map = "1:a:0"
+            audio_codec = ["-c:a", "aac", "-b:a", "192k", "-ar", str(sr), "-ac", "2"]
+        else:
+            # Music (+ maybe captions): normalize narration then duck+amix the looped bed.
+            parts.append(f"[1:a]aresample={sr},aformat=channel_layouts=stereo[voice]")
+            music_parts, audio_map = self._build_music_branch("[voice]", music_idx=2)
+            parts.extend(music_parts)
+            # -ss before -i is the input seek (fast); each loop iteration restarts at this offset.
+            inputs += ["-ss", f"{music_start:.3f}", "-stream_loop", "-1", "-i", str(music)]
+            audio_codec = ["-c:a", "aac", "-b:a", "192k"]
+
+        video_codec = (["-c:v", "libx264", "-crf", str(self.crf), "-preset", self.preset,
+                        "-pix_fmt", "yuv420p"] if sub else ["-c:v", "copy"])
         _run([
-            ffmpeg, "-y", "-hide_banner", "-loglevel", "error",
-            "-i", str(bg), "-i", str(audio),
-            "-ss", f"{music_start:.3f}", "-stream_loop", "-1", "-i", str(music),
+            ffmpeg, "-y", "-hide_banner", "-loglevel", "error", *inputs,
             "-filter_complex", ";".join(parts),
-            "-map", "0:v:0", "-map", audio_out,
-            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+            "-map", video_map, "-map", audio_map, *video_codec, *audio_codec,
             "-movflags", "+faststart", "-shortest", str(out),
         ])
 
     def _mux_with_outro(self, ffmpeg: str, bg: Path, audio: Path, out: Path,
-                        music: Path | None, music_start: float = 0.0) -> None:
+                        music: Path | None, music_start: float = 0.0,
+                        subtitle_path: Path | None = None) -> None:
         """Concat [background+narration] then [outro] in a single re-encoding filter pass.
 
         Both concat segments must share geometry/SAR/fps/pixfmt and audio rate/layout, so each
@@ -240,10 +291,13 @@ class VideoEditor:
         outro_dur = self.outro_duration_sec if outro_is_image else probe_duration(outro)
 
         w, h, fps, sr = self.width, self.height, self.fps, self.audio_sample_rate
+        # Burn captions onto the narration/background segment ([0:v]) only -- the outro ([2:v]) is
+        # deliberately left clean. Prepended before the normalize filters so libass draws first.
+        sub_prefix = f"{self._subtitles_filter(subtitle_path)}," if subtitle_path is not None else ""
         # Normalize main video (already correct size, but enforce sar/fps/format) and outro
         # video (fit-and-pad to the exact frame). aresample/aformat align the audio for concat.
         parts = [
-            f"[0:v]setsar=1,fps={fps},format=yuv420p[v0]",
+            f"[0:v]{sub_prefix}setsar=1,fps={fps},format=yuv420p[v0]",
             f"[1:a]aresample={sr},aformat=channel_layouts=stereo[a0]",
             f"[2:v]scale={w}:{h}:force_original_aspect_ratio=decrease,"
             f"pad={w}:{h}:(ow-iw)/2:(oh-ih)/2,setsar=1,fps={fps},format=yuv420p[v1]",
