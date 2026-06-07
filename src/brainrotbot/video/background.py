@@ -1,7 +1,7 @@
 """Step 3: build a vertical background clip for a story, sized to its narration.
 
 Pipeline per story:
-  1. Pick a source from the curated `[video].sources` pool (round-robin -> A/B testing),
+  1. Pick a source from the curated `[video].sources` pool (random per story -> A/B testing),
      download it once with yt-dlp and cache it on disk (data/video_cache/), reused across runs.
   2. Trim a window the length of the narration from a random offset in the source (for variety),
      and center-crop the 16:9 gameplay to a 9:16 TikTok frame with ffmpeg.
@@ -26,18 +26,16 @@ from pathlib import Path
 _DURATION_RE = re.compile(r"Duration:\s*(\d+):(\d\d):(\d\d(?:\.\d+)?)")
 
 
-def pick_source(sources: list[str], index: int) -> str:
-    """Round-robin a story over the source-video pool by a caller-supplied rotation key.
+def pick_source(sources: list[str], rng: random.Random | None = None) -> str:
+    """Random source from the curated pool (one per story; rng injectable for tests).
 
-    Deterministic so rotation is reproducible/testable; the chosen source is logged per story
-    to feed the Step 6 A/B analytics (which background works). Caller is expected to pass a
-    monotonically-advancing key (e.g. historical-ledger-count + in-run index) so the rotation
-    advances *across* runs -- using the bare in-run index would always reset to sources[0],
-    making the top of the pool dominate every short run.
+    A uniform per-story pick (not a deterministic rotation) so every source keeps getting
+    exercised regardless of run length; the chosen source is logged per story to feed the
+    Step 6 A/B analytics (which background works).
     """
     if not sources:
         raise ValueError("source pool is empty")
-    return sources[index % len(sources)]
+    return (rng or random).choice(sources)
 
 
 def _ffmpeg() -> str:

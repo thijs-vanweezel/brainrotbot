@@ -13,23 +13,23 @@ extra installed.
 
 from __future__ import annotations
 
+import random
 from pathlib import Path
 
 # Kokoro always synthesizes at 24 kHz.
 KOKORO_SAMPLE_RATE = 24000
 
 
-def pick_voice(voices: list[str], index: int) -> str:
-    """Round-robin a story over a language's voice pool by a caller-supplied rotation key.
+def pick_voice(voices: list[str], rng: random.Random | None = None) -> str:
+    """Random voice from a language's pool (one per story; rng injectable for tests).
 
-    Deterministic so rotation is reproducible and unit-testable; the chosen voice is logged
-    per story to feed the Step 6 A/B analytics on what performs best. Caller passes a
-    monotonically-advancing key (historical-ledger-count + in-run index) so rotation
-    advances *across* runs instead of always starting at voices[0] every run.
+    A uniform per-story pick (not a deterministic rotation) so every voice keeps getting
+    exercised regardless of run length; the chosen voice is logged per story to feed the
+    Step 6 A/B analytics on what performs best.
     """
     if not voices:
         raise ValueError("voice pool is empty")
-    return voices[index % len(voices)]
+    return (rng or random).choice(voices)
 
 
 class KokoroSynthesizer:
