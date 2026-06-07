@@ -19,13 +19,14 @@ from pathlib import Path
 
 from ..ledger import append_entry, iter_entries
 from ..models import LedgerEntry
-from .tiktok import TikTokUploader
+from .tiktok import PostFailedError, TikTokUploader
 
 # Statuses that mean an upload was already started or finished for this video; scan_ready never
 # re-surfaces these, so we can't double-post. `upload_attempting` is the crash-safety breadcrumb
 # written just before clicking Post -- if the process dies mid-upload it stays on disk and the next
 # run skips the video (surfaced for manual review) instead of posting it a second time.
-_ATTEMPTED_STATUSES = ("upload_done", "upload_unconfirmed", "upload_attempting")
+# `upload_discarded` is a dead Post button we deliberately gave up on (see PostFailedError handling).
+_ATTEMPTED_STATUSES = ("upload_done", "upload_unconfirmed", "upload_attempting", "upload_discarded")
 
 
 def _post_id(entry: LedgerEntry) -> str:
@@ -197,6 +198,18 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
                           f"upload_unconfirmed, media kept. Check TikTok manually.")
                 _rewrite_story_file(settings, entry)
                 append_entry(settings.ledger_path, entry)
+            except PostFailedError as exc:
+                # Dead Post button (e.g. the daily check limit froze the form): the post definitely
+                # didn't land, so discard this video rather than stall the batch. Mark it
+                # upload_discarded so scan_ready won't re-surface it, and -- like a successful upload --
+                # delete its heavy media when delete_after is on. Warn and continue with the next one.
+                entry.status = "upload_discarded"
+                entry.upload["discarded_reason"] = str(exc)
+                if delete_after:
+                    entry.upload["assets_deleted"] = _cleanup_assets(settings, entry)
+                _rewrite_story_file(settings, entry)
+                append_entry(settings.ledger_path, entry)
+                print(f"[brainrotbot] WARNING: Post button did not work for {pid} -- discarded ({exc}).")
             except Exception as exc:  # noqa: BLE001 -- one bad upload must not abort the batch
                 # Clean failure (not a hard crash): the post didn't go through, so clear the in-flight
                 # marker and let the next run retry. A hard crash skips this and leaves the marker.
