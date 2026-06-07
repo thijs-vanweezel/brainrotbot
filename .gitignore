@@ -1,8 +1,9 @@
 # Secrets
 .env
 
-# TikTok logged-in browser profile (Step 7 upload session)
+# TikTok logged-in browser profile + imported session cookies (Step 7 upload)
 config/tiktok_profile/
+config/tiktok_cookies.txt
 
 # Runtime data / generated artifacts
 data/
