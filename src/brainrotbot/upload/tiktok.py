@@ -284,23 +284,24 @@ class TikTokUploader:
         """Flip 'Content check lite' OFF so the post completes immediately.
 
         That toggle defaults ON and re-arms every upload; left on it runs a ~10 min pre-post eligibility
-        check that spawns confirmation/exit modals and stalls automation. We turn it off each time. If the
-        switch isn't found we expand the advanced ("Show more") section once and retry. Best-effort.
-        Returns True when the check is off (or already was).
+        check that spawns confirmation/exit modals and stalls automation. We turn it off each time. The
+        "Checks" card renders a little after the video finishes processing, so we wait for the switch
+        (and expand the advanced "Show more" section if it's collapsed). Best-effort; returns True when
+        the check is off (or already was).
         """
-        for _ in range(2):
+        for _ in range(3):
             try:
                 sw = page.locator(_CHECK_SWITCH).first
-                if sw.count():
-                    root = sw.locator("xpath=ancestor::div[contains(@class,'Switch__root')][1]")
-                    if root.locator("[aria-checked='true']").count():
-                        root.first.click()  # click the visible switch (the input itself is hidden)
-                        self._pause()
-                        print("[brainrotbot]   Content Check Lite -> OFF")
-                    return True
+                sw.wait_for(timeout=8000)  # the Checks card appears a beat after processing completes
+                root = sw.locator("xpath=ancestor::div[contains(@class,'Switch__root')][1]")
+                if root.locator("[aria-checked='true']").count():
+                    root.first.click()  # click the visible switch (the input itself is hidden)
+                    self._pause()
+                    print("[brainrotbot]   Content Check Lite -> OFF")
+                return True
             except Exception:  # noqa: BLE001
                 pass
-            try:  # maybe it's collapsed under advanced settings -- expand and retry once
+            try:  # maybe it's collapsed under advanced settings -- expand and retry
                 more = page.get_by_text(_SHOW_MORE)
                 if more.count() and more.first.is_visible():
                     more.first.click()
@@ -414,9 +415,6 @@ class TikTokUploader:
         self._pause(1.0, 2.0)
         self._dump(page, "01_processed")
 
-        # 1.5) Turn OFF Content Check Lite up front so the post lands immediately (no ~10 min check).
-        check_off = self._disable_content_check(page)
-
         # 2) Caption = title + hashtags. Clear the placeholder text, then type.
         editor = page.locator(_CAPTION_EDITOR).first
         editor.click()
@@ -429,6 +427,9 @@ class TikTokUploader:
         captions_on = self.subtitles  # TikTok auto-captions by default; we just record the intent
         cover_set = bool(cover_path) and self.set_cover and self._set_cover(page, Path(cover_path))
         self._set_public(page)
+        # Turn OFF Content Check Lite now that the "Checks" card has rendered, so the post lands
+        # immediately instead of waiting on the ~10 min pre-post check.
+        check_off = self._disable_content_check(page)
         self._dump(page, "02_prepost")
 
         # 6) Click the REAL post button (data-e2e, NOT the "Posts" nav), then wait for the post to land
