@@ -1,3 +1,5 @@
+import random
+
 import pytest
 
 from brainrotbot.models import LedgerEntry, Story
@@ -5,28 +7,19 @@ from brainrotbot.pipeline import _add_background_video
 from brainrotbot.video.background import pick_source
 
 
-# --- pick_source: deterministic round-robin over the source pool -----------------
+# --- pick_source: uniform random pick over the source pool ------------------------
 
-def test_pick_source_round_robins_and_wraps():
+def test_pick_source_picks_from_pool_and_is_seed_deterministic():
     sources = ["a", "b", "c"]
-    got = [pick_source(sources, i) for i in range(5)]
-    assert got == ["a", "b", "c", "a", "b"]
+    # Every pick is a pool member.
+    assert all(pick_source(sources, random.Random(i)) in sources for i in range(20))
+    # A given seed reproduces the same pick (injectable rng -> testable).
+    assert pick_source(sources, random.Random(42)) == pick_source(sources, random.Random(42))
 
 
 def test_pick_source_empty_pool_raises():
     with pytest.raises(ValueError):
-        pick_source([], 0)
-
-
-def test_pick_source_offset_rotates_across_runs():
-    """Two runs starting from different rotation_offsets must visit different sources for
-    the same in-run story index -- otherwise short runs always start at sources[0]."""
-    sources = ["a", "b", "c", "d"]
-    # run #1: ledger empty, first story -> rotation_key = 0 -> 'a'
-    # run #2: ledger has 1 story, first story -> rotation_key = 1 -> 'b'
-    # run #3: ledger has 2 stories, first story -> rotation_key = 2 -> 'c'
-    first_picks = [pick_source(sources, offset + 0) for offset in (0, 1, 2)]
-    assert first_picks == ["a", "b", "c"]
+        pick_source([])
 
 
 # --- _add_background_video: ledger wiring, tested against a fake maker -------------
@@ -72,38 +65,38 @@ def _entry(with_audio=True):
 def test_add_background_video_records_assets_and_status(tmp_path):
     entry, story = _entry()
     maker = _FakeMaker()
-    _add_background_video(entry, story, maker, _FakeSettings(tmp_path), index=0)
+    _add_background_video(entry, story, maker, _FakeSettings(tmp_path))
 
     assert entry.status == "video_done"
     assert entry.assets["background_video"].endswith("abc123.mp4")
     assert entry.assets["background"]["source_id"] == "vid123"
     assert entry.assets["background"]["start_sec"] == 4.0
-    # Trims to the real narrated duration, and rotates source 0.
-    assert maker.calls[0] == ("https://yt/a", 42.0, str(tmp_path / "video" / "abc123.mp4"))
+    # Trims to the real narrated duration; source is randomly drawn from the pool.
+    url, duration, out = maker.calls[0]
+    assert url in ("https://yt/a", "https://yt/b")
+    assert (duration, out) == (42.0, str(tmp_path / "video" / "abc123.mp4"))
 
 
 def test_add_background_video_falls_back_to_estimate_without_audio(tmp_path):
     entry, story = _entry(with_audio=False)
     maker = _FakeMaker()
-    _add_background_video(entry, story, maker, _FakeSettings(tmp_path), index=0)
+    _add_background_video(entry, story, maker, _FakeSettings(tmp_path))
     # No audio -> uses the word-count estimate from the cleaned text.
     assert maker.calls[0][1] == entry.text["est_speech_seconds"]
 
 
-def test_add_background_video_rotates_source_by_index(tmp_path):
+def test_add_background_video_picks_source_from_pool(tmp_path):
     settings = _FakeSettings(tmp_path)
-    used = []
-    for i in range(3):
+    for _ in range(5):
         entry, story = _entry()
         maker = _FakeMaker()
-        _add_background_video(entry, story, maker, settings, index=i)
-        used.append(maker.calls[0][0])
-    assert used == ["https://yt/a", "https://yt/b", "https://yt/a"]
+        _add_background_video(entry, story, maker, settings)
+        assert maker.calls[0][0] in ("https://yt/a", "https://yt/b")
 
 
 def test_add_background_video_no_sources_skips(tmp_path):
     entry, story = _entry()
-    _add_background_video(entry, story, _FakeMaker(), _FakeSettings(tmp_path, sources=()), index=0)
+    _add_background_video(entry, story, _FakeMaker(), _FakeSettings(tmp_path, sources=()))
     assert entry.status == "cleaned"  # unchanged (not advanced to video_done), background left null
     assert entry.assets["background_video"] is None
 
@@ -115,5 +108,5 @@ def test_add_background_video_swallows_failure(tmp_path):
             raise RuntimeError("ffmpeg exploded")
 
     entry, story = _entry()
-    _add_background_video(entry, story, _Boom(), _FakeSettings(tmp_path), index=0)
+    _add_background_video(entry, story, _Boom(), _FakeSettings(tmp_path))
     assert entry.assets["background_video"] is None

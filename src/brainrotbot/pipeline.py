@@ -51,12 +51,6 @@ def run(
     selected = select_stories(candidates, selection, seen_ids=seen)
     print(f"[brainrotbot] {len(selected)} stories selected (after filters + dedup).")
 
-    # Cross-run rotation: pick_voice / pick_source are deterministic mod-len pickers, so if we
-    # always reset the rotation key to 0 each run, top-of-pool sources (e.g. the first three
-    # Subway Surfers entries) dominate every short run. Seed the rotation with the count of
-    # ledger-known stories so it advances *across* runs while staying reproducible per story.
-    rotation_offset = len(seen)
-
     # Build one synthesizer for the whole run; the model loads lazily on first use.
     tts_opts = settings.tts_opts
     synth = None if skip_tts else KokoroSynthesizer(
@@ -111,13 +105,12 @@ def run(
 
     settings.stories_dir.mkdir(parents=True, exist_ok=True)
     entries: list[LedgerEntry] = []
-    for index, story in enumerate(selected):
-        rotation_key = rotation_offset + index
+    for story in selected:
         entry = _process_story(story, settings)
         if synth is not None:
-            _add_audio(entry, story, synth, settings, rotation_key)
+            _add_audio(entry, story, synth, settings)
         if maker is not None:
-            _add_background_video(entry, story, maker, settings, rotation_key)
+            _add_background_video(entry, story, maker, settings)
         if music_catalogue:
             _add_music_bed(entry, story, music_catalogue, settings)
         if editor is not None:
@@ -151,7 +144,7 @@ def _process_story(story: Story, settings) -> LedgerEntry:
     return LedgerEntry.from_story(story, cleaned, replacements)
 
 
-def _add_audio(entry: LedgerEntry, story: Story, synth: KokoroSynthesizer, settings, index: int) -> None:
+def _add_audio(entry: LedgerEntry, story: Story, synth: KokoroSynthesizer, settings) -> None:
     """Narrate the cleaned story to data/audio/<post_id>.wav and record it in the entry.
 
     Resilient: a failure (bad text, model error) logs a warning and leaves audio_path null
@@ -160,7 +153,7 @@ def _add_audio(entry: LedgerEntry, story: Story, synth: KokoroSynthesizer, setti
     tts_opts = settings.tts_opts
     lang_code = tts_opts.get("default_lang", "a")
     voices = tts_opts["voices"][lang_code]
-    voice = pick_voice(voices, index)
+    voice = pick_voice(voices)
     out_path = settings.audio_dir / f"{story.post_id}.wav"
     try:
         meta = synth.synthesize(
@@ -177,7 +170,7 @@ def _add_audio(entry: LedgerEntry, story: Story, synth: KokoroSynthesizer, setti
         print(f"[brainrotbot] WARNING: TTS failed for {story.post_id} ({voice}/{lang_code}): {exc}")
 
 
-def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVideoMaker, settings, index: int) -> None:
+def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVideoMaker, settings) -> None:
     """Build a vertical gameplay clip sized to the narration and record it in the entry.
 
     Trims to the real narrated duration (assets.audio.duration_sec); if TTS was skipped/failed,
@@ -191,7 +184,7 @@ def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVid
         print(f"[brainrotbot] WARNING: skipping background video for {story.post_id} "
               f"(duration={duration}, sources={len(sources)}).")
         return
-    source_url = pick_source(sources, index)
+    source_url = pick_source(sources)
     out_path = settings.video_dir / f"{story.post_id}.mp4"
     try:
         meta = maker.make(source_url, float(duration), out_path)
