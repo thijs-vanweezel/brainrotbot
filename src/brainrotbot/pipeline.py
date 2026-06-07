@@ -42,6 +42,7 @@ def run(
     skip_thumbnail: bool = False,
     skip_upload: bool = False,
     upload_only: bool = False,
+    debug_upload: bool = False,
 ) -> list[LedgerEntry]:
     settings = load_settings(settings_path)
 
@@ -51,7 +52,7 @@ def run(
     upload_enabled = (not skip_upload) and settings.upload_opts.get("enabled", True)
     batch_size = int(settings.upload_opts.get("batch_size", 30))
     if upload_only:
-        drain_upload_queue(settings)
+        drain_upload_queue(settings, debug=debug_upload)
         return []
 
     selection = dict(settings.selection)
@@ -154,7 +155,7 @@ def run(
         entries.append(entry)
         # Drain the upload queue every `batch_size` created videos (the "after every N" trigger).
         if upload_enabled and len(entries) % batch_size == 0:
-            drain_upload_queue(settings)
+            drain_upload_queue(settings, debug=debug_upload)
 
     _print_summary(entries)
 
@@ -162,7 +163,7 @@ def run(
     # "or when the requested count is achieved, whichever is first" trigger). Also sweeps up any
     # finished-but-unuploaded leftovers from earlier runs.
     if upload_enabled and entries:
-        drain_upload_queue(settings)
+        drain_upload_queue(settings, debug=debug_upload)
 
     # Future steps consume `entries` here and fill the ledger's assets/upload/metrics:
     #   2. text-to-speech    -> entry.assets["audio_path"]        (DONE)
@@ -383,6 +384,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="Don't create anything; just drain the ready-to-upload queue (Step 7)")
     parser.add_argument("--tiktok-check", action="store_true",
                         help="Open TikTok with the imported cookies and report if the session is valid")
+    parser.add_argument("--tiktok-debug", action="store_true",
+                        help="Dump the Studio DOM (screenshot+HTML) at each upload milestone to data/upload_debug")
     parser.add_argument("--tiktok-login", action="store_true",
                         help="Fallback: open a browser to log in to TikTok by hand and save the session")
     args = parser.parse_args(argv)
@@ -403,7 +406,8 @@ def main(argv: list[str] | None = None) -> int:
 
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,
         skip_video=args.skip_video, skip_edit=args.skip_edit, skip_music=args.skip_music,
-        skip_thumbnail=args.skip_thumbnail, skip_upload=args.skip_upload, upload_only=args.upload_only)
+        skip_thumbnail=args.skip_thumbnail, skip_upload=args.skip_upload, upload_only=args.upload_only,
+        debug_upload=args.tiktok_debug)
     return 0
 
 
