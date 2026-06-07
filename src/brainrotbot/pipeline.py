@@ -14,15 +14,17 @@ import argparse
 import json
 import os
 import sys
+from dataclasses import replace
 from pathlib import Path
 
 from .config import load_settings
 from .ledger import append_entry, existing_post_ids
-from .models import LedgerEntry, Story
+from .models import WORDS_PER_SECOND, LedgerEntry, Story
 from .reddit.fetch import fetch_candidates
 from .reddit.select import select_stories
 from .text.clean import clean_text
 from .text.filter_words import filter_banned_words
+from .text.translate import LANGUAGES, Translator
 from .edit.compose import VideoEditor
 from .music.ncs import TrackMeta, discover_instrumental_tracks, download_track, pick_track
 from .subtitles.generate import SubtitleMaker
@@ -37,6 +39,7 @@ def run(
     settings_path=None,
     top_k: int | None = None,
     skip_tts: bool = False,
+    skip_translation: bool = False,
     skip_video: bool = False,
     skip_edit: bool = False,
     skip_music: bool = False,
@@ -76,6 +79,21 @@ def run(
         device=tts_opts.get("device", "auto"),
         sample_rate=tts_opts.get("sample_rate", 24000),
     )
+
+    # Step 1.5 -- language fan-out. Each story is produced once per language in `languages`; "en" is
+    # the untouched original. --skip-translation (or enabled=false / no non-en langs) collapses to
+    # English-only, i.e. today's behavior. The NLLB model loads lazily on the first non-en story.
+    trans_opts = settings.translation_opts
+    translation_on = (not skip_translation) and trans_opts.get("enabled", False)
+    languages = [str(l) for l in trans_opts.get("languages", ["en"])] if translation_on else ["en"]
+    languages = [l for l in languages if l in LANGUAGES] or ["en"]
+    translator = None if not any(l != "en" for l in languages) else Translator(
+        cache_dir=settings.translation_cache_dir,
+        model_name=trans_opts.get("model", "facebook/nllb-200-distilled-600M"),
+        device=trans_opts.get("device", "auto"),
+        compute_type=trans_opts.get("compute_type", "int8"),
+    )
+    print(f"[brainrotbot] Language variants per story: {', '.join(languages)}")
 
     # Build the background-video maker once; sources are downloaded+cached lazily on first use.
     video_opts = settings.video_opts
@@ -164,25 +182,36 @@ def run(
     settings.stories_dir.mkdir(parents=True, exist_ok=True)
     entries: list[LedgerEntry] = []
     for story in selected:
-        entry = _process_story(story, settings)
-        if synth is not None:
-            _add_audio(entry, story, synth, settings)
-        if sub_maker is not None:
-            _add_subtitles(entry, story, sub_maker, settings)
-        if maker is not None:
-            _add_background_video(entry, story, maker, settings)
-        if music_catalogue:
-            _add_music_bed(entry, story, music_catalogue, settings)
-        if editor is not None:
-            _add_final_video(entry, story, editor, settings)
-        if thumb_maker is not None:
-            _add_thumbnail(entry, story, thumb_maker, settings)
-        _write_story_file(settings, story, entry)
-        append_entry(settings.ledger_path, entry)
-        entries.append(entry)
-        # Drain the upload queue every `batch_size` created videos (the "after every N" trigger).
-        if upload_enabled and len(entries) % batch_size == 0:
-            drain_upload_queue(settings, debug=debug_upload)
+        # Clean+filter the English source once, then fan out into the language variants. Shared
+        # assets (background source, music track, thumbnail image) are picked ONCE per base story and
+        # reused across every variant, so each video differs only by language -- a clean A/B control.
+        cleaned, replacements = _clean_and_filter(story, settings)
+        shared_source = pick_source(_video_sources(settings)) if (maker and _video_sources(settings)) else None
+        shared_track = pick_track(music_catalogue) if music_catalogue else None
+        shared_image = _pick_thumbnail(thumb_maker, story)  # None on failure -> each variant picks its own
+        for lang in languages:
+            entry = LedgerEntry.from_story(story, cleaned, replacements)  # source.post_id = base id
+            entry.source["variant_id"] = f"{story.post_id}_{lang}"
+            _localize(entry, lang, translator)
+            vstory = replace(story, post_id=entry.source["variant_id"])  # variant filename stem
+            if synth is not None:
+                _add_audio(entry, vstory, synth, settings)
+            if sub_maker is not None:
+                _add_subtitles(entry, vstory, sub_maker, settings)
+            if maker is not None:
+                _add_background_video(entry, vstory, maker, settings, source_url=shared_source)
+            if shared_track is not None:
+                _add_music_bed(entry, vstory, settings, track=shared_track)
+            if editor is not None:
+                _add_final_video(entry, vstory, editor, settings)
+            if thumb_maker is not None:
+                _add_thumbnail(entry, vstory, thumb_maker, settings, picked=shared_image)
+            _write_story_file(settings, vstory, entry)
+            append_entry(settings.ledger_path, entry)
+            entries.append(entry)
+            # Drain the upload queue every `batch_size` created videos (the "after every N" trigger).
+            if upload_enabled and len(entries) % batch_size == 0:
+                drain_upload_queue(settings, debug=debug_upload)
 
     _print_summary(entries)
 
@@ -203,7 +232,12 @@ def run(
     return entries
 
 
-def _process_story(story: Story, settings) -> LedgerEntry:
+def _clean_and_filter(story: Story, settings):
+    """Clean the raw post + apply the banned-word filter once (English); return (text, replacements).
+
+    Run once per base story and reused across all language variants, which translate this English
+    text. Banned-word filtering stays on the English source (the list is English).
+    """
     text_opts = settings.text_opts
     cleaned = clean_text(
         story.title,
@@ -212,8 +246,54 @@ def _process_story(story: Story, settings) -> LedgerEntry:
         strip_edits=text_opts.get("strip_edits", True),
         strip_tldr=text_opts.get("strip_tldr", True),
     )
-    cleaned, replacements = filter_banned_words(cleaned, settings.banned_words_path)
-    return LedgerEntry.from_story(story, cleaned, replacements)
+    return filter_banned_words(cleaned, settings.banned_words_path)
+
+
+def _video_sources(settings) -> list[str]:
+    return [s for s in (settings.video_opts.get("sources") or []) if s]  # drop blank entries
+
+
+def _pick_thumbnail(maker, story: Story):
+    """Pick one Pixabay background per base story (reused across variants); None on failure."""
+    if maker is None:
+        return None
+    try:
+        return maker.pick()
+    except Exception as exc:  # noqa: BLE001 -- fall back to per-variant picking; never abort
+        print(f"[brainrotbot] WARNING: thumbnail image pick failed for {story.post_id}: {exc}")
+        return None
+
+
+def _localize(entry: LedgerEntry, lang: str, translator: Translator | None) -> None:
+    """Translate the entry's title + body into `lang` in place; English is a passthrough.
+
+    Localizes the standard `title`/`cleaned_body` fields so every downstream consumer (TTS,
+    subtitles, thumbnail, caption) is in the target language with no further changes. The English
+    originals are preserved in `title_en`/`body_en` for the Step 8 audit. `lang_code` drives the
+    Kokoro voice pool in `_add_audio`.
+    """
+    meta = LANGUAGES.get(lang, LANGUAGES["en"])
+    text = entry.text
+    text["title_en"] = text["title"]
+    text["body_en"] = text["cleaned_body"]
+    entry.source["lang"] = lang
+    text["lang"] = lang
+    text["lang_code"] = meta["kokoro"]
+    if lang == "en" or not meta["nllb"] or translator is None:
+        text["translation_model"] = None
+        return
+    text["title"] = translator.translate(text["title"], lang)
+    text["cleaned_body"] = translator.translate(text["cleaned_body"], lang)
+    text["translation_model"] = translator.model_label
+    # Refresh the spoken-length fallback (only used if TTS is skipped). CJK has no word spaces, so
+    # estimate from characters; otherwise re-count words on the translated text.
+    body = text["cleaned_body"]
+    if lang in ("zh", "ja"):
+        text["word_count"] = len(body)
+        text["est_speech_seconds"] = round(len(body) / 5.0, 1)  # ~5 Han chars/sec narration
+    else:
+        text["word_count"] = len(body.split())
+        text["est_speech_seconds"] = round(len(body.split()) / WORDS_PER_SECOND, 1)
 
 
 def _add_audio(entry: LedgerEntry, story: Story, synth: KokoroSynthesizer, settings) -> None:
@@ -223,8 +303,9 @@ def _add_audio(entry: LedgerEntry, story: Story, synth: KokoroSynthesizer, setti
     rather than aborting the run, so one bad story never blocks the rest.
     """
     tts_opts = settings.tts_opts
-    lang_code = tts_opts.get("default_lang", "a")
-    voices = tts_opts["voices"][lang_code]
+    # Language picked by the Step 1.5 fan-out (set in entry.text); falls back to the config default.
+    lang_code = entry.text.get("lang_code") or tts_opts.get("default_lang", "a")
+    voices = tts_opts["voices"].get(lang_code) or tts_opts["voices"][tts_opts.get("default_lang", "a")]
     voice = pick_voice(voices)
     out_path = settings.audio_dir / f"{story.post_id}.wav"
     try:
@@ -264,21 +345,23 @@ def _add_subtitles(entry: LedgerEntry, story: Story, maker: SubtitleMaker, setti
         print(f"[brainrotbot] WARNING: subtitles failed for {story.post_id}: {exc}")
 
 
-def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVideoMaker, settings) -> None:
+def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVideoMaker, settings,
+                          source_url: str | None = None) -> None:
     """Build a vertical gameplay clip sized to the narration and record it in the entry.
 
     Trims to the real narrated duration (assets.audio.duration_sec); if TTS was skipped/failed,
-    falls back to the word-count estimate so the step still works standalone. Resilient like
-    `_add_audio`: any download/ffmpeg failure logs a warning and leaves background_video null.
+    falls back to the word-count estimate so the step still works standalone. `source_url` is the
+    per-base-story shared source (so all language variants use the same gameplay); None -> pick one.
+    Resilient like `_add_audio`: any download/ffmpeg failure logs a warning and leaves it null.
     """
     audio = entry.assets.get("audio")
     duration = audio["duration_sec"] if audio else entry.text["est_speech_seconds"]
-    sources = [s for s in (settings.video_opts.get("sources") or []) if s]  # drop blank entries
+    sources = _video_sources(settings)
     if not duration or duration <= 0 or not sources:
         print(f"[brainrotbot] WARNING: skipping background video for {story.post_id} "
               f"(duration={duration}, sources={len(sources)}).")
         return
-    source_url = pick_source(sources)
+    source_url = source_url or pick_source(sources)
     out_path = settings.video_dir / f"{story.post_id}.mp4"
     try:
         meta = maker.make(source_url, float(duration), out_path)
@@ -292,15 +375,14 @@ def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVid
         print(f"[brainrotbot] WARNING: background video failed for {story.post_id}: {exc}")
 
 
-def _add_music_bed(entry: LedgerEntry, story: Story, catalogue: list[TrackMeta], settings) -> None:
-    """Pick a random NCS instrumental track for this story and stash it in the entry.
+def _add_music_bed(entry: LedgerEntry, story: Story, settings, track: TrackMeta) -> None:
+    """Stash the (pre-picked, per-base-story shared) NCS instrumental track in the entry.
 
-    The actual mix happens later in `_add_final_video` (compose() reads `music_path`). Per-story
-    randomness is intentional (user spec): every video gets a fresh track, not a deterministic
-    rotation. A failed download is swallowed so the rest of the pipeline still produces a final
-    video -- just without the music bed.
+    The actual mix happens later in `_add_final_video` (compose() reads `music_path`). `track` is
+    chosen once per base story and shared across language variants so every variant has the same
+    bed. A failed download is swallowed so the rest of the pipeline still produces a final video --
+    just without the music bed.
     """
-    track = pick_track(catalogue)
     try:
         mp3 = download_track(track, settings.music_cache_dir)
         edit_opts = settings.edit_opts
@@ -359,17 +441,18 @@ def _add_final_video(entry: LedgerEntry, story: Story, editor: VideoEditor, sett
         print(f"[brainrotbot] WARNING: final video failed for {story.post_id}: {exc}")
 
 
-def _add_thumbnail(entry: LedgerEntry, story: Story, maker: ThumbnailMaker, settings) -> None:
-    """Build a 9:16 cover image (data/thumbnail/<post_id>.png) from a random Pixabay background
-    with the post title overlaid, and record it in the entry.
+def _add_thumbnail(entry: LedgerEntry, story: Story, maker: ThumbnailMaker, settings,
+                   picked: dict | None = None) -> None:
+    """Build a 9:16 cover image (data/thumbnail/<post_id>.png) from a Pixabay background with the
+    (localized) post title overlaid, and record it in the entry.
 
-    Depends only on the title, so it runs even when the audio/video/edit steps were skipped or
-    failed. Resilient like the other steps: any download/render failure logs a warning and leaves
-    thumbnail_path null rather than aborting the run.
+    `picked` is the per-base-story shared background image (so every language variant overlays its
+    own translated title on the SAME image); None -> pick a fresh one. Depends only on the title, so
+    it runs even when audio/video/edit were skipped. Resilient: a failure leaves thumbnail_path null.
     """
     out_path = settings.thumbnail_dir / f"{story.post_id}.png"
     try:
-        meta = maker.make(entry.text["title"], out_path)
+        meta = maker.render(entry.text["title"], out_path, picked) if picked else maker.make(entry.text["title"], out_path)
         entry.assets["thumbnail_path"] = meta["path"]
         entry.assets["thumbnail"] = {
             k: meta[k] for k in
@@ -416,8 +499,9 @@ def _print_summary(entries: list[LedgerEntry]) -> None:
         music_tag = f" track={music['genre']}/{music['title']}" if music else ""
         thumb = e.assets.get("thumbnail")
         thumb_tag = f" thumb={thumb['search_category']}/{thumb['search_term']}" if thumb else ""
+        lang_tag = f" lang={t.get('lang', 'en')}"
         print(
-            f"- [{e.source['subreddit']}] feed_rank={e.source['feed_rank']} "
+            f"- [{e.source['subreddit']}]{lang_tag} feed_rank={e.source['feed_rank']} "
             f"words={t['word_count']} {narration}{video}{final}{music_tag}{thumb_tag} "
             f"replaced={len(t['banned_words_replaced'])}\n"
             f"    {t['title'][:90]}"
@@ -429,6 +513,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--settings", default=None, help="Path to settings.toml")
     parser.add_argument("--top-k", type=int, default=None, help="Override stories kept per run")
     parser.add_argument("--skip-tts", action="store_true", help="Skip text-to-speech (Step 1 only)")
+    parser.add_argument("--skip-translation", action="store_true",
+                        help="Skip the language fan-out (Step 1.5); produce English-only videos")
     parser.add_argument("--skip-video", action="store_true", help="Skip background-video retrieval (Step 3)")
     parser.add_argument("--skip-edit", action="store_true", help="Skip editing/final-video assembly (Step 4)")
     parser.add_argument("--skip-music", action="store_true", help="Skip background-music bed (Step 5)")
@@ -461,6 +547,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,
+        skip_translation=args.skip_translation,
         skip_video=args.skip_video, skip_edit=args.skip_edit, skip_music=args.skip_music,
         skip_subtitles=args.skip_subtitles, skip_thumbnail=args.skip_thumbnail,
         skip_upload=args.skip_upload, upload_only=args.upload_only,
