@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -24,6 +25,7 @@ from .text.clean import clean_text
 from .text.filter_words import filter_banned_words
 from .edit.compose import VideoEditor
 from .music.ncs import TrackMeta, discover_instrumental_tracks, download_track, pick_track
+from .thumbnail.generate import ThumbnailMaker
 from .tts.synthesize import KokoroSynthesizer, pick_voice
 from .video.background import BackgroundVideoMaker, pick_source
 
@@ -35,6 +37,7 @@ def run(
     skip_video: bool = False,
     skip_edit: bool = False,
     skip_music: bool = False,
+    skip_thumbnail: bool = False,
 ) -> list[LedgerEntry]:
     settings = load_settings(settings_path)
 
@@ -103,6 +106,22 @@ def run(
         except Exception as exc:  # noqa: BLE001 -- music is a polish; never abort over it
             print(f"[brainrotbot] WARNING: NCS catalogue unavailable, continuing without music: {exc}")
 
+    # Build the thumbnail maker once. The API key comes from the environment (PIXABAY_API_KEY,
+    # loaded from .env) and falls back to an inline value in [thumbnail]. Downloads are cached
+    # on disk; the title overlay is composited per story.
+    thumb_opts = settings.thumbnail_opts
+    thumb_maker = None if (skip_thumbnail or not thumb_opts.get("enabled", True)) else ThumbnailMaker(
+        cache_dir=settings.thumbnail_cache_dir,
+        search_terms=thumb_opts.get("search_terms", {}),
+        width=video_opts.get("width", 1080),
+        height=video_opts.get("height", 1920),
+        font_file=settings.thumbnail_font_file,
+        font_max_size=int(thumb_opts.get("font_max_size", 110)),
+        stroke_width=int(thumb_opts.get("stroke_width", 6)),
+        scrim_opacity=float(thumb_opts.get("scrim_opacity", 0.35)),
+        api_key=os.environ.get("PIXABAY_API_KEY") or thumb_opts.get("PIXABAY_API_KEY", ""),
+    )
+
     settings.stories_dir.mkdir(parents=True, exist_ok=True)
     entries: list[LedgerEntry] = []
     for story in selected:
@@ -115,6 +134,8 @@ def run(
             _add_music_bed(entry, story, music_catalogue, settings)
         if editor is not None:
             _add_final_video(entry, story, editor, settings)
+        if thumb_maker is not None:
+            _add_thumbnail(entry, story, thumb_maker, settings)
         _write_story_file(settings, story, entry)
         append_entry(settings.ledger_path, entry)
         entries.append(entry)
@@ -126,8 +147,9 @@ def run(
     #   3. background video  -> entry.assets["background_video"]  (DONE)
     #   4. editing           -> entry.assets["final_video"]       (DONE)
     #   5. background music  -> entry.assets["music_path"] + mix  (DONE -- mixed in Step 4 pass)
-    #   6. upload to TikTok  -> entry.upload[...]
-    #   7. analysis          -> entry.metrics[...] + entry.content_analysis[...]
+    #   6. thumbnail         -> entry.assets["thumbnail_path"]    (DONE)
+    #   7. upload to TikTok  -> entry.upload[...]
+    #   8. analysis          -> entry.metrics[...] + entry.content_analysis[...]
     return entries
 
 
@@ -262,6 +284,28 @@ def _add_final_video(entry: LedgerEntry, story: Story, editor: VideoEditor, sett
         print(f"[brainrotbot] WARNING: final video failed for {story.post_id}: {exc}")
 
 
+def _add_thumbnail(entry: LedgerEntry, story: Story, maker: ThumbnailMaker, settings) -> None:
+    """Build a 9:16 cover image (data/thumbnail/<post_id>.png) from a random Pixabay background
+    with the post title overlaid, and record it in the entry.
+
+    Depends only on the title, so it runs even when the audio/video/edit steps were skipped or
+    failed. Resilient like the other steps: any download/render failure logs a warning and leaves
+    thumbnail_path null rather than aborting the run.
+    """
+    out_path = settings.thumbnail_dir / f"{story.post_id}.png"
+    try:
+        meta = maker.make(entry.text["title"], out_path)
+        entry.assets["thumbnail_path"] = meta["path"]
+        entry.assets["thumbnail"] = {
+            k: meta[k] for k in
+            ("width", "height", "search_category", "search_term",
+             "image_id", "image_page_url", "image_url", "title_rendered")
+        }
+        entry.status = "thumbnail_done"
+    except Exception as exc:  # noqa: BLE001 -- never abort the run over a thumbnail
+        print(f"[brainrotbot] WARNING: thumbnail failed for {story.post_id}: {exc}")
+
+
 def _write_story_file(settings, story: Story, entry: LedgerEntry) -> None:
     path = settings.stories_dir / f"{story.post_id}.json"
     with open(path, "w", encoding="utf-8") as f:
@@ -293,9 +337,11 @@ def _print_summary(entries: list[LedgerEntry]) -> None:
                 final += "+music"
         music = e.assets.get("music")
         music_tag = f" track={music['genre']}/{music['title']}" if music else ""
+        thumb = e.assets.get("thumbnail")
+        thumb_tag = f" thumb={thumb['search_category']}/{thumb['search_term']}" if thumb else ""
         print(
             f"- [{e.source['subreddit']}] feed_rank={e.source['feed_rank']} "
-            f"words={t['word_count']} {narration}{video}{final}{music_tag} "
+            f"words={t['word_count']} {narration}{video}{final}{music_tag}{thumb_tag} "
             f"replaced={len(t['banned_words_replaced'])}\n"
             f"    {t['title'][:90]}"
         )
@@ -309,9 +355,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--skip-video", action="store_true", help="Skip background-video retrieval (Step 3)")
     parser.add_argument("--skip-edit", action="store_true", help="Skip editing/final-video assembly (Step 4)")
     parser.add_argument("--skip-music", action="store_true", help="Skip background-music bed (Step 5)")
+    parser.add_argument("--skip-thumbnail", action="store_true", help="Skip thumbnail generation (Step 6)")
     args = parser.parse_args(argv)
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,
-        skip_video=args.skip_video, skip_edit=args.skip_edit, skip_music=args.skip_music)
+        skip_video=args.skip_video, skip_edit=args.skip_edit, skip_music=args.skip_music,
+        skip_thumbnail=args.skip_thumbnail)
     return 0
 
 
