@@ -265,23 +265,55 @@ class TikTokUploader:
                 btn = page.get_by_text(label, exact=False)
                 if btn.count() and btn.first.is_visible():
                     btn.first.click()
-                    self._pause(1.0, 2.0)
                     opened = True
                     break
             if not opened:
                 return False
+            dialog = page.get_by_role("dialog")
+            dialog.first.wait_for(state="visible", timeout=10000)  # cover editor opened
             # Set the cover file straight onto the dialog's input (no "Upload" click -> no OS dialog).
             inputs = page.locator(_FILE_INPUT)
             inputs.nth(inputs.count() - 1).set_input_files(str(cover_path))
-            self._pause(1.5, 2.5)
+            self._pause(1.5, 2.5)  # let the preview render
+            # Click Save, then VERIFY the modal actually closed. The intermittent "stuck on the cover
+            # window" is a Save click that didn't register -- the modal stays open and blocks Post. Retry
+            # once, then force-dismiss so the run never hangs (degrades to TikTok's auto frame).
             save = page.get_by_role("button", name=re.compile(r"^(save|confirm|done|apply)$", re.I))
-            if save.count():
-                save.first.click()
-                self._pause()
-            return True
+            for _ in range(2):
+                if save.count():
+                    try:
+                        save.first.click(timeout=8000)
+                    except Exception:  # noqa: BLE001
+                        pass
+                try:
+                    dialog.first.wait_for(state="hidden", timeout=6000)  # closed/detached
+                    return True
+                except Exception:  # noqa: BLE001 -- still open: loop retries the Save click once
+                    self._pause(0.5, 1.0)
+            self._close_any_dialog(page)
+            print("[brainrotbot]   (cover dialog wouldn't close -- using auto frame)")
+            return False
         except Exception as exc:  # noqa: BLE001 -- fall back to TikTok's auto frame
             print(f"[brainrotbot]   (custom cover not set, using auto frame: {exc})")
+            self._close_any_dialog(page)
             return False
+
+    def _close_any_dialog(self, page) -> None:
+        """Dismiss a lingering modal (e.g. the cover editor) so it can't block the Post step.
+
+        Prefer the modal's own Cancel; fall back to Escape. Safe no-op when nothing is open.
+        """
+        try:
+            dlg = page.get_by_role("dialog")
+            if dlg.count() and dlg.first.is_visible():
+                cancel = page.get_by_role("button", name=re.compile(r"^cancel$", re.I))
+                if cancel.count() and cancel.first.is_visible():
+                    cancel.first.click()
+                else:
+                    page.keyboard.press("Escape")
+                self._pause()
+        except Exception:  # noqa: BLE001
+            pass
 
     def _disable_content_check(self, page) -> bool:
         """Flip 'Content check lite' OFF so the post completes immediately.
@@ -464,6 +496,7 @@ class TikTokUploader:
 
         # 6) Click the REAL post button (data-e2e, NOT the "Posts" nav), then wait for the post to land
         # before touching anything (the old code clicked the nav / navigated away and aborted the post).
+        self._close_any_dialog(page)  # never let a leftover modal (e.g. the cover editor) block Post
         post = page.locator(_POST_BUTTON).first
         post.wait_for(timeout=self.nav_timeout_ms)
         post.click()
