@@ -53,11 +53,21 @@ _EXIT_CANCEL = re.compile(r"^cancel$", re.I)
 # The "Content check lite" toggle (pinned from a DOM dump): its label sits in a `headline-wrapper`, the
 # switch in the sibling `headline-switch`. Scoping by the label text avoids the identical HD-uploads
 # switch. It defaults ON and re-arms each upload, so we flip it off every time (see _disable_content_check).
-_CHECK_SWITCH = (
-    "xpath=//div[contains(@class,'headline-wrapper')][.//*[contains(text(),'Content check lite')]]"
-    "/following-sibling::div[contains(@class,'headline-switch')]//input[@role='switch']"
-)
 _SHOW_MORE = re.compile(r"^show more$", re.I)  # expands the advanced settings section if collapsed
+# In-page JS: find the switch whose surrounding `.card` mentions "Content check lite"; if it's on
+# (aria-checked=true), click its `.Switch__root` to turn it off. Robust to label/switch ordering, and
+# works on the hidden <input> (Playwright visibility locators time out on it). Returns off|already-off|not-found.
+_CHECK_OFF_JS = """() => {
+  for (const sw of document.querySelectorAll('input[role=switch]')) {
+    const card = sw.closest('.card');
+    if (card && /content check lite/i.test(card.innerText)) {
+      const root = sw.closest('.Switch__root');
+      if (root && root.querySelector('[aria-checked="true"]')) { root.click(); return 'off'; }
+      return 'already-off';
+    }
+  }
+  return 'not-found';
+}"""
 
 
 class TikTokUploader:
@@ -289,25 +299,25 @@ class TikTokUploader:
         (and expand the advanced "Show more" section if it's collapsed). Best-effort; returns True when
         the check is off (or already was).
         """
+        # Done in the page via JS: the switch <input> is hidden (so visibility-based Playwright locators
+        # time out), and its position relative to the label varies. closest('.card') + a text match is
+        # robust: find the switch whose card mentions "Content check lite", and if its aria-checked is
+        # true, click the switch root to turn it off.
         for _ in range(3):
             try:
-                sw = page.locator(_CHECK_SWITCH).first
-                sw.wait_for(timeout=8000)  # the Checks card appears a beat after processing completes
-                root = sw.locator("xpath=ancestor::div[contains(@class,'Switch__root')][1]")
-                if root.locator("[aria-checked='true']").count():
-                    root.first.click()  # click the visible switch (the input itself is hidden)
-                    self._pause()
-                    print("[brainrotbot]   Content Check Lite -> OFF")
-                return True
+                res = page.evaluate(_CHECK_OFF_JS)
+                if res in ("off", "already-off"):
+                    print(f"[brainrotbot]   Content Check Lite -> {'OFF' if res == 'off' else 'already off'}")
+                    return True
             except Exception:  # noqa: BLE001
                 pass
-            try:  # maybe it's collapsed under advanced settings -- expand and retry
+            try:  # card may be collapsed under advanced settings -- expand and retry
                 more = page.get_by_text(_SHOW_MORE)
                 if more.count() and more.first.is_visible():
                     more.first.click()
-                    self._pause()
             except Exception:  # noqa: BLE001
                 pass
+            self._pause(1.0, 2.0)
         print("[brainrotbot]   (Content Check Lite toggle not found -- the ~10 min check may still run)")
         return False
 
