@@ -151,7 +151,10 @@ hashtags = ["#fyp", "#storytime", "#reddit"]
 delete_after_upload = true       # delete this post's final/background/audio/thumbnail once uploaded
                                  # (keeps the JSON record + shared caches for Step 8 analytics)
 nav_timeout_sec = 120            # per-action Playwright timeout (uploads/processing can be slow)
-completion_timeout_sec = 300     # after Post, wait up to this long for TikTok's content check to finish
+# After Post, wait up to this long for the post to land. RECOMMENDED: turn OFF "Content Check Lite" in
+# TikTok Studio (profile -> Settings) -- it runs a ~10 min pre-post check that spawns confirmation modals
+# and makes automation flaky. With it off, posts complete in seconds; with it on, raise this to ~720.
+completion_timeout_sec = 600
 debug = false                    # dump Studio DOM (screenshot+HTML) per milestone to data/upload_debug
 session_subdir = "tiktok_profile"  # persistent browser profile under config/ (gitignored)
 
