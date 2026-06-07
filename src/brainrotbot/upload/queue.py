@@ -17,7 +17,7 @@ import json
 import time
 from pathlib import Path
 
-from ..ledger import append_entry
+from ..ledger import append_entry, iter_entries
 from ..models import LedgerEntry
 from .tiktok import TikTokUploader
 
@@ -28,17 +28,37 @@ def _post_id(entry: LedgerEntry) -> str:
     return entry.source.get("variant_id") or entry.source.get("post_id") or entry.id
 
 
+def _uploaded_keys(ledger_path) -> set[str]:
+    """Per-video ids that the append-only ledger records as already posted/attempted.
+
+    The per-story JSON is normally authoritative, but the ledger is the durable history of every
+    upload, so cross-checking it means a video posted in an earlier run can never be re-posted even
+    if its story JSON was lost, reverted, or regenerated. Keys are `_post_id` (the per-video
+    variant_id) + the entry id -- NOT the base Reddit post_id, so uploading `<post>_en` never blocks
+    its sibling `<post>_fr` (different language variants are deliberately separate videos).
+    """
+    keys: set[str] = set()
+    for entry in iter_entries(ledger_path):
+        if entry.upload.get("tiktok_id") or entry.status in ("upload_done", "upload_unconfirmed"):
+            keys.add(_post_id(entry))
+            if entry.id:
+                keys.add(entry.id)
+    return keys
+
+
 def scan_ready(settings) -> list[LedgerEntry]:
     """Ready = final video present on disk and the post has not been attempted yet.
 
     Reads the per-story JSON (updated in place by each step), which is the authoritative latest state
-    for a post. Skips anything already attempted -- status `upload_done` (succeeded) OR
-    `upload_unconfirmed` (Post was clicked but we couldn't confirm the URL) -- so we never auto-re-post
-    and risk a duplicate; unconfirmed ones are surfaced for manual review instead. Sorted oldest-first.
+    for a post, AND cross-checks the append-only ledger: a video is skipped if its own JSON says it
+    was attempted (status `upload_done`/`upload_unconfirmed` or a `tiktok_id`) OR if the ledger has it
+    recorded as posted. Either signal alone blocks a re-post, so we never double-post; unconfirmed
+    ones are surfaced for manual review instead. Sorted oldest-first.
     """
     stories_dir = settings.stories_dir
     if not stories_dir.is_dir():
         return []
+    uploaded = _uploaded_keys(settings.ledger_path)
     ready: list[LedgerEntry] = []
     for path in sorted(stories_dir.glob("*.json")):
         try:
@@ -46,7 +66,9 @@ def scan_ready(settings) -> list[LedgerEntry]:
         except Exception:  # noqa: BLE001 -- skip an unreadable/partial story file
             continue
         if entry.upload.get("tiktok_id") or entry.status in ("upload_done", "upload_unconfirmed"):
-            continue  # already uploaded or already attempted -- don't re-post
+            continue  # already uploaded or already attempted (per this story file) -- don't re-post
+        if _post_id(entry) in uploaded or entry.id in uploaded:
+            continue  # the ledger already has this video as posted/attempted -- don't re-post
         final = entry.assets.get("final_video")
         if final and Path(final).is_file():
             ready.append(entry)
