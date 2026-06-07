@@ -50,6 +50,14 @@ _VIDEO_ID_RE = re.compile(r"/video/(\d+)")
 _POSTED_TEXT = re.compile(r"your video has been (uploaded|posted)|posted to|view profile", re.I)
 # In-page "Are you sure you want to exit?" modal (React, NOT a native dialog) -- its stay/leave buttons.
 _EXIT_CANCEL = re.compile(r"^cancel$", re.I)
+# The "Content check lite" toggle (pinned from a DOM dump): its label sits in a `headline-wrapper`, the
+# switch in the sibling `headline-switch`. Scoping by the label text avoids the identical HD-uploads
+# switch. It defaults ON and re-arms each upload, so we flip it off every time (see _disable_content_check).
+_CHECK_SWITCH = (
+    "xpath=//div[contains(@class,'headline-wrapper')][.//*[contains(text(),'Content check lite')]]"
+    "/following-sibling::div[contains(@class,'headline-switch')]//input[@role='switch']"
+)
+_SHOW_MORE = re.compile(r"^show more$", re.I)  # expands the advanced settings section if collapsed
 
 
 class TikTokUploader:
@@ -272,6 +280,36 @@ class TikTokUploader:
             print(f"[brainrotbot]   (custom cover not set, using auto frame: {exc})")
             return False
 
+    def _disable_content_check(self, page) -> bool:
+        """Flip 'Content check lite' OFF so the post completes immediately.
+
+        That toggle defaults ON and re-arms every upload; left on it runs a ~10 min pre-post eligibility
+        check that spawns confirmation/exit modals and stalls automation. We turn it off each time. If the
+        switch isn't found we expand the advanced ("Show more") section once and retry. Best-effort.
+        Returns True when the check is off (or already was).
+        """
+        for _ in range(2):
+            try:
+                sw = page.locator(_CHECK_SWITCH).first
+                if sw.count():
+                    root = sw.locator("xpath=ancestor::div[contains(@class,'Switch__root')][1]")
+                    if root.locator("[aria-checked='true']").count():
+                        root.first.click()  # click the visible switch (the input itself is hidden)
+                        self._pause()
+                        print("[brainrotbot]   Content Check Lite -> OFF")
+                    return True
+            except Exception:  # noqa: BLE001
+                pass
+            try:  # maybe it's collapsed under advanced settings -- expand and retry once
+                more = page.get_by_text(_SHOW_MORE)
+                if more.count() and more.first.is_visible():
+                    more.first.click()
+                    self._pause()
+            except Exception:  # noqa: BLE001
+                pass
+        print("[brainrotbot]   (Content Check Lite toggle not found -- the ~10 min check may still run)")
+        return False
+
     def _set_public(self, page) -> None:
         """Best-effort: ensure visibility is 'Everyone' (Studio usually defaults to public already)."""
         if self.privacy != "public":
@@ -376,6 +414,9 @@ class TikTokUploader:
         self._pause(1.0, 2.0)
         self._dump(page, "01_processed")
 
+        # 1.5) Turn OFF Content Check Lite up front so the post lands immediately (no ~10 min check).
+        check_off = self._disable_content_check(page)
+
         # 2) Caption = title + hashtags. Clear the placeholder text, then type.
         editor = page.locator(_CAPTION_EDITOR).first
         editor.click()
@@ -406,4 +447,5 @@ class TikTokUploader:
             "public": self.privacy == "public",
             "captions_on": captions_on,
             "cover_set": cover_set,
+            "content_check_off": check_off,
         }
