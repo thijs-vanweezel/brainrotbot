@@ -381,17 +381,24 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--skip-upload", action="store_true", help="Skip TikTok upload (Step 7)")
     parser.add_argument("--upload-only", action="store_true",
                         help="Don't create anything; just drain the ready-to-upload queue (Step 7)")
+    parser.add_argument("--tiktok-check", action="store_true",
+                        help="Open TikTok with the imported cookies and report if the session is valid")
     parser.add_argument("--tiktok-login", action="store_true",
-                        help="One-time: open a browser to log in to TikTok, save the session, and exit")
+                        help="Fallback: open a browser to log in to TikTok by hand and save the session")
     args = parser.parse_args(argv)
 
-    # One-time interactive login: open TikTok, let the user sign in, persist the session, then stop.
-    if args.tiktok_login:
+    # TikTok session utilities (build the uploader from config, then run one action and exit).
+    if args.tiktok_check or args.tiktok_login:
         settings = load_settings(args.settings)
-        TikTokUploader(
+        uploader = TikTokUploader(
             session_dir=settings.tiktok_session_dir,
             browser=settings.upload_opts.get("browser", "chromium"),
-        ).login()
+            cookies_file=settings.tiktok_cookies_file,
+            user_agent=settings.upload_opts.get("user_agent", ""),
+        )
+        if args.tiktok_check:
+            return 0 if uploader.check() else 1
+        uploader.login()  # manual fallback when no cookies are available
         return 0
 
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,

@@ -74,6 +74,19 @@ class Settings:
         return (self.settings_path.parent / sub).resolve()
 
     @property
+    def tiktok_cookies_file(self) -> str:
+        """Absolute path to the TikTok cookies.txt, or "" if unset.
+
+        Auth source for Step 7 (login is bot-walled, so we import a session instead). Resolved like
+        video_cookies_file: a relative path is taken against the settings file's own directory (config/).
+        """
+        cf = self.upload_opts.get("cookies_file", "")
+        if not cf:
+            return ""
+        p = Path(cf)
+        return str(p if p.is_absolute() else (self.settings_path.parent / p).resolve())
+
+    @property
     def thumbnail_font_file(self) -> str:
         """Absolute path to the title font, or "" if unset (resolved like the outro file)."""
         ff = self.thumbnail_opts.get("font_file", "")
