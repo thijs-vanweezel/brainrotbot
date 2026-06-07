@@ -48,15 +48,6 @@ class Story:
 
 
 @dataclass
-class Replacement:
-    """A single banned-word substitution made during cleaning."""
-
-    from_word: str
-    to_word: str
-    count: int
-
-
-@dataclass
 class LedgerEntry:
     """Durable record for one selected story. Written as one JSONL line."""
 
@@ -82,9 +73,16 @@ class LedgerEntry:
         cls,
         story: Story,
         cleaned_body: str,
-        replacements: list[Replacement],
+        masked: list[dict] | None = None,
+        display_body: str | None = None,
     ) -> "LedgerEntry":
-        """Build a fresh ledger entry from a story and its cleaned text."""
+        """Build a fresh ledger entry from a story and its cleaned text.
+
+        `cleaned_body` is the *spoken* narration (banned words intact -- a blur SFX is laid over them
+        later). `display_body` is the caption form (banned words vowel-masked, "fuck" -> "f*ck");
+        defaults to the spoken text when no masking applies. `masked` logs which words were masked
+        (list of {"word", "count"}) for the Step 8 analytics.
+        """
         word_count = len(cleaned_body.split())
         return cls(
             id=uuid.uuid4().hex,
@@ -108,9 +106,10 @@ class LedgerEntry:
                 "title": story.title,
                 "raw_body": story.raw_body,
                 "cleaned_body": cleaned_body,
+                "display_body": display_body if display_body is not None else cleaned_body,
                 "word_count": word_count,
                 "est_speech_seconds": round(word_count / WORDS_PER_SECOND, 1),
-                "banned_words_replaced": [asdict(r) for r in replacements],
+                "banned_words_masked": list(masked or []),
             },
             content_analysis={"topic": None, "style": None, "tone": None, "hook_type": None},
             assets={"audio_path": None, "background_video": None, "final_video": None,

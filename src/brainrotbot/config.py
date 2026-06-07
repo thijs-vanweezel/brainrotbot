@@ -64,6 +64,16 @@ class Settings:
         return self.raw.get("subtitles", {})
 
     @property
+    def censor_opts(self) -> dict:
+        return self.raw.get("censor", {})
+
+    @property
+    def censor_sfx_file(self) -> str:
+        """Absolute path to the blur SFX, or "" if unset (resolved like the outro/banned_words)."""
+        sf = self.censor_opts.get("sfx_file", "")
+        return str(self._resolve(sf)) if sf else ""
+
+    @property
     def thumbnail_opts(self) -> dict:
         return self.raw.get("thumbnail", {})
 

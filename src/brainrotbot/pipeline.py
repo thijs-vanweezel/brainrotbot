@@ -23,8 +23,9 @@ from .models import WORDS_PER_SECOND, LedgerEntry, Story
 from .reddit.fetch import fetch_candidates
 from .reddit.select import select_stories
 from .text.clean import clean_text
-from .text.filter_words import filter_banned_words
+from .text.censor import censor_for_captions, load_banned_words
 from .text.translate import LANGUAGES, Translator
+from .tts.censor import BlurCensor
 from .edit.compose import VideoEditor
 from .music.ncs import TrackMeta, discover_instrumental_tracks, download_track, pick_track
 from .subtitles.generate import SubtitleMaker
@@ -44,6 +45,7 @@ def run(
     skip_edit: bool = False,
     skip_music: bool = False,
     skip_subtitles: bool = False,
+    skip_censor: bool = False,
     skip_thumbnail: bool = False,
     skip_upload: bool = False,
     upload_only: bool = False,
@@ -129,6 +131,10 @@ def run(
         subtitle_fonts_dir=str(Path(settings.subtitles_font_file).parent) if settings.subtitles_font_file else "",
     )
 
+    # Banned-word set (loaded once): the narration speaks these words but a blur SFX is laid over
+    # them and the captions vowel-mask them ("fuck" -> "f*ck"). See text/censor.py + tts/censor.py.
+    banned = load_banned_words(str(settings.banned_words_path))
+
     # Build the subtitle maker once; the CTC aligner model loads lazily on first use (after TTS).
     sub_opts = settings.subtitles_opts
     sub_maker = None if (skip_subtitles or not sub_opts.get("enabled", True)) else SubtitleMaker(
@@ -148,6 +154,19 @@ def run(
         scale_active=int(sub_opts.get("scale_active", 110)),
         width=video_opts.get("width", 1080),
         height=video_opts.get("height", 1920),
+        banned_words=banned,
+    )
+
+    # Build the blur-censor once: it lays a loud blur SFX over each banned word's spoken interval
+    # (timing comes from the subtitle alignment, so it needs sub_maker). The SFX decodes lazily.
+    censor_opts = settings.censor_opts
+    blur = None if (skip_censor or sub_maker is None or not censor_opts.get("enabled", True)
+                    or not settings.censor_sfx_file or not banned) else BlurCensor(
+        sfx_file=settings.censor_sfx_file,
+        gain_db=float(censor_opts.get("gain_db", 0.0)),
+        voice_duck_db=float(censor_opts.get("voice_duck_db", -30.0)),
+        pad_sec=float(censor_opts.get("pad_sec", 0.05)),
+        sample_rate=int(tts_opts.get("sample_rate", 24000)),
     )
 
     # Scrape the NCS instrumental catalogue once per run (cached by music/ncs.py on disk).
@@ -187,19 +206,22 @@ def run(
         # Clean+filter the English source once, then fan out into the language variants. Shared
         # assets (background source, music track, thumbnail image) are picked ONCE per base story and
         # reused across every variant, so each video differs only by language -- a clean A/B control.
-        cleaned, replacements = _clean_and_filter(story, settings)
+        cleaned = _clean_story(story, settings)
         shared_source = pick_source(_video_sources(settings)) if (maker and _video_sources(settings)) else None
         shared_track = pick_track(music_catalogue) if music_catalogue else None
         shared_image = _pick_thumbnail(thumb_maker, story)  # None on failure -> each variant picks its own
         for lang in languages:
-            entry = LedgerEntry.from_story(story, cleaned, replacements)  # source.post_id = base id
+            entry = LedgerEntry.from_story(story, cleaned)  # source.post_id = base id
             entry.source["variant_id"] = f"{story.post_id}_{lang}"
             _localize(entry, lang, translator)
+            _apply_censor(entry, banned)  # caption display form + masked-word log (per localized text)
             vstory = replace(story, post_id=entry.source["variant_id"])  # variant filename stem
             if synth is not None:
                 _add_audio(entry, vstory, synth, settings)
             if sub_maker is not None:
                 _add_subtitles(entry, vstory, sub_maker, settings)
+            if blur is not None:
+                _censor_narration(entry, vstory, blur)
             if maker is not None:
                 _add_background_video(entry, vstory, maker, settings, source_url=shared_source)
             if shared_track is not None:
@@ -234,21 +256,33 @@ def run(
     return entries
 
 
-def _clean_and_filter(story: Story, settings):
-    """Clean the raw post + apply the banned-word filter once (English); return (text, replacements).
+def _clean_story(story: Story, settings) -> str:
+    """Clean the raw post into spoken narration prose once (English); return the cleaned text.
 
-    Run once per base story and reused across all language variants, which translate this English
-    text. Banned-word filtering stays on the English source (the list is English).
+    Abbreviations are unpacked here (clean_text), so both the spoken and the captioned form unpack
+    them. Run once per base story and reused across all language variants (which translate it).
+    Banned words are left intact -- they're masked for captions / blurred in audio per variant later.
     """
     text_opts = settings.text_opts
-    cleaned = clean_text(
+    return clean_text(
         story.title,
         story.raw_body,
         prepend_title=text_opts.get("prepend_title", True),
         strip_edits=text_opts.get("strip_edits", True),
         strip_tldr=text_opts.get("strip_tldr", True),
     )
-    return filter_banned_words(cleaned, settings.banned_words_path)
+
+
+def _apply_censor(entry: LedgerEntry, banned) -> None:
+    """Fill the entry's caption display form + masked-word log from its (localized) spoken text.
+
+    Operates on the current `cleaned_body`, so for English it vowel-masks the banned words and for
+    a translated variant it's a no-op (the English banned list won't match other languages). The
+    spoken `cleaned_body` is left untouched (narrated verbatim; blurred in audio via _censor_narration).
+    """
+    display, hits = censor_for_captions(entry.text["cleaned_body"], banned)
+    entry.text["display_body"] = display
+    entry.text["banned_words_masked"] = hits
 
 
 def _video_sources(settings) -> list[str]:
@@ -338,13 +372,36 @@ def _add_subtitles(entry: LedgerEntry, story: Story, maker: SubtitleMaker, setti
         return  # no narration to align against (TTS skipped/failed) -- nothing to caption
     out_path = settings.subtitles_dir / f"{story.post_id}.ass"
     try:
+        # Align the *spoken* text (banned words intact); the maker masks them on screen and reports
+        # their spoken intervals so _censor_narration can blur exactly those spans.
         meta = maker.make(Path(audio), entry.text["cleaned_body"], out_path)
         entry.assets["subtitles_path"] = meta["path"]
         entry.assets["subtitles"] = {
-            k: meta[k] for k in ("num_words", "num_cues", "backend", "model", "language")
+            k: meta[k] for k in
+            ("num_words", "num_cues", "num_masked", "banned_intervals", "backend", "model", "language")
         }
     except Exception as exc:  # noqa: BLE001 -- never abort the run over captions
         print(f"[brainrotbot] WARNING: subtitles failed for {story.post_id}: {exc}")
+
+
+def _censor_narration(entry: LedgerEntry, story: Story, blur: BlurCensor) -> None:
+    """Lay the blur SFX loudly over each banned word's spoken interval in the narration WAV, in place.
+
+    Intervals come from the subtitle alignment (assets.subtitles.banned_intervals); with no banned
+    words (or subtitles skipped/failed) there's nothing to blur. Resilient: any failure logs a
+    warning and leaves the WAV unblurred rather than aborting the run. The WAV length is unchanged,
+    so the background clip (sized to assets.audio.duration_sec) still lines up.
+    """
+    audio = entry.assets.get("audio_path")
+    intervals = (entry.assets.get("subtitles") or {}).get("banned_intervals") or []
+    if not audio or not intervals:
+        return
+    try:
+        n = blur.censor(Path(audio), [(s, e) for s, e in intervals])
+        if entry.assets.get("audio"):
+            entry.assets["audio"]["blurred_words"] = n
+    except Exception as exc:  # noqa: BLE001 -- a blur failure must not block the video
+        print(f"[brainrotbot] WARNING: audio blur failed for {story.post_id}: {exc}")
 
 
 def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVideoMaker, settings,
@@ -505,7 +562,7 @@ def _print_summary(entries: list[LedgerEntry]) -> None:
         print(
             f"- [{e.source['subreddit']}]{lang_tag} feed_rank={e.source['feed_rank']} "
             f"words={t['word_count']} {narration}{video}{final}{music_tag}{thumb_tag} "
-            f"replaced={len(t['banned_words_replaced'])}\n"
+            f"masked={len(t.get('banned_words_masked', []))}\n"
             f"    {t['title'][:90]}"
         )
 
@@ -522,6 +579,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--skip-music", action="store_true", help="Skip background-music bed (Step 5)")
     parser.add_argument("--skip-subtitles", action="store_true",
                         help="Skip burned-in word-by-word captions (Step 4.5)")
+    parser.add_argument("--skip-censor", action="store_true",
+                        help="Skip laying the blur SFX over banned words in the narration (captions stay masked)")
     parser.add_argument("--skip-thumbnail", action="store_true", help="Skip thumbnail generation (Step 6)")
     parser.add_argument("--skip-upload", action="store_true", help="Skip TikTok upload (Step 7)")
     parser.add_argument("--upload-only", action="store_true",
@@ -551,7 +610,8 @@ def main(argv: list[str] | None = None) -> int:
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,
         skip_translation=args.skip_translation,
         skip_video=args.skip_video, skip_edit=args.skip_edit, skip_music=args.skip_music,
-        skip_subtitles=args.skip_subtitles, skip_thumbnail=args.skip_thumbnail,
+        skip_subtitles=args.skip_subtitles, skip_censor=args.skip_censor,
+        skip_thumbnail=args.skip_thumbnail,
         skip_upload=args.skip_upload, upload_only=args.upload_only,
         debug_upload=args.tiktok_debug)
     return 0
