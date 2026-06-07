@@ -21,6 +21,12 @@ from ..ledger import append_entry, iter_entries
 from ..models import LedgerEntry
 from .tiktok import TikTokUploader
 
+# Statuses that mean an upload was already started or finished for this video; scan_ready never
+# re-surfaces these, so we can't double-post. `upload_attempting` is the crash-safety breadcrumb
+# written just before clicking Post -- if the process dies mid-upload it stays on disk and the next
+# run skips the video (surfaced for manual review) instead of posting it a second time.
+_ATTEMPTED_STATUSES = ("upload_done", "upload_unconfirmed", "upload_attempting")
+
 
 def _post_id(entry: LedgerEntry) -> str:
     # Filenames/JSON are keyed per language variant (Step 1.5 fan-out): `<post_id>_<lang>`.
@@ -39,7 +45,7 @@ def _uploaded_keys(ledger_path) -> set[str]:
     """
     keys: set[str] = set()
     for entry in iter_entries(ledger_path):
-        if entry.upload.get("tiktok_id") or entry.status in ("upload_done", "upload_unconfirmed"):
+        if entry.upload.get("tiktok_id") or entry.status in _ATTEMPTED_STATUSES:
             keys.add(_post_id(entry))
             if entry.id:
                 keys.add(entry.id)
@@ -65,7 +71,7 @@ def scan_ready(settings) -> list[LedgerEntry]:
             entry = LedgerEntry.from_dict(json.loads(path.read_text(encoding="utf-8")))
         except Exception:  # noqa: BLE001 -- skip an unreadable/partial story file
             continue
-        if entry.upload.get("tiktok_id") or entry.status in ("upload_done", "upload_unconfirmed"):
+        if entry.upload.get("tiktok_id") or entry.status in _ATTEMPTED_STATUSES:
             continue  # already uploaded or already attempted (per this story file) -- don't re-post
         if _post_id(entry) in uploaded or entry.id in uploaded:
             continue  # the ledger already has this video as posted/attempted -- don't re-post
@@ -152,6 +158,14 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
             pid = _post_id(entry)
             caption = _build_caption(entry, template, hashtags)
             cover = entry.assets.get("thumbnail_path")
+            # Persist an in-flight marker BEFORE posting. The post is a live side-effect; if the
+            # process is killed between the post and our success-write, this on-disk status is the
+            # only thing that stops the next run re-posting the (still-on-disk) final. A normal
+            # upload() exception means the post almost certainly didn't happen, so we revert the
+            # marker below to keep retrying that genuine failure.
+            prev_status = entry.status
+            entry.status = "upload_attempting"
+            _rewrite_story_file(settings, entry)
             try:
                 meta = uploader.upload(
                     Path(entry.assets["final_video"]),
@@ -184,6 +198,10 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
                 _rewrite_story_file(settings, entry)
                 append_entry(settings.ledger_path, entry)
             except Exception as exc:  # noqa: BLE001 -- one bad upload must not abort the batch
+                # Clean failure (not a hard crash): the post didn't go through, so clear the in-flight
+                # marker and let the next run retry. A hard crash skips this and leaves the marker.
+                entry.status = prev_status
+                _rewrite_story_file(settings, entry)
                 print(f"[brainrotbot] WARNING: upload failed for {pid}: {exc}")
     print(f"[brainrotbot] Drain complete: {posted}/{len(ready)} confirmed posted.")
     return posted
