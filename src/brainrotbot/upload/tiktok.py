@@ -43,6 +43,10 @@ _POST_BUTTON = "button:has-text('Post')"               # final submit
 _REPLACE_BUTTON = "button:has-text('Replace')"         # appears once a video finished processing
 _VIDEO_HREF = "a[href*='/video/']"                     # links that carry a posted video id
 _VIDEO_ID_RE = re.compile(r"/video/(\d+)")
+# A real "the post finished" signal -- only trust these, not the upload page's ambient nav text.
+_POSTED_TEXT = re.compile(r"your video has been (uploaded|posted)|posted to|view profile", re.I)
+# Buttons that may appear in a post-click confirmation/content-check modal (best-effort, click to proceed).
+_CONFIRM_POST = re.compile(r"^(post now|post|continue|got it|confirm)$", re.I)
 
 
 class TikTokUploader:
@@ -65,6 +69,9 @@ class TikTokUploader:
         subtitles: bool = True,
         set_cover: bool = True,
         nav_timeout_sec: float = 120.0,
+        completion_timeout_sec: float = 300.0,
+        debug: bool = False,
+        debug_dir: Path | None = None,
     ):
         self.session_dir = Path(session_dir)
         self.browser = browser
@@ -76,6 +83,10 @@ class TikTokUploader:
         self.subtitles = subtitles
         self.set_cover = set_cover
         self.nav_timeout_ms = int(nav_timeout_sec * 1000)
+        # TikTok's post-click content check can take minutes; wait this long for a real "posted" signal.
+        self.completion_timeout_sec = completion_timeout_sec
+        self.debug = debug
+        self.debug_dir = Path(debug_dir) if debug_dir else None
         self._pw = None
         self._ctx = None  # Playwright persistent BrowserContext
 
@@ -207,6 +218,20 @@ class TikTokUploader:
         """Small randomized human-like delay between UI actions."""
         time.sleep(random.uniform(lo, hi))
 
+    def _dump(self, page, label: str) -> None:
+        """Debug only: save a screenshot + HTML + URL at a milestone, to pin selectors from the real DOM."""
+        if not self.debug or self.debug_dir is None:
+            return
+        try:
+            self.debug_dir.mkdir(parents=True, exist_ok=True)
+            stamp = f"{int(time.time())}_{label}"
+            page.screenshot(path=str(self.debug_dir / f"{stamp}.png"), full_page=True)
+            (self.debug_dir / f"{stamp}.html").write_text(page.content(), encoding="utf-8")
+            (self.debug_dir / f"{stamp}.url.txt").write_text(page.url, encoding="utf-8")
+            print(f"[brainrotbot]   [debug] dumped {stamp} ({page.url})")
+        except Exception as exc:  # noqa: BLE001 -- debugging must never break the upload
+            print(f"[brainrotbot]   [debug] dump failed at {label}: {exc}")
+
     def _ensure_logged_in(self, page) -> None:
         """Heuristic: the upload page bounces to /login when there's no valid session."""
         if "/login" in page.url:
@@ -289,28 +314,66 @@ class TikTokUploader:
         except Exception:  # noqa: BLE001
             pass
 
-    def _capture_url(self, page) -> tuple[str | None, str | None]:
-        """After posting, resolve the live video URL+id. Best-effort; returns (url, id) or (None, None)."""
-        # 1) A "View" link sometimes appears in the success toast/modal.
+    def _confirm_post(self, page) -> None:
+        """Best-effort: clear a post-click confirmation/content-check modal so the post proceeds.
+
+        TikTok sometimes shows a small modal after Post (e.g. content-check / "Post now"). Click its
+        confirm button if one is visible; never hard-fail (the account already enabled content checks).
+        """
         try:
-            link = page.locator(_VIDEO_HREF)
-            link.first.wait_for(timeout=8000)
-            href = link.first.get_attribute("href")
-            if href:
-                return self._normalize(href)
+            self._pause(1.0, 2.0)
+            btn = page.get_by_role("button", name=_CONFIRM_POST)
+            for i in range(btn.count()):
+                if btn.nth(i).is_visible():
+                    btn.nth(i).click()
+                    self._pause()
+                    return
         except Exception:  # noqa: BLE001
             pass
-        # 2) Fall back to the newest item in the Studio content list.
+
+    def _await_completion(self, page) -> tuple[str | None, str | None]:
+        """Block until TikTok finishes the content check and the post lands; return (url, id).
+
+        This is the fix for the original bug: we must NOT navigate away or close while the check runs.
+        Poll (up to completion_timeout_sec) for a real "posted" signal -- a redirect to the content
+        manager, a success toast, or a /video/<id> link -- then read the URL. Falls back to opening the
+        content list (now safe, post is done) and grabbing the newest video link. (None, None) if it
+        never confirms -- the caller then treats the upload as unconfirmed and keeps the media.
+        """
+        deadline = time.time() + self.completion_timeout_sec
+        while time.time() < deadline:
+            # A posted video link on the current (success) screen is the strongest signal.
+            try:
+                link = page.locator(_VIDEO_HREF)
+                if link.count() and link.first.is_visible():
+                    href = link.first.get_attribute("href")
+                    if href:
+                        return self._normalize(href)
+            except Exception:  # noqa: BLE001
+                pass
+            # A redirect to the content manager, or an explicit success toast, also means "done".
+            if "/content" in page.url or self._has_text(page, _POSTED_TEXT):
+                break
+            time.sleep(2.0)
+        # Post is finished now -- safe to consult the content list for the newest video's link.
         try:
-            page.goto(CONTENT_URL)
+            if "/content" not in page.url:
+                page.goto(CONTENT_URL)
             link = page.locator(_VIDEO_HREF)
-            link.first.wait_for(timeout=15000)
+            link.first.wait_for(timeout=self.nav_timeout_ms)
             href = link.first.get_attribute("href")
             if href:
                 return self._normalize(href)
         except Exception:  # noqa: BLE001
             pass
         return None, None
+
+    @staticmethod
+    def _has_text(page, pattern: re.Pattern) -> bool:
+        try:
+            return page.get_by_text(pattern).count() > 0
+        except Exception:  # noqa: BLE001
+            return False
 
     @staticmethod
     def _normalize(href: str) -> tuple[str | None, str | None]:
@@ -329,6 +392,9 @@ class TikTokUploader:
         if self._ctx is None:
             raise RuntimeError("TikTokUploader used outside its context manager (`with uploader:`)")
         page = self._ctx.pages[0] if self._ctx.pages else self._ctx.new_page()
+        # Auto-dismiss any dialog (notably the "are you sure you want to leave?" beforeunload that the
+        # premature navigation used to trigger mid content-check) so it can never block automation.
+        page.on("dialog", lambda d: d.accept())
         page.goto(self.upload_url)
         self._ensure_logged_in(page)
 
@@ -336,6 +402,7 @@ class TikTokUploader:
         page.locator(_FILE_INPUT).first.set_input_files(str(video_path))
         page.locator(_REPLACE_BUTTON).first.wait_for(timeout=self.nav_timeout_ms)  # "Replace" => done
         self._pause(1.0, 2.0)
+        self._dump(page, "01_processed")
 
         # 2) Caption = title + hashtags. Clear the placeholder text, then type.
         editor = page.locator(_CAPTION_EDITOR).first
@@ -349,21 +416,18 @@ class TikTokUploader:
         captions_on = self._enable_captions(page) if self.subtitles else False
         cover_set = bool(cover_path) and self.set_cover and self._set_cover(page, Path(cover_path))
         self._set_public(page)
+        self._dump(page, "02_prepost")
 
-        # 6) Post and confirm it went through.
+        # 6) Post, clear any confirm/content-check modal, then WAIT for the check to finish before we
+        # touch anything (the old code navigated away mid-check and aborted the post).
         post = page.locator(_POST_BUTTON).first
         post.wait_for(timeout=self.nav_timeout_ms)
         post.click()
-        # Success = the post button goes away / a confirmation toast shows. Give it room.
-        try:
-            page.get_by_text(re.compile(r"your video|posted|uploaded|manage", re.I)).first.wait_for(
-                timeout=self.nav_timeout_ms
-            )
-        except Exception:  # noqa: BLE001 -- some builds just navigate; URL capture still tries
-            pass
-        self._pause(1.5, 2.5)
-
-        url, tiktok_id = self._capture_url(page)
+        self._dump(page, "03_postclicked")
+        self._confirm_post(page)
+        print("[brainrotbot]   posted; waiting for TikTok's content check to finish ...")
+        url, tiktok_id = self._await_completion(page)
+        self._dump(page, "04_complete")
         return {
             "url": url,
             "tiktok_id": tiktok_id,
