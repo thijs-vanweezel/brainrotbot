@@ -86,7 +86,7 @@ cookies_from_browser = "edge"
 # Geometry (width/height/fps) is reused from [video] so the outro matches the background frame.
 # Standard outro shot appended after the narration. A 9:16 video or image; "" disables it
 # (final video is then just the narrated background). Resolved relative to the project root.
-outro_file = "resources/outrov1.mp4"
+outro_file = "resources/outro.mp4"
 outro_duration_sec = 4     # how long an image outro is shown (ignored for video outros)
 crf = 23                   # libx264 quality for the re-encoded final (lower = better/larger)
 preset = "veryfast"        # libx264 speed/size trade-off
@@ -114,7 +114,7 @@ PIXABAY_API_KEY = "17376527-284228145394ba34556c8c975"
 font_file = "resources/Anton-Regular.ttf"  # falls back to Arial Bold, then PIL default if missing
 font_max_size = 110        # title auto-shrinks from here to fit the text box
 stroke_width = 6           # dark outline around the white title for legibility on any image
-scrim_opacity = 0.35       # darkened band behind the text (0 = none, 1 = opaque)
+scrim_opacity = 0          # darkened band behind the text (0 = none, 1 = opaque)
 
 # Curated background search terms grouped by category. A random category is chosen per story,
 # then a random term within it; both land in the ledger (assets.thumbnail) for A/B analysis.
