@@ -54,20 +54,10 @@ _EXIT_CANCEL = re.compile(r"^cancel$", re.I)
 # switch in the sibling `headline-switch`. Scoping by the label text avoids the identical HD-uploads
 # switch. It defaults ON and re-arms each upload, so we flip it off every time (see _disable_content_check).
 _SHOW_MORE = re.compile(r"^show more$", re.I)  # expands the advanced settings section if collapsed
-# In-page JS: find the switch whose surrounding `.card` mentions "Content check lite"; if it's on
-# (aria-checked=true), click its `.Switch__root` to turn it off. Robust to label/switch ordering, and
-# works on the hidden <input> (Playwright visibility locators time out on it). Returns off|already-off|not-found.
-_CHECK_OFF_JS = """() => {
-  for (const sw of document.querySelectorAll('input[role=switch]')) {
-    const card = sw.closest('.card');
-    if (card && /content check lite/i.test(card.innerText)) {
-      const root = sw.closest('.Switch__root');
-      if (root && root.querySelector('[aria-checked="true"]')) { root.click(); return 'off'; }
-      return 'already-off';
-    }
-  }
-  return 'not-found';
-}"""
+# The Content Check Lite control lives in the `.card` whose text contains "Content check lite"; its switch
+# is a hidden <input role=switch>, and aria-checked=true (on a child) means the check is ON. A force-click
+# on the input is the only thing that actually flips it (React ignores a programmatic .click() on the root).
+_CHECK_CARD = "Content check lite"
 
 
 class TikTokUploader:
@@ -299,16 +289,20 @@ class TikTokUploader:
         (and expand the advanced "Show more" section if it's collapsed). Best-effort; returns True when
         the check is off (or already was).
         """
-        # Done in the page via JS: the switch <input> is hidden (so visibility-based Playwright locators
-        # time out), and its position relative to the label varies. closest('.card') + a text match is
-        # robust: find the switch whose card mentions "Content check lite", and if its aria-checked is
-        # true, click the switch root to turn it off.
         for _ in range(3):
             try:
-                res = page.evaluate(_CHECK_OFF_JS)
-                if res in ("off", "already-off"):
-                    print(f"[brainrotbot]   Content Check Lite -> {'OFF' if res == 'off' else 'already off'}")
-                    return True
+                card = page.locator(".card").filter(has_text=_CHECK_CARD).last
+                inp = card.locator("input[role=switch]")
+                inp.first.wait_for(state="attached", timeout=8000)  # input is hidden -> attached, not visible
+                if card.locator("[aria-checked='true']").count() == 0:
+                    return True  # already off
+                inp.first.click(force=True)  # force-click the hidden input (the only thing React honours)
+                self._pause()
+                if card.locator("[aria-checked='true']").count() == 0:
+                    print("[brainrotbot]   Content Check Lite -> OFF")
+                else:
+                    print("[brainrotbot]   (Content Check Lite click did not register)")
+                return True
             except Exception:  # noqa: BLE001
                 pass
             try:  # card may be collapsed under advanced settings -- expand and retry
