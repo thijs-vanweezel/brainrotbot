@@ -131,7 +131,12 @@ food = ["gourmet burger", "dessert", "pizza", "snacks", "sushi"]
 # flushes the queue without creating anything new.
 enabled = true
 batch_size = 30                  # drain the ready-queue after this many newly-created videos
-headless = false                 # headed Chromium is far more reliable against TikTok's bot checks
+browser = "firefox"             # playwright engine: chromium | firefox | webkit. Firefox trips
+                                 # TikTok's login bot-detection ("maximum attempts reached") less
+                                 # than Chromium. After changing this, re-run `run.bat --tiktok-login`
+                                 # (each engine keeps its own profile under config/tiktok_profile/<engine>/).
+                                 # Install the engine once: `playwright install firefox`.
+headless = false                 # headed browser is far more reliable against TikTok's bot checks
 upload_url = "https://www.tiktok.com/tiktokstudio/upload"
 privacy = "public"               # "public" posts live; anything else leaves visibility as-is
 subtitles = true                 # turn ON TikTok's auto-generated captions in the UI
