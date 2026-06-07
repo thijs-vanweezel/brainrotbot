@@ -59,8 +59,13 @@ _SHOW_MORE = re.compile(r"^show more$", re.I)  # expands the advanced settings s
 # on the input is the only thing that actually flips it (React ignores a programmatic .click() on the root).
 _CHECK_CARD = "Content check lite"
 # After a while of uploading TikTok caps the daily pre-post checks and shows this banner; the toggle then
-# can't be moved, but the post still goes through -- so we just skip the uncheck and post with the check ON.
+# can't be moved. The post then DOES NOT go through -- TikTok shows an inline error and leaves the upload
+# form open -- so we detect that and stop, rather than waiting out the (never-running) ~10 min check.
 _CHECK_LIMIT = re.compile(r"check limit for today|try again tomorrow", re.I)
+# Inline error shown when a post is rejected (e.g. the content check couldn't run because the daily limit
+# was hit). Pinned from a DOM dump: a danger-coloured "status-tip" reading "Something went wrong. Try
+# again later. Retry".
+_POST_FAILED = re.compile(r"something went wrong|try again later|upload(?:ing)? failed", re.I)
 
 
 class PostFailedError(RuntimeError):
@@ -69,6 +74,20 @@ class PostFailedError(RuntimeError):
     Raised so the queue discards this video and moves on instead of stalling the batch -- the post
     definitely didn't land, so there's nothing to confirm or double-post.
     """
+
+
+class UploadRejectedError(RuntimeError):
+    """The Post button was clicked but TikTok positively rejected the post (it did NOT go through).
+
+    Detected via an on-page failure signal (the daily check-limit banner / an inline error) or by the
+    upload dialog never closing within the settle window. Because we KNOW it didn't post, the queue
+    reverts the video to its prior status (retriable, media kept) instead of marking it unconfirmed. When
+    `daily_limit` is set the cap blocks every remaining video that day, so the caller aborts the batch.
+    """
+
+    def __init__(self, message: str, *, daily_limit: bool = False):
+        super().__init__(message)
+        self.daily_limit = daily_limit
 
 
 class TikTokUploader:
@@ -92,6 +111,7 @@ class TikTokUploader:
         set_cover: bool = True,
         nav_timeout_sec: float = 120.0,
         completion_timeout_sec: float = 300.0,
+        post_settle_sec: float = 30.0,
         debug: bool = False,
         debug_dir: Path | None = None,
     ):
@@ -105,8 +125,13 @@ class TikTokUploader:
         self.subtitles = subtitles
         self.set_cover = set_cover
         self.nav_timeout_ms = int(nav_timeout_sec * 1000)
-        # TikTok's post-click content check can take minutes; wait this long for a real "posted" signal.
+        # TikTok's post-click content check can take minutes; wait this long for a real "posted" signal
+        # ONLY on the genuine long-check path (toggle present but couldn't be flipped, no daily limit).
         self.completion_timeout_sec = completion_timeout_sec
+        # Fast path (check turned off, or daily limit hit): wait only this long for the upload dialog to
+        # close (= posted). If it doesn't close, the post was rejected -- bail instead of hanging.
+        self.post_settle_sec = post_settle_sec
+        self._limit_hit = False  # set by _disable_content_check when the daily check-limit banner shows
         self.debug = debug
         self.debug_dir = Path(debug_dir) if debug_dir else None
         self._pw = None
@@ -339,7 +364,8 @@ class TikTokUploader:
             # Daily check cap hit: the banner is up and the toggle is frozen ON, but posting still
             # works -- stop fighting the switch and let upload() click Post with the check left ON.
             if self._has_text(page, _CHECK_LIMIT):
-                print("[brainrotbot]   (daily check limit reached -- leaving Content Check Lite ON, posting anyway)")
+                print("[brainrotbot]   (daily check limit reached -- check stuck ON; the post will be rejected)")
+                self._limit_hit = True
                 return False
             try:
                 card = page.locator(".card").filter(has_text=_CHECK_CARD).last
@@ -350,7 +376,8 @@ class TikTokUploader:
                 inp.first.click(force=True)  # force-click the hidden input (the only thing React honours)
                 self._pause()
                 if self._has_text(page, _CHECK_LIMIT):  # banner often only pops AFTER you try to flip it
-                    print("[brainrotbot]   (daily check limit reached -- leaving Content Check Lite ON, posting anyway)")
+                    print("[brainrotbot]   (daily check limit reached -- check stuck ON; the post will be rejected)")
+                    self._limit_hit = True
                     return False
                 if card.locator("[aria-checked='true']").count() == 0:
                     print("[brainrotbot]   Content Check Lite -> OFF")
@@ -413,17 +440,22 @@ class TikTokUploader:
         except Exception:  # noqa: BLE001
             pass
 
-    def _await_completion(self, page) -> tuple[str | None, str | None]:
-        """Block until the post truly lands; return (url, id), or (None, None) if never confirmed.
+    def _await_completion(self, page, *, fast: bool) -> tuple[str | None, str | None]:
+        """Block until the post lands; return (url, id) on success.
 
-        Fix for the original bug: we must NOT navigate away or close while TikTok is still posting (that
-        triggered the exit modal and aborted the post). Poll up to completion_timeout_sec for a real
-        "posted" signal -- a visible /video/ link, a success toast, or a redirect to the content manager --
-        and ONLY navigate to the content list once we're sure the post finished. If it never confirms we
-        return (None, None) WITHOUT navigating, so the caller marks it unconfirmed and keeps the media.
-        (With Content Check Lite OFF this resolves in seconds; with it ON, the check can take ~10 min.)
+        Raises UploadRejectedError when the post is positively rejected (an on-page failure signal, or --
+        on the fast path -- the upload dialog never closing). Returns (None, None) only on the genuine
+        long-check path when nothing resolved (caller -> unconfirmed, media kept).
+
+        We must NOT navigate away or close while TikTok is still posting (that triggers the exit modal and
+        aborts the post). `fast` means a quick outcome is expected (Content Check Lite was turned off, or
+        the daily limit is in effect): the upload form closes within seconds on success, or stays open
+        with an inline error on failure -- so we only wait `post_settle_sec` and treat "dialog still open"
+        as a rejection. On the slow path (check genuinely running, ~10 min) we wait `completion_timeout_sec`
+        and fall back to unconfirmed rather than guessing failure.
         """
-        deadline = time.time() + self.completion_timeout_sec
+        window = self.post_settle_sec if fast else self.completion_timeout_sec
+        deadline = time.time() + window
         completed = False
         while time.time() < deadline:
             try:  # strongest signal: a posted /video/ link is on screen
@@ -437,10 +469,28 @@ class TikTokUploader:
             if "/content" in page.url or self._has_text(page, _POSTED_TEXT):
                 completed = True
                 break
+            # Success without a link/redirect yet: the upload dialog (Post button) closed = posted.
+            try:
+                post = page.locator(_POST_BUTTON)
+                if post.count() == 0 or not post.first.is_visible():
+                    completed = True
+                    break
+            except Exception:  # noqa: BLE001
+                pass
+            # Positive failure: the daily-limit banner or an inline post error, with the form still open.
+            if self._has_text(page, _CHECK_LIMIT):
+                raise UploadRejectedError("daily check limit reached -- post rejected", daily_limit=True)
+            if self._has_text(page, _POST_FAILED):
+                raise UploadRejectedError("TikTok reported the post did not go through",
+                                          daily_limit=self._limit_hit)
             self._stay(page)  # defensive: never let an exit modal abandon the post
             time.sleep(2.0)
         if not completed:
-            return None, None  # don't navigate mid-upload (avoids the exit modal) -> caller: unconfirmed
+            if fast:  # dialog never closed within the settle window => the post did not go through
+                raise UploadRejectedError(
+                    f"post dialog did not close within {self.post_settle_sec:.0f}s -- post not confirmed",
+                    daily_limit=self._limit_hit)
+            return None, None  # slow check, no signal: don't navigate (exit modal) -> caller: unconfirmed
         # Post landed -- now it's safe to read the newest video's link from the content manager.
         try:
             if "/content" not in page.url:
@@ -492,13 +542,16 @@ class TikTokUploader:
     def upload(self, video_path: Path, cover_path: Path | None, caption: str) -> dict:
         """Post one video; return {url, tiktok_id, posted_at, public, captions_on, cover_set}.
 
-        Raises on hard failures (no session, processing never completed) so the queue marks the video
-        failed. Cosmetic steps (cover, visibility) degrade quietly. Subtitles need no action: TikTok now
+        Raises PostFailedError (dead Post button -> discard) or UploadRejectedError (post positively
+        rejected, e.g. the daily check limit -> revert & retry, abort batch on the limit). Other hard
+        failures (no session, processing never completed) also raise so the queue marks the video failed.
+        Cosmetic steps (cover, visibility) degrade quietly. Subtitles need no action: TikTok now
         auto-captions every video (American English + Japanese), and removed the upload-time toggle -- so
         `captions_on` reflects that automatic default rather than a UI click.
         """
         if self._ctx is None:
             raise RuntimeError("TikTokUploader used outside its context manager (`with uploader:`)")
+        self._limit_hit = False  # reset the per-upload daily-check-limit flag (set in _disable_content_check)
         page = self._ctx.pages[0] if self._ctx.pages else self._ctx.new_page()
         # Auto-dismiss any dialog (notably the "are you sure you want to leave?" beforeunload that the
         # premature navigation used to trigger mid content-check) so it can never block automation.
@@ -543,8 +596,17 @@ class TikTokUploader:
             self._dump(page, "03_postfailed")
             raise
         self._dump(page, "03_postclicked")
-        print("[brainrotbot]   posted; waiting for it to finish (Content Check Lite, if on, can take ~10 min) ...")
-        url, tiktok_id = self._await_completion(page)
+        # A quick outcome is expected when the check is off (lands in seconds) or the daily limit is hit
+        # (rejected immediately); only a genuinely-running check is slow. Message + wait match that.
+        fast = check_off or self._limit_hit
+        if check_off:
+            print("[brainrotbot]   posted; confirming (should land in a few seconds) ...")
+        elif self._limit_hit:
+            print("[brainrotbot]   clicked Post with the daily check limit reached -- "
+                  "watching briefly to confirm whether it was rejected ...")
+        else:
+            print("[brainrotbot]   posted; Content Check Lite is ON -- the pre-post check can take ~10 min ...")
+        url, tiktok_id = self._await_completion(page, fast=fast)  # raises UploadRejectedError if rejected
         self._dump(page, "04_complete")
         return {
             "url": url,
