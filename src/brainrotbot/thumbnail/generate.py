@@ -12,6 +12,7 @@ on disk. All the heavy lifting is Pillow; the network/pick helpers live in image
 from __future__ import annotations
 
 import random
+import re
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -20,6 +21,15 @@ from .images import download_image, pick_image, pick_term, search_images
 
 # System fallbacks tried (in order) when no font_file is configured / it's missing.
 _FALLBACK_FONTS = [r"C:\Windows\Fonts\arialbd.ttf", r"C:\Windows\Fonts\arial.ttf"]
+
+# Translated (Step 1.5) Chinese/Japanese titles need a CJK-capable font -- the brainrot Anton font
+# is latin-only and would render Han glyphs as empty boxes. Detect CJK and swap to a system CJK font.
+_CJK_RE = re.compile(r"[぀-ヿ㐀-鿿豈-﫿]")
+_CJK_FONTS = [r"C:\Windows\Fonts\msyhbd.ttc", r"C:\Windows\Fonts\msyh.ttc", r"C:\Windows\Fonts\simhei.ttf"]
+
+
+def _has_cjk(text: str) -> bool:
+    return bool(_CJK_RE.search(text))
 
 
 def _load_font(font_file: str, size: int) -> ImageFont.FreeTypeFont:
@@ -76,23 +86,36 @@ class ThumbnailMaker:
         self.scrim_opacity = scrim_opacity
         self.api_key = api_key
 
-    def _fit_text(self, draw: ImageDraw.ImageDraw, title: str):
-        """Wrap+auto-shrink the title to fit the text box; return (font, lines, line_height)."""
-        words = title.split()
+    def _font_for_title(self, title: str) -> str:
+        """Configured font normally; a system CJK font for Chinese/Japanese (Anton lacks Han glyphs)."""
+        if _has_cjk(title):
+            for cand in _CJK_FONTS:
+                if Path(cand).is_file():
+                    return cand
+        return self.font_file
+
+    def _fit_text(self, draw: ImageDraw.ImageDraw, title: str, font_file: str):
+        """Wrap+auto-shrink the title to fit the text box; return (font, lines, line_height).
+
+        CJK text has no spaces, so it wraps per character; latin text wraps per word.
+        """
+        is_cjk = _has_cjk(title)
+        units = list(title) if is_cjk else title.split()
+        sep = "" if is_cjk else " "
         max_w = self.width - 2 * self.margin
         max_h = int(self.height * 0.5)
         best = None
         for size in range(self.font_max_size, self.font_min_size - 1, -4):
-            font = _load_font(self.font_file, size)
+            font = _load_font(font_file, size)
             lines, cur = [], ""
-            for word in words:
-                trial = f"{cur} {word}".strip()
+            for unit in units:
+                trial = f"{cur}{sep}{unit}" if cur else unit
                 tw = draw.textbbox((0, 0), trial, font=font, stroke_width=self.stroke_width)[2]
                 if tw <= max_w or not cur:
                     cur = trial
                 else:
                     lines.append(cur)
-                    cur = word
+                    cur = unit
             if cur:
                 lines.append(cur)
             # Per-line height from the font metrics (stable across lines), + 20% leading.
@@ -104,11 +127,12 @@ class ThumbnailMaker:
                 return best
         return best  # smallest size reached -- use it even if slightly overflowing
 
-    def make(self, title: str, out_path: Path) -> dict:
-        """Build the thumbnail for `title` at `out_path`; return ledger metadata.
+    def pick(self) -> dict:
+        """Choose + download one background image; return its provenance (no title drawn yet).
 
-        Tries one alternate search term if the first yields no usable hits, then raises (the
-        pipeline helper swallows it so a thumbnail failure never aborts the run).
+        Split out from `render` so the language fan-out (Step 1.5) can pick ONE image per base story
+        and reuse it across every language variant (controlled A/B + a single Pixabay call). Tries one
+        alternate search term if the first yields no usable hits, then raises.
         """
         category, term = pick_term(self.search_terms)
         hits = search_images(term, self.api_key, min_width=self.width, min_height=self.height)
@@ -117,13 +141,22 @@ class ThumbnailMaker:
             hits = search_images(term, self.api_key, min_width=self.width, min_height=self.height)
         if not hits:
             raise RuntimeError(f"no Pixabay images for term '{term}' (check PIXABAY_API_KEY)")
-
         hit = pick_image(hits)
         img_path = download_image(hit, self.cache_dir)
+        return {"category": category, "term": term, "hit": hit, "img_path": str(img_path)}
 
-        base = _cover_crop(Image.open(img_path).convert("RGB"), self.width, self.height).convert("RGBA")
+    def make(self, title: str, out_path: Path) -> dict:
+        """Build the thumbnail for `title` at `out_path` (pick a fresh image, then render)."""
+        return self.render(title, out_path, self.pick())
+
+    def render(self, title: str, out_path: Path, picked: dict) -> dict:
+        """Overlay `title` onto a previously `pick()`ed background; return ledger metadata."""
+        category, term, hit = picked["category"], picked["term"], picked["hit"]
+        font_file = self._font_for_title(title)
+
+        base = _cover_crop(Image.open(picked["img_path"]).convert("RGB"), self.width, self.height).convert("RGBA")
         draw = ImageDraw.Draw(base)
-        font, lines, line_h = self._fit_text(draw, title)
+        font, lines, line_h = self._fit_text(draw, title, font_file)
 
         block_h = line_h * len(lines)
         top = int(self.height * 0.30)                 # title block sits in the upper third
