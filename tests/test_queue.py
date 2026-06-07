@@ -65,6 +65,13 @@ def test_skips_when_ledger_marks_uploaded_even_if_story_json_lost_status(tmp_pat
     assert scan_ready(settings) == []
 
 
+def test_skips_in_flight_marker_after_crash(tmp_path):
+    """A crash mid-upload leaves status=upload_attempting on disk; the next run must not re-post it."""
+    settings = _settings(tmp_path)
+    _write_story(settings, _entry("abc_en", status="upload_attempting"), tmp_path)
+    assert scan_ready(settings) == []
+
+
 def test_sibling_language_variant_not_blocked(tmp_path):
     """Posting abc_en must NOT block abc_fr -- different language variants are separate videos."""
     settings = _settings(tmp_path)
