@@ -96,6 +96,8 @@ _REDDIT_ABBREVIATIONS = {
     "ETA": "edited to add",
     "IDGAF": "I don't give a fuck",
     "IDC": "I don't care",
+    "min": "minute",
+    "mins": "minutes",
 }
 # Single alternation regex, length-descending so AITAH wins over AITA.
 _ABBREV_RE = re.compile(
