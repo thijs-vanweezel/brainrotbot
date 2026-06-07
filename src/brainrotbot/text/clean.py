@@ -76,6 +76,8 @@ _REDDIT_ABBREVIATIONS = {
     "SAHM": "stay-at-home mom",
     "SAHD": "stay-at-home dad",
     "LO": "little one",
+    "AP": "affair partner",
+    "LDAP": "long-distance affair partner",
     # General internet shorthand
     "IMHO": "in my humble opinion",
     "IMO": "in my opinion",
@@ -92,6 +94,8 @@ _REDDIT_ABBREVIATIONS = {
     "DM": "direct message",
     "LPT": "life pro tip",
     "ETA": "edited to add",
+    "IDGAF": "I don't give a fuck",
+    "IDC": "I don't care",
 }
 # Single alternation regex, length-descending so AITAH wins over AITA.
 _ABBREV_RE = re.compile(
