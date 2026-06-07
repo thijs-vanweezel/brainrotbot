@@ -388,7 +388,10 @@ def main(argv: list[str] | None = None) -> int:
     # One-time interactive login: open TikTok, let the user sign in, persist the session, then stop.
     if args.tiktok_login:
         settings = load_settings(args.settings)
-        TikTokUploader(session_dir=settings.tiktok_session_dir).login()
+        TikTokUploader(
+            session_dir=settings.tiktok_session_dir,
+            browser=settings.upload_opts.get("browser", "chromium"),
+        ).login()
         return 0
 
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,

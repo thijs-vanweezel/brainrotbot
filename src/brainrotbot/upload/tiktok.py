@@ -47,6 +47,7 @@ class TikTokUploader:
         self,
         *,
         session_dir: Path,
+        browser: str = "chromium",
         upload_url: str = UPLOAD_URL,
         headless: bool = False,
         privacy: str = "public",
@@ -55,6 +56,7 @@ class TikTokUploader:
         nav_timeout_sec: float = 120.0,
     ):
         self.session_dir = Path(session_dir)
+        self.browser = browser
         self.upload_url = upload_url
         self.headless = headless
         self.privacy = privacy
@@ -66,13 +68,21 @@ class TikTokUploader:
 
     # --- lifecycle -------------------------------------------------------------------------------
     def _launch(self, *, headless: bool):
-        """Start Playwright + a persistent Chromium context bound to our profile dir."""
+        """Start Playwright + a persistent context (chromium/firefox/webkit) bound to our profile.
+
+        Firefox often trips TikTok's login bot-detection ("maximum attempts reached") less than
+        Chromium. The profile is namespaced per engine (session_dir/<browser>/) because the on-disk
+        user-data formats are incompatible, so switching engines just uses its own clean profile --
+        re-run --tiktok-login once after changing [upload].browser.
+        """
         from playwright.sync_api import sync_playwright  # lazy: keeps the extra optional
 
-        self.session_dir.mkdir(parents=True, exist_ok=True)
+        profile_dir = self.session_dir / self.browser
+        profile_dir.mkdir(parents=True, exist_ok=True)
         self._pw = sync_playwright().start()
-        self._ctx = self._pw.chromium.launch_persistent_context(
-            user_data_dir=str(self.session_dir),
+        engine = getattr(self._pw, self.browser)  # chromium | firefox | webkit
+        self._ctx = engine.launch_persistent_context(
+            user_data_dir=str(profile_dir),
             headless=headless,
             viewport={"width": 1280, "height": 900},
         )
