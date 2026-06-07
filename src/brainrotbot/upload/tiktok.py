@@ -6,9 +6,14 @@ We use browser automation, NOT TikTok's official Content Posting API, for three 
     app audit, unsuitable for a personal single-user bot;
   - the API returns only a publish_id, not the public video URL we must write back to the ledger.
 
-A persistent Chromium profile (config/tiktok_profile/, gitignored) keeps the logged-in session and the
-full browser fingerprint across runs -- the most robust setup against TikTok's bot checks. Log in once
-via `run.bat --tiktok-login`; later drains reuse that profile.
+**Auth is by imported cookies, not automated login.** TikTok's login flow is bot-walled ("maximum
+attempts reached") regardless of engine -- it blocks the automated browser *environment*, not the
+password. So instead we inject a `cookies.txt` exported from the browser where the user is already logged
+into TikTok (same "Get cookies.txt LOCALLY" workflow the project uses for YouTube), skipping login
+entirely. Lightweight stealth tweaks (hide navigator.webdriver, drop the AutomationControlled flag) make
+the upload/post actions look less automated too. A persistent profile (config/tiktok_profile/<engine>/,
+gitignored) is still launched but is no longer the auth source; `run.bat --tiktok-login` survives as a
+manual fallback, and `run.bat --tiktok-check` verifies the cookies without needing a finished video.
 
 The Studio DOM is not a stable API: the selectors below are best-effort and may need re-pinning when
 TikTok ships UI changes. They're isolated as named constants for quick fixups, and every fragile step is
@@ -18,10 +23,14 @@ than aborting the whole batch. `playwright` is imported lazily so the package im
 
 from __future__ import annotations
 
+import http.cookiejar
 import random
 import re
 import time
 from pathlib import Path
+
+# Injected once per page so TikTok's bot checks don't see the automation flag.
+_STEALTH_JS = "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
 
 UPLOAD_URL = "https://www.tiktok.com/tiktokstudio/upload"
 CONTENT_URL = "https://www.tiktok.com/tiktokstudio/content"
@@ -48,6 +57,8 @@ class TikTokUploader:
         *,
         session_dir: Path,
         browser: str = "chromium",
+        cookies_file: str = "",
+        user_agent: str = "",
         upload_url: str = UPLOAD_URL,
         headless: bool = False,
         privacy: str = "public",
@@ -57,6 +68,8 @@ class TikTokUploader:
     ):
         self.session_dir = Path(session_dir)
         self.browser = browser
+        self.cookies_file = cookies_file
+        self.user_agent = user_agent
         self.upload_url = upload_url
         self.headless = headless
         self.privacy = privacy
@@ -68,12 +81,12 @@ class TikTokUploader:
 
     # --- lifecycle -------------------------------------------------------------------------------
     def _launch(self, *, headless: bool):
-        """Start Playwright + a persistent context (chromium/firefox/webkit) bound to our profile.
+        """Start Playwright + a persistent context (chromium/firefox/webkit), inject cookies + stealth.
 
-        Firefox often trips TikTok's login bot-detection ("maximum attempts reached") less than
-        Chromium. The profile is namespaced per engine (session_dir/<browser>/) because the on-disk
-        user-data formats are incompatible, so switching engines just uses its own clean profile --
-        re-run --tiktok-login once after changing [upload].browser.
+        The profile is namespaced per engine (session_dir/<browser>/) because the on-disk user-data
+        formats are incompatible. Auth comes from the imported cookies (see _load_cookies); the profile
+        is just a stable browser to attach them to. Stealth: drop Chromium's AutomationControlled flag
+        and mask navigator.webdriver so TikTok's bot checks don't flag the upload session.
         """
         from playwright.sync_api import sync_playwright  # lazy: keeps the extra optional
 
@@ -81,12 +94,57 @@ class TikTokUploader:
         profile_dir.mkdir(parents=True, exist_ok=True)
         self._pw = sync_playwright().start()
         engine = getattr(self._pw, self.browser)  # chromium | firefox | webkit
-        self._ctx = engine.launch_persistent_context(
+        kwargs = dict(
             user_data_dir=str(profile_dir),
             headless=headless,
             viewport={"width": 1280, "height": 900},
+            locale="en-US",
         )
+        if self.user_agent:
+            kwargs["user_agent"] = self.user_agent
+        if self.browser == "chromium":  # Chromium-only flag (Firefox/WebKit reject unknown args)
+            kwargs["args"] = ["--disable-blink-features=AutomationControlled"]
+        self._ctx = engine.launch_persistent_context(**kwargs)
         self._ctx.set_default_timeout(self.nav_timeout_ms)
+        self._ctx.add_init_script(_STEALTH_JS)
+        cookies = self._load_cookies()
+        if cookies:
+            self._ctx.add_cookies(cookies)
+            print(f"[brainrotbot] Injected {len(cookies)} TikTok cookies from {self.cookies_file}")
+
+    def _load_cookies(self) -> list[dict]:
+        """Parse the Netscape cookies.txt into Playwright add_cookies dicts (empty if unset/missing).
+
+        Uses stdlib MozillaCookieJar; falls back to a manual tab-split parse when the file lacks the
+        Netscape magic header (some exporters omit it). httpOnly/sameSite are not emitted -- Playwright
+        still *sends* the cookies, which is all the session needs.
+        """
+        if not self.cookies_file or not Path(self.cookies_file).is_file():
+            return []
+        out: list[dict] = []
+        jar = http.cookiejar.MozillaCookieJar()
+        try:
+            jar.load(self.cookies_file, ignore_discard=True, ignore_expires=True)
+            for c in jar:
+                out.append({
+                    "name": c.name, "value": c.value,
+                    "domain": c.domain, "path": c.path or "/",
+                    "secure": bool(c.secure),
+                    "expires": float(c.expires) if c.expires else -1,
+                })
+        except (http.cookiejar.LoadError, OSError):
+            for line in Path(self.cookies_file).read_text(encoding="utf-8").splitlines():
+                if not line.strip() or line.lstrip().startswith("#"):
+                    continue
+                f = line.split("\t")
+                if len(f) >= 7:  # domain, flag, path, secure, expires, name, value
+                    out.append({
+                        "name": f[5], "value": f[6].strip(),
+                        "domain": f[0], "path": f[2] or "/",
+                        "secure": f[3].upper() == "TRUE",
+                        "expires": float(f[4]) if f[4].lstrip("-").isdigit() else -1,
+                    })
+        return out
 
     def _close(self):
         try:
@@ -122,6 +180,27 @@ class TikTokUploader:
             self._close()
         print(f"[brainrotbot] TikTok session saved to {self.session_dir}")
 
+    def check(self) -> bool:
+        """Open the upload page with the imported cookies and report whether the session is valid.
+
+        Exposed via `run.bat --tiktok-check` -- verifies cookies without needing a finished video.
+        Returns True when the Studio loads logged-in (no bounce to /login).
+        """
+        self._launch(headless=self.headless)
+        try:
+            page = self._ctx.pages[0] if self._ctx.pages else self._ctx.new_page()
+            page.goto(self.upload_url)
+            self._pause(2.0, 3.0)
+            ok = "/login" not in page.url
+            if ok:
+                print("[brainrotbot] TikTok session OK -- Studio loaded logged in.")
+            else:
+                print("[brainrotbot] NOT logged in -- export a fresh tiktok.com cookies.txt "
+                      f"to {self.cookies_file or '[upload].cookies_file'} and retry.")
+            return ok
+        finally:
+            self._close()
+
     # --- helpers ---------------------------------------------------------------------------------
     @staticmethod
     def _pause(lo: float = 0.6, hi: float = 1.6) -> None:
@@ -131,7 +210,10 @@ class TikTokUploader:
     def _ensure_logged_in(self, page) -> None:
         """Heuristic: the upload page bounces to /login when there's no valid session."""
         if "/login" in page.url:
-            raise RuntimeError("not logged in to TikTok -- run `run.bat --tiktok-login` first")
+            raise RuntimeError(
+                "not logged in to TikTok -- export a fresh tiktok.com cookies.txt to "
+                f"{self.cookies_file or '[upload].cookies_file'} (verify with `run.bat --tiktok-check`)"
+            )
 
     def _enable_captions(self, page) -> bool:
         """Best-effort: turn on TikTok's auto-generated captions toggle. Returns True if flipped.
