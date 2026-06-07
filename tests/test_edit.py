@@ -16,13 +16,15 @@ class _FakeEditor:
         self.calls = []
         self._has_music = has_music
 
-    def compose(self, background_path, audio_path, out_path, music_path=None):
+    def compose(self, background_path, audio_path, out_path, music_path=None, subtitle_path=None):
         self.calls.append((str(background_path), str(audio_path), str(out_path),
-                           str(music_path) if music_path else None))
+                           str(music_path) if music_path else None,
+                           str(subtitle_path) if subtitle_path else None))
         return {
             "path": str(out_path),
             "has_outro": True,
             "has_music": music_path is not None,
+            "has_subtitles": subtitle_path is not None,
             "music_start_sec": 12.34 if music_path is not None else None,
             "outro_file": "resources/outro.mp4",
             "duration_sec": 46.0,
@@ -62,10 +64,10 @@ def test_add_final_video_records_assets_and_status(tmp_path):
     assert entry.assets["edit"]["duration_sec"] == 46.0
     # Muxes the recorded background + audio into data/final/<post_id>.mp4 (paths are
     # Path-normalized by the helper, so compare on normalized paths, not raw separators).
-    # music_path is None because the test entry has no music asset.
+    # music_path and subtitle_path are None because the test entry has neither asset.
     assert editor.calls[0] == (
         str(Path("data/video/abc123.mp4")), str(Path("data/audio/abc123.wav")),
-        str(tmp_path / "final" / "abc123.mp4"), None,
+        str(tmp_path / "final" / "abc123.mp4"), None, None,
     )
 
 

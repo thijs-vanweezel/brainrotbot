@@ -56,6 +56,10 @@ class Settings:
         return self.raw.get("edit", {})
 
     @property
+    def subtitles_opts(self) -> dict:
+        return self.raw.get("subtitles", {})
+
+    @property
     def thumbnail_opts(self) -> dict:
         return self.raw.get("thumbnail", {})
 
@@ -90,6 +94,12 @@ class Settings:
     def thumbnail_font_file(self) -> str:
         """Absolute path to the title font, or "" if unset (resolved like the outro file)."""
         ff = self.thumbnail_opts.get("font_file", "")
+        return str(self._resolve(ff)) if ff else ""
+
+    @property
+    def subtitles_font_file(self) -> str:
+        """Absolute path to the caption font, or "" if unset (resolved like the thumbnail font)."""
+        ff = self.subtitles_opts.get("font_file", "")
         return str(self._resolve(ff)) if ff else ""
 
     @property
@@ -138,6 +148,11 @@ class Settings:
     @property
     def final_dir(self) -> Path:
         return self.data_dir / self.raw["paths"]["final_subdir"]
+
+    @property
+    def subtitles_dir(self) -> Path:
+        # Step 4.5: per-story .ass caption files, burned into the final video by Step 4.
+        return self.data_dir / self.raw["paths"].get("subtitles_subdir", "subtitles")
 
     @property
     def music_cache_dir(self) -> Path:

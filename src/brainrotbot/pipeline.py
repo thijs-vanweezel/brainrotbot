@@ -25,6 +25,7 @@ from .text.clean import clean_text
 from .text.filter_words import filter_banned_words
 from .edit.compose import VideoEditor
 from .music.ncs import TrackMeta, discover_instrumental_tracks, download_track, pick_track
+from .subtitles.generate import SubtitleMaker
 from .thumbnail.generate import ThumbnailMaker
 from .tts.synthesize import KokoroSynthesizer, pick_voice
 from .upload.queue import drain_upload_queue
@@ -39,6 +40,7 @@ def run(
     skip_video: bool = False,
     skip_edit: bool = False,
     skip_music: bool = False,
+    skip_subtitles: bool = False,
     skip_thumbnail: bool = False,
     skip_upload: bool = False,
     upload_only: bool = False,
@@ -103,6 +105,29 @@ def run(
         music_volume_db=edit_opts.get("music_volume_db", -15.0),
         music_duck=edit_opts.get("music_duck", True),
         music_intro_skip_sec=float(edit_opts.get("music_intro_skip_sec", 5.0)),
+        # libass loads the caption font from the .ttf's directory (Step 4.5 burns the .ass here).
+        subtitle_fonts_dir=str(Path(settings.subtitles_font_file).parent) if settings.subtitles_font_file else "",
+    )
+
+    # Build the subtitle maker once; the CTC aligner model loads lazily on first use (after TTS).
+    sub_opts = settings.subtitles_opts
+    sub_maker = None if (skip_subtitles or not sub_opts.get("enabled", True)) else SubtitleMaker(
+        device=sub_opts.get("device", "auto"),
+        language=sub_opts.get("language", "eng"),
+        max_words_per_cue=int(sub_opts.get("max_words_per_cue", 4)),
+        max_gap_sec=float(sub_opts.get("max_gap_sec", 0.6)),
+        font_name=sub_opts.get("font_name", "Anton"),
+        font_size=int(sub_opts.get("font_size", 90)),
+        primary_color=sub_opts.get("primary_color", "#FFFFFF"),
+        highlight_color=sub_opts.get("highlight_color", "#FFE000"),
+        outline_color=sub_opts.get("outline_color", "#000000"),
+        outline_width=int(sub_opts.get("outline_width", 4)),
+        alignment=int(sub_opts.get("alignment", 5)),
+        margin_v=int(sub_opts.get("margin_v", 120)),
+        uppercase=bool(sub_opts.get("uppercase", True)),
+        scale_active=int(sub_opts.get("scale_active", 110)),
+        width=video_opts.get("width", 1080),
+        height=video_opts.get("height", 1920),
     )
 
     # Scrape the NCS instrumental catalogue once per run (cached by music/ncs.py on disk).
@@ -142,6 +167,8 @@ def run(
         entry = _process_story(story, settings)
         if synth is not None:
             _add_audio(entry, story, synth, settings)
+        if sub_maker is not None:
+            _add_subtitles(entry, story, sub_maker, settings)
         if maker is not None:
             _add_background_video(entry, story, maker, settings)
         if music_catalogue:
@@ -213,6 +240,28 @@ def _add_audio(entry: LedgerEntry, story: Story, synth: KokoroSynthesizer, setti
         entry.status = "tts_done"
     except Exception as exc:  # noqa: BLE001 -- keep the pipeline going on any TTS failure
         print(f"[brainrotbot] WARNING: TTS failed for {story.post_id} ({voice}/{lang_code}): {exc}")
+
+
+def _add_subtitles(entry: LedgerEntry, story: Story, maker: SubtitleMaker, settings) -> None:
+    """Forced-align the narration to word-by-word captions in data/subtitles/<post_id>.ass.
+
+    Needs the narration WAV (from _add_audio) + the cleaned text. The .ass is burned into the final
+    video later by _add_final_video (compose() reads subtitles_path). Resilient like the other steps:
+    any alignment/render failure logs a warning and leaves subtitles_path null -- the video still
+    composes, just without captions.
+    """
+    audio = entry.assets.get("audio_path")
+    if not audio:
+        return  # no narration to align against (TTS skipped/failed) -- nothing to caption
+    out_path = settings.subtitles_dir / f"{story.post_id}.ass"
+    try:
+        meta = maker.make(Path(audio), entry.text["cleaned_body"], out_path)
+        entry.assets["subtitles_path"] = meta["path"]
+        entry.assets["subtitles"] = {
+            k: meta[k] for k in ("num_words", "num_cues", "backend", "model", "language")
+        }
+    except Exception as exc:  # noqa: BLE001 -- never abort the run over captions
+        print(f"[brainrotbot] WARNING: subtitles failed for {story.post_id}: {exc}")
 
 
 def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVideoMaker, settings) -> None:
@@ -287,16 +336,19 @@ def _add_final_video(entry: LedgerEntry, story: Story, editor: VideoEditor, sett
               f"(background={bool(background)}, audio={bool(audio)}).")
         return
     music_path = entry.assets.get("music_path")
+    subtitle_path = entry.assets.get("subtitles_path")
     out_path = settings.final_dir / f"{story.post_id}.mp4"
     try:
         meta = editor.compose(
             Path(background), Path(audio), out_path,
             music_path=Path(music_path) if music_path else None,
+            subtitle_path=Path(subtitle_path) if subtitle_path else None,
         )
         entry.assets["final_video"] = meta["path"]
         entry.assets["edit"] = {
             k: meta[k] for k in
-            ("has_outro", "has_music", "outro_file", "duration_sec", "width", "height", "fps")
+            ("has_outro", "has_music", "has_subtitles", "outro_file", "duration_sec",
+             "width", "height", "fps")
         }
         # Record the random music window in assets.music so each render is reproducible /
         # auditable in Step 8 analytics. Only present when music was actually mixed.
@@ -358,6 +410,8 @@ def _print_summary(entries: list[LedgerEntry]) -> None:
                 final += "+outro"
             if edit.get("has_music"):
                 final += "+music"
+            if edit.get("has_subtitles"):
+                final += "+subs"
         music = e.assets.get("music")
         music_tag = f" track={music['genre']}/{music['title']}" if music else ""
         thumb = e.assets.get("thumbnail")
@@ -378,6 +432,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--skip-video", action="store_true", help="Skip background-video retrieval (Step 3)")
     parser.add_argument("--skip-edit", action="store_true", help="Skip editing/final-video assembly (Step 4)")
     parser.add_argument("--skip-music", action="store_true", help="Skip background-music bed (Step 5)")
+    parser.add_argument("--skip-subtitles", action="store_true",
+                        help="Skip burned-in word-by-word captions (Step 4.5)")
     parser.add_argument("--skip-thumbnail", action="store_true", help="Skip thumbnail generation (Step 6)")
     parser.add_argument("--skip-upload", action="store_true", help="Skip TikTok upload (Step 7)")
     parser.add_argument("--upload-only", action="store_true",
@@ -406,7 +462,8 @@ def main(argv: list[str] | None = None) -> int:
 
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,
         skip_video=args.skip_video, skip_edit=args.skip_edit, skip_music=args.skip_music,
-        skip_thumbnail=args.skip_thumbnail, skip_upload=args.skip_upload, upload_only=args.upload_only,
+        skip_subtitles=args.skip_subtitles, skip_thumbnail=args.skip_thumbnail,
+        skip_upload=args.skip_upload, upload_only=args.upload_only,
         debug_upload=args.tiktok_debug)
     return 0
 

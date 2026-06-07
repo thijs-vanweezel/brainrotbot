@@ -34,6 +34,14 @@ video = [
 music = [
     "beautifulsoup4>=4.12",
 ]
+# Step 4.5 (burned-in word-by-word captions). transformers loads an MMS CTC aligner for forced
+# alignment; torch + soundfile come via the tts extra. soxr resamples the 24 kHz WAV to 16 kHz.
+# NOT ctc-forced-aligner: its C++ extension won't build on Windows and torchaudio's forced_align
+# would force a torch downgrade -- a pure-torch Viterbi in subtitles/generate.py avoids both.
+subtitles = [
+    "transformers>=4.40",
+    "soxr>=0.3",
+]
 # Step 6 (thumbnail). Pillow composites the post title onto a downloaded background image.
 # Pixabay search uses `requests` (core); the image download uses stdlib urllib (like music).
 thumbnail = [

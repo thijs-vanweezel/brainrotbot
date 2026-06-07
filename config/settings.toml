@@ -103,6 +103,29 @@ music_catalogue_ttl_days = 7     # re-scrape NCS after this many days (cache fre
 music_catalogue_pages = 3        # how many listing pages to scrape (~21 tracks/page; 3 = plenty of variety)
 music_intro_skip_sec = 5         # floor on the random start offset into the track (NCS intros are often quiet)
 
+[subtitles]
+# Step 4.5 -- burned-in word-by-word "brainrot" captions. We forced-align the exact narration
+# script (text.cleaned_body) to its TTS WAV with an MMS CTC model (no transcription, so captions
+# always match the script), write a .ass with one event per word interval (the active word pops in
+# highlight_color), and burn it into the Step 4 ffmpeg pass over the narration only (never the
+# outro). --skip-subtitles skips the step; enabled=false also disables it.
+enabled = true
+device = "auto"            # auto | cpu | cuda -- alignment model runs after TTS (sequential), OOM falls back to cpu
+language = "eng"           # recorded in the ledger; the MMS aligner is multilingual
+max_words_per_cue = 4      # words shown on screen at once
+max_gap_sec = 0.6          # a narration pause longer than this forces a new cue
+font_file = "resources/Anton-Regular.ttf"  # libass loads fonts from this dir (fontsdir); reuses the thumbnail font
+font_name = "Anton"        # font family name written into the .ass style (must match the .ttf's family)
+font_size = 90
+primary_color = "#FFFFFF"  # inactive words
+highlight_color = "#FFE000"  # the currently-spoken word
+outline_color = "#000000"
+outline_width = 4
+alignment = 5              # ASS numpad position: 5 = screen centre
+margin_v = 120             # vertical margin (used by bottom/top alignments)
+uppercase = true
+scale_active = 110         # % size bump on the active word (100 = no scale)
+
 [thumbnail]
 # Step 6 -- a 9:16 cover image per video: a random Pixabay background with the post title
 # overlaid (white bold text + dark stroke on a soft scrim band, no subreddit chrome). Output:
@@ -165,6 +188,7 @@ audio_subdir = "audio"
 video_subdir = "video"
 video_cache_subdir = "video_cache"
 final_subdir = "final"
+subtitles_subdir = "subtitles"
 music_cache_subdir = "music_cache"
 thumbnail_subdir = "thumbnail"
 thumbnail_cache_subdir = "thumbnail_cache"
