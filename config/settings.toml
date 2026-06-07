@@ -21,7 +21,7 @@ allow_nsfw = false     # skip posts flagged over_18 when false
 # Length bounds, derived from a 30-90s target read at ~150 wpm (~2.5 words/sec).
 min_words = 75
 max_words = 350
-top_k = 5              # number of stories to keep per pipeline run
+top_k = 30              # number of stories to keep per pipeline run
 
 [text]
 prepend_title = true   # use the post title as the spoken hook
