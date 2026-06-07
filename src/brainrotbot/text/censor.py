@@ -3,7 +3,7 @@
 We no longer *replace* nasty words with euphemisms. Instead:
   * the spoken narration keeps the original word (Step 2 narrates it verbatim; a blur SFX is
     later laid over its spoken interval -- see `tts/censor.py`), and
-  * the burned-in caption shows the word with its vowels asterisked ("fuck" -> "f*ck").
+  * the burned-in caption shows the word with its first vowel asterisked ("fuck" -> "f*ck").
 
 This module owns the *text* half of that: loading the banned-word list, deciding whether a token
 is banned (punctuation-insensitive, whole-word), masking a token's vowels, and turning a whole
@@ -17,7 +17,7 @@ import re
 import tomllib
 from functools import lru_cache
 
-# Vowels become '*'. 'y' is intentionally left alone (it reads fine and keeps short words legible).
+# Only the first vowel is masked (see mask_vowels). 'y' is intentionally not treated as a vowel.
 _VOWELS = re.compile(r"[aeiou]", re.IGNORECASE)
 # A token's "core" word, ignoring any surrounding punctuation ("fuck!" / "(fuck)" -> "fuck").
 _WORD_CORE = re.compile(r"[a-z']+", re.IGNORECASE)
@@ -43,8 +43,9 @@ def is_banned(token: str, banned: frozenset[str]) -> bool:
 
 
 def mask_vowels(token: str) -> str:
-    """Replace a token's vowels with '*', leaving consonants/punctuation intact ("fuck!" -> "f*ck!")."""
-    return _VOWELS.sub("*", token)
+    """Replace only the FIRST vowel with '*', leaving the rest intact ("fuck" -> "f*ck",
+    "murder" -> "m*rder", "ass!" -> "*ss!"). A token with no vowels is returned unchanged."""
+    return _VOWELS.sub("*", token, count=1)
 
 
 def censor_for_captions(text: str, banned: frozenset[str]) -> tuple[str, list[dict]]:

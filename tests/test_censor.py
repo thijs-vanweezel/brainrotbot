@@ -29,10 +29,15 @@ def test_load_supports_words_list_and_legacy_replacements(tmp_path):
     assert load_banned_words(str(legacy)) == frozenset({"kill", "gun"})
 
 
-def test_mask_vowels():
+def test_mask_vowels_masks_only_first_vowel():
     assert mask_vowels("fuck") == "f*ck"
     assert mask_vowels("FUCK!") == "F*CK!"
     assert mask_vowels("shit") == "sh*t"
+    # Multi-vowel words: only the FIRST vowel is asterisked, the rest stay.
+    assert mask_vowels("murder") == "m*rder"
+    assert mask_vowels("cocaine") == "c*caine"
+    assert mask_vowels("ass!") == "*ss!"
+    assert mask_vowels("rhythm") == "rhythm"  # no a/e/i/o/u -> unchanged
 
 
 def test_is_banned_whole_word_and_punctuation_insensitive():
