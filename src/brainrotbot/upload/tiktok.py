@@ -252,28 +252,31 @@ class TikTokUploader:
             )
 
     def _set_cover(self, page, cover_path: Path) -> bool:
-        """Best-effort custom cover from the Step 6 PNG. Returns True on success."""
+        """Best-effort custom cover from the Step 6 PNG. Returns True on success.
+
+        Open the cover editor and set its file `input` DIRECTLY -- we must NOT click the dialog's
+        "Upload" button, which fires the native OS file picker (a real dialog Playwright can't close, so
+        it stalls the run until dismissed by hand). A page-level filechooser handler (registered in
+        upload()) is a backstop that fills any stray picker. Then click the dialog's "Save".
+        """
         try:
-            for label in ("Edit cover", "Select cover", "Cover"):
+            opened = False
+            for label in ("Edit cover", "Select cover"):
                 btn = page.get_by_text(label, exact=False)
                 if btn.count() and btn.first.is_visible():
                     btn.first.click()
-                    self._pause()
+                    self._pause(1.0, 2.0)
+                    opened = True
                     break
-            else:
+            if not opened:
                 return False
-            up_tab = page.get_by_text(re.compile(r"upload\s+cover", re.I))
-            if up_tab.count():
-                up_tab.first.click()
-                self._pause()
-            # The cover dialog has its own file input; pick the last one on the page to avoid the
-            # main video input.
+            # Set the cover file straight onto the dialog's input (no "Upload" click -> no OS dialog).
             inputs = page.locator(_FILE_INPUT)
             inputs.nth(inputs.count() - 1).set_input_files(str(cover_path))
-            self._pause(1.0, 2.0)
-            confirm = page.get_by_role("button", name=re.compile(r"confirm|done|save|apply", re.I))
-            if confirm.count():
-                confirm.first.click()
+            self._pause(1.5, 2.5)
+            save = page.get_by_role("button", name=re.compile(r"^(save|confirm|done|apply)$", re.I))
+            if save.count():
+                save.first.click()
                 self._pause()
             return True
         except Exception as exc:  # noqa: BLE001 -- fall back to TikTok's auto frame
@@ -314,6 +317,24 @@ class TikTokUploader:
             self._pause(1.0, 2.0)
         print("[brainrotbot]   (Content Check Lite toggle not found -- the ~10 min check may still run)")
         return False
+
+    def _dismiss_caption_popup(self, page) -> None:
+        """Close the hashtag/mention suggestion dropdown after typing the caption.
+
+        TikTok pops a suggestion overlay while typing '#fyp' etc.; left open it covers the form and the
+        next actions (cover, visibility) get stuck scrolling around it. Press Escape, then click a
+        neutral static label ('Details' heading) to blur the editor -- the same "click anywhere" dismissal
+        a human would do.
+        """
+        try:
+            page.keyboard.press("Escape")
+            self._pause(0.3, 0.6)
+            neutral = page.get_by_text("Details", exact=True)
+            if neutral.count() and neutral.first.is_visible():
+                neutral.first.click()
+        except Exception:  # noqa: BLE001
+            pass
+        self._pause()
 
     def _set_public(self, page) -> None:
         """Best-effort: ensure visibility is 'Everyone' (Studio usually defaults to public already)."""
@@ -410,6 +431,10 @@ class TikTokUploader:
         # Auto-dismiss any dialog (notably the "are you sure you want to leave?" beforeunload that the
         # premature navigation used to trigger mid content-check) so it can never block automation.
         page.on("dialog", lambda d: d.accept())
+        # Backstop: if any click ever opens the native OS file picker (e.g. the cover dialog's "Upload"
+        # button), fill it with the cover image instead of leaving a real dialog blocking the run.
+        if cover_path and self.set_cover:
+            page.on("filechooser", lambda fc: fc.set_files(str(cover_path)))
         page.goto(self.upload_url)
         self._ensure_logged_in(page)
 
@@ -419,13 +444,14 @@ class TikTokUploader:
         self._pause(1.0, 2.0)
         self._dump(page, "01_processed")
 
-        # 2) Caption = title + hashtags. Clear the placeholder text, then type.
+        # 2) Caption = title + hashtags. Clear the placeholder text, then type, then DISMISS the hashtag
+        # suggestion dropdown -- left open it overlays the form and our next clicks fight it (scroll loop).
         editor = page.locator(_CAPTION_EDITOR).first
         editor.click()
         page.keyboard.press("Control+A")
         page.keyboard.press("Delete")
         editor.type(caption, delay=15)
-        self._pause()
+        self._dismiss_caption_popup(page)
 
         # 3) Subtitles: nothing to toggle -- TikTok auto-captions every video. 4) cover, 5) visibility.
         captions_on = self.subtitles  # TikTok auto-captions by default; we just record the intent
