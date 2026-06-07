@@ -104,6 +104,7 @@ def drain_upload_queue(settings, *, headless: bool | None = None) -> int:
     posted = 0
     uploader = TikTokUploader(
         session_dir=settings.tiktok_session_dir,
+        browser=opts.get("browser", "chromium"),
         upload_url=opts.get("upload_url", "https://www.tiktok.com/tiktokstudio/upload"),
         headless=headless,
         privacy=opts.get("privacy", "public"),
