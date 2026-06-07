@@ -68,11 +68,12 @@ def _rewrite_story_file(settings, entry: LedgerEntry) -> None:
 def _cleanup_assets(settings, entry: LedgerEntry) -> list[str]:
     """Delete this post's heavy per-video media once it's safely uploaded; keep JSON + shared caches.
 
-    Removes final / background / audio / thumbnail files (regenerable, and large). Leaves the music MP3
-    (it lives in the shared, reused music_cache) and every *_cache dir untouched. Returns what was deleted.
+    Removes final / background / audio / subtitle / thumbnail files (regenerable, and large). Leaves the
+    music MP3 (it lives in the shared, reused music_cache) and every *_cache dir untouched. The .ass is an
+    intermediate already burned into the final video, so it goes too. Returns what was deleted.
     """
     deleted: list[str] = []
-    for key in ("final_video", "background_video", "audio_path", "thumbnail_path"):
+    for key in ("final_video", "background_video", "audio_path", "subtitles_path", "thumbnail_path"):
         p = entry.assets.get(key)
         if p and Path(p).is_file():
             try:
