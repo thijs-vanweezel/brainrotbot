@@ -10,6 +10,8 @@ import tomllib
 from dataclasses import dataclass
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 # config.py lives at src/brainrotbot/config.py -> root is three parents up.
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SETTINGS_PATH = PROJECT_ROOT / "config" / "settings.toml"
@@ -52,6 +54,16 @@ class Settings:
     @property
     def edit_opts(self) -> dict:
         return self.raw.get("edit", {})
+
+    @property
+    def thumbnail_opts(self) -> dict:
+        return self.raw.get("thumbnail", {})
+
+    @property
+    def thumbnail_font_file(self) -> str:
+        """Absolute path to the title font, or "" if unset (resolved like the outro file)."""
+        ff = self.thumbnail_opts.get("font_file", "")
+        return str(self._resolve(ff)) if ff else ""
 
     @property
     def edit_outro_file(self) -> str:
@@ -107,6 +119,16 @@ class Settings:
         return self.data_dir / self.raw["paths"].get("music_cache_subdir", "music_cache")
 
     @property
+    def thumbnail_dir(self) -> Path:
+        return self.data_dir / self.raw["paths"].get("thumbnail_subdir", "thumbnail")
+
+    @property
+    def thumbnail_cache_dir(self) -> Path:
+        # Step 6: downloaded Pixabay backgrounds, keyed by image id (reused across runs when the
+        # same image is picked again; otherwise a fresh random image per story).
+        return self.data_dir / self.raw["paths"].get("thumbnail_cache_subdir", "thumbnail_cache")
+
+    @property
     def ledger_path(self) -> Path:
         return self.data_dir / self.raw["paths"]["ledger_file"]
 
@@ -116,6 +138,7 @@ class Settings:
 
 
 def load_settings(path: Path | None = None) -> Settings:
+    load_dotenv()  # pull secrets (e.g. PIXABAY_API_KEY) from a local .env into the environment
     path = path or DEFAULT_SETTINGS_PATH
     with open(path, "rb") as f:
         raw = tomllib.load(f)
