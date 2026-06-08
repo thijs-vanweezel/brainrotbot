@@ -67,6 +67,30 @@ _CHECK_LIMIT = re.compile(r"check limit for today|try again tomorrow", re.I)
 # again later. Retry".
 _POST_FAILED = re.compile(r"something went wrong|try again later|upload(?:ing)? failed", re.I)
 
+# --- Scheduling selectors (Step 7 batch path). Pinned from a real debug dump
+# (data/upload_debug/*_bulk_01_added0.html): the web uploader is a SINGLE-video editor (its file input
+# is NOT `multiple`), so we schedule videos SEQUENTIALLY in one session rather than as multi-cards.
+# The "When to post" card holds two radios named postSchedule -- value=post_now (default) and
+# value=schedule; choosing the latter reveals a date/time picker. Visibility defaults to "Everyone"
+# (public) so we leave it. The submit button is the same data-e2e id; its label flips Post -> Schedule.
+_SCHEDULE_CONTAINER = "[data-e2e=schedule_container]"        # the "When to post" card
+_SCHEDULE_RADIO = "input[value='schedule']"                  # reveals the date/time picker when clicked
+_SCHEDULE_ON = "input[value='schedule'][aria-checked='true']"  # proof scheduling is engaged before Post
+# Clicking the Schedule radio first pops a consent modal ("Allow your video to be saved for scheduled
+# posting?"); its Allow button must be clicked before scheduling engages and the date/time picker renders.
+_SCHEDULE_ALLOW = re.compile(r"^allow$", re.I)
+# Date/time picker (revealed only after the Schedule radio is on) -- PENDING a second dump
+# (bulk_03_scheduleopen); these are best-guess until then. _set_schedule raises if it can't confirm.
+_SCHEDULE_DATE_INPUT = "input[placeholder*='-'], input[type='text']"
+_SCHEDULE_TIME_INPUT = "input[placeholder*=':']"
+_SCHEDULED_OK = re.compile(r"scheduled|will be posted|view post", re.I)  # post-submit confirmation text
+
+
+class BulkScheduleError(RuntimeError):
+    """A video's schedule could not be engaged in the bulk uploader (e.g. the Schedule option/picker
+    wasn't found). Raised per item so the queue leaves that video retriable + its media kept, and we
+    never fall through to posting it live by accident."""
+
 
 class PostFailedError(RuntimeError):
     """The Post button could not be clicked (missing/disabled/click rejected).
@@ -351,6 +375,23 @@ class TikTokUploader:
         except Exception:  # noqa: BLE001
             pass
 
+    def _human_toggle_off(self, card) -> bool:
+        """Flip the check OFF with a human-like click on the VISIBLE switch (hover + real click).
+
+        Returns True only if the switch actually went off. Used in preference to force-clicking the
+        hidden input -- the visible-element interaction looks far less like automation to TikTok.
+        """
+        try:
+            switch = card.locator("[aria-checked]").first
+            switch.scroll_into_view_if_needed()
+            switch.hover()
+            self._pause(0.2, 0.5)
+            switch.click()
+            self._pause()
+            return card.locator("[aria-checked='true']").count() == 0
+        except Exception:  # noqa: BLE001
+            return False
+
     def _disable_content_check(self, page) -> bool:
         """Flip 'Content check lite' OFF so the post completes immediately.
 
@@ -373,7 +414,13 @@ class TikTokUploader:
                 inp.first.wait_for(state="attached", timeout=8000)  # input is hidden -> attached, not visible
                 if card.locator("[aria-checked='true']").count() == 0:
                     return True  # already off
-                inp.first.click(force=True)  # force-click the hidden input (the only thing React honours)
+                # Prefer a HUMAN-LIKE click on the visible switch (hover + real click) over force-clicking
+                # the hidden input -- the force-click is a strong automation tell. Fall back to the
+                # force-click only if React didn't register the human click.
+                if self._human_toggle_off(card):
+                    print("[brainrotbot]   Content Check Lite -> OFF (human click)")
+                    return True
+                inp.first.click(force=True)  # last resort: force-click the hidden input
                 self._pause()
                 if self._has_text(page, _CHECK_LIMIT):  # banner often only pops AFTER you try to flip it
                     print("[brainrotbot]   (daily check limit reached -- check stuck ON; the post will be rejected)")
@@ -617,3 +664,148 @@ class TikTokUploader:
             "cover_set": cover_set,
             "content_check_off": check_off,
         }
+
+    # --- sequential scheduling -------------------------------------------------------------------
+    def _set_schedule(self, page, when) -> None:
+        """Switch the editor from 'Post now' to 'Schedule' and set its publish time to `when`.
+
+        Selects the Schedule radio (which reveals the date/time picker), fills date + time, then VERIFIES
+        the schedule radio is engaged -- raising BulkScheduleError otherwise so we never click Post while
+        the form is still in "Post now" mode (which would publish live). `when` is a local-time datetime
+        (Studio schedules in browser/local time, matching `datetime.now()` on this PC). The date/time
+        input selectors are best-guess pending the bulk_03_scheduleopen dump.
+        """
+        box = page.locator(_SCHEDULE_CONTAINER)
+        radio = box.locator(_SCHEDULE_RADIO).first
+        if not radio.count():
+            raise BulkScheduleError("Schedule radio not found")
+        radio.click(force=True)  # the visible control is a styled label over a hidden radio input
+        self._pause()
+        # Clicking Schedule pops a consent modal -- Allow it, else scheduling never engages and the
+        # date/time picker never renders (the radio stays on "Now").
+        try:
+            allow = page.get_by_role("button", name=_SCHEDULE_ALLOW)
+            if allow.count() and allow.first.is_visible():
+                allow.first.click()
+                self._pause()
+        except Exception:  # noqa: BLE001
+            pass
+        self._dump(page, "bulk_03_scheduleopen")  # now shows the date/time picker for pinning
+        if box.locator(_SCHEDULE_ON).count() == 0:  # consent not granted / radio didn't switch
+            raise BulkScheduleError("schedule not engaged (consent modal not Allowed?)")
+        try:
+            date_in = box.locator(_SCHEDULE_DATE_INPUT).first
+            date_in.click()
+            date_in.fill(when.strftime("%Y-%m-%d"))
+            date_in.press("Enter")
+            time_in = box.locator(_SCHEDULE_TIME_INPUT).first
+            time_in.click()
+            time_in.fill(when.strftime("%H:%M"))
+            time_in.press("Enter")
+        except Exception as exc:  # noqa: BLE001
+            raise BulkScheduleError(f"could not set schedule date/time: {exc}")
+        self._pause()
+        if box.locator(_SCHEDULE_ON).count() == 0:  # never click Post unless scheduling is truly engaged
+            raise BulkScheduleError("schedule radio not engaged after setting the time")
+
+    def _await_schedule_confirm(self, page) -> None:
+        """After clicking Schedule, wait for confirmation (form closed / redirect / 'scheduled' text).
+
+        Raises UploadRejectedError on an on-page failure, or BulkScheduleError if nothing confirmed in
+        the settle window (form still open) -- the caller then keeps that video retriable, media kept.
+        """
+        deadline = time.time() + self.post_settle_sec
+        while time.time() < deadline:
+            if "/content" in page.url or self._has_text(page, _SCHEDULED_OK):
+                return
+            try:
+                btn = page.locator(_POST_BUTTON)
+                if btn.count() == 0 or not btn.first.is_visible():
+                    return  # the upload form closed -> scheduled
+            except Exception:  # noqa: BLE001
+                pass
+            if self._has_text(page, _POST_FAILED):
+                raise UploadRejectedError("post rejected after clicking Schedule")
+            self._stay(page)  # never let a stray exit modal abandon the post
+            time.sleep(1.5)
+        raise BulkScheduleError("schedule submit not confirmed (form still open)")
+
+    def _schedule_one(self, page, video: Path, cover, caption: str, when) -> bool:
+        """Upload ONE video and schedule it for `when`. Returns whether a custom cover was set.
+
+        Mirrors upload() up to the Post step, but selects Schedule (not "Post now") and clicks Post only
+        after scheduling is confirmed engaged -- so a mis-pin can never publish live. Raises on failure.
+        """
+        page.goto(self.upload_url)
+        self._ensure_logged_in(page)
+        if cover and self.set_cover:
+            page.on("filechooser", lambda fc: fc.set_files(str(cover)))  # backstop for the cover picker
+        page.locator(_FILE_INPUT).first.set_input_files(str(video))
+        page.locator(_REPLACE_BUTTON).first.wait_for(timeout=self.nav_timeout_ms)  # processed
+        self._pause(1.0, 2.0)
+        editor = page.locator(_CAPTION_EDITOR).first
+        editor.click()
+        page.keyboard.press("Control+A")
+        page.keyboard.press("Delete")
+        editor.type(caption, delay=10)
+        self._dismiss_caption_popup(page)
+        cover_set = bool(cover) and self.set_cover and self._set_cover(page, Path(cover))
+        self._disable_content_check(page)   # best-effort; usually absent on the scheduled path
+        self._set_schedule(page, when)       # raises unless scheduling is engaged -> safe to Post
+        self._dump(page, "bulk_04_scheduled")
+        self._close_any_dialog(page)
+        self._click_post(page)               # the button now reads "Schedule"
+        self._await_schedule_confirm(page)
+        return cover_set
+
+    def upload_batch(self, items: list[tuple], schedule_times: list) -> list[dict]:
+        """Upload videos in ONE session and SCHEDULE each (no live post), sequentially.
+
+        `items` = [(video_path, cover_path|None, caption), ...]; `schedule_times` = [datetime, ...]
+        aligned by index. Returns a per-item list of {ok, scheduled_for, cover_set, error}. Scheduled
+        posts have no live URL yet -- the queue marks them `upload_scheduled` and reconcile_scheduled()
+        captures the URL once they publish. One video's failure never sinks the rest of the batch.
+        """
+        if self._ctx is None:
+            raise RuntimeError("TikTokUploader used outside its context manager (`with uploader:`)")
+        page = self._ctx.pages[0] if self._ctx.pages else self._ctx.new_page()
+        page.on("dialog", lambda d: d.accept())  # auto-accept the beforeunload between videos
+        results: list[dict] = []
+        for i, (video, cover, caption) in enumerate(items):
+            when = schedule_times[i]
+            try:
+                cover_set = self._schedule_one(page, Path(video), cover, caption, when)
+                results.append({"ok": True, "scheduled_for": when.timestamp(),
+                                "cover_set": cover_set, "error": None})
+                print(f"[brainrotbot]   scheduled video {i} for {when:%Y-%m-%d %H:%M}")
+            except Exception as exc:  # noqa: BLE001
+                self._dump(page, f"bulk_99_failed{i}")
+                results.append({"ok": False, "scheduled_for": None, "cover_set": False, "error": str(exc)})
+                print(f"[brainrotbot]   (could not schedule video {i}: {exc})")
+        return results
+
+    def published_videos(self) -> list[dict]:
+        """Read the Studio content manager and return [{url, tiktok_id}] for published videos.
+
+        Used by reconcile_scheduled() to match now-live scheduled posts to their URLs. BEST-EFFORT /
+        RE-PIN: scrapes every `/video/` link on the content page. Caption matching happens in the queue.
+        """
+        if self._ctx is None:
+            raise RuntimeError("TikTokUploader used outside its context manager (`with uploader:`)")
+        page = self._ctx.pages[0] if self._ctx.pages else self._ctx.new_page()
+        page.goto(CONTENT_URL)
+        self._ensure_logged_in(page)
+        self._pause(2.0, 3.0)
+        self._dump(page, "reconcile_content")
+        out: list[dict] = []
+        try:
+            links = page.locator(_VIDEO_HREF)
+            for i in range(links.count()):
+                href = links.nth(i).get_attribute("href")
+                if not href:
+                    continue
+                url, tid = self._normalize(href)
+                out.append({"url": url, "tiktok_id": tid})
+        except Exception:  # noqa: BLE001
+            pass
+        return out
