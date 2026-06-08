@@ -1,22 +1,54 @@
-# TikTok-sensitive words. These are NOT replaced: the narration speaks the real word while a blur
-# SFX is laid loudly over its spoken interval (tts/censor.py), and the burned-in caption shows the
-# word with its vowels asterisked ("fuck" -> "f*ck", text/censor.py). Matched whole-word and
-# case-insensitively on each word's alphabetic core (surrounding punctuation is ignored), so list
-# the inflections you care about explicitly ("fuck"/"fucking"/"fucked"). Edit freely -- this is data.
+# TikTok-sensitive words, per language. These are NOT replaced: the narration speaks the real word
+# while a blur SFX is laid over its spoken interval (tts/censor.py), and the burned-in caption shows
+# the word with its FIRST vowel asterisked ("fuck" -> "f*ck", text/censor.py). Matched whole-word and
+# case-insensitively on each word's letter-core (surrounding punctuation ignored; accents kept), so
+# list the inflections you care about explicitly. The bot picks the list matching each video's
+# language (Step 1.5 fan-out); a language with no list here is left uncensored. Edit freely -- data.
+#
+# Legacy forms still load: a flat `words = [...]` or a `[replacements]` table both map to `en`.
 
-words = [
+[words]
+en = [
     "kill", "killed", "killing", "kills",
     "dead", "death", "die", "died", "dying",
     "suicide", "suicidal",
     "murder", "murdered", "murderer",
     "rape", "raped", "rapist",
     "sex", "sexual", "horny",
-    "porn", "buttplug", "butt", "ass", "anal",
+    "porn",
     "gun", "guns", "shoot", "shooting", "shot",
-    "drugs", "cocaine", "heroine",
+    "drugs", "cocaine",
     "nazi",
     "dick", "penis", "cock", "boner",
     "cunt", "pussy", "vagina",
     "fuck", "fucked", "fucking", "fucker", "motherfucker",
     "shit", "bitch", "slut", "whore",
+]
+
+fr = [
+    "tuer", "tué", "tuée", "tués", "tue", "meurtre", "meurtrier",
+    "mort", "morte", "morts", "mourir", "meurt", "mourant",
+    "suicide", "suicidaire", "assassiner", "assassiné", "assassinat", "assassin",
+    "viol", "violer", "violé", "violée", "violeur",
+    "sexe", "sexuel", "sexuelle", "excité", "excitée",
+    "porno", "pornographie",
+    "arme", "armes", "fusil", "pistolet", "flingue", "tirer",
+    "drogue", "drogues", "cocaïne",
+    "nazi", "nazis",
+    "bite", "pénis", "chatte",
+    "salope", "pute", "putain", "merde", "enculé", "connard", "conne", "niquer", "foutre",
+]
+
+es = [
+    "matar", "mató", "matado", "mata", "asesinar", "asesinato", "asesino", "asesinado",
+    "muerte", "muerto", "muerta", "muertos", "morir", "murió", "muriendo",
+    "suicidio", "suicida",
+    "violación", "violar", "violó", "violada", "violador",
+    "sexo", "sexual", "cachondo", "cachonda",
+    "porno", "pornografía",
+    "arma", "armas", "pistola", "fusil", "disparar", "disparo",
+    "droga", "drogas", "cocaína",
+    "nazi", "nazis",
+    "polla", "pene", "verga", "coño",
+    "puta", "puto", "zorra", "mierda", "joder", "follar", "cabrón", "capullo", "gilipollas", "maricón",
 ]
