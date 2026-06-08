@@ -101,7 +101,7 @@ def test_blur_masks_the_word_interval(tmp_path):
     # 1 s of loud full-scale narration; blur the middle 0.4-0.6 s window.
     audio = np.ones(sr, dtype=np.float32) * 0.9
     sf.write(tmp_path / "n.wav", audio, sr)
-    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40, pad_sec=0.0,
+    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40, sfx_inset_sec=0.0,
                       sample_rate=sr)
 
     n = blur.censor(tmp_path / "n.wav", [(0.4, 0.6)])
@@ -118,6 +118,36 @@ def test_blur_masks_the_word_interval(tmp_path):
     # before/after the window: untouched (abs tol covers the WAV's 16-bit quantization).
     assert out[100] == pytest.approx(0.9, abs=1e-3)
     assert out[-100] == pytest.approx(0.9, abs=1e-3)
+
+
+def test_blur_inset_runs_shorter_than_the_word(tmp_path):
+    sr = 24000
+    audio = np.ones(sr, dtype=np.float32) * 0.9
+    sf.write(tmp_path / "n.wav", audio, sr)
+    # Inset 0.05 s each edge: a 0.4-0.6 s word -> blur/duck only over ~0.45-0.55 s.
+    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40, sfx_inset_sec=0.05,
+                      sample_rate=sr)
+    assert blur.censor(tmp_path / "n.wav", [(0.4, 0.6)]) == 1
+    out, _ = sf.read(tmp_path / "n.wav", dtype="float32")
+    # The word edges (just inside 0.4 / 0.6) are NOT touched -- the beep is shorter than the word.
+    assert out[int(0.41 * sr)] == pytest.approx(0.9, abs=1e-3)
+    assert out[int(0.59 * sr)] == pytest.approx(0.9, abs=1e-3)
+    # ...but the inset centre IS blurred (loud, zero-mean) -- the word is still masked there.
+    centre = out[int(0.48 * sr):int(0.52 * sr)]
+    assert abs(float(np.mean(centre))) < 0.05 and float(np.max(np.abs(centre))) > 0.3
+
+
+def test_blur_too_short_word_falls_back_to_exact_interval(tmp_path):
+    sr = 24000
+    sf.write(tmp_path / "n.wav", np.ones(sr, dtype=np.float32) * 0.9, sr)
+    # A 0.03 s word with a 0.05 s inset would collapse -> fall back to the exact interval so the
+    # banned word is never left audible.
+    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40, sfx_inset_sec=0.05,
+                      sample_rate=sr)
+    assert blur.censor(tmp_path / "n.wav", [(0.40, 0.43)]) == 1
+    out, _ = sf.read(tmp_path / "n.wav", dtype="float32")
+    centre = out[int(0.41 * sr):int(0.42 * sr)]
+    assert abs(float(np.mean(centre))) < 0.1  # the short word is ducked/masked, not skipped
 
 
 def test_blur_noop_without_intervals(tmp_path):

@@ -32,7 +32,7 @@ from .music.ncs import TrackMeta, discover_instrumental_tracks, download_track, 
 from .subtitles.generate import SubtitleMaker
 from .thumbnail.generate import ThumbnailMaker
 from .tts.synthesize import KokoroSynthesizer, pick_voice
-from .upload.queue import drain_upload_queue
+from .upload.queue import drain_upload_queue, reconcile_scheduled
 from .upload.tiktok import TikTokUploader
 from .video.background import BackgroundVideoMaker, pick_source
 
@@ -60,6 +60,11 @@ def run(
     # video). --upload-only just flushes whatever is already finished, creating nothing new.
     upload_enabled = (not skip_upload) and settings.upload_opts.get("enabled", True)
     batch_size = int(settings.upload_opts.get("batch_size", 30))
+    # First finalize any posts scheduled on a previous run that have since published (capture their live
+    # URLs + clean up media) before scheduling new ones -- the daily flow for the Zernio/bulk paths.
+    # Cheap no-op when nothing is pending (and on the legacy live path).
+    if upload_enabled:
+        reconcile_scheduled(settings, debug=debug_upload)
     if upload_only:
         drain_upload_queue(settings, debug=debug_upload)
         return []
@@ -170,7 +175,7 @@ def run(
         sfx_file=settings.censor_sfx_file,
         gain_db=float(censor_opts.get("gain_db", 0.0)),
         voice_duck_db=float(censor_opts.get("voice_duck_db", -30.0)),
-        pad_sec=float(censor_opts.get("pad_sec", 0.05)),
+        sfx_inset_sec=float(censor_opts.get("sfx_inset_sec", 0.04)),
         sample_rate=int(tts_opts.get("sample_rate", 24000)),
     )
 
@@ -181,6 +186,7 @@ def run(
                          or not settings.tts_intro_sfx_file) else IntroSfx(
         sfx_file=settings.tts_intro_sfx_file,
         gain_db=float(tts_opts.get("intro_sfx_gain_db", 0.0)),
+        offset_sec=float(tts_opts.get("intro_sfx_offset_sec", -0.15)),
         sample_rate=int(tts_opts.get("sample_rate", 24000)),
     )
 
@@ -638,6 +644,9 @@ def main(argv: list[str] | None = None) -> int:
                         help="Dump the Studio DOM (screenshot+HTML) at each upload milestone to data/upload_debug")
     parser.add_argument("--tiktok-login", action="store_true",
                         help="Fallback: open a browser to log in to TikTok by hand and save the session")
+    parser.add_argument("--reconcile", action="store_true",
+                        help="Finalize already-scheduled posts that have since published (capture their "
+                             "live URLs, mark upload_done, delete media); creates nothing new")
     args = parser.parse_args(argv)
 
     # TikTok session utilities (build the uploader from config, then run one action and exit).
@@ -652,6 +661,11 @@ def main(argv: list[str] | None = None) -> int:
         if args.tiktok_check:
             return 0 if uploader.check() else 1
         uploader.login()  # manual fallback when no cookies are available
+        return 0
+
+    # Reconcile-only: finalize scheduled posts that have published, then exit (creates nothing new).
+    if args.reconcile:
+        reconcile_scheduled(load_settings(args.settings), debug=args.tiktok_debug)
         return 0
 
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,

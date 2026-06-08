@@ -36,10 +36,11 @@ strip_tldr = true      # drop "TL;DR" lines
 # --skip-censor disables the audio blur (captions stay masked); enabled=false also disables it.
 enabled = true
 sfx_file = "resources/blur_sfx.mp3"
-gain_db = 0            # extra loudness on the blur SFX (peak-normalized to ~0.95 first; >0 = louder)
-voice_duck_db = -30    # how far the real word is attenuated under the blur (-30 dB ~= inaudible)
-pad_sec = 0.05         # extend the blur slightly past the word edges so consonants are fully covered
-                       # (0 = blur length matches the aligned word exactly)
+gain_db = -10          # loudness trim on the blur SFX (peak-normalized first; <0 = quieter)
+voice_duck_db = -22    # how far the real word is attenuated under the blur (-30 dB ~= inaudible)
+sfx_inset_sec = 0.04   # inset the blur (and its duck) this much on each edge, so the beep runs a
+                       # touch shorter than the word (0 = exactly the aligned word; too-short words
+                       # fall back to their exact interval so they're never left audible)
 
 [tts]
 engine = "kokoro"
@@ -54,7 +55,8 @@ sample_rate = 24000    # Kokoro's native rate; do not change
 # intro_sfx_gain_db trims from there. Needs subtitles on (the alignment); --skip-intro-sfx disables.
 intro_sfx_enabled = true
 intro_sfx_file = "resources/ahem.mp3"
-intro_sfx_gain_db = 0  # loudness trim on the ahem (peak-normalized to ~0.95 first; >0 = louder)
+intro_sfx_gain_db = -6     # loudness trim on the ahem (peak-normalized to ~0.95 first; <0 = quieter)
+intro_sfx_offset_sec = -0.15  # start the ahem this many seconds before the title ends (negative = earlier)
 
 # Voice pools rotated over per story for A/B testing; chosen voice+lang logged in the ledger.
 # Keyed by Kokoro lang_code. 'a' (English) is required; others used for non-English stories
@@ -240,6 +242,27 @@ completion_timeout_sec = 600
 # If it doesn't close in time, the post was rejected -- the video is left queued to retry, and a daily
 # limit aborts the rest of the batch. Avoids burning completion_timeout_sec on a post that already failed.
 post_settle_sec = 30
+# --- Provider. "zernio" (DEFAULT) posts via Zernio's REST API -- TikTok's official Content Posting API
+# through Zernio's AUDITED app, so posts go out PUBLIC + scheduled with no browser, no "Content Check
+# Lite" gate, and none of the account-flagging risk that broke the web-Studio path. One-time setup:
+# sign up at zernio.com, connect your TikTok account, put the key in .env as ZERNIO_API_KEY (loaded like
+# PIXABAY_API_KEY). zernio_account_id auto-resolves from /v1/profiles when a single TikTok account is
+# connected, else set it here. Videos are stashed on Litterbox (72h temp host) so Zernio can pull them.
+# Set provider="playwright" to fall back to the web-Studio driver (the schedule/bulk path below).
+provider = "zernio"
+zernio_account_id = ""           # blank = auto-resolve the single connected TikTok profile from /profiles
+timezone = "Europe/Amsterdam"    # timezone Zernio interprets scheduledFor in (match your local zone)
+# --- Bulk scheduling. Posting each video LIVE one-by-one is a burst that trips TikTok's "abnormal
+# environment" detection and exhausts the daily content-check quota -> "Content Check Lite" freezes ON
+# and posts fail with "Something went wrong". Instead the drain uses TikTok Studio's BULK uploader:
+# it uploads up to `max_per_run` videos in ONE short session and SCHEDULES them a few hours apart
+# across a single day. Scheduled posts are moderated server-side near publish, sidestepping the live
+# content-check toggle, and the PC only needs to be on for the one session (run `run.bat` once a day,
+# optionally via Windows Task Scheduler). schedule=false falls back to the live one-by-one path.
+schedule = true
+max_per_run = 4                  # max videos uploaded + scheduled per drain (keep small; raise slowly)
+schedule_first_offset_min = 60   # first post is scheduled this many minutes from now (local time)
+schedule_gap_hours = 3           # spacing between consecutive scheduled posts (stays within one day)
 debug = false                    # dump Studio DOM (screenshot+HTML) per milestone to data/upload_debug
 session_subdir = "tiktok_profile"  # persistent browser profile under config/ (gitignored)
 

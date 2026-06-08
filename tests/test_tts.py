@@ -114,7 +114,7 @@ def test_intro_sfx_overlays_at_timestamp_keeping_length(tmp_path):
     sr = 24000
     # 1 s of quiet narration; overlay the ahem at the 0.4 s "title end".
     sf.write(tmp_path / "n.wav", np.full(sr, 0.1, dtype=np.float32), sr)
-    fx = IntroSfx(sfx_file=str(_make_tone(tmp_path)), sample_rate=sr)
+    fx = IntroSfx(sfx_file=str(_make_tone(tmp_path)), offset_sec=0.0, sample_rate=sr)
 
     assert fx.overlay(tmp_path / "n.wav", 0.4) is True
     out, _ = sf.read(tmp_path / "n.wav", dtype="float32")
@@ -125,6 +125,18 @@ def test_intro_sfx_overlays_at_timestamp_keeping_length(tmp_path):
     s = int(0.4 * sr)
     window = out[s + 300 : s + int(0.2 * sr) - 300]  # inside the 0.2 s tone, past the edge fade
     assert float(np.max(np.abs(window))) > 0.8  # clearly audible over the narration
+
+
+def test_intro_sfx_offset_starts_earlier(tmp_path):
+    sr = 24000
+    sf.write(tmp_path / "n.wav", np.full(sr, 0.1, dtype=np.float32), sr)
+    # offset_sec=-0.2 starts the 0.2 s tone a fifth of a second before the 0.4 s title end (~0.2 s).
+    fx = IntroSfx(sfx_file=str(_make_tone(tmp_path)), offset_sec=-0.2, sample_rate=sr)
+    assert fx.overlay(tmp_path / "n.wav", 0.4) is True
+    out, _ = sf.read(tmp_path / "n.wav", dtype="float32")
+    # The tone is now audible just after 0.2 s and gone before 0.4 s (it ran 0.2-0.4 s, not 0.4-0.6).
+    assert float(np.max(np.abs(out[int(0.22 * sr):int(0.38 * sr)]))) > 0.8
+    assert out[int(0.5 * sr)] == pytest.approx(0.1, abs=1e-3)  # nothing left past the early tone
 
 
 def test_intro_sfx_noop_when_start_past_end(tmp_path):
