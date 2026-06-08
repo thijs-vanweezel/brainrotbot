@@ -74,12 +74,23 @@ class Settings:
         return str(self._resolve(sf)) if sf else ""
 
     @property
+    def tts_intro_sfx_file(self) -> str:
+        """Absolute path to the intro "ahem" SFX, or "" if unset (resolved like censor_sfx_file)."""
+        sf = self.tts_opts.get("intro_sfx_file", "")
+        return str(self._resolve(sf)) if sf else ""
+
+    @property
     def thumbnail_opts(self) -> dict:
         return self.raw.get("thumbnail", {})
 
     @property
     def upload_opts(self) -> dict:
         return self.raw.get("upload", {})
+
+    @property
+    def wikipedia_opts(self) -> dict:
+        # Step 7: random Wikipedia intro used as the TikTok caption body (+ its category for the ledger).
+        return self.raw.get("wikipedia", {})
 
     @property
     def tiktok_session_dir(self) -> Path:

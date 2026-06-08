@@ -14,11 +14,13 @@ keeping only the JSON record and the shared caches for Step 8 analytics.
 from __future__ import annotations
 
 import json
+import re
 import time
 from pathlib import Path
 
 from ..ledger import append_entry, iter_entries
 from ..models import LedgerEntry
+from ..wiki.article import fetch_random_article
 from .tiktok import PostFailedError, TikTokUploader, UploadRejectedError
 
 # Statuses that mean an upload was already started or finished for this video; scan_ready never
@@ -83,11 +85,52 @@ def scan_ready(settings) -> list[LedgerEntry]:
     return ready
 
 
-def _build_caption(entry: LedgerEntry, template: str, hashtags: list[str]) -> str:
-    """caption_template (default '{title}') + space-joined hashtags."""
-    base = template.format(title=entry.text.get("title", ""))
+def _subreddit_hashtag(entry: LedgerEntry) -> str | None:
+    """The story's own source subreddit as a hashtag (#AmItheAsshole), or None if unknown.
+
+    Sanitised to the alphanumerics/underscore TikTok allows in a tag.
+    """
+    sub = re.sub(r"[^0-9A-Za-z_]", "", (entry.source.get("subreddit") or "").strip())
+    return f"#{sub}" if sub else None
+
+
+def _truncate(text: str, limit: int) -> str:
+    """Trim to <= `limit` chars, cutting at a word boundary and appending an ellipsis."""
+    text = text.strip()
+    if len(text) <= limit:
+        return text
+    if limit <= 1:
+        return text[:limit]
+    cut = text[: limit - 1].rstrip()           # leave room for the 1-char ellipsis
+    sp = cut.rfind(" ")
+    if sp > 0:
+        cut = cut[:sp].rstrip()
+    return cut + "…"
+
+
+def _build_caption(
+    entry: LedgerEntry,
+    hashtags: list[str],
+    *,
+    article: dict | None,
+    fallback_template: str,
+    max_chars: int,
+) -> str:
+    """Caption = a (random, unrelated) Wikipedia intro + the hashtag block, capped at `max_chars`.
+
+    The hashtag block drives reach, so it's built whole first; the body is then truncated at a
+    word boundary to fit. Degrades to the post title (via `fallback_template`) when no article
+    was fetched (e.g. Wikipedia outage).
+    """
+    body = (article or {}).get("extract") or fallback_template.format(title=entry.text.get("title", ""))
     tags = " ".join(hashtags)
-    return f"{base} {tags}".strip()
+    if not tags:
+        return _truncate(body, max_chars)
+    room = max_chars - len(tags) - 2           # reserve the tags + a blank-line separator
+    if room <= 0:                              # pathological: tags alone exceed the cap -> tags only
+        return tags[:max_chars].strip()
+    body = _truncate(body, room)
+    return f"{body}\n\n{tags}".strip() if body else tags
 
 
 def _rewrite_story_file(settings, entry: LedgerEntry) -> None:
@@ -131,8 +174,11 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
         return 0
 
     opts = settings.upload_opts
-    template = opts.get("caption_template", "{title}")
-    hashtags = [h for h in opts.get("hashtags", []) if h]
+    template = opts.get("caption_template", "{title}")           # fallback body if Wikipedia is down
+    hashtags = [h for h in opts.get("hashtags", []) if h]        # fixed pool, same every post
+    max_chars = int(opts.get("caption_max_chars", 2200))
+    append_sub = bool(opts.get("append_subreddit_hashtag", True))
+    wiki_enabled = bool(settings.wikipedia_opts.get("enabled", True))
     delete_after = bool(opts.get("delete_after_upload", True))
     headless = opts.get("headless", False) if headless is None else headless
     debug = debug or bool(opts.get("debug", False))
@@ -158,7 +204,17 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
     with uploader:
         for entry in ready:
             pid = _post_id(entry)
-            caption = _build_caption(entry, template, hashtags)
+            # Random, deliberately-unrelated Wikipedia intro as the description body (+ its category
+            # recorded below for Step 8). Tags = the fixed pool plus this story's own subreddit.
+            article = fetch_random_article(settings) if wiki_enabled else None
+            entry_tags = list(hashtags)
+            if append_sub:
+                sub_tag = _subreddit_hashtag(entry)
+                if sub_tag and sub_tag.lower() not in {t.lower() for t in entry_tags}:
+                    entry_tags.append(sub_tag)
+            caption = _build_caption(
+                entry, entry_tags, article=article, fallback_template=template, max_chars=max_chars
+            )
             cover = entry.assets.get("thumbnail_path")
             # Persist an in-flight marker BEFORE posting. The post is a live side-effect; if the
             # process is killed between the post and our success-write, this on-disk status is the
@@ -180,12 +236,18 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
                     url=meta["url"],
                     posted_at=meta["posted_at"],
                     caption=caption,
-                    hashtags=hashtags,
+                    hashtags=entry_tags,
                     public=meta["public"],
                     captions_on=meta["captions_on"],
                     cover_set=meta["cover_set"],
                     content_check_off=meta.get("content_check_off"),
                 )
+                if article:
+                    # Step 8 A/B signal: the (unrelated) Wikipedia article whose intro padded the caption.
+                    entry.upload["wikipedia"] = {
+                        "title": article["title"], "url": article["url"],
+                        "category": article["category"], "categories": article["categories"],
+                    }
                 if confirmed:
                     entry.status = "upload_done"
                     if delete_after:
