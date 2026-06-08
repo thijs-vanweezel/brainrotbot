@@ -48,6 +48,14 @@ device = "auto"        # auto | cpu | cuda
 speed = 1.15           # narration speed multiplier
 sample_rate = 24000    # Kokoro's native rate; do not change
 
+# Intro SFX: an "ahem" throat-clear overlaid on the narration the instant the post title finishes
+# (the title-end time comes from the Step 4.5 caption alignment). Pure overlay -- it briefly layers
+# over the first words of the body and leaves the total length unchanged. Peak-normalized loud first;
+# intro_sfx_gain_db trims from there. Needs subtitles on (the alignment); --skip-intro-sfx disables.
+intro_sfx_enabled = true
+intro_sfx_file = "resources/ahem.mp3"
+intro_sfx_gain_db = 0  # loudness trim on the ahem (peak-normalized to ~0.95 first; >0 = louder)
+
 # Voice pools rotated over per story for A/B testing; chosen voice+lang logged in the ledger.
 # Keyed by Kokoro lang_code. 'a' (English) is required; others used for non-English stories
 # (we plan to translate posts to Japanese 'j' / Chinese 'z' later).
