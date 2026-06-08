@@ -5,10 +5,12 @@ We no longer *replace* nasty words with euphemisms. Instead:
     later laid over its spoken interval -- see `tts/censor.py`), and
   * the burned-in caption shows the word with its first vowel asterisked ("fuck" -> "f*ck").
 
-This module owns the *text* half of that: loading the banned-word list, deciding whether a token
-is banned (punctuation-insensitive, whole-word), masking a token's vowels, and turning a whole
-cleaned story into its caption/display form plus a per-word log for the ledger. The *audio* half
-(laying the blur SFX over the spoken word) lives in `tts/censor.py`; both share `is_banned`.
+This module owns the *text* half of that: loading the per-language banned-word lists, deciding
+whether a token is banned (punctuation-insensitive, whole-word, accent-aware), masking a token's
+first vowel, and turning a cleaned story into its caption/display form plus a per-word log for the
+ledger. The *audio* half (laying the blur SFX over the spoken word) lives in `tts/censor.py`; both
+share `is_banned`. Translated variants (Step 1.5) censor with their own language's list -- the bot
+picks `load_banned_words(...)[lang]` -- since the English words never appear in French/Spanish text.
 """
 
 from __future__ import annotations
@@ -17,23 +19,34 @@ import re
 import tomllib
 from functools import lru_cache
 
-# Only the first vowel is masked (see mask_vowels). 'y' is intentionally not treated as a vowel.
-_VOWELS = re.compile(r"[aeiou]", re.IGNORECASE)
-# A token's "core" word, ignoring any surrounding punctuation ("fuck!" / "(fuck)" -> "fuck").
-_WORD_CORE = re.compile(r"[a-z']+", re.IGNORECASE)
+# Only the FIRST vowel is masked (see mask_vowels). Accented vowels are included so French/Spanish
+# words mask correctly ("pénis" -> "p*nis"); 'y' is intentionally not treated as a vowel.
+_VOWELS = re.compile(r"[aeiouàáâäãèéêëìíîïòóôöõùúûü]", re.IGNORECASE)
+# A token's "core" word: a run of letters of ANY script (so accents count), ignoring surrounding
+# punctuation/digits ("fuck!" / "(fuck)" -> "fuck", "cocaïne." -> "cocaïne").
+_WORD_CORE = re.compile(r"[^\W\d_]+", re.UNICODE)
 
 
 @lru_cache(maxsize=8)
-def load_banned_words(path_str: str) -> frozenset[str]:
-    """Load the lowercase banned-word set from a TOML file.
+def load_banned_words(path_str: str) -> dict[str, frozenset[str]]:
+    """Load the lowercase banned-word lists keyed by language from a TOML file.
 
-    Accepts either the new flat form (`words = ["fuck", ...]`) or the legacy `[replacements]`
-    table (its keys are the words), so an old banned_words.toml keeps working. Cached by path.
+    Three accepted forms (cached by path):
+      * new per-language table: `[words]` with `en = [...]`, `fr = [...]`, ... -> {lang: set};
+      * legacy flat list `words = [...]` -> {"en": set};
+      * legacy `[replacements]` table (keys are the words) -> {"en": set}.
+    A language absent from the file maps to no set, so its variant is left uncensored.
     """
     with open(path_str, "rb") as f:
         data = tomllib.load(f)
-    words = data.get("words") or list(data.get("replacements", {}).keys())
-    return frozenset(str(w).lower() for w in words)
+    words = data.get("words")
+    if isinstance(words, dict):  # per-language table
+        return {lang: frozenset(str(w).lower() for w in lst) for lang, lst in words.items()}
+    if isinstance(words, list):  # legacy flat list -> English
+        return {"en": frozenset(str(w).lower() for w in words)}
+    if "replacements" in data:  # legacy euphemism map -> English (keys only)
+        return {"en": frozenset(str(k).lower() for k in data["replacements"])}
+    return {}
 
 
 def is_banned(token: str, banned: frozenset[str]) -> bool:
