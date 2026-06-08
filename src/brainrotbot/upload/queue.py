@@ -192,8 +192,9 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
     max_per_run = int(opts.get("max_per_run", 4))
 
     # Default path: schedule via Zernio's REST API (official Content Posting API, their audited app) --
-    # no browser, no Content Check Lite, no flagging risk. provider="playwright" uses the web-Studio
-    # driver below (schedule=true -> bulk-schedule; schedule=false -> legacy live one-by-one).
+    # no browser, no Content Check Lite, no flagging risk. provider="playwright" falls back to the
+    # legacy live one-by-one web-Studio driver below (kept as a fallback; the account is currently
+    # flagged on it).
     if provider == "zernio":
         return _schedule_batch_zernio(
             settings, ready[:max_per_run], template=template, hashtags=hashtags,
@@ -218,16 +219,6 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
         debug=debug,
         debug_dir=settings.data_dir / "upload_debug",
     )
-
-    # Bulk-schedule path (default): upload up to max_per_run videos in one session and schedule them a
-    # few hours apart over one day, instead of posting each live (which trips bot-detection + the daily
-    # content-check quota). schedule=false keeps the legacy live one-by-one loop below.
-    if bool(opts.get("schedule", True)):
-        return _schedule_batch(
-            settings, uploader, ready[:max_per_run],
-            template=template, hashtags=hashtags, max_chars=max_chars,
-            append_sub=append_sub, wiki_enabled=wiki_enabled,
-        )
 
     with uploader:
         for entry in ready:
@@ -322,80 +313,6 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
                 print(f"[brainrotbot] WARNING: upload failed for {pid}: {exc}")
     print(f"[brainrotbot] Drain complete: {posted}/{len(ready)} confirmed posted.")
     return posted
-
-
-def _schedule_batch(settings, uploader, ready, *, template, hashtags, max_chars,
-                    append_sub, wiki_enabled) -> int:
-    """Upload `ready` in one session and schedule them a few hours apart today. Returns # scheduled.
-
-    Each scheduled video is marked `upload_scheduled` (media KEPT -- it isn't live yet; reconcile_scheduled
-    finalizes it + deletes media once published). Items the scheduler couldn't engage stay retriable
-    (reverted to their prior status, media kept) for the next run. Nothing is posted live here.
-    """
-    if not ready:
-        return 0
-    first_offset = int(settings.upload_opts.get("schedule_first_offset_min", 60))
-    gap_hours = float(settings.upload_opts.get("schedule_gap_hours", 3))
-    start = datetime.now() + timedelta(minutes=first_offset)
-
-    # Build captions/covers/times per entry exactly like the live path (Wikipedia body + tag pool).
-    batch: list[tuple] = []          # (entry, prev_status, tags, caption, article)
-    items: list[tuple] = []          # (video_path, cover_path|None, caption) for the uploader
-    schedule_times: list[datetime] = []
-    for i, entry in enumerate(ready):
-        article = fetch_random_article(settings) if wiki_enabled else None
-        entry_tags = list(hashtags)
-        if append_sub:
-            sub_tag = _subreddit_hashtag(entry)
-            if sub_tag and sub_tag.lower() not in {t.lower() for t in entry_tags}:
-                entry_tags.append(sub_tag)
-        caption = _build_caption(entry, entry_tags, article=article,
-                                 fallback_template=template, max_chars=max_chars)
-        cover = entry.assets.get("thumbnail_path")
-        cover_path = Path(cover) if cover and Path(cover).is_file() else None
-        batch.append((entry, entry.status, entry_tags, caption, article))
-        items.append((Path(entry.assets["final_video"]), cover_path, caption))
-        schedule_times.append(start + timedelta(hours=gap_hours * i))
-
-    # Crash-safety breadcrumb before the live browser side-effect (same as the per-video path).
-    for entry, *_ in batch:
-        entry.status = "upload_attempting"
-        _rewrite_story_file(settings, entry)
-
-    print(f"[brainrotbot] Scheduling {len(items)} video(s) on TikTok (one session, "
-          f"{gap_hours:g}h apart from {start:%Y-%m-%d %H:%M}) ...")
-    with uploader:
-        results = uploader.upload_batch(items, schedule_times)
-
-    scheduled = 0
-    for (entry, prev_status, entry_tags, caption, article), result, when in zip(batch, results, schedule_times):
-        pid = _post_id(entry)
-        if result.get("ok"):
-            entry.status = "upload_scheduled"
-            entry.upload.update(
-                scheduled_for=when.timestamp(),
-                caption=caption,
-                hashtags=entry_tags,
-                public=getattr(uploader, "privacy", "public") == "public",
-                cover_set=bool(result.get("cover_set")),
-            )
-            if article:
-                entry.upload["wikipedia"] = {
-                    "title": article["title"], "url": article["url"],
-                    "category": article["category"], "categories": article["categories"],
-                }
-            _rewrite_story_file(settings, entry)
-            append_entry(settings.ledger_path, entry)
-            scheduled += 1
-            print(f"[brainrotbot]   scheduled {pid} for {when:%Y-%m-%d %H:%M}")
-        else:
-            # Not scheduled -- revert to the prior (retriable) status and KEEP the media for next run.
-            entry.status = prev_status
-            _rewrite_story_file(settings, entry)
-            print(f"[brainrotbot] WARNING: could not schedule {pid} ({result.get('error')}) -- "
-                  "left retriable, media kept.")
-    print(f"[brainrotbot] Schedule complete: {scheduled}/{len(items)} scheduled.")
-    return scheduled
 
 
 def _zernio_client(settings) -> ZernioClient:
@@ -518,59 +435,13 @@ def _reconcile_zernio(settings) -> int:
 def reconcile_scheduled(settings, *, headless: bool | None = None, debug: bool = False) -> int:
     """Finalize `upload_scheduled` posts that have since published. Returns # reconciled.
 
-    Opens the Studio content manager once, reads the published `/video/` links, and matches each
-    scheduled entry by a distinctive snippet of its caption (the Wikipedia body's opening words --
-    unique per post), newest-first as a fallback. On a match: writes upload.{url,tiktok_id,posted_at},
-    sets status=upload_done, and (delete_after_upload) deletes the heavy media. Unmatched entries stay
-    `upload_scheduled` for a later run. Best-effort: the content-manager DOM may need re-pinning.
-
-    On the default Zernio provider this delegates to _reconcile_zernio (poll the post status by id).
+    Only the Zernio provider schedules posts, so this delegates to _reconcile_zernio (poll each post's
+    status by id). On the legacy live `playwright` path nothing is ever scheduled, so there's nothing to
+    reconcile and this is a no-op.
     """
     if str(settings.upload_opts.get("provider", "zernio")).lower() == "zernio":
         return _reconcile_zernio(settings)
-
-    pending = [e for e in _iter_story_entries(settings) if e.status == "upload_scheduled"]
-    if not pending:
-        print("[brainrotbot] No scheduled posts awaiting reconciliation.")
-        return 0
-
-    opts = settings.upload_opts
-    delete_after = bool(opts.get("delete_after_upload", True))
-    headless = opts.get("headless", False) if headless is None else headless
-    uploader = TikTokUploader(
-        session_dir=settings.tiktok_session_dir,
-        browser=opts.get("browser", "chromium"),
-        cookies_file=settings.tiktok_cookies_file,
-        user_agent=opts.get("user_agent", ""),
-        upload_url=opts.get("upload_url", "https://www.tiktok.com/tiktokstudio/upload"),
-        headless=headless,
-        debug=debug or bool(opts.get("debug", False)),
-        debug_dir=settings.data_dir / "upload_debug",
-    )
-    with uploader:
-        published = uploader.published_videos()  # [{url, tiktok_id}], newest-first as TikTok lists them
-
-    if not published:
-        print("[brainrotbot] Reconcile: no published videos read from the content manager.")
-        return 0
-
-    # We only have URLs/ids from the listing (captions are truncated/unreliable there), so match by
-    # order: scheduled oldest-first <-> published newest-first. This is heuristic; tighten once the
-    # content-manager DOM is pinned and per-item captions can be read.
-    pending.sort(key=lambda e: e.upload.get("scheduled_for") or e.created_at)
-    reconciled = 0
-    for entry, pub in zip(pending, reversed(published)):  # earliest scheduled <-> earliest published
-        pid = _post_id(entry)
-        entry.upload.update(url=pub["url"], tiktok_id=pub["tiktok_id"], posted_at=time.time())
-        entry.status = "upload_done"
-        if delete_after:
-            entry.upload["assets_deleted"] = _cleanup_assets(settings, entry)
-        _rewrite_story_file(settings, entry)
-        append_entry(settings.ledger_path, entry)
-        reconciled += 1
-        print(f"[brainrotbot]   reconciled {pid} -> {pub['url']}")
-    print(f"[brainrotbot] Reconcile complete: {reconciled}/{len(pending)} finalized.")
-    return reconciled
+    return 0
 
 
 def _iter_story_entries(settings):
