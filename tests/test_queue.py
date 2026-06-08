@@ -88,6 +88,7 @@ def _drain_settings(tmp_path):
     """Full settings stub for drain_upload_queue (scan_ready fields + the bits the drain reads)."""
     s = _settings(tmp_path)
     s.upload_opts = {"delete_after_upload": True, "headless": True}
+    s.wikipedia_opts = {"enabled": False}  # keep the drain offline/deterministic (no real Wikipedia call)
     s.tiktok_session_dir = tmp_path / "profile"
     s.tiktok_cookies_file = ""
     s.data_dir = tmp_path
