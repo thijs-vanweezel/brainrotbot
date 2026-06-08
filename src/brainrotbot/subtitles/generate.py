@@ -326,11 +326,16 @@ class SubtitleMaker:
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text("".join(lines), encoding="utf-8")
 
-    def make(self, audio_path: Path, text: str, out_ass_path: Path) -> dict:
+    def make(self, audio_path: Path, text: str, out_ass_path: Path,
+             intro_words: int | None = None) -> dict:
         """Align `text` to `audio_path` and write word-by-word captions to `out_ass_path`.
 
         Returns ledger meta. Raises on hard failures (missing audio, model load); the pipeline
         wraps the call so a failure just leaves the video uncaptioned.
+
+        When `intro_words` is the title's word count (`0 < intro_words < len(words)`), the meta also
+        carries `intro_end_sec` -- the moment the title's last word ends -- so the pipeline can lay
+        the intro "ahem" SFX over the narration there without a second alignment pass.
         """
         words = self._align(Path(audio_path), text)
         cues = self._group(words)
@@ -341,12 +346,17 @@ class SubtitleMaker:
             [round(w["start"], 3), round(w["end"], 3)]
             for w in words if is_banned(w["text"], self.banned_words)
         ]
+        intro_end_sec = (
+            round(words[intro_words - 1]["end"], 3)
+            if intro_words and 0 < intro_words < len(words) else None
+        )
         return {
             "path": str(out_ass_path),
             "num_words": len(words),
             "num_cues": len(cues),
             "num_masked": len(banned_intervals),
             "banned_intervals": banned_intervals,
+            "intro_end_sec": intro_end_sec,
             "backend": "ctc-forced-align",
             "model": _MODEL,
             "language": self.language,
