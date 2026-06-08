@@ -26,6 +26,7 @@ from .text.clean import clean_text
 from .text.censor import censor_for_captions, load_banned_words
 from .text.translate import LANGUAGES, Translator
 from .tts.censor import BlurCensor
+from .tts.intro_sfx import IntroSfx
 from .edit.compose import VideoEditor
 from .music.ncs import TrackMeta, discover_instrumental_tracks, download_track, pick_track
 from .subtitles.generate import SubtitleMaker
@@ -46,6 +47,7 @@ def run(
     skip_music: bool = False,
     skip_subtitles: bool = False,
     skip_censor: bool = False,
+    skip_intro_sfx: bool = False,
     skip_thumbnail: bool = False,
     skip_upload: bool = False,
     upload_only: bool = False,
@@ -169,6 +171,16 @@ def run(
         sample_rate=int(tts_opts.get("sample_rate", 24000)),
     )
 
+    # Build the intro-SFX overlay once: it lays the "ahem" on the narration WAV right after the
+    # title is read. The title-end timestamp comes from the subtitle alignment (so it's gated on
+    # intro_end_sec at use-time); the SFX decodes lazily on first use.
+    intro_sfx = None if (skip_intro_sfx or not tts_opts.get("intro_sfx_enabled", True)
+                         or not settings.tts_intro_sfx_file) else IntroSfx(
+        sfx_file=settings.tts_intro_sfx_file,
+        gain_db=float(tts_opts.get("intro_sfx_gain_db", 0.0)),
+        sample_rate=int(tts_opts.get("sample_rate", 24000)),
+    )
+
     # Scrape the NCS instrumental catalogue once per run (cached by music/ncs.py on disk).
     # A scrape failure just disables music for this run -- it must never block the pipeline.
     music_on = (not skip_music) and edit_opts.get("music_enabled", True)
@@ -222,6 +234,8 @@ def run(
                 _add_subtitles(entry, vstory, sub_maker, settings)
             if blur is not None:
                 _censor_narration(entry, vstory, blur)
+            if intro_sfx is not None:
+                _overlay_intro_sfx(entry, vstory, intro_sfx)
             if maker is not None:
                 _add_background_video(entry, vstory, maker, settings, source_url=shared_source)
             if shared_track is not None:
@@ -371,14 +385,19 @@ def _add_subtitles(entry: LedgerEntry, story: Story, maker: SubtitleMaker, setti
     if not audio:
         return  # no narration to align against (TTS skipped/failed) -- nothing to caption
     out_path = settings.subtitles_dir / f"{story.post_id}.ass"
+    # The narration is "{title}\n\n{body}" (clean_text), so the first paragraph is the title/hook;
+    # its word count tells the aligner where the title ends, used to place the intro "ahem" SFX.
+    cleaned = entry.text["cleaned_body"]
+    intro_words = len(cleaned.split("\n\n", 1)[0].split()) if "\n\n" in cleaned else 0
     try:
         # Align the *spoken* text (banned words intact); the maker masks them on screen and reports
         # their spoken intervals so _censor_narration can blur exactly those spans.
-        meta = maker.make(Path(audio), entry.text["cleaned_body"], out_path)
+        meta = maker.make(Path(audio), cleaned, out_path, intro_words=intro_words)
         entry.assets["subtitles_path"] = meta["path"]
         entry.assets["subtitles"] = {
             k: meta[k] for k in
-            ("num_words", "num_cues", "num_masked", "banned_intervals", "backend", "model", "language")
+            ("num_words", "num_cues", "num_masked", "banned_intervals", "intro_end_sec",
+             "backend", "model", "language")
         }
     except Exception as exc:  # noqa: BLE001 -- never abort the run over captions
         print(f"[brainrotbot] WARNING: subtitles failed for {story.post_id}: {exc}")
@@ -402,6 +421,25 @@ def _censor_narration(entry: LedgerEntry, story: Story, blur: BlurCensor) -> Non
             entry.assets["audio"]["blurred_words"] = n
     except Exception as exc:  # noqa: BLE001 -- a blur failure must not block the video
         print(f"[brainrotbot] WARNING: audio blur failed for {story.post_id}: {exc}")
+
+
+def _overlay_intro_sfx(entry: LedgerEntry, story: Story, intro_sfx: IntroSfx) -> None:
+    """Lay the "ahem" SFX over the narration WAV right after the title is read, in place.
+
+    The title-end timestamp (assets.subtitles.intro_end_sec) comes from the subtitle alignment, so
+    if subtitles were skipped/failed (or the post is title-only / a translation lost its paragraph
+    break) there's nothing to place and this is a no-op. The overlay keeps the WAV length unchanged,
+    so the background clip and captions stay in sync. Resilient: any failure logs a warning.
+    """
+    audio = entry.assets.get("audio_path")
+    at = (entry.assets.get("subtitles") or {}).get("intro_end_sec")
+    if not audio or at is None:
+        return
+    try:
+        if intro_sfx.overlay(Path(audio), float(at)) and entry.assets.get("audio"):
+            entry.assets["audio"]["intro_sfx_at_sec"] = float(at)
+    except Exception as exc:  # noqa: BLE001 -- the ahem is polish; never block the video
+        print(f"[brainrotbot] WARNING: intro SFX overlay failed for {story.post_id}: {exc}")
 
 
 def _add_background_video(entry: LedgerEntry, story: Story, maker: BackgroundVideoMaker, settings,
@@ -581,6 +619,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="Skip burned-in word-by-word captions (Step 4.5)")
     parser.add_argument("--skip-censor", action="store_true",
                         help="Skip laying the blur SFX over banned words in the narration (captions stay masked)")
+    parser.add_argument("--skip-intro-sfx", action="store_true",
+                        help="Skip the 'ahem' SFX overlaid on the narration after the post title")
     parser.add_argument("--skip-thumbnail", action="store_true", help="Skip thumbnail generation (Step 6)")
     parser.add_argument("--skip-upload", action="store_true", help="Skip TikTok upload (Step 7)")
     parser.add_argument("--upload-only", action="store_true",
@@ -611,6 +651,7 @@ def main(argv: list[str] | None = None) -> int:
         skip_translation=args.skip_translation,
         skip_video=args.skip_video, skip_edit=args.skip_edit, skip_music=args.skip_music,
         skip_subtitles=args.skip_subtitles, skip_censor=args.skip_censor,
+        skip_intro_sfx=args.skip_intro_sfx,
         skip_thumbnail=args.skip_thumbnail,
         skip_upload=args.skip_upload, upload_only=args.upload_only,
         debug_upload=args.tiktok_debug)
