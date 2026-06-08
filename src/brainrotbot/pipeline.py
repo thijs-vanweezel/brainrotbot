@@ -133,9 +133,11 @@ def run(
         subtitle_fonts_dir=str(Path(settings.subtitles_font_file).parent) if settings.subtitles_font_file else "",
     )
 
-    # Banned-word set (loaded once): the narration speaks these words but a blur SFX is laid over
-    # them and the captions vowel-mask them ("fuck" -> "f*ck"). See text/censor.py + tts/censor.py.
-    banned = load_banned_words(str(settings.banned_words_path))
+    # Banned-word sets keyed by language (loaded once): the narration speaks these words but a blur
+    # SFX is laid over them and the captions vowel-mask them ("fuck" -> "f*ck"). Each language variant
+    # (Step 1.5) is censored with its OWN list, since the English words never appear in the translated
+    # text. A language with no list is left uncensored. See text/censor.py + tts/censor.py.
+    banned_by_lang = load_banned_words(str(settings.banned_words_path))
 
     # Build the subtitle maker once; the CTC aligner model loads lazily on first use (after TTS).
     sub_opts = settings.subtitles_opts
@@ -156,14 +158,15 @@ def run(
         scale_active=int(sub_opts.get("scale_active", 110)),
         width=video_opts.get("width", 1080),
         height=video_opts.get("height", 1920),
-        banned_words=banned,
+        banned_words=banned_by_lang.get("en", frozenset()),  # default; per-variant set passed to make()
     )
 
     # Build the blur-censor once: it lays a loud blur SFX over each banned word's spoken interval
     # (timing comes from the subtitle alignment, so it needs sub_maker). The SFX decodes lazily.
     censor_opts = settings.censor_opts
     blur = None if (skip_censor or sub_maker is None or not censor_opts.get("enabled", True)
-                    or not settings.censor_sfx_file or not banned) else BlurCensor(
+                    or not settings.censor_sfx_file
+                    or not any(banned_by_lang.values())) else BlurCensor(
         sfx_file=settings.censor_sfx_file,
         gain_db=float(censor_opts.get("gain_db", 0.0)),
         voice_duck_db=float(censor_opts.get("voice_duck_db", -30.0)),
@@ -226,12 +229,14 @@ def run(
             entry = LedgerEntry.from_story(story, cleaned)  # source.post_id = base id
             entry.source["variant_id"] = f"{story.post_id}_{lang}"
             _localize(entry, lang, translator)
-            _apply_censor(entry, banned)  # caption display form + masked-word log (per localized text)
+            # This variant's language-specific banned set (empty -> uncensored for that language).
+            vbanned = banned_by_lang.get(lang, frozenset())
+            _apply_censor(entry, vbanned)  # caption display form + masked-word log (per localized text)
             vstory = replace(story, post_id=entry.source["variant_id"])  # variant filename stem
             if synth is not None:
                 _add_audio(entry, vstory, synth, settings)
             if sub_maker is not None:
-                _add_subtitles(entry, vstory, sub_maker, settings)
+                _add_subtitles(entry, vstory, sub_maker, settings, vbanned)
             if blur is not None:
                 _censor_narration(entry, vstory, blur)
             if intro_sfx is not None:
@@ -290,9 +295,9 @@ def _clean_story(story: Story, settings) -> str:
 def _apply_censor(entry: LedgerEntry, banned) -> None:
     """Fill the entry's caption display form + masked-word log from its (localized) spoken text.
 
-    Operates on the current `cleaned_body`, so for English it vowel-masks the banned words and for
-    a translated variant it's a no-op (the English banned list won't match other languages). The
-    spoken `cleaned_body` is left untouched (narrated verbatim; blurred in audio via _censor_narration).
+    `banned` is this variant's language-specific set, so the French/Spanish narration is censored
+    against French/Spanish words (an empty set -> no masking). The spoken `cleaned_body` is left
+    untouched (narrated verbatim; blurred in audio via _censor_narration).
     """
     display, hits = censor_for_captions(entry.text["cleaned_body"], banned)
     entry.text["display_body"] = display
@@ -373,13 +378,15 @@ def _add_audio(entry: LedgerEntry, story: Story, synth: KokoroSynthesizer, setti
         print(f"[brainrotbot] WARNING: TTS failed for {story.post_id} ({voice}/{lang_code}): {exc}")
 
 
-def _add_subtitles(entry: LedgerEntry, story: Story, maker: SubtitleMaker, settings) -> None:
+def _add_subtitles(entry: LedgerEntry, story: Story, maker: SubtitleMaker, settings,
+                   banned=frozenset()) -> None:
     """Forced-align the narration to word-by-word captions in data/subtitles/<post_id>.ass.
 
-    Needs the narration WAV (from _add_audio) + the cleaned text. The .ass is burned into the final
-    video later by _add_final_video (compose() reads subtitles_path). Resilient like the other steps:
-    any alignment/render failure logs a warning and leaves subtitles_path null -- the video still
-    composes, just without captions.
+    Needs the narration WAV (from _add_audio) + the cleaned text. `banned` is this variant's
+    language-specific banned set -- its words are vowel-masked on screen and their spoken intervals
+    reported for the audio blur. The .ass is burned into the final video later by _add_final_video
+    (compose() reads subtitles_path). Resilient like the other steps: any alignment/render failure
+    logs a warning and leaves subtitles_path null -- the video still composes, just without captions.
     """
     audio = entry.assets.get("audio_path")
     if not audio:
@@ -392,7 +399,7 @@ def _add_subtitles(entry: LedgerEntry, story: Story, maker: SubtitleMaker, setti
     try:
         # Align the *spoken* text (banned words intact); the maker masks them on screen and reports
         # their spoken intervals so _censor_narration can blur exactly those spans.
-        meta = maker.make(Path(audio), cleaned, out_path, intro_words=intro_words)
+        meta = maker.make(Path(audio), cleaned, out_path, intro_words=intro_words, banned=banned)
         entry.assets["subtitles_path"] = meta["path"]
         entry.assets["subtitles"] = {
             k: meta[k] for k in

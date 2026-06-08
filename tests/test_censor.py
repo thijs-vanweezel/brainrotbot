@@ -21,12 +21,34 @@ def _write_words(tmp_path: Path) -> Path:
 
 # --- text side: detection + masking --------------------------------------------------
 
-def test_load_supports_words_list_and_legacy_replacements(tmp_path):
-    new = _write_words(tmp_path)
-    assert load_banned_words(str(new)) == frozenset({"fuck", "kill", "gun"})
+def test_load_per_language_table(tmp_path):
+    p = tmp_path / "multi.toml"
+    p.write_text('[words]\nen = ["fuck"]\nfr = ["putain", "merde"]\n', encoding="utf-8")
+    by_lang = load_banned_words(str(p))
+    assert by_lang["en"] == frozenset({"fuck"})
+    assert by_lang["fr"] == frozenset({"putain", "merde"})
+    assert by_lang.get("es", frozenset()) == frozenset()  # absent language -> uncensored
+
+
+def test_load_supports_legacy_flat_list_and_replacements(tmp_path):
+    flat = _write_words(tmp_path)  # words = [...] -> English
+    assert load_banned_words(str(flat)) == {"en": frozenset({"fuck", "kill", "gun"})}
     legacy = tmp_path / "legacy.toml"
     legacy.write_text('[replacements]\nkill = "unalive"\ngun = "pew-pew"\n', encoding="utf-8")
-    assert load_banned_words(str(legacy)) == frozenset({"kill", "gun"})
+    assert load_banned_words(str(legacy)) == {"en": frozenset({"kill", "gun"})}
+
+
+def test_detection_and_masking_with_accents():
+    # French/Spanish words with accents must be detected (Unicode word-core) and have their FIRST
+    # vowel masked, including when that vowel is accented.
+    banned = frozenset({"putain", "merde", "cocaïne", "pénis"})
+    assert is_banned("Putain!", banned)
+    assert is_banned("cocaïne.", banned)      # accent kept in the core, not split on 'ï'
+    assert mask_vowels("putain") == "p*tain"
+    assert mask_vowels("pénis") == "p*nis"    # first vowel is the accented 'é'
+    display, hits = censor_for_captions("c'est de la merde", banned)
+    assert "m*rde" in display
+    assert {h["word"]: h["count"] for h in hits} == {"merde": 1}
 
 
 def test_mask_vowels_masks_only_first_vowel():

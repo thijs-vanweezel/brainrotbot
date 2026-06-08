@@ -272,7 +272,7 @@ class SubtitleMaker:
             cues.append(cur)
         return cues
 
-    def _render_event(self, cue: list[dict], active: int) -> str:
+    def _render_event(self, cue: list[dict], active: int, banned: frozenset[str]) -> str:
         """One cue's text with word `active` highlighted (colour + optional scale-up)."""
         hi = _hex_to_ass(self.highlight_color)
         pri = _hex_to_ass(self.primary_color)
@@ -280,8 +280,8 @@ class SubtitleMaker:
         out = []
         for i, w in enumerate(cue):
             txt = _escape_text(w["text"])
-            if is_banned(txt, self.banned_words):
-                txt = mask_vowels(txt)  # vowels -> '*' for the caption (audio is blurred separately)
+            if is_banned(txt, banned):
+                txt = mask_vowels(txt)  # first vowel -> '*' for the caption (audio is blurred separately)
             if self.uppercase:
                 txt = txt.upper()
             if i == active:
@@ -290,7 +290,7 @@ class SubtitleMaker:
                 out.append(txt)
         return " ".join(out)
 
-    def _write_ass(self, cues: list[list[dict]], out_path: Path) -> None:
+    def _write_ass(self, cues: list[list[dict]], out_path: Path, banned: frozenset[str]) -> None:
         """Write the `.ass`: header + V4+ style (Anton + outline) + one event per word interval.
 
         Within a cue each word's event runs from its own start to the next word's start (last word
@@ -321,30 +321,33 @@ class SubtitleMaker:
                     end = start + 0.05
                 lines.append(
                     f"Dialogue: 0,{_ass_time(start)},{_ass_time(end)},Default,,0,0,0,,"
-                    f"{self._render_event(cue, i)}\n"
+                    f"{self._render_event(cue, i, banned)}\n"
                 )
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text("".join(lines), encoding="utf-8")
 
     def make(self, audio_path: Path, text: str, out_ass_path: Path,
-             intro_words: int | None = None) -> dict:
+             intro_words: int | None = None, banned: frozenset[str] | None = None) -> dict:
         """Align `text` to `audio_path` and write word-by-word captions to `out_ass_path`.
 
-        Returns ledger meta. Raises on hard failures (missing audio, model load); the pipeline
-        wraps the call so a failure just leaves the video uncaptioned.
+        `banned` is this variant's language-specific banned set (falls back to the maker default);
+        its words are vowel-masked on screen and their spoken intervals returned for the audio blur.
+        Returns ledger meta. Raises on hard failures (missing audio, model load); the pipeline wraps
+        the call so a failure just leaves the video uncaptioned.
 
         When `intro_words` is the title's word count (`0 < intro_words < len(words)`), the meta also
         carries `intro_end_sec` -- the moment the title's last word ends -- so the pipeline can lay
         the intro "ahem" SFX over the narration there without a second alignment pass.
         """
+        banned = self.banned_words if banned is None else banned
         words = self._align(Path(audio_path), text)
         cues = self._group(words)
-        self._write_ass(cues, Path(out_ass_path))
+        self._write_ass(cues, Path(out_ass_path), banned)
         # Spoken intervals of the banned words, so tts/censor.py can lay the blur SFX over exactly
         # those spans (the blur length thus matches each word). Rounded for a tidy ledger record.
         banned_intervals = [
             [round(w["start"], 3), round(w["end"], 3)]
-            for w in words if is_banned(w["text"], self.banned_words)
+            for w in words if is_banned(w["text"], banned)
         ]
         intro_end_sec = (
             round(words[intro_words - 1]["end"], 3)
