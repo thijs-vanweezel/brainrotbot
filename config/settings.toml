@@ -118,8 +118,8 @@ cookies_from_browser = "edge"
 # Geometry (width/height/fps) is reused from [video] so the outro matches the background frame.
 # Standard outro shot appended after the narration. A 9:16 video or image; "" disables it
 # (final video is then just the narrated background). Resolved relative to the project root.
-outro_file = "resources/outro.mp4"
-outro_duration_sec = 4     # how long an image outro is shown (ignored for video outros)
+outro_file = "resources/outro.png"
+outro_duration_sec = 1.5     # how long an image outro is shown (ignored for video outros)
 crf = 23                   # libx264 quality for the re-encoded final (lower = better/larger)
 preset = "veryfast"        # libx264 speed/size trade-off
 # Loudness. voice_volume_db is an absolute boost on the narration alone (also offsets amix's 1/n
@@ -206,8 +206,18 @@ upload_url = "https://www.tiktok.com/tiktokstudio/upload"
 privacy = "public"               # "public" posts live; anything else leaves visibility as-is
 subtitles = true                 # turn ON TikTok's auto-generated captions in the UI
 set_cover = true                 # best-effort: use the Step 6 thumbnail PNG as the TikTok cover
-caption_template = "{title}"     # caption body; hashtags below are appended
-hashtags = ["#fyp", "#storytime", "#reddit"]
+# The description body is a random, deliberately-unrelated Wikipedia intro paragraph (see [wikipedia]).
+# caption_template is only the FALLBACK body used when the Wikipedia fetch fails (then it's the title).
+caption_template = "{title}"
+caption_max_chars = 2200         # TikTok caption cap; the Wikipedia body is truncated to fit under it
+# A big fixed hashtag pool, appended to EVERY post; the story's own subreddit (#<sub>) is added on top.
+hashtags = [
+  "#fyp", "#foryou", "#foryoupage", "#fypシ", "#viral", "#viralvideo", "#trending", "#storytime",
+  "#stories", "#story", "#reddit", "#redditstories", "#redditstorytime", "#askreddit", "#drama",
+  "#tea", "#confession", "#relationship", "#relationshipadvice", "#aita", "#scary", "#creepy",
+  "#wholesome", "#revenge", "#pov", "#fortnite", "#minecraft", "#asmr", "#satisfying", "#brainrot",
+]
+append_subreddit_hashtag = true  # also tag the originating subreddit, e.g. r/tifu -> #tifu
 delete_after_upload = true       # delete this post's final/background/audio/thumbnail once uploaded
                                  # (keeps the JSON record + shared caches for Step 8 analytics)
 nav_timeout_sec = 120            # per-action Playwright timeout (uploads/processing can be slow)
@@ -224,6 +234,16 @@ completion_timeout_sec = 600
 post_settle_sec = 30
 debug = false                    # dump Studio DOM (screenshot+HTML) per milestone to data/upload_debug
 session_subdir = "tiktok_profile"  # persistent browser profile under config/ (gitignored)
+
+[wikipedia]
+# Step 7 caption body: one MediaWiki `generator=random` call fetches a random (deliberately
+# unrelated) article's intro paragraph + its visible category. The intro pads the description and
+# the category is logged to the ledger (upload.wikipedia) for Step 8 A/B analysis. On any failure
+# the caption falls back to the post title. Set enabled=false to keep the old title-only caption.
+enabled = true
+lang = "en"                      # Wikipedia language edition (en|fr|es|...)
+extract_chars = 1200             # max intro length requested; still re-truncated to caption_max_chars
+timeout_sec = 20
 
 [paths]
 data_dir = "data"
