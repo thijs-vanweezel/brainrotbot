@@ -257,8 +257,8 @@ timezone = "Europe/Amsterdam"    # timezone Zernio interprets scheduledFor in (m
 # apart over a single day, so the publish times look human and the PC only needs to be on for the one
 # short scheduling session (run `run.bat` once a day, optionally via Windows Task Scheduler).
 max_per_run = 4                  # max videos scheduled per drain (keep small; raise slowly)
-schedule_first_offset_min = 60   # first post is scheduled this many minutes from now (local time)
-schedule_gap_hours = 3           # spacing between consecutive scheduled posts (stays within one day)
+schedule_first_offset_min = 15   # first post is scheduled this many minutes from now (local time)
+schedule_gap_hours = 1           # spacing between consecutive scheduled posts (stays within one day)
 debug = false                    # (playwright fallback only) dump Studio DOM per milestone to data/upload_debug
 session_subdir = "tiktok_profile"  # persistent browser profile under config/ (gitignored)
 
