@@ -23,6 +23,7 @@ en = [
     "cunt", "pussy", "vagina",
     "fuck", "fucked", "fucking", "fucken", "fuckin", "fucker", "motherfucker",
     "shit", "bitch", "slut", "whore",
+    "masturbate", "masturbated", "masturbating", "jerking off", "jerk off", "jerked off",
 ]
 
 fr = [
@@ -37,6 +38,7 @@ fr = [
     "nazi", "nazis",
     "bite", "pénis", "chatte",
     "salope", "pute", "putain", "merde", "enculé", "connard", "conne", "niquer", "foutre",
+    "masturber", "masturbé", "se masturbant", "se branler", "s'est branlé", "héroïne"
 ]
 
 es = [
@@ -51,4 +53,5 @@ es = [
     "nazi", "nazis",
     "polla", "pene", "verga", "coño",
     "puta", "puto", "zorra", "mierda", "joder", "follar", "cabrón", "capullo", "gilipollas", "maricón",
+    "masturbándose", "masturbarse", "masturbado", "heroína"
 ]
