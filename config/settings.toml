@@ -36,8 +36,8 @@ strip_tldr = true      # drop "TL;DR" lines
 # --skip-censor disables the audio blur (captions stay masked); enabled=false also disables it.
 enabled = true
 sfx_file = "resources/blur_sfx.mp3"
-gain_db = -5          # loudness trim on the blur SFX (peak-normalized first; <0 = quieter)
-voice_duck_db = -20    # how far the real word is attenuated under the blur (-30 dB ~= inaudible)
+gain_db = -2          # loudness trim on the blur SFX (peak-normalized first; <0 = quieter)
+voice_duck_db = -26    # how far the real word is attenuated under the blur (-30 dB ~= inaudible)
 sfx_inset_sec = 0.04   # inset the blur (and its duck) this much on each edge, so the beep runs a
                        # touch shorter than the word (0 = exactly the aligned word; too-short words
                        # fall back to their exact interval so they're never left audible)
@@ -253,12 +253,11 @@ post_settle_sec = 30
 provider = "zernio"
 zernio_account_id = ""           # blank = auto-resolve the single connected TikTok account from /v1/accounts
 timezone = "Europe/Amsterdam"    # timezone Zernio interprets scheduledFor in (match your local zone)
-# --- Scheduling cadence (Zernio). Each drain schedules up to `max_per_run` videos, spaced a few hours
-# apart over a single day, so the publish times look human and the PC only needs to be on for the one
-# short scheduling session (run `run.bat` once a day, optionally via Windows Task Scheduler).
-max_per_run = 4                  # max videos scheduled per drain (keep small; raise slowly)
+# --- Scheduling cadence (Zernio). All ready videos are scheduled in one pass, linearly spaced over
+# `schedule_window_hours` (default 24h), so the publish times look human and the PC only needs to be
+# on for the one short scheduling session (run `run.bat` once a day, optionally via Windows Task Scheduler).
 schedule_first_offset_min = 15   # first post is scheduled this many minutes from now (local time)
-schedule_gap_hours = 1           # spacing between consecutive scheduled posts (stays within one day)
+schedule_window_hours = 24       # total window across which all ready videos are spread
 debug = false                    # (playwright fallback only) dump Studio DOM per milestone to data/upload_debug
 session_subdir = "tiktok_profile"  # persistent browser profile under config/ (gitignored)
 

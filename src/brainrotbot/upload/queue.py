@@ -189,7 +189,6 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
     headless = opts.get("headless", False) if headless is None else headless
     debug = debug or bool(opts.get("debug", False))
     provider = str(opts.get("provider", "zernio")).lower()
-    max_per_run = int(opts.get("max_per_run", 4))
 
     # Default path: schedule via Zernio's REST API (official Content Posting API, their audited app) --
     # no browser, no Content Check Lite, no flagging risk. provider="playwright" falls back to the
@@ -197,7 +196,7 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
     # flagged on it).
     if provider == "zernio":
         return _schedule_batch_zernio(
-            settings, ready[:max_per_run], template=template, hashtags=hashtags,
+            settings, ready, template=template, hashtags=hashtags,
             max_chars=max_chars, append_sub=append_sub, wiki_enabled=wiki_enabled,
         )
 
@@ -333,11 +332,14 @@ def _schedule_batch_zernio(settings, ready, *, template, hashtags, max_chars,
     if not ready:
         return 0
     client = _zernio_client(settings)
-    first_offset = int(settings.upload_opts.get("schedule_first_offset_min", 60))
-    gap_hours = float(settings.upload_opts.get("schedule_gap_hours", 3))
+    n = len(ready)
+    first_offset = int(settings.upload_opts.get("schedule_first_offset_min", 15))
+    window = float(settings.upload_opts.get("schedule_window_hours", 24))
+    gap_hours = window / n if n > 1 else 0.0   # evenly spaced over the window
     start = datetime.now() + timedelta(minutes=first_offset)
-    print(f"[brainrotbot] Scheduling {len(ready)} video(s) via Zernio "
-          f"({gap_hours:g}h apart from {start:%Y-%m-%d %H:%M}) ...")
+    print(f"[brainrotbot] Scheduling {n} video(s) via Zernio, "
+          f"paced over {window:g}h ({gap_hours * 60:.0f} min apart, "
+          f"first {start:%Y-%m-%d %H:%M}) ...")
     scheduled = 0
     for i, entry in enumerate(ready):
         pid = _post_id(entry)
@@ -384,7 +386,12 @@ def _schedule_batch_zernio(settings, ready, *, template, hashtags, max_chars,
         append_entry(settings.ledger_path, entry)
         scheduled += 1
         print(f"[brainrotbot]   scheduled {pid} -> Zernio post {post_id} for {when:%Y-%m-%d %H:%M}")
-    print(f"[brainrotbot] Schedule complete: {scheduled}/{len(ready)} scheduled via Zernio.")
+    last_time = start + timedelta(hours=gap_hours * (scheduled - 1)) if scheduled > 1 else start
+    print(
+        f"[brainrotbot] Schedule complete: {scheduled}/{n} scheduled via Zernio — "
+        f"first {start:%Y-%m-%d %H:%M}, last {last_time:%H:%M} "
+        f"({gap_hours * 60:.0f} min apart over ~{window:g}h)."
+    )
     return scheduled
 
 
