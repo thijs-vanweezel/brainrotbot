@@ -60,6 +60,7 @@ def run(
     # video). --upload-only just flushes whatever is already finished, creating nothing new.
     upload_enabled = (not skip_upload) and settings.upload_opts.get("enabled", True)
     batch_size = int(settings.upload_opts.get("batch_size", 30))
+    upload_provider = str(settings.upload_opts.get("provider", "zernio")).lower()
     # First finalize any posts scheduled on a previous run that have since published (capture their live
     # URLs + clean up media) before scheduling new ones -- the daily flow for the Zernio/bulk paths.
     # Cheap no-op when nothing is pending (and on the legacy live path).
@@ -258,15 +259,15 @@ def run(
             _write_story_file(settings, vstory, entry)
             append_entry(settings.ledger_path, entry)
             entries.append(entry)
-            # Drain the upload queue every `batch_size` created videos (the "after every N" trigger).
-            if upload_enabled and len(entries) % batch_size == 0:
+            # For the Playwright path, drain every `batch_size` videos (keeps browser sessions short).
+            # Zernio skips mid-run drains: it schedules the entire batch in one pass at the end so the
+            # 24h pacing window is computed over the full set, not independently per mid-run chunk.
+            if upload_enabled and upload_provider != "zernio" and len(entries) % batch_size == 0:
                 drain_upload_queue(settings, debug=debug_upload)
 
     _print_summary(entries)
 
-    # Final flush: drain whatever is still queued now that the requested top_k is reached (the
-    # "or when the requested count is achieved, whichever is first" trigger). Also sweeps up any
-    # finished-but-unuploaded leftovers from earlier runs.
+    # Final flush: schedule/post everything created this run plus any on-disk leftovers from prior runs.
     if upload_enabled and entries:
         drain_upload_queue(settings, debug=debug_upload)
 
@@ -308,6 +309,9 @@ def _apply_censor(entry: LedgerEntry, banned) -> None:
     display, hits = censor_for_captions(entry.text["cleaned_body"], banned)
     entry.text["display_body"] = display
     entry.text["banned_words_masked"] = hits
+    # Title is the first paragraph of cleaned_body, so its banned words are already counted above.
+    # We only need the masked string separately so the thumbnail can render the censored form.
+    entry.text["display_title"] = censor_for_captions(entry.text["title"], banned)[0]
 
 
 def _video_sources(settings) -> list[str]:
@@ -562,7 +566,8 @@ def _add_thumbnail(entry: LedgerEntry, story: Story, maker: ThumbnailMaker, sett
     """
     out_path = settings.thumbnail_dir / f"{story.post_id}.png"
     try:
-        meta = maker.render(entry.text["title"], out_path, picked) if picked else maker.make(entry.text["title"], out_path)
+        title = entry.text.get("display_title") or entry.text["title"]  # vowel-masked, falls back to raw
+        meta = maker.render(title, out_path, picked) if picked else maker.make(title, out_path)
         entry.assets["thumbnail_path"] = meta["path"]
         entry.assets["thumbnail"] = {
             k: meta[k] for k in
