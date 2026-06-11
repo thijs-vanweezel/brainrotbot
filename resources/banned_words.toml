@@ -5,53 +5,190 @@
 # list the inflections you care about explicitly. The bot picks the list matching each video's
 # language (Step 1.5 fan-out); a language with no list here is left uncensored. Edit freely -- data.
 #
+# NOTE: is_banned() matches a SINGLE whitespace token, so multi-word phrases are dead entries.
+# Use the individual tokens instead (e.g. "masturbate" not "jerk off").
+#
 # Legacy forms still load: a flat `words = [...]` or a `[replacements]` table both map to `en`.
 
 [words]
 en = [
-    "kill", "killed", "killing", "kills",
+    # --- death / violence ---
+    "kill", "killed", "killer", "killing", "kills",
     "dead", "death", "die", "died", "dying",
     "suicide", "suicidal",
     "murder", "murdered", "murderer",
-    "rape", "raped", "rapist",
-    "sex", "sexual", "horny",
-    "porn", "ass", "butt", "buttplug", "arse",
-    "gun", "guns", "shoot", "shooting", "shot",
-    "drugs", "cocaine", "heroin", "drug",
-    "nazi", "asshole",
-    "dick", "penis", "cock", "boner",
+    "stab", "stabbed", "stabbing", "stabs",
+    "strangle", "strangled", "strangling",
+    "choke", "choked", "choking",
+    "hang", "hanged", "hanging",
+    "behead", "beheaded", "beheading",
+    "slaughter", "slaughtered",
+    "massacre",
+    "corpse",
+    "homicide", "manslaughter",
+    "overdose", "overdosed",
+    "rape", "raped", "rapist", "abortion",
+    # --- weapons / terror ---
+    "gun", "guns", "shoot", "shooting", "shot", "shooter",
+    "rifle", "pistol", "firearm",
+    "bomb", "bombing",
+    "explosive",
+    "terrorist", "terrorism",
+    # --- drugs ---
+    "drugs", "drug",
+    "cocaine", "heroin",
+    "meth", "methamphetamine",
+    "marijuana", "weed", "cannabis",
+    "crack", "ecstasy",
+    "fentanyl", "opioid", "opioids",
+    "addict", "addicted",
+    # --- hate / slurs ---
+    "nazi",
+    "faggot", "fag",
+    "nigger", "nigga",
+    "retard", "retarded",
+    # --- profanity ---
+    "fuck", "fucked", "fucking", "fucken", "fuckin", "fucker", "motherfucker", "fucks", "fuckers",
+    "shit", "bitch",
+    "asshole", "bastard",
+    "bullshit",
+    "dickhead", "prick", "twat",
+    "wank", "wanker",
+    # --- explicit / anatomy ---
+    "sex", "sexual", "sexually", "horny",
+    "porn",
+    "ass", "butt", "butthole", "buttplug", "arse",
+    "nude", "nudes", "naked",
+    "boobs", "tits", "tit", "nipple", "nipples",
+    "orgasm",
+    "cum", "cumming",
+    "blowjob", "handjob",
+    "anal",
+    "dick", "penis", "cock", "boner", "erection",
     "cunt", "pussy", "vagina",
-    "fuck", "fucked", "fucking", "fucken", "fuckin", "fucker", "motherfucker",
-    "shit", "bitch", "slut", "whore",
-    "masturbate", "masturbated", "masturbating", "jerking off", "jerk off", "jerked off",
+    "anus",
+    "ejaculate", "ejaculation",
+    "grope", "groped", "groping",
+    "incest",
+    "molest", "molested", "molester", "molesting",
+    "pedophile", "pedo",
+    "prostitute", "prostitution",
+    "hooker", "escort",
+    "slut", "whore",
+    "masturbate", "masturbated", "masturbating",
 ]
 
 fr = [
-    "tuer", "tué", "tuée", "tués", "tue", "meurtre", "meurtrier",
+    # --- mort / violence ---
+    "tuer", "tué", "tuée", "tués", "tue", "tueur",
+    "meurtre", "meurtrier",
     "mort", "morte", "morts", "mourir", "meurt", "mourant",
-    "suicide", "suicidaire", "assassiner", "assassiné", "assassinat", "assassin",
-    "viol", "violer", "violé", "violée", "violeur",
-    "sexe", "sexuel", "sexuelle", "excité", "excitée",
-    "porno", "pornographie",
+    "suicide", "suicidaire",
+    "assassiner", "assassiné", "assassinat", "assassin",
+    "poignarder", "poignardé",
+    "étrangler", "étranglé",
+    "pendre", "pendu",
+    "décapiter", "décapité",
+    "massacrer", "massacre",
+    "cadavre",
+    "homicide",
+    "overdose",
+    "viol", "violer", "violé", "violée", "violeur", "avortement",
+    # --- armes / terreur ---
     "arme", "armes", "fusil", "pistolet", "flingue", "tirer",
-    "drogue", "drogues", "cocaïne",
+    "tireur",
+    "bombe",
+    "terroriste", "terrorisme",
+    # --- drogues ---
+    "drogue", "drogues",
+    "cocaïne", "héroïne",
+    "méthamphétamine",
+    "weed", "cannabis",
+    "crack", "ecstasy",
+    "fentanyl",
+    "addict",
+    # --- haine / insultes ---
     "nazi", "nazis",
-    "bite", "pénis", "chatte",
-    "salope", "pute", "putain", "merde", "enculé", "connard", "conne", "niquer", "foutre",
-    "masturber", "masturbé", "se masturbant", "se branler", "s'est branlé", "héroïne"
+    "pédé", "enfoiré",
+    # --- grossièretés ---
+    "putain", "merde",
+    "enculé", "connard", "conne", "niquer", "foutre",
+    "salope", "pute",
+    # --- explicite / anatomie ---
+    "sexe", "sexuel", "sexuelle", "sexuellement", "excité", "excitée",
+    "porno", "pornographie",
+    "nu", "nue", "nus", "nues",
+    "seins", "nichons", "tétons",
+    "orgasme",
+    "bite", "pénis", "queue", "bander",
+    "chatte", "vagin",
+    "anus",
+    "branler", "branlette",
+    "inceste",
+    "pédophile",
+    "prostituée", "prostitution",
+    "masturber", "masturbé",
 ]
 
 es = [
-    "matar", "mató", "matado", "mata", "asesinar", "asesinato", "asesino", "asesinado",
+    # --- muerte / violencia ---
+    "matar", "mató", "matado", "mata", "matando",
+    "asesinar", "asesinato", "asesino", "asesinada", "asesinado",
     "muerte", "muerto", "muerta", "muertos", "morir", "murió", "muriendo",
     "suicidio", "suicida",
+    "apuñalar", "apuñalado",
+    "estrangular", "estrangulado",
+    "ahorcar", "ahorcado",
+    "decapitar", "decapitado",
+    "masacrar", "masacre",
+    "cadáver",
+    "homicidio",
+    "sobredosis",
     "violación", "violar", "violó", "violada", "violador",
-    "sexo", "sexual", "cachondo", "cachonda",
-    "porno", "pornografía",
+    # --- armas / terror ---
     "arma", "armas", "pistola", "fusil", "disparar", "disparo",
-    "droga", "drogas", "cocaína",
+    "tirador",
+    "bomba",
+    "terrorista", "terrorismo",
+    # --- drogas ---
+    "droga", "drogas",
+    "cocaína", "heroína",
+    "metanfetamina",
+    "marihuana", "weed", "cannabis",
+    "crack", "éxtasis",
+    "fentanilo",
+    "adicto", "adicta",
+    # --- odio / insultos ---
     "nazi", "nazis",
-    "polla", "pene", "verga", "coño",
-    "puta", "puto", "zorra", "mierda", "joder", "follar", "cabrón", "capullo", "gilipollas", "maricón",
-    "masturbándose", "masturbarse", "masturbado", "heroína"
+    "maricón",
+    # --- palabrotas ---
+    "puta", "puto", "zorra", "mierda", "joder", "follar",
+    "cabrón", "capullo", "gilipollas",
+    "aborto",
+    # --- explícito / anatomía ---
+    "sexo", "sexual", "sexualmente", "cachondo", "cachonda",
+    "porno", "pornografía",
+    "desnudo", "desnuda", "desnudos",
+    "tetas", "pezones",
+    "orgasmo",
+    "polla", "pene", "verga", "erección",
+    "coño", "vagina",
+    "ano",
+    "incesto",
+    "pederasta", "pedófilo",
+    "prostituta", "prostitución",
+    "masturbarse", "masturbado", "masturbada",
+    "pajearse",
+]
+
+# zh -- inert until `[translation].languages` re-adds "zh" (the caption aligner is latin-only, so
+# Chinese gets no blur timing today). Loads harmlessly; activates automatically when zh is enabled.
+zh = [
+    "杀", "杀人", "死", "死亡", "自杀",
+    "强奸", "强奸犯",
+    "毒品", "海洛因", "可卡因", "冰毒",
+    "枪", "炸弹", "恐怖主义",
+    "性", "色情", "裸体", "鸡巴", "阴道", "肛门", "高潮", "手淫",
+    "操", "妈的", "傻逼", "他妈的", "王八蛋",
+    "纳粹",
 ]

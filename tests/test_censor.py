@@ -155,3 +155,16 @@ def test_blur_noop_without_intervals(tmp_path):
     sf.write(tmp_path / "n.wav", np.ones(sr, dtype=np.float32) * 0.5, sr)
     blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), sample_rate=sr)
     assert blur.censor(tmp_path / "n.wav", []) == 0
+
+
+def test_new_en_tokens_are_detected():
+    """New terms added to the en list must be detected by is_banned (smoke-check a sample)."""
+    banned = frozenset({
+        "stabbed", "overdose", "terrorist", "pedophile", "incest", "meth",
+        "strangle", "corpse", "wanker", "bullshit", "nude", "orgasm",
+    })
+    for word in banned:
+        assert is_banned(word, banned), f"expected {word!r} to be detected"
+    # Punctuation-wrapped forms also match:
+    assert is_banned("stabbed!", banned)
+    assert is_banned("(overdose)", banned)
