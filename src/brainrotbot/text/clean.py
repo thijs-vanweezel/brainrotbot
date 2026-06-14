@@ -98,6 +98,7 @@ _REDDIT_ABBREVIATIONS = {
     "IDC": "I don't care",
     "min": "minute",
     "mins": "minutes",
+    "TW": "trigger warning",
 }
 # Single alternation regex, length-descending so AITAH wins over AITA.
 _ABBREV_RE = re.compile(
@@ -140,6 +141,19 @@ def expand_reddit_abbreviations(text: str) -> str:
     return text
 
 
+def _strip_inline_markup(text: str) -> str:
+    """Strip zero-width chars, markdown images/links, bare URLs, heading/quote markers, and
+    emphasis (*, **, _, __, ~~, `). Applied to BOTH body and title so neither feeds a stray
+    '*' to the TTS (which would verbalize it as 'asterisk')."""
+    text = _ZERO_WIDTH.sub("", text)
+    text = _MD_IMAGE.sub("", text)
+    text = _MD_LINK.sub(r"\1", text)
+    text = _BARE_URL.sub("", text)
+    text = _HEADING_QUOTE.sub("", text)
+    text = _EMPHASIS.sub("", text)
+    return text
+
+
 def clean_text(
     title: str,
     raw_body: str,
@@ -165,17 +179,13 @@ def clean_text(
     if strip_tldr:
         body = _TLDR_LINE.sub("", body)
 
-    body = _ZERO_WIDTH.sub("", body)
-    body = _MD_IMAGE.sub("", body)
-    body = _MD_LINK.sub(r"\1", body)
-    body = _BARE_URL.sub("", body)
-    body = _HEADING_QUOTE.sub("", body)
-    body = _EMPHASIS.sub("", body)
-
+    body = _strip_inline_markup(body)
     body = _normalize_whitespace(body)
 
     if prepend_title and title:
-        hook = _normalize_whitespace(title)
+        # Apply the same markup stripping to the title so stray '*' (emphasis, self-censored
+        # words like "f*ck") are stripped before the TTS receives them.
+        hook = _normalize_whitespace(_strip_inline_markup(title))
         body = f"{hook}\n\n{body}".strip() if body else hook
 
     # Expand abbreviations last so it runs on the assembled title+body in one shot.

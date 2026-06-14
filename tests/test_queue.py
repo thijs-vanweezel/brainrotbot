@@ -4,12 +4,13 @@ from __future__ import annotations
 
 import json
 import time
+from pathlib import Path
 from types import SimpleNamespace
 
 from brainrotbot.ledger import append_entry
 from brainrotbot.models import LedgerEntry
 from brainrotbot.upload import queue as queue_mod
-from brainrotbot.upload.queue import drain_upload_queue, scan_ready
+from brainrotbot.upload.queue import drain_upload_queue, reconcile_scheduled, scan_ready
 from brainrotbot.upload.tiktok import UploadRejectedError
 
 
@@ -84,10 +85,14 @@ def test_sibling_language_variant_not_blocked(tmp_path):
 
 # --- drain rejection handling -------------------------------------------------------------------
 
-def _drain_settings(tmp_path):
-    """Full settings stub for drain_upload_queue (scan_ready fields + the bits the drain reads)."""
+def _drain_settings(tmp_path, *, provider: str = "playwright"):
+    """Full settings stub for drain_upload_queue (scan_ready fields + the bits the drain reads).
+
+    Defaults to provider="playwright" so the live-path tests below exercise upload() without the default
+    Zernio branch; the Zernio tests pass provider="zernio".
+    """
     s = _settings(tmp_path)
-    s.upload_opts = {"delete_after_upload": True, "headless": True}
+    s.upload_opts = {"delete_after_upload": True, "headless": True, "provider": provider}
     s.wikipedia_opts = {"enabled": False}  # keep the drain offline/deterministic (no real Wikipedia call)
     s.tiktok_session_dir = tmp_path / "profile"
     s.tiktok_cookies_file = ""
@@ -158,3 +163,88 @@ def test_non_limit_rejection_reverts_and_continues(tmp_path, monkeypatch):
     assert _status(settings, "a_en") == "thumbnail_done"  # reverted, retriable
     assert _final_exists(tmp_path, "a_en")  # rejected video keeps its media
     assert _status(settings, "b_en") == "upload_done"
+
+
+# --- Zernio provider (default) ------------------------------------------------------------------
+
+class _FakeZernio:
+    """Drop-in for ZernioClient: records scheduled posts and replays a fixed status payload."""
+
+    def __init__(self, post_id="zp_1", status_payload=None, **_kw):
+        self.post_id = post_id
+        self.status_payload = status_payload or {}
+        self.scheduled = []
+
+    def schedule_video(self, url, caption, when, **_kw):
+        self.scheduled.append((url, caption, when))
+        return self.post_id
+
+    def post_status(self, _post_id):
+        return self.status_payload
+
+
+def test_zernio_schedules_keeps_media_and_records_post_id(tmp_path, monkeypatch):
+    """Default Zernio path: stash to Litterbox, POST to Zernio, mark upload_scheduled, keep media."""
+    settings = _drain_settings(tmp_path, provider="zernio")
+    _write_story(settings, _entry("a_en", status="thumbnail_done"), tmp_path)
+    _write_story(settings, _entry("b_en", status="thumbnail_done"), tmp_path)
+    fake = _FakeZernio(post_id="zp_x")
+    monkeypatch.setattr(queue_mod, "ZernioClient", lambda *a, **k: fake)
+    monkeypatch.setattr(queue_mod, "upload_to_litterbox", lambda p, **k: "https://litterbox/" + Path(p).name)
+
+    n = drain_upload_queue(settings)
+
+    assert n == 2 and len(fake.scheduled) == 2
+    rec = json.loads((settings.stories_dir / "a_en.json").read_text(encoding="utf-8"))
+    assert rec["status"] == "upload_scheduled"
+    assert rec["upload"]["zernio_post_id"] == "zp_x" and rec["upload"]["provider"] == "zernio"
+    assert _final_exists(tmp_path, "a_en") and _final_exists(tmp_path, "b_en")  # media KEPT until publish
+    assert scan_ready(settings) == []  # scheduled -> skip set -> never re-scheduled
+    assert fake.scheduled[1][2] > fake.scheduled[0][2]  # spread in time
+
+
+def test_zernio_litterbox_failure_reverts_and_keeps_media(tmp_path, monkeypatch):
+    """If the Litterbox upload (or Zernio POST) fails, the entry stays retriable with media kept."""
+    settings = _drain_settings(tmp_path, provider="zernio")
+    _write_story(settings, _entry("a_en", status="thumbnail_done"), tmp_path)
+    monkeypatch.setattr(queue_mod, "ZernioClient", lambda *a, **k: _FakeZernio())
+
+    def boom(_p, **_k):
+        raise RuntimeError("litterbox down")
+    monkeypatch.setattr(queue_mod, "upload_to_litterbox", boom)
+
+    assert drain_upload_queue(settings) == 0
+    assert _status(settings, "a_en") == "thumbnail_done"  # reverted, retriable
+    assert _final_exists(tmp_path, "a_en")
+    assert [e.source["variant_id"] for e in scan_ready(settings)] == ["a_en"]
+
+
+def test_zernio_reconcile_published_writes_url_and_cleans(tmp_path, monkeypatch):
+    """A published Zernio post -> live URL captured, upload_done, media deleted."""
+    settings = _drain_settings(tmp_path, provider="zernio")
+    entry = _entry("a_en", status="upload_scheduled")
+    entry.upload.update(zernio_post_id="zp_x", scheduled_for=1.0)
+    _write_story(settings, entry, tmp_path)
+    payload = {"status": "published", "postUrl": "https://www.tiktok.com/@x/video/77"}
+    monkeypatch.setattr(queue_mod, "ZernioClient", lambda *a, **k: _FakeZernio(status_payload=payload))
+
+    n = reconcile_scheduled(settings)
+
+    assert n == 1
+    rec = json.loads((settings.stories_dir / "a_en.json").read_text(encoding="utf-8"))
+    assert rec["status"] == "upload_done" and rec["upload"]["url"].endswith("/video/77")
+    assert not _final_exists(tmp_path, "a_en")  # cleaned after confirmed publish
+
+
+def test_zernio_reconcile_pending_leaves_scheduled(tmp_path, monkeypatch):
+    """A still-pending Zernio post stays upload_scheduled with media kept (retried next run)."""
+    settings = _drain_settings(tmp_path, provider="zernio")
+    entry = _entry("a_en", status="upload_scheduled")
+    entry.upload.update(zernio_post_id="zp_x", scheduled_for=1.0)
+    _write_story(settings, entry, tmp_path)
+    monkeypatch.setattr(queue_mod, "ZernioClient",
+                        lambda *a, **k: _FakeZernio(status_payload={"status": "scheduled"}))
+
+    assert reconcile_scheduled(settings) == 0
+    assert _status(settings, "a_en") == "upload_scheduled"
+    assert _final_exists(tmp_path, "a_en")
