@@ -12,6 +12,7 @@ from brainrotbot.models import LedgerEntry
 from brainrotbot.upload import queue as queue_mod
 from brainrotbot.upload.queue import drain_upload_queue, reconcile_scheduled, scan_ready
 from brainrotbot.upload.tiktok import UploadRejectedError
+from brainrotbot.upload.zernio import ZernioNotFound
 
 
 def _entry(variant_id: str, *, status: str = "thumbnail_done", tiktok_id=None) -> LedgerEntry:
@@ -170,16 +171,19 @@ def test_non_limit_rejection_reverts_and_continues(tmp_path, monkeypatch):
 class _FakeZernio:
     """Drop-in for ZernioClient: records scheduled posts and replays a fixed status payload."""
 
-    def __init__(self, post_id="zp_1", status_payload=None, **_kw):
+    def __init__(self, post_id="zp_1", status_payload=None, *, not_found=False, **_kw):
         self.post_id = post_id
         self.status_payload = status_payload or {}
+        self.not_found = not_found  # if True, post_status raises ZernioNotFound (deleted on Zernio)
         self.scheduled = []
 
     def schedule_video(self, url, caption, when, **_kw):
         self.scheduled.append((url, caption, when))
         return self.post_id
 
-    def post_status(self, _post_id):
+    def post_status(self, post_id):
+        if self.not_found:
+            raise ZernioNotFound(f"Zernio post {post_id} not found (404)")
         return self.status_payload
 
 
@@ -248,3 +252,49 @@ def test_zernio_reconcile_pending_leaves_scheduled(tmp_path, monkeypatch):
     assert reconcile_scheduled(settings) == 0
     assert _status(settings, "a_en") == "upload_scheduled"
     assert _final_exists(tmp_path, "a_en")
+
+
+def test_zernio_reconcile_deleted_404_marks_deleted_and_cleans(tmp_path, monkeypatch):
+    """A post the user deleted on Zernio (404) -> upload_deleted, media cleaned, never re-scheduled."""
+    settings = _drain_settings(tmp_path, provider="zernio")
+    entry = _entry("a_en", status="upload_scheduled")
+    entry.upload.update(zernio_post_id="zp_x", scheduled_for=1.0)
+    _write_story(settings, entry, tmp_path)
+    monkeypatch.setattr(queue_mod, "ZernioClient", lambda *a, **k: _FakeZernio(not_found=True))
+
+    assert reconcile_scheduled(settings) == 0  # not a publish -> not counted
+    rec = json.loads((settings.stories_dir / "a_en.json").read_text(encoding="utf-8"))
+    assert rec["status"] == "upload_deleted" and rec["upload"]["deleted_reason"]
+    assert not _final_exists(tmp_path, "a_en")  # kept media freed
+    assert scan_ready(settings) == []           # terminal -> never re-surfaces
+
+
+def test_zernio_reconcile_deleted_status_payload_marks_deleted(tmp_path, monkeypatch):
+    """Zernio reporting a cancelled/deleted status (200 payload, not 404) -> same delete-locally path."""
+    settings = _drain_settings(tmp_path, provider="zernio")
+    entry = _entry("a_en", status="upload_scheduled")
+    entry.upload.update(zernio_post_id="zp_x", scheduled_for=1.0)
+    _write_story(settings, entry, tmp_path)
+    monkeypatch.setattr(queue_mod, "ZernioClient",
+                        lambda *a, **k: _FakeZernio(status_payload={"status": "cancelled"}))
+
+    assert reconcile_scheduled(settings) == 0
+    assert _status(settings, "a_en") == "upload_deleted"
+    assert not _final_exists(tmp_path, "a_en")
+
+
+def test_drain_limit_caps_to_oldest_and_leaves_rest_queued(tmp_path, monkeypatch):
+    """drain(limit=N) schedules only the N oldest ready videos; the rest stay queued for a later run."""
+    settings = _drain_settings(tmp_path, provider="zernio")
+    for vid in ("a_en", "b_en", "c_en"):  # created oldest-first (sequential time.time())
+        _write_story(settings, _entry(vid, status="thumbnail_done"), tmp_path)
+    fake = _FakeZernio(post_id="zp_x")
+    monkeypatch.setattr(queue_mod, "ZernioClient", lambda *a, **k: fake)
+    monkeypatch.setattr(queue_mod, "upload_to_litterbox", lambda p, **k: "https://litterbox/" + Path(p).name)
+
+    n = drain_upload_queue(settings, limit=2)
+
+    assert n == 2 and len(fake.scheduled) == 2                       # only 2 of the 3 scheduled
+    assert _status(settings, "a_en") == "upload_scheduled"
+    assert _status(settings, "b_en") == "upload_scheduled"
+    assert [e.source["variant_id"] for e in scan_ready(settings)] == ["c_en"]  # newest left queued
