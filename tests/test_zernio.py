@@ -5,7 +5,9 @@ from __future__ import annotations
 import pytest
 
 from brainrotbot.upload import zernio as z
-from brainrotbot.upload.zernio import ZernioClient, ZernioError, classify_status, find_tiktok_url
+from brainrotbot.upload.zernio import (
+    ZernioClient, ZernioError, ZernioNotFound, classify_status, find_tiktok_url,
+)
 
 
 class _Resp:
@@ -42,6 +44,10 @@ def test_find_tiktok_url_none_when_absent():
     ({"state": "completed"}, "published"),
     ({"status": "failed"}, "failed"),
     ({"status": "error", "reason": "x"}, "failed"),
+    ({"status": "rejected"}, "failed"),
+    ({"status": "deleted"}, "deleted"),       # user removed it -> deleted (checked before failed)
+    ({"status": "cancelled"}, "deleted"),
+    ({"state": "removed"}, "deleted"),
     ({"status": "scheduled"}, "pending"),
     ({"status": "processing"}, "pending"),
 ])
@@ -149,6 +155,21 @@ def test_resolve_account_id_raises_when_ambiguous(monkeypatch):
                                  {"_id": "b", "platform": "tiktok", "enabled": True}]}))
     with pytest.raises(ZernioError):
         ZernioClient("sk_test").resolve_account_id()
+
+
+def test_post_status_raises_not_found_on_404(monkeypatch):
+    # A deleted post -> 404 -> ZernioNotFound (so reconcile cleans it up, not retries forever).
+    monkeypatch.setattr(z.requests, "get", lambda *a, **k: _Resp(status_code=404, text="not found"))
+    with pytest.raises(ZernioNotFound):
+        ZernioClient("sk_test", account_id="acc_1").post_status("zp_gone")
+
+
+def test_post_status_raises_generic_error_on_500(monkeypatch):
+    # A transient server error stays a generic ZernioError (NOT ZernioNotFound) -> left retriable.
+    monkeypatch.setattr(z.requests, "get", lambda *a, **k: _Resp(status_code=500, text="boom"))
+    with pytest.raises(ZernioError) as exc:
+        ZernioClient("sk_test", account_id="acc_1").post_status("zp_1")
+    assert not isinstance(exc.value, ZernioNotFound)
 
 
 def test_upload_to_litterbox_returns_url(monkeypatch, tmp_path):
