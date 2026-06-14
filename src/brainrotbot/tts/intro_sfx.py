@@ -30,9 +30,11 @@ class IntroSfx:
     """Overlays a one-shot SFX onto a narration WAV at a given timestamp. The SFX is loaded lazily
     and cached resampled to the narration rate, so a whole run decodes it once."""
 
-    def __init__(self, *, sfx_file: str, gain_db: float = 0.0, sample_rate: int = 24000):
+    def __init__(self, *, sfx_file: str, gain_db: float = 0.0, offset_sec: float = -0.15,
+                 sample_rate: int = 24000):
         self.sfx_file = sfx_file
         self.gain_db = gain_db
+        self.offset_sec = offset_sec  # shift the start by this much (negative = a bit earlier)
         self.sample_rate = sample_rate
         self._sfx = None  # peak-normalized mono float32 at `sample_rate`, decoded on first use
 
@@ -54,7 +56,8 @@ class IntroSfx:
         return self._sfx
 
     def overlay(self, wav_path: Path, at_sec: float) -> bool:
-        """Mix the SFX into `wav_path` in place, starting at `at_sec`. Returns True if applied.
+        """Mix the SFX into `wav_path` in place, starting at `at_sec` + `offset_sec`. Returns True if
+        applied.
 
         The narration is left playing underneath (no ducking); the SFX is added on top at
         `gain_db`, truncated so the WAV length is unchanged, with a short edge fade and a final clip
@@ -68,8 +71,8 @@ class IntroSfx:
         if sfx.size == 0:
             return False
         n = audio.shape[0]
-        s = int(at_sec * sr)
-        if s < 0 or s >= n:
+        s = max(0, int((at_sec + self.offset_sec) * sr))  # nudge earlier/later; never before 0
+        if s >= n:
             return False  # nothing left to overlay onto
 
         seg = (sfx[: n - s] * (10 ** (self.gain_db / 20.0))).astype(np.float32)
