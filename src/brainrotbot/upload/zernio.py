@@ -28,6 +28,14 @@ class ZernioError(RuntimeError):
     """A Zernio API call (or the Litterbox upload that feeds it) failed."""
 
 
+class ZernioNotFound(ZernioError):
+    """A Zernio post no longer exists (404/410) -- e.g. the user deleted it on the dashboard.
+
+    Distinct from a transient network/server error so reconcile can treat it as a deliberate
+    deletion (clean up + stop polling) rather than retrying it forever as a flaky call.
+    """
+
+
 def upload_to_litterbox(path: Path, *, expiry: str = "72h", timeout: float = 600.0) -> str:
     """Upload a file to Litterbox and return its public URL (auto-expires after `expiry`).
 
@@ -66,15 +74,19 @@ def find_tiktok_url(obj) -> str | None:
 
 
 def classify_status(payload: dict) -> str:
-    """Map Zernio's post-status payload to one of: published | failed | pending.
+    """Map Zernio's post-status payload to one of: deleted | published | failed | pending.
 
     The exact schema isn't documented, so this is intentionally lenient: any 'status'/'state' string
     found anywhere is matched against known terminal words; a live TikTok URL is treated as published.
+    A 'deleted'/'cancelled' status means the user removed the post (a 200-payload equivalent of a 404)
+    -- checked before 'failed' so reconcile can delete it locally rather than keep it for review.
     """
     if find_tiktok_url(payload):
         return "published"
     text = " ".join(_status_strings(payload)).lower()
-    if re.search(r"\b(failed|error|rejected|cancell?ed)\b", text):
+    if re.search(r"\b(deleted|removed|cancell?ed)\b", text):
+        return "deleted"
+    if re.search(r"\b(failed|error|rejected)\b", text):
         return "failed"
     if re.search(r"\b(published|posted|completed|success|live)\b", text):
         return "published"
@@ -172,7 +184,15 @@ class ZernioClient:
         return str(post_id)
 
     def post_status(self, post_id: str) -> dict:
-        """GET /v1/posts/{id} -- the raw status payload (classify with classify_status/find_tiktok_url)."""
+        """GET /v1/posts/{id} -- the raw status payload (classify with classify_status/find_tiktok_url).
+
+        Raises ZernioNotFound on a 404/410 (the post was deleted), so reconcile can clean it up;
+        other HTTP errors raise the generic ZernioError, and transport failures propagate -- both
+        leave the post retriable so a flaky call never destroys local media.
+        """
         r = requests.get(f"{self.base_url}/posts/{post_id}", headers=self._headers, timeout=self.timeout)
-        r.raise_for_status()
+        if r.status_code in (404, 410):
+            raise ZernioNotFound(f"Zernio post {post_id} not found ({r.status_code})")
+        if r.status_code >= 400:
+            raise ZernioError(f"Zernio GET /posts/{post_id} failed ({r.status_code}): {r.text[:300]}")
         return r.json()
