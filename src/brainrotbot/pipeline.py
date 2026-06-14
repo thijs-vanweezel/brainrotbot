@@ -267,9 +267,12 @@ def run(
 
     _print_summary(entries)
 
-    # Final flush: schedule/post everything created this run plus any on-disk leftovers from prior runs.
+    # Final flush. Cap to the videos produced THIS run (len(entries) == selected stories × languages,
+    # minus mid-pipeline failures) so `--top-k k` schedules only its own k×langs even when older
+    # unscheduled leftovers sit on disk; extras stay queued for a future run. (`--upload-only` above
+    # passes no limit -- it's an explicit flush-everything.)
     if upload_enabled and entries:
-        drain_upload_queue(settings, debug=debug_upload)
+        drain_upload_queue(settings, limit=len(entries), debug=debug_upload)
 
     # Future steps consume `entries` here and fill the ledger's assets/upload/metrics:
     #   2. text-to-speech    -> entry.assets["audio_path"]        (DONE)

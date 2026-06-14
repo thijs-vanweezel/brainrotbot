@@ -24,7 +24,7 @@ from ..ledger import append_entry, iter_entries
 from ..models import LedgerEntry
 from ..wiki.article import fetch_random_article
 from .tiktok import PostFailedError, TikTokUploader, UploadRejectedError
-from .zernio import ZernioClient, classify_status, find_tiktok_url, upload_to_litterbox
+from .zernio import ZernioClient, ZernioNotFound, classify_status, find_tiktok_url, upload_to_litterbox
 
 # Statuses that mean an upload was already started or finished for this video; scan_ready never
 # re-surfaces these, so we can't double-post. `upload_attempting` is the crash-safety breadcrumb
@@ -33,8 +33,10 @@ from .zernio import ZernioClient, classify_status, find_tiktok_url, upload_to_li
 # `upload_discarded` is a dead Post button we deliberately gave up on (see PostFailedError handling).
 # `upload_scheduled` is a video handed to TikTok's bulk scheduler (not live yet); reconcile_scheduled
 # captures its URL once it publishes -- until then scan_ready must skip it so it isn't re-scheduled.
+# `upload_deleted` is a scheduled post the user removed on Zernio: reconcile cleans up its media and
+# marks it terminal so it's never re-scheduled nor re-posted (deletion = deliberate curation).
 _ATTEMPTED_STATUSES = ("upload_done", "upload_unconfirmed", "upload_attempting", "upload_discarded",
-                       "upload_scheduled", "upload_failed")
+                       "upload_scheduled", "upload_failed", "upload_deleted")
 
 
 def _post_id(entry: LedgerEntry) -> str:
@@ -164,7 +166,23 @@ def _cleanup_assets(settings, entry: LedgerEntry) -> list[str]:
     return deleted
 
 
-def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = False) -> int:
+def _delete_locally(settings, entry: LedgerEntry, *, reason: str, delete_after: bool) -> None:
+    """Mark a Zernio-deleted post terminal (`upload_deleted`), clean its kept media, and persist.
+
+    The deletion was deliberate (the user removed it on Zernio), so the post is never re-scheduled
+    (`upload_deleted` is in _ATTEMPTED_STATUSES) nor re-posted (the ledger append dedups it). Media is
+    freed when delete_after is on, matching the published/discarded paths (respects delete_after=false).
+    """
+    entry.status = "upload_deleted"
+    entry.upload["deleted_reason"] = reason
+    if delete_after:
+        entry.upload["assets_deleted"] = _cleanup_assets(settings, entry)
+    _rewrite_story_file(settings, entry)
+    append_entry(settings.ledger_path, entry)
+
+
+def drain_upload_queue(settings, *, limit: int | None = None, headless: bool | None = None,
+                       debug: bool = False) -> int:
     """Upload every ready video to TikTok in one browser session. Returns the number confirmed posted.
 
     Resilient: one video's failure logs a warning and never aborts the batch. **Confirm-before-commit**:
@@ -173,8 +191,14 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
     entry is marked `upload_unconfirmed` and its media is KEPT (scan_ready then won't re-post it, so no
     duplicate). The updated entry is rewritten to the story JSON and re-appended to the append-only ledger
     (Step 8 dedupes by id, taking the latest line). `debug` dumps the Studio DOM at each milestone.
+
+    `limit` caps how many ready videos are scheduled this drain (oldest-first; the rest stay queued for a
+    later run). The pipeline passes `limit=<videos produced this run>` so `--top-k k` schedules only its
+    own k×langs even when older leftovers sit on disk; `limit=None` (e.g. `--upload-only`) drains all.
     """
     ready = scan_ready(settings)
+    if limit is not None:
+        ready = ready[:limit]                    # oldest-first FIFO; extras wait for a future run
     if not ready:
         print("[brainrotbot] Upload queue empty -- nothing to drain.")
         return 0
@@ -414,11 +438,22 @@ def _reconcile_zernio(settings) -> int:
         post_id = entry.upload["zernio_post_id"]
         try:
             payload = client.post_status(post_id)
-        except Exception as exc:  # noqa: BLE001
+        except ZernioNotFound as exc:
+            # The post is gone on Zernio -- the user deleted it. Treat the deletion as deliberate:
+            # mark it terminal, free its kept media, and never repost it (no payload to classify).
+            _delete_locally(settings, entry, reason=str(exc), delete_after=delete_after)
+            print(f"[brainrotbot]   {pid} removed on Zernio -> upload_deleted, media cleaned.")
+            continue
+        except Exception as exc:  # noqa: BLE001 -- transient: leave upload_scheduled, retry next run
             print(f"[brainrotbot]   (status check failed for {pid} / Zernio {post_id}: {exc})")
             continue
         state = classify_status(payload)
-        if state == "published":
+        if state == "deleted":
+            # Zernio reports the post deleted/cancelled via a 200 status string (vs a 404) -- same
+            # deliberate-deletion semantics as ZernioNotFound above.
+            _delete_locally(settings, entry, reason=str(payload)[:300], delete_after=delete_after)
+            print(f"[brainrotbot]   {pid} cancelled/deleted on Zernio -> upload_deleted, media cleaned.")
+        elif state == "published":
             url = find_tiktok_url(payload)
             entry.upload.update(url=url, posted_at=time.time())
             entry.status = "upload_done"
