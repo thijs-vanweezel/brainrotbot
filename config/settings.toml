@@ -104,6 +104,7 @@ sources = [
     "https://www.youtube.com/watch?v=ceBRUwCk_J8",   # Train video, 10 mins
     "https://www.youtube.com/watch?v=ZJDn89O_dTI",   # Food video, 4 mins
     "https://www.youtube.com/watch?v=VAGmUv___iQ",   # Food video, 10 mins
+    "https://www.youtube.com/watch?v=QbWStbEv4LU",   # Smiling people, 4 mins
 ]
 max_source_height = 1080   # cap download resolution (keeps cache small)
 width = 1080               # output frame -- TikTok vertical 9:16
