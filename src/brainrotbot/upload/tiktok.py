@@ -351,6 +351,23 @@ class TikTokUploader:
         except Exception:  # noqa: BLE001
             pass
 
+    def _human_toggle_off(self, card) -> bool:
+        """Flip the check OFF with a human-like click on the VISIBLE switch (hover + real click).
+
+        Returns True only if the switch actually went off. Used in preference to force-clicking the
+        hidden input -- the visible-element interaction looks far less like automation to TikTok.
+        """
+        try:
+            switch = card.locator("[aria-checked]").first
+            switch.scroll_into_view_if_needed()
+            switch.hover()
+            self._pause(0.2, 0.5)
+            switch.click()
+            self._pause()
+            return card.locator("[aria-checked='true']").count() == 0
+        except Exception:  # noqa: BLE001
+            return False
+
     def _disable_content_check(self, page) -> bool:
         """Flip 'Content check lite' OFF so the post completes immediately.
 
@@ -373,7 +390,13 @@ class TikTokUploader:
                 inp.first.wait_for(state="attached", timeout=8000)  # input is hidden -> attached, not visible
                 if card.locator("[aria-checked='true']").count() == 0:
                     return True  # already off
-                inp.first.click(force=True)  # force-click the hidden input (the only thing React honours)
+                # Prefer a HUMAN-LIKE click on the visible switch (hover + real click) over force-clicking
+                # the hidden input -- the force-click is a strong automation tell. Fall back to the
+                # force-click only if React didn't register the human click.
+                if self._human_toggle_off(card):
+                    print("[brainrotbot]   Content Check Lite -> OFF (human click)")
+                    return True
+                inp.first.click(force=True)  # last resort: force-click the hidden input
                 self._pause()
                 if self._has_text(page, _CHECK_LIMIT):  # banner often only pops AFTER you try to flip it
                     print("[brainrotbot]   (daily check limit reached -- check stuck ON; the post will be rejected)")
@@ -617,3 +640,4 @@ class TikTokUploader:
             "cover_set": cover_set,
             "content_check_off": check_off,
         }
+

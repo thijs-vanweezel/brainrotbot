@@ -101,7 +101,7 @@ def test_blur_masks_the_word_interval(tmp_path):
     # 1 s of loud full-scale narration; blur the middle 0.4-0.6 s window.
     audio = np.ones(sr, dtype=np.float32) * 0.9
     sf.write(tmp_path / "n.wav", audio, sr)
-    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40, pad_sec=0.0,
+    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40, sfx_inset_sec=0.0,
                       sample_rate=sr)
 
     n = blur.censor(tmp_path / "n.wav", [(0.4, 0.6)])
@@ -120,8 +120,72 @@ def test_blur_masks_the_word_interval(tmp_path):
     assert out[-100] == pytest.approx(0.9, abs=1e-3)
 
 
+def test_blur_inset_runs_shorter_than_the_word(tmp_path):
+    sr = 24000
+    audio = np.ones(sr, dtype=np.float32) * 0.9
+    sf.write(tmp_path / "n.wav", audio, sr)
+    # Inset 0.05 s each edge: a 0.4-0.6 s word -> blur/duck only over ~0.45-0.55 s.
+    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40, sfx_inset_sec=0.05,
+                      sample_rate=sr)
+    assert blur.censor(tmp_path / "n.wav", [(0.4, 0.6)]) == 1
+    out, _ = sf.read(tmp_path / "n.wav", dtype="float32")
+    # The word edges (just inside 0.4 / 0.6) are NOT touched -- the beep is shorter than the word.
+    assert out[int(0.41 * sr)] == pytest.approx(0.9, abs=1e-3)
+    assert out[int(0.59 * sr)] == pytest.approx(0.9, abs=1e-3)
+    # ...but the inset centre IS blurred (loud, zero-mean) -- the word is still masked there.
+    centre = out[int(0.48 * sr):int(0.52 * sr)]
+    assert abs(float(np.mean(centre))) < 0.05 and float(np.max(np.abs(centre))) > 0.3
+
+
+def test_blur_too_short_word_falls_back_to_exact_interval(tmp_path):
+    sr = 24000
+    sf.write(tmp_path / "n.wav", np.ones(sr, dtype=np.float32) * 0.9, sr)
+    # A 0.03 s word with a 0.05 s inset would collapse -> fall back to the exact interval so the
+    # banned word is never left audible.
+    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40, sfx_inset_sec=0.05,
+                      sample_rate=sr)
+    assert blur.censor(tmp_path / "n.wav", [(0.40, 0.43)]) == 1
+    out, _ = sf.read(tmp_path / "n.wav", dtype="float32")
+    centre = out[int(0.41 * sr):int(0.42 * sr)]
+    assert abs(float(np.mean(centre))) < 0.1  # the short word is ducked/masked, not skipped
+
+
 def test_blur_noop_without_intervals(tmp_path):
     sr = 24000
     sf.write(tmp_path / "n.wav", np.ones(sr, dtype=np.float32) * 0.5, sr)
     blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), sample_rate=sr)
     assert blur.censor(tmp_path / "n.wav", []) == 0
+
+
+def test_blur_capped_at_max_sfx_sec(tmp_path):
+    """The audible beep must be ≤ max_sfx_sec; the full duck span still masks the word."""
+    sr = 24000
+    # 2 s of loud narration; blur a long interval (1.0-1.8 s = 0.8 s span) with a 0.30 s cap.
+    audio = np.ones(sr * 2, dtype=np.float32) * 0.9
+    sf.write(tmp_path / "n.wav", audio, sr)
+    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40,
+                      sfx_inset_sec=0.0, max_sfx_sec=0.30, sample_rate=sr)
+    assert blur.censor(tmp_path / "n.wav", [(1.0, 1.8)]) == 1
+    out, _ = sf.read(tmp_path / "n.wav", dtype="float32")
+    cap = int(0.30 * sr)
+    # Leading cap: the beep region is loud and zero-mean (tone).
+    beep_region = out[int(1.0 * sr) + 50: int(1.0 * sr) + cap - 50]
+    assert float(np.max(np.abs(beep_region))) > 0.3
+    # Post-cap within the duck span: narration is ducked near-silence, no beep energy.
+    ducked_tail = out[int(1.0 * sr) + cap + 100: int(1.8 * sr) - 100]
+    assert float(np.max(np.abs(ducked_tail))) < 0.1
+    # After the span: narration is untouched.
+    assert out[int(1.9 * sr)] == pytest.approx(0.9, abs=1e-3)
+
+
+def test_new_en_tokens_are_detected():
+    """New terms added to the en list must be detected by is_banned (smoke-check a sample)."""
+    banned = frozenset({
+        "stabbed", "overdose", "terrorist", "pedophile", "incest", "meth",
+        "strangle", "corpse", "wanker", "bullshit", "nude", "orgasm",
+    })
+    for word in banned:
+        assert is_banned(word, banned), f"expected {word!r} to be detected"
+    # Punctuation-wrapped forms also match:
+    assert is_banned("stabbed!", banned)
+    assert is_banned("(overdose)", banned)
