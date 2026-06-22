@@ -36,11 +36,10 @@ strip_tldr = true      # drop "TL;DR" lines
 # --skip-censor disables the audio blur (captions stay masked); enabled=false also disables it.
 enabled = true
 sfx_file = "resources/blur_sfx.mp3"
-gain_db = 0            # loudness trim on the blur SFX (peak-normalized first; <0 = quieter)
+gain_db = -3            # loudness trim on the blur SFX (peak-normalized first; <0 = quieter)
 voice_duck_db = -23    # how far the real word is attenuated under the blur (-30 dB ~= inaudible)
-sfx_inset_sec = 0.04   # inset the blur (and its duck) this much on each edge, so the beep runs a
-                       # touch shorter than the word (0 = exactly the aligned word; too-short words
-                       # fall back to their exact interval so they're never left audible)
+sfx_inset_sec = 0.06   # inset the duck span on each edge (CTC over-extends into trailing silence)
+max_sfx_sec = 0.30     # cap the audible beep here; rest of the duck span is near-silent but masked
 
 [tts]
 engine = "kokoro"

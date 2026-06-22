@@ -157,6 +157,27 @@ def test_blur_noop_without_intervals(tmp_path):
     assert blur.censor(tmp_path / "n.wav", []) == 0
 
 
+def test_blur_capped_at_max_sfx_sec(tmp_path):
+    """The audible beep must be ≤ max_sfx_sec; the full duck span still masks the word."""
+    sr = 24000
+    # 2 s of loud narration; blur a long interval (1.0-1.8 s = 0.8 s span) with a 0.30 s cap.
+    audio = np.ones(sr * 2, dtype=np.float32) * 0.9
+    sf.write(tmp_path / "n.wav", audio, sr)
+    blur = BlurCensor(sfx_file=str(_make_sfx(tmp_path)), voice_duck_db=-40,
+                      sfx_inset_sec=0.0, max_sfx_sec=0.30, sample_rate=sr)
+    assert blur.censor(tmp_path / "n.wav", [(1.0, 1.8)]) == 1
+    out, _ = sf.read(tmp_path / "n.wav", dtype="float32")
+    cap = int(0.30 * sr)
+    # Leading cap: the beep region is loud and zero-mean (tone).
+    beep_region = out[int(1.0 * sr) + 50: int(1.0 * sr) + cap - 50]
+    assert float(np.max(np.abs(beep_region))) > 0.3
+    # Post-cap within the duck span: narration is ducked near-silence, no beep energy.
+    ducked_tail = out[int(1.0 * sr) + cap + 100: int(1.8 * sr) - 100]
+    assert float(np.max(np.abs(ducked_tail))) < 0.1
+    # After the span: narration is untouched.
+    assert out[int(1.9 * sr)] == pytest.approx(0.9, abs=1e-3)
+
+
 def test_new_en_tokens_are_detected():
     """New terms added to the en list must be detected by is_banned (smoke-check a sample)."""
     banned = frozenset({
