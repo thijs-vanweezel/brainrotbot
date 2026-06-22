@@ -40,12 +40,14 @@ class BlurCensor:
         gain_db: float = 0.0,
         voice_duck_db: float = -30.0,
         sfx_inset_sec: float = 0.04,
+        max_sfx_sec: float = 0.30,
         sample_rate: int = 24000,
     ):
         self.sfx_file = sfx_file
         self.gain_db = gain_db
         self.voice_duck_db = voice_duck_db
         self.sfx_inset_sec = max(0.0, sfx_inset_sec)
+        self.max_sfx_sec = max(0.0, max_sfx_sec)
         self.sample_rate = sample_rate
         self._sfx = None  # peak-normalized mono float32 at `sample_rate`, decoded on first use
 
@@ -104,24 +106,29 @@ class BlurCensor:
             if e <= s:
                 continue
             seg_len = e - s
-            # Tile (loop) the SFX to the span length and trim the tail. Re-peak-normalize this slice
-            # so EVERY blur is uniformly loud -- a short word slices only the SFX's (often soft) onset,
-            # which would otherwise be quiet. `level` (gain_db) then scales on top; the final clip guards.
-            beep = np.resize(sfx, seg_len).astype(np.float32)
+            # Cap the audible beep at max_sfx_sec; the rest of the span stays ducked to near-silence
+            # so the whole word remains masked even on long CTC-over-extended intervals.
+            beep_len = min(seg_len, max(1, int(self.max_sfx_sec * sr)))
+            # Tile/trim the SFX to the (capped) beep length; re-peak-normalize so every blur is
+            # uniformly loud regardless of where the tile seam falls. `level` scales on top.
+            beep = np.resize(sfx, beep_len).astype(np.float32)
             seg_peak = float(np.max(np.abs(beep)))
             if seg_peak > 0:
                 beep *= (0.97 / seg_peak)
             beep *= level
-            f = min(fade, seg_len // 2)
+            f = min(fade, beep_len // 2)
             if f > 0:
                 ramp = np.linspace(0.0, 1.0, f, dtype=np.float32)
                 beep[:f] *= ramp
                 beep[-f:] *= ramp[::-1]
-            # Duck the real word to near-silence, then add the (loud) blur over it.
+            # Duck the full inset span (so the whole word is masked), then add the beep over the
+            # leading portion only. The ducked-but-silent tail is effectively inaudible.
             if channels == 1:
-                audio[s:e] = audio[s:e] * duck + beep
+                audio[s:e] *= duck
+                audio[s:s + beep_len] += beep
             else:
-                audio[s:e, :] = audio[s:e, :] * duck + beep[:, None]
+                audio[s:e, :] *= duck
+                audio[s:s + beep_len, :] += beep[:, None]
             count += 1
 
         np.clip(audio, -1.0, 1.0, out=audio)

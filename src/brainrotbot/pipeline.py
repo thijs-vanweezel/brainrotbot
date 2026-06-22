@@ -177,6 +177,7 @@ def run(
         gain_db=float(censor_opts.get("gain_db", 0.0)),
         voice_duck_db=float(censor_opts.get("voice_duck_db", -30.0)),
         sfx_inset_sec=float(censor_opts.get("sfx_inset_sec", 0.04)),
+        max_sfx_sec=float(censor_opts.get("max_sfx_sec", 0.30)),
         sample_rate=int(tts_opts.get("sample_rate", 24000)),
     )
 
@@ -350,8 +351,13 @@ def _localize(entry: LedgerEntry, lang: str, translator: Translator | None) -> N
     if lang == "en" or not meta["nllb"] or translator is None:
         text["translation_model"] = None
         return
-    text["title"] = translator.translate(text["title"], lang)
-    text["cleaned_body"] = translator.translate(text["cleaned_body"], lang)
+    # Translate title and body *separately* so the "\n\n" paragraph break is preserved in
+    # cleaned_body. Translating the whole blob collapses the break (sentence splitter strips \n),
+    # which would silence the intro "ahem" SFX (pipeline.py:411 needs the break to find intro_words).
+    en_title, sep, en_body = text["cleaned_body"].partition("\n\n")
+    t_title = translator.translate(en_title, lang)
+    text["title"] = t_title
+    text["cleaned_body"] = f"{t_title}\n\n{translator.translate(en_body, lang)}" if sep else t_title
     text["translation_model"] = translator.model_label
     # Refresh the spoken-length fallback (only used if TTS is skipped). CJK has no word spaces, so
     # estimate from characters; otherwise re-count words on the translated text.
