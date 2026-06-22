@@ -5,10 +5,13 @@ alignment then tells us exactly *when* each banned word is spoken. This module o
 blur/beep SFX on top of those spans so the spoken word is masked, while the surrounding prosody and
 total length are untouched. Two guarantees the user asked for:
 
-  * **Loud** -- the SFX is peak-normalized (~0.95 full-scale) and the real word underneath is ducted
-    to near-silence (`voice_duck_db`, default -30 dB), so the blur clearly dominates the word.
-  * **Length matches the word** -- the SFX is tiled/trimmed to exactly the aligned word interval
-    (plus a small `pad_sec` so the word's leading/trailing consonants are fully covered).
+  * **Loud (but not overpowering)** -- the SFX is peak-normalized then trimmed by `gain_db`, and the
+    real word underneath is ducked to near-silence (`voice_duck_db`, default -30 dB), so the blur
+    masks the word without being the only thing the viewer hears.
+  * **A touch shorter than the word** -- the SFX (and the matching duck) span the aligned word
+    interval *inset* by `sfx_inset_sec` on each edge, so the beep is slightly shorter than the word
+    and doesn't drag. A word too short for the inset falls back to its exact interval (never left
+    audible).
 
 The WAV is rewritten in place (same path, same sample rate). The blur SFX is decoded once via the
 bundled ffmpeg (so any container/codec works, e.g. the bundled blur_sfx.mp3) and cached resampled
@@ -36,13 +39,15 @@ class BlurCensor:
         sfx_file: str,
         gain_db: float = 0.0,
         voice_duck_db: float = -30.0,
-        pad_sec: float = 0.05,
+        sfx_inset_sec: float = 0.04,
+        max_sfx_sec: float = 0.30,
         sample_rate: int = 24000,
     ):
         self.sfx_file = sfx_file
         self.gain_db = gain_db
         self.voice_duck_db = voice_duck_db
-        self.pad_sec = max(0.0, pad_sec)
+        self.sfx_inset_sec = max(0.0, sfx_inset_sec)
+        self.max_sfx_sec = max(0.0, max_sfx_sec)
         self.sample_rate = sample_rate
         self._sfx = None  # peak-normalized mono float32 at `sample_rate`, decoded on first use
 
@@ -67,10 +72,11 @@ class BlurCensor:
     def censor(self, wav_path: Path, intervals: list[tuple[float, float]]) -> int:
         """Overlay the blur SFX over each (start, end) span in `wav_path`, in place.
 
-        Returns the number of spans blurred. Each span ducks the underlying narration by
-        `voice_duck_db` and adds the SFX (tiled/trimmed to the span + `pad_sec`) at full level; the
-        sum is clipped to [-1, 1]. Mono or stereo input is handled. A span list that's empty (no
-        banned words) is a no-op.
+        Returns the number of spans blurred. Each span is inset by `sfx_inset_sec` on each edge (so
+        the beep runs a touch shorter than the word; a word too short to inset uses its exact
+        interval), ducks the underlying narration there by `voice_duck_db`, and adds the SFX
+        (tiled/trimmed to that span) on top; the sum is clipped to [-1, 1]. Mono or stereo input is
+        handled. A span list that's empty (no banned words) is a no-op.
         """
         import numpy as np
         import soundfile as sf
@@ -89,29 +95,40 @@ class BlurCensor:
 
         count = 0
         for start, end in intervals:
-            s = max(0, int((start - self.pad_sec) * sr))
-            e = min(n, int((end + self.pad_sec) * sr))
+            # Inset the span so the beep (and its duck) is a touch shorter than the word -- less
+            # annoying than a beep that overruns it. If the word is too short to inset, fall back to
+            # its exact interval so it's never left audible.
+            s = max(0, int((start + self.sfx_inset_sec) * sr))
+            e = min(n, int((end - self.sfx_inset_sec) * sr))
+            if e <= s:
+                s = max(0, int(start * sr))
+                e = min(n, int(end * sr))
             if e <= s:
                 continue
             seg_len = e - s
-            # Tile (loop) the SFX to the span length and trim the tail. Re-peak-normalize this slice
-            # so EVERY blur is uniformly loud -- a short word slices only the SFX's (often soft) onset,
-            # which would otherwise be quiet. `level` (gain_db) then scales on top; the final clip guards.
-            beep = np.resize(sfx, seg_len).astype(np.float32)
+            # Cap the audible beep at max_sfx_sec; the rest of the span stays ducked to near-silence
+            # so the whole word remains masked even on long CTC-over-extended intervals.
+            beep_len = min(seg_len, max(1, int(self.max_sfx_sec * sr)))
+            # Tile/trim the SFX to the (capped) beep length; re-peak-normalize so every blur is
+            # uniformly loud regardless of where the tile seam falls. `level` scales on top.
+            beep = np.resize(sfx, beep_len).astype(np.float32)
             seg_peak = float(np.max(np.abs(beep)))
             if seg_peak > 0:
                 beep *= (0.97 / seg_peak)
             beep *= level
-            f = min(fade, seg_len // 2)
+            f = min(fade, beep_len // 2)
             if f > 0:
                 ramp = np.linspace(0.0, 1.0, f, dtype=np.float32)
                 beep[:f] *= ramp
                 beep[-f:] *= ramp[::-1]
-            # Duck the real word to near-silence, then add the (loud) blur over it.
+            # Duck the full inset span (so the whole word is masked), then add the beep over the
+            # leading portion only. The ducked-but-silent tail is effectively inaudible.
             if channels == 1:
-                audio[s:e] = audio[s:e] * duck + beep
+                audio[s:e] *= duck
+                audio[s:s + beep_len] += beep
             else:
-                audio[s:e, :] = audio[s:e, :] * duck + beep[:, None]
+                audio[s:e, :] *= duck
+                audio[s:s + beep_len, :] += beep[:, None]
             count += 1
 
         np.clip(audio, -1.0, 1.0, out=audio)

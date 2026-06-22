@@ -14,21 +14,29 @@ keeping only the JSON record and the shared caches for Step 8 analytics.
 from __future__ import annotations
 
 import json
+import os
 import re
 import time
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from ..ledger import append_entry, iter_entries
 from ..models import LedgerEntry
 from ..wiki.article import fetch_random_article
 from .tiktok import PostFailedError, TikTokUploader, UploadRejectedError
+from .zernio import ZernioClient, ZernioNotFound, classify_status, find_tiktok_url, upload_to_litterbox
 
 # Statuses that mean an upload was already started or finished for this video; scan_ready never
 # re-surfaces these, so we can't double-post. `upload_attempting` is the crash-safety breadcrumb
 # written just before clicking Post -- if the process dies mid-upload it stays on disk and the next
 # run skips the video (surfaced for manual review) instead of posting it a second time.
 # `upload_discarded` is a dead Post button we deliberately gave up on (see PostFailedError handling).
-_ATTEMPTED_STATUSES = ("upload_done", "upload_unconfirmed", "upload_attempting", "upload_discarded")
+# `upload_scheduled` is a video handed to TikTok's bulk scheduler (not live yet); reconcile_scheduled
+# captures its URL once it publishes -- until then scan_ready must skip it so it isn't re-scheduled.
+# `upload_deleted` is a scheduled post the user removed on Zernio: reconcile cleans up its media and
+# marks it terminal so it's never re-scheduled nor re-posted (deletion = deliberate curation).
+_ATTEMPTED_STATUSES = ("upload_done", "upload_unconfirmed", "upload_attempting", "upload_discarded",
+                       "upload_scheduled", "upload_failed", "upload_deleted")
 
 
 def _post_id(entry: LedgerEntry) -> str:
@@ -158,7 +166,23 @@ def _cleanup_assets(settings, entry: LedgerEntry) -> list[str]:
     return deleted
 
 
-def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = False) -> int:
+def _delete_locally(settings, entry: LedgerEntry, *, reason: str, delete_after: bool) -> None:
+    """Mark a Zernio-deleted post terminal (`upload_deleted`), clean its kept media, and persist.
+
+    The deletion was deliberate (the user removed it on Zernio), so the post is never re-scheduled
+    (`upload_deleted` is in _ATTEMPTED_STATUSES) nor re-posted (the ledger append dedups it). Media is
+    freed when delete_after is on, matching the published/discarded paths (respects delete_after=false).
+    """
+    entry.status = "upload_deleted"
+    entry.upload["deleted_reason"] = reason
+    if delete_after:
+        entry.upload["assets_deleted"] = _cleanup_assets(settings, entry)
+    _rewrite_story_file(settings, entry)
+    append_entry(settings.ledger_path, entry)
+
+
+def drain_upload_queue(settings, *, limit: int | None = None, headless: bool | None = None,
+                       debug: bool = False) -> int:
     """Upload every ready video to TikTok in one browser session. Returns the number confirmed posted.
 
     Resilient: one video's failure logs a warning and never aborts the batch. **Confirm-before-commit**:
@@ -167,8 +191,14 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
     entry is marked `upload_unconfirmed` and its media is KEPT (scan_ready then won't re-post it, so no
     duplicate). The updated entry is rewritten to the story JSON and re-appended to the append-only ledger
     (Step 8 dedupes by id, taking the latest line). `debug` dumps the Studio DOM at each milestone.
+
+    `limit` caps how many ready videos are scheduled this drain (oldest-first; the rest stay queued for a
+    later run). The pipeline passes `limit=<videos produced this run>` so `--top-k k` schedules only its
+    own k×langs even when older leftovers sit on disk; `limit=None` (e.g. `--upload-only`) drains all.
     """
     ready = scan_ready(settings)
+    if limit is not None:
+        ready = ready[:limit]                    # oldest-first FIFO; extras wait for a future run
     if not ready:
         print("[brainrotbot] Upload queue empty -- nothing to drain.")
         return 0
@@ -182,6 +212,17 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
     delete_after = bool(opts.get("delete_after_upload", True))
     headless = opts.get("headless", False) if headless is None else headless
     debug = debug or bool(opts.get("debug", False))
+    provider = str(opts.get("provider", "zernio")).lower()
+
+    # Default path: schedule via Zernio's REST API (official Content Posting API, their audited app) --
+    # no browser, no Content Check Lite, no flagging risk. provider="playwright" falls back to the
+    # legacy live one-by-one web-Studio driver below (kept as a fallback; the account is currently
+    # flagged on it).
+    if provider == "zernio":
+        return _schedule_batch_zernio(
+            settings, ready, template=template, hashtags=hashtags,
+            max_chars=max_chars, append_sub=append_sub, wiki_enabled=wiki_enabled,
+        )
 
     print(f"[brainrotbot] Draining upload queue: {len(ready)} video(s) ready for TikTok.")
     posted = 0
@@ -201,6 +242,7 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
         debug=debug,
         debug_dir=settings.data_dir / "upload_debug",
     )
+
     with uploader:
         for entry in ready:
             pid = _post_id(entry)
@@ -294,3 +336,163 @@ def drain_upload_queue(settings, *, headless: bool | None = None, debug: bool = 
                 print(f"[brainrotbot] WARNING: upload failed for {pid}: {exc}")
     print(f"[brainrotbot] Drain complete: {posted}/{len(ready)} confirmed posted.")
     return posted
+
+
+def _zernio_client(settings) -> ZernioClient:
+    """Build a ZernioClient from settings + the ZERNIO_API_KEY env var (.env), like the Pixabay key."""
+    opts = settings.upload_opts
+    api_key = os.environ.get("ZERNIO_API_KEY") or opts.get("ZERNIO_API_KEY", "")
+    return ZernioClient(api_key, opts.get("zernio_account_id", ""),
+                        timezone=opts.get("timezone", "Europe/Amsterdam"))
+
+
+def _schedule_batch_zernio(settings, ready, *, template, hashtags, max_chars,
+                           append_sub, wiki_enabled) -> int:
+    """Schedule `ready` via Zernio: stash each mp4 on Litterbox, POST to /v1/posts spaced over one day.
+
+    Marks each scheduled video `upload_scheduled` (media KEPT until reconcile confirms publish) and records
+    the Zernio post id. A failure leaves that entry retriable (prior status, media kept). No browser.
+    """
+    if not ready:
+        return 0
+    client = _zernio_client(settings)
+    n = len(ready)
+    first_offset = int(settings.upload_opts.get("schedule_first_offset_min", 15))
+    window = float(settings.upload_opts.get("schedule_window_hours", 24))
+    gap_hours = window / n if n > 1 else 0.0   # evenly spaced over the window
+    start = datetime.now() + timedelta(minutes=first_offset)
+    print(f"[brainrotbot] Scheduling {n} video(s) via Zernio, "
+          f"paced over {window:g}h ({gap_hours * 60:.0f} min apart, "
+          f"first {start:%Y-%m-%d %H:%M}) ...")
+    scheduled = 0
+    for i, entry in enumerate(ready):
+        pid = _post_id(entry)
+        when = start + timedelta(hours=gap_hours * i)
+        article = fetch_random_article(settings) if wiki_enabled else None
+        entry_tags = list(hashtags)
+        if append_sub:
+            sub_tag = _subreddit_hashtag(entry)
+            if sub_tag and sub_tag.lower() not in {t.lower() for t in entry_tags}:
+                entry_tags.append(sub_tag)
+        caption = _build_caption(entry, entry_tags, article=article,
+                                 fallback_template=template, max_chars=max_chars)
+        cover = entry.assets.get("thumbnail_path")
+        prev_status = entry.status
+        entry.status = "upload_attempting"
+        _rewrite_story_file(settings, entry)
+        try:
+            media_url = upload_to_litterbox(Path(entry.assets["final_video"]))
+            # Upload the Step 6 thumbnail too (best-effort) so Zernio sets it as the TikTok cover.
+            cover_url = None
+            if cover and Path(cover).is_file():
+                try:
+                    cover_url = upload_to_litterbox(Path(cover))
+                except Exception as exc:  # noqa: BLE001 -- cover is optional; degrade to a video frame
+                    print(f"[brainrotbot]   (cover upload failed for {pid}, using a video frame: {exc})")
+            post_id = client.schedule_video(media_url, caption, when, cover_url=cover_url)
+        except Exception as exc:  # noqa: BLE001 -- keep retriable, media kept; move to the next video
+            entry.status = prev_status
+            _rewrite_story_file(settings, entry)
+            print(f"[brainrotbot] WARNING: could not schedule {pid} via Zernio ({exc}) -- "
+                  "left retriable, media kept.")
+            continue
+        entry.status = "upload_scheduled"
+        entry.upload.update(provider="zernio", zernio_post_id=post_id, media_url=media_url,
+                            cover_url=cover_url, cover_set=bool(cover_url),
+                            scheduled_for=when.timestamp(), caption=caption, hashtags=entry_tags,
+                            public=True)
+        if article:
+            entry.upload["wikipedia"] = {
+                "title": article["title"], "url": article["url"],
+                "category": article["category"], "categories": article["categories"],
+            }
+        _rewrite_story_file(settings, entry)
+        append_entry(settings.ledger_path, entry)
+        scheduled += 1
+        print(f"[brainrotbot]   scheduled {pid} -> Zernio post {post_id} for {when:%Y-%m-%d %H:%M}")
+    last_time = start + timedelta(hours=gap_hours * (scheduled - 1)) if scheduled > 1 else start
+    print(
+        f"[brainrotbot] Schedule complete: {scheduled}/{n} scheduled via Zernio — "
+        f"first {start:%Y-%m-%d %H:%M}, last {last_time:%H:%M} "
+        f"({gap_hours * 60:.0f} min apart over ~{window:g}h)."
+    )
+    return scheduled
+
+
+def _reconcile_zernio(settings) -> int:
+    """Finalize Zernio-scheduled posts that have published: GET status, capture the live URL, clean up.
+
+    A published post -> upload.{url,posted_at} + status=upload_done (+ media deleted if delete_after).
+    A failed post -> status=upload_failed (media kept for review, not retried). Pending -> left as-is.
+    """
+    pending = [e for e in _iter_story_entries(settings)
+               if e.status == "upload_scheduled" and e.upload.get("zernio_post_id")]
+    if not pending:
+        print("[brainrotbot] No Zernio-scheduled posts awaiting reconciliation.")
+        return 0
+    client = _zernio_client(settings)
+    delete_after = bool(settings.upload_opts.get("delete_after_upload", True))
+    done = 0
+    for entry in pending:
+        pid = _post_id(entry)
+        post_id = entry.upload["zernio_post_id"]
+        try:
+            payload = client.post_status(post_id)
+        except ZernioNotFound as exc:
+            # The post is gone on Zernio -- the user deleted it. Treat the deletion as deliberate:
+            # mark it terminal, free its kept media, and never repost it (no payload to classify).
+            _delete_locally(settings, entry, reason=str(exc), delete_after=delete_after)
+            print(f"[brainrotbot]   {pid} removed on Zernio -> upload_deleted, media cleaned.")
+            continue
+        except Exception as exc:  # noqa: BLE001 -- transient: leave upload_scheduled, retry next run
+            print(f"[brainrotbot]   (status check failed for {pid} / Zernio {post_id}: {exc})")
+            continue
+        state = classify_status(payload)
+        if state == "deleted":
+            # Zernio reports the post deleted/cancelled via a 200 status string (vs a 404) -- same
+            # deliberate-deletion semantics as ZernioNotFound above.
+            _delete_locally(settings, entry, reason=str(payload)[:300], delete_after=delete_after)
+            print(f"[brainrotbot]   {pid} cancelled/deleted on Zernio -> upload_deleted, media cleaned.")
+        elif state == "published":
+            url = find_tiktok_url(payload)
+            entry.upload.update(url=url, posted_at=time.time())
+            entry.status = "upload_done"
+            if delete_after:
+                entry.upload["assets_deleted"] = _cleanup_assets(settings, entry)
+            _rewrite_story_file(settings, entry)
+            append_entry(settings.ledger_path, entry)
+            done += 1
+            print(f"[brainrotbot]   reconciled {pid} -> {url or '(published; no URL returned)'}")
+        elif state == "failed":
+            entry.status = "upload_failed"
+            entry.upload["failed_reason"] = str(payload)[:300]
+            _rewrite_story_file(settings, entry)
+            append_entry(settings.ledger_path, entry)
+            print(f"[brainrotbot] WARNING: Zernio reports {pid} failed -- marked upload_failed (media kept).")
+        # else pending (scheduled/processing) -> leave upload_scheduled for a later run
+    print(f"[brainrotbot] Reconcile complete: {done}/{len(pending)} published.")
+    return done
+
+
+def reconcile_scheduled(settings, *, headless: bool | None = None, debug: bool = False) -> int:
+    """Finalize `upload_scheduled` posts that have since published. Returns # reconciled.
+
+    Only the Zernio provider schedules posts, so this delegates to _reconcile_zernio (poll each post's
+    status by id). On the legacy live `playwright` path nothing is ever scheduled, so there's nothing to
+    reconcile and this is a no-op.
+    """
+    if str(settings.upload_opts.get("provider", "zernio")).lower() == "zernio":
+        return _reconcile_zernio(settings)
+    return 0
+
+
+def _iter_story_entries(settings):
+    """Yield every readable per-story LedgerEntry from data/stories/ (latest in-place state)."""
+    stories_dir = settings.stories_dir
+    if not stories_dir.is_dir():
+        return
+    for path in sorted(stories_dir.glob("*.json")):
+        try:
+            yield LedgerEntry.from_dict(json.loads(path.read_text(encoding="utf-8")))
+        except Exception:  # noqa: BLE001 -- skip an unreadable/partial story file
+            continue

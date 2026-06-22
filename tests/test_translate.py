@@ -36,6 +36,62 @@ def test_english_is_passthrough_without_model():
     assert tr.translate("", "fr") == ""  # empty stays empty, still no model load
 
 
+def test_localize_preserves_paragraph_break():
+    """_localize must keep the '\\n\\n' title/body separator so intro_words > 0 for fr/es."""
+    from dataclasses import dataclass, field
+    from brainrotbot.pipeline import _localize
+
+    @dataclass
+    class _FakeTr:
+        model_label = "fake"
+        def translate(self, text: str, lang: str) -> str:
+            return f"[{lang}]{text}"
+
+    @dataclass
+    class _Entry:
+        source: dict = field(default_factory=dict)
+        text: dict = field(default_factory=lambda: {
+            "title": "My Title",
+            "cleaned_body": "My Title\n\nBody text here.",
+        })
+
+    entry = _Entry()
+    _localize(entry, "fr", _FakeTr())
+    # The translated cleaned_body must retain a \n\n so the pipeline can find intro_words.
+    assert "\n\n" in entry.text["cleaned_body"]
+    # The first paragraph is the translated title; the second is the translated body.
+    title_part, _, body_part = entry.text["cleaned_body"].partition("\n\n")
+    assert title_part == "[fr]My Title"
+    assert body_part == "[fr]Body text here."
+    # title field is also updated.
+    assert entry.text["title"] == "[fr]My Title"
+
+
+def test_localize_title_only_no_break():
+    """Title-only stories (no \\n\\n) degrade cleanly: cleaned_body = translated title."""
+    from dataclasses import dataclass, field
+    from brainrotbot.pipeline import _localize
+
+    @dataclass
+    class _FakeTr:
+        model_label = "fake"
+        def translate(self, text: str, lang: str) -> str:
+            return f"[{lang}]{text}"
+
+    @dataclass
+    class _Entry:
+        source: dict = field(default_factory=dict)
+        text: dict = field(default_factory=lambda: {
+            "title": "Just a title",
+            "cleaned_body": "Just a title",
+        })
+
+    entry = _Entry()
+    _localize(entry, "es", _FakeTr())
+    assert entry.text["cleaned_body"] == "[es]Just a title"
+    assert "\n\n" not in entry.text["cleaned_body"]
+
+
 needs_model = pytest.mark.skipif(
     not (os.environ.get("BRBOT_TEST_TRANSLATE") == "1"),
     reason="set BRBOT_TEST_TRANSLATE=1 (and install ctranslate2) to run model-backed translation",

@@ -32,7 +32,7 @@ from .music.ncs import TrackMeta, discover_instrumental_tracks, download_track, 
 from .subtitles.generate import SubtitleMaker
 from .thumbnail.generate import ThumbnailMaker
 from .tts.synthesize import KokoroSynthesizer, pick_voice
-from .upload.queue import drain_upload_queue
+from .upload.queue import drain_upload_queue, reconcile_scheduled
 from .upload.tiktok import TikTokUploader
 from .video.background import BackgroundVideoMaker, pick_source
 
@@ -60,6 +60,12 @@ def run(
     # video). --upload-only just flushes whatever is already finished, creating nothing new.
     upload_enabled = (not skip_upload) and settings.upload_opts.get("enabled", True)
     batch_size = int(settings.upload_opts.get("batch_size", 30))
+    upload_provider = str(settings.upload_opts.get("provider", "zernio")).lower()
+    # First finalize any posts scheduled on a previous run that have since published (capture their live
+    # URLs + clean up media) before scheduling new ones -- the daily flow for the Zernio/bulk paths.
+    # Cheap no-op when nothing is pending (and on the legacy live path).
+    if upload_enabled:
+        reconcile_scheduled(settings, debug=debug_upload)
     if upload_only:
         drain_upload_queue(settings, debug=debug_upload)
         return []
@@ -170,7 +176,8 @@ def run(
         sfx_file=settings.censor_sfx_file,
         gain_db=float(censor_opts.get("gain_db", 0.0)),
         voice_duck_db=float(censor_opts.get("voice_duck_db", -30.0)),
-        pad_sec=float(censor_opts.get("pad_sec", 0.05)),
+        sfx_inset_sec=float(censor_opts.get("sfx_inset_sec", 0.04)),
+        max_sfx_sec=float(censor_opts.get("max_sfx_sec", 0.30)),
         sample_rate=int(tts_opts.get("sample_rate", 24000)),
     )
 
@@ -181,6 +188,7 @@ def run(
                          or not settings.tts_intro_sfx_file) else IntroSfx(
         sfx_file=settings.tts_intro_sfx_file,
         gain_db=float(tts_opts.get("intro_sfx_gain_db", 0.0)),
+        offset_sec=float(tts_opts.get("intro_sfx_offset_sec", -0.15)),
         sample_rate=int(tts_opts.get("sample_rate", 24000)),
     )
 
@@ -252,17 +260,20 @@ def run(
             _write_story_file(settings, vstory, entry)
             append_entry(settings.ledger_path, entry)
             entries.append(entry)
-            # Drain the upload queue every `batch_size` created videos (the "after every N" trigger).
-            if upload_enabled and len(entries) % batch_size == 0:
+            # For the Playwright path, drain every `batch_size` videos (keeps browser sessions short).
+            # Zernio skips mid-run drains: it schedules the entire batch in one pass at the end so the
+            # 24h pacing window is computed over the full set, not independently per mid-run chunk.
+            if upload_enabled and upload_provider != "zernio" and len(entries) % batch_size == 0:
                 drain_upload_queue(settings, debug=debug_upload)
 
     _print_summary(entries)
 
-    # Final flush: drain whatever is still queued now that the requested top_k is reached (the
-    # "or when the requested count is achieved, whichever is first" trigger). Also sweeps up any
-    # finished-but-unuploaded leftovers from earlier runs.
+    # Final flush. Cap to the videos produced THIS run (len(entries) == selected stories × languages,
+    # minus mid-pipeline failures) so `--top-k k` schedules only its own k×langs even when older
+    # unscheduled leftovers sit on disk; extras stay queued for a future run. (`--upload-only` above
+    # passes no limit -- it's an explicit flush-everything.)
     if upload_enabled and entries:
-        drain_upload_queue(settings, debug=debug_upload)
+        drain_upload_queue(settings, limit=len(entries), debug=debug_upload)
 
     # Future steps consume `entries` here and fill the ledger's assets/upload/metrics:
     #   2. text-to-speech    -> entry.assets["audio_path"]        (DONE)
@@ -302,6 +313,9 @@ def _apply_censor(entry: LedgerEntry, banned) -> None:
     display, hits = censor_for_captions(entry.text["cleaned_body"], banned)
     entry.text["display_body"] = display
     entry.text["banned_words_masked"] = hits
+    # Title is the first paragraph of cleaned_body, so its banned words are already counted above.
+    # We only need the masked string separately so the thumbnail can render the censored form.
+    entry.text["display_title"] = censor_for_captions(entry.text["title"], banned)[0]
 
 
 def _video_sources(settings) -> list[str]:
@@ -337,8 +351,13 @@ def _localize(entry: LedgerEntry, lang: str, translator: Translator | None) -> N
     if lang == "en" or not meta["nllb"] or translator is None:
         text["translation_model"] = None
         return
-    text["title"] = translator.translate(text["title"], lang)
-    text["cleaned_body"] = translator.translate(text["cleaned_body"], lang)
+    # Translate title and body *separately* so the "\n\n" paragraph break is preserved in
+    # cleaned_body. Translating the whole blob collapses the break (sentence splitter strips \n),
+    # which would silence the intro "ahem" SFX (pipeline.py:411 needs the break to find intro_words).
+    en_title, sep, en_body = text["cleaned_body"].partition("\n\n")
+    t_title = translator.translate(en_title, lang)
+    text["title"] = t_title
+    text["cleaned_body"] = f"{t_title}\n\n{translator.translate(en_body, lang)}" if sep else t_title
     text["translation_model"] = translator.model_label
     # Refresh the spoken-length fallback (only used if TTS is skipped). CJK has no word spaces, so
     # estimate from characters; otherwise re-count words on the translated text.
@@ -556,7 +575,8 @@ def _add_thumbnail(entry: LedgerEntry, story: Story, maker: ThumbnailMaker, sett
     """
     out_path = settings.thumbnail_dir / f"{story.post_id}.png"
     try:
-        meta = maker.render(entry.text["title"], out_path, picked) if picked else maker.make(entry.text["title"], out_path)
+        title = entry.text.get("display_title") or entry.text["title"]  # vowel-masked, falls back to raw
+        meta = maker.render(title, out_path, picked) if picked else maker.make(title, out_path)
         entry.assets["thumbnail_path"] = meta["path"]
         entry.assets["thumbnail"] = {
             k: meta[k] for k in
@@ -638,6 +658,9 @@ def main(argv: list[str] | None = None) -> int:
                         help="Dump the Studio DOM (screenshot+HTML) at each upload milestone to data/upload_debug")
     parser.add_argument("--tiktok-login", action="store_true",
                         help="Fallback: open a browser to log in to TikTok by hand and save the session")
+    parser.add_argument("--reconcile", action="store_true",
+                        help="Finalize already-scheduled posts that have since published (capture their "
+                             "live URLs, mark upload_done, delete media); creates nothing new")
     args = parser.parse_args(argv)
 
     # TikTok session utilities (build the uploader from config, then run one action and exit).
@@ -652,6 +675,11 @@ def main(argv: list[str] | None = None) -> int:
         if args.tiktok_check:
             return 0 if uploader.check() else 1
         uploader.login()  # manual fallback when no cookies are available
+        return 0
+
+    # Reconcile-only: finalize scheduled posts that have published, then exit (creates nothing new).
+    if args.reconcile:
+        reconcile_scheduled(load_settings(args.settings), debug=args.tiktok_debug)
         return 0
 
     run(settings_path=args.settings, top_k=args.top_k, skip_tts=args.skip_tts,

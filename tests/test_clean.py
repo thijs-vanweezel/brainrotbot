@@ -1,4 +1,4 @@
-from brainrotbot.text.clean import clean_text, expand_reddit_abbreviations, html_to_text
+﻿from brainrotbot.text.clean import clean_text, expand_reddit_abbreviations, html_to_text
 
 
 def test_strips_markdown_links_and_urls():
@@ -137,8 +137,26 @@ def test_html_to_text_empty():
 
 
 def test_normalizes_smart_punctuation_for_tts():
-    out = clean_text("", "I’d say “hi”—really…", prepend_title=False)
-    assert "’" not in out and "“" not in out and "—" not in out
-    assert "I'd say" in out
-    assert '"hi"' in out
-    assert "-really..." in out
+    # \uXXXX escapes avoid embedded curly-quote chars in the source (original
+    # test used curly quotes AS delimiters, causing SyntaxError on Python 3.12).
+    body = "\u201cI\u2019d say \u201chi\u201d\u2014really\u2026\u201d"
+    out = clean_text("", body, prepend_title=False)
+    assert "\u2018" not in out and "\u201c" not in out  # curly quotes gone
+    assert "\u2014" not in out and "\u2013" not in out  # em/en dashes gone
+    assert "I'd say" in out   # right-single-quote normalized to straight apostrophe
+    assert '"hi"' in out      # curly double quotes normalized to straight
+    assert "-really..." in out  # em-dash -> hyphen, ellipsis -> "..."
+
+def test_title_asterisks_are_stripped():
+    """Asterisks in the title (markdown emphasis or self-censored words) must be stripped
+    before they reach Kokoro; otherwise TTS verbalises them as 'asterisk'. Text survives."""
+    out = clean_text(
+        "AITA for telling my *sister* to f*ck off?",
+        "The whole story.",
+        prepend_title=True,
+    )
+    assert "*" not in out, f"stray asterisk survived: {out!r}"
+    assert "sister" in out
+    # The word-core survives (vowel masking happens in text/censor.py, not clean_text).
+    # "_strip_inline_markup" removes '*', leaving "fck" (the vowel was the asterisk).
+    assert "fck" in out or "fuck" in out
