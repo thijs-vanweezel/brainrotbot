@@ -61,9 +61,9 @@ jobs:
         # Playwright is only required for the legacy provider="playwright" fallback.
 
       - name: Write YouTube cookies
-        run: printf '%s' "${{ secrets.YT_COOKIES_TXT }}" > yt_cookies.txt
+        run: printf '%s' "${{ secrets.YT_COOKIES }}" > yt_cookies.txt
         # Netscape cookies.txt exported from a logged-in browser (same file used locally),
-        # stored whole as the YT_COOKIES_TXT repo secret. Re-export + update the secret if
+        # stored whole as the YT_COOKIES repo secret. Re-export + update the secret if
         # background-video downloads start failing (YouTube cookies do expire over time).
 
       - name: Run pipeline (top_k=5)
