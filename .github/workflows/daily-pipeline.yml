@@ -61,7 +61,11 @@ jobs:
         # Playwright is only required for the legacy provider="playwright" fallback.
 
       - name: Write YouTube cookies
-        run: printf '%s' "${{ secrets.YT_COOKIES }}" > yt_cookies.txt
+        run: |
+          printf '%s' "${{ secrets.YT_COOKIES }}" > config/yt_cookies.txt
+          echo "config/yt_cookies.txt: $(wc -c < config/yt_cookies.txt) bytes, $(wc -l < config/yt_cookies.txt) lines, $(grep -c '\.youtube\.com' config/yt_cookies.txt || true) youtube.com cookie line(s)"
+        # [video].cookies_file = "./yt_cookies.txt" resolves relative to settings.toml's own
+        # directory (config/), NOT the repo root -- see Settings.video_cookies_file in config.py.
         # Netscape cookies.txt exported from a logged-in browser (same file used locally),
         # stored whole as the YT_COOKIES repo secret. Re-export + update the secret if
         # background-video downloads start failing (YouTube cookies do expire over time).
