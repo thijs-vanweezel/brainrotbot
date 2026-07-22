@@ -1,0 +1,116 @@
+{
+  "id": "4ab0226fa3034ff89a1850d1ff16b953",
+  "created_at": 1784721835.7998202,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "AmItheAsshole",
+    "post_id": "1v2tbda",
+    "url": "https://www.reddit.com/r/AmItheAsshole/comments/1v2tbda/aita_alcohol_at_an_aloholics_house/",
+    "author": "/u/Medium-Pack-7327",
+    "feed_rank": 8,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/AmItheAsshole",
+    "created_utc": 1784663666.0,
+    "nsfw": null,
+    "variant_id": "1v2tbda_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "AITA Alcohol at an Aloholics house",
+    "raw_body": "Throwaway\n My (30M) wife (27F) got a verbal invitation from a coworker (late 30's) about a watch party for the World Cup a few weeks ago. We had nothing to do that Saturday so I said we should go. She's only worked at this place for about 6 months. She knows her co-workers, but not that close.\n I picked up a few 6 packs and on the day of we ubered to the party. We walked in and greeted a few people. Found a cooler and put our drinks in. Got one for my wife and I then went to greet more people and settle in.\n When I was introduced to the coworker, she was very cold with me and then finally said we don't allow alcohol at the house. I apologized and said I didn't know. She said her husband (who I did meet a few minutes earlier) was a recovering alcoholic. With an attitude she said people shouldn't assume alcohol is allowed at others homes and should check first. Personally, I hear party (Kids party the exception), I assume drinks are being served. It was bizarre and we opted to leave. Are we the assholes?\n\n submitted by /u/Medium-Pack-7327\n [link] [comments]",
+    "cleaned_body": "Am I the asshole Alcohol at an Aloholics house\n\nThrowaway\n My 30 year old male wife 27 year old female got a verbal invitation from a coworker (late 30's) about a watch party for the World Cup a few weeks ago. We had nothing to do that Saturday so I said we should go. She's only worked at this place for about 6 months. She knows her co-workers, but not that close.\n I picked up a few 6 packs and on the day of we ubered to the party. We walked in and greeted a few people. Found a cooler and put our drinks in. Got one for my wife and I then went to greet more people and settle in.\n When I was introduced to the coworker, she was very cold with me and then finally said we don't allow alcohol at the house. I apologized and said I didn't know. She said her husband (who I did meet a few minutes earlier) was a recovering alcoholic. With an attitude she said people shouldn't assume alcohol is allowed at others homes and should check first. Personally, I hear party (Kids party the exception), I assume drinks are being served. It was bizarre and we opted to leave. Are we the assholes?",
+    "display_body": "Am I the *sshole Alcohol at an Aloholics house Throwaway My 30 year old male wife 27 year old female got a verbal invitation from a coworker (late 30's) about a watch party for the World Cup a few weeks ago. We had nothing to do that Saturday so I said we should go. She's only worked at this place for about 6 months. She knows her co-workers, but not that close. I picked up a few 6 packs and on the day of we ubered to the party. We walked in and greeted a few people. Found a cooler and put our drinks in. Got one for my wife and I then went to greet more people and settle in. When I was introduced to the coworker, she was very cold with me and then finally said we don't allow alcohol at the house. I apologized and said I didn't know. She said her husband (who I did meet a few minutes earlier) was a recovering alcoholic. With an attitude she said people shouldn't assume alcohol is allowed at others homes and should check first. Personally, I hear party (Kids party the exception), I assume drinks are being served. It was bizarre and we opted to leave. Are we the assholes?",
+    "word_count": 212,
+    "est_speech_seconds": 84.8,
+    "banned_words_masked": [
+      {
+        "word": "asshole",
+        "count": 1
+      }
+    ],
+    "title_en": "AITA Alcohol at an Aloholics house",
+    "body_en": "Am I the asshole Alcohol at an Aloholics house\n\nThrowaway\n My 30 year old male wife 27 year old female got a verbal invitation from a coworker (late 30's) about a watch party for the World Cup a few weeks ago. We had nothing to do that Saturday so I said we should go. She's only worked at this place for about 6 months. She knows her co-workers, but not that close.\n I picked up a few 6 packs and on the day of we ubered to the party. We walked in and greeted a few people. Found a cooler and put our drinks in. Got one for my wife and I then went to greet more people and settle in.\n When I was introduced to the coworker, she was very cold with me and then finally said we don't allow alcohol at the house. I apologized and said I didn't know. She said her husband (who I did meet a few minutes earlier) was a recovering alcoholic. With an attitude she said people shouldn't assume alcohol is allowed at others homes and should check first. Personally, I hear party (Kids party the exception), I assume drinks are being served. It was bizarre and we opted to leave. Are we the assholes?",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "AITA Alcohol at an Aloholics house"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v2tbda_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/55e23ca1-072d-4445-8a3e-f38353b5c2c2.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v2tbda_en.png",
+    "audio": {
+      "voice": "am_michael",
+      "lang_code": "a",
+      "duration_sec": 65.9,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 3.761
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v2tbda_en.ass",
+    "subtitles": {
+      "num_words": 212,
+      "num_cues": 57,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          0.72,
+          1.18
+        ]
+      ],
+      "intro_end_sec": 3.761,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "55e23ca1-072d-4445-8a3e-f38353b5c2c2",
+      "title": "Firestarter",
+      "artist": "Lack D, KDH, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/Firestarter",
+      "instrumental_url": "https://ncs.io/track/download/i_55e23ca1-072d-4445-8a3e-f38353b5c2c2",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "dessert",
+      "image_id": 4751821,
+      "image_page_url": "https://pixabay.com/photos/strawberry-syrup-dessert-4751821/",
+      "image_url": "https://pixabay.com/get/gd6bacce1a772d3e40db1754da43988e085ca0722847e1d444c6fac3b6d69595634b7e433d53ffe7110e48bbf6eaa37219c120761b2a4bab1bcd612d9cc47afb4_1280.jpg",
+      "title_rendered": "AITA Alcohol at an Aloholics house"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

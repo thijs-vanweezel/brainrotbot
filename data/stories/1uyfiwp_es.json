@@ -1,0 +1,105 @@
+{
+  "id": "ba0bd1007b6244628c977ae7e376d791",
+  "created_at": 1784722133.0100653,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "AmItheAsshole",
+    "post_id": "1uyfiwp",
+    "url": "https://www.reddit.com/r/AmItheAsshole/comments/1uyfiwp/aita_for_refusing_to_do_my_business_at_my_future/",
+    "author": "/u/Weddin_Swordfish4030",
+    "feed_rank": 10,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/AmItheAsshole",
+    "created_utc": 1784236429.0,
+    "nsfw": null,
+    "variant_id": "1uyfiwp_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "¿Soy el imbécil por negarme a hacer mi negocio en mi futura boda DILS y DILS",
+    "raw_body": "edit: whoops put DILs twice. My future DILS and daughters wedding\n I was a stay at home parent for many years and only started to go back to work the past few years. I made my own business and have carts that dish out desserts and topping at events.\n The businesses is overall good and I am proud to say I have 3 full time employees now( business it going well and probably will expand more) and multiple part time. We even have our own office/ bakery area. My main stuff is get hired is wedding, graduation parties or birthday.\n The issue is my DIL wants me to do this at their wedding. She wishes to have a semi large wedding so I would need all my employees to work it and I would have to work it. She said she would pay but I don't want to work on the wedding day.\n I informed her that I won't be doing it and explained that I don't wish to work on their wedding day. She is upset and pointed out that I have done this for other people in the family. Those have been one graduation party for my niece and a 4 year olds birthday party.\n She is spreading it to the rest of the family and everyone seems to have theirs own opinions on the situation\n\n submitted by /u/Weddin_Swordfish4030\n [link] [comments]",
+    "cleaned_body": "¿Soy el imbécil por negarme a hacer mi negocio en mi futura boda DILS y DILS\n\nHe sido padre en casa durante muchos años y sólo empecé a volver al trabajo en los últimos años. Hice mi propio negocio y tengo carros que preparan postres y encabezando eventos. Los negocios en general son buenos y me enorgullece decir que tengo 3 empleados a tiempo completo ahora(el negocio va bien y probablemente se expandirá más) y múltiples a tiempo parcial. Incluso tenemos nuestra propia oficina / área de panadería. Mi principal cosa es contratar es boda, fiestas de graduación o cumpleaños. El problema es que mi DIL quiere que haga esto en su boda. Ella desea tener una boda semiconductor así que necesitaría que todos mis empleados lo trabajaran y yo tendría que hacerlo. Dijo que pagaría pero no quiero trabajar el día de la boda. Le informé que no lo haría y le expliqué que no quería trabajar el día de su boda. Ella se molesta y señala que lo he hecho por otras personas en la familia. Esa ha sido una fiesta de graduación para mi sobrina y una fiesta de cumpleaños de 4 años. Ella lo está difundiendo al resto de la familia y todos parecen tener sus propias opiniones sobre la situación",
+    "display_body": "¿Soy el imbécil por negarme a hacer mi negocio en mi futura boda DILS y DILS He sido padre en casa durante muchos años y sólo empecé a volver al trabajo en los últimos años. Hice mi propio negocio y tengo carros que preparan postres y encabezando eventos. Los negocios en general son buenos y me enorgullece decir que tengo 3 empleados a tiempo completo ahora(el negocio va bien y probablemente se expandirá más) y múltiples a tiempo parcial. Incluso tenemos nuestra propia oficina / área de panadería. Mi principal cosa es contratar es boda, fiestas de graduación o cumpleaños. El problema es que mi DIL quiere que haga esto en su boda. Ella desea tener una boda semiconductor así que necesitaría que todos mis empleados lo trabajaran y yo tendría que hacerlo. Dijo que pagaría pero no quiero trabajar el día de la boda. Le informé que no lo haría y le expliqué que no quería trabajar el día de su boda. Ella se molesta y señala que lo he hecho por otras personas en la familia. Esa ha sido una fiesta de graduación para mi sobrina y una fiesta de cumpleaños de 4 años. Ella lo está difundiendo al resto de la familia y todos parecen tener sus propias opiniones sobre la situación",
+    "word_count": 215,
+    "est_speech_seconds": 86.0,
+    "banned_words_masked": [],
+    "title_en": "AITA for refusing to do my business at my future DILS and DILS wedding",
+    "body_en": "Am I the asshole for refusing to do my business at my future DILS and DILS wedding\n\nI was a stay at home parent for many years and only started to go back to work the past few years. I made my own business and have carts that dish out desserts and topping at events.\n The businesses is overall good and I am proud to say I have 3 full time employees now( business it going well and probably will expand more) and multiple part time. We even have our own office/ bakery area. My main stuff is get hired is wedding, graduation parties or birthday.\n The issue is my DIL wants me to do this at their wedding. She wishes to have a semi large wedding so I would need all my employees to work it and I would have to work it. She said she would pay but I don't want to work on the wedding day.\n I informed her that I won't be doing it and explained that I don't wish to work on their wedding day. She is upset and pointed out that I have done this for other people in the family. Those have been one graduation party for my niece and a 4 year olds birthday party.\n She is spreading it to the rest of the family and everyone seems to have theirs own opinions on the situation",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "¿Soy el imbécil por negarme a hacer mi negocio en mi futura boda DILS y DILS"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1uyfiwp_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/5e003872-421d-4c32-a8e0-d165cc600344.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1uyfiwp_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 62.3,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.081
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1uyfiwp_es.ass",
+    "subtitles": {
+      "num_words": 215,
+      "num_cues": 58,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.081,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "5e003872-421d-4c32-a8e0-d165cc600344",
+      "title": "Real Good Liar",
+      "artist": "Nokae",
+      "genre": "Bass House",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/RealGoodLiar",
+      "instrumental_url": "https://ncs.io/track/download/i_5e003872-421d-4c32-a8e0-d165cc600344",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury watch",
+      "image_id": 3320799,
+      "image_page_url": "https://pixabay.com/photos/jewelry-background-reflection-3320799/",
+      "image_url": "https://pixabay.com/get/g14891ce666e71270abb783e441fca5e2da00c0a7fdca198acc2b025d16462760de3854e6fe72a4fb6630131c9eef6b2f818d12e6bf0f5763489b5520211e2a86_1280.jpg",
+      "title_rendered": "¿Soy el imbécil por negarme a hacer mi negocio en mi futura boda DILS y DILS"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
