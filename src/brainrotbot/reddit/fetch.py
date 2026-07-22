@@ -20,8 +20,8 @@ from ..text.clean import html_to_text
 
 _RSS_URL = "https://www.reddit.com/r/{sub}/{sort}/.rss"
 _REQUEST_PAUSE_SECONDS = 2.0  # polite gap between feed requests
-_MAX_429_RETRIES = 3          # shared/datacenter IPs (e.g. CI runners) get rate-limited harder
-_RETRY_BACKOFF_SECONDS = 10.0  # used when Reddit sends no Retry-After header
+_MAX_429_RETRIES = 5          # shared/datacenter IPs (e.g. CI runners) get rate-limited harder
+_RETRY_BACKOFF_BASE_SECONDS = 5.0  # used when Reddit sends no Retry-After header; doubles each retry
 _ATOM = {"a": "http://www.w3.org/2005/Atom"}
 # A browser-like UA gets far fewer 403s than an API-style one.
 _BROWSER_UA = (
@@ -51,8 +51,10 @@ def _fetch_feed(sub: str, sort: str, params: dict, headers: dict) -> ET.Element 
                 _RSS_URL.format(sub=sub, sort=sort), headers=headers, params=params, timeout=20
             )
             if resp.status_code == 429 and attempt < _MAX_429_RETRIES:
-                wait = float(resp.headers.get("Retry-After", _RETRY_BACKOFF_SECONDS * (attempt + 1)))
-                print(f"[brainrotbot]   r/{sub} rate-limited (429); retrying in {wait:.0f}s ...")
+                default_wait = _RETRY_BACKOFF_BASE_SECONDS * (2 ** attempt)  # 5, 10, 20, 40, 80s
+                wait = float(resp.headers.get("Retry-After", default_wait))
+                print(f"[brainrotbot]   r/{sub} rate-limited (429); retrying in {wait:.0f}s "
+                      f"(attempt {attempt + 1}/{_MAX_429_RETRIES}) ...")
                 time.sleep(wait)
                 continue
             resp.raise_for_status()
