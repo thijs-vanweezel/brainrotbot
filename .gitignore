@@ -5,6 +5,9 @@
 config/tiktok_profile/
 config/tiktok_cookies.txt
 
+# YouTube logged-in session cookies (Step 3 background-video download)
+yt_cookies.txt
+
 # Runtime data / generated artifacts
 data/
 *.mp4
