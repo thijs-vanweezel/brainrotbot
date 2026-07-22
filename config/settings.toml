@@ -11,6 +11,8 @@ subreddits = [
     "offmychest",
     "nosleep",
     "adultery",
+    "UnresolvedMysteries",   # real-case write-ups; the "true crime"/mystery niche does very well on TikTok
+    "Glitch_in_the_Matrix",  # real (claimed) eerie-coincidence stories; same narrative pull as nosleep, framed as true
 ]
 time_filter = "week"   # one of: hour, day, week, month, year, all
 limit_per_sub = 25     # candidate posts pulled per subreddit before filtering
