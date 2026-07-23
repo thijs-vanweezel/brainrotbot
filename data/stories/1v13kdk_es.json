@@ -1,0 +1,116 @@
+{
+  "id": "6fa879c4881541c89e890e9ec29258bc",
+  "created_at": 1784801710.0442774,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1v13kdk",
+    "url": "https://www.reddit.com/r/confession/comments/1v13kdk/used_to_let_my_dealer_go_down_on_me_in_exchange/",
+    "author": "/u/edkhm1218",
+    "feed_rank": 1,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1784499813.0,
+    "nsfw": null,
+    "variant_id": "1v13kdk_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Solía dejar que mi traficante se metiera conmigo a cambio de hierba libre.",
+    "raw_body": "He was 23 years older than me, and I did it regularly for almost 3 years. He would give me a free half oz every time. Never did any other sexual acts with him and all I ever had to do was lay there. I honestly used to look forward to it because he was really good at it and I liked not having to spend any money on my weed. Sometimes it would last almost an hour, but I didn't care. He was also married and did it behind his wife's back, which makes me feel guilty to look back on. I'm sure I wasn't the only one, but I sometimes wonder if she ever found out what he was doing and left him. I really hope she did. I've never told anyone irl and probably never will though.\n\n submitted by /u/edkhm1218\n [link] [comments]",
+    "cleaned_body": "Solía dejar que mi traficante se metiera conmigo a cambio de hierba libre.\n\nÉl era 23 años mayor que yo, y lo hice regularmente durante casi 3 años. Me daba una media onza gratis cada vez. Nunca hice ningún otro acto sexual con él y todo lo que tuve que hacer era acostarme allí. Sinceramente solía esperar por él porque era muy bueno en ello y me gustaba no tener que gastar dinero en mi hierba. A veces duraría casi una hora, pero no me importaba. También estaba casado y lo hizo detrás de la espalda de su esposa, lo que me hace sentir culpable al mirar hacia atrás. Estoy segura de que no fui la única, pero a veces me pregunto si alguna vez se enteró de lo que estaba haciendo y lo dejó. Realmente espero que lo haya hecho. Nunca se lo he dicho a nadie y probablemente nunca lo haré.",
+    "display_body": "Solía dejar que mi traficante se metiera conmigo a cambio de hierba libre. Él era 23 años mayor que yo, y lo hice regularmente durante casi 3 años. Me daba una media onza gratis cada vez. Nunca hice ningún otro acto s*xual con él y todo lo que tuve que hacer era acostarme allí. Sinceramente solía esperar por él porque era muy bueno en ello y me gustaba no tener que gastar dinero en mi hierba. A veces duraría casi una hora, pero no me importaba. También estaba casado y lo hizo detrás de la espalda de su esposa, lo que me hace sentir culpable al mirar hacia atrás. Estoy segura de que no fui la única, pero a veces me pregunto si alguna vez se enteró de lo que estaba haciendo y lo dejó. Realmente espero que lo haya hecho. Nunca se lo he dicho a nadie y probablemente nunca lo haré.",
+    "word_count": 153,
+    "est_speech_seconds": 61.2,
+    "banned_words_masked": [
+      {
+        "word": "sexual",
+        "count": 1
+      }
+    ],
+    "title_en": "Used to let my dealer go down on me in exchange for free weed.",
+    "body_en": "Used to let my dealer go down on me in exchange for free weed.\n\nHe was 23 years older than me, and I did it regularly for almost 3 years. He would give me a free half oz every time. Never did any other sexual acts with him and all I ever had to do was lay there. I honestly used to look forward to it because he was really good at it and I liked not having to spend any money on my weed. Sometimes it would last almost an hour, but I didn't care. He was also married and did it behind his wife's back, which makes me feel guilty to look back on. I'm sure I wasn't the only one, but I sometimes wonder if she ever found out what he was doing and left him. I really hope she did. I've never told anyone irl and probably never will though.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Solía dejar que mi traficante se metiera conmigo a cambio de hierba libre."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v13kdk_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/b72d9868-12c0-42c9-a554-54f17725713b.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v13kdk_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 40.65,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 4.461
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v13kdk_es.ass",
+    "subtitles": {
+      "num_words": 153,
+      "num_cues": 42,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          12.083,
+          12.503
+        ]
+      ],
+      "intro_end_sec": 4.461,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "b72d9868-12c0-42c9-a554-54f17725713b",
+      "title": "Doxx My Heart",
+      "artist": "Diamond Eyes",
+      "genre": "Drum & Bass",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/DoxxMyHeart",
+      "instrumental_url": "https://ncs.io/track/download/i_b72d9868-12c0-42c9-a554-54f17725713b",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "beach sunset",
+      "image_id": 8544672,
+      "image_page_url": "https://pixabay.com/photos/sunset-phone-capture-view-scenery-8544672/",
+      "image_url": "https://pixabay.com/get/g085422b19c431670ec219916f570c0a5ce21c0f4058c20c247d4d09766c4487f339a1d9328cbb44c61fa35309a6d834f4592113ef1f2b390a6d1eae121b5ba0c_1280.jpg",
+      "title_rendered": "Solía dejar que mi traficante se metiera conmigo a cambio de hierba libre."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

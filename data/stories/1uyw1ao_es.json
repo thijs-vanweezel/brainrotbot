@@ -1,0 +1,95 @@
+{
+  "id": "257c3a55f9c04f3ca7612d5c5592d26f",
+  "created_at": 1784801093.800075,
+  "status": "tts_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1uyw1ao",
+    "url": "https://www.reddit.com/r/confession/comments/1uyw1ao/i_perform_silent_repairs_without_the_owners/",
+    "author": "/u/Alexis_Darko",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1784284715.0,
+    "nsfw": null,
+    "variant_id": "1uyw1ao_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Llevo a cabo reparaciones silenciosas sin el permiso de los propietarios.",
+    "raw_body": "To start, I know I have a problem, but these acts give me great joy.\n Sometimes, I find things that don't work in businesses and public areas and it really gets to me, I can't stop my brain from working on the fault so sometimes I come back and repair or replace the parts(s) without talking to the owners.\n A few examples are:\n I once missed half a movie at the cinema because I had disassembled their faulty handdryer and locked my self in the cubicle to clean the sensor and blower.\n In my local town, one of the flashing lights at a pedestrian crossing was hanging of its holder and the bulb was faulty, I walked down at 3am with my ladder and tool kit, replaced the bulb and refitted the light.\n I've replaced faulty bulbs in public toilets with LED's\n LED strips flashing on local coffee shop signage, replaced LED driver\n Rewired plugs on heated seats at motorway service stations.\n The list goes on.\n I can't describe the dopamine hit I get from this, especially when I return at different times after repair and the devices are still working.\n I usually carry a screwdriver and bit set along with multiple Amp fuses because sometimes it's just simple things.\n\n submitted by /u/Alexis_Darko\n [link] [comments]",
+    "cleaned_body": "Llevo a cabo reparaciones silenciosas sin el permiso de los propietarios.\n\nPara empezar, sé que tengo un problema, pero estos actos me dan gran alegría. A veces, encuentro cosas que no funcionan en negocios y áreas públicas y realmente me afecta, no puedo detener mi cerebro de trabajar en la falla así que a veces vuelvo a reparar o reemplazar las piezas sin hablar con los propietarios. Algunos ejemplos son: Una vez me perdí la mitad de una película en el cine porque había desmontado su secador de manos defectuoso y me encerré en el cubículo para limpiar el sensor y el soplador. En mi localidad, una de las luces parpadeantes de un cruce peatonal colgaba de su soporte y la bombilla estaba defectuosa, bajé a las 3 de la mañana con mi escalera y kit de herramientas, reemplacé la bombilla y remodelado la luz. He reemplazado las bombillas defectuosas en los baños públicos con LED Las tiras LED parpadean en la señalización local de la cafetería, reemplazaron al conductor LED Enchufes rematados en los asientos calientes en las estaciones de servicio de la autopista. La lista continúa. No puedo describir el impacto de dopamina que recibo de esto, especialmente cuando regreso a diferentes horas después de la reparación y los dispositivos siguen funcionando. Por lo general llevo un destornillador y un conjunto de bits junto con múltiples fusibles Amp porque a veces son cosas simples.",
+    "display_body": "Llevo a cabo reparaciones silenciosas sin el permiso de los propietarios. Para empezar, sé que tengo un problema, pero estos actos me dan gran alegría. A veces, encuentro cosas que no funcionan en negocios y áreas públicas y realmente me afecta, no puedo detener mi cerebro de trabajar en la falla así que a veces vuelvo a reparar o reemplazar las piezas sin hablar con los propietarios. Algunos ejemplos son: Una vez me perdí la mitad de una película en el cine porque había desmontado su secador de manos defectuoso y me encerré en el cubículo para limpiar el sensor y el soplador. En mi localidad, una de las luces parpadeantes de un cruce peatonal colgaba de su soporte y la bombilla estaba defectuosa, bajé a las 3 de la mañana con mi escalera y kit de herramientas, reemplacé la bombilla y remodelado la luz. He reemplazado las bombillas defectuosas en los baños públicos con LED Las tiras LED parpadean en la señalización local de la cafetería, reemplazaron al conductor LED Enchufes rematados en los asientos calientes en las estaciones de servicio de la autopista. La lista continúa. No puedo describir el impacto de dopamina que recibo de esto, especialmente cuando regreso a diferentes horas después de la reparación y los dispositivos siguen funcionando. Por lo general llevo un destornillador y un conjunto de bits junto con múltiples fusibles Amp porque a veces son cosas simples.",
+    "word_count": 236,
+    "est_speech_seconds": 94.4,
+    "banned_words_masked": [],
+    "title_en": "I perform \"Silent\" repairs without the owners permission",
+    "body_en": "I perform \"Silent\" repairs without the owners permission\n\nTo start, I know I have a problem, but these acts give me great joy.\n Sometimes, I find things that don't work in businesses and public areas and it really gets to me, I can't stop my brain from working on the fault so sometimes I come back and repair or replace the parts(s) without talking to the owners.\n A few examples are:\n I once missed half a movie at the cinema because I had disassembled their faulty handdryer and locked my self in the cubicle to clean the sensor and blower.\n In my local town, one of the flashing lights at a pedestrian crossing was hanging of its holder and the bulb was faulty, I walked down at 3am with my ladder and tool kit, replaced the bulb and refitted the light.\n I've replaced faulty bulbs in public toilets with LED's\n LED strips flashing on local coffee shop signage, replaced LED driver\n Rewired plugs on heated seats at motorway service stations.\n The list goes on.\n I can't describe the dopamine hit I get from this, especially when I return at different times after repair and the devices are still working.\n I usually carry a screwdriver and bit set along with multiple Amp fuses because sometimes it's just simple things.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Llevo a cabo reparaciones silenciosas sin el permiso de los propietarios."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1uyw1ao_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/bf8bbb28-d551-4cbb-93c9-34f23063bda4.mp3",
+    "thumbnail_path": null,
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 75.2,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.181
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1uyw1ao_es.ass",
+    "subtitles": {
+      "num_words": 236,
+      "num_cues": 62,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.181,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "bf8bbb28-d551-4cbb-93c9-34f23063bda4",
+      "title": "After The End",
+      "artist": "Rex Hooligan",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/AfterTheEnd",
+      "instrumental_url": "https://ncs.io/track/download/i_bf8bbb28-d551-4cbb-93c9-34f23063bda4",
+      "volume_db": -25,
+      "ducked": true
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
