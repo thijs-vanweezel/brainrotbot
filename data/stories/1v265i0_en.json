@@ -1,0 +1,105 @@
+{
+  "id": "0ce168f6d86f4c7797210db4b1657403",
+  "created_at": 1784801169.0866547,
+  "status": "tts_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1v265i0",
+    "url": "https://www.reddit.com/r/adultery/comments/1v265i0/hookups_in_the_wild_hotel_bars/",
+    "author": "/u/subvertingnorms",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1784602493.0,
+    "nsfw": null,
+    "variant_id": "1v265i0_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Hookups in the wild - hotel bars!",
+    "raw_body": "Holy crap, why did no one tell me that this was a thing? Instead of being \"heartbroken\" after my one and only AP, I could've been going out and having fun!\n I decided to scope out hotel bars recently and was successful 2 out of 3 times (not bad). I suppose it's easier as a MW to find a MM to hookup with for the night. The topic of being married inevitably comes up but it isn't a showstopper (/s shock!)\n I feel so sexually powerful as a woman and desired - definitely my new game plan from now on 🤭 I'm waiting two long, dreadful weeks for my next opportunity to go out.\n I know a lot of people here have long standing affairs, but this works for me because of OPSEC. And I can only go out and hoe out when my partner is on extended work trips, which doesn't lend well to an ongoing affair. I also don't go on any work trips so I can't get away myself - c'est la vie!\n Anyone else here do this? Would love to know cuz it seems like the 2% sort of situation in this subreddit.\n\n submitted by /u/subvertingnorms\n [link] [comments]",
+    "cleaned_body": "Hookups in the wild - hotel bars!\n\nHoly crap, why did no one tell me that this was a thing? Instead of being \"heartbroken\" after my one and only affair partner, I could've been going out and having fun!\n I decided to scope out hotel bars recently and was successful 2 out of 3 times (not bad). I suppose it's easier as a MW to find a MM to hookup with for the night. The topic of being married inevitably comes up but it isn't a showstopper (/s shock!)\n I feel so sexually powerful as a woman and desired - definitely my new game plan from now on 🤭 I'm waiting two long, dreadful weeks for my next opportunity to go out.\n I know a lot of people here have long standing affairs, but this works for me because of OPSEC. And I can only go out and hoe out when my partner is on extended work trips, which doesn't lend well to an ongoing affair. I also don't go on any work trips so I can't get away myself - c'est la vie!\n Anyone else here do this? Would love to know cuz it seems like the 2% sort of situation in this subreddit.",
+    "display_body": "Hookups in the wild - hotel bars! Holy crap, why did no one tell me that this was a thing? Instead of being \"heartbroken\" after my one and only affair partner, I could've been going out and having fun! I decided to scope out hotel bars recently and was successful 2 out of 3 times (not bad). I suppose it's easier as a MW to find a MM to hookup with for the night. The topic of being married inevitably comes up but it isn't a showstopper (/s shock!) I feel so s*xually powerful as a woman and desired - definitely my new game plan from now on 🤭 I'm waiting two long, dreadful weeks for my next opportunity to go out. I know a lot of people here have long standing affairs, but this works for me because of OPSEC. And I can only go out and hoe out when my partner is on extended work trips, which doesn't lend well to an ongoing affair. I also don't go on any work trips so I can't get away myself - c'est la vie! Anyone else here do this? Would love to know cuz it seems like the 2% sort of situation in this subreddit.",
+    "word_count": 205,
+    "est_speech_seconds": 82.0,
+    "banned_words_masked": [
+      {
+        "word": "sexually",
+        "count": 1
+      }
+    ],
+    "title_en": "Hookups in the wild - hotel bars!",
+    "body_en": "Hookups in the wild - hotel bars!\n\nHoly crap, why did no one tell me that this was a thing? Instead of being \"heartbroken\" after my one and only affair partner, I could've been going out and having fun!\n I decided to scope out hotel bars recently and was successful 2 out of 3 times (not bad). I suppose it's easier as a MW to find a MM to hookup with for the night. The topic of being married inevitably comes up but it isn't a showstopper (/s shock!)\n I feel so sexually powerful as a woman and desired - definitely my new game plan from now on 🤭 I'm waiting two long, dreadful weeks for my next opportunity to go out.\n I know a lot of people here have long standing affairs, but this works for me because of OPSEC. And I can only go out and hoe out when my partner is on extended work trips, which doesn't lend well to an ongoing affair. I also don't go on any work trips so I can't get away myself - c'est la vie!\n Anyone else here do this? Would love to know cuz it seems like the 2% sort of situation in this subreddit.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Hookups in the wild - hotel bars!"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v265i0_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/1ec62f16-3f57-4ef9-bfcd-091223d45f74.mp3",
+    "thumbnail_path": null,
+    "audio": {
+      "voice": "af_heart",
+      "lang_code": "a",
+      "duration_sec": 62.42,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 2.6
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v265i0_en.ass",
+    "subtitles": {
+      "num_words": 205,
+      "num_cues": 56,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          28.242,
+          28.642
+        ]
+      ],
+      "intro_end_sec": 2.6,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "1ec62f16-3f57-4ef9-bfcd-091223d45f74",
+      "title": "Overheat",
+      "artist": "Cartoon",
+      "genre": "Drum & Bass",
+      "moods": [
+        "dark",
+        "energetic"
+      ],
+      "page_url": "https://ncs.io/Overheat",
+      "instrumental_url": "https://ncs.io/track/download/i_1ec62f16-3f57-4ef9-bfcd-091223d45f74",
+      "volume_db": -25,
+      "ducked": true
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

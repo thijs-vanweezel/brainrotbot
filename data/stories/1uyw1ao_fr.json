@@ -1,0 +1,95 @@
+{
+  "id": "8a6abc4e7be94980bfea75e4604df932",
+  "created_at": 1784801017.9977982,
+  "status": "tts_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1uyw1ao",
+    "url": "https://www.reddit.com/r/confession/comments/1uyw1ao/i_perform_silent_repairs_without_the_owners/",
+    "author": "/u/Alexis_Darko",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1784284715.0,
+    "nsfw": null,
+    "variant_id": "1uyw1ao_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Je fais des réparations silencieuses sans la permission des propriétaires.",
+    "raw_body": "To start, I know I have a problem, but these acts give me great joy.\n Sometimes, I find things that don't work in businesses and public areas and it really gets to me, I can't stop my brain from working on the fault so sometimes I come back and repair or replace the parts(s) without talking to the owners.\n A few examples are:\n I once missed half a movie at the cinema because I had disassembled their faulty handdryer and locked my self in the cubicle to clean the sensor and blower.\n In my local town, one of the flashing lights at a pedestrian crossing was hanging of its holder and the bulb was faulty, I walked down at 3am with my ladder and tool kit, replaced the bulb and refitted the light.\n I've replaced faulty bulbs in public toilets with LED's\n LED strips flashing on local coffee shop signage, replaced LED driver\n Rewired plugs on heated seats at motorway service stations.\n The list goes on.\n I can't describe the dopamine hit I get from this, especially when I return at different times after repair and the devices are still working.\n I usually carry a screwdriver and bit set along with multiple Amp fuses because sometimes it's just simple things.\n\n submitted by /u/Alexis_Darko\n [link] [comments]",
+    "cleaned_body": "Je fais des réparations silencieuses sans la permission des propriétaires.\n\nPour commencer, je sais que j'ai un problème, mais ces actes me donnent une grande joie. Parfois, je trouve des choses qui ne fonctionnent pas dans les entreprises et les espaces publics et ça me touche vraiment, je ne peux pas empêcher mon cerveau de travailler sur la faille donc parfois je reviens réparer ou remplacer les pièces sans parler aux propriétaires. Voici quelques exemples: Une fois, j'ai raté un demi-film au cinéma parce que j'avais démonté leur séchoir à main défectueux et que je me suis enfermé dans la cabine pour nettoyer le capteur et le souffleur. Dans ma ville, l'une des lumières clignotantes d'un passage piétonnier était accrochée à son support et l'ampoule était défectueuse, j'ai descendu à 3 heures du matin avec mon échelle et mon kit d'outils, j'ai remplacé l'ampoule et réaménagé la lumière. J'ai remplacé les ampoules défectueuses dans les toilettes publiques par des LED. Des bandes LED clignotant sur les panneaux de signalisation du café local, remplacé par un conducteur LED Encastrements sur des sièges chauffés dans les stations d'autoroutes. La liste continue. Je ne peux pas décrire le coup de dopamine que je reçois de ça, surtout quand je reviens à différents moments après la réparation et que les appareils fonctionnent encore. Je porte généralement un tournevis et un petit réglage avec plusieurs fusibles Amp parce que parfois ce sont juste des choses simples.",
+    "display_body": "Je fais des réparations silencieuses sans la permission des propriétaires. Pour commencer, je sais que j'ai un problème, mais ces actes me donnent une grande joie. Parfois, je trouve des choses qui ne fonctionnent pas dans les entreprises et les espaces publics et ça me touche vraiment, je ne peux pas empêcher mon cerveau de travailler sur la faille donc parfois je reviens réparer ou remplacer les pièces sans parler aux propriétaires. Voici quelques exemples: Une fois, j'ai raté un demi-film au cinéma parce que j'avais démonté leur séchoir à main défectueux et que je me suis enfermé dans la cabine pour nettoyer le capteur et le souffleur. Dans ma ville, l'une des lumières clignotantes d'un passage piétonnier était accrochée à son support et l'ampoule était défectueuse, j'ai descendu à 3 heures du matin avec mon échelle et mon kit d'outils, j'ai remplacé l'ampoule et réaménagé la lumière. J'ai remplacé les ampoules défectueuses dans les toilettes publiques par des LED. Des bandes LED clignotant sur les panneaux de signalisation du café local, remplacé par un conducteur LED Encastrements sur des sièges chauffés dans les stations d'autoroutes. La liste continue. Je ne peux pas décrire le coup de dopamine que je reçois de ça, surtout quand je reviens à différents moments après la réparation et que les appareils fonctionnent encore. Je porte généralement un tournevis et un petit réglage avec plusieurs fusibles Amp parce que parfois ce sont juste des choses simples.",
+    "word_count": 241,
+    "est_speech_seconds": 96.4,
+    "banned_words_masked": [],
+    "title_en": "I perform \"Silent\" repairs without the owners permission",
+    "body_en": "I perform \"Silent\" repairs without the owners permission\n\nTo start, I know I have a problem, but these acts give me great joy.\n Sometimes, I find things that don't work in businesses and public areas and it really gets to me, I can't stop my brain from working on the fault so sometimes I come back and repair or replace the parts(s) without talking to the owners.\n A few examples are:\n I once missed half a movie at the cinema because I had disassembled their faulty handdryer and locked my self in the cubicle to clean the sensor and blower.\n In my local town, one of the flashing lights at a pedestrian crossing was hanging of its holder and the bulb was faulty, I walked down at 3am with my ladder and tool kit, replaced the bulb and refitted the light.\n I've replaced faulty bulbs in public toilets with LED's\n LED strips flashing on local coffee shop signage, replaced LED driver\n Rewired plugs on heated seats at motorway service stations.\n The list goes on.\n I can't describe the dopamine hit I get from this, especially when I return at different times after repair and the devices are still working.\n I usually carry a screwdriver and bit set along with multiple Amp fuses because sometimes it's just simple things.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Je fais des réparations silencieuses sans la permission des propriétaires."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1uyw1ao_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/bf8bbb28-d551-4cbb-93c9-34f23063bda4.mp3",
+    "thumbnail_path": null,
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 74.2,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.601
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1uyw1ao_fr.ass",
+    "subtitles": {
+      "num_words": 241,
+      "num_cues": 63,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.601,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "bf8bbb28-d551-4cbb-93c9-34f23063bda4",
+      "title": "After The End",
+      "artist": "Rex Hooligan",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/AfterTheEnd",
+      "instrumental_url": "https://ncs.io/track/download/i_bf8bbb28-d551-4cbb-93c9-34f23063bda4",
+      "volume_db": -25,
+      "ducked": true
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

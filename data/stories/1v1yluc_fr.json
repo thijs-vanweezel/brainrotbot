@@ -1,0 +1,105 @@
+{
+  "id": "91a5d9813cae4c50a4114aa7c7cfbb9d",
+  "created_at": 1784801783.1672761,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v1yluc",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v1yluc/my_fiance_shared_me_with_her_best_friend/",
+    "author": "/u/SnooHedgehogs3284",
+    "feed_rank": 1,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1784582872.0,
+    "nsfw": null,
+    "variant_id": "1v1yluc_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Ma fiancée m'a partagé avec sa meilleure amie.",
+    "raw_body": "Last Friday I (M29) was chilling watching baseball after putting the kids down for bed. My fiance (F28) was out with her best friend (F27) getting drinks and apps and called me asking if I would be down for a threesome with her and her best friend. I immediately was like uhhh is this a prank? Initially thought she was testing me or something but nope. she was serious. They ended up coming back, we all had a few drinks and had a really good time. I always wanted to have a threesome but never thought it would happen. I felt like a real rockstar this past weekend 😂\n\n submitted by /u/SnooHedgehogs3284\n [link] [comments]",
+    "cleaned_body": "Ma fiancée m'a partagé avec sa meilleure amie.\n\nVendredi dernier, un homme de 29 ans regardait le baseball après avoir mis les enfants au lit. Ma fiancée, une femme de 28 ans, était dehors avec sa meilleure amie, une femme de 27 ans, elle prenait des boissons et des applications et m'a appelé pour me demander si je voulais faire un trio avec elle et sa meilleure amie. J'ai tout de suite pensé: \"Est-ce une blague ? Au début, je pensais qu'elle me testait, mais non. Elle était sérieuse. Ils ont fini par revenir, on a tous bu quelques verres et on s'est vraiment bien amusés. J'ai toujours voulu faire un trio, mais je ne pensais pas que ça arriverait. Je me suis sentie comme une vraie rockstar le week-end dernier 😂",
+    "display_body": "Ma fiancée m'a partagé avec sa meilleure amie. Vendredi dernier, un homme de 29 ans regardait le baseball après avoir mis les enfants au lit. Ma fiancée, une femme de 28 ans, était dehors avec sa meilleure amie, une femme de 27 ans, elle prenait des boissons et des applications et m'a appelé pour me demander si je voulais faire un trio avec elle et sa meilleure amie. J'ai tout de suite pensé: \"Est-ce une blague ? Au début, je pensais qu'elle me testait, mais non. Elle était sérieuse. Ils ont fini par revenir, on a tous bu quelques verres et on s'est vraiment bien amusés. J'ai toujours voulu faire un trio, mais je ne pensais pas que ça arriverait. Je me suis sentie comme une vraie rockstar le week-end dernier 😂",
+    "word_count": 132,
+    "est_speech_seconds": 52.8,
+    "banned_words_masked": [],
+    "title_en": "My fiance shared me with her best friend",
+    "body_en": "My fiance shared me with her best friend\n\nLast Friday I 29 year old male was chilling watching baseball after putting the kids down for bed. My fiance 28 year old female was out with her best friend 27 year old female getting drinks and apps and called me asking if I would be down for a threesome with her and her best friend. I immediately was like uhhh is this a prank? Initially thought she was testing me or something but nope. she was serious. They ended up coming back, we all had a few drinks and had a really good time. I always wanted to have a threesome but never thought it would happen. I felt like a real rockstar this past weekend 😂",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Ma fiancée m'a partagé avec sa meilleure amie."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v1yluc_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/e6d52a77-603b-4083-8957-a41ba4735cd5.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v1yluc_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 35.23,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.28
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v1yluc_fr.ass",
+    "subtitles": {
+      "num_words": 132,
+      "num_cues": 37,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.28,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "e6d52a77-603b-4083-8957-a41ba4735cd5",
+      "title": "All Or Nothing",
+      "artist": "No Hero, Tatsunoshin",
+      "genre": "Hardcore",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/TN_AllOrNothing",
+      "instrumental_url": "https://ncs.io/track/download/i_e6d52a77-603b-4083-8957-a41ba4735cd5",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 5234306,
+      "image_page_url": "https://pixabay.com/photos/beach-sea-ocean-shore-waves-5234306/",
+      "image_url": "https://pixabay.com/get/gb8fd0d524266a2ec9c88d8f03e178c20b5d138923f837d2750e7dec75ed7d4daecc3aee396b8788cee58a77fda607fa515697712a3c3b45518418e6f76ddd6d8_1280.jpg",
+      "title_rendered": "Ma fiancée m'a partagé avec sa meilleure amie."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
