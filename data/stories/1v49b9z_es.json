@@ -1,0 +1,116 @@
+{
+  "id": "b992ebf17d4d4ea68ab277e3ced59d9c",
+  "created_at": 1784888052.5248573,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1v49b9z",
+    "url": "https://www.reddit.com/r/confession/comments/1v49b9z/no_one_knows_i_stopped_taking_my_lifesaving/",
+    "author": "/u/The-Siren-Sings",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1784800406.0,
+    "nsfw": null,
+    "variant_id": "1v49b9z_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Nadie sabe que dejé de tomar mi medicación hace un mes.",
+    "raw_body": "After ten years of fighting my body every day, I decided that enough was enough. I don't have the nerve to make a quick exit, nor do I want to leave a mess for others to find. The UK doesn't provide assisted death and travelling abroad would be almost impossible as a seriously disabled person and cause too much emotional pressure from friends and family. So, instead, I've opted for a sort of slow rolling exit.\n Due to the nature of my genetic illness my body doesn't have a properly functioning immune system. The slightest infection could lead to full-blown sepsis (and has, on two occasions.) To keep that at bay I take high dose antibiotics and other medications every day. Or, at least, I did until a month ago. No one in my real life knows.\n I've started to feel sluggish and generally 'under the weather' but I'm still waiting quietly for something substantial to do the job. I'll admit I'm kind of surprised it hasn't happened yet. I know that no one else is watching for it and it will take hold well before I end up being admitted to hospital. Natural Causes will be acceptable to people in a way that taking my own life would never be.\n I guess I just wanted to admit it to someone, somewhere.\n\n submitted by /u/The-Siren-Sings\n [link] [comments]",
+    "cleaned_body": "Nadie sabe que dejé de tomar mi medicación hace un mes.\n\nDespués de diez años luchando contra mi cuerpo todos los días, decidí que ya era suficiente. No tengo el coraje de hacer una salida rápida, ni quiero dejar un desastre para que otros lo encuentren. El Reino Unido no proporciona muerte asistida y viajar al extranjero sería casi imposible como una persona con discapacidad grave y causar demasiada presión emocional de amigos y familiares. Así que, en cambio, he optado por una especie de salida lenta. Debido a la naturaleza de mi enfermedad genética mi cuerpo no tiene un sistema inmunológico que funcione correctamente. La infección más leve podría conducir a una sepsis completa (y lo ha hecho, en dos ocasiones. Para evitar eso, tomo dosis altas de antibióticos y otros medicamentos todos los días. O al menos lo hice hasta hace un mes. Nadie en mi vida real lo sabe. Comencé a sentirme lento y generalmente 'bajo el tiempo', pero todavía estoy esperando en silencio por algo sustancial para hacer el trabajo. Admitiré que me sorprende que aún no haya pasado. Sé que nadie más lo está vigilando y se pondrá en marcha mucho antes de que termine ingresando en el hospital. Las Causas Naturales serán aceptables para la gente de una manera que quitarme la vida nunca sería. Supongo que sólo quería admitirlo a alguien, en algún lugar.",
+    "display_body": "Nadie sabe que dejé de tomar mi medicación hace un mes. Después de diez años luchando contra mi cuerpo todos los días, decidí que ya era suficiente. No tengo el coraje de hacer una salida rápida, ni quiero dejar un desastre para que otros lo encuentren. El Reino Unido no proporciona m*erte asistida y viajar al extranjero sería casi imposible como una persona con discapacidad grave y causar demasiada presión emocional de amigos y familiares. Así que, en cambio, he optado por una especie de salida lenta. Debido a la naturaleza de mi enfermedad genética mi cuerpo no tiene un sistema inmunológico que funcione correctamente. La infección más leve podría conducir a una sepsis completa (y lo ha hecho, en dos ocasiones. Para evitar eso, tomo dosis altas de antibióticos y otros medicamentos todos los días. O al menos lo hice hasta hace un mes. Nadie en mi vida real lo sabe. Comencé a sentirme lento y generalmente 'bajo el tiempo', pero todavía estoy esperando en silencio por algo sustancial para hacer el trabajo. Admitiré que me sorprende que aún no haya pasado. Sé que nadie más lo está vigilando y se pondrá en marcha mucho antes de que termine ingresando en el hospital. Las Causas Naturales serán aceptables para la gente de una manera que quitarme la vida nunca sería. Supongo que sólo quería admitirlo a alguien, en algún lugar.",
+    "word_count": 231,
+    "est_speech_seconds": 92.4,
+    "banned_words_masked": [
+      {
+        "word": "muerte",
+        "count": 1
+      }
+    ],
+    "title_en": "No one knows I stopped taking my life-saving medication a month ago.",
+    "body_en": "No one knows I stopped taking my life-saving medication a month ago.\n\nAfter ten years of fighting my body every day, I decided that enough was enough. I don't have the nerve to make a quick exit, nor do I want to leave a mess for others to find. The UK doesn't provide assisted death and travelling abroad would be almost impossible as a seriously disabled person and cause too much emotional pressure from friends and family. So, instead, I've opted for a sort of slow rolling exit.\n Due to the nature of my genetic illness my body doesn't have a properly functioning immune system. The slightest infection could lead to full-blown sepsis (and has, on two occasions.) To keep that at bay I take high dose antibiotics and other medications every day. Or, at least, I did until a month ago. No one in my real life knows.\n I've started to feel sluggish and generally 'under the weather' but I'm still waiting quietly for something substantial to do the job. I'll admit I'm kind of surprised it hasn't happened yet. I know that no one else is watching for it and it will take hold well before I end up being admitted to hospital. Natural Causes will be acceptable to people in a way that taking my own life would never be.\n I guess I just wanted to admit it to someone, somewhere.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Nadie sabe que dejé de tomar mi medicación hace un mes."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v49b9z_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a72b01e3-1976-4dee-b721-814bc4b7cca7.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v49b9z_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 69.97,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 3.461
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v49b9z_es.ass",
+    "subtitles": {
+      "num_words": 231,
+      "num_cues": 65,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          14.983,
+          15.263
+        ]
+      ],
+      "intro_end_sec": 3.461,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "a72b01e3-1976-4dee-b721-814bc4b7cca7",
+      "title": "On My Mind",
+      "artist": "No Hero",
+      "genre": "Hardstyle",
+      "moods": [
+        "energetic",
+        "powerful",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/OnMyMind",
+      "instrumental_url": "https://ncs.io/track/download/i_a72b01e3-1976-4dee-b721-814bc4b7cca7",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "man portrait",
+      "image_id": 9687749,
+      "image_page_url": "https://pixabay.com/photos/male-fashion-portrait-editorial-9687749/",
+      "image_url": "https://pixabay.com/get/gb83b5813e72177b4453e1923e734cbe7731e476bd4287d9401f621e40340b079c591faf230e042052904da63be5a7bbe46b91ce1e84cc27063c9bd9917e67e6a_1280.jpg",
+      "title_rendered": "Nadie sabe que dejé de tomar mi medicación hace un mes."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
