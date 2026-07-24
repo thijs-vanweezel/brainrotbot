@@ -1,0 +1,116 @@
+{
+  "id": "787d8ac86b5b485a8a0c38043fbc3406",
+  "created_at": 1784888387.305481,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1v0fqbt",
+    "url": "https://www.reddit.com/r/adultery/comments/1v0fqbt/if_this_is_wrong_i_dont_want_to_be_right/",
+    "author": "/u/Secure_Telephone6157",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1784432031.0,
+    "nsfw": null,
+    "variant_id": "1v0fqbt_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "If this is wrong, I don’t want to be right.",
+    "raw_body": "Male, 51, married.\n For the first time in over a decade I feel alive again. I still cannot believe I found her. I thought all hope was lost and I'd be confined to a loveless marriage and a DB the rest of my life.\n She's a true partner, my partner in crime. She's becoming my best friend. The sex is out of this world, the emotions are deep, the connection is strong. I love her, she loves me.\n It's a high that I can't even remember clearly having before, it's been so long. My heart skips a beat whenever I get a message from her. I grin ear to ear when I see her walk into a room.\n I'm just rambling on here because I have no one else to talk to about this.\n Brothers and sisters, life is short, grab it by the ears and live it to the fullest every chance you get.\n\n submitted by /u/Secure_Telephone6157\n [link] [comments]",
+    "cleaned_body": "If this is wrong, I don't want to be right.\n\nMale, 51, married.\n For the first time in over a decade I feel alive again. I still cannot believe I found her. I thought all hope was lost and I'd be confined to a loveless marriage and a DB the rest of my life.\n She's a true partner, my partner in crime. She's becoming my best friend. The sex is out of this world, the emotions are deep, the connection is strong. I love her, she loves me.\n It's a high that I can't even remember clearly having before, it's been so long. My heart skips a beat whenever I get a message from her. I grin ear to ear when I see her walk into a room.\n I'm just rambling on here because I have no one else to talk to about this.\n Brothers and sisters, life is short, grab it by the ears and live it to the fullest every chance you get.",
+    "display_body": "If this is wrong, I don't want to be right. Male, 51, married. For the first time in over a decade I feel alive again. I still cannot believe I found her. I thought all hope was lost and I'd be confined to a loveless marriage and a DB the rest of my life. She's a true partner, my partner in crime. She's becoming my best friend. The s*x is out of this world, the emotions are deep, the connection is strong. I love her, she loves me. It's a high that I can't even remember clearly having before, it's been so long. My heart skips a beat whenever I get a message from her. I grin ear to ear when I see her walk into a room. I'm just rambling on here because I have no one else to talk to about this. Brothers and sisters, life is short, grab it by the ears and live it to the fullest every chance you get.",
+    "word_count": 165,
+    "est_speech_seconds": 66.0,
+    "banned_words_masked": [
+      {
+        "word": "sex",
+        "count": 1
+      }
+    ],
+    "title_en": "If this is wrong, I don’t want to be right.",
+    "body_en": "If this is wrong, I don't want to be right.\n\nMale, 51, married.\n For the first time in over a decade I feel alive again. I still cannot believe I found her. I thought all hope was lost and I'd be confined to a loveless marriage and a DB the rest of my life.\n She's a true partner, my partner in crime. She's becoming my best friend. The sex is out of this world, the emotions are deep, the connection is strong. I love her, she loves me.\n It's a high that I can't even remember clearly having before, it's been so long. My heart skips a beat whenever I get a message from her. I grin ear to ear when I see her walk into a room.\n I'm just rambling on here because I have no one else to talk to about this.\n Brothers and sisters, life is short, grab it by the ears and live it to the fullest every chance you get.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "If this is wrong, I don’t want to be right."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v0fqbt_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/389756fc-3503-4d45-819d-a03bdd369ee5.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v0fqbt_en.png",
+    "audio": {
+      "voice": "af_heart",
+      "lang_code": "a",
+      "duration_sec": 46.92,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 2.9
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v0fqbt_en.ass",
+    "subtitles": {
+      "num_words": 165,
+      "num_cues": 46,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          20.282,
+          20.602
+        ]
+      ],
+      "intro_end_sec": 2.9,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "389756fc-3503-4d45-819d-a03bdd369ee5",
+      "title": "Obsession",
+      "artist": "More Plastic",
+      "genre": "Neurofunk",
+      "moods": [
+        "energetic",
+        "powerful",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/Obsession",
+      "instrumental_url": "https://ncs.io/track/download/i_389756fc-3503-4d45-819d-a03bdd369ee5",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "money",
+      "image_id": 209722,
+      "image_page_url": "https://pixabay.com/photos/money-cash-loose-change-currency-209722/",
+      "image_url": "https://pixabay.com/get/gafb244ef5ed3da97c8f6bdb4b216b54fef5273b3058ffcd8fda777583ca3c041f820882219e1d9cde78f44cd3fa477df31f96482a8c78a052c58dd3b816745e0_1280.jpg",
+      "title_rendered": "If this is wrong, I don’t want to be right."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

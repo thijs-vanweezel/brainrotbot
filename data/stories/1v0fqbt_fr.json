@@ -1,0 +1,116 @@
+{
+  "id": "90e4896c1264499a9be38ba8228a47cf",
+  "created_at": 1784888431.4304085,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1v0fqbt",
+    "url": "https://www.reddit.com/r/adultery/comments/1v0fqbt/if_this_is_wrong_i_dont_want_to_be_right/",
+    "author": "/u/Secure_Telephone6157",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1784432031.0,
+    "nsfw": null,
+    "variant_id": "1v0fqbt_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Si c'est mal, je ne veux pas avoir raison.",
+    "raw_body": "Male, 51, married.\n For the first time in over a decade I feel alive again. I still cannot believe I found her. I thought all hope was lost and I'd be confined to a loveless marriage and a DB the rest of my life.\n She's a true partner, my partner in crime. She's becoming my best friend. The sex is out of this world, the emotions are deep, the connection is strong. I love her, she loves me.\n It's a high that I can't even remember clearly having before, it's been so long. My heart skips a beat whenever I get a message from her. I grin ear to ear when I see her walk into a room.\n I'm just rambling on here because I have no one else to talk to about this.\n Brothers and sisters, life is short, grab it by the ears and live it to the fullest every chance you get.\n\n submitted by /u/Secure_Telephone6157\n [link] [comments]",
+    "cleaned_body": "Si c'est mal, je ne veux pas avoir raison.\n\nHomme, 51 ans, marié. Pour la première fois depuis plus d'une décennie, je me sens vivant. Je n'arrive toujours pas à croire que je l'ai trouvée. Je pensais que tout espoir était perdu et que je serais confiné à un mariage sans amour et à un DB pour le reste de ma vie. C'est une vraie compagne, ma compagne dans le crime. Elle devient ma meilleure amie. Le sexe est hors de ce monde, les émotions sont profondes, le lien est fort. Je l'aime, elle m'aime. C'est une forte que je ne me souviens même pas avoir eu avant, ça fait si longtemps. Mon cœur saute chaque fois que je reçois un message d'elle. Je souris d'oreille en oreille quand je la vois entrer dans une pièce. Je me déplace parce que je n'ai personne d'autre à qui en parler. Frères et sœurs, la vie est courte, saisissez-la par les oreilles et vivez-la pleinement chaque fois que vous en avez l'occasion.",
+    "display_body": "Si c'est mal, je ne veux pas avoir raison. Homme, 51 ans, marié. Pour la première fois depuis plus d'une décennie, je me sens vivant. Je n'arrive toujours pas à croire que je l'ai trouvée. Je pensais que tout espoir était perdu et que je serais confiné à un mariage sans amour et à un DB pour le reste de ma vie. C'est une vraie compagne, ma compagne dans le crime. Elle devient ma meilleure amie. Le s*xe est hors de ce monde, les émotions sont profondes, le lien est fort. Je l'aime, elle m'aime. C'est une forte que je ne me souviens même pas avoir eu avant, ça fait si longtemps. Mon cœur saute chaque fois que je reçois un message d'elle. Je souris d'oreille en oreille quand je la vois entrer dans une pièce. Je me déplace parce que je n'ai personne d'autre à qui en parler. Frères et sœurs, la vie est courte, saisissez-la par les oreilles et vivez-la pleinement chaque fois que vous en avez l'occasion.",
+    "word_count": 170,
+    "est_speech_seconds": 68.0,
+    "banned_words_masked": [
+      {
+        "word": "sexe",
+        "count": 1
+      }
+    ],
+    "title_en": "If this is wrong, I don’t want to be right.",
+    "body_en": "If this is wrong, I don't want to be right.\n\nMale, 51, married.\n For the first time in over a decade I feel alive again. I still cannot believe I found her. I thought all hope was lost and I'd be confined to a loveless marriage and a DB the rest of my life.\n She's a true partner, my partner in crime. She's becoming my best friend. The sex is out of this world, the emotions are deep, the connection is strong. I love her, she loves me.\n It's a high that I can't even remember clearly having before, it's been so long. My heart skips a beat whenever I get a message from her. I grin ear to ear when I see her walk into a room.\n I'm just rambling on here because I have no one else to talk to about this.\n Brothers and sisters, life is short, grab it by the ears and live it to the fullest every chance you get.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Si c'est mal, je ne veux pas avoir raison."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v0fqbt_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/389756fc-3503-4d45-819d-a03bdd369ee5.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v0fqbt_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 42.52,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 3.02
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v0fqbt_fr.ass",
+    "subtitles": {
+      "num_words": 170,
+      "num_cues": 49,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          19.642,
+          19.922
+        ]
+      ],
+      "intro_end_sec": 3.02,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "389756fc-3503-4d45-819d-a03bdd369ee5",
+      "title": "Obsession",
+      "artist": "More Plastic",
+      "genre": "Neurofunk",
+      "moods": [
+        "energetic",
+        "powerful",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/Obsession",
+      "instrumental_url": "https://ncs.io/track/download/i_389756fc-3503-4d45-819d-a03bdd369ee5",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "money",
+      "image_id": 209722,
+      "image_page_url": "https://pixabay.com/photos/money-cash-loose-change-currency-209722/",
+      "image_url": "https://pixabay.com/get/gafb244ef5ed3da97c8f6bdb4b216b54fef5273b3058ffcd8fda777583ca3c041f820882219e1d9cde78f44cd3fa477df31f96482a8c78a052c58dd3b816745e0_1280.jpg",
+      "title_rendered": "Si c'est mal, je ne veux pas avoir raison."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
