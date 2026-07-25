@@ -1,0 +1,116 @@
+{
+  "id": "88cdfd439fc54e5ab9374fc0ebdef66a",
+  "created_at": 1784973375.7171264,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1v4vqu8",
+    "url": "https://www.reddit.com/r/adultery/comments/1v4vqu8/lurkers_you_would_do_well_to_read_these_posts/",
+    "author": "/u/tiedOverd",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1784852817.0,
+    "nsfw": null,
+    "variant_id": "1v4vqu8_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Vous feriez bien de lire ces messages.",
+    "raw_body": "It doesn't get any more real than what you read here. I know there are hundreds and hundreds of you contemplating crossing the line...these posts will tell you exactly what you're in for.\n Say you do meet someone and you click... the NRE will be a heady drug. It will buzz you and make you giggle like a teenager - but know this: from the first contact you have with AP, the timer starts.Maybe a better description is the countdown starts . The NRE will fizzle out, one or both of you will get the guilts, life events will change and you won't be able to meet with any type of regularity.... who know but something will happen. Then you'll most likely be right back where you started, except this time your heart is broken and you can't tell a damn soul about it.\n That may be okay for you, I don't know your situation. Just know if you're looking at an affair to scratch an itch, you might be scratching it with 80-grit sandpaper.\n Eh, but what do I know? I went through all of this and I'm back like Oliver with his soup bowl, so maybe don't listen to me.\n\n submitted by /u/tiedOverd\n [link] [comments]",
+    "cleaned_body": "Vous feriez bien de lire ces messages.\n\nCe n'est pas plus réel que ce que vous lisez ici. Je sais qu'il y a des centaines et des centaines d'entre vous qui envisagent de franchir la frontière... Ces postes vous diront exactement ce que vous allez faire. Disons que tu rencontres quelqu'un et que tu cliques... Le NRE sera une drogue dégueulasse. Cela vous fera rire comme un adolescent, mais sachez ceci: dès le premier contact avec votre partenaire, le chronomètre commence. Peut-être que le compte à rebours commence mieux . L'IRN va s'effondrer, l'un ou les deux de vous seront coupables, les événements de votre vie vont changer et vous ne pourrez pas rencontrer un type de régularité.... Qui sait, mais quelque chose va arriver. Alors tu seras probablement là où tu as commencé, sauf que cette fois ton cœur est brisé et tu ne peux rien dire à une âme. Ça peut être bon pour toi, je ne connais pas ta situation. Si vous cherchez une liaison pour gratter une démangeaison, vous pourriez la gratter avec du papier de sable à 80 grains. Eh, mais que sais-je ? J'ai traversé tout ça et je suis de retour comme Oliver avec son bol de soupe, alors ne m'écoutez pas.",
+    "display_body": "Vous feriez bien de lire ces messages. Ce n'est pas plus réel que ce que vous lisez ici. Je sais qu'il y a des centaines et des centaines d'entre vous qui envisagent de franchir la frontière... Ces postes vous diront exactement ce que vous allez faire. Disons que tu rencontres quelqu'un et que tu cliques... Le NRE sera une dr*gue dégueulasse. Cela vous fera rire comme un adolescent, mais sachez ceci: dès le premier contact avec votre partenaire, le chronomètre commence. Peut-être que le compte à rebours commence mieux . L'IRN va s'effondrer, l'un ou les deux de vous seront coupables, les événements de votre vie vont changer et vous ne pourrez pas rencontrer un type de régularité.... Qui sait, mais quelque chose va arriver. Alors tu seras probablement là où tu as commencé, sauf que cette fois ton cœur est brisé et tu ne peux rien dire à une âme. Ça peut être bon pour toi, je ne connais pas ta situation. Si vous cherchez une liaison pour gratter une démangeaison, vous pourriez la gratter avec du papier de sable à 80 grains. Eh, mais que sais-je ? J'ai traversé tout ça et je suis de retour comme Oliver avec son bol de soupe, alors ne m'écoutez pas.",
+    "word_count": 209,
+    "est_speech_seconds": 83.6,
+    "banned_words_masked": [
+      {
+        "word": "drogue",
+        "count": 1
+      }
+    ],
+    "title_en": "lurkers - you would do well to read these posts",
+    "body_en": "lurkers - you would do well to read these posts\n\nIt doesn't get any more real than what you read here. I know there are hundreds and hundreds of you contemplating crossing the line...these posts will tell you exactly what you're in for.\n Say you do meet someone and you click... the NRE will be a heady drug. It will buzz you and make you giggle like a teenager - but know this: from the first contact you have with affair partner, the timer starts.Maybe a better description is the countdown starts . The NRE will fizzle out, one or both of you will get the guilts, life events will change and you won't be able to meet with any type of regularity.... who know but something will happen. Then you'll most likely be right back where you started, except this time your heart is broken and you can't tell a damn soul about it.\n That may be okay for you, I don't know your situation. Just know if you're looking at an affair to scratch an itch, you might be scratching it with 80-grit sandpaper.\n Eh, but what do I know? I went through all of this and I'm back like Oliver with his soup bowl, so maybe don't listen to me.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Vous feriez bien de lire ces messages."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v4vqu8_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/2908fa5d-41c4-4c7a-9d85-6aed4a96522d.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v4vqu8_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 56.45,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 2.64
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v4vqu8_fr.ass",
+    "subtitles": {
+      "num_words": 209,
+      "num_cues": 58,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          16.183,
+          16.423
+        ]
+      ],
+      "intro_end_sec": 2.64,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "2908fa5d-41c4-4c7a-9d85-6aed4a96522d",
+      "title": "Just The Way It Goes",
+      "artist": "Crumb Pit",
+      "genre": "Dance-Pop",
+      "moods": [
+        "exciting",
+        "positive",
+        "energetic"
+      ],
+      "page_url": "https://ncs.io/justthewayitgoesWE",
+      "instrumental_url": "https://ncs.io/track/download/i_2908fa5d-41c4-4c7a-9d85-6aed4a96522d",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury car",
+      "image_id": 10176261,
+      "image_page_url": "https://pixabay.com/photos/woman-portrait-fashion-model-girl-10176261/",
+      "image_url": "https://pixabay.com/get/ga9bb14fed70e13d6b57d2fb510532307a508099c399c456e84a9acf36ad61cecb4a114d2234abc10f8bcfa13148c268b3fdac11907671148f18ee799b99a1567_1280.jpg",
+      "title_rendered": "Vous feriez bien de lire ces messages."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

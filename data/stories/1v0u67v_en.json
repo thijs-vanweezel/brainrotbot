@@ -1,0 +1,140 @@
+{
+  "id": "91221fd9fcba4c809f8ee3cad2a2029a",
+  "created_at": 1784972962.2536738,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1v0u67v",
+    "url": "https://www.reddit.com/r/confession/comments/1v0u67v/heterosexual_m47_and_i_gave_in_to_the_temptation/",
+    "author": "/u/Extension-Can7029",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1784476507.0,
+    "nsfw": null,
+    "variant_id": "1v0u67v_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "heterosexual m/47 and I gave in to the temptation of gay sex....",
+    "raw_body": "I am not gay by any means. I have always loved women and been turned on by women. but in the past few years women have become extinct in my life. so hearing that let me say that I have never seen a man they turned me on sexually. last night I gave in and let a man do whatever he wanted to me.. I just laid there and got sucked real good and he punched my nipples and then wanted to enter me. I was so worked up that I agreed and let's say that I ended up having the most intense orgasm I have ever had iny life. it was absolutely amazing. so now I'm contemplating doing it again for the simple fact that I nutted do good.\n\n submitted by /u/Extension-Can7029\n [link] [comments]",
+    "cleaned_body": "heterosexual m/47 and I gave in to the temptation of gay sex....\n\nI am not gay by any means. I have always loved women and been turned on by women. but in the past few years women have become extinct in my life. so hearing that let me say that I have never seen a man they turned me on sexually. last night I gave in and let a man do whatever he wanted to me.. I just laid there and got sucked real good and he punched my nipples and then wanted to enter me. I was so worked up that I agreed and let's say that I ended up having the most intense orgasm I have ever had iny life. it was absolutely amazing. so now I'm contemplating doing it again for the simple fact that I nutted do good.",
+    "display_body": "heterosexual m/47 and I gave in to the temptation of gay s*x.... I am not gay by any means. I have always loved women and been turned on by women. but in the past few years women have become extinct in my life. so hearing that let me say that I have never seen a man they turned me on s*xually. last night I gave in and let a man do whatever he wanted to me.. I just laid there and got sucked real good and he punched my n*pples and then wanted to enter me. I was so worked up that I agreed and let's say that I ended up having the most intense *rgasm I have ever had iny life. it was absolutely amazing. so now I'm contemplating doing it again for the simple fact that I nutted do good.",
+    "word_count": 142,
+    "est_speech_seconds": 56.8,
+    "banned_words_masked": [
+      {
+        "word": "sex",
+        "count": 1
+      },
+      {
+        "word": "sexually",
+        "count": 1
+      },
+      {
+        "word": "nipples",
+        "count": 1
+      },
+      {
+        "word": "orgasm",
+        "count": 1
+      }
+    ],
+    "title_en": "heterosexual m/47 and I gave in to the temptation of gay sex....",
+    "body_en": "heterosexual m/47 and I gave in to the temptation of gay sex....\n\nI am not gay by any means. I have always loved women and been turned on by women. but in the past few years women have become extinct in my life. so hearing that let me say that I have never seen a man they turned me on sexually. last night I gave in and let a man do whatever he wanted to me.. I just laid there and got sucked real good and he punched my nipples and then wanted to enter me. I was so worked up that I agreed and let's say that I ended up having the most intense orgasm I have ever had iny life. it was absolutely amazing. so now I'm contemplating doing it again for the simple fact that I nutted do good.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "heterosexual m/47 and I gave in to the temptation of gay s*x...."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v0u67v_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/2dff700f-41e1-4539-87cb-e87495502c42.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v0u67v_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 35.98,
+      "sample_rate": 24000,
+      "blurred_words": 4,
+      "intro_sfx_at_sec": 5.242
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v0u67v_en.ass",
+    "subtitles": {
+      "num_words": 142,
+      "num_cues": 38,
+      "num_masked": 4,
+      "banned_intervals": [
+        [
+          4.142,
+          5.242
+        ],
+        [
+          14.366,
+          15.146
+        ],
+        [
+          20.589,
+          20.969
+        ],
+        [
+          27.091,
+          27.712
+        ]
+      ],
+      "intro_end_sec": 5.242,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "2dff700f-41e1-4539-87cb-e87495502c42",
+      "title": "Feelings Fade",
+      "artist": "Wwings, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/FeelingsFade",
+      "instrumental_url": "https://ncs.io/track/download/i_2dff700f-41e1-4539-87cb-e87495502c42",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "money",
+      "image_id": 60531,
+      "image_page_url": "https://pixabay.com/photos/euro-cent-currency-money-europe-60531/",
+      "image_url": "https://pixabay.com/get/g80f65a1c8edbc94bea35d11deac7530bad9a80f29807377279e14a9940ac73681b441b40125a9dc3a03c26cf5cdebbc2_1280.jpg",
+      "title_rendered": "heterosexual m/47 and I gave in to the temptation of gay s*x...."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

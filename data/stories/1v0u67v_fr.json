@@ -1,0 +1,136 @@
+{
+  "id": "180cb35eb6824011a6abb2dcf3b25146",
+  "created_at": 1784972994.2365763,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1v0u67v",
+    "url": "https://www.reddit.com/r/confession/comments/1v0u67v/heterosexual_m47_and_i_gave_in_to_the_temptation/",
+    "author": "/u/Extension-Can7029",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1784476507.0,
+    "nsfw": null,
+    "variant_id": "1v0u67v_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "M/47 et j'ai cédé à la tentation du sexe gay....",
+    "raw_body": "I am not gay by any means. I have always loved women and been turned on by women. but in the past few years women have become extinct in my life. so hearing that let me say that I have never seen a man they turned me on sexually. last night I gave in and let a man do whatever he wanted to me.. I just laid there and got sucked real good and he punched my nipples and then wanted to enter me. I was so worked up that I agreed and let's say that I ended up having the most intense orgasm I have ever had iny life. it was absolutely amazing. so now I'm contemplating doing it again for the simple fact that I nutted do good.\n\n submitted by /u/Extension-Can7029\n [link] [comments]",
+    "cleaned_body": "M/47 et j'ai cédé à la tentation du sexe gay....\n\nJe ne suis en aucun cas gay. J'ai toujours aimé les femmes et elles m'ont excité. Mais ces dernières années, les femmes ont disparu de ma vie. J'ai tellement entendu que je peux dire que je n'ai jamais vu un homme qu'ils m'ont incité sexuellement. Hier soir, j'ai renoncé et laissé un homme me faire ce qu'il voulait. Je me suis allongée et j'ai été très bien sucée et il m'a frappé les mamelons et il a voulu entrer. J'étais tellement excité que j'ai accepté et disons que j'ai eu l'orgasme le plus intense que j'ai jamais eu dans ma vie. C'était vraiment incroyable. Donc maintenant je pense à le faire à nouveau pour le simple fait que j'ai fait du bien.",
+    "display_body": "M/47 et j'ai cédé à la tentation du s*xe gay.... Je ne suis en aucun cas gay. J'ai toujours aimé les femmes et elles m'ont *xcité. Mais ces dernières années, les femmes ont disparu de ma vie. J'ai tellement entendu que je peux dire que je n'ai jamais vu un homme qu'ils m'ont incité s*xuellement. Hier soir, j'ai renoncé et laissé un homme me faire ce qu'il voulait. Je me suis allongée et j'ai été très bien sucée et il m'a frappé les mamelons et il a voulu entrer. J'étais tellement *xcité que j'ai accepté et disons que j'ai eu l'orgasme le plus intense que j'ai jamais eu dans ma vie. C'était vraiment incroyable. Donc maintenant je pense à le faire à nouveau pour le simple fait que j'ai fait du bien.",
+    "word_count": 132,
+    "est_speech_seconds": 52.8,
+    "banned_words_masked": [
+      {
+        "word": "sexe",
+        "count": 1
+      },
+      {
+        "word": "excité",
+        "count": 2
+      },
+      {
+        "word": "sexuellement",
+        "count": 1
+      }
+    ],
+    "title_en": "heterosexual m/47 and I gave in to the temptation of gay sex....",
+    "body_en": "heterosexual m/47 and I gave in to the temptation of gay sex....\n\nI am not gay by any means. I have always loved women and been turned on by women. but in the past few years women have become extinct in my life. so hearing that let me say that I have never seen a man they turned me on sexually. last night I gave in and let a man do whatever he wanted to me.. I just laid there and got sucked real good and he punched my nipples and then wanted to enter me. I was so worked up that I agreed and let's say that I ended up having the most intense orgasm I have ever had iny life. it was absolutely amazing. so now I'm contemplating doing it again for the simple fact that I nutted do good.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "M/47 et j'ai cédé à la tentation du s*xe gay...."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v0u67v_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/2dff700f-41e1-4539-87cb-e87495502c42.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v0u67v_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 34.75,
+      "sample_rate": 24000,
+      "blurred_words": 4,
+      "intro_sfx_at_sec": 3.921
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v0u67v_fr.ass",
+    "subtitles": {
+      "num_words": 132,
+      "num_cues": 38,
+      "num_masked": 4,
+      "banned_intervals": [
+        [
+          2.681,
+          2.961
+        ],
+        [
+          7.122,
+          7.862
+        ],
+        [
+          14.324,
+          15.204
+        ],
+        [
+          24.507,
+          24.967
+        ]
+      ],
+      "intro_end_sec": 3.921,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "2dff700f-41e1-4539-87cb-e87495502c42",
+      "title": "Feelings Fade",
+      "artist": "Wwings, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/FeelingsFade",
+      "instrumental_url": "https://ncs.io/track/download/i_2dff700f-41e1-4539-87cb-e87495502c42",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "money",
+      "image_id": 60531,
+      "image_page_url": "https://pixabay.com/photos/euro-cent-currency-money-europe-60531/",
+      "image_url": "https://pixabay.com/get/g80f65a1c8edbc94bea35d11deac7530bad9a80f29807377279e14a9940ac73681b441b40125a9dc3a03c26cf5cdebbc2_1280.jpg",
+      "title_rendered": "M/47 et j'ai cédé à la tentation du s*xe gay...."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

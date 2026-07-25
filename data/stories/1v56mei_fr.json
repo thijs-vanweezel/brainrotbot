@@ -1,0 +1,116 @@
+{
+  "id": "05cf6689a7754063bfc35bcd82eacb54",
+  "created_at": 1784973522.0435648,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1v56mei",
+    "url": "https://www.reddit.com/r/tifu/comments/1v56mei/tifu_by_trusting_that_no_tear_baby_shampoo/",
+    "author": "/u/Jeffrey_Friedl",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1784885930.0,
+    "nsfw": null,
+    "variant_id": "1v56mei_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Aujourd'hui, j'ai foiré en croyant que le shampooing pour bébé sans larmes ne ferait pas mal.",
+    "raw_body": "When my son was maybe four or five years old, he was particularly fussy in the bath one day, saying that the shampoo hurt his eyes. Baby shampoo is completely neutral for the eyes, so I knew he was just being fussy, but he insisted. Finally out of frustration, I said \"Look\" and proceeded to pour some directly into my eyes.\n OH FUCKING HELL, IT BUUUUURNED. What I imagine a cocktail of lemon juice, napalm, and pepper spray might feel like. I don't know whether we got a bad bottle or it was just a shitty brand, but damn, it hurt.\n (In my response to the situation, after flushing my eyes, I concentrated on his emotions: how it must have felt for him to have it hurt so much after daddy said it wouldn't hurt, and how it must have felt when daddy didn't believe him when he said it hurt.)\n TL;DR: young son complained that shampoo hurt his eyes. To show that the shampoo didn't hurt, I poured some into my own eyes and found that that contrary to the \"no tears\" label, it burned like hell.\n\n submitted by /u/Jeffrey_Friedl\n [link] [comments]",
+    "cleaned_body": "Aujourd'hui, j'ai foiré en croyant que le shampooing pour bébé sans larmes ne ferait pas mal.\n\nQuand mon fils avait peut-être quatre ou cinq ans, il était particulièrement agité dans le bain un jour, disant que le shampooing lui faisait mal aux yeux. Le shampooing pour bébé est totalement neutre pour les yeux, alors je savais qu'il était juste fou, mais il a insisté. Finalement, frustré, j'ai dit \" Regardez \" et j'ai commencé à en verser directement dans mes yeux. C'est vrai qu'il est bouuru. Ce que j'imagine qu'un cocktail de jus de citron, de napalm et de spray au poivre pourrait ressembler. Je ne sais pas si nous avons une mauvaise bouteille ou si c'était une marque de merde, mais c'était mal. (En réponse à la situation, après avoir souri les yeux, je me suis concentré sur ses émotions: comment il devait se sentir pour lui d'avoir tant fait mal après que papa a dit que ça ne ferait pas mal, et comment il devait se sentir quand papa ne le croyait pas quand il a dit que ça faisait mal. )",
+    "display_body": "Aujourd'hui, j'ai foiré en croyant que le shampooing pour bébé sans larmes ne ferait pas mal. Quand mon fils avait peut-être quatre ou cinq ans, il était particulièrement agité dans le bain un jour, disant que le shampooing lui faisait mal aux yeux. Le shampooing pour bébé est totalement neutre pour les yeux, alors je savais qu'il était juste fou, mais il a insisté. Finalement, frustré, j'ai dit \" Regardez \" et j'ai commencé à en verser directement dans mes yeux. C'est vrai qu'il est bouuru. Ce que j'imagine qu'un cocktail de jus de citron, de napalm et de spray au poivre pourrait ressembler. Je ne sais pas si nous avons une mauvaise bouteille ou si c'était une marque de m*rde, mais c'était mal. (En réponse à la situation, après avoir souri les yeux, je me suis concentré sur ses émotions: comment il devait se sentir pour lui d'avoir tant fait mal après que papa a dit que ça ne ferait pas mal, et comment il devait se sentir quand papa ne le croyait pas quand il a dit que ça faisait mal. )",
+    "word_count": 184,
+    "est_speech_seconds": 73.6,
+    "banned_words_masked": [
+      {
+        "word": "merde",
+        "count": 1
+      }
+    ],
+    "title_en": "TIFU by trusting that \"no tear\" baby shampoo wouldn't hurt like hell",
+    "body_en": "Today I fucked up by trusting that \"no tear\" baby shampoo wouldn't hurt like hell\n\nWhen my son was maybe four or five years old, he was particularly fussy in the bath one day, saying that the shampoo hurt his eyes. Baby shampoo is completely neutral for the eyes, so I knew he was just being fussy, but he insisted. Finally out of frustration, I said \"Look\" and proceeded to pour some directly into my eyes.\n OH FUCKING HELL, IT BUUUUURNED. What I imagine a cocktail of lemon juice, napalm, and pepper spray might feel like. I don't know whether we got a bad bottle or it was just a shitty brand, but damn, it hurt.\n (In my response to the situation, after flushing my eyes, I concentrated on his emotions: how it must have felt for him to have it hurt so much after daddy said it wouldn't hurt, and how it must have felt when daddy didn't believe him when he said it hurt.)",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Aujourd'hui, j'ai foiré en croyant que le shampooing pour bébé sans larmes ne ferait pas mal."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v56mei_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/25dc9e59-bfba-4f95-85bd-4f0eed6ea07e.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v56mei_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 47.9,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 5.242
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v56mei_fr.ass",
+    "subtitles": {
+      "num_words": 184,
+      "num_cues": 50,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          31.713,
+          32.173
+        ]
+      ],
+      "intro_end_sec": 5.242,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "25dc9e59-bfba-4f95-85bd-4f0eed6ea07e",
+      "title": "Euphoria",
+      "artist": "Cartoon, VALLO, KAZHI, Blooom",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "exciting",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/C_euphoria",
+      "instrumental_url": "https://ncs.io/track/download/i_25dc9e59-bfba-4f95-85bd-4f0eed6ea07e",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "pizza",
+      "image_id": 8763646,
+      "image_page_url": "https://pixabay.com/photos/pizza-neapolitan-basil-tomatoes-8763646/",
+      "image_url": "https://pixabay.com/get/gad5335e3fbc35a3f1e2ffa79bdef438738020394cffceb4e6a35583b0d8fcd39e755f6b97bb6c4a8a729d53b759e73cf9182ec5e5abd0b70149a5cce2960c476_1280.jpg",
+      "title_rendered": "Aujourd'hui, j'ai foiré en croyant que le shampooing pour bébé sans larmes ne ferait pas mal."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

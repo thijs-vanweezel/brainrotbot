@@ -1,0 +1,105 @@
+{
+  "id": "aefce6af97264c2fa6500cc30ce2ff77",
+  "created_at": 1784972905.2919834,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "AmItheAsshole",
+    "post_id": "1v4r4ux",
+    "url": "https://www.reddit.com/r/AmItheAsshole/comments/1v4r4ux/aita_for_not_not_helping_a_student_of_mine_after/",
+    "author": "/u/A_Symptom_of_Life",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/AmItheAsshole",
+    "created_utc": 1784841626.0,
+    "nsfw": null,
+    "variant_id": "1v4r4ux_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "¿Soy un imbécil por no haber ayudado a un estudiante después de haber \"robado\" a mi cliente?",
+    "raw_body": "I am an artist who makes and teaches students how to make stained glass windows. One of my students found out that I was about to start a window for a couple that he now knows through another friend and then convinced the couple to drop me and go with him to make the window. I had already drawn a 1/4 size sketch to see if it was something the customer wanted and now my student expects me to draw it out full sized and actually help him make it. It's too large to work on in class-- we have always had a maximum size limitation that this almost doubles. Working on a window this size would displace another student. Also, I'm supposed to store the window week to week so he won't have to lug it back and forth from home since it's so large. AITA for telling him that it can't be worked on in the shop and that I am not drawing a full size pattern (57 x 34) for him? I told him he could have a copy of the sketch. Win or lose I plan on showing him this.\n\n submitted by /u/A_Symptom_of_Life\n [link] [comments]",
+    "cleaned_body": "¿Soy un imbécil por no haber ayudado a un estudiante después de haber \"robado\" a mi cliente?\n\nSoy un artista que hace y enseña a los estudiantes a hacer vitrales. Uno de mis estudiantes descubrió que estaba a punto de abrir una ventana para una pareja que ahora conoce a través de otro amigo y luego convenció a la pareja de dejarme y ir con él a hacer la ventana. Ya había dibujado un boceto de 1/4 tamaño para ver si era algo que el cliente quería y ahora mi estudiante espera que lo dibuje en tamaño completo y realmente le ayude a hacerlo. Es demasiado grande para trabajar en la clase... siempre hemos tenido una limitación de tamaño máximo que casi duplica. Trabajar en una ventana de este tamaño desplazaría a otro estudiante. Además, se supone que tengo que guardar la ventana de semana en semana para que no tenga que llevarla de ida y vuelta desde casa ya que es tan grande. ¿Soy el imbécil por decirle que no se puede trabajar en la tienda y que no estoy dibujando un patrón de tamaño completo (57 x 34) para él? Le dije que podía tener una copia del boceto. Ganar o perder planeo mostrarle esto.",
+    "display_body": "¿Soy un imbécil por no haber ayudado a un estudiante después de haber \"robado\" a mi cliente? Soy un artista que hace y enseña a los estudiantes a hacer vitrales. Uno de mis estudiantes descubrió que estaba a punto de abrir una ventana para una pareja que ahora conoce a través de otro amigo y luego convenció a la pareja de dejarme y ir con él a hacer la ventana. Ya había dibujado un boceto de 1/4 tamaño para ver si era algo que el cliente quería y ahora mi estudiante espera que lo dibuje en tamaño completo y realmente le ayude a hacerlo. Es demasiado grande para trabajar en la clase... siempre hemos tenido una limitación de tamaño máximo que casi duplica. Trabajar en una ventana de este tamaño desplazaría a otro estudiante. Además, se supone que tengo que guardar la ventana de semana en semana para que no tenga que llevarla de ida y vuelta desde casa ya que es tan grande. ¿Soy el imbécil por decirle que no se puede trabajar en la tienda y que no estoy dibujando un patrón de tamaño completo (57 x 34) para él? Le dije que podía tener una copia del boceto. Ganar o perder planeo mostrarle esto.",
+    "word_count": 207,
+    "est_speech_seconds": 82.8,
+    "banned_words_masked": [],
+    "title_en": "AITA For not not helping a student of mine after he 'stole' my customer?",
+    "body_en": "Am I the asshole For not not helping a student of mine after he 'stole' my customer?\n\nI am an artist who makes and teaches students how to make stained glass windows. One of my students found out that I was about to start a window for a couple that he now knows through another friend and then convinced the couple to drop me and go with him to make the window. I had already drawn a 1/4 size sketch to see if it was something the customer wanted and now my student expects me to draw it out full sized and actually help him make it. It's too large to work on in class-- we have always had a maximum size limitation that this almost doubles. Working on a window this size would displace another student. Also, I'm supposed to store the window week to week so he won't have to lug it back and forth from home since it's so large. Am I the asshole for telling him that it can't be worked on in the shop and that I am not drawing a full size pattern (57 x 34) for him? I told him he could have a copy of the sketch. Win or lose I plan on showing him this.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "¿Soy un imbécil por no haber ayudado a un estudiante después de haber \"robado\" a mi cliente?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v4r4ux_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/967744b7-7384-47d8-a8b7-c2bcb825950a.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v4r4ux_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 58.55,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.941
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v4r4ux_es.ass",
+    "subtitles": {
+      "num_words": 207,
+      "num_cues": 56,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.941,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "967744b7-7384-47d8-a8b7-c2bcb825950a",
+      "title": "Spicy",
+      "artist": "Cartoon",
+      "genre": "Dubstep",
+      "moods": [
+        "energetic",
+        "exciting",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/Spicy",
+      "instrumental_url": "https://ncs.io/track/download/i_967744b7-7384-47d8-a8b7-c2bcb825950a",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "gourmet burger",
+      "image_id": 7323674,
+      "image_page_url": "https://pixabay.com/photos/cheese-burger-burger-hamburger-7323674/",
+      "image_url": "https://pixabay.com/get/g3839ef5e3cb400dc3b6ac35d1fad565fc0fcbf7ef761c5e2bd691c18a7f67aa7da4946fa86f6cf6ae68dbb578fa158f881a631c9ba253f163241efc79fc5a9cf_1280.jpg",
+      "title_rendered": "¿Soy un imbécil por no haber ayudado a un estudiante después de haber \"robado\" a mi cliente?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

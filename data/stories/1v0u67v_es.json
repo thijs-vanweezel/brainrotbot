@@ -1,0 +1,140 @@
+{
+  "id": "a3ab43a7fcd64fed9a4fe5099503d756",
+  "created_at": 1784973025.714555,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1v0u67v",
+    "url": "https://www.reddit.com/r/confession/comments/1v0u67v/heterosexual_m47_and_i_gave_in_to_the_temptation/",
+    "author": "/u/Extension-Can7029",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1784476507.0,
+    "nsfw": null,
+    "variant_id": "1v0u67v_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "heterosexual M/47 y yo cedí a la tentación del sexo gay....",
+    "raw_body": "I am not gay by any means. I have always loved women and been turned on by women. but in the past few years women have become extinct in my life. so hearing that let me say that I have never seen a man they turned me on sexually. last night I gave in and let a man do whatever he wanted to me.. I just laid there and got sucked real good and he punched my nipples and then wanted to enter me. I was so worked up that I agreed and let's say that I ended up having the most intense orgasm I have ever had iny life. it was absolutely amazing. so now I'm contemplating doing it again for the simple fact that I nutted do good.\n\n submitted by /u/Extension-Can7029\n [link] [comments]",
+    "cleaned_body": "heterosexual M/47 y yo cedí a la tentación del sexo gay....\n\nNo soy gay de ninguna manera. Siempre he amado a las mujeres y me han encendido. Pero en los últimos años las mujeres han desaparecido de mi vida. Así que escuchando que me permite decir que nunca he visto un hombre que me incita sexualmente. Anoche me rendí y dejé que un hombre me hiciera lo que quisiera. Me acosté allí y me chuparon muy bien y me golpeó los pezones y luego quería entrar en mí. Estaba tan nerviosa que acepté y digamos que terminé teniendo el orgasmo más intenso que he tenido en mi vida. Fue absolutamente increíble. Así que ahora estoy contemplando hacerlo de nuevo por el simple hecho de que he hecho el bien.",
+    "display_body": "heterosexual M/47 y yo cedí a la tentación del s*xo gay.... No soy gay de ninguna manera. Siempre he amado a las mujeres y me han encendido. Pero en los últimos años las mujeres han desaparecido de mi vida. Así que escuchando que me permite decir que nunca he visto un hombre que me incita s*xualmente. Anoche me rendí y dejé que un hombre me hiciera lo que quisiera. Me acosté allí y me chuparon muy bien y me golpeó los p*zones y luego quería entrar en mí. Estaba tan nerviosa que acepté y digamos que terminé teniendo el *rgasmo más intenso que he tenido en mi vida. Fue absolutamente increíble. Así que ahora estoy contemplando hacerlo de nuevo por el simple hecho de que he hecho el bien.",
+    "word_count": 129,
+    "est_speech_seconds": 51.6,
+    "banned_words_masked": [
+      {
+        "word": "sexo",
+        "count": 1
+      },
+      {
+        "word": "sexualmente",
+        "count": 1
+      },
+      {
+        "word": "pezones",
+        "count": 1
+      },
+      {
+        "word": "orgasmo",
+        "count": 1
+      }
+    ],
+    "title_en": "heterosexual m/47 and I gave in to the temptation of gay sex....",
+    "body_en": "heterosexual m/47 and I gave in to the temptation of gay sex....\n\nI am not gay by any means. I have always loved women and been turned on by women. but in the past few years women have become extinct in my life. so hearing that let me say that I have never seen a man they turned me on sexually. last night I gave in and let a man do whatever he wanted to me.. I just laid there and got sucked real good and he punched my nipples and then wanted to enter me. I was so worked up that I agreed and let's say that I ended up having the most intense orgasm I have ever had iny life. it was absolutely amazing. so now I'm contemplating doing it again for the simple fact that I nutted do good.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "heterosexual M/47 y yo cedí a la tentación del s*xo gay...."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v0u67v_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/2dff700f-41e1-4539-87cb-e87495502c42.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v0u67v_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 35.65,
+      "sample_rate": 24000,
+      "blurred_words": 4,
+      "intro_sfx_at_sec": 4.781
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v0u67v_es.ass",
+    "subtitles": {
+      "num_words": 129,
+      "num_cues": 36,
+      "num_masked": 4,
+      "banned_intervals": [
+        [
+          3.801,
+          4.141
+        ],
+        [
+          15.204,
+          16.185
+        ],
+        [
+          21.606,
+          22.066
+        ],
+        [
+          26.928,
+          27.368
+        ]
+      ],
+      "intro_end_sec": 4.781,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "2dff700f-41e1-4539-87cb-e87495502c42",
+      "title": "Feelings Fade",
+      "artist": "Wwings, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/FeelingsFade",
+      "instrumental_url": "https://ncs.io/track/download/i_2dff700f-41e1-4539-87cb-e87495502c42",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "money",
+      "image_id": 60531,
+      "image_page_url": "https://pixabay.com/photos/euro-cent-currency-money-europe-60531/",
+      "image_url": "https://pixabay.com/get/g80f65a1c8edbc94bea35d11deac7530bad9a80f29807377279e14a9940ac73681b441b40125a9dc3a03c26cf5cdebbc2_1280.jpg",
+      "title_rendered": "heterosexual M/47 y yo cedí a la tentación del s*xo gay...."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

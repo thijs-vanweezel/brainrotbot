@@ -1,0 +1,116 @@
+{
+  "id": "150cacd63520436f8ea245808747314d",
+  "created_at": 1784973426.8645816,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1v4vqu8",
+    "url": "https://www.reddit.com/r/adultery/comments/1v4vqu8/lurkers_you_would_do_well_to_read_these_posts/",
+    "author": "/u/tiedOverd",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1784852817.0,
+    "nsfw": null,
+    "variant_id": "1v4vqu8_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Lo mejor es que lea estos artículos.",
+    "raw_body": "It doesn't get any more real than what you read here. I know there are hundreds and hundreds of you contemplating crossing the line...these posts will tell you exactly what you're in for.\n Say you do meet someone and you click... the NRE will be a heady drug. It will buzz you and make you giggle like a teenager - but know this: from the first contact you have with AP, the timer starts.Maybe a better description is the countdown starts . The NRE will fizzle out, one or both of you will get the guilts, life events will change and you won't be able to meet with any type of regularity.... who know but something will happen. Then you'll most likely be right back where you started, except this time your heart is broken and you can't tell a damn soul about it.\n That may be okay for you, I don't know your situation. Just know if you're looking at an affair to scratch an itch, you might be scratching it with 80-grit sandpaper.\n Eh, but what do I know? I went through all of this and I'm back like Oliver with his soup bowl, so maybe don't listen to me.\n\n submitted by /u/tiedOverd\n [link] [comments]",
+    "cleaned_body": "Lo mejor es que lea estos artículos.\n\nNo es más real que lo que lees aquí. Sé que hay cientos y cientos de ustedes contemplando cruzar la línea... Estos puestos te dirán exactamente lo que estás en. Digamos que conoces a alguien y haces clic... El NRE será una droga de cabeza. Te hará sonar y te hará reír como un adolescente, pero debes saber esto: desde el primer contacto que tienes con tu pareja, el temporizador comienza. Tal vez una mejor descripción es que comience la cuenta regresiva . El NRE se desvanecerá, uno o los dos recibirán la culpa, los eventos de la vida cambiarán y no podrán reunirse con ningún tipo de regularidad.... que lo saben pero algo va a pasar. Entonces probablemente estarás de vuelta donde empezaste, excepto que esta vez tu corazón está roto y no puedes decirle a ningún alma. Eso puede estar bien para ti, no conozco tu situación. Sólo sé que si estás viendo una aventura para rascar una picazón, podrías estar rascando con papel de arena de 80 gritos. ¿Pero qué sé yo? He pasado por todo esto y estoy de vuelta como Oliver con su tazón de sopa, así que tal vez no me escuches.",
+    "display_body": "Lo mejor es que lea estos artículos. No es más real que lo que lees aquí. Sé que hay cientos y cientos de ustedes contemplando cruzar la línea... Estos puestos te dirán exactamente lo que estás en. Digamos que conoces a alguien y haces clic... El NRE será una dr*ga de cabeza. Te hará sonar y te hará reír como un adolescente, pero debes saber esto: desde el primer contacto que tienes con tu pareja, el temporizador comienza. Tal vez una mejor descripción es que comience la cuenta regresiva . El NRE se desvanecerá, uno o los dos recibirán la culpa, los eventos de la vida cambiarán y no podrán reunirse con ningún tipo de regularidad.... que lo saben pero algo va a pasar. Entonces probablemente estarás de vuelta donde empezaste, excepto que esta vez tu corazón está roto y no puedes decirle a ningún alma. Eso puede estar bien para ti, no conozco tu situación. Sólo sé que si estás viendo una aventura para rascar una picazón, podrías estar rascando con papel de arena de 80 gritos. ¿Pero qué sé yo? He pasado por todo esto y estoy de vuelta como Oliver con su tazón de sopa, así que tal vez no me escuches.",
+    "word_count": 205,
+    "est_speech_seconds": 82.0,
+    "banned_words_masked": [
+      {
+        "word": "droga",
+        "count": 1
+      }
+    ],
+    "title_en": "lurkers - you would do well to read these posts",
+    "body_en": "lurkers - you would do well to read these posts\n\nIt doesn't get any more real than what you read here. I know there are hundreds and hundreds of you contemplating crossing the line...these posts will tell you exactly what you're in for.\n Say you do meet someone and you click... the NRE will be a heady drug. It will buzz you and make you giggle like a teenager - but know this: from the first contact you have with affair partner, the timer starts.Maybe a better description is the countdown starts . The NRE will fizzle out, one or both of you will get the guilts, life events will change and you won't be able to meet with any type of regularity.... who know but something will happen. Then you'll most likely be right back where you started, except this time your heart is broken and you can't tell a damn soul about it.\n That may be okay for you, I don't know your situation. Just know if you're looking at an affair to scratch an itch, you might be scratching it with 80-grit sandpaper.\n Eh, but what do I know? I went through all of this and I'm back like Oliver with his soup bowl, so maybe don't listen to me.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Lo mejor es que lea estos artículos."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v4vqu8_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/2908fa5d-41c4-4c7a-9d85-6aed4a96522d.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v4vqu8_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 57.42,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 2.48
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v4vqu8_es.ass",
+    "subtitles": {
+      "num_words": 205,
+      "num_cues": 56,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          13.441,
+          13.661
+        ]
+      ],
+      "intro_end_sec": 2.48,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "2908fa5d-41c4-4c7a-9d85-6aed4a96522d",
+      "title": "Just The Way It Goes",
+      "artist": "Crumb Pit",
+      "genre": "Dance-Pop",
+      "moods": [
+        "exciting",
+        "positive",
+        "energetic"
+      ],
+      "page_url": "https://ncs.io/justthewayitgoesWE",
+      "instrumental_url": "https://ncs.io/track/download/i_2908fa5d-41c4-4c7a-9d85-6aed4a96522d",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury car",
+      "image_id": 10176261,
+      "image_page_url": "https://pixabay.com/photos/woman-portrait-fashion-model-girl-10176261/",
+      "image_url": "https://pixabay.com/get/ga9bb14fed70e13d6b57d2fb510532307a508099c399c456e84a9acf36ad61cecb4a114d2234abc10f8bcfa13148c268b3fdac11907671148f18ee799b99a1567_1280.jpg",
+      "title_rendered": "Lo mejor es que lea estos artículos."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

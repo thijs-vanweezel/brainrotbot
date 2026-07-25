@@ -1,0 +1,116 @@
+{
+  "id": "95076b94d3c5429fbb205afdc7b13670",
+  "created_at": 1784972846.8420577,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "AmItheAsshole",
+    "post_id": "1v4r4ux",
+    "url": "https://www.reddit.com/r/AmItheAsshole/comments/1v4r4ux/aita_for_not_not_helping_a_student_of_mine_after/",
+    "author": "/u/A_Symptom_of_Life",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/AmItheAsshole",
+    "created_utc": 1784841626.0,
+    "nsfw": null,
+    "variant_id": "1v4r4ux_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Suis-je un connard pour ne pas avoir aidé un de mes étudiants après qu'il ait volé mon client ?",
+    "raw_body": "I am an artist who makes and teaches students how to make stained glass windows. One of my students found out that I was about to start a window for a couple that he now knows through another friend and then convinced the couple to drop me and go with him to make the window. I had already drawn a 1/4 size sketch to see if it was something the customer wanted and now my student expects me to draw it out full sized and actually help him make it. It's too large to work on in class-- we have always had a maximum size limitation that this almost doubles. Working on a window this size would displace another student. Also, I'm supposed to store the window week to week so he won't have to lug it back and forth from home since it's so large. AITA for telling him that it can't be worked on in the shop and that I am not drawing a full size pattern (57 x 34) for him? I told him he could have a copy of the sketch. Win or lose I plan on showing him this.\n\n submitted by /u/A_Symptom_of_Life\n [link] [comments]",
+    "cleaned_body": "Suis-je un connard pour ne pas avoir aidé un de mes étudiants après qu'il ait volé mon client ?\n\nJe suis un artiste qui fabrique et enseigne aux étudiants comment faire des vitraux colorés. Un de mes étudiants a découvert que j'étais sur le point de créer une fenêtre pour un couple qu'il connaît maintenant par l'intermédiaire d'un autre ami et a ensuite convaincu le couple de me déposer et d'aller avec lui faire la fenêtre. J'avais déjà dessiné un schéma de 1/4 de taille pour voir si c'était quelque chose que le client voulait et maintenant mon élève s'attend à ce que je le dessine en taille complète et l'aide à le faire. Il est trop grand pour travailler en classe - nous avons toujours eu une limite de taille maximale que cela presque doubler. Travailler sur une fenêtre de cette taille déplacerait un autre étudiant. De plus, je suis censé stocker la fenêtre semaine après semaine pour qu'il n'ait pas à la transporter de chez lui puisqu'elle est si grande. Suis-je l'idiot pour lui dire que ça ne peut pas être travaillé dans le magasin et que je ne dessine pas un motif de taille complète pour lui ? Je lui ai dit qu'il pouvait avoir une copie du dessin. Gagnez ou perdez, j'ai l'intention de lui montrer ça.",
+    "display_body": "Suis-je un c*nnard pour ne pas avoir aidé un de mes étudiants après qu'il ait volé mon client ? Je suis un artiste qui fabrique et enseigne aux étudiants comment faire des vitraux colorés. Un de mes étudiants a découvert que j'étais sur le point de créer une fenêtre pour un couple qu'il connaît maintenant par l'intermédiaire d'un autre ami et a ensuite convaincu le couple de me déposer et d'aller avec lui faire la fenêtre. J'avais déjà dessiné un schéma de 1/4 de taille pour voir si c'était quelque chose que le client voulait et maintenant mon élève s'attend à ce que je le dessine en taille complète et l'aide à le faire. Il est trop grand pour travailler en classe - nous avons toujours eu une limite de taille maximale que cela presque doubler. Travailler sur une fenêtre de cette taille déplacerait un autre étudiant. De plus, je suis censé stocker la fenêtre semaine après semaine pour qu'il n'ait pas à la transporter de chez lui puisqu'elle est si grande. Suis-je l'idiot pour lui dire que ça ne peut pas être travaillé dans le magasin et que je ne dessine pas un motif de taille complète pour lui ? Je lui ai dit qu'il pouvait avoir une copie du dessin. Gagnez ou perdez, j'ai l'intention de lui montrer ça.",
+    "word_count": 221,
+    "est_speech_seconds": 88.4,
+    "banned_words_masked": [
+      {
+        "word": "connard",
+        "count": 1
+      }
+    ],
+    "title_en": "AITA For not not helping a student of mine after he 'stole' my customer?",
+    "body_en": "Am I the asshole For not not helping a student of mine after he 'stole' my customer?\n\nI am an artist who makes and teaches students how to make stained glass windows. One of my students found out that I was about to start a window for a couple that he now knows through another friend and then convinced the couple to drop me and go with him to make the window. I had already drawn a 1/4 size sketch to see if it was something the customer wanted and now my student expects me to draw it out full sized and actually help him make it. It's too large to work on in class-- we have always had a maximum size limitation that this almost doubles. Working on a window this size would displace another student. Also, I'm supposed to store the window week to week so he won't have to lug it back and forth from home since it's so large. Am I the asshole for telling him that it can't be worked on in the shop and that I am not drawing a full size pattern (57 x 34) for him? I told him he could have a copy of the sketch. Win or lose I plan on showing him this.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Suis-je un c*nnard pour ne pas avoir aidé un de mes étudiants après qu'il ait volé mon client ?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v4r4ux_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/967744b7-7384-47d8-a8b7-c2bcb825950a.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v4r4ux_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 58.4,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 5.262
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v4r4ux_fr.ass",
+    "subtitles": {
+      "num_words": 221,
+      "num_cues": 60,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          0.86,
+          1.42
+        ]
+      ],
+      "intro_end_sec": 5.262,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "967744b7-7384-47d8-a8b7-c2bcb825950a",
+      "title": "Spicy",
+      "artist": "Cartoon",
+      "genre": "Dubstep",
+      "moods": [
+        "energetic",
+        "exciting",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/Spicy",
+      "instrumental_url": "https://ncs.io/track/download/i_967744b7-7384-47d8-a8b7-c2bcb825950a",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "gourmet burger",
+      "image_id": 7323674,
+      "image_page_url": "https://pixabay.com/photos/cheese-burger-burger-hamburger-7323674/",
+      "image_url": "https://pixabay.com/get/g3839ef5e3cb400dc3b6ac35d1fad565fc0fcbf7ef761c5e2bd691c18a7f67aa7da4946fa86f6cf6ae68dbb578fa158f881a631c9ba253f163241efc79fc5a9cf_1280.jpg",
+      "title_rendered": "Suis-je un c*nnard pour ne pas avoir aidé un de mes étudiants après qu'il ait volé mon client ?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
