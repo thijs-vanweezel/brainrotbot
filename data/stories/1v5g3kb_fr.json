@@ -1,0 +1,105 @@
+{
+  "id": "4cb1d5537fc84145b7428af4e8eeb82c",
+  "created_at": 1785059865.550303,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1v5g3kb",
+    "url": "https://www.reddit.com/r/tifu/comments/1v5g3kb/tifu_by_getting_sciatica_due_to_my_masturbation/",
+    "author": "/u/Evakshinova",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1784910088.0,
+    "nsfw": null,
+    "variant_id": "1v5g3kb_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Aujourd'hui, j'ai fait une sacrée erreur en recevant la sciatique à cause de mes habitudes de masturbation.",
+    "raw_body": "i have always struggled with back pain due to poor posture but for the past year it got significantly worse and started having sciatica and leg pain also, specially some days but i did not know why.\n Then i got the biggest flare up ever due to a certain movement i did when i was having \"me\" time, and it caused me to just lay in bed all day because of the pain. Turns out, a couple years ago i started a new habit of doing it face down, causing my spine to arch and in result pinching my nerve, for months, and i did not realize it making it worse.\n Sorry if this was not allowed but it seemed pretty funny in retrospect, now i am following a treatment plan and going to physiotherapy. Pay more attention to your habits guys!\n TL;DR: for months i pinched my nerves while i was masturbating and now have sciatica problems.\n\n submitted by /u/Evakshinova\n [link] [comments]",
+    "cleaned_body": "Aujourd'hui, j'ai fait une sacrée erreur en recevant la sciatique à cause de mes habitudes de masturbation.\n\nJ'ai toujours eu du mal au dos en raison d'une mauvaise posture, mais l'année dernière, ça s'est considérablement aggravé et j'ai commencé à avoir des sciatiques et des douleurs aux jambes, surtout quelques jours, mais je ne savais pas pourquoi. Puis j'ai eu la plus grande flamme de tous les temps en raison d'un certain mouvement que j'ai fait quand j'avais le temps \"moi\", et cela m'a fait rester au lit toute la journée à cause de la douleur. Il s'avère qu'il y a quelques années, j'ai commencé une nouvelle habitude de le faire face bas, ce qui a fait que ma colonne vertébrale s'arquait et, en conséquence, m'a pincé le nerf pendant des mois, et je ne savais pas que cela aggravait les choses. Désolée si ça n'était pas permis, mais ça a semblé drôle en rétrospective, maintenant je suis en train de suivre un plan de traitement et je vais en physiothérapie. Faites attention à vos habitudes !",
+    "display_body": "Aujourd'hui, j'ai fait une sacrée erreur en recevant la sciatique à cause de mes habitudes de masturbation. J'ai toujours eu du mal au dos en raison d'une mauvaise posture, mais l'année dernière, ça s'est considérablement aggravé et j'ai commencé à avoir des sciatiques et des douleurs aux jambes, surtout quelques jours, mais je ne savais pas pourquoi. Puis j'ai eu la plus grande flamme de tous les temps en raison d'un certain mouvement que j'ai fait quand j'avais le temps \"moi\", et cela m'a fait rester au lit toute la journée à cause de la douleur. Il s'avère qu'il y a quelques années, j'ai commencé une nouvelle habitude de le faire face bas, ce qui a fait que ma colonne vertébrale s'arquait et, en conséquence, m'a pincé le nerf pendant des mois, et je ne savais pas que cela aggravait les choses. Désolée si ça n'était pas permis, mais ça a semblé drôle en rétrospective, maintenant je suis en train de suivre un plan de traitement et je vais en physiothérapie. Faites attention à vos habitudes !",
+    "word_count": 177,
+    "est_speech_seconds": 70.8,
+    "banned_words_masked": [],
+    "title_en": "TIFU by getting sciatica due to my masturbation habits",
+    "body_en": "Today I fucked up by getting sciatica due to my masturbation habits\n\ni have always struggled with back pain due to poor posture but for the past year it got significantly worse and started having sciatica and leg pain also, specially some days but i did not know why.\n Then i got the biggest flare up ever due to a certain movement i did when i was having \"me\" time, and it caused me to just lay in bed all day because of the pain. Turns out, a couple years ago i started a new habit of doing it face down, causing my spine to arch and in result pinching my nerve, for months, and i did not realize it making it worse.\n Sorry if this was not allowed but it seemed pretty funny in retrospect, now i am following a treatment plan and going to physiotherapy. Pay more attention to your habits guys!",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Aujourd'hui, j'ai fait une sacrée erreur en recevant la sciatique à cause de mes habitudes de masturbation."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v5g3kb_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/e6d52a77-603b-4083-8957-a41ba4735cd5.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v5g3kb_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 50.77,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 6.282
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v5g3kb_fr.ass",
+    "subtitles": {
+      "num_words": 177,
+      "num_cues": 47,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 6.282,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "e6d52a77-603b-4083-8957-a41ba4735cd5",
+      "title": "All Or Nothing",
+      "artist": "No Hero, Tatsunoshin",
+      "genre": "Hardcore",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/TN_AllOrNothing",
+      "instrumental_url": "https://ncs.io/track/download/i_e6d52a77-603b-4083-8957-a41ba4735cd5",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury car",
+      "image_id": 7830737,
+      "image_page_url": "https://pixabay.com/photos/car-vehicle-bridge-maserati-7830737/",
+      "image_url": "https://pixabay.com/get/g132810da6975c0a95761575a797179f233f0f6d7a6943730cb818c822f95e0008e04806621615ef2d6cc610cd7cef2379321b51cd31a3bcbf31e665e424e519e_1280.jpg",
+      "title_rendered": "Aujourd'hui, j'ai fait une sacrée erreur en recevant la sciatique à cause de mes habitudes de masturbation."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "id": "a0772e0412d54882af3f12db8341cd48",
+  "created_at": 1785060382.2919667,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1v3pk87",
+    "url": "https://www.reddit.com/r/adultery/comments/1v3pk87/the_struggle_is_real/",
+    "author": "/u/holiday_HOmeWreCkER",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1784746799.0,
+    "nsfw": null,
+    "variant_id": "1v3pk87_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "La lutte est réelle.",
+    "raw_body": "Recovering from an affair is the hardest thing I've ever had to do. I've never been more loved or appreciated or honest or vulnerable than I was when I was with my AP. He knew me & parts of my life & he seemed to choose me anyway. Now it's over & it's been months of NC & I still seem to fucking miss him & feel like I can't breathe sometimes.\n Am I stuck in the fantasy realm or was he just that sweet?\n Is the first cut the deepest???\n\n submitted by /u/holiday_HOmeWreCkER\n [link] [comments]",
+    "cleaned_body": "La lutte est réelle.\n\nSe remettre d'une liaison est la chose la plus difficile que j'aie jamais dû faire. Je n'ai jamais été plus aimée, appréciée, honnête ou vulnérable que lorsque j'étais avec mon partenaire amoureux. Il me connaissait et certaines parties de ma vie et il semblait me choisir de toute façon. Maintenant que c'est fini et que ça fait des mois de NC et je lui manque encore et j'ai l'impression que je ne peux pas respirer parfois. Suis-je coincé dans le monde des fantasmes ou était-il juste si gentil ? Est-ce que la première coupe est la plus profonde???",
+    "display_body": "La lutte est réelle. Se remettre d'une liaison est la chose la plus difficile que j'aie jamais dû faire. Je n'ai jamais été plus aimée, appréciée, honnête ou vulnérable que lorsque j'étais avec mon partenaire amoureux. Il me connaissait et certaines parties de ma vie et il semblait me choisir de toute façon. Maintenant que c'est fini et que ça fait des mois de NC et je lui manque encore et j'ai l'impression que je ne peux pas respirer parfois. Suis-je coincé dans le monde des fantasmes ou était-il juste si gentil ? Est-ce que la première coupe est la plus profonde???",
+    "word_count": 102,
+    "est_speech_seconds": 40.8,
+    "banned_words_masked": [],
+    "title_en": "The struggle is real",
+    "body_en": "The struggle is real\n\nRecovering from an affair is the hardest thing I've ever had to do. I've never been more loved or appreciated or honest or vulnerable than I was when I was with my affair partner. He knew me & parts of my life & he seemed to choose me anyway. Now it's over & it's been months of NC & I still seem to fucking miss him & feel like I can't breathe sometimes.\n Am I stuck in the fantasy realm or was he just that sweet?\n Is the first cut the deepest???",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "La lutte est réelle."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v3pk87_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/da612e5c-1614-49be-9988-b7c2c6c64bf3.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v3pk87_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 28.27,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.901
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v3pk87_fr.ass",
+    "subtitles": {
+      "num_words": 102,
+      "num_cues": 29,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.901,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "da612e5c-1614-49be-9988-b7c2c6c64bf3",
+      "title": "Around Us (ft. Pasha & Carlos Ukareda)",
+      "artist": "Pasha, Carlos Ukareda, VALLO, NCT, Cartoon",
+      "genre": "Drum & Bass",
+      "moods": [
+        "exciting",
+        "positive",
+        "romantic",
+        "powerful",
+        "majestic",
+        "energetic",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/AroundUs",
+      "instrumental_url": "https://ncs.io/track/download/i_da612e5c-1614-49be-9988-b7c2c6c64bf3",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 2123230,
+      "image_page_url": "https://pixabay.com/photos/business-woman-beauty-portrait-2123230/",
+      "image_url": "https://pixabay.com/get/gbd4c5bfa8fb067bd4bb5b5ebb10aede1f6d92365a8746b1d45a6d1b67df5c851fb72dafa9d2030270647a6217f2ccbefa56b39bd8a98c2d0533daaa4251fade9_1280.jpg",
+      "title_rendered": "La lutte est réelle."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

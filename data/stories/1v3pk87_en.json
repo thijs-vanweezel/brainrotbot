@@ -1,0 +1,120 @@
+{
+  "id": "2a5936e915a748bfa794872db7bc783b",
+  "created_at": 1785060359.70601,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1v3pk87",
+    "url": "https://www.reddit.com/r/adultery/comments/1v3pk87/the_struggle_is_real/",
+    "author": "/u/holiday_HOmeWreCkER",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1784746799.0,
+    "nsfw": null,
+    "variant_id": "1v3pk87_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "The struggle is real",
+    "raw_body": "Recovering from an affair is the hardest thing I've ever had to do. I've never been more loved or appreciated or honest or vulnerable than I was when I was with my AP. He knew me & parts of my life & he seemed to choose me anyway. Now it's over & it's been months of NC & I still seem to fucking miss him & feel like I can't breathe sometimes.\n Am I stuck in the fantasy realm or was he just that sweet?\n Is the first cut the deepest???\n\n submitted by /u/holiday_HOmeWreCkER\n [link] [comments]",
+    "cleaned_body": "The struggle is real\n\nRecovering from an affair is the hardest thing I've ever had to do. I've never been more loved or appreciated or honest or vulnerable than I was when I was with my affair partner. He knew me & parts of my life & he seemed to choose me anyway. Now it's over & it's been months of NC & I still seem to fucking miss him & feel like I can't breathe sometimes.\n Am I stuck in the fantasy realm or was he just that sweet?\n Is the first cut the deepest???",
+    "display_body": "The struggle is real Recovering from an affair is the hardest thing I've ever had to do. I've never been more loved or appreciated or honest or vulnerable than I was when I was with my affair partner. He knew me & parts of my life & he seemed to choose me anyway. Now it's over & it's been months of NC & I still seem to f*cking miss him & feel like I can't breathe sometimes. Am I stuck in the fantasy realm or was he just that sweet? Is the first cut the deepest???",
+    "word_count": 96,
+    "est_speech_seconds": 38.4,
+    "banned_words_masked": [
+      {
+        "word": "fucking",
+        "count": 1
+      }
+    ],
+    "title_en": "The struggle is real",
+    "body_en": "The struggle is real\n\nRecovering from an affair is the hardest thing I've ever had to do. I've never been more loved or appreciated or honest or vulnerable than I was when I was with my affair partner. He knew me & parts of my life & he seemed to choose me anyway. Now it's over & it's been months of NC & I still seem to fucking miss him & feel like I can't breathe sometimes.\n Am I stuck in the fantasy realm or was he just that sweet?\n Is the first cut the deepest???",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "The struggle is real"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v3pk87_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/da612e5c-1614-49be-9988-b7c2c6c64bf3.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v3pk87_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 24.35,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 1.741
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v3pk87_en.ass",
+    "subtitles": {
+      "num_words": 96,
+      "num_cues": 27,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          15.967,
+          16.307
+        ]
+      ],
+      "intro_end_sec": 1.741,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "da612e5c-1614-49be-9988-b7c2c6c64bf3",
+      "title": "Around Us (ft. Pasha & Carlos Ukareda)",
+      "artist": "Pasha, Carlos Ukareda, VALLO, NCT, Cartoon",
+      "genre": "Drum & Bass",
+      "moods": [
+        "exciting",
+        "positive",
+        "romantic",
+        "powerful",
+        "majestic",
+        "energetic",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/AroundUs",
+      "instrumental_url": "https://ncs.io/track/download/i_da612e5c-1614-49be-9988-b7c2c6c64bf3",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 2123230,
+      "image_page_url": "https://pixabay.com/photos/business-woman-beauty-portrait-2123230/",
+      "image_url": "https://pixabay.com/get/gbd4c5bfa8fb067bd4bb5b5ebb10aede1f6d92365a8746b1d45a6d1b67df5c851fb72dafa9d2030270647a6217f2ccbefa56b39bd8a98c2d0533daaa4251fade9_1280.jpg",
+      "title_rendered": "The struggle is real"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

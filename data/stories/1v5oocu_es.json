@@ -1,0 +1,104 @@
+{
+  "id": "a43337aa288d4d7b8cd6ca48e728c85a",
+  "created_at": 1785060330.8763568,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v5oocu",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v5oocu/after_finally_watching_the_odyssey_you_people_are/",
+    "author": "/u/saddiebabbie",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1784928542.0,
+    "nsfw": null,
+    "variant_id": "1v5oocu_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Después de ver finalmente la Odisea... Ustedes son idiotas .",
+    "raw_body": "Are you serious??? Nolan literally changed the whole point of the story, he changed who Odysseus is as a whole person, he removed certain characters, added characters that aren't even in the poem, made up characters!!!!! Changed how gods are perceived, changed cyclops, changed the final test etc. SO MANY THINGS ARE ALTERED, REMOVED, ADDED, DIFFERENT. AND YOU, YOU ARE BOTHERED BY THE SKIN COLOR OF ONE WOMAN BECAUSE \"HiStoOriCal AccUrAcyy\"???\n You're a fucking idiot.\n\n submitted by /u/saddiebabbie\n [link] [comments]",
+    "cleaned_body": "Después de ver finalmente la Odisea... Ustedes son idiotas .\n\n¿Estás hablando en serio? Nolan literalmente cambió todo el punto de la historia, cambió quién era Odiseo en su totalidad, eliminó ciertos personajes, agregó personajes que ni siquiera están en el poema, inventó personajes!!!!! Cambió la forma en que se perciben a los dioses, cambió los ciclopes, cambió la prueba final, etc. Muchas otras cosas son alteradas, removidas, añadidas, diferentes. Y tú, ¿Estás confundido por el color de la piel de una mujer debido a la \"acurateza histórica\"??? Eres un maldito idiota.",
+    "display_body": "Después de ver finalmente la Odisea... Ustedes son idiotas . ¿Estás hablando en serio? Nolan literalmente cambió todo el punto de la historia, cambió quién era Odiseo en su totalidad, eliminó ciertos personajes, agregó personajes que ni siquiera están en el poema, inventó personajes!!!!! Cambió la forma en que se perciben a los dioses, cambió los ciclopes, cambió la prueba final, etc. Muchas otras cosas son alteradas, removidas, añadidas, diferentes. Y tú, ¿Estás confundido por el color de la piel de una mujer debido a la \"acurateza histórica\"??? Eres un maldito idiota.",
+    "word_count": 92,
+    "est_speech_seconds": 36.8,
+    "banned_words_masked": [],
+    "title_en": "After finally watching the Odyssey... you people are such fucking idiots",
+    "body_en": "After finally watching the Odyssey... you people are such fucking idiots\n\nAre you serious??? Nolan literally changed the whole point of the story, he changed who Odysseus is as a whole person, he removed certain characters, added characters that aren't even in the poem, made up characters!!!!! Changed how gods are perceived, changed cyclops, changed the final test etc. significant other MANY THINGS ARE ALTERED, REMOVED, ADDED, DIFFERENT. AND YOU, YOU ARE BOTHERED BY THE SKIN COLOR OF ONE WOMAN BECAUSE \"HiStoOriCal AccUrAcyy\"???\n You're a fucking idiot.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Después de ver finalmente la Odisea... Ustedes son idiotas ."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v5oocu_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/dc7edbe0-3848-4746-b54c-02579dc269bd.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v5oocu_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 29.6,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.723
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v5oocu_es.ass",
+    "subtitles": {
+      "num_words": 92,
+      "num_cues": 25,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.723,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "dc7edbe0-3848-4746-b54c-02579dc269bd",
+      "title": "Notice That",
+      "artist": "Zaug",
+      "genre": "Electronic Rock",
+      "moods": [
+        "powerful",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/NoticeThat",
+      "instrumental_url": "https://ncs.io/track/download/i_dc7edbe0-3848-4746-b54c-02579dc269bd",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "beautiful face",
+      "image_id": 10374419,
+      "image_page_url": "https://pixabay.com/photos/woman-portrait-fashion-style-10374419/",
+      "image_url": "https://pixabay.com/get/g83055db34599b998298b5b19b1da69b6565496a472879b36f041d2c176916bdfc623b7e14bf18487119d0cfc99c6be198dd69dc9ff4106010bfb6f99fe00ba1f_1280.jpg",
+      "title_rendered": "Después de ver finalmente la Odisea... Ustedes son idiotas ."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

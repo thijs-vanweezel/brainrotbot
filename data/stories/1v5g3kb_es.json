@@ -1,0 +1,105 @@
+{
+  "id": "a2eeffaa07494b98969560f43c238b2d",
+  "created_at": 1785059913.2001045,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1v5g3kb",
+    "url": "https://www.reddit.com/r/tifu/comments/1v5g3kb/tifu_by_getting_sciatica_due_to_my_masturbation/",
+    "author": "/u/Evakshinova",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1784910088.0,
+    "nsfw": null,
+    "variant_id": "1v5g3kb_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Hoy me he jodido con la ciática debido a mis hábitos de masturbación",
+    "raw_body": "i have always struggled with back pain due to poor posture but for the past year it got significantly worse and started having sciatica and leg pain also, specially some days but i did not know why.\n Then i got the biggest flare up ever due to a certain movement i did when i was having \"me\" time, and it caused me to just lay in bed all day because of the pain. Turns out, a couple years ago i started a new habit of doing it face down, causing my spine to arch and in result pinching my nerve, for months, and i did not realize it making it worse.\n Sorry if this was not allowed but it seemed pretty funny in retrospect, now i am following a treatment plan and going to physiotherapy. Pay more attention to your habits guys!\n TL;DR: for months i pinched my nerves while i was masturbating and now have sciatica problems.\n\n submitted by /u/Evakshinova\n [link] [comments]",
+    "cleaned_body": "Hoy me he jodido con la ciática debido a mis hábitos de masturbación\n\nSiempre he luchado con dolor de espalda debido a una mala postura pero durante el año pasado empeoró significativamente y comenzó a tener ciática y dolor de pierna también, especialmente algunos días pero no sabía por qué. Luego tuve la mayor explosión de la historia debido a un cierto movimiento que hice cuando estaba teniendo tiempo \"yo\", y me hizo acostarme en la cama todo el día debido al dolor. Resulta que hace un par de años empecé un nuevo hábito de hacerlo boca abajo, haciendo que mi columna vertebral se arqueara y, como resultado, me pinzara el nervio durante meses, y no me di cuenta de que empeoraba. Lo siento si esto no estaba permitido pero me pareció bastante gracioso en retrospectiva, ahora estoy siguiendo un plan de tratamiento y voy a la fisioterapia. ¡Cuidado con tus hábitos, chicos!",
+    "display_body": "Hoy me he jodido con la ciática debido a mis hábitos de masturbación Siempre he luchado con dolor de espalda debido a una mala postura pero durante el año pasado empeoró significativamente y comenzó a tener ciática y dolor de pierna también, especialmente algunos días pero no sabía por qué. Luego tuve la mayor explosión de la historia debido a un cierto movimiento que hice cuando estaba teniendo tiempo \"yo\", y me hizo acostarme en la cama todo el día debido al dolor. Resulta que hace un par de años empecé un nuevo hábito de hacerlo boca abajo, haciendo que mi columna vertebral se arqueara y, como resultado, me pinzara el nervio durante meses, y no me di cuenta de que empeoraba. Lo siento si esto no estaba permitido pero me pareció bastante gracioso en retrospectiva, ahora estoy siguiendo un plan de tratamiento y voy a la fisioterapia. ¡Cuidado con tus hábitos, chicos!",
+    "word_count": 153,
+    "est_speech_seconds": 61.2,
+    "banned_words_masked": [],
+    "title_en": "TIFU by getting sciatica due to my masturbation habits",
+    "body_en": "Today I fucked up by getting sciatica due to my masturbation habits\n\ni have always struggled with back pain due to poor posture but for the past year it got significantly worse and started having sciatica and leg pain also, specially some days but i did not know why.\n Then i got the biggest flare up ever due to a certain movement i did when i was having \"me\" time, and it caused me to just lay in bed all day because of the pain. Turns out, a couple years ago i started a new habit of doing it face down, causing my spine to arch and in result pinching my nerve, for months, and i did not realize it making it worse.\n Sorry if this was not allowed but it seemed pretty funny in retrospect, now i am following a treatment plan and going to physiotherapy. Pay more attention to your habits guys!",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Hoy me he jodido con la ciática debido a mis hábitos de masturbación"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v5g3kb_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/e6d52a77-603b-4083-8957-a41ba4735cd5.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v5g3kb_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 45.65,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.061
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v5g3kb_es.ass",
+    "subtitles": {
+      "num_words": 153,
+      "num_cues": 41,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.061,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "e6d52a77-603b-4083-8957-a41ba4735cd5",
+      "title": "All Or Nothing",
+      "artist": "No Hero, Tatsunoshin",
+      "genre": "Hardcore",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/TN_AllOrNothing",
+      "instrumental_url": "https://ncs.io/track/download/i_e6d52a77-603b-4083-8957-a41ba4735cd5",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury car",
+      "image_id": 7830737,
+      "image_page_url": "https://pixabay.com/photos/car-vehicle-bridge-maserati-7830737/",
+      "image_url": "https://pixabay.com/get/g132810da6975c0a95761575a797179f233f0f6d7a6943730cb818c822f95e0008e04806621615ef2d6cc610cd7cef2379321b51cd31a3bcbf31e665e424e519e_1280.jpg",
+      "title_rendered": "Hoy me he jodido con la ciática debido a mis hábitos de masturbación"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
