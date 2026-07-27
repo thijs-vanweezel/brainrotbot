@@ -1,0 +1,105 @@
+{
+  "id": "52ce9f69deac4d07ba327f3131d67489",
+  "created_at": 1785148819.8872795,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1v79d25",
+    "url": "https://www.reddit.com/r/confession/comments/1v79d25/the_girl_i_am_dating_thinks_i_am_mute_while_i_am/",
+    "author": "/u/Randomsicilianguy",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1785084945.0,
+    "nsfw": null,
+    "variant_id": "1v79d25_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "La chica con la que salgo piensa que soy mudo mientras soy perfectamente capaz de hablar",
+    "raw_body": "Hi. I've never loved talking, or to say it better I've always done mistakes talking. It's too easy to be misunderstood. Roughly 1 year ago I decided to stop using my voice completely and I started using a small notebook when I have to engage in a conversation. At the beginning it was weird but I started loving it, till it became totally normal for me.\n 4 month ago I was on the tube and a girl approached me. She was (is) really beautiful and nice, we had this sort of weird conversation where she was talking and I was writing. Fast forward we are dating now and she still thinks that I am mute.\n I really don't know what to do, because I like her and I don't want her to react bad to the truth.\n\n submitted by /u/Randomsicilianguy\n [link] [comments]",
+    "cleaned_body": "La chica con la que salgo piensa que soy mudo mientras soy perfectamente capaz de hablar\n\n¿Qué pasa? Nunca me ha gustado hablar, o para decirlo mejor siempre he cometido errores hablando. Es demasiado fácil ser malinterpretado. Hace aproximadamente un año decidí dejar de usar mi voz por completo y empecé a usar un pequeño cuaderno cuando tengo que participar en una conversación. Al principio fue raro, pero empecé a amarlo, hasta que se volvió totalmente normal para mí. Hace 4 meses estaba en el canal y una chica se me acercó. Ella era realmente hermosa y agradable, tuvimos una conversación extraña donde ella estaba hablando y yo estaba escribiendo. Avanzamos rápido y estamos saliendo ahora y ella todavía piensa que soy mudo. Realmente no sé qué hacer, porque me gusta y no quiero que reaccione mal a la verdad.",
+    "display_body": "La chica con la que salgo piensa que soy mudo mientras soy perfectamente capaz de hablar ¿Qué pasa? Nunca me ha gustado hablar, o para decirlo mejor siempre he cometido errores hablando. Es demasiado fácil ser malinterpretado. Hace aproximadamente un año decidí dejar de usar mi voz por completo y empecé a usar un pequeño cuaderno cuando tengo que participar en una conversación. Al principio fue raro, pero empecé a amarlo, hasta que se volvió totalmente normal para mí. Hace 4 meses estaba en el canal y una chica se me acercó. Ella era realmente hermosa y agradable, tuvimos una conversación extraña donde ella estaba hablando y yo estaba escribiendo. Avanzamos rápido y estamos saliendo ahora y ella todavía piensa que soy mudo. Realmente no sé qué hacer, porque me gusta y no quiero que reaccione mal a la verdad.",
+    "word_count": 140,
+    "est_speech_seconds": 56.0,
+    "banned_words_masked": [],
+    "title_en": "The girl I am dating thinks I am mute while I am perfectly able to talk",
+    "body_en": "The girl I am dating thinks I am mute while I am perfectly able to talk\n\nHi. I've never loved talking, or to say it better I've always done mistakes talking. It's too easy to be misunderstood. Roughly 1 year ago I decided to stop using my voice completely and I started using a small notebook when I have to engage in a conversation. At the beginning it was weird but I started loving it, till it became totally normal for me.\n 4 month ago I was on the tube and a girl approached me. She was (is) really beautiful and nice, we had this sort of weird conversation where she was talking and I was writing. Fast forward we are dating now and she still thinks that I am mute.\n I really don't know what to do, because I like her and I don't want her to react bad to the truth.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "La chica con la que salgo piensa que soy mudo mientras soy perfectamente capaz de hablar"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v79d25_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/37f1a843-e931-4ffb-b3e5-7272fce44ad0.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v79d25_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 42.58,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.982
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v79d25_es.ass",
+    "subtitles": {
+      "num_words": 140,
+      "num_cues": 40,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.982,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "37f1a843-e931-4ffb-b3e5-7272fce44ad0",
+      "title": "Just A Minute More (feat. Halvorsen)",
+      "artist": "Division One, Halvorsen, JJD",
+      "genre": "Future Bass",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/JAMM",
+      "instrumental_url": "https://ncs.io/track/download/i_37f1a843-e931-4ffb-b3e5-7272fce44ad0",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 7552693,
+      "image_page_url": "https://pixabay.com/photos/woman-fashion-model-black-and-white-7552693/",
+      "image_url": "https://pixabay.com/get/g3a0c4e45a1e88b24736edf6ccd8262ed66a3db57d0a1ab25272e552295a5661811d159e67578039bc38dfbf47d635637cf1a4249511a47ca5b05c9532360bcfd_1280.jpg",
+      "title_rendered": "La chica con la que salgo piensa que soy mudo mientras soy perfectamente capaz de hablar"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

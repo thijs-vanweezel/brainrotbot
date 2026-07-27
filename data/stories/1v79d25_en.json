@@ -1,0 +1,87 @@
+{
+  "id": "3ae0bce8ca624bba9118bc1dceabfc60",
+  "created_at": 1785148768.7143133,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1v79d25",
+    "url": "https://www.reddit.com/r/confession/comments/1v79d25/the_girl_i_am_dating_thinks_i_am_mute_while_i_am/",
+    "author": "/u/Randomsicilianguy",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1785084945.0,
+    "nsfw": null,
+    "variant_id": "1v79d25_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "The girl I am dating thinks I am mute while I am perfectly able to talk",
+    "raw_body": "Hi. I've never loved talking, or to say it better I've always done mistakes talking. It's too easy to be misunderstood. Roughly 1 year ago I decided to stop using my voice completely and I started using a small notebook when I have to engage in a conversation. At the beginning it was weird but I started loving it, till it became totally normal for me.\n 4 month ago I was on the tube and a girl approached me. She was (is) really beautiful and nice, we had this sort of weird conversation where she was talking and I was writing. Fast forward we are dating now and she still thinks that I am mute.\n I really don't know what to do, because I like her and I don't want her to react bad to the truth.\n\n submitted by /u/Randomsicilianguy\n [link] [comments]",
+    "cleaned_body": "The girl I am dating thinks I am mute while I am perfectly able to talk\n\nHi. I've never loved talking, or to say it better I've always done mistakes talking. It's too easy to be misunderstood. Roughly 1 year ago I decided to stop using my voice completely and I started using a small notebook when I have to engage in a conversation. At the beginning it was weird but I started loving it, till it became totally normal for me.\n 4 month ago I was on the tube and a girl approached me. She was (is) really beautiful and nice, we had this sort of weird conversation where she was talking and I was writing. Fast forward we are dating now and she still thinks that I am mute.\n I really don't know what to do, because I like her and I don't want her to react bad to the truth.",
+    "display_body": "The girl I am dating thinks I am mute while I am perfectly able to talk Hi. I've never loved talking, or to say it better I've always done mistakes talking. It's too easy to be misunderstood. Roughly 1 year ago I decided to stop using my voice completely and I started using a small notebook when I have to engage in a conversation. At the beginning it was weird but I started loving it, till it became totally normal for me. 4 month ago I was on the tube and a girl approached me. She was (is) really beautiful and nice, we had this sort of weird conversation where she was talking and I was writing. Fast forward we are dating now and she still thinks that I am mute. I really don't know what to do, because I like her and I don't want her to react bad to the truth.",
+    "word_count": 153,
+    "est_speech_seconds": 61.2,
+    "banned_words_masked": [],
+    "title_en": "The girl I am dating thinks I am mute while I am perfectly able to talk",
+    "body_en": "The girl I am dating thinks I am mute while I am perfectly able to talk\n\nHi. I've never loved talking, or to say it better I've always done mistakes talking. It's too easy to be misunderstood. Roughly 1 year ago I decided to stop using my voice completely and I started using a small notebook when I have to engage in a conversation. At the beginning it was weird but I started loving it, till it became totally normal for me.\n 4 month ago I was on the tube and a girl approached me. She was (is) really beautiful and nice, we had this sort of weird conversation where she was talking and I was writing. Fast forward we are dating now and she still thinks that I am mute.\n I really don't know what to do, because I like her and I don't want her to react bad to the truth.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "The girl I am dating thinks I am mute while I am perfectly able to talk"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": null,
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/37f1a843-e931-4ffb-b3e5-7272fce44ad0.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v79d25_en.png",
+    "music": {
+      "track_id": "37f1a843-e931-4ffb-b3e5-7272fce44ad0",
+      "title": "Just A Minute More (feat. Halvorsen)",
+      "artist": "Division One, Halvorsen, JJD",
+      "genre": "Future Bass",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/JAMM",
+      "instrumental_url": "https://ncs.io/track/download/i_37f1a843-e931-4ffb-b3e5-7272fce44ad0",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 7552693,
+      "image_page_url": "https://pixabay.com/photos/woman-fashion-model-black-and-white-7552693/",
+      "image_url": "https://pixabay.com/get/g3a0c4e45a1e88b24736edf6ccd8262ed66a3db57d0a1ab25272e552295a5661811d159e67578039bc38dfbf47d635637cf1a4249511a47ca5b05c9532360bcfd_1280.jpg",
+      "title_rendered": "The girl I am dating thinks I am mute while I am perfectly able to talk"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
