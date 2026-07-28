@@ -1,0 +1,105 @@
+{
+  "id": "111a661a34d641fc87eaf744f2ee5caa",
+  "created_at": 1785233320.2951021,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1v7bss8",
+    "url": "https://www.reddit.com/r/tifu/comments/1v7bss8/tifu_by_taking_3_laxatives_at_once_because_i_was/",
+    "author": "/u/governmenttookmyname",
+    "feed_rank": 1,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1785090305.0,
+    "nsfw": null,
+    "variant_id": "1v7bss8_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Hoy me he jodido tomando 3 laxantes a la vez porque estaba desesperada.",
+    "raw_body": "I've been put on Ozempic because I have PMOS and have developed insulin resistance. I've been taking it for 2 weeks now and I've fallen victim to the constipation side effect, my last bowel movement being 4 days ago. I was feeling bloated and uncomfortable so I gave in and bought laxatives, then took 3 before bed, hoping to clear the blockage when I wake up.\n I woke up an hour after my alarm was supposed to ring, meaning I had to leave my house ASAP to get to work on time. I didn't think about pooping at all until I was at work and counting the till for opening. I felt like I just had to fart, so I just let it rip. Big mistake. It was not just a fart.\n It was a mess. I was supposed to be manning the store alone today. I had to put up a sign saying we were closed due to electrical issues and cried into the phone to my roommate as I cleaned myself up and tried to wash off my pants. I waited an hour for her to come and rescue me with a new change of clothing. Then had to explain to my manager why I opened the store 2 hours late.\n TL;DR: I was constipated and took 3 laxatives in desperation to clear the blockage. Thought I had to fart at work and proceeded to mess my pants.\n\n submitted by /u/governmenttookmyname\n [link] [comments]",
+    "cleaned_body": "Hoy me he jodido tomando 3 laxantes a la vez porque estaba desesperada.\n\nMe han dado Ozempic porque tengo PMOS y he desarrollado resistencia a la insulina. Lo tomo desde hace 2 semanas y he sido víctima del efecto secundario del estreñimiento, mi último movimiento intestinal fue hace 4 días. Me sentía hinchado e incómodo así que me rendí y compré laxantes, luego tomé 3 antes de acostarme, con la esperanza de despejar el bloqueo cuando me desperté. Me desperté una hora después de que la alarma fuera a sonar, lo que significaba que tenía que salir de casa lo antes posible para ir a trabajar a tiempo. No pensé en hacer caca hasta que estaba en el trabajo y contando la caja de dinero para abrir. Me sentí como si tuviera que fartar, así que lo dejé rasgar. Un gran error. No fue sólo un ternudo. Fue un desastre. Se suponía que iba a estar solo en la tienda hoy. Tuve que poner un cartel diciendo que estábamos cerrados debido a problemas eléctricos y grité al teléfono a mi compañero de cuarto mientras me limpiaba y trataba de lavarme los pantalones. Esperé una hora que ella viniera a rescatarme con un cambio de ropa nuevo. Luego tuve que explicar a mi gerente por qué abrí la tienda 2 horas tarde.",
+    "display_body": "Hoy me he jodido tomando 3 laxantes a la vez porque estaba desesperada. Me han dado Ozempic porque tengo PMOS y he desarrollado resistencia a la insulina. Lo tomo desde hace 2 semanas y he sido víctima del efecto secundario del estreñimiento, mi último movimiento intestinal fue hace 4 días. Me sentía hinchado e incómodo así que me rendí y compré laxantes, luego tomé 3 antes de acostarme, con la esperanza de despejar el bloqueo cuando me desperté. Me desperté una hora después de que la alarma fuera a sonar, lo que significaba que tenía que salir de casa lo antes posible para ir a trabajar a tiempo. No pensé en hacer caca hasta que estaba en el trabajo y contando la caja de dinero para abrir. Me sentí como si tuviera que fartar, así que lo dejé rasgar. Un gran error. No fue sólo un ternudo. Fue un desastre. Se suponía que iba a estar solo en la tienda hoy. Tuve que poner un cartel diciendo que estábamos cerrados debido a problemas eléctricos y grité al teléfono a mi compañero de cuarto mientras me limpiaba y trataba de lavarme los pantalones. Esperé una hora que ella viniera a rescatarme con un cambio de ropa nuevo. Luego tuve que explicar a mi gerente por qué abrí la tienda 2 horas tarde.",
+    "word_count": 221,
+    "est_speech_seconds": 88.4,
+    "banned_words_masked": [],
+    "title_en": "TIFU by taking 3 laxatives at once because I was desperate",
+    "body_en": "Today I fucked up by taking 3 laxatives at once because I was desperate\n\nI've been put on Ozempic because I have PMOS and have developed insulin resistance. I've been taking it for 2 weeks now and I've fallen victim to the constipation side effect, my last bowel movement being 4 days ago. I was feeling bloated and uncomfortable so I gave in and bought laxatives, then took 3 before bed, hoping to clear the blockage when I wake up.\n I woke up an hour after my alarm was supposed to ring, meaning I had to leave my house as soon as possible to get to work on time. I didn't think about pooping at all until I was at work and counting the till for opening. I felt like I just had to fart, so I just let it rip. Big mistake. It was not just a fart.\n It was a mess. I was supposed to be manning the store alone today. I had to put up a sign saying we were closed due to electrical issues and cried into the phone to my roommate as I cleaned myself up and tried to wash off my pants. I waited an hour for her to come and rescue me with a new change of clothing. Then had to explain to my manager why I opened the store 2 hours late.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Hoy me he jodido tomando 3 laxantes a la vez porque estaba desesperada."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v7bss8_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a855a35f-489d-4575-b4f4-4e4070d1bf47.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v7bss8_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 61.73,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.36
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v7bss8_es.ass",
+    "subtitles": {
+      "num_words": 221,
+      "num_cues": 60,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.36,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "title": "Mortals (TOKYO MACHINE & Boom Kitty Remix)",
+      "artist": "Boom Kitty, TOKYO MACHINE, Warriyo",
+      "genre": "Dubstep",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/Mortals_TMBK",
+      "instrumental_url": "https://ncs.io/track/download/i_a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "real estate",
+      "image_id": 8539140,
+      "image_page_url": "https://pixabay.com/photos/hallway-real-estate-interior-house-8539140/",
+      "image_url": "https://pixabay.com/get/g5ab29a2caf2615ba55d73204e5c872cc655e265e3232a810676e744870539f0f93fb341527f0d5d5ff0669c78ea75e0f4da92c4d51ff2bb7d4ab20df721a4527_1280.jpg",
+      "title_rendered": "Hoy me he jodido tomando 3 laxantes a la vez porque estaba desesperada."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

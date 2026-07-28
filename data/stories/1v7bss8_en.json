@@ -1,0 +1,116 @@
+{
+  "id": "6b8b991a45104f42b7baa379ebd7c54b",
+  "created_at": 1785233183.834143,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1v7bss8",
+    "url": "https://www.reddit.com/r/tifu/comments/1v7bss8/tifu_by_taking_3_laxatives_at_once_because_i_was/",
+    "author": "/u/governmenttookmyname",
+    "feed_rank": 1,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1785090305.0,
+    "nsfw": null,
+    "variant_id": "1v7bss8_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "TIFU by taking 3 laxatives at once because I was desperate",
+    "raw_body": "I've been put on Ozempic because I have PMOS and have developed insulin resistance. I've been taking it for 2 weeks now and I've fallen victim to the constipation side effect, my last bowel movement being 4 days ago. I was feeling bloated and uncomfortable so I gave in and bought laxatives, then took 3 before bed, hoping to clear the blockage when I wake up.\n I woke up an hour after my alarm was supposed to ring, meaning I had to leave my house ASAP to get to work on time. I didn't think about pooping at all until I was at work and counting the till for opening. I felt like I just had to fart, so I just let it rip. Big mistake. It was not just a fart.\n It was a mess. I was supposed to be manning the store alone today. I had to put up a sign saying we were closed due to electrical issues and cried into the phone to my roommate as I cleaned myself up and tried to wash off my pants. I waited an hour for her to come and rescue me with a new change of clothing. Then had to explain to my manager why I opened the store 2 hours late.\n TL;DR: I was constipated and took 3 laxatives in desperation to clear the blockage. Thought I had to fart at work and proceeded to mess my pants.\n\n submitted by /u/governmenttookmyname\n [link] [comments]",
+    "cleaned_body": "Today I fucked up by taking 3 laxatives at once because I was desperate\n\nI've been put on Ozempic because I have PMOS and have developed insulin resistance. I've been taking it for 2 weeks now and I've fallen victim to the constipation side effect, my last bowel movement being 4 days ago. I was feeling bloated and uncomfortable so I gave in and bought laxatives, then took 3 before bed, hoping to clear the blockage when I wake up.\n I woke up an hour after my alarm was supposed to ring, meaning I had to leave my house as soon as possible to get to work on time. I didn't think about pooping at all until I was at work and counting the till for opening. I felt like I just had to fart, so I just let it rip. Big mistake. It was not just a fart.\n It was a mess. I was supposed to be manning the store alone today. I had to put up a sign saying we were closed due to electrical issues and cried into the phone to my roommate as I cleaned myself up and tried to wash off my pants. I waited an hour for her to come and rescue me with a new change of clothing. Then had to explain to my manager why I opened the store 2 hours late.",
+    "display_body": "Today I f*cked up by taking 3 laxatives at once because I was desperate I've been put on Ozempic because I have PMOS and have developed insulin resistance. I've been taking it for 2 weeks now and I've fallen victim to the constipation side effect, my last bowel movement being 4 days ago. I was feeling bloated and uncomfortable so I gave in and bought laxatives, then took 3 before bed, hoping to clear the blockage when I wake up. I woke up an hour after my alarm was supposed to ring, meaning I had to leave my house as soon as possible to get to work on time. I didn't think about pooping at all until I was at work and counting the till for opening. I felt like I just had to fart, so I just let it rip. Big mistake. It was not just a fart. It was a mess. I was supposed to be manning the store alone today. I had to put up a sign saying we were closed due to electrical issues and cried into the phone to my roommate as I cleaned myself up and tried to wash off my pants. I waited an hour for her to come and rescue me with a new change of clothing. Then had to explain to my manager why I opened the store 2 hours late.",
+    "word_count": 230,
+    "est_speech_seconds": 92.0,
+    "banned_words_masked": [
+      {
+        "word": "fucked",
+        "count": 1
+      }
+    ],
+    "title_en": "TIFU by taking 3 laxatives at once because I was desperate",
+    "body_en": "Today I fucked up by taking 3 laxatives at once because I was desperate\n\nI've been put on Ozempic because I have PMOS and have developed insulin resistance. I've been taking it for 2 weeks now and I've fallen victim to the constipation side effect, my last bowel movement being 4 days ago. I was feeling bloated and uncomfortable so I gave in and bought laxatives, then took 3 before bed, hoping to clear the blockage when I wake up.\n I woke up an hour after my alarm was supposed to ring, meaning I had to leave my house as soon as possible to get to work on time. I didn't think about pooping at all until I was at work and counting the till for opening. I felt like I just had to fart, so I just let it rip. Big mistake. It was not just a fart.\n It was a mess. I was supposed to be manning the store alone today. I had to put up a sign saying we were closed due to electrical issues and cried into the phone to my roommate as I cleaned myself up and tried to wash off my pants. I waited an hour for her to come and rescue me with a new change of clothing. Then had to explain to my manager why I opened the store 2 hours late.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "TIFU by taking 3 laxatives at once because I was desperate"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v7bss8_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a855a35f-489d-4575-b4f4-4e4070d1bf47.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v7bss8_en.png",
+    "audio": {
+      "voice": "am_michael",
+      "lang_code": "a",
+      "duration_sec": 68.97,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 5.521
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v7bss8_en.ass",
+    "subtitles": {
+      "num_words": 230,
+      "num_cues": 63,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          0.9,
+          1.16
+        ]
+      ],
+      "intro_end_sec": 5.521,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "title": "Mortals (TOKYO MACHINE & Boom Kitty Remix)",
+      "artist": "Boom Kitty, TOKYO MACHINE, Warriyo",
+      "genre": "Dubstep",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/Mortals_TMBK",
+      "instrumental_url": "https://ncs.io/track/download/i_a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "real estate",
+      "image_id": 8539140,
+      "image_page_url": "https://pixabay.com/photos/hallway-real-estate-interior-house-8539140/",
+      "image_url": "https://pixabay.com/get/g5ab29a2caf2615ba55d73204e5c872cc655e265e3232a810676e744870539f0f93fb341527f0d5d5ff0669c78ea75e0f4da92c4d51ff2bb7d4ab20df721a4527_1280.jpg",
+      "title_rendered": "TIFU by taking 3 laxatives at once because I was desperate"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
