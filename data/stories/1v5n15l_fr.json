@@ -1,0 +1,116 @@
+{
+  "id": "ef5b1381b39341378313a69a29d0edb8",
+  "created_at": 1785320099.561623,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1v5n15l",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1v5n15l/where_did_it_come_from/",
+    "author": "/u/nexxusoftheuniverse",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1784924903.0,
+    "nsfw": null,
+    "variant_id": "1v5n15l_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "D'où vient-il ?",
+    "raw_body": "ok so getting the usual out of the way, i don't drink or take drugs of any kind and my carbon monoxide detector is fine.\n the other day i needed to charge my foreo bear (microcurrent face toning thingy). i hadn't charged it in a while, and i could not find the cable anywhere. i searched my entire (studio) apartment, definitely looked through the small pile of cables out in the open near my couch.\n it was nowhere to be found. fine whatever, i ordered another one on amazon for $5 nbd. just 20 mins ago i went to grab a different charger from that same little open pile and wtf? the foreo charger is there, ON TOP OF THE OTHERS!! like even wrapped up and everything!! i literally PICKED UP AND LOOKED THROUGH these cords the other day, no way in hell it was just sitting there!\n i live alone and my cat is definitely not smart enough for this 😂\n\n submitted by /u/nexxusoftheuniverse\n [link] [comments]",
+    "cleaned_body": "D'où vient-il ?\n\nOK, alors pour me débarrasser de ce qui est habituel, je ne bois ni ne prends de drogues et mon détecteur de monoxyde de carbone va bien. L'autre jour , j' ai dû charger mon ours avant . Je n'avais pas chargé depuis un moment, et je n'ai pas pu trouver le câble. J'ai fouillé tout mon appartement, j'ai certainement regardé à travers la petite pile de câbles en plein air près de mon canapé. Elle n'était nulle part. D'accord, j'en ai commandé un sur Amazon pour 5 $ de CBD. Il y a seulement 20 minutes, j'ai pris un chargeur différent de cette même pile ouverte et WTF ? Le chargeur avant est là, sur le dessus des autres!! comme même enveloppé et tout !! J'ai littéralement pris et regardé à travers ces cordes l'autre jour, il n'y avait aucun moyen en enfer qu'il était juste assis là! Je vis seul et mon chat n'est certainement pas assez intelligent pour ça 😂",
+    "display_body": "D'où vient-il ? OK, alors pour me débarrasser de ce qui est habituel, je ne bois ni ne prends de dr*gues et mon détecteur de monoxyde de carbone va bien. L'autre jour , j' ai dû charger mon ours avant . Je n'avais pas chargé depuis un moment, et je n'ai pas pu trouver le câble. J'ai fouillé tout mon appartement, j'ai certainement regardé à travers la petite pile de câbles en plein air près de mon canapé. Elle n'était nulle part. D'accord, j'en ai commandé un sur Amazon pour 5 $ de CBD. Il y a seulement 20 minutes, j'ai pris un chargeur différent de cette même pile ouverte et WTF ? Le chargeur avant est là, sur le dessus des autres!! comme même enveloppé et tout !! J'ai littéralement pris et regardé à travers ces cordes l'autre jour, il n'y avait aucun moyen en enfer qu'il était juste assis là! Je vis seul et mon chat n'est certainement pas assez intelligent pour ça 😂",
+    "word_count": 166,
+    "est_speech_seconds": 66.4,
+    "banned_words_masked": [
+      {
+        "word": "drogues",
+        "count": 1
+      }
+    ],
+    "title_en": "where did it come from??",
+    "body_en": "where did it come from??\n\nok so getting the usual out of the way, i don't drink or take drugs of any kind and my carbon monoxide detector is fine.\n the other day i needed to charge my foreo bear (microcurrent face toning thingy). i hadn't charged it in a while, and i could not find the cable anywhere. i searched my entire (studio) apartment, definitely looked through the small pile of cables out in the open near my couch.\n it was nowhere to be found. fine whatever, i ordered another one on amazon for $5 nbd. just 20 minutes ago i went to grab a different charger from that same little open pile and wtf? the foreo charger is there, ON TOP OF THE OTHERS!! like even wrapped up and everything!! i literally PICKED UP AND LOOKED THROUGH these cords the other day, no way in hell it was just sitting there!\n i live alone and my cat is definitely not smart enough for this 😂",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "D'où vient-il ?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v5n15l_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/5998b3bf-56b4-47e5-9502-a0dc5f84bb8f.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v5n15l_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 41.83,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 1.82
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v5n15l_fr.ass",
+    "subtitles": {
+      "num_words": 166,
+      "num_cues": 45,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          4.901,
+          5.281
+        ]
+      ],
+      "intro_end_sec": 1.82,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "5998b3bf-56b4-47e5-9502-a0dc5f84bb8f",
+      "title": "Muscle Up (feat. Drama B & Ryo)",
+      "artist": "Drama B, SKAN",
+      "genre": "Trap",
+      "moods": [
+        "powerful",
+        "angry",
+        "negative"
+      ],
+      "page_url": "https://ncs.io/MuscleUp",
+      "instrumental_url": "https://ncs.io/track/download/i_5998b3bf-56b4-47e5-9502-a0dc5f84bb8f",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "landscape",
+      "image_id": 6773683,
+      "image_page_url": "https://pixabay.com/photos/greece-lefkada-coast-island-nature-6773683/",
+      "image_url": "https://pixabay.com/get/g27ad29eb9df142cb51b60b26cc5b43714284c4d0cdf58df73895959712b32594d866837a95a53c4b7d0b0a00f995f7561e5d11f35414c2e048db71560e8289f3_1280.jpg",
+      "title_rendered": "D'où vient-il ?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

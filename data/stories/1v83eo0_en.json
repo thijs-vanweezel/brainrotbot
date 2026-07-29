@@ -1,0 +1,132 @@
+{
+  "id": "b6c64178b09c4248a4a9ad5dcf5f30b8",
+  "created_at": 1785320183.0790799,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1v83eo0",
+    "url": "https://www.reddit.com/r/tifu/comments/1v83eo0/tifu_by_inviting_a_girl_over_without_considering/",
+    "author": "/u/EfficientShake1867",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1785165571.0,
+    "nsfw": null,
+    "variant_id": "1v83eo0_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "TIFU by inviting a girl over without considering the implications",
+    "raw_body": "Today i fucked up by inviting this girl I was interested in to my apartment. For context, I met this really pretty girl while I was out for my friends birthday. I was super exhausted from work, so I just kinda sat around mildly moving to the music, when her and her friends approached me. I chatted them up for a bit, and in the end the girl ended up hugging me 3 or 4 times to say bye. I got her insta and a few days later I hit her up asking to go the beach. I thought she was really pretty and sweet, and so a few days later I hit her up asking if she wanted to go to the beach. She asked which beach, and I replied with my apt has one. I didnt even think of the implications of inviting her to my apt at all I just wanted to hang out with some people at the beach and have a few drinks. Haven't heard from her since, and like 3 days later I looked at it, and was like OH, I Basically just asked her to come over my apt which was SUPER forward. 😭😭 i just wanted to hang out at the beach with cool people, and ended up being a creep fml.\n TL;DR: Met a girl at a club, invited her to the beach/my apt which definitely read more as my apt inv. Pretty sure I came off as a creep and got ghosted\n\n submitted by /u/EfficientShake1867\n [link] [comments]",
+    "cleaned_body": "Today I fucked up by inviting a girl over without considering the implications\n\nToday i fucked up by inviting this girl I was interested in to my apartment. For context, I met this really pretty girl while I was out for my friends birthday. I was super exhausted from work, so I just kinda sat around mildly moving to the music, when her and her friends approached me. I chatted them up for a bit, and in the end the girl ended up hugging me 3 or 4 times to say bye. I got her insta and a few days later I hit her up asking to go the beach. I thought she was really pretty and sweet, and so a few days later I hit her up asking if she wanted to go to the beach. She asked which beach, and I replied with my apt has one. I didnt even think of the implications of inviting her to my apt at all I just wanted to hang out with some people at the beach and have a few drinks. Haven't heard from her since, and like 3 days later I looked at it, and was like OH, I Basically just asked her to come over my apt which was SUPER forward. 😭😭 i just wanted to hang out at the beach with cool people, and ended up being a creep fml.",
+    "display_body": "Today I f*cked up by inviting a girl over without considering the implications Today i f*cked up by inviting this girl I was interested in to my apartment. For context, I met this really pretty girl while I was out for my friends birthday. I was super exhausted from work, so I just kinda sat around mildly moving to the music, when her and her friends approached me. I chatted them up for a bit, and in the end the girl ended up hugging me 3 or 4 times to say bye. I got her insta and a few days later I hit her up asking to go the beach. I thought she was really pretty and sweet, and so a few days later I hit her up asking if she wanted to go to the beach. She asked which beach, and I replied with my apt has one. I didnt even think of the implications of inviting her to my apt at all I just wanted to h*ng out with some people at the beach and have a few drinks. Haven't heard from her since, and like 3 days later I looked at it, and was like OH, I Basically just asked her to come over my apt which was SUPER forward. 😭😭 i just wanted to h*ng out at the beach with cool people, and ended up being a creep fml.",
+    "word_count": 233,
+    "est_speech_seconds": 93.2,
+    "banned_words_masked": [
+      {
+        "word": "fucked",
+        "count": 2
+      },
+      {
+        "word": "hang",
+        "count": 2
+      }
+    ],
+    "title_en": "TIFU by inviting a girl over without considering the implications",
+    "body_en": "Today I fucked up by inviting a girl over without considering the implications\n\nToday i fucked up by inviting this girl I was interested in to my apartment. For context, I met this really pretty girl while I was out for my friends birthday. I was super exhausted from work, so I just kinda sat around mildly moving to the music, when her and her friends approached me. I chatted them up for a bit, and in the end the girl ended up hugging me 3 or 4 times to say bye. I got her insta and a few days later I hit her up asking to go the beach. I thought she was really pretty and sweet, and so a few days later I hit her up asking if she wanted to go to the beach. She asked which beach, and I replied with my apt has one. I didnt even think of the implications of inviting her to my apt at all I just wanted to hang out with some people at the beach and have a few drinks. Haven't heard from her since, and like 3 days later I looked at it, and was like OH, I Basically just asked her to come over my apt which was SUPER forward. 😭😭 i just wanted to hang out at the beach with cool people, and ended up being a creep fml.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "TIFU by inviting a girl over without considering the implications"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v83eo0_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a855a35f-489d-4575-b4f4-4e4070d1bf47.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v83eo0_en.png",
+    "audio": {
+      "voice": "af_bella",
+      "lang_code": "a",
+      "duration_sec": 60.88,
+      "sample_rate": 24000,
+      "blurred_words": 4,
+      "intro_sfx_at_sec": 5.521
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v83eo0_en.ass",
+    "subtitles": {
+      "num_words": 233,
+      "num_cues": 59,
+      "num_masked": 4,
+      "banned_intervals": [
+        [
+          0.92,
+          1.16
+        ],
+        [
+          5.941,
+          6.182
+        ],
+        [
+          42.811,
+          42.991
+        ],
+        [
+          56.414,
+          56.634
+        ]
+      ],
+      "intro_end_sec": 5.521,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "title": "Mortals (TOKYO MACHINE & Boom Kitty Remix)",
+      "artist": "Boom Kitty, TOKYO MACHINE, Warriyo",
+      "genre": "Dubstep",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/Mortals_TMBK",
+      "instrumental_url": "https://ncs.io/track/download/i_a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "real estate",
+      "image_id": 6893122,
+      "image_page_url": "https://pixabay.com/photos/bathroom-interior-design-indoors-6893122/",
+      "image_url": "https://pixabay.com/get/g97abe5f5acaefd0742d10656a105f4fbbcbaced7280acd372de159370b2ef088e03a0b8a062ed1eb6a1685d50acf469fed1fcc5cf80bba56499d6a04f77a1e8a_1280.jpg",
+      "title_rendered": "TIFU by inviting a girl over without considering the implications"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

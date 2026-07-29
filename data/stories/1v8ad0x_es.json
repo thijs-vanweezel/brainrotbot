@@ -1,0 +1,116 @@
+{
+  "id": "3e697b7ad36e434a835c9eaed0411684",
+  "created_at": 1785320010.56401,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v8ad0x",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v8ad0x/my_partner_is_jealous_because_of_my_fans_past/",
+    "author": "/u/Icy-Okra3507",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785180148.0,
+    "nsfw": null,
+    "variant_id": "1v8ad0x_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Mi compañero está celoso por mi pasado de \"fanes\"",
+    "raw_body": "I had adult model career few years ago. Not particularly successful, just a pretty avarage one. I stopped with this, as my most successful videos was in collaboration with a famous male model.\n My current partner knew from the very beginning I had the \"fans\". He was fine with that as long as I won't do it anymore and I have zero intentions starting this again.I keep my account because the collaboration video Mentioned still brings me a few hundred each month.\n When my partner found out I still receive payment from that he insisted to see that video. It's a pretty normal sex content, nothing kinky, but he got upset about it and said that he wants us to do a video together. His logic is that if I have a video doing with with some other guy why not with him too.\n I can tell he is a bit jealous about it but I'm not sure this whole thing is a good idea.\n\n submitted by /u/Icy-Okra3507\n [link] [comments]",
+    "cleaned_body": "Mi compañero está celoso por mi pasado de \"fanes\"\n\nTuve una carrera de modelo adulta hace unos años. No fue muy exitoso, solo un poco avaricio. Me detuve con esto, ya que mis videos más exitosos fueron en colaboración con un famoso modelo masculino. Mi actual compañero sabía desde el principio que tenía los \"fans\". Estaba bien con eso siempre y cuando no lo haga más y no tengo ninguna intención de empezar de nuevo. Mantengo mi cuenta porque el video de colaboración Mencionado todavía me trae unos pocos cientos cada mes. Cuando mi compañero se enteró de que todavía recibí pago por eso insistió en ver ese video. Es un contenido sexual bastante normal, nada raro, pero se molestó y dijo que quería que hiciéramos un video juntos. Su lógica es que si tengo un video haciendo con algún otro chico por qué no con él también. Puedo decir que es un poco celoso por eso pero no estoy seguro de que todo esto sea una buena idea.",
+    "display_body": "Mi compañero está celoso por mi pasado de \"fanes\" Tuve una carrera de modelo adulta hace unos años. No fue muy exitoso, solo un poco avaricio. Me detuve con esto, ya que mis videos más exitosos fueron en colaboración con un famoso modelo masculino. Mi actual compañero sabía desde el principio que tenía los \"fans\". Estaba bien con eso siempre y cuando no lo haga más y no tengo ninguna intención de empezar de nuevo. Mantengo mi cuenta porque el video de colaboración Mencionado todavía me trae unos pocos cientos cada mes. Cuando mi compañero se enteró de que todavía recibí pago por eso insistió en ver ese video. Es un contenido s*xual bastante normal, nada raro, pero se molestó y dijo que quería que hiciéramos un video juntos. Su lógica es que si tengo un video haciendo con algún otro chico por qué no con él también. Puedo decir que es un poco celoso por eso pero no estoy seguro de que todo esto sea una buena idea.",
+    "word_count": 169,
+    "est_speech_seconds": 67.6,
+    "banned_words_masked": [
+      {
+        "word": "sexual",
+        "count": 1
+      }
+    ],
+    "title_en": "My partner is jealous because of my \"fans\" past",
+    "body_en": "My partner is jealous because of my \"fans\" past\n\nI had adult model career few years ago. Not particularly successful, just a pretty avarage one. I stopped with this, as my most successful videos was in collaboration with a famous male model.\n My current partner knew from the very beginning I had the \"fans\". He was fine with that as long as I won't do it anymore and I have zero intentions starting this again.I keep my account because the collaboration video Mentioned still brings me a few hundred each month.\n When my partner found out I still receive payment from that he insisted to see that video. It's a pretty normal sex content, nothing kinky, but he got upset about it and said that he wants us to do a video together. His logic is that if I have a video doing with with some other guy why not with him too.\n I can tell he is a bit jealous about it but I'm not sure this whole thing is a good idea.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Mi compañero está celoso por mi pasado de \"fanes\""
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v8ad0x_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/fc9ea5f8-1d74-4747-ad38-19798c6d86e6.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v8ad0x_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 49.3,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 3.381
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v8ad0x_es.ass",
+    "subtitles": {
+      "num_words": 169,
+      "num_cues": 46,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          33.594,
+          33.974
+        ]
+      ],
+      "intro_end_sec": 3.381,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "fc9ea5f8-1d74-4747-ad38-19798c6d86e6",
+      "title": "Shadow Glow",
+      "artist": "Janji",
+      "genre": "Dance-Pop",
+      "moods": [
+        "powerful",
+        "dark",
+        "energetic"
+      ],
+      "page_url": "https://ncs.io/shadowglow",
+      "instrumental_url": "https://ncs.io/track/download/i_fc9ea5f8-1d74-4747-ad38-19798c6d86e6",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "money",
+      "image_id": 2245435,
+      "image_page_url": "https://pixabay.com/photos/coins-money-norwegian-cash-saving-2245435/",
+      "image_url": "https://pixabay.com/get/gdba6ef3d54b126fbace32e1f73ab128f179eb512ba595b130ac2de24a05b77f0b9d5f8b3c4c1eaa5b9c8c4a815ae800ac84093d053e2738a14bf71aeec40cbdc_1280.jpg",
+      "title_rendered": "Mi compañero está celoso por mi pasado de \"fanes\""
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

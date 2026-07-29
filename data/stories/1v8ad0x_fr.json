@@ -1,0 +1,116 @@
+{
+  "id": "4f40d86978904db884e6357e2a2ed07c",
+  "created_at": 1785319968.4229054,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v8ad0x",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v8ad0x/my_partner_is_jealous_because_of_my_fans_past/",
+    "author": "/u/Icy-Okra3507",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785180148.0,
+    "nsfw": null,
+    "variant_id": "1v8ad0x_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Mon partenaire est jaloux à cause de mon passé \"fan\"",
+    "raw_body": "I had adult model career few years ago. Not particularly successful, just a pretty avarage one. I stopped with this, as my most successful videos was in collaboration with a famous male model.\n My current partner knew from the very beginning I had the \"fans\". He was fine with that as long as I won't do it anymore and I have zero intentions starting this again.I keep my account because the collaboration video Mentioned still brings me a few hundred each month.\n When my partner found out I still receive payment from that he insisted to see that video. It's a pretty normal sex content, nothing kinky, but he got upset about it and said that he wants us to do a video together. His logic is that if I have a video doing with with some other guy why not with him too.\n I can tell he is a bit jealous about it but I'm not sure this whole thing is a good idea.\n\n submitted by /u/Icy-Okra3507\n [link] [comments]",
+    "cleaned_body": "Mon partenaire est jaloux à cause de mon passé \"fan\"\n\nJ'ai eu une carrière de mannequin adulte il y a quelques années. Pas particulièrement réussi, juste un peu avare. J'ai arrêté avec ça, car mes vidéos les plus réussies étaient en collaboration avec un célèbre mannequin. Mon partenaire actuel savait dès le début que j'avais les \"fans\". Il était d'accord avec ça tant que je ne le ferai plus et que je n'ai aucune intention de recommencer. Je garde mon compte parce que la vidéo de collaboration mentionnée me rapporte encore quelques centaines chaque mois. Quand mon partenaire a découvert que je recevais toujours de l'argent, il a insisté pour voir cette vidéo. C'est un contenu sexuel assez normal, rien de bizarre, mais il s'en est fâché et a dit qu'il voulait qu'on fasse une vidéo ensemble. Sa logique est que si j'ai une vidéo avec quelqu'un d'autre pourquoi pas avec lui aussi. Je peux dire qu'il est un peu jaloux mais je ne suis pas sûr que ce soit une bonne idée.",
+    "display_body": "Mon partenaire est jaloux à cause de mon passé \"fan\" J'ai eu une carrière de mannequin adulte il y a quelques années. Pas particulièrement réussi, juste un peu avare. J'ai arrêté avec ça, car mes vidéos les plus réussies étaient en collaboration avec un célèbre mannequin. Mon partenaire actuel savait dès le début que j'avais les \"fans\". Il était d'accord avec ça tant que je ne le ferai plus et que je n'ai aucune intention de recommencer. Je garde mon compte parce que la vidéo de collaboration mentionnée me rapporte encore quelques centaines chaque mois. Quand mon partenaire a découvert que je recevais toujours de l'argent, il a insisté pour voir cette vidéo. C'est un contenu s*xuel assez normal, rien de bizarre, mais il s'en est fâché et a dit qu'il voulait qu'on fasse une vidéo ensemble. Sa logique est que si j'ai une vidéo avec quelqu'un d'autre pourquoi pas avec lui aussi. Je peux dire qu'il est un peu jaloux mais je ne suis pas sûr que ce soit une bonne idée.",
+    "word_count": 173,
+    "est_speech_seconds": 69.2,
+    "banned_words_masked": [
+      {
+        "word": "sexuel",
+        "count": 1
+      }
+    ],
+    "title_en": "My partner is jealous because of my \"fans\" past",
+    "body_en": "My partner is jealous because of my \"fans\" past\n\nI had adult model career few years ago. Not particularly successful, just a pretty avarage one. I stopped with this, as my most successful videos was in collaboration with a famous male model.\n My current partner knew from the very beginning I had the \"fans\". He was fine with that as long as I won't do it anymore and I have zero intentions starting this again.I keep my account because the collaboration video Mentioned still brings me a few hundred each month.\n When my partner found out I still receive payment from that he insisted to see that video. It's a pretty normal sex content, nothing kinky, but he got upset about it and said that he wants us to do a video together. His logic is that if I have a video doing with with some other guy why not with him too.\n I can tell he is a bit jealous about it but I'm not sure this whole thing is a good idea.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Mon partenaire est jaloux à cause de mon passé \"fan\""
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v8ad0x_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/fc9ea5f8-1d74-4747-ad38-19798c6d86e6.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v8ad0x_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 46.4,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 3.421
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v8ad0x_fr.ass",
+    "subtitles": {
+      "num_words": 173,
+      "num_cues": 46,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          31.654,
+          32.094
+        ]
+      ],
+      "intro_end_sec": 3.421,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "fc9ea5f8-1d74-4747-ad38-19798c6d86e6",
+      "title": "Shadow Glow",
+      "artist": "Janji",
+      "genre": "Dance-Pop",
+      "moods": [
+        "powerful",
+        "dark",
+        "energetic"
+      ],
+      "page_url": "https://ncs.io/shadowglow",
+      "instrumental_url": "https://ncs.io/track/download/i_fc9ea5f8-1d74-4747-ad38-19798c6d86e6",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "money",
+      "image_id": 2245435,
+      "image_page_url": "https://pixabay.com/photos/coins-money-norwegian-cash-saving-2245435/",
+      "image_url": "https://pixabay.com/get/gdba6ef3d54b126fbace32e1f73ab128f179eb512ba595b130ac2de24a05b77f0b9d5f8b3c4c1eaa5b9c8c4a815ae800ac84093d053e2738a14bf71aeec40cbdc_1280.jpg",
+      "title_rendered": "Mon partenaire est jaloux à cause de mon passé \"fan\""
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
