@@ -1,0 +1,128 @@
+{
+  "id": "6c57b5e3d4fb428499b7b3902a746770",
+  "created_at": 1785405950.4040952,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v9e8nz",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v9e8nz/my_girlfriend_told_me_i_have_a_boyfriend_dick/",
+    "author": "/u/nicedude9636",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785279733.0,
+    "nsfw": null,
+    "variant_id": "1v9e8nz_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Mi novia me dijo que tengo un tío",
+    "raw_body": "She told me that right after her nails were digging into my back while she told me she was cumming. Then she laid her head on my chest and told me I was her best friend and she loves every part of me.\n Alt account, but I wanted to put this out here because I have seen a lot of posts over the years about guys being dumped or are insecure because of penis size.\n 4 inches btw. I'm 100 percent going to marry her. I've never felt the way about anyone the way I do her. I was thinking about it and I think teenage me might have been insecure about the \"boyfriend dick\" comment. Now I can take it in stride and realize she means she loves me as I am. That's all I ever wanted anyway.\n Who cares what a pornstar dick size is? Who cares what a bunch of other dudes thinks? Hell, who cares what the majority of women think? I care what she thinks. Hope this helps somebody\n\n submitted by /u/nicedude9636\n [link] [comments]",
+    "cleaned_body": "Mi novia me dijo que tengo un tío\n\nMe lo dijo justo después de que sus uñas me cavaran en la espalda mientras me decía que estaba cumming. Luego me puso la cabeza sobre el pecho y me dijo que era su mejor amiga y que amaba cada parte de mí. Alt cuenta, pero quería poner esto aquí porque he visto un montón de publicaciones a lo largo de los años sobre los chicos que son abandonados o son inseguros debido al tamaño del pene. 4 pulgadas btw. Voy a casarme con ella al 100%. Nunca he sentido la manera en la que me siento con ella. Estaba pensando en ello y creo que yo adolescente podría haber estado inseguro sobre el comentario \"pica de novio\". Ahora puedo darme cuenta de que quiere decir que me ama como soy. Eso es todo lo que siempre quise de todos modos. ¿A quién le importa el tamaño del pene de una estrella porno? ¿A quién le importa lo que piensen otros tipos? ¿A quién le importa lo que piensen las mujeres? Me importa lo que ella piense. Espero que esto ayude a alguien .",
+    "display_body": "Mi novia me dijo que tengo un tío Me lo dijo justo después de que sus uñas me cavaran en la espalda mientras me decía que estaba cumming. Luego me puso la cabeza sobre el pecho y me dijo que era su mejor amiga y que amaba cada parte de mí. Alt cuenta, pero quería poner esto aquí porque he visto un montón de publicaciones a lo largo de los años sobre los chicos que son abandonados o son inseguros debido al tamaño del p*ne. 4 pulgadas btw. Voy a casarme con ella al 100%. Nunca he sentido la manera en la que me siento con ella. Estaba pensando en ello y creo que yo adolescente podría haber estado inseguro sobre el comentario \"pica de novio\". Ahora puedo darme cuenta de que quiere decir que me ama como soy. Eso es todo lo que siempre quise de todos modos. ¿A quién le importa el tamaño del p*ne de una estrella p*rno? ¿A quién le importa lo que piensen otros tipos? ¿A quién le importa lo que piensen las mujeres? Me importa lo que ella piense. Espero que esto ayude a alguien .",
+    "word_count": 192,
+    "est_speech_seconds": 76.8,
+    "banned_words_masked": [
+      {
+        "word": "pene",
+        "count": 2
+      },
+      {
+        "word": "porno",
+        "count": 1
+      }
+    ],
+    "title_en": "My girlfriend told me I have a boyfriend dick",
+    "body_en": "My girlfriend told me I have a boyfriend dick\n\nShe told me that right after her nails were digging into my back while she told me she was cumming. Then she laid her head on my chest and told me I was her best friend and she loves every part of me.\n Alt account, but I wanted to put this out here because I have seen a lot of posts over the years about guys being dumped or are insecure because of penis size.\n 4 inches btw. I'm 100 percent going to marry her. I've never felt the way about anyone the way I do her. I was thinking about it and I think teenage me might have been insecure about the \"boyfriend dick\" comment. Now I can take it in stride and realize she means she loves me as I am. That's all I ever wanted anyway.\n Who cares what a pornstar dick size is? Who cares what a bunch of other dudes thinks? Hell, who cares what the majority of women think? I care what she thinks. Hope this helps somebody",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Mi novia me dijo que tengo un tío"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v9e8nz_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/55e23ca1-072d-4445-8a3e-f38353b5c2c2.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v9e8nz_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 50.0,
+      "sample_rate": 24000,
+      "blurred_words": 3,
+      "intro_sfx_at_sec": 2.341
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v9e8nz_es.ass",
+    "subtitles": {
+      "num_words": 192,
+      "num_cues": 53,
+      "num_masked": 3,
+      "banned_intervals": [
+        [
+          21.429,
+          22.249
+        ],
+        [
+          40.696,
+          40.916
+        ],
+        [
+          41.557,
+          42.257
+        ]
+      ],
+      "intro_end_sec": 2.341,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "55e23ca1-072d-4445-8a3e-f38353b5c2c2",
+      "title": "Firestarter",
+      "artist": "Lack D, KDH, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/Firestarter",
+      "instrumental_url": "https://ncs.io/track/download/i_55e23ca1-072d-4445-8a3e-f38353b5c2c2",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "sushi",
+      "image_id": 7590451,
+      "image_page_url": "https://pixabay.com/photos/sushi-japanese-food-sushi-rolls-7590451/",
+      "image_url": "https://pixabay.com/get/g05ec0dfae7c114aa6223aab649460db6312179c2d336846d0ab43d85aada0e97245d8a5bbcba42e249591b676e998832c5be6a2ca3ef2042b50f7c3e3b18902c_1280.jpg",
+      "title_rendered": "Mi novia me dijo que tengo un tío"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

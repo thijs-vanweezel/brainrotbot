@@ -1,0 +1,105 @@
+{
+  "id": "61a63151b9644936950f97269775f7a3",
+  "created_at": 1785406350.9573226,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1v98cl3",
+    "url": "https://www.reddit.com/r/adultery/comments/1v98cl3/wow_im_amazed/",
+    "author": "/u/tonytsunami",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785266422.0,
+    "nsfw": null,
+    "variant_id": "1v98cl3_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "- Qué bueno. Estoy asombrado.",
+    "raw_body": "My AP just sent me a message.\n She reminded me it was five years ago today that I first sent her a message right here in this sub. This is by far the longest affair I've ever had. We're both still hot for each other, and are still close friends, even a bit closer today than we were a week ago. We both hope this will go on and on, with my wife totally in the dark. AP is the big bright spot in my life. We both hope it will be the lasf affair for either one of us\n\n submitted by /u/tonytsunami\n [link] [comments]",
+    "cleaned_body": "- Qué bueno. Estoy asombrado.\n\nMi pareja de relaciones acaba de enviarme un mensaje. Me recordó que fue hace cinco años que le envié un mensaje en este submarino. Esta es, con mucho, la relación más larga que he tenido. Los dos seguimos enamorados, y seguimos siendo amigos cercanos, incluso un poco más cerca hoy que hace una semana. Ambos esperamos que esto continúe, con mi esposa totalmente en la oscuridad. Mi pareja de aventura es el gran punto brillante de mi vida. Ambos esperamos que sea el caso de las mujeres para cualquiera de nosotros",
+    "display_body": "- Qué bueno. Estoy asombrado. Mi pareja de relaciones acaba de enviarme un mensaje. Me recordó que fue hace cinco años que le envié un mensaje en este submarino. Esta es, con mucho, la relación más larga que he tenido. Los dos seguimos enamorados, y seguimos siendo amigos cercanos, incluso un poco más cerca hoy que hace una semana. Ambos esperamos que esto continúe, con mi esposa totalmente en la oscuridad. Mi pareja de aventura es el gran punto brillante de mi vida. Ambos esperamos que sea el caso de las mujeres para cualquiera de nosotros",
+    "word_count": 96,
+    "est_speech_seconds": 38.4,
+    "banned_words_masked": [],
+    "title_en": "Wow. I'm amazed",
+    "body_en": "Wow. I'm amazed\n\nMy affair partner just sent me a message.\n She reminded me it was five years ago today that I first sent her a message right here in this sub. This is by far the longest affair I've ever had. We're both still hot for each other, and are still close friends, even a bit closer today than we were a week ago. We both hope this will go on and on, with my wife totally in the dark. affair partner is the big bright spot in my life. We both hope it will be the lasf affair for either one of us",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "- Qué bueno. Estoy asombrado."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v98cl3_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/3155507d-ca4b-4239-9f64-88f6f7345e79.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v98cl3_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 28.62,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 2.02
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v98cl3_es.ass",
+    "subtitles": {
+      "num_words": 96,
+      "num_cues": 27,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 2.02,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "title": "akina",
+      "artist": "Ailow",
+      "genre": "Dubstep",
+      "moods": [
+        "Angry",
+        "Dark",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/akina",
+      "instrumental_url": "https://ncs.io/track/download/i_3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "snacks",
+      "image_id": 4455840,
+      "image_page_url": "https://pixabay.com/photos/chocolate-sweet-dessert-cocoa-4455840/",
+      "image_url": "https://pixabay.com/get/gc8b0a624f6c0082e42f9aa6d03b921d00604ba09857c084ea8ae10875e9624a47ca10dfb229ef31746320f959f90c35bf2f4cfa6127f54ec6d61c72333810e3c_1280.jpg",
+      "title_rendered": "- Qué bueno. Estoy asombrado."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

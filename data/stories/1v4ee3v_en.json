@@ -1,0 +1,105 @@
+{
+  "id": "99ecefec4172429d955bc37576123d6a",
+  "created_at": 1785406370.7704017,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1v4ee3v",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1v4ee3v/the_vanishing_ice_cream_truck/",
+    "author": "/u/Anime_EmoPhase21",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1784814350.0,
+    "nsfw": null,
+    "variant_id": "1v4ee3v_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "The Vanishing Ice Cream Truck",
+    "raw_body": "About a month ago, me and my siblings wanted to get ice cream from the ice cream truck. We set out to find it, walking to the last place we saw it, across from our school. My mom decided to pick us up in the car so it would be faster and it wasn't there anymore, so we headed back home.\n I went up to my room, a little sad about not being able to get ice-cream, but I was fine. A few minutes later, I hear the ice cream truck and we hesitated for a bit before going to chase after it with just my step-sister because my sister didn't want to run. We saw it ahead of us as we chased it. As soon as it turned the corner at the end of the street, the music stopped, but we didn't really notice. A second later, we turned the corner and ran up to what we mistaken as the ice cream truck. It was a parked van. The ice cream truck was gone along with its music.\n\n submitted by /u/Anime_EmoPhase21\n [link] [comments]",
+    "cleaned_body": "The Vanishing Ice Cream Truck\n\nAbout a month ago, me and my siblings wanted to get ice cream from the ice cream truck. We set out to find it, walking to the last place we saw it, across from our school. My mom decided to pick us up in the car so it would be faster and it wasn't there anymore, so we headed back home.\n I went up to my room, a little sad about not being able to get ice-cream, but I was fine. A few minutes later, I hear the ice cream truck and we hesitated for a bit before going to chase after it with just my step-sister because my sister didn't want to run. We saw it ahead of us as we chased it. As soon as it turned the corner at the end of the street, the music stopped, but we didn't really notice. A second later, we turned the corner and ran up to what we mistaken as the ice cream truck. It was a parked van. The ice cream truck was gone along with its music.",
+    "display_body": "The Vanishing Ice Cream Truck About a month ago, me and my siblings wanted to get ice cream from the ice cream truck. We set out to find it, walking to the last place we saw it, across from our school. My mom decided to pick us up in the car so it would be faster and it wasn't there anymore, so we headed back home. I went up to my room, a little sad about not being able to get ice-cream, but I was fine. A few minutes later, I hear the ice cream truck and we hesitated for a bit before going to chase after it with just my step-sister because my sister didn't want to run. We saw it ahead of us as we chased it. As soon as it turned the corner at the end of the street, the music stopped, but we didn't really notice. A second later, we turned the corner and ran up to what we mistaken as the ice cream truck. It was a parked van. The ice cream truck was gone along with its music.",
+    "word_count": 184,
+    "est_speech_seconds": 73.6,
+    "banned_words_masked": [],
+    "title_en": "The Vanishing Ice Cream Truck",
+    "body_en": "The Vanishing Ice Cream Truck\n\nAbout a month ago, me and my siblings wanted to get ice cream from the ice cream truck. We set out to find it, walking to the last place we saw it, across from our school. My mom decided to pick us up in the car so it would be faster and it wasn't there anymore, so we headed back home.\n I went up to my room, a little sad about not being able to get ice-cream, but I was fine. A few minutes later, I hear the ice cream truck and we hesitated for a bit before going to chase after it with just my step-sister because my sister didn't want to run. We saw it ahead of us as we chased it. As soon as it turned the corner at the end of the street, the music stopped, but we didn't really notice. A second later, we turned the corner and ran up to what we mistaken as the ice cream truck. It was a parked van. The ice cream truck was gone along with its music.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "The Vanishing Ice Cream Truck"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v4ee3v_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/bf8bbb28-d551-4cbb-93c9-34f23063bda4.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v4ee3v_en.png",
+    "audio": {
+      "voice": "af_bella",
+      "lang_code": "a",
+      "duration_sec": 49.52,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 2.54
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v4ee3v_en.ass",
+    "subtitles": {
+      "num_words": 184,
+      "num_cues": 51,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 2.54,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "bf8bbb28-d551-4cbb-93c9-34f23063bda4",
+      "title": "After The End",
+      "artist": "Rex Hooligan",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/AfterTheEnd",
+      "instrumental_url": "https://ncs.io/track/download/i_bf8bbb28-d551-4cbb-93c9-34f23063bda4",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 8265114,
+      "image_page_url": "https://pixabay.com/photos/fish-clownfish-nature-beach-8265114/",
+      "image_url": "https://pixabay.com/get/g82bc47662e114f808b3a2e48347806c6fa998679e53ebc3acfd571b91158e829510b7d86365ce47911ecaeafd708ff85c1557ce57420bba32d41f77230b367e8_1280.jpg",
+      "title_rendered": "The Vanishing Ice Cream Truck"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

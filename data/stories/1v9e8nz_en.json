@@ -1,0 +1,140 @@
+{
+  "id": "02bfaa15f83f4b929a3589c9ee9b9cb7",
+  "created_at": 1785405874.4580488,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v9e8nz",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v9e8nz/my_girlfriend_told_me_i_have_a_boyfriend_dick/",
+    "author": "/u/nicedude9636",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785279733.0,
+    "nsfw": null,
+    "variant_id": "1v9e8nz_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "My girlfriend told me I have a boyfriend dick",
+    "raw_body": "She told me that right after her nails were digging into my back while she told me she was cumming. Then she laid her head on my chest and told me I was her best friend and she loves every part of me.\n Alt account, but I wanted to put this out here because I have seen a lot of posts over the years about guys being dumped or are insecure because of penis size.\n 4 inches btw. I'm 100 percent going to marry her. I've never felt the way about anyone the way I do her. I was thinking about it and I think teenage me might have been insecure about the \"boyfriend dick\" comment. Now I can take it in stride and realize she means she loves me as I am. That's all I ever wanted anyway.\n Who cares what a pornstar dick size is? Who cares what a bunch of other dudes thinks? Hell, who cares what the majority of women think? I care what she thinks. Hope this helps somebody\n\n submitted by /u/nicedude9636\n [link] [comments]",
+    "cleaned_body": "My girlfriend told me I have a boyfriend dick\n\nShe told me that right after her nails were digging into my back while she told me she was cumming. Then she laid her head on my chest and told me I was her best friend and she loves every part of me.\n Alt account, but I wanted to put this out here because I have seen a lot of posts over the years about guys being dumped or are insecure because of penis size.\n 4 inches btw. I'm 100 percent going to marry her. I've never felt the way about anyone the way I do her. I was thinking about it and I think teenage me might have been insecure about the \"boyfriend dick\" comment. Now I can take it in stride and realize she means she loves me as I am. That's all I ever wanted anyway.\n Who cares what a pornstar dick size is? Who cares what a bunch of other dudes thinks? Hell, who cares what the majority of women think? I care what she thinks. Hope this helps somebody",
+    "display_body": "My girlfriend told me I have a boyfriend d*ck She told me that right after her nails were digging into my back while she told me she was c*mming. Then she laid her head on my chest and told me I was her best friend and she loves every part of me. Alt account, but I wanted to put this out here because I have seen a lot of posts over the years about guys being dumped or are insecure because of p*nis size. 4 inches btw. I'm 100 percent going to marry her. I've never felt the way about anyone the way I do her. I was thinking about it and I think teenage me might have been insecure about the \"boyfriend d*ck\" comment. Now I can take it in stride and realize she means she loves me as I am. That's all I ever wanted anyway. Who cares what a pornstar d*ck size is? Who cares what a bunch of other dudes thinks? Hell, who cares what the majority of women think? I care what she thinks. Hope this helps somebody",
+    "word_count": 183,
+    "est_speech_seconds": 73.2,
+    "banned_words_masked": [
+      {
+        "word": "dick",
+        "count": 3
+      },
+      {
+        "word": "cumming",
+        "count": 1
+      },
+      {
+        "word": "penis",
+        "count": 1
+      }
+    ],
+    "title_en": "My girlfriend told me I have a boyfriend dick",
+    "body_en": "My girlfriend told me I have a boyfriend dick\n\nShe told me that right after her nails were digging into my back while she told me she was cumming. Then she laid her head on my chest and told me I was her best friend and she loves every part of me.\n Alt account, but I wanted to put this out here because I have seen a lot of posts over the years about guys being dumped or are insecure because of penis size.\n 4 inches btw. I'm 100 percent going to marry her. I've never felt the way about anyone the way I do her. I was thinking about it and I think teenage me might have been insecure about the \"boyfriend dick\" comment. Now I can take it in stride and realize she means she loves me as I am. That's all I ever wanted anyway.\n Who cares what a pornstar dick size is? Who cares what a bunch of other dudes thinks? Hell, who cares what the majority of women think? I care what she thinks. Hope this helps somebody",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "My girlfriend told me I have a boyfriend d*ck"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v9e8nz_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/55e23ca1-072d-4445-8a3e-f38353b5c2c2.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v9e8nz_en.png",
+    "audio": {
+      "voice": "af_heart",
+      "lang_code": "a",
+      "duration_sec": 51.27,
+      "sample_rate": 24000,
+      "blurred_words": 5,
+      "intro_sfx_at_sec": 2.921
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v9e8nz_en.ass",
+    "subtitles": {
+      "num_words": 183,
+      "num_cues": 51,
+      "num_masked": 5,
+      "banned_intervals": [
+        [
+          2.021,
+          2.921
+        ],
+        [
+          7.122,
+          8.062
+        ],
+        [
+          21.546,
+          21.866
+        ],
+        [
+          33.79,
+          34.03
+        ],
+        [
+          42.432,
+          42.632
+        ]
+      ],
+      "intro_end_sec": 2.921,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "55e23ca1-072d-4445-8a3e-f38353b5c2c2",
+      "title": "Firestarter",
+      "artist": "Lack D, KDH, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/Firestarter",
+      "instrumental_url": "https://ncs.io/track/download/i_55e23ca1-072d-4445-8a3e-f38353b5c2c2",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "sushi",
+      "image_id": 7590451,
+      "image_page_url": "https://pixabay.com/photos/sushi-japanese-food-sushi-rolls-7590451/",
+      "image_url": "https://pixabay.com/get/g05ec0dfae7c114aa6223aab649460db6312179c2d336846d0ab43d85aada0e97245d8a5bbcba42e249591b676e998832c5be6a2ca3ef2042b50f7c3e3b18902c_1280.jpg",
+      "title_rendered": "My girlfriend told me I have a boyfriend d*ck"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
