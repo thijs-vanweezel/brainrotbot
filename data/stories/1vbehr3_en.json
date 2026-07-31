@@ -1,0 +1,105 @@
+{
+  "id": "3235ce837ad34d08811a822c0777d7ed",
+  "created_at": 1785492722.6396728,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vbehr3",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vbehr3/ever_see_someone_no_clip_while_driving/",
+    "author": "/u/adhdslore",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1785466483.0,
+    "nsfw": null,
+    "variant_id": "1vbehr3_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Ever see someone no clip while driving?",
+    "raw_body": "I don't know if this is a uniquely me experience or not. I have maybe 4-5 instances of this happening. 1 of them just moments ago. But have you ever been driving and notice a car for whatever reason. Maybe you even take a keen interest on it and start thinking about their stickers or plate or the kind of car it is. Meaning the car is on your mind and you are very aware of its existence near you. And then maybe you pass them and all of a sudden in an actual blink of an eye, they're gone? Nowhere they could have turned or disappeared that quickly. But they just sort of poof into thin air?\n\n submitted by /u/adhdslore\n [link] [comments]",
+    "cleaned_body": "Ever see someone no clip while driving?\n\nI don't know if this is a uniquely me experience or not. I have maybe 4-5 instances of this happening. 1 of them just moments ago. But have you ever been driving and notice a car for whatever reason. Maybe you even take a keen interest on it and start thinking about their stickers or plate or the kind of car it is. Meaning the car is on your mind and you are very aware of its existence near you. And then maybe you pass them and all of a sudden in an actual blink of an eye, they're gone? Nowhere they could have turned or disappeared that quickly. But they just sort of poof into thin air?",
+    "display_body": "Ever see someone no clip while driving? I don't know if this is a uniquely me experience or not. I have maybe 4-5 instances of this happening. 1 of them just moments ago. But have you ever been driving and notice a car for whatever reason. Maybe you even take a keen interest on it and start thinking about their stickers or plate or the kind of car it is. Meaning the car is on your mind and you are very aware of its existence near you. And then maybe you pass them and all of a sudden in an actual blink of an eye, they're gone? Nowhere they could have turned or disappeared that quickly. But they just sort of poof into thin air?",
+    "word_count": 125,
+    "est_speech_seconds": 50.0,
+    "banned_words_masked": [],
+    "title_en": "Ever see someone no clip while driving?",
+    "body_en": "Ever see someone no clip while driving?\n\nI don't know if this is a uniquely me experience or not. I have maybe 4-5 instances of this happening. 1 of them just moments ago. But have you ever been driving and notice a car for whatever reason. Maybe you even take a keen interest on it and start thinking about their stickers or plate or the kind of car it is. Meaning the car is on your mind and you are very aware of its existence near you. And then maybe you pass them and all of a sudden in an actual blink of an eye, they're gone? Nowhere they could have turned or disappeared that quickly. But they just sort of poof into thin air?",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Ever see someone no clip while driving?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vbehr3_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/2dff700f-41e1-4539-87cb-e87495502c42.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vbehr3_en.png",
+    "audio": {
+      "voice": "af_bella",
+      "lang_code": "a",
+      "duration_sec": 33.27,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.121
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vbehr3_en.ass",
+    "subtitles": {
+      "num_words": 125,
+      "num_cues": 35,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.121,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "2dff700f-41e1-4539-87cb-e87495502c42",
+      "title": "Feelings Fade",
+      "artist": "Wwings, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/FeelingsFade",
+      "instrumental_url": "https://ncs.io/track/download/i_2dff700f-41e1-4539-87cb-e87495502c42",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 10190136,
+      "image_page_url": "https://pixabay.com/photos/young-woman-peaceful-expression-10190136/",
+      "image_url": "https://pixabay.com/get/g584c4249ae6a241ecb31138d8a7d3cd744cea351312dd11c76415a2f6922316e2daba3ae182404d567e330d345aa475d9c6e71ffdb24ed7060dcae808c6db82b_1280.jpg",
+      "title_rendered": "Ever see someone no clip while driving?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

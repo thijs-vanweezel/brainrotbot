@@ -1,0 +1,105 @@
+{
+  "id": "bba7c0aeb1ee4b61a0013d575ce9f063",
+  "created_at": 1785492958.547831,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v7fxju",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v7fxju/nazism_is_mainstream/",
+    "author": "/u/early252",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785099542.0,
+    "nsfw": null,
+    "variant_id": "1v7fxju_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Le nazisme est courant",
+    "raw_body": "Hanging out with my high school best friend for the first time in a while, and he just casually drops that he wants to move to Poland because there's \"no migrants there.\"\n Later on, when he's scrolling on TikTok, I overhear it. It's just blatant, inbred-style racism against Indians, black people, and so forth. Then he starts trying to quiz me - a white guy dating a girl who isn't white, by the way - on whether some cultures just aren't compatible.\n And on and on. Not everything can be anti-Semitism. Maybe Jews do run the world; why's it so bad to say that? Watch any video of a white girl walking in India and see how safe it is there. Nick Fuentes might be edgy, but he makes good points.\n The whole world just feels like some funhouse mirror version of the one pre-COVID where everything is dark and hopeless, and even people I know and care about have changed.\n\n submitted by /u/early252\n [link] [comments]",
+    "cleaned_body": "Le nazisme est courant\n\nJe traînais avec mon meilleur ami du lycée pour la première fois depuis un certain temps, et il déclare simplement qu'il veut déménager en Pologne parce qu'il n'y a \"pas de migrants là-bas. \" Je suis là . \" Plus tard, quand il fait défiler sur TikTok, je l'entends. C'est juste un racisme flagrant et de style naturel contre les Indiens, les Noirs, etc. Puis il a commencé à essayer de me poser des questions - un type blanc sortant avec une fille qui n'est pas blanche, au fait - sur si certaines cultures ne sont pas compatibles. Et encore et encore. Tout ne peut pas être antisémite. Peut-être que les Juifs dirigent le monde, pourquoi est-ce si mauvais de dire ça ? Regardez n'importe quelle vidéo d'une fille blanche qui marche en Inde et voyez à quel point c'est sûr là-bas. Nick Fuentes est peut-être énervé, mais il fait de bons points. Le monde entier se sent comme une version miroir de l'avant-COVID où tout est sombre et sans espoir, et même les gens que je connais et que j'aime ont changé.",
+    "display_body": "Le nazisme est courant Je traînais avec mon meilleur ami du lycée pour la première fois depuis un certain temps, et il déclare simplement qu'il veut déménager en Pologne parce qu'il n'y a \"pas de migrants là-bas. \" Je suis là . \" Plus tard, quand il fait défiler sur TikTok, je l'entends. C'est juste un racisme flagrant et de style naturel contre les Indiens, les Noirs, etc. Puis il a commencé à essayer de me poser des questions - un type blanc sortant avec une fille qui n'est pas blanche, au fait - sur si certaines cultures ne sont pas compatibles. Et encore et encore. Tout ne peut pas être antisémite. Peut-être que les Juifs dirigent le monde, pourquoi est-ce si mauvais de dire ça ? Regardez n'importe quelle vidéo d'une fille blanche qui marche en Inde et voyez à quel point c'est sûr là-bas. Nick Fuentes est peut-être énervé, mais il fait de bons points. Le monde entier se sent comme une version miroir de l'avant-COVID où tout est sombre et sans espoir, et même les gens que je connais et que j'aime ont changé.",
+    "word_count": 187,
+    "est_speech_seconds": 74.8,
+    "banned_words_masked": [],
+    "title_en": "Nazism is mainstream",
+    "body_en": "Nazism is mainstream\n\nHanging out with my high school best friend for the first time in a while, and he just casually drops that he wants to move to Poland because there's \"no migrants there.\"\n Later on, when he's scrolling on TikTok, I overhear it. It's just blatant, inbred-style racism against Indians, black people, and so forth. Then he starts trying to quiz me - a white guy dating a girl who isn't white, by the way - on whether some cultures just aren't compatible.\n And on and on. Not everything can be anti-Semitism. Maybe Jews do run the world; why's it so bad to say that? Watch any video of a white girl walking in India and see how safe it is there. Nick Fuentes might be edgy, but he makes good points.\n The whole world just feels like some funhouse mirror version of the one pre-COVID where everything is dark and hopeless, and even people I know and care about have changed.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Le nazisme est courant"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v7fxju_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/3155507d-ca4b-4239-9f64-88f6f7345e79.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v7fxju_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 48.38,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 2.081
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v7fxju_fr.ass",
+    "subtitles": {
+      "num_words": 187,
+      "num_cues": 51,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 2.081,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "title": "akina",
+      "artist": "Ailow",
+      "genre": "Dubstep",
+      "moods": [
+        "Angry",
+        "Dark",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/akina",
+      "instrumental_url": "https://ncs.io/track/download/i_3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "mountains",
+      "image_id": 10201702,
+      "image_page_url": "https://pixabay.com/photos/nature-mountains-landscape-10201702/",
+      "image_url": "https://pixabay.com/get/g832bf00afaf3704423d132eb5f356a5824d55cb23ea1c829eabff996deeb8e32ed241060f970bc24bc8b6c8c50bb61d2771686a993782b6db2cfbc6c0f4b31a3_1280.jpg",
+      "title_rendered": "Le nazisme est courant"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

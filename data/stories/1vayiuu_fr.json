@@ -1,0 +1,105 @@
+{
+  "id": "2a41ad582253435fbafca43d20fde1d5",
+  "created_at": 1785492849.7658427,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vayiuu",
+    "url": "https://www.reddit.com/r/confession/comments/1vayiuu/i_took_advantage_of_a_cvs_self_checkout_kiosk/",
+    "author": "/u/marcusthegladiator",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1785428890.0,
+    "nsfw": null,
+    "variant_id": "1vayiuu_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "J'ai profité d'un kiosque CVS qui avait des billets de 20 $ chargés dans la fente de billets de 5 $.",
+    "raw_body": "Many years ago I used a self checkout at CVS and instead of giving me 2 $5 bills in my change it gave me 2 $20 bills. I told my friend and his wife and we all teamed up to empty it. We all went in and each bought something that costs less than $5 and inserted small bills. Instead of $15 and change we each received $40 and change. I went twice including my first time and they each went once but when we went back again the machine was \"out of order\". It was awesome.\n\n submitted by /u/marcusthegladiator\n [link] [comments]",
+    "cleaned_body": "J'ai profité d'un kiosque CVS qui avait des billets de 20 $ chargés dans la fente de billets de 5 $.\n\nIl y a de nombreuses années, j'ai utilisé un auto-check-out chez CVS et au lieu de me donner 2 billets de 5 $ dans mon change, il m'a donné 2 billets de 20 $. J'en ai parlé à mon ami et à sa femme et nous nous sommes tous associés pour le vider. Nous sommes tous entrés et chacun a acheté quelque chose qui coûte moins de 5 $ et a inséré de petits billets. Au lieu de 15 dollars et de change, nous avons chacun reçu 40 dollars et de change. J'y suis allé deux fois, y compris la première fois, et ils y sont tous allés une fois, mais quand nous sommes retournés, la machine était en panne. C'était génial.",
+    "display_body": "J'ai profité d'un kiosque CVS qui avait des billets de 20 $ chargés dans la fente de billets de 5 $. Il y a de nombreuses années, j'ai utilisé un auto-check-out chez CVS et au lieu de me donner 2 billets de 5 $ dans mon change, il m'a donné 2 billets de 20 $. J'en ai parlé à mon ami et à sa femme et nous nous sommes tous associés pour le vider. Nous sommes tous entrés et chacun a acheté quelque chose qui coûte moins de 5 $ et a inséré de petits billets. Au lieu de 15 dollars et de change, nous avons chacun reçu 40 dollars et de change. J'y suis allé deux fois, y compris la première fois, et ils y sont tous allés une fois, mais quand nous sommes retournés, la machine était en panne. C'était génial.",
+    "word_count": 143,
+    "est_speech_seconds": 57.2,
+    "banned_words_masked": [],
+    "title_en": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot.",
+    "body_en": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot.\n\nMany years ago I used a self checkout at CVS and instead of giving me 2 $5 bills in my change it gave me 2 $20 bills. I told my friend and his wife and we all teamed up to empty it. We all went in and each bought something that costs less than $5 and inserted small bills. Instead of $15 and change we each received $40 and change. I went twice including my first time and they each went once but when we went back again the machine was \"out of order\". It was awesome.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "J'ai profité d'un kiosque CVS qui avait des billets de 20 $ chargés dans la fente de billets de 5 $."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vayiuu_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/4a0ad566-21b3-42ea-bb6b-836dd9809cd6.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vayiuu_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 36.77,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 6.803
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vayiuu_fr.ass",
+    "subtitles": {
+      "num_words": 143,
+      "num_cues": 39,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 6.803,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "4a0ad566-21b3-42ea-bb6b-836dd9809cd6",
+      "title": "Like Fire",
+      "artist": "Apollo On The Run, Immy Odon, Biometrix",
+      "genre": "Melodic Dubstep",
+      "moods": [
+        "energetic",
+        "exciting",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/LikeFire",
+      "instrumental_url": "https://ncs.io/track/download/i_4a0ad566-21b3-42ea-bb6b-836dd9809cd6",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "snacks",
+      "image_id": 7797541,
+      "image_page_url": "https://pixabay.com/photos/nuts-snack-container-jar-food-7797541/",
+      "image_url": "https://pixabay.com/get/g8b0b3e4abc06007006c54f7a1531fd38f86e610ae907f949b1ba881b85c9331fbae556ac28fb004c899a087f6cd906fd70bdc3cc979eb03778682045c34a913d_1280.jpg",
+      "title_rendered": "J'ai profité d'un kiosque CVS qui avait des billets de 20 $ chargés dans la fente de billets de 5 $."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

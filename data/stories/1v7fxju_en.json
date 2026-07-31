@@ -1,0 +1,116 @@
+{
+  "id": "4404b908c9cf417f8913417742d11927",
+  "created_at": 1785492916.1478543,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v7fxju",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v7fxju/nazism_is_mainstream/",
+    "author": "/u/early252",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785099542.0,
+    "nsfw": null,
+    "variant_id": "1v7fxju_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Nazism is mainstream",
+    "raw_body": "Hanging out with my high school best friend for the first time in a while, and he just casually drops that he wants to move to Poland because there's \"no migrants there.\"\n Later on, when he's scrolling on TikTok, I overhear it. It's just blatant, inbred-style racism against Indians, black people, and so forth. Then he starts trying to quiz me - a white guy dating a girl who isn't white, by the way - on whether some cultures just aren't compatible.\n And on and on. Not everything can be anti-Semitism. Maybe Jews do run the world; why's it so bad to say that? Watch any video of a white girl walking in India and see how safe it is there. Nick Fuentes might be edgy, but he makes good points.\n The whole world just feels like some funhouse mirror version of the one pre-COVID where everything is dark and hopeless, and even people I know and care about have changed.\n\n submitted by /u/early252\n [link] [comments]",
+    "cleaned_body": "Nazism is mainstream\n\nHanging out with my high school best friend for the first time in a while, and he just casually drops that he wants to move to Poland because there's \"no migrants there.\"\n Later on, when he's scrolling on TikTok, I overhear it. It's just blatant, inbred-style racism against Indians, black people, and so forth. Then he starts trying to quiz me - a white guy dating a girl who isn't white, by the way - on whether some cultures just aren't compatible.\n And on and on. Not everything can be anti-Semitism. Maybe Jews do run the world; why's it so bad to say that? Watch any video of a white girl walking in India and see how safe it is there. Nick Fuentes might be edgy, but he makes good points.\n The whole world just feels like some funhouse mirror version of the one pre-COVID where everything is dark and hopeless, and even people I know and care about have changed.",
+    "display_body": "Nazism is mainstream H*nging out with my high school best friend for the first time in a while, and he just casually drops that he wants to move to Poland because there's \"no migrants there.\" Later on, when he's scrolling on TikTok, I overhear it. It's just blatant, inbred-style racism against Indians, black people, and so forth. Then he starts trying to quiz me - a white guy dating a girl who isn't white, by the way - on whether some cultures just aren't compatible. And on and on. Not everything can be anti-Semitism. Maybe Jews do run the world; why's it so bad to say that? Watch any video of a white girl walking in India and see how safe it is there. Nick Fuentes might be edgy, but he makes good points. The whole world just feels like some funhouse mirror version of the one pre-COVID where everything is dark and hopeless, and even people I know and care about have changed.",
+    "word_count": 164,
+    "est_speech_seconds": 65.6,
+    "banned_words_masked": [
+      {
+        "word": "hanging",
+        "count": 1
+      }
+    ],
+    "title_en": "Nazism is mainstream",
+    "body_en": "Nazism is mainstream\n\nHanging out with my high school best friend for the first time in a while, and he just casually drops that he wants to move to Poland because there's \"no migrants there.\"\n Later on, when he's scrolling on TikTok, I overhear it. It's just blatant, inbred-style racism against Indians, black people, and so forth. Then he starts trying to quiz me - a white guy dating a girl who isn't white, by the way - on whether some cultures just aren't compatible.\n And on and on. Not everything can be anti-Semitism. Maybe Jews do run the world; why's it so bad to say that? Watch any video of a white girl walking in India and see how safe it is there. Nick Fuentes might be edgy, but he makes good points.\n The whole world just feels like some funhouse mirror version of the one pre-COVID where everything is dark and hopeless, and even people I know and care about have changed.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Nazism is mainstream"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v7fxju_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/3155507d-ca4b-4239-9f64-88f6f7345e79.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v7fxju_en.png",
+    "audio": {
+      "voice": "af_heart",
+      "lang_code": "a",
+      "duration_sec": 51.15,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 2.2
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v7fxju_en.ass",
+    "subtitles": {
+      "num_words": 164,
+      "num_cues": 45,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          2.22,
+          2.52
+        ]
+      ],
+      "intro_end_sec": 2.2,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "title": "akina",
+      "artist": "Ailow",
+      "genre": "Dubstep",
+      "moods": [
+        "Angry",
+        "Dark",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/akina",
+      "instrumental_url": "https://ncs.io/track/download/i_3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "mountains",
+      "image_id": 10201702,
+      "image_page_url": "https://pixabay.com/photos/nature-mountains-landscape-10201702/",
+      "image_url": "https://pixabay.com/get/g832bf00afaf3704423d132eb5f356a5824d55cb23ea1c829eabff996deeb8e32ed241060f970bc24bc8b6c8c50bb61d2771686a993782b6db2cfbc6c0f4b31a3_1280.jpg",
+      "title_rendered": "Nazism is mainstream"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

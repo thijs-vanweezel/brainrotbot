@@ -1,0 +1,105 @@
+{
+  "id": "bd9b15345c684207acf7188eeceb7f20",
+  "created_at": 1785492815.2591956,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vayiuu",
+    "url": "https://www.reddit.com/r/confession/comments/1vayiuu/i_took_advantage_of_a_cvs_self_checkout_kiosk/",
+    "author": "/u/marcusthegladiator",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1785428890.0,
+    "nsfw": null,
+    "variant_id": "1vayiuu_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot.",
+    "raw_body": "Many years ago I used a self checkout at CVS and instead of giving me 2 $5 bills in my change it gave me 2 $20 bills. I told my friend and his wife and we all teamed up to empty it. We all went in and each bought something that costs less than $5 and inserted small bills. Instead of $15 and change we each received $40 and change. I went twice including my first time and they each went once but when we went back again the machine was \"out of order\". It was awesome.\n\n submitted by /u/marcusthegladiator\n [link] [comments]",
+    "cleaned_body": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot.\n\nMany years ago I used a self checkout at CVS and instead of giving me 2 $5 bills in my change it gave me 2 $20 bills. I told my friend and his wife and we all teamed up to empty it. We all went in and each bought something that costs less than $5 and inserted small bills. Instead of $15 and change we each received $40 and change. I went twice including my first time and they each went once but when we went back again the machine was \"out of order\". It was awesome.",
+    "display_body": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot. Many years ago I used a self checkout at CVS and instead of giving me 2 $5 bills in my change it gave me 2 $20 bills. I told my friend and his wife and we all teamed up to empty it. We all went in and each bought something that costs less than $5 and inserted small bills. Instead of $15 and change we each received $40 and change. I went twice including my first time and they each went once but when we went back again the machine was \"out of order\". It was awesome.",
+    "word_count": 116,
+    "est_speech_seconds": 46.4,
+    "banned_words_masked": [],
+    "title_en": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot.",
+    "body_en": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot.\n\nMany years ago I used a self checkout at CVS and instead of giving me 2 $5 bills in my change it gave me 2 $20 bills. I told my friend and his wife and we all teamed up to empty it. We all went in and each bought something that costs less than $5 and inserted small bills. Instead of $15 and change we each received $40 and change. I went twice including my first time and they each went once but when we went back again the machine was \"out of order\". It was awesome.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vayiuu_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/4a0ad566-21b3-42ea-bb6b-836dd9809cd6.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vayiuu_en.png",
+    "audio": {
+      "voice": "am_michael",
+      "lang_code": "a",
+      "duration_sec": 39.7,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 8.284
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vayiuu_en.ass",
+    "subtitles": {
+      "num_words": 116,
+      "num_cues": 31,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 8.284,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "4a0ad566-21b3-42ea-bb6b-836dd9809cd6",
+      "title": "Like Fire",
+      "artist": "Apollo On The Run, Immy Odon, Biometrix",
+      "genre": "Melodic Dubstep",
+      "moods": [
+        "energetic",
+        "exciting",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/LikeFire",
+      "instrumental_url": "https://ncs.io/track/download/i_4a0ad566-21b3-42ea-bb6b-836dd9809cd6",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "snacks",
+      "image_id": 7797541,
+      "image_page_url": "https://pixabay.com/photos/nuts-snack-container-jar-food-7797541/",
+      "image_url": "https://pixabay.com/get/g8b0b3e4abc06007006c54f7a1531fd38f86e610ae907f949b1ba881b85c9331fbae556ac28fb004c899a087f6cd906fd70bdc3cc979eb03778682045c34a913d_1280.jpg",
+      "title_rendered": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

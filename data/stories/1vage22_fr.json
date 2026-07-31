@@ -1,0 +1,105 @@
+{
+  "id": "5aec6399acf743e798422148097a6f0b",
+  "created_at": 1785492483.5208426,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vage22",
+    "url": "https://www.reddit.com/r/adultery/comments/1vage22/i_think_i_just_bumped_into_my_spouse_on_am/",
+    "author": "/u/ICQueenD",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785377398.0,
+    "nsfw": null,
+    "variant_id": "1vage22_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Je crois que je viens de rencontrer mon conjoint sur AM",
+    "raw_body": "I guess it's hypocritical for me to feel any kind of way... but I do WOW ok\n Well this is interesting. I have wanted them to leave me alone and do their own thing but it feels weird knowing that finally it may happen.\n Im 100% sure its them based on the name location age and terms used in the ad. Clearly an amateur too. Wow. I can't even confront them else i blow my own spot. This is a weird feeling\n Has this happened to anyone\n\n submitted by /u/ICQueenD\n [link] [comments]",
+    "cleaned_body": "Je crois que je viens de rencontrer mon conjoint sur AM\n\nJe suppose que c'est hypocrite pour moi de ressentir quelque chose... Mais je le fais bien C'est intéressant. J'ai voulu qu'ils me laissent seule et fassent leur propre chose, mais c'est bizarre de savoir que ça pourrait arriver. Je suis sûr à 100% qu'il s'agit d'eux en fonction du nom de l'emplacement et de l'âge et des termes utilisés dans l'annonce. C'est évidemment aussi un amateur. - Je sais pas. Je ne peux même pas les affronter, sinon je fais sauter mon propre endroit. C'est un sentiment étrange . Cela est arrivé à quelqu'un ?",
+    "display_body": "Je crois que je viens de rencontrer mon conjoint sur AM Je suppose que c'est hypocrite pour moi de ressentir quelque chose... Mais je le fais bien C'est intéressant. J'ai voulu qu'ils me laissent seule et fassent leur propre chose, mais c'est bizarre de savoir que ça pourrait arriver. Je suis sûr à 100% qu'il s'agit d'eux en fonction du nom de l'emplacement et de l'âge et des termes utilisés dans l'annonce. C'est évidemment aussi un amateur. - Je sais pas. Je ne peux même pas les affronter, sinon je fais sauter mon propre endroit. C'est un sentiment étrange . Cela est arrivé à quelqu'un ?",
+    "word_count": 106,
+    "est_speech_seconds": 42.4,
+    "banned_words_masked": [],
+    "title_en": "I think i just bumped into my spouse on AM",
+    "body_en": "I think i just bumped into my spouse on AM\n\nI guess it's hypocritical for me to feel any kind of way... but I do WOW ok\n Well this is interesting. I have wanted them to leave me alone and do their own thing but it feels weird knowing that finally it may happen.\n Im 100% sure its them based on the name location age and terms used in the ad. Clearly an amateur too. Wow. I can't even confront them else i blow my own spot. This is a weird feeling\n Has this happened to anyone",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Je crois que je viens de rencontrer mon conjoint sur AM"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vage22_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/273cac01-0c61-44f1-9085-6432e2170e29.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vage22_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 28.75,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.621
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vage22_fr.ass",
+    "subtitles": {
+      "num_words": 106,
+      "num_cues": 30,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.621,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "273cac01-0c61-44f1-9085-6432e2170e29",
+      "title": "Ocean",
+      "artist": "Seanyy",
+      "genre": "Future House",
+      "moods": [
+        "powerful",
+        "angry",
+        "negative"
+      ],
+      "page_url": "https://ncs.io/Ocean",
+      "instrumental_url": "https://ncs.io/track/download/i_273cac01-0c61-44f1-9085-6432e2170e29",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "beach sunset",
+      "image_id": 7855153,
+      "image_page_url": "https://pixabay.com/photos/sea-moon-sunset-water-dusk-7855153/",
+      "image_url": "https://pixabay.com/get/g4225b66c946d7d78a0fe00ef0d2505045c52f8d9d5ad220bf1ce6ea2a3871b0f20adb86e5983d6b5b366afa9f5cf553183b875c6685ea9628d31da42af2586a3_1280.jpg",
+      "title_rendered": "Je crois que je viens de rencontrer mon conjoint sur AM"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

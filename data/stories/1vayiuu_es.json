@@ -1,0 +1,105 @@
+{
+  "id": "e12cb0ece00b4dfabacaeb6cea43b0e3",
+  "created_at": 1785492883.9626265,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vayiuu",
+    "url": "https://www.reddit.com/r/confession/comments/1vayiuu/i_took_advantage_of_a_cvs_self_checkout_kiosk/",
+    "author": "/u/marcusthegladiator",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1785428890.0,
+    "nsfw": null,
+    "variant_id": "1vayiuu_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Aproveché un quiosco CVS que tenía billetes de 20 dólares cargados en la ranura de billetes de 5 dólares.",
+    "raw_body": "Many years ago I used a self checkout at CVS and instead of giving me 2 $5 bills in my change it gave me 2 $20 bills. I told my friend and his wife and we all teamed up to empty it. We all went in and each bought something that costs less than $5 and inserted small bills. Instead of $15 and change we each received $40 and change. I went twice including my first time and they each went once but when we went back again the machine was \"out of order\". It was awesome.\n\n submitted by /u/marcusthegladiator\n [link] [comments]",
+    "cleaned_body": "Aproveché un quiosco CVS que tenía billetes de 20 dólares cargados en la ranura de billetes de 5 dólares.\n\nHace muchos años usé un auto-cheque en CVS y en lugar de darme billetes de 2 dólares en mi cambio me dio billetes de 2 dólares. Se lo dije a mi amigo y a su esposa y todos nos unimos para vaciarlo. Todos fuimos y cada uno compró algo que costaba menos de 5 dólares e insertamos billetes pequeños. En lugar de 15 dólares y cambio cada uno recibimos 40 dólares y cambio. Fui dos veces, incluida mi primera vez y cada uno fue una vez pero cuando volvimos la máquina estaba \"desordenada\". Fue genial.",
+    "display_body": "Aproveché un quiosco CVS que tenía billetes de 20 dólares cargados en la ranura de billetes de 5 dólares. Hace muchos años usé un auto-cheque en CVS y en lugar de darme billetes de 2 dólares en mi cambio me dio billetes de 2 dólares. Se lo dije a mi amigo y a su esposa y todos nos unimos para vaciarlo. Todos fuimos y cada uno compró algo que costaba menos de 5 dólares e insertamos billetes pequeños. En lugar de 15 dólares y cambio cada uno recibimos 40 dólares y cambio. Fui dos veces, incluida mi primera vez y cada uno fue una vez pero cuando volvimos la máquina estaba \"desordenada\". Fue genial.",
+    "word_count": 114,
+    "est_speech_seconds": 45.6,
+    "banned_words_masked": [],
+    "title_en": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot.",
+    "body_en": "I took advantage of a CVS self checkout kiosk that had $20 bills loaded into the $5 bill slot.\n\nMany years ago I used a self checkout at CVS and instead of giving me 2 $5 bills in my change it gave me 2 $20 bills. I told my friend and his wife and we all teamed up to empty it. We all went in and each bought something that costs less than $5 and inserted small bills. Instead of $15 and change we each received $40 and change. I went twice including my first time and they each went once but when we went back again the machine was \"out of order\". It was awesome.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Aproveché un quiosco CVS que tenía billetes de 20 dólares cargados en la ranura de billetes de 5 dólares."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vayiuu_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/4a0ad566-21b3-42ea-bb6b-836dd9809cd6.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vayiuu_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 33.45,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 6.542
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vayiuu_es.ass",
+    "subtitles": {
+      "num_words": 114,
+      "num_cues": 31,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 6.542,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "4a0ad566-21b3-42ea-bb6b-836dd9809cd6",
+      "title": "Like Fire",
+      "artist": "Apollo On The Run, Immy Odon, Biometrix",
+      "genre": "Melodic Dubstep",
+      "moods": [
+        "energetic",
+        "exciting",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/LikeFire",
+      "instrumental_url": "https://ncs.io/track/download/i_4a0ad566-21b3-42ea-bb6b-836dd9809cd6",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "snacks",
+      "image_id": 7797541,
+      "image_page_url": "https://pixabay.com/photos/nuts-snack-container-jar-food-7797541/",
+      "image_url": "https://pixabay.com/get/g8b0b3e4abc06007006c54f7a1531fd38f86e610ae907f949b1ba881b85c9331fbae556ac28fb004c899a087f6cd906fd70bdc3cc979eb03778682045c34a913d_1280.jpg",
+      "title_rendered": "Aproveché un quiosco CVS que tenía billetes de 20 dólares cargados en la ranura de billetes de 5 dólares."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
