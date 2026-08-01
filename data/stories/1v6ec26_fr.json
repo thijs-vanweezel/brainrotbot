@@ -1,0 +1,105 @@
+{
+  "id": "8204b1699e394c24b1983d0367cba75d",
+  "created_at": 1785578250.8440347,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v6ec26",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v6ec26/i_am_tired_of_americas_race_obsession_with_odyssey/",
+    "author": "/u/Consistent-Parking56",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785000404.0,
+    "nsfw": null,
+    "variant_id": "1v6ec26_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Je suis fatigué de l'obsession raciale de l'Amérique pour l'Odyssée",
+    "raw_body": "I am Greek, and I don't want to talk about the movie itself, but rather about the many letterboxd reviews & social media posts I've seen that have sparked a fringe debate over whether Greeks are 'white' or not. Honestly, I am so tired of the American obsession with race being forced onto our country. It's offensive to try to shove us into a tiny, specific box based on skin shade. Are they expecting us to look either strictly Nordic or African? Have any of these people actually visited Greece? It just goes to show how deeply alive racism still is in the US, and how obsessed they are with categorising everyone based on skin color. Also, I don't care about casting a black actress as a mythological character. Helen of Troy never actually existed, you know. What I care about is for you to stop dragging my country into your toxic culture wars. Also, it would be nice if, in your next Hollywood movie based on Greek history or mythology, you cast Greek actors to represent their own culture. You know, it would add a sense of authenticity.\n\n submitted by /u/Consistent-Parking56\n [link] [comments]",
+    "cleaned_body": "Je suis fatigué de l'obsession raciale de l'Amérique pour l'Odyssée\n\nJe suis grec, et je ne veux pas parler du film en lui-même, mais plutôt des nombreuses critiques et messages sur les réseaux sociaux que j'ai vus qui ont déclenché un débat marginal sur le fait que les Grecs soient \"blancs\" ou non. Honnêtement, je suis tellement fatigué de l'obsession américaine envers la race qui est imposée à notre pays. C'est offensant d'essayer de nous pousser dans une petite boîte spécifique basée sur l'ombre de la peau. Ils s'attendent à ce que nous soyons strictement nordiques ou africains ? Est-ce qu'une de ces personnes a vraiment visité la Grèce ? Cela montre à quel point le racisme est encore vivant aux États-Unis, et à quel point ils sont obsédés par la catégorisation de chacun en fonction de la couleur de la peau. En plus, je ne me soucie pas de choisir une actrice noire comme personnage mythologique. Hélène de Troie n'a jamais vraiment existé. Ce qui m'intéresse, c'est que vous arrêtiez d'entraîner mon pays dans vos guerres de culture toxiques. En outre, ce serait bien si, dans votre prochain film hollywoodien basé sur l'histoire ou la mythologie grecque, vous choisissiez des acteurs grecs pour représenter leur propre culture. Ça ajouterait un sentiment d'authenticité.",
+    "display_body": "Je suis fatigué de l'obsession raciale de l'Amérique pour l'Odyssée Je suis grec, et je ne veux pas parler du film en lui-même, mais plutôt des nombreuses critiques et messages sur les réseaux sociaux que j'ai vus qui ont déclenché un débat marginal sur le fait que les Grecs soient \"blancs\" ou non. Honnêtement, je suis tellement fatigué de l'obsession américaine envers la race qui est imposée à notre pays. C'est offensant d'essayer de nous pousser dans une petite boîte spécifique basée sur l'ombre de la peau. Ils s'attendent à ce que nous soyons strictement nordiques ou africains ? Est-ce qu'une de ces personnes a vraiment visité la Grèce ? Cela montre à quel point le racisme est encore vivant aux États-Unis, et à quel point ils sont obsédés par la catégorisation de chacun en fonction de la couleur de la peau. En plus, je ne me soucie pas de choisir une actrice noire comme personnage mythologique. Hélène de Troie n'a jamais vraiment existé. Ce qui m'intéresse, c'est que vous arrêtiez d'entraîner mon pays dans vos guerres de culture toxiques. En outre, ce serait bien si, dans votre prochain film hollywoodien basé sur l'histoire ou la mythologie grecque, vous choisissiez des acteurs grecs pour représenter leur propre culture. Ça ajouterait un sentiment d'authenticité.",
+    "word_count": 213,
+    "est_speech_seconds": 85.2,
+    "banned_words_masked": [],
+    "title_en": "I am tired of America’s race obsession with Odyssey",
+    "body_en": "I am tired of America's race obsession with Odyssey\n\nI am Greek, and I don't want to talk about the movie itself, but rather about the many letterboxd reviews & social media posts I've seen that have sparked a fringe debate over whether Greeks are 'white' or not. Honestly, I am so tired of the American obsession with race being forced onto our country. It's offensive to try to shove us into a tiny, specific box based on skin shade. Are they expecting us to look either strictly Nordic or African? Have any of these people actually visited Greece? It just goes to show how deeply alive racism still is in the US, and how obsessed they are with categorising everyone based on skin color. Also, I don't care about casting a black actress as a mythological character. Helen of Troy never actually existed, you know. What I care about is for you to stop dragging my country into your toxic culture wars. Also, it would be nice if, in your next Hollywood movie based on Greek history or mythology, you cast Greek actors to represent their own culture. You know, it would add a sense of authenticity.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Je suis fatigué de l'obsession raciale de l'Amérique pour l'Odyssée"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v6ec26_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/967744b7-7384-47d8-a8b7-c2bcb825950a.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v6ec26_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 62.85,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.181
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v6ec26_fr.ass",
+    "subtitles": {
+      "num_words": 213,
+      "num_cues": 57,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.181,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "967744b7-7384-47d8-a8b7-c2bcb825950a",
+      "title": "Spicy",
+      "artist": "Cartoon",
+      "genre": "Dubstep",
+      "moods": [
+        "energetic",
+        "exciting",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/Spicy",
+      "instrumental_url": "https://ncs.io/track/download/i_967744b7-7384-47d8-a8b7-c2bcb825950a",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "gourmet burger",
+      "image_id": 1887233,
+      "image_page_url": "https://pixabay.com/photos/cheese-snacks-appetizer-nutrition-1887233/",
+      "image_url": "https://pixabay.com/get/gff1d7a3402e9e91ca8dcd195f5421e523cbbb6fea61c13ac4c055b36b58772ba3373c6e136091bd1efca95a3d8c420db35cc481a441917bcb23c483c8c5f0770_1280.jpg",
+      "title_rendered": "Je suis fatigué de l'obsession raciale de l'Amérique pour l'Odyssée"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "5a099573cc764d9294b5eb18a95bb2b9",
+  "created_at": 1785578321.4930665,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1v7pxsf",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1v7pxsf/affirmation_paper_put_in_pocket_moved_to_a/",
+    "author": "/u/pdcyhs",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1785126064.0,
+    "nsfw": null,
+    "variant_id": "1v7pxsf_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Affirmation paper put in pocket moved to a different pair of pants.",
+    "raw_body": "This happened a month ago and I forgot to post. I just randomly remembered.\n My boyfriend and I went to a crystal shop and on the way out, the shop owner handed me a folded up piece of paper with an affirmation on it. I read it and I put it in my pants pocket. A pair of jeans with rips in the knees. I only wear these on the weekend so I know it was these pants. Fast forward like two weeks later, I go to work and then head to a therapy appointment after. I was wearing a green pair of pants that I only wear to work. This is how I know I was not just misremembering what pants I wore on the day of getting the affirmation. I'm in the elevator and trying to get my phone out of my pocket when the slip of paper also comes out. It was the affirmation that I specifically remember leaving in my other pants.... Maybe it moved pockets because I needed to hear it before therapy. I forget now but it was something along the lines of \"I am strong enough to face any challenges.\" My therapist said it must be fairies lol.\n\n submitted by /u/pdcyhs\n [link] [comments]",
+    "cleaned_body": "Affirmation paper put in pocket moved to a different pair of pants.\n\nThis happened a month ago and I forgot to post. I just randomly remembered.\n My boyfriend and I went to a crystal shop and on the way out, the shop owner handed me a folded up piece of paper with an affirmation on it. I read it and I put it in my pants pocket. A pair of jeans with rips in the knees. I only wear these on the weekend so I know it was these pants. Fast forward like two weeks later, I go to work and then head to a therapy appointment after. I was wearing a green pair of pants that I only wear to work. This is how I know I was not just misremembering what pants I wore on the day of getting the affirmation. I'm in the elevator and trying to get my phone out of my pocket when the slip of paper also comes out. It was the affirmation that I specifically remember leaving in my other pants.... Maybe it moved pockets because I needed to hear it before therapy. I forget now but it was something along the lines of \"I am strong enough to face any challenges.\" My therapist said it must be fairies lol.",
+    "display_body": "Affirmation paper put in pocket moved to a different pair of pants. This happened a month ago and I forgot to post. I just randomly remembered. My boyfriend and I went to a crystal shop and on the way out, the shop owner handed me a folded up piece of paper with an affirmation on it. I read it and I put it in my pants pocket. A pair of jeans with rips in the knees. I only wear these on the weekend so I know it was these pants. Fast forward like two weeks later, I go to work and then head to a therapy appointment after. I was wearing a green pair of pants that I only wear to work. This is how I know I was not just misremembering what pants I wore on the day of getting the affirmation. I'm in the elevator and trying to get my phone out of my pocket when the slip of paper also comes out. It was the affirmation that I specifically remember leaving in my other pants.... Maybe it moved pockets because I needed to hear it before therapy. I forget now but it was something along the lines of \"I am strong enough to face any challenges.\" My therapist said it must be fairies lol.",
+    "word_count": 217,
+    "est_speech_seconds": 86.8,
+    "banned_words_masked": [],
+    "title_en": "Affirmation paper put in pocket moved to a different pair of pants.",
+    "body_en": "Affirmation paper put in pocket moved to a different pair of pants.\n\nThis happened a month ago and I forgot to post. I just randomly remembered.\n My boyfriend and I went to a crystal shop and on the way out, the shop owner handed me a folded up piece of paper with an affirmation on it. I read it and I put it in my pants pocket. A pair of jeans with rips in the knees. I only wear these on the weekend so I know it was these pants. Fast forward like two weeks later, I go to work and then head to a therapy appointment after. I was wearing a green pair of pants that I only wear to work. This is how I know I was not just misremembering what pants I wore on the day of getting the affirmation. I'm in the elevator and trying to get my phone out of my pocket when the slip of paper also comes out. It was the affirmation that I specifically remember leaving in my other pants.... Maybe it moved pockets because I needed to hear it before therapy. I forget now but it was something along the lines of \"I am strong enough to face any challenges.\" My therapist said it must be fairies lol.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Affirmation paper put in pocket moved to a different pair of pants."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v7pxsf_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/aa10a463-431f-4669-9ec0-f42bdd267b7b.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v7pxsf_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 47.12,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.08
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v7pxsf_en.ass",
+    "subtitles": {
+      "num_words": 217,
+      "num_cues": 60,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.08,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "aa10a463-431f-4669-9ec0-f42bdd267b7b",
+      "title": "Silence",
+      "artist": "N3b, Extra Terra",
+      "genre": "Midtempo Bass",
+      "moods": [
+        "Chasing",
+        "Dark",
+        "Angry",
+        "Eccentric",
+        "Fear",
+        "Mysterious",
+        "Restless",
+        "Suspense"
+      ],
+      "page_url": "https://ncs.io/EN_Silence",
+      "instrumental_url": "https://ncs.io/track/download/i_aa10a463-431f-4669-9ec0-f42bdd267b7b",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "mountains",
+      "image_id": 8460950,
+      "image_page_url": "https://pixabay.com/photos/winter-snow-mountain-jasper-canada-8460950/",
+      "image_url": "https://pixabay.com/get/gf30415a244d19befebb4d0dfdfd4b6ba71985422605a207b484f6a349ca26d8a043c1ed7ed9127f3e878437b685009863108b24826fc8ca652394baaafab973a_1280.jpg",
+      "title_rendered": "Affirmation paper put in pocket moved to a different pair of pants."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

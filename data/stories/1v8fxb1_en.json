@@ -1,0 +1,115 @@
+{
+  "id": "80fd640e14ae47318bf836b157e9a141",
+  "created_at": 1785578411.4530394,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1v8fxb1",
+    "url": "https://www.reddit.com/r/tifu/comments/1v8fxb1/tifu_by_joking_that_i_run_an_appliance_repair_shop/",
+    "author": "/u/CarobImpossible9",
+    "feed_rank": 5,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1785192485.0,
+    "nsfw": null,
+    "variant_id": "1v8fxb1_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "TIFU by joking that I run an appliance repair shop",
+    "raw_body": "A neighbor in my building group asked if anyone had a tiny screwdriver for his coffee grinder. I had one, went downstairs and helped him tighten a loose part. Took 30 seconds.\n He posted in the group thanking me for fixing it, so I joked that my repair shop was officially open and I accepted payment in coffee.\n A woman from the third floor messaged me almost immediately asking if I could look at her flickering lamp. I told her I was kidding and had no idea how lamps worked, but she said it was probably something simple.\n Then another guy asked about his toaster. Someone else sent me a photo of a desk fan making a weird noise. The original neighbor kept replying to people saying I was being modest because I saved him money he won on Ѕtake on a new grinder.\n By the evening three different people were trying to arrange times to bring things over for me to fix. I turned them all down and explained that I literally just tightened one screw, but one of them still replied with \"no worries, whenever you have time.\"\n I muted the building group after someone asked if I also repair microwaves.\n TLDR: Fixed one loose screw, made one joke, and accidentally became my apartment building's appliance repair guy.\n\n submitted by /u/CarobImpossible9\n [link] [comments]",
+    "cleaned_body": "Today I fucked up by joking that I run an appliance repair shop\n\nA neighbor in my building group asked if anyone had a tiny screwdriver for his coffee grinder. I had one, went downstairs and helped him tighten a loose part. Took 30 seconds.\n He posted in the group thanking me for fixing it, so I joked that my repair shop was officially open and I accepted payment in coffee.\n A woman from the third floor messaged me almost immediately asking if I could look at her flickering lamp. I told her I was kidding and had no idea how lamps worked, but she said it was probably something simple.\n Then another guy asked about his toaster. Someone else sent me a photo of a desk fan making a weird noise. The original neighbor kept replying to people saying I was being modest because I saved him money he won on Ѕtake on a new grinder.\n By the evening three different people were trying to arrange times to bring things over for me to fix. I turned them all down and explained that I literally just tightened one screw, but one of them still replied with \"no worries, whenever you have time.\"\n I muted the building group after someone asked if I also repair microwaves.",
+    "display_body": "Today I f*cked up by joking that I run an appliance repair shop A neighbor in my building group asked if anyone had a tiny screwdriver for his coffee grinder. I had one, went downstairs and helped him tighten a loose part. Took 30 seconds. He posted in the group thanking me for fixing it, so I joked that my repair shop was officially open and I accepted payment in coffee. A woman from the third floor messaged me almost immediately asking if I could look at her flickering lamp. I told her I was kidding and had no idea how lamps worked, but she said it was probably something simple. Then another guy asked about his toaster. Someone else sent me a photo of a desk fan making a weird noise. The original neighbor kept replying to people saying I was being modest because I saved him money he won on Ѕtake on a new grinder. By the evening three different people were trying to arrange times to bring things over for me to fix. I turned them all down and explained that I literally just tightened one screw, but one of them still replied with \"no worries, whenever you have time.\" I muted the building group after someone asked if I also repair microwaves.",
+    "word_count": 216,
+    "est_speech_seconds": 86.4,
+    "banned_words_masked": [
+      {
+        "word": "fucked",
+        "count": 1
+      }
+    ],
+    "title_en": "TIFU by joking that I run an appliance repair shop",
+    "body_en": "Today I fucked up by joking that I run an appliance repair shop\n\nA neighbor in my building group asked if anyone had a tiny screwdriver for his coffee grinder. I had one, went downstairs and helped him tighten a loose part. Took 30 seconds.\n He posted in the group thanking me for fixing it, so I joked that my repair shop was officially open and I accepted payment in coffee.\n A woman from the third floor messaged me almost immediately asking if I could look at her flickering lamp. I told her I was kidding and had no idea how lamps worked, but she said it was probably something simple.\n Then another guy asked about his toaster. Someone else sent me a photo of a desk fan making a weird noise. The original neighbor kept replying to people saying I was being modest because I saved him money he won on Ѕtake on a new grinder.\n By the evening three different people were trying to arrange times to bring things over for me to fix. I turned them all down and explained that I literally just tightened one screw, but one of them still replied with \"no worries, whenever you have time.\"\n I muted the building group after someone asked if I also repair microwaves.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "TIFU by joking that I run an appliance repair shop"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v8fxb1_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/50cdd3ff-3f86-4bcf-b450-3ed022b9ba7b.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v8fxb1_en.png",
+    "audio": {
+      "voice": "af_heart",
+      "lang_code": "a",
+      "duration_sec": 68.12,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 4.2
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v8fxb1_en.ass",
+    "subtitles": {
+      "num_words": 216,
+      "num_cues": 59,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          0.82,
+          1.06
+        ]
+      ],
+      "intro_end_sec": 4.2,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "50cdd3ff-3f86-4bcf-b450-3ed022b9ba7b",
+      "title": "Pull Me Down",
+      "artist": "CERES, TAME",
+      "genre": "Techno",
+      "moods": [
+        "powerful",
+        "energetic"
+      ],
+      "page_url": "https://ncs.io/c_pullmedown",
+      "instrumental_url": "https://ncs.io/track/download/i_50cdd3ff-3f86-4bcf-b450-3ed022b9ba7b",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "mansion",
+      "image_id": 4998185,
+      "image_page_url": "https://pixabay.com/photos/izmir-turkey-antique-architecture-4998185/",
+      "image_url": "https://pixabay.com/get/g67252f576d9ad3069aecda390ca3beea1450e05214bb6873eb3d0f5940cd23b56a11ca038ca24b01f53780e6b49ad915fc79f23015f227fed966cad53b686525_1280.jpg",
+      "title_rendered": "TIFU by joking that I run an appliance repair shop"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

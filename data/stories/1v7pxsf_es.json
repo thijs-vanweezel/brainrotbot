@@ -1,0 +1,110 @@
+{
+  "id": "d9a2058cf4ca4625aa1c948853d1ac2a",
+  "created_at": 1785578375.984919,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1v7pxsf",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1v7pxsf/affirmation_paper_put_in_pocket_moved_to_a/",
+    "author": "/u/pdcyhs",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1785126064.0,
+    "nsfw": null,
+    "variant_id": "1v7pxsf_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "El papel de confirmación puesto en el bolsillo se trasladó a un par de pantalones diferentes.",
+    "raw_body": "This happened a month ago and I forgot to post. I just randomly remembered.\n My boyfriend and I went to a crystal shop and on the way out, the shop owner handed me a folded up piece of paper with an affirmation on it. I read it and I put it in my pants pocket. A pair of jeans with rips in the knees. I only wear these on the weekend so I know it was these pants. Fast forward like two weeks later, I go to work and then head to a therapy appointment after. I was wearing a green pair of pants that I only wear to work. This is how I know I was not just misremembering what pants I wore on the day of getting the affirmation. I'm in the elevator and trying to get my phone out of my pocket when the slip of paper also comes out. It was the affirmation that I specifically remember leaving in my other pants.... Maybe it moved pockets because I needed to hear it before therapy. I forget now but it was something along the lines of \"I am strong enough to face any challenges.\" My therapist said it must be fairies lol.\n\n submitted by /u/pdcyhs\n [link] [comments]",
+    "cleaned_body": "El papel de confirmación puesto en el bolsillo se trasladó a un par de pantalones diferentes.\n\nEsto pasó hace un mes y me olvidé de publicar. Me acordé al azar. Mi novio y yo fuimos a una tienda de cristal y en el camino de salir, el dueño de la tienda me entregó un pedazo de papel plegado con una afirmación en él. Lo leí y lo puse en el bolsillo de mis pantalones. Un par de pantalones con grietas en las rodillas. Sólo las uso los fines de semana para saber que fueron estos pantalones. Avanzo rápido como dos semanas después, voy al trabajo y luego me dirijo a una cita de terapia después. Estaba usando un par de pantalones verdes que solo uso para trabajar. Así es como sé que no estaba recordando mal qué pantalones llevaba el día de recibir la confirmación. Estoy en el ascensor tratando de sacar mi teléfono de mi bolsillo cuando la hoja de papel también sale. Fue la afirmación que recuerdo específicamente dejar en mis otros pantalones... Tal vez me movió los bolsillos porque necesitaba escucharlo antes de la terapia. Ahora lo olvido, pero fue algo así como \"Soy lo suficientemente fuerte como para enfrentar cualquier desafío. \"Mi terapeuta dijo que deben ser hadas lol.",
+    "display_body": "El papel de confirmación puesto en el bolsillo se trasladó a un par de pantalones diferentes. Esto pasó hace un mes y me olvidé de publicar. Me acordé al azar. Mi novio y yo fuimos a una tienda de cristal y en el camino de salir, el dueño de la tienda me entregó un pedazo de papel plegado con una afirmación en él. Lo leí y lo puse en el bolsillo de mis pantalones. Un par de pantalones con grietas en las rodillas. Sólo las uso los fines de semana para saber que fueron estos pantalones. Avanzo rápido como dos semanas después, voy al trabajo y luego me dirijo a una cita de terapia después. Estaba usando un par de pantalones verdes que solo uso para trabajar. Así es como sé que no estaba recordando mal qué pantalones llevaba el día de recibir la confirmación. Estoy en el ascensor tratando de sacar mi teléfono de mi bolsillo cuando la hoja de papel también sale. Fue la afirmación que recuerdo específicamente dejar en mis otros pantalones... Tal vez me movió los bolsillos porque necesitaba escucharlo antes de la terapia. Ahora lo olvido, pero fue algo así como \"Soy lo suficientemente fuerte como para enfrentar cualquier desafío. \"Mi terapeuta dijo que deben ser hadas lol.",
+    "word_count": 213,
+    "est_speech_seconds": 85.2,
+    "banned_words_masked": [],
+    "title_en": "Affirmation paper put in pocket moved to a different pair of pants.",
+    "body_en": "Affirmation paper put in pocket moved to a different pair of pants.\n\nThis happened a month ago and I forgot to post. I just randomly remembered.\n My boyfriend and I went to a crystal shop and on the way out, the shop owner handed me a folded up piece of paper with an affirmation on it. I read it and I put it in my pants pocket. A pair of jeans with rips in the knees. I only wear these on the weekend so I know it was these pants. Fast forward like two weeks later, I go to work and then head to a therapy appointment after. I was wearing a green pair of pants that I only wear to work. This is how I know I was not just misremembering what pants I wore on the day of getting the affirmation. I'm in the elevator and trying to get my phone out of my pocket when the slip of paper also comes out. It was the affirmation that I specifically remember leaving in my other pants.... Maybe it moved pockets because I needed to hear it before therapy. I forget now but it was something along the lines of \"I am strong enough to face any challenges.\" My therapist said it must be fairies lol.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "El papel de confirmación puesto en el bolsillo se trasladó a un par de pantalones diferentes."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v7pxsf_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/aa10a463-431f-4669-9ec0-f42bdd267b7b.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v7pxsf_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 60.9,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 5.202
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v7pxsf_es.ass",
+    "subtitles": {
+      "num_words": 213,
+      "num_cues": 59,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 5.202,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "aa10a463-431f-4669-9ec0-f42bdd267b7b",
+      "title": "Silence",
+      "artist": "N3b, Extra Terra",
+      "genre": "Midtempo Bass",
+      "moods": [
+        "Chasing",
+        "Dark",
+        "Angry",
+        "Eccentric",
+        "Fear",
+        "Mysterious",
+        "Restless",
+        "Suspense"
+      ],
+      "page_url": "https://ncs.io/EN_Silence",
+      "instrumental_url": "https://ncs.io/track/download/i_aa10a463-431f-4669-9ec0-f42bdd267b7b",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "mountains",
+      "image_id": 8460950,
+      "image_page_url": "https://pixabay.com/photos/winter-snow-mountain-jasper-canada-8460950/",
+      "image_url": "https://pixabay.com/get/gf30415a244d19befebb4d0dfdfd4b6ba71985422605a207b484f6a349ca26d8a043c1ed7ed9127f3e878437b685009863108b24826fc8ca652394baaafab973a_1280.jpg",
+      "title_rendered": "El papel de confirmación puesto en el bolsillo se trasladó a un par de pantalones diferentes."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
