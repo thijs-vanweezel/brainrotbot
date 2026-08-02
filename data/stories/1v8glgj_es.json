@@ -1,0 +1,105 @@
+{
+  "id": "da4e2eff4bdb47398c95c2b03f5763e7",
+  "created_at": 1785664688.1559086,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1v8glgj",
+    "url": "https://www.reddit.com/r/offmychest/comments/1v8glgj/everything_is_a_scam_in_america/",
+    "author": "/u/toastyalchemist",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785194088.0,
+    "nsfw": null,
+    "variant_id": "1v8glgj_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Todo es una estafa en Estados Unidos .",
+    "raw_body": "I really hate living in America. Every company is trying to bleed you of as much money as possible all the time. Every day. Never stopping. You work 8 hours a day (actually more because you have to get ready for work in the morning, drive there, and drive back and that's all unpaid) just to get the company's scraps that's not enough to live off of. Then get bombarded by gambling ads every 5 minutes. I pay hundreds of dollars in health insurance every month only for them to deny me when I really need it (I have United Healthcare, so even though I haven't had a health emergency yet, I know they'll deny me when I really need it). Even the fucking president is running crypto scams. Was it always like this? I know we can fix this with regulation and raising the minimum wage, but the zombies in congress are all bought up and sold by the corporations in order to keep things the way they are.\n I don't have a point or a grand thesis. I'm just angry.\n\n submitted by /u/toastyalchemist\n [link] [comments]",
+    "cleaned_body": "Todo es una estafa en Estados Unidos .\n\nRealmente odio vivir en Estados Unidos. Cada compañía está tratando de sangrarle el mayor dinero posible todo el tiempo. Todos los días. Nunca se detiene. Trabajas 8 horas al día (en realidad más porque tienes que prepararte para el trabajo por la mañana, conducir allí y volver y eso es todo sin pago) solo para obtener los restos de la empresa que no son suficientes para vivir. Entonces, se bombardean con anuncios de juegos de azar cada 5 minutos. Pago cientos de dólares en seguro médico cada mes sólo para que me denieguen cuando realmente lo necesito (tengo United Healthcare, así que aunque aún no he tenido una emergencia médica, sé que me negarán cuando realmente lo necesite). Incluso el maldito presidente está ejecutando estafas de criptomonedas. ¿Siempre fue así? Sé que podemos arreglar esto con la regulación y el aumento del salario mínimo, pero los zombis en el Congreso son comprados y vendidos por las corporaciones para mantener las cosas como son. No tengo un punto ni una gran tesis. Sólo estoy enojado.",
+    "display_body": "Todo es una estafa en Estados Unidos . Realmente odio vivir en Estados Unidos. Cada compañía está tratando de sangrarle el mayor dinero posible todo el tiempo. Todos los días. Nunca se detiene. Trabajas 8 horas al día (en realidad más porque tienes que prepararte para el trabajo por la mañana, conducir allí y volver y eso es todo sin pago) solo para obtener los restos de la empresa que no son suficientes para vivir. Entonces, se bombardean con anuncios de juegos de azar cada 5 minutos. Pago cientos de dólares en seguro médico cada mes sólo para que me denieguen cuando realmente lo necesito (tengo United Healthcare, así que aunque aún no he tenido una emergencia médica, sé que me negarán cuando realmente lo necesite). Incluso el maldito presidente está ejecutando estafas de criptomonedas. ¿Siempre fue así? Sé que podemos arreglar esto con la regulación y el aumento del salario mínimo, pero los zombis en el Congreso son comprados y vendidos por las corporaciones para mantener las cosas como son. No tengo un punto ni una gran tesis. Sólo estoy enojado.",
+    "word_count": 182,
+    "est_speech_seconds": 72.8,
+    "banned_words_masked": [],
+    "title_en": "Everything is a scam in America",
+    "body_en": "Everything is a scam in America\n\nI really hate living in America. Every company is trying to bleed you of as much money as possible all the time. Every day. Never stopping. You work 8 hours a day (actually more because you have to get ready for work in the morning, drive there, and drive back and that's all unpaid) just to get the company's scraps that's not enough to live off of. Then get bombarded by gambling ads every 5 minutes. I pay hundreds of dollars in health insurance every month only for them to deny me when I really need it (I have United Healthcare, so even though I haven't had a health emergency yet, I know they'll deny me when I really need it). Even the fucking president is running crypto scams. Was it always like this? I know we can fix this with regulation and raising the minimum wage, but the zombies in congress are all bought up and sold by the corporations in order to keep things the way they are.\n I don't have a point or a grand thesis. I'm just angry.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Todo es una estafa en Estados Unidos ."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1v8glgj_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/041ce816-631e-4fc7-a403-35ff52bb0d6c.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1v8glgj_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 55.55,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 2.56
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1v8glgj_es.ass",
+    "subtitles": {
+      "num_words": 182,
+      "num_cues": 50,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 2.56,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "041ce816-631e-4fc7-a403-35ff52bb0d6c",
+      "title": "Lay Low",
+      "artist": "Zeli, Biometrix",
+      "genre": "Trap",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/LayLow",
+      "instrumental_url": "https://ncs.io/track/download/i_041ce816-631e-4fc7-a403-35ff52bb0d6c",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "fashion model",
+      "image_id": 1868459,
+      "image_page_url": "https://pixabay.com/photos/woman-brunette-model-portrait-1868459/",
+      "image_url": "https://pixabay.com/get/g10d4d9369c5137c49e2d4bcd78cbfafa3b2b0afb8bba8481b607cdfa7f345fa53a08deb9ffcba381a0483ec2d96448805c4a9bbc25f8efa531e44b28f491ff13_1280.jpg",
+      "title_rendered": "Todo es una estafa en Estados Unidos ."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

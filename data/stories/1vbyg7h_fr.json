@@ -1,0 +1,108 @@
+{
+  "id": "c957be1dae8a42dcbf9c18814d937968",
+  "created_at": 1785664752.4821975,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1vbyg7h",
+    "url": "https://www.reddit.com/r/tifu/comments/1vbyg7h/tifu_by_missing_a_court_hearing_ive_been_waiting/",
+    "author": "/u/dvillin",
+    "feed_rank": 5,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1785521013.0,
+    "nsfw": null,
+    "variant_id": "1vbyg7h_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Aujourd'hui, j'ai raté une audience. J'attends depuis 3 ans.",
+    "raw_body": "Three years ago the cold water line in my kitchen broke. It spilled water all over the floor causing warping damage and shorting my electrical box. I got the immediate problem solved and then made a claim with Travelers. What followed was two years of runaround as they rejected my estimates from multiple contractors, including their own. I finally had enough and filed a complaint with the state insurance commission. I was forced to represent myself because none of the lawyers in my state wanted to fight Travelers. I had been waiting for a hearing for almost 8 months. It was originally scheduled for July 21st, but the date was changed. I thought the new date was today. When I showed up to the hearing with all my paperwork, it turns out the hearing was yesterday. Default judgment is being issued against me. I'm hoping I can appeal, but the odds are slim.\n Tldr: I got the date wrong for an important hearing.\n\n submitted by /u/dvillin\n [link] [comments]",
+    "cleaned_body": "Aujourd'hui, j'ai raté une audience. J'attends depuis 3 ans.\n\nIl y a trois ans, la ligne d'eau froide de ma cuisine s'est cassée. Il a versé de l'eau sur tout le sol, causant des dommages déformants et un court-circuit de ma boîte électrique. J'ai résolu le problème immédiatement et j'ai fait une réclamation auprès de Travelers. Ce qui a suivi a été deux ans de décalage car ils ont rejeté mes estimations de plusieurs entrepreneurs, y compris le leur. J'en avais enfin assez et j'ai déposé une plainte auprès de la Commission d'assurance de l'État. J'ai été obligé de me représenter parce que aucun des avocats de mon État ne voulait combattre les Travelers. J'attendais une audience depuis 8 mois. Il était prévu pour le 21 juillet, mais la date a été changée. Je croyais que la nouvelle date était aujourd'hui. Quand je suis venu à l'audience avec tous mes papiers, il s'est avéré que l'audience était hier. Je suis condamné par défaut. J'espère pouvoir faire appel, mais les chances sont minces.",
+    "display_body": "Aujourd'hui, j'ai raté une audience. J'attends depuis 3 ans. Il y a trois ans, la ligne d'eau froide de ma cuisine s'est cassée. Il a versé de l'eau sur tout le sol, causant des dommages déformants et un court-circuit de ma boîte électrique. J'ai résolu le problème immédiatement et j'ai fait une réclamation auprès de Travelers. Ce qui a suivi a été deux ans de décalage car ils ont rejeté mes estimations de plusieurs entrepreneurs, y compris le leur. J'en avais enfin assez et j'ai déposé une plainte auprès de la Commission d'assurance de l'État. J'ai été obligé de me représenter parce que aucun des avocats de mon État ne voulait combattre les Travelers. J'attendais une audience depuis 8 mois. Il était prévu pour le 21 juillet, mais la date a été changée. Je croyais que la nouvelle date était aujourd'hui. Quand je suis venu à l'audience avec tous mes papiers, il s'est avéré que l'audience était hier. Je suis condamné par défaut. J'espère pouvoir faire appel, mais les chances sont minces.",
+    "word_count": 172,
+    "est_speech_seconds": 68.8,
+    "banned_words_masked": [],
+    "title_en": "TIFU by missing a court hearing I've been waiting for 3 years",
+    "body_en": "Today I fucked up by missing a court hearing I've been waiting for 3 years\n\nThree years ago the cold water line in my kitchen broke. It spilled water all over the floor causing warping damage and shorting my electrical box. I got the immediate problem solved and then made a claim with Travelers. What followed was two years of runaround as they rejected my estimates from multiple contractors, including their own. I finally had enough and filed a complaint with the state insurance commission. I was forced to represent myself because none of the lawyers in my state wanted to fight Travelers. I had been waiting for a hearing for almost 8 months. It was originally scheduled for July 21st, but the date was changed. I thought the new date was today. When I showed up to the hearing with all my paperwork, it turns out the hearing was yesterday. Default judgment is being issued against me. I'm hoping I can appeal, but the odds are slim.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Aujourd'hui, j'ai raté une audience. J'attends depuis 3 ans."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vbyg7h_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/0f42c347-dce4-4173-9d61-4ec44d8a5c51.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vbyg7h_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 47.95,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.961
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vbyg7h_fr.ass",
+    "subtitles": {
+      "num_words": 172,
+      "num_cues": 49,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.961,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "title": "Your Poison",
+      "artist": "ROY KNOX",
+      "genre": "Dubstep",
+      "moods": [
+        "Epic",
+        "Euphoric",
+        "Glamorous",
+        "Heavy",
+        "Restless",
+        "Hopeful"
+      ],
+      "page_url": "https://ncs.io/YourPoison",
+      "instrumental_url": "https://ncs.io/track/download/i_0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "portrait woman",
+      "image_id": 9532283,
+      "image_page_url": "https://pixabay.com/photos/woman-model-fashion-posing-9532283/",
+      "image_url": "https://pixabay.com/get/g4fd5f50a80f7b735d471dee72c928fcd99b146516898f2b2a3f69204e3ec6b488a41793fb63cc95b7526834407796b750ffc8508b32b76115fde1689e98c694b_1280.jpg",
+      "title_rendered": "Aujourd'hui, j'ai raté une audience. J'attends depuis 3 ans."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "10e14fb378b84f96af96d503466c3386",
+  "created_at": 1785664495.6693223,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vd70ko",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vd70ko/well_it_finally_happened_to_me/",
+    "author": "/u/rissk1012",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1785641151.0,
+    "nsfw": null,
+    "variant_id": "1vd70ko_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Ça m'est enfin arrivé.",
+    "raw_body": "Last week I went to my grandma's house and my cousin met me over there so we could go to lunch. Before my cousin and I left, my aunt gave me cash and asked me to bring food back for her and my grandma. I immediately zipped the money into the inner pocket of my bag and didn't touch it again.\n The other day I unzipped the inner pocket of my bag looking for the cash-it was nowhere in that pocket. I emptied the entire bag and there was no cash to be found! The zipper pocket is the only extra pocket in the bag, for reference.\n Last night, I'm out to dinner, unzipped the pocket to grab my lip gloss and there's the cash, as if it had always been there. I know for a fact it was gone earlier in the week.\n (And before anyone asks, I paid for everything on my CC as one transaction and held on to the cash).\n\n submitted by /u/rissk1012\n [link] [comments]",
+    "cleaned_body": "Ça m'est enfin arrivé.\n\nLa semaine dernière, j'étais chez ma grand-mère et mon cousin m'y a rencontré pour déjeuner. Avant de partir, ma tante m'a donné de l'argent et m'a demandé de ramener de la nourriture pour elle et ma grand-mère. J'ai immédiatement mis l'argent dans la poche intérieure de mon sac et je ne l'ai plus jamais touché. L'autre jour, j'ai déverrouillé la poche intérieure de mon sac à la recherche de l'argent. Il n'y avait nulle part dans cette poche. J'ai vidé tout le sac et il n'y avait pas d'argent ! La poche à fermeture à glissière est la seule poche supplémentaire dans le sac, pour référence. Hier soir, je suis sorti dîner, j'ai déverrouillé la poche pour prendre mon gloss de lèvres et il y a l'argent, comme s'il avait toujours été là. Je sais avec certitude qu'il a disparu plus tôt dans la semaine. (Et avant que quelqu'un me demande, j'ai payé pour tout sur mon CC comme une seule transaction et gardé l'argent).",
+    "display_body": "Ça m'est enfin arrivé. La semaine dernière, j'étais chez ma grand-mère et mon cousin m'y a rencontré pour déjeuner. Avant de partir, ma tante m'a donné de l'argent et m'a demandé de ramener de la nourriture pour elle et ma grand-mère. J'ai immédiatement mis l'argent dans la poche intérieure de mon sac et je ne l'ai plus jamais touché. L'autre jour, j'ai déverrouillé la poche intérieure de mon sac à la recherche de l'argent. Il n'y avait nulle part dans cette poche. J'ai vidé tout le sac et il n'y avait pas d'argent ! La poche à fermeture à glissière est la seule poche supplémentaire dans le sac, pour référence. Hier soir, je suis sorti dîner, j'ai déverrouillé la poche pour prendre mon gloss de lèvres et il y a l'argent, comme s'il avait toujours été là. Je sais avec certitude qu'il a disparu plus tôt dans la semaine. (Et avant que quelqu'un me demande, j'ai payé pour tout sur mon CC comme une seule transaction et gardé l'argent).",
+    "word_count": 169,
+    "est_speech_seconds": 67.6,
+    "banned_words_masked": [],
+    "title_en": "Well, it finally happened to me…",
+    "body_en": "Well, it finally happened to me...\n\nLast week I went to my grandma's house and my cousin met me over there so we could go to lunch. Before my cousin and I left, my aunt gave me cash and asked me to bring food back for her and my grandma. I immediately zipped the money into the inner pocket of my bag and didn't touch it again.\n The other day I unzipped the inner pocket of my bag looking for the cash-it was nowhere in that pocket. I emptied the entire bag and there was no cash to be found! The zipper pocket is the only extra pocket in the bag, for reference.\n Last night, I'm out to dinner, unzipped the pocket to grab my lip gloss and there's the cash, as if it had always been there. I know for a fact it was gone earlier in the week.\n (And before anyone asks, I paid for everything on my CC as one transaction and held on to the cash).",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Ça m'est enfin arrivé."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vd70ko_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/76fc0203-42e7-424b-b030-650fa7bd316b.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vd70ko_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 45.67,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 2.081
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vd70ko_fr.ass",
+    "subtitles": {
+      "num_words": 169,
+      "num_cues": 44,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 2.081,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "76fc0203-42e7-424b-b030-650fa7bd316b",
+      "title": "Back Again",
+      "artist": "ThatBehavior",
+      "genre": "Drum & Bass",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/BackAgain",
+      "instrumental_url": "https://ncs.io/track/download/i_76fc0203-42e7-424b-b030-650fa7bd316b",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "sushi",
+      "image_id": 7050556,
+      "image_page_url": "https://pixabay.com/photos/shrimp-japanese-cuisine-sashimi-7050556/",
+      "image_url": "https://pixabay.com/get/g6182778fee7d50b3a5e22f2a007ee77a18bd26fb214419321c7e7a4a957eb5596c650169f4443a7a31e3af21d4d2a98d84f5ef442e83ad6d3974b93fdb1e52d9_1280.jpg",
+      "title_rendered": "Ça m'est enfin arrivé."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "1981890f0d6b4fad9889a914d08ef16d",
+  "created_at": 1785664577.7980287,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vbwq7z",
+    "url": "https://www.reddit.com/r/confession/comments/1vbwq7z/cancer_terminal_illness_just_want_it_to_be_over/",
+    "author": "/u/Pleasant-Original-51",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1785517295.0,
+    "nsfw": null,
+    "variant_id": "1vbwq7z_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Je veux juste que ce soit fini.",
+    "raw_body": "I have stage 4 ovarian cancer, secondary spread to liver and other parts of my body. The pain is constant like sharp and stinging under my ribs. The Morphine has slowed my gut to point im constantly constipated and severly dehydrated. No respite. I would end it today if it wasn't for my kids. Fuck my husband. I fucking hate you you insensitive dipshit, you wouldnt be anything without me. How it burns my heart that you will be what my kids have to look up to. Fuck my mother for ruining my life and trying to control what i do with my body. Fuck my siblings for being selfish assholes.\n\n submitted by /u/Pleasant-Original-51\n [link] [comments]",
+    "cleaned_body": "Je veux juste que ce soit fini.\n\nJ'ai un cancer de l'ovaire au stade 4, une propagation secondaire au foie et à d'autres parties de mon corps. La douleur est constante sous mes côtes. La morphine a ralenti mon intestin jusqu'à ce qu'il soit constamment constipé et sévèrement déshydraté. Pas de répit. Je l'arrêterais aujourd'hui si ce n'était pour mes enfants. Va te foutre de mon mari. Je te déteste, imbécile insensé, tu ne serais rien sans moi. Comme ça me brûle le cœur que tu sois ce que mes enfants ont à admirer. Je vais foutre ma mère pour avoir ruiné ma vie et essayé de contrôler ce que je fais de mon corps. Je vais foutre mes frères et sœurs pour être des enfoirés égoïstes.",
+    "display_body": "Je veux juste que ce soit fini. J'ai un cancer de l'ovaire au stade 4, une propagation secondaire au foie et à d'autres parties de mon corps. La douleur est constante sous mes côtes. La morphine a ralenti mon intestin jusqu'à ce qu'il soit constamment constipé et sévèrement déshydraté. Pas de répit. Je l'arrêterais aujourd'hui si ce n'était pour mes enfants. Va te f*utre de mon mari. Je te déteste, imbécile insensé, tu ne serais rien sans moi. Comme ça me brûle le cœur que tu sois ce que mes enfants ont à admirer. Je vais f*utre ma mère pour avoir ruiné ma vie et essayé de contrôler ce que je fais de mon corps. Je vais f*utre mes frères et sœurs pour être des enfoirés égoïstes.",
+    "word_count": 127,
+    "est_speech_seconds": 50.8,
+    "banned_words_masked": [
+      {
+        "word": "foutre",
+        "count": 3
+      }
+    ],
+    "title_en": "Cancer Terminal Illness - Just want it to be over.",
+    "body_en": "Cancer Terminal Illness - Just want it to be over.\n\nI have stage 4 ovarian cancer, secondary spread to liver and other parts of my body. The pain is constant like sharp and stinging under my ribs. The Morphine has slowed my gut to point im constantly constipated and severly dehydrated. No respite. I would end it today if it wasn't for my kids. Fuck my husband. I fucking hate you you insensitive dipshit, you wouldnt be anything without me. How it burns my heart that you will be what my kids have to look up to. Fuck my mother for ruining my life and trying to control what i do with my body. Fuck my siblings for being selfish assholes.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Je veux juste que ce soit fini."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vbwq7z_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/018563ec-10f8-44ab-b46c-e05b7cb20749.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vbwq7z_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 34.38,
+      "sample_rate": 24000,
+      "blurred_words": 3,
+      "intro_sfx_at_sec": 2.561
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vbwq7z_fr.ass",
+    "subtitles": {
+      "num_words": 127,
+      "num_cues": 35,
+      "num_masked": 3,
+      "banned_intervals": [
+        [
+          18.068,
+          18.348
+        ],
+        [
+          26.772,
+          27.072
+        ],
+        [
+          31.314,
+          31.594
+        ]
+      ],
+      "intro_end_sec": 2.561,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "018563ec-10f8-44ab-b46c-e05b7cb20749",
+      "title": "Sunrise (feat. fawlin)",
+      "artist": "Tatsunoshin, fawlin",
+      "genre": "Hardcore",
+      "moods": [
+        "energetic",
+        "majestic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/TS_sunrise",
+      "instrumental_url": "https://ncs.io/track/download/i_018563ec-10f8-44ab-b46c-e05b7cb20749",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "real estate",
+      "image_id": 6893066,
+      "image_page_url": "https://pixabay.com/photos/bathroom-interior-design-6893066/",
+      "image_url": "https://pixabay.com/get/gbb39a25bfe175ed18a606086f0b9136adde4a34c2c379e964b12a2c17f6cf622418d96dc6957c2889229fe6e1a991d7f818002b423567d90778c55c59934337b_1280.jpg",
+      "title_rendered": "Je veux juste que ce soit fini."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

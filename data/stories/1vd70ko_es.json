@@ -1,0 +1,105 @@
+{
+  "id": "5d495a5620bb41a0b7b739f40e162bd9",
+  "created_at": 1785664529.176616,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vd70ko",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vd70ko/well_it_finally_happened_to_me/",
+    "author": "/u/rissk1012",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1785641151.0,
+    "nsfw": null,
+    "variant_id": "1vd70ko_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Bueno, finalmente me pasó a mí...",
+    "raw_body": "Last week I went to my grandma's house and my cousin met me over there so we could go to lunch. Before my cousin and I left, my aunt gave me cash and asked me to bring food back for her and my grandma. I immediately zipped the money into the inner pocket of my bag and didn't touch it again.\n The other day I unzipped the inner pocket of my bag looking for the cash-it was nowhere in that pocket. I emptied the entire bag and there was no cash to be found! The zipper pocket is the only extra pocket in the bag, for reference.\n Last night, I'm out to dinner, unzipped the pocket to grab my lip gloss and there's the cash, as if it had always been there. I know for a fact it was gone earlier in the week.\n (And before anyone asks, I paid for everything on my CC as one transaction and held on to the cash).\n\n submitted by /u/rissk1012\n [link] [comments]",
+    "cleaned_body": "Bueno, finalmente me pasó a mí...\n\nLa semana pasada fui a la casa de mi abuela y mi primo me encontró allí para que pudiéramos ir a almorzar. Antes de que mi prima y yo nos fuéramos, mi tía me dio dinero en efectivo y me pidió que le trajera comida a ella y a mi abuela. Inmediatamente metié el dinero en el bolsillo interior de mi bolso y no lo toqué de nuevo. El otro día abrí el bolsillo interior de mi bolso buscando el efectivo, no estaba en ningún lugar en ese bolsillo. ¡Viajé toda la bolsa y no había dinero en efectivo! El bolsillo de la cremallera es el único bolsillo extra en la bolsa, como referencia. Anoche, estaba fuera a cenar, abrí el bolsillo para coger mi brillo de labios y ahí está el dinero, como si siempre hubiera estado allí. Sé por cierto que se había ido antes de la semana. (Y antes de que alguien pregunte, pagé todo en mi CC como una transacción y me quedé con el efectivo).",
+    "display_body": "Bueno, finalmente me pasó a mí... La semana pasada fui a la casa de mi abuela y mi primo me encontró allí para que pudiéramos ir a almorzar. Antes de que mi prima y yo nos fuéramos, mi tía me dio dinero en efectivo y me pidió que le trajera comida a ella y a mi abuela. Inmediatamente metié el dinero en el bolsillo interior de mi bolso y no lo toqué de nuevo. El otro día abrí el bolsillo interior de mi bolso buscando el efectivo, no estaba en ningún lugar en ese bolsillo. ¡Viajé toda la bolsa y no había dinero en efectivo! El bolsillo de la cremallera es el único bolsillo extra en la bolsa, como referencia. Anoche, estaba fuera a cenar, abrí el bolsillo para coger mi brillo de labios y ahí está el dinero, como si siempre hubiera estado allí. Sé por cierto que se había ido antes de la semana. (Y antes de que alguien pregunte, pagé todo en mi CC como una transacción y me quedé con el efectivo).",
+    "word_count": 176,
+    "est_speech_seconds": 70.4,
+    "banned_words_masked": [],
+    "title_en": "Well, it finally happened to me…",
+    "body_en": "Well, it finally happened to me...\n\nLast week I went to my grandma's house and my cousin met me over there so we could go to lunch. Before my cousin and I left, my aunt gave me cash and asked me to bring food back for her and my grandma. I immediately zipped the money into the inner pocket of my bag and didn't touch it again.\n The other day I unzipped the inner pocket of my bag looking for the cash-it was nowhere in that pocket. I emptied the entire bag and there was no cash to be found! The zipper pocket is the only extra pocket in the bag, for reference.\n Last night, I'm out to dinner, unzipped the pocket to grab my lip gloss and there's the cash, as if it had always been there. I know for a fact it was gone earlier in the week.\n (And before anyone asks, I paid for everything on my CC as one transaction and held on to the cash).",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Bueno, finalmente me pasó a mí..."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vd70ko_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/76fc0203-42e7-424b-b030-650fa7bd316b.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vd70ko_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 45.98,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 2.221
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vd70ko_es.ass",
+    "subtitles": {
+      "num_words": 176,
+      "num_cues": 49,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 2.221,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "76fc0203-42e7-424b-b030-650fa7bd316b",
+      "title": "Back Again",
+      "artist": "ThatBehavior",
+      "genre": "Drum & Bass",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/BackAgain",
+      "instrumental_url": "https://ncs.io/track/download/i_76fc0203-42e7-424b-b030-650fa7bd316b",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "sushi",
+      "image_id": 7050556,
+      "image_page_url": "https://pixabay.com/photos/shrimp-japanese-cuisine-sashimi-7050556/",
+      "image_url": "https://pixabay.com/get/g6182778fee7d50b3a5e22f2a007ee77a18bd26fb214419321c7e7a4a957eb5596c650169f4443a7a31e3af21d4d2a98d84f5ef442e83ad6d3974b93fdb1e52d9_1280.jpg",
+      "title_rendered": "Bueno, finalmente me pasó a mí..."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
