@@ -1,0 +1,116 @@
+{
+  "id": "f7d08a910f0c46a181106702347a0127",
+  "created_at": 1785754054.2876728,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1ve40j3",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1ve40j3/finally_its_my_turn_to_tell_the_story/",
+    "author": "/u/BirthdayUnfair7703",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1785733733.0,
+    "nsfw": null,
+    "variant_id": "1ve40j3_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Finally it’s my turn to tell the story!",
+    "raw_body": "I used to be a total skeptic about parallel universes and simulation theory until I had an experience that completely shifted my perspective. It wasn't a massive event, but it was more than enough to make me question reality.\n A couple of months ago, I spotted a spider in the middle of my apartment hallway. I stepped on it, crushed it, and picked up the body with a napkin to throw it away in the bathroom. The entire process took maybe 60 sec. But when I stepped back into the hallway, there it was, the exact same dead spider lying in the exact same spot.\n I froze. I was so freaked out that I called my partner over to look, but he just assumed I was imagining things. But I know I wasn't. If 10 or 30 minutes had passed, I might have second guessed my memory, but not in a one minute window.\n I haven't really shared this with anyone else because I knew people would scoff at the idea of a \"glitch in the matrix.\" Honestly, though I'm glad it happened. It completely reframed how I view our world, and now I'm just here to enjoy the ride!\n\n submitted by /u/BirthdayUnfair7703\n [link] [comments]",
+    "cleaned_body": "Finally it's my turn to tell the story!\n\nI used to be a total skeptic about parallel universes and simulation theory until I had an experience that completely shifted my perspective. It wasn't a massive event, but it was more than enough to make me question reality.\n A couple of months ago, I spotted a spider in the middle of my apartment hallway. I stepped on it, crushed it, and picked up the body with a napkin to throw it away in the bathroom. The entire process took maybe 60 sec. But when I stepped back into the hallway, there it was, the exact same dead spider lying in the exact same spot.\n I froze. I was so freaked out that I called my partner over to look, but he just assumed I was imagining things. But I know I wasn't. If 10 or 30 minutes had passed, I might have second guessed my memory, but not in a one minute window.\n I haven't really shared this with anyone else because I knew people would scoff at the idea of a \"glitch in the matrix.\" Honestly, though I'm glad it happened. It completely reframed how I view our world, and now I'm just here to enjoy the ride!",
+    "display_body": "Finally it's my turn to tell the story! I used to be a total skeptic about parallel universes and simulation theory until I had an experience that completely shifted my perspective. It wasn't a massive event, but it was more than enough to make me question reality. A couple of months ago, I spotted a spider in the middle of my apartment hallway. I stepped on it, crushed it, and picked up the body with a napkin to throw it away in the bathroom. The entire process took maybe 60 sec. But when I stepped back into the hallway, there it was, the exact same d*ad spider lying in the exact same spot. I froze. I was so freaked out that I called my partner over to look, but he just assumed I was imagining things. But I know I wasn't. If 10 or 30 minutes had passed, I might have second guessed my memory, but not in a one minute window. I haven't really shared this with anyone else because I knew people would scoff at the idea of a \"glitch in the matrix.\" Honestly, though I'm glad it happened. It completely reframed how I view our world, and now I'm just here to enjoy the ride!",
+    "word_count": 208,
+    "est_speech_seconds": 83.2,
+    "banned_words_masked": [
+      {
+        "word": "dead",
+        "count": 1
+      }
+    ],
+    "title_en": "Finally it’s my turn to tell the story!",
+    "body_en": "Finally it's my turn to tell the story!\n\nI used to be a total skeptic about parallel universes and simulation theory until I had an experience that completely shifted my perspective. It wasn't a massive event, but it was more than enough to make me question reality.\n A couple of months ago, I spotted a spider in the middle of my apartment hallway. I stepped on it, crushed it, and picked up the body with a napkin to throw it away in the bathroom. The entire process took maybe 60 sec. But when I stepped back into the hallway, there it was, the exact same dead spider lying in the exact same spot.\n I froze. I was so freaked out that I called my partner over to look, but he just assumed I was imagining things. But I know I wasn't. If 10 or 30 minutes had passed, I might have second guessed my memory, but not in a one minute window.\n I haven't really shared this with anyone else because I knew people would scoff at the idea of a \"glitch in the matrix.\" Honestly, though I'm glad it happened. It completely reframed how I view our world, and now I'm just here to enjoy the ride!",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Finally it’s my turn to tell the story!"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1ve40j3_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/b72d9868-12c0-42c9-a554-54f17725713b.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1ve40j3_en.png",
+    "audio": {
+      "voice": "af_bella",
+      "lang_code": "a",
+      "duration_sec": 63.23,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 3.06
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1ve40j3_en.ass",
+    "subtitles": {
+      "num_words": 208,
+      "num_cues": 58,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          32.003,
+          32.263
+        ]
+      ],
+      "intro_end_sec": 3.06,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "b72d9868-12c0-42c9-a554-54f17725713b",
+      "title": "Doxx My Heart",
+      "artist": "Diamond Eyes",
+      "genre": "Drum & Bass",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/DoxxMyHeart",
+      "instrumental_url": "https://ncs.io/track/download/i_b72d9868-12c0-42c9-a554-54f17725713b",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "mansion",
+      "image_id": 9452814,
+      "image_page_url": "https://pixabay.com/photos/woman-park-stroll-manor-sight-9452814/",
+      "image_url": "https://pixabay.com/get/g19da95b25c0c333035ad7b013d8819ea3d719198c25f71a0c04d109b6cdfa74c0e4e1b02313ba8a87da3f0c927a82253d5915167aac3ed4a9f9e05217c307c81_1280.jpg",
+      "title_rendered": "Finally it’s my turn to tell the story!"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
