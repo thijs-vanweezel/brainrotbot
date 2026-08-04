@@ -1,0 +1,108 @@
+{
+  "id": "f1a9e635d0db4ce7967224ef5d6a73e8",
+  "created_at": 1785838171.2050786,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1ver4fr",
+    "url": "https://www.reddit.com/r/tifu/comments/1ver4fr/tifu_by_giving_my_neighbor_a_cat_feeder_that/",
+    "author": "/u/Radiant-Loss7166",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1785793791.0,
+    "nsfw": null,
+    "variant_id": "1ver4fr_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Hoy me he jodido dándole a mi vecino un alimentador de gatos que todavía tenía mi voz en él",
+    "raw_body": "My cat stopped using his automatic feeder after I changed his food, so I cleaned it out and shoved it in a kitchen cabinet. It sat there forgotten for probably six months before a woman in my building mentioned she had just adopted a cat, and I offered it to her.\n I completely forgot that I had recorded a custom message on it.\n Every morning at 6 it plays me saying, wake up you unemployed little goblin, your government assistance has arrived.\n Apparently the first time it happened she thought somebody was speaking through her baby monitor. The second morning she unplugged the monitor and still heard it, so she started checking every room because she thought someone had gotten inside her apartment.\n She finally figured out it was the feeder after standing next to it at exactly 6 in morning. She knocked on my door holding it and asked why my voice was insulting her cat before sunrise.\n I deleted the recording but now we have to see each other in the elevator knowing she spent mornings searching her apartment for me.\n TLDR: Gave my neighbor an automatic cat feeder that had been sitting unused for months and forgot it was programmed to announce breakfast in my voice by calling the cat an unemployed little goblin.\n\n submitted by /u/Radiant-Loss7166\n [link] [comments]",
+    "cleaned_body": "Hoy me he jodido dándole a mi vecino un alimentador de gatos que todavía tenía mi voz en él\n\nMi gato dejó de usar su alimentador automático después de que cambié su comida, así que lo limpié y lo metié en un armario de cocina. Se quedó ahí olvidado durante probablemente seis meses antes de que una mujer en mi edificio mencionara que acababa de adoptar un gato, y le ofrecí. Olvidé por completo que había grabado un mensaje personalizado en él. Todas las mañanas a las 6 me toca decir, despierta desempleado pequeño goblin, su ayuda del gobierno ha llegado. Al parecer, la primera vez que sucedió pensó que alguien estaba hablando a través de su monitor de bebés. La segunda mañana desconectó el monitor y todavía lo escuchaba, así que comenzó a revisar todas las habitaciones porque pensó que alguien había entrado en su apartamento. Finalmente se dio cuenta de que era el alimentador después de estar junto a ella a las 6 de la mañana. Ella llamó a mi puerta y me preguntó por qué mi voz estaba insultando a su gato antes del amanecer. Borré la grabación pero ahora tenemos que vernos en el ascensor sabiendo que pasó las mañanas buscando en su apartamento por mí.",
+    "display_body": "Hoy me he jodido dándole a mi vecino un alimentador de gatos que todavía tenía mi voz en él Mi gato dejó de usar su alimentador automático después de que cambié su comida, así que lo limpié y lo metié en un armario de cocina. Se quedó ahí olvidado durante probablemente seis meses antes de que una mujer en mi edificio mencionara que acababa de adoptar un gato, y le ofrecí. Olvidé por completo que había grabado un mensaje personalizado en él. Todas las mañanas a las 6 me toca decir, despierta desempleado pequeño goblin, su ayuda del gobierno ha llegado. Al parecer, la primera vez que sucedió pensó que alguien estaba hablando a través de su monitor de bebés. La segunda mañana desconectó el monitor y todavía lo escuchaba, así que comenzó a revisar todas las habitaciones porque pensó que alguien había entrado en su apartamento. Finalmente se dio cuenta de que era el alimentador después de estar junto a ella a las 6 de la mañana. Ella llamó a mi puerta y me preguntó por qué mi voz estaba insultando a su gato antes del amanecer. Borré la grabación pero ahora tenemos que vernos en el ascensor sabiendo que pasó las mañanas buscando en su apartamento por mí.",
+    "word_count": 210,
+    "est_speech_seconds": 84.0,
+    "banned_words_masked": [],
+    "title_en": "TIFU by giving my neighbor a cat feeder that still had my voice in it",
+    "body_en": "Today I fucked up by giving my neighbor a cat feeder that still had my voice in it\n\nMy cat stopped using his automatic feeder after I changed his food, so I cleaned it out and shoved it in a kitchen cabinet. It sat there forgotten for probably six months before a woman in my building mentioned she had just adopted a cat, and I offered it to her.\n I completely forgot that I had recorded a custom message on it.\n Every morning at 6 it plays me saying, wake up you unemployed little goblin, your government assistance has arrived.\n Apparently the first time it happened she thought somebody was speaking through her baby monitor. The second morning she unplugged the monitor and still heard it, so she started checking every room because she thought someone had gotten inside her apartment.\n She finally figured out it was the feeder after standing next to it at exactly 6 in morning. She knocked on my door holding it and asked why my voice was insulting her cat before sunrise.\n I deleted the recording but now we have to see each other in the elevator knowing she spent mornings searching her apartment for me.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Hoy me he jodido dándole a mi vecino un alimentador de gatos que todavía tenía mi voz en él"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1ver4fr_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/0f42c347-dce4-4173-9d61-4ec44d8a5c51.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1ver4fr_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 60.58,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 5.001
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1ver4fr_es.ass",
+    "subtitles": {
+      "num_words": 210,
+      "num_cues": 56,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 5.001,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "title": "Your Poison",
+      "artist": "ROY KNOX",
+      "genre": "Dubstep",
+      "moods": [
+        "Epic",
+        "Euphoric",
+        "Glamorous",
+        "Heavy",
+        "Restless",
+        "Hopeful"
+      ],
+      "page_url": "https://ncs.io/YourPoison",
+      "instrumental_url": "https://ncs.io/track/download/i_0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "gourmet burger",
+      "image_id": 7323672,
+      "image_page_url": "https://pixabay.com/photos/cheese-burger-burger-hamburger-7323672/",
+      "image_url": "https://pixabay.com/get/g31ebe3bd2cf15d1cf2a561dac43f9c969442630682ce804e912ab9b02f69940823cc251c9ec6560576063d0cf8f5a7583bc3850448de47b8b9729e3007d1177d_1280.jpg",
+      "title_rendered": "Hoy me he jodido dándole a mi vecino un alimentador de gatos que todavía tenía mi voz en él"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

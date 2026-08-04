@@ -1,0 +1,105 @@
+{
+  "id": "49d1736c995d45fbae7813fe65a73ae0",
+  "created_at": 1785838782.4544299,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vcm3yt",
+    "url": "https://www.reddit.com/r/confession/comments/1vcm3yt/my_dad_kicked_me_out_the_house_because_he_thought/",
+    "author": "/u/Hot-Suit-2327",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1785587289.0,
+    "nsfw": null,
+    "variant_id": "1vcm3yt_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "mi padre me echó de casa porque pensaba que era gay, así que le recordé a la corte su multa de £5,000",
+    "raw_body": "pretty much what it says, my dad assumed I was gay and just started being so nasty towards me, I'm not but just can't control how I act..\n anyway, I remember that in 2022, he lost a court case and had to pay £5,000 ($6741.25), but the court forgot about it. I sent them an email recently reminding them, and they said they're recalling the case for the fine to be paid\n considering its been 4 years and there's been no contact between him and the court, its safe to assume its just been forgotten about\n\n submitted by /u/Hot-Suit-2327\n [link] [comments]",
+    "cleaned_body": "mi padre me echó de casa porque pensaba que era gay, así que le recordé a la corte su multa de £5,000\n\nEs más o menos lo que dice, mi padre asumió que era gay y empezó a ser tan desagradable conmigo, que no lo soy, pero no puedo controlar mi comportamiento. De todos modos, recuerdo que en 2022, perdió un caso judicial y tuvo que pagar £5,000 ($6741). 25), pero el tribunal lo olvidó. Recientemente les envié un correo electrónico recordándoles, y dijeron que estaban recordando el caso para pagar la multa Teniendo en cuenta que han pasado 4 años y no ha habido contacto entre él y la corte, es seguro asumir que se ha olvidado",
+    "display_body": "mi padre me echó de casa porque pensaba que era gay, así que le recordé a la corte su multa de £5,000 Es más o menos lo que dice, mi padre asumió que era gay y empezó a ser tan desagradable conmigo, que no lo soy, pero no puedo controlar mi comportamiento. De todos modos, recuerdo que en 2022, perdió un caso judicial y tuvo que pagar £5,000 ($6741). 25), pero el tribunal lo olvidó. Recientemente les envié un correo electrónico recordándoles, y dijeron que estaban recordando el caso para pagar la multa Teniendo en cuenta que han pasado 4 años y no ha habido contacto entre él y la corte, es seguro asumir que se ha olvidado",
+    "word_count": 118,
+    "est_speech_seconds": 47.2,
+    "banned_words_masked": [],
+    "title_en": "my dad kicked me out the house because he thought I was gay, so I reminded the court of his £5,000 fine",
+    "body_en": "my dad kicked me out the house because he thought I was gay, so I reminded the court of his £5,000 fine\n\npretty much what it says, my dad assumed I was gay and just started being so nasty towards me, I'm not but just can't control how I act..\n anyway, I remember that in 2022, he lost a court case and had to pay £5,000 ($6741.25), but the court forgot about it. I sent them an email recently reminding them, and they said they're recalling the case for the fine to be paid\n considering its been 4 years and there's been no contact between him and the court, its safe to assume its just been forgotten about",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "mi padre me echó de casa porque pensaba que era gay, así que le recordé a la corte su multa de £5,000"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vcm3yt_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/55e23ca1-072d-4445-8a3e-f38353b5c2c2.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vcm3yt_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 37.88,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 6.883
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vcm3yt_es.ass",
+    "subtitles": {
+      "num_words": 118,
+      "num_cues": 31,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 6.883,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "55e23ca1-072d-4445-8a3e-f38353b5c2c2",
+      "title": "Firestarter",
+      "artist": "Lack D, KDH, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/Firestarter",
+      "instrumental_url": "https://ncs.io/track/download/i_55e23ca1-072d-4445-8a3e-f38353b5c2c2",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "pizza",
+      "image_id": 480794,
+      "image_page_url": "https://pixabay.com/photos/vegetable-pizza-pizza-meal-food-480794/",
+      "image_url": "https://pixabay.com/get/gae6c191fc742e510d0c736326cd0364c0e7d6b33655d36c8d1c2f7c1d41a684fe4e630fba9a3af2dec9cbf9b4e683e0f2fab722f98157539186ffbc26af2ceae_1280.jpg",
+      "title_rendered": "mi padre me echó de casa porque pensaba que era gay, así que le recordé a la corte su multa de £5,000"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

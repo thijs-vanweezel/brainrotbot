@@ -1,0 +1,108 @@
+{
+  "id": "d20e4b853e244c3d875b735542b2a023",
+  "created_at": 1785838110.4711971,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1ver4fr",
+    "url": "https://www.reddit.com/r/tifu/comments/1ver4fr/tifu_by_giving_my_neighbor_a_cat_feeder_that/",
+    "author": "/u/Radiant-Loss7166",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1785793791.0,
+    "nsfw": null,
+    "variant_id": "1ver4fr_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Aujourd'hui, j'ai foiré en donnant à ma voisine une fourrure de chat qui avait encore ma voix.",
+    "raw_body": "My cat stopped using his automatic feeder after I changed his food, so I cleaned it out and shoved it in a kitchen cabinet. It sat there forgotten for probably six months before a woman in my building mentioned she had just adopted a cat, and I offered it to her.\n I completely forgot that I had recorded a custom message on it.\n Every morning at 6 it plays me saying, wake up you unemployed little goblin, your government assistance has arrived.\n Apparently the first time it happened she thought somebody was speaking through her baby monitor. The second morning she unplugged the monitor and still heard it, so she started checking every room because she thought someone had gotten inside her apartment.\n She finally figured out it was the feeder after standing next to it at exactly 6 in morning. She knocked on my door holding it and asked why my voice was insulting her cat before sunrise.\n I deleted the recording but now we have to see each other in the elevator knowing she spent mornings searching her apartment for me.\n TLDR: Gave my neighbor an automatic cat feeder that had been sitting unused for months and forgot it was programmed to announce breakfast in my voice by calling the cat an unemployed little goblin.\n\n submitted by /u/Radiant-Loss7166\n [link] [comments]",
+    "cleaned_body": "Aujourd'hui, j'ai foiré en donnant à ma voisine une fourrure de chat qui avait encore ma voix.\n\nMon chat a cessé d'utiliser son alimentateur automatique après que j'ai changé sa nourriture, alors je l'ai nettoyé et l'ai poussé dans un armoire de cuisine. Il était là oublié pendant six mois avant qu'une femme dans mon bâtiment ne me dise qu'elle venait d'adopter un chat, et je lui ai offert. J'avais complètement oublié que j'avais enregistré un message sur le disque. Chaque matin à 6 heures, je me joue à dire, réveille-toi, petit gobelin au chômage, ton aide gouvernementale est arrivée. Apparemment, la première fois qu'il s'est passé, elle a pensé que quelqu'un parlait à travers son moniteur de bébé. Le deuxième matin, elle a débranché le moniteur et l'a toujours entendu, alors elle a commencé à vérifier chaque chambre parce qu'elle pensait que quelqu'un avait pénétré dans son appartement. Elle a finalement compris que c'était le nourrisseur après être restée à côté à 6 heures du matin. Elle a frappé à ma porte et m'a demandé pourquoi ma voix insultait son chat avant le lever du soleil. J'ai supprimé l'enregistrement mais maintenant nous devons nous voir dans l'ascenseur sachant qu'elle a passé les matinées à me chercher dans son appartement.",
+    "display_body": "Aujourd'hui, j'ai foiré en donnant à ma voisine une fourrure de chat qui avait encore ma voix. Mon chat a cessé d'utiliser son alimentateur automatique après que j'ai changé sa nourriture, alors je l'ai nettoyé et l'ai poussé dans un armoire de cuisine. Il était là oublié pendant six mois avant qu'une femme dans mon bâtiment ne me dise qu'elle venait d'adopter un chat, et je lui ai offert. J'avais complètement oublié que j'avais enregistré un message sur le disque. Chaque matin à 6 heures, je me joue à dire, réveille-toi, petit gobelin au chômage, ton aide gouvernementale est arrivée. Apparemment, la première fois qu'il s'est passé, elle a pensé que quelqu'un parlait à travers son moniteur de bébé. Le deuxième matin, elle a débranché le moniteur et l'a toujours entendu, alors elle a commencé à vérifier chaque chambre parce qu'elle pensait que quelqu'un avait pénétré dans son appartement. Elle a finalement compris que c'était le nourrisseur après être restée à côté à 6 heures du matin. Elle a frappé à ma porte et m'a demandé pourquoi ma voix insultait son chat avant le lever du soleil. J'ai supprimé l'enregistrement mais maintenant nous devons nous voir dans l'ascenseur sachant qu'elle a passé les matinées à me chercher dans son appartement.",
+    "word_count": 210,
+    "est_speech_seconds": 84.0,
+    "banned_words_masked": [],
+    "title_en": "TIFU by giving my neighbor a cat feeder that still had my voice in it",
+    "body_en": "Today I fucked up by giving my neighbor a cat feeder that still had my voice in it\n\nMy cat stopped using his automatic feeder after I changed his food, so I cleaned it out and shoved it in a kitchen cabinet. It sat there forgotten for probably six months before a woman in my building mentioned she had just adopted a cat, and I offered it to her.\n I completely forgot that I had recorded a custom message on it.\n Every morning at 6 it plays me saying, wake up you unemployed little goblin, your government assistance has arrived.\n Apparently the first time it happened she thought somebody was speaking through her baby monitor. The second morning she unplugged the monitor and still heard it, so she started checking every room because she thought someone had gotten inside her apartment.\n She finally figured out it was the feeder after standing next to it at exactly 6 in morning. She knocked on my door holding it and asked why my voice was insulting her cat before sunrise.\n I deleted the recording but now we have to see each other in the elevator knowing she spent mornings searching her apartment for me.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Aujourd'hui, j'ai foiré en donnant à ma voisine une fourrure de chat qui avait encore ma voix."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1ver4fr_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/0f42c347-dce4-4173-9d61-4ec44d8a5c51.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1ver4fr_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 60.8,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 5.222
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1ver4fr_fr.ass",
+    "subtitles": {
+      "num_words": 210,
+      "num_cues": 56,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 5.222,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "title": "Your Poison",
+      "artist": "ROY KNOX",
+      "genre": "Dubstep",
+      "moods": [
+        "Epic",
+        "Euphoric",
+        "Glamorous",
+        "Heavy",
+        "Restless",
+        "Hopeful"
+      ],
+      "page_url": "https://ncs.io/YourPoison",
+      "instrumental_url": "https://ncs.io/track/download/i_0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "gourmet burger",
+      "image_id": 7323672,
+      "image_page_url": "https://pixabay.com/photos/cheese-burger-burger-hamburger-7323672/",
+      "image_url": "https://pixabay.com/get/g31ebe3bd2cf15d1cf2a561dac43f9c969442630682ce804e912ab9b02f69940823cc251c9ec6560576063d0cf8f5a7583bc3850448de47b8b9729e3007d1177d_1280.jpg",
+      "title_rendered": "Aujourd'hui, j'ai foiré en donnant à ma voisine une fourrure de chat qui avait encore ma voix."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
