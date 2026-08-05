@@ -1,0 +1,132 @@
+{
+  "id": "d93a6b0cde0043708ff6b0785598cb4b",
+  "created_at": 1785924387.0954754,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vf1kfh",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vf1kfh/i_think_my_partner_just_had_sex_with_me_just_to/",
+    "author": "/u/itsacreaturefeature",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785822404.0,
+    "nsfw": null,
+    "variant_id": "1vf1kfh_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "I think my partner just had sex with me just to stop me from eating my licorice in bed.",
+    "raw_body": "I can't really be mad because it was good sex, but damn.\n My jaw is clicky while I eat and those trader joes strawberry licorice twists are so good, but so chewy... then very clicky, and kinda loud. This man in this sleepy state took my candy out of hand and initiated sex. It was quickie but very effective, but we both came and cuddled. He mumbled out \"you're not getting these back\", shoved my licorice in the bed crack then promptly started lightly snoring again. Im baffled.\n\n submitted by /u/itsacreaturefeature\n [link] [comments]",
+    "cleaned_body": "I think my partner just had sex with me just to stop me from eating my licorice in bed.\n\nI can't really be mad because it was good sex, but damn.\n My jaw is clicky while I eat and those trader joes strawberry licorice twists are so good, but so chewy... then very clicky, and kinda loud. This man in this sleepy state took my candy out of hand and initiated sex. It was quickie but very effective, but we both came and cuddled. He mumbled out \"you're not getting these back\", shoved my licorice in the bed crack then promptly started lightly snoring again. Im baffled.",
+    "display_body": "I think my partner just had s*x with me just to stop me from eating my licorice in bed. I can't really be mad because it was good s*x, but damn. My jaw is clicky while I eat and those trader joes strawberry licorice twists are so good, but so chewy... then very clicky, and kinda loud. This man in this sleepy state took my candy out of hand and initiated s*x. It was quickie but very effective, but we both came and cuddled. He mumbled out \"you're not getting these back\", shoved my licorice in the bed cr*ck then promptly started lightly snoring again. Im baffled.",
+    "word_count": 107,
+    "est_speech_seconds": 42.8,
+    "banned_words_masked": [
+      {
+        "word": "sex",
+        "count": 3
+      },
+      {
+        "word": "crack",
+        "count": 1
+      }
+    ],
+    "title_en": "I think my partner just had sex with me just to stop me from eating my licorice in bed.",
+    "body_en": "I think my partner just had sex with me just to stop me from eating my licorice in bed.\n\nI can't really be mad because it was good sex, but damn.\n My jaw is clicky while I eat and those trader joes strawberry licorice twists are so good, but so chewy... then very clicky, and kinda loud. This man in this sleepy state took my candy out of hand and initiated sex. It was quickie but very effective, but we both came and cuddled. He mumbled out \"you're not getting these back\", shoved my licorice in the bed crack then promptly started lightly snoring again. Im baffled.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "I think my partner just had s*x with me just to stop me from eating my licorice in bed."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vf1kfh_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a72b01e3-1976-4dee-b721-814bc4b7cca7.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vf1kfh_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 28.18,
+      "sample_rate": 24000,
+      "blurred_words": 4,
+      "intro_sfx_at_sec": 5.583
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vf1kfh_en.ass",
+    "subtitles": {
+      "num_words": 107,
+      "num_cues": 29,
+      "num_masked": 4,
+      "banned_intervals": [
+        [
+          1.641,
+          1.921
+        ],
+        [
+          7.364,
+          7.684
+        ],
+        [
+          18.31,
+          18.81
+        ],
+        [
+          24.593,
+          24.893
+        ]
+      ],
+      "intro_end_sec": 5.583,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "a72b01e3-1976-4dee-b721-814bc4b7cca7",
+      "title": "On My Mind",
+      "artist": "No Hero",
+      "genre": "Hardstyle",
+      "moods": [
+        "energetic",
+        "powerful",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/OnMyMind",
+      "instrumental_url": "https://ncs.io/track/download/i_a72b01e3-1976-4dee-b721-814bc4b7cca7",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "landscape",
+      "image_id": 4484517,
+      "image_page_url": "https://pixabay.com/photos/prague-zoo-giraffe-animals-nature-4484517/",
+      "image_url": "https://pixabay.com/get/g9106af187c79fcbddc812b586475f8100831da3a3e44f33a2f4ddc92147c8683b376ee2d36f7be51065970c88139db93e2c8f9ae68e01a83ba53ee6112aac472_1280.jpg",
+      "title_rendered": "I think my partner just had s*x with me just to stop me from eating my licorice in bed."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

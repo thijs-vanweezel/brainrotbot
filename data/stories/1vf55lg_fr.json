@@ -1,0 +1,104 @@
+{
+  "id": "541c74781cba4994b87fc507e400bf4c",
+  "created_at": 1785924899.6729474,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "UnresolvedMysteries",
+    "post_id": "1vf55lg",
+    "url": "https://www.reddit.com/r/UnresolvedMysteries/comments/1vf55lg/man_claims_to_be_christopher_abeyta_kidnapped_in/",
+    "author": "/u/JessalynSueSmiling",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/UnresolvedMysteries",
+    "created_utc": 1785834766.0,
+    "nsfw": null,
+    "variant_id": "1vf55lg_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Un homme prétend être Christopher Abeyta, enlevé en 1986",
+    "raw_body": "A man in Colorado Springs is claiming to be Christopher Enoch Abeyta, who was kidnapped from the city in 1986 at the age of seven months. He was crying at a bar in Colorado Springs and told the bartender there that he thought that he was Christopher Abeyta and had come to the city by bus. The bartender took a picture of the man and told the police. There is DNA testing being performed, but it could take months.\n Christopher was taken from his crib on July 15, 1986. His parents had recently separated but were attempting to get back together. His mother apparently failed two polygraph tests but blamed it on the tranquilizers she was taking at the time, and no one in his family was ever ruled out as a suspect. His sister suspects a woman named Emma Bradshaw, who was having an affair with their father, as being behind Christopher's disappearance, but no one has ever charged, and Christopher has never been found.\n Personally, I've always been suspicious of people claiming to be a kidnapped child, but who knows? It would be wonderful if he really is Christopher.\n Sources:\n https://krdo.com/news/2026/07/31/man-walks-into-old-colorado-city-bar-claiming-to-be-christopher-abeyta-man-missing-for-decades/\n https://charleyproject.org/case/christopher-enoch-abeyta\n\n submitted by /u/JessalynSueSmiling\n [link] [comments]",
+    "cleaned_body": "Un homme prétend être Christopher Abeyta, enlevé en 1986\n\nUn homme de Colorado Springs prétend être Christopher Enoch Abeyta, qui a été enlevé de la ville en 1986 à l'âge de sept mois. Il pleurait dans un bar de Colorado Springs et a dit au barman qu'il pensait être Christopher Abeyta et qu'il était venu en bus. Le barman a pris une photo de l'homme et a dit à la police. Des tests ADN sont en cours, mais ça pourrait prendre des mois. Christopher a été enlevé de son berceau le 15 juillet 1986. Ses parents étaient récemment séparés mais essayaient de se remettre ensemble. Sa mère a apparemment échoué à deux tests de polygraphe mais a blâmé les tranquillisants qu'elle prenait à l'époque, et personne dans sa famille n'a jamais été exclu comme suspect. Sa sœur soupçonne une femme nommée Emma Bradshaw, qui avait une liaison avec leur père, d'être derrière la disparition de Christopher, mais personne n'a jamais porté plainte, et Christopher n'a jamais été retrouvé. Personnellement, j'ai toujours été méfiante des gens qui prétendent être un enfant enlevé, mais qui sait ? Ce serait merveilleux s'il était vraiment Christopher. Sources:",
+    "display_body": "Un homme prétend être Christopher Abeyta, enlevé en 1986 Un homme de Colorado Springs prétend être Christopher Enoch Abeyta, qui a été enlevé de la ville en 1986 à l'âge de sept mois. Il pleurait dans un bar de Colorado Springs et a dit au barman qu'il pensait être Christopher Abeyta et qu'il était venu en bus. Le barman a pris une photo de l'homme et a dit à la police. Des tests ADN sont en cours, mais ça pourrait prendre des mois. Christopher a été enlevé de son berceau le 15 juillet 1986. Ses parents étaient récemment séparés mais essayaient de se remettre ensemble. Sa mère a apparemment échoué à deux tests de polygraphe mais a blâmé les tranquillisants qu'elle prenait à l'époque, et personne dans sa famille n'a jamais été exclu comme suspect. Sa sœur soupçonne une femme nommée Emma Bradshaw, qui avait une liaison avec leur père, d'être derrière la disparition de Christopher, mais personne n'a jamais porté plainte, et Christopher n'a jamais été retrouvé. Personnellement, j'ai toujours été méfiante des gens qui prétendent être un enfant enlevé, mais qui sait ? Ce serait merveilleux s'il était vraiment Christopher. Sources:",
+    "word_count": 193,
+    "est_speech_seconds": 77.2,
+    "banned_words_masked": [],
+    "title_en": "Man claims to be Christopher Abeyta, kidnapped in 1986",
+    "body_en": "Man claims to be Christopher Abeyta, kidnapped in 1986\n\nA man in Colorado Springs is claiming to be Christopher Enoch Abeyta, who was kidnapped from the city in 1986 at the age of seven months. He was crying at a bar in Colorado Springs and told the bartender there that he thought that he was Christopher Abeyta and had come to the city by bus. The bartender took a picture of the man and told the police. There is DNA testing being performed, but it could take months.\n Christopher was taken from his crib on July 15, 1986. His parents had recently separated but were attempting to get back together. His mother apparently failed two polygraph tests but blamed it on the tranquilizers she was taking at the time, and no one in his family was ever ruled out as a suspect. His sister suspects a woman named Emma Bradshaw, who was having an affair with their father, as being behind Christopher's disappearance, but no one has ever charged, and Christopher has never been found.\n Personally, I've always been suspicious of people claiming to be a kidnapped child, but who knows? It would be wonderful if he really is Christopher.\n Sources:",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Un homme prétend être Christopher Abeyta, enlevé en 1986"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vf55lg_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/dc7edbe0-3848-4746-b54c-02579dc269bd.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vf55lg_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 56.75,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.961
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vf55lg_fr.ass",
+    "subtitles": {
+      "num_words": 193,
+      "num_cues": 53,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.961,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "dc7edbe0-3848-4746-b54c-02579dc269bd",
+      "title": "Notice That",
+      "artist": "Zaug",
+      "genre": "Electronic Rock",
+      "moods": [
+        "powerful",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/NoticeThat",
+      "instrumental_url": "https://ncs.io/track/download/i_dc7edbe0-3848-4746-b54c-02579dc269bd",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury car",
+      "image_id": 6502060,
+      "image_page_url": "https://pixabay.com/photos/luxury-car-sports-car-vehicle-6502060/",
+      "image_url": "https://pixabay.com/get/g6d43a67d169afef5150927c3bd85db4dd3b14728d464c82a49848f165807f0252db4ae6920eb1d703871eec2429d13ead3c0f7e96a068968f0e33143c925e212_1280.jpg",
+      "title_rendered": "Un homme prétend être Christopher Abeyta, enlevé en 1986"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

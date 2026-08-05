@@ -1,0 +1,105 @@
+{
+  "id": "453d37b217f1443c825c642a63be0552",
+  "created_at": 1785924774.814874,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "relationship_advice",
+    "post_id": "1veobli",
+    "url": "https://www.reddit.com/r/relationship_advice/comments/1veobli/update_he_wants_me_to_sell_my_house_to_show/",
+    "author": "/u/Margaret_3333",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/relationship_advice",
+    "created_utc": 1785787461.0,
+    "nsfw": null,
+    "variant_id": "1veobli_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Il veut que je vends ma maison pour montrer mon engagement.",
+    "raw_body": "https://www.reddit.com/r/relationship_advice/s/Q1AkYeIHyY\n This is a post to update from the above post.\n It's been a crazy few weeks! I have read everyone's comments and I'm truly thankful.\n I have ended the relationship, but we are still living together until his house is sorted to move into (end of August). Everything I felt I told him, I have not sold my house, nor am I moving. Myself and my son are staying put in our home.\n I feel at peace with my decision, and hopefully onwards and upwards once he moves out. We are friendly and amicable, and he has really took on board everything that I told him.\n I hope I have done the right thing?\n\n submitted by /u/Margaret_3333\n [link] [comments]",
+    "cleaned_body": "Il veut que je vends ma maison pour montrer mon engagement.\n\nCeci est un article à mettre à jour à partir du post ci-dessus. Ça a été une folie de quelques semaines ! J'ai lu les commentaires de tout le monde et je suis vraiment reconnaissante. J'ai mis fin à la relation, mais nous vivons ensemble jusqu'à ce que sa maison soit organisée pour emménager (fin août). Tout ce que j'ai ressenti, je lui ai dit, je n'ai pas vendu ma maison, et je ne déménage pas. Mon fils et moi restons chez nous. Je me sens en paix avec ma décision, et j'espère aller de l'avant et de l'avant une fois qu'il sera parti. Nous sommes amicaux et amicaux, et il a vraiment pris en compte tout ce que je lui ai dit. J'espère avoir fait la bonne chose.",
+    "display_body": "Il veut que je vends ma maison pour montrer mon engagement. Ceci est un article à mettre à jour à partir du post ci-dessus. Ça a été une folie de quelques semaines ! J'ai lu les commentaires de tout le monde et je suis vraiment reconnaissante. J'ai mis fin à la relation, mais nous vivons ensemble jusqu'à ce que sa maison soit organisée pour emménager (fin août). Tout ce que j'ai ressenti, je lui ai dit, je n'ai pas vendu ma maison, et je ne déménage pas. Mon fils et moi restons chez nous. Je me sens en paix avec ma décision, et j'espère aller de l'avant et de l'avant une fois qu'il sera parti. Nous sommes amicaux et amicaux, et il a vraiment pris en compte tout ce que je lui ai dit. J'espère avoir fait la bonne chose.",
+    "word_count": 140,
+    "est_speech_seconds": 56.0,
+    "banned_words_masked": [],
+    "title_en": "UPDATE - he wants me to sell my house to show commitment 30F 31M.",
+    "body_en": "UPDATE - he wants me to sell my house to show commitment 30F 31M.\n\nThis is a post to update from the above post.\n It's been a crazy few weeks! I have read everyone's comments and I'm truly thankful.\n I have ended the relationship, but we are still living together until his house is sorted to move into (end of August). Everything I felt I told him, I have not sold my house, nor am I moving. Myself and my son are staying put in our home.\n I feel at peace with my decision, and hopefully onwards and upwards once he moves out. We are friendly and amicable, and he has really took on board everything that I told him.\n I hope I have done the right thing?",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Il veut que je vends ma maison pour montrer mon engagement."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1veobli_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/5998b3bf-56b4-47e5-9502-a0dc5f84bb8f.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1veobli_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 33.92,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.661
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1veobli_fr.ass",
+    "subtitles": {
+      "num_words": 140,
+      "num_cues": 40,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.661,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "5998b3bf-56b4-47e5-9502-a0dc5f84bb8f",
+      "title": "Muscle Up (feat. Drama B & Ryo)",
+      "artist": "Drama B, SKAN",
+      "genre": "Trap",
+      "moods": [
+        "powerful",
+        "angry",
+        "negative"
+      ],
+      "page_url": "https://ncs.io/MuscleUp",
+      "instrumental_url": "https://ncs.io/track/download/i_5998b3bf-56b4-47e5-9502-a0dc5f84bb8f",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "gourmet burger",
+      "image_id": 3365223,
+      "image_page_url": "https://pixabay.com/photos/burger-food-meat-meal-beef-3365223/",
+      "image_url": "https://pixabay.com/get/gc8651a1f82083ba52f393b7b160862c0bcf3389ac36eac588ca8b4eb70ea95cf1e7d265d851162d1244f816fe92a29c70f6327999fbe4b7ba4f73d9c14c25f25_1280.jpg",
+      "title_rendered": "Il veut que je vends ma maison pour montrer mon engagement."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

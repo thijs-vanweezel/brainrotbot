@@ -1,0 +1,105 @@
+{
+  "id": "669de89989e942a0ba9c120767b49182",
+  "created_at": 1785924686.0201516,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1va7hg2",
+    "url": "https://www.reddit.com/r/adultery/comments/1va7hg2/the_final_block/",
+    "author": "/u/isthismylife2024",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785355666.0,
+    "nsfw": null,
+    "variant_id": "1va7hg2_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Le dernier bloc",
+    "raw_body": "Took me long enough-the final block, the final delete...tired of checking and seeing your status but you're not talking to me, so you found someone else to scratch that itch, and good for you, but the realization you are so disposable. For someone who \"doesn't do this type of thing\" you sure are on a \"cheaters\" platform a lot. It is what it is, and the final block is done, the text string is gone. I.was.nothing. Time to move on.\n\n submitted by /u/isthismylife2024\n [link] [comments]",
+    "cleaned_body": "Le dernier bloc\n\nIl m'a fallu assez de temps... le dernier bloc, la dernière suppression... fatigué de vérifier et de voir votre état, mais vous ne me parlez pas, alors vous avez trouvé quelqu'un d'autre pour rayer cette démangeaison, et bon pour vous, mais la réalisation que vous êtes si jetable. Pour quelqu'un qui \"ne fait pas ce genre de chose\" vous êtes certainement sur une plateforme \"cheaters\" beaucoup. C'est ce qu'il est, et le dernier bloc est terminé, la chaîne de texte a disparu. Je suis là. C'était vrai. Je n'ai rien dit. Il est temps de passer à autre chose.",
+    "display_body": "Le dernier bloc Il m'a fallu assez de temps... le dernier bloc, la dernière suppression... fatigué de vérifier et de voir votre état, mais vous ne me parlez pas, alors vous avez trouvé quelqu'un d'autre pour rayer cette démangeaison, et bon pour vous, mais la réalisation que vous êtes si jetable. Pour quelqu'un qui \"ne fait pas ce genre de chose\" vous êtes certainement sur une plateforme \"cheaters\" beaucoup. C'est ce qu'il est, et le dernier bloc est terminé, la chaîne de texte a disparu. Je suis là. C'était vrai. Je n'ai rien dit. Il est temps de passer à autre chose.",
+    "word_count": 102,
+    "est_speech_seconds": 40.8,
+    "banned_words_masked": [],
+    "title_en": "The final block",
+    "body_en": "The final block\n\nTook me long enough-the final block, the final delete...tired of checking and seeing your status but you're not talking to me, so you found someone else to scratch that itch, and good for you, but the realization you are so disposable. For someone who \"doesn't do this type of thing\" you sure are on a \"cheaters\" platform a lot. It is what it is, and the final block is done, the text string is gone. I.was.nothing. Time to move on.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Le dernier bloc"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1va7hg2_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/041ce816-631e-4fc7-a403-35ff52bb0d6c.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1va7hg2_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 27.55,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.901
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1va7hg2_fr.ass",
+    "subtitles": {
+      "num_words": 102,
+      "num_cues": 28,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.901,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "041ce816-631e-4fc7-a403-35ff52bb0d6c",
+      "title": "Lay Low",
+      "artist": "Zeli, Biometrix",
+      "genre": "Trap",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/LayLow",
+      "instrumental_url": "https://ncs.io/track/download/i_041ce816-631e-4fc7-a403-35ff52bb0d6c",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "real estate",
+      "image_id": 9011238,
+      "image_page_url": "https://pixabay.com/photos/bathroom-sink-house-apartment-9011238/",
+      "image_url": "https://pixabay.com/get/gac33ed0750010cbb3929777a962d04f9b551ad08988377a7ef8c35a0ef32486883ded3840d1f578507053375f413eca61ef7cbbfea0918b6d17427f286c443fe_1280.jpg",
+      "title_rendered": "Le dernier bloc"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

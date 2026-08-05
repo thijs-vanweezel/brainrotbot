@@ -1,0 +1,128 @@
+{
+  "id": "641361d4cc5740bd94cb40af7c058edc",
+  "created_at": 1785924421.2777247,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vf1kfh",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vf1kfh/i_think_my_partner_just_had_sex_with_me_just_to/",
+    "author": "/u/itsacreaturefeature",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785822404.0,
+    "nsfw": null,
+    "variant_id": "1vf1kfh_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Je pense que mon partenaire a fait l'amour avec moi juste pour m'empêcher de manger mon lécorce au lit.",
+    "raw_body": "I can't really be mad because it was good sex, but damn.\n My jaw is clicky while I eat and those trader joes strawberry licorice twists are so good, but so chewy... then very clicky, and kinda loud. This man in this sleepy state took my candy out of hand and initiated sex. It was quickie but very effective, but we both came and cuddled. He mumbled out \"you're not getting these back\", shoved my licorice in the bed crack then promptly started lightly snoring again. Im baffled.\n\n submitted by /u/itsacreaturefeature\n [link] [comments]",
+    "cleaned_body": "Je pense que mon partenaire a fait l'amour avec moi juste pour m'empêcher de manger mon lécorce au lit.\n\nJe ne peux pas être vraiment en colère parce que c'était un bon sexe, mais merde. Ma mâchoire est claque pendant que je mange et ces tournées de concombre de fraise sont si bonnes, mais si mâchées... puis très cliqué, et un peu fort. Cet homme dans cet état endormi a pris mes bonbons et a commencé le sexe. C'était rapide, mais très efficace, mais on est tous les deux venus nous câliner. Il a murmuré \"tu ne récupères pas ça\", a poussé mon raisin dans la fissure du lit et a rapidement commencé à ronfler légèrement à nouveau. Je suis perplexe.",
+    "display_body": "Je pense que mon partenaire a fait l'amour avec moi juste pour m'empêcher de manger mon lécorce au lit. Je ne peux pas être vraiment en colère parce que c'était un bon s*xe, mais m*rde. Ma mâchoire est claque pendant que je mange et ces tournées de concombre de fraise sont si bonnes, mais si mâchées... puis très cliqué, et un peu fort. Cet homme dans cet état endormi a pris mes bonbons et a commencé le s*xe. C'était rapide, mais très efficace, mais on est tous les deux venus nous câliner. Il a murmuré \"tu ne récupères pas ça\", a poussé mon raisin dans la fissure du lit et a rapidement commencé à ronfler légèrement à nouveau. Je suis perplexe.",
+    "word_count": 121,
+    "est_speech_seconds": 48.4,
+    "banned_words_masked": [
+      {
+        "word": "sexe",
+        "count": 2
+      },
+      {
+        "word": "merde",
+        "count": 1
+      }
+    ],
+    "title_en": "I think my partner just had sex with me just to stop me from eating my licorice in bed.",
+    "body_en": "I think my partner just had sex with me just to stop me from eating my licorice in bed.\n\nI can't really be mad because it was good sex, but damn.\n My jaw is clicky while I eat and those trader joes strawberry licorice twists are so good, but so chewy... then very clicky, and kinda loud. This man in this sleepy state took my candy out of hand and initiated sex. It was quickie but very effective, but we both came and cuddled. He mumbled out \"you're not getting these back\", shoved my licorice in the bed crack then promptly started lightly snoring again. Im baffled.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Je pense que mon partenaire a fait l'amour avec moi juste pour m'empêcher de manger mon lécorce au lit."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vf1kfh_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a72b01e3-1976-4dee-b721-814bc4b7cca7.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vf1kfh_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 31.32,
+      "sample_rate": 24000,
+      "blurred_words": 3,
+      "intro_sfx_at_sec": 5.961
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vf1kfh_fr.ass",
+    "subtitles": {
+      "num_words": 121,
+      "num_cues": 33,
+      "num_masked": 3,
+      "banned_intervals": [
+        [
+          8.401,
+          8.701
+        ],
+        [
+          8.881,
+          9.462
+        ],
+        [
+          18.443,
+          19.123
+        ]
+      ],
+      "intro_end_sec": 5.961,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "a72b01e3-1976-4dee-b721-814bc4b7cca7",
+      "title": "On My Mind",
+      "artist": "No Hero",
+      "genre": "Hardstyle",
+      "moods": [
+        "energetic",
+        "powerful",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/OnMyMind",
+      "instrumental_url": "https://ncs.io/track/download/i_a72b01e3-1976-4dee-b721-814bc4b7cca7",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "landscape",
+      "image_id": 4484517,
+      "image_page_url": "https://pixabay.com/photos/prague-zoo-giraffe-animals-nature-4484517/",
+      "image_url": "https://pixabay.com/get/g9106af187c79fcbddc812b586475f8100831da3a3e44f33a2f4ddc92147c8683b376ee2d36f7be51065970c88139db93e2c8f9ae68e01a83ba53ee6112aac472_1280.jpg",
+      "title_rendered": "Je pense que mon partenaire a fait l'amour avec moi juste pour m'empêcher de manger mon lécorce au lit."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

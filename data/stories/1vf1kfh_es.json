@@ -1,0 +1,124 @@
+{
+  "id": "69f12227fc8d422fb4df7e37a3bee9e7",
+  "created_at": 1785924455.3718436,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vf1kfh",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vf1kfh/i_think_my_partner_just_had_sex_with_me_just_to/",
+    "author": "/u/itsacreaturefeature",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785822404.0,
+    "nsfw": null,
+    "variant_id": "1vf1kfh_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Creo que mi pareja sólo hizo sexo conmigo sólo para evitar que comiera mi regaliz en la cama.",
+    "raw_body": "I can't really be mad because it was good sex, but damn.\n My jaw is clicky while I eat and those trader joes strawberry licorice twists are so good, but so chewy... then very clicky, and kinda loud. This man in this sleepy state took my candy out of hand and initiated sex. It was quickie but very effective, but we both came and cuddled. He mumbled out \"you're not getting these back\", shoved my licorice in the bed crack then promptly started lightly snoring again. Im baffled.\n\n submitted by /u/itsacreaturefeature\n [link] [comments]",
+    "cleaned_body": "Creo que mi pareja sólo hizo sexo conmigo sólo para evitar que comiera mi regaliz en la cama.\n\nNo puedo estar realmente enojada porque fue un buen sexo, pero maldita sea. Mi mandíbula se agita mientras como y esos saltos de regaliz de fresas son tan buenos, pero tan masticados... luego muy clicoso, y un poco ruidoso. Este hombre en este estado somnoliento me quitó los caramelos y comenzó el sexo. Fue rápido pero muy efectivo, pero ambos llegamos y nos acarició. Murmuró \"no vas a recuperar esto\", metió mi regaliz en la grieta de la cama y rápidamente comenzó a roncar ligeramente de nuevo. Estoy perplejo.",
+    "display_body": "Creo que mi pareja sólo hizo s*xo conmigo sólo para evitar que comiera mi regaliz en la cama. No puedo estar realmente enojada porque fue un buen s*xo, pero maldita sea. Mi mandíbula se agita mientras como y esos saltos de regaliz de fresas son tan buenos, pero tan masticados... luego muy clicoso, y un poco ruidoso. Este hombre en este estado somnoliento me quitó los caramelos y comenzó el s*xo. Fue rápido pero muy efectivo, pero ambos llegamos y nos acarició. Murmuró \"no vas a recuperar esto\", metió mi regaliz en la grieta de la cama y rápidamente comenzó a roncar ligeramente de nuevo. Estoy perplejo.",
+    "word_count": 107,
+    "est_speech_seconds": 42.8,
+    "banned_words_masked": [
+      {
+        "word": "sexo",
+        "count": 3
+      }
+    ],
+    "title_en": "I think my partner just had sex with me just to stop me from eating my licorice in bed.",
+    "body_en": "I think my partner just had sex with me just to stop me from eating my licorice in bed.\n\nI can't really be mad because it was good sex, but damn.\n My jaw is clicky while I eat and those trader joes strawberry licorice twists are so good, but so chewy... then very clicky, and kinda loud. This man in this sleepy state took my candy out of hand and initiated sex. It was quickie but very effective, but we both came and cuddled. He mumbled out \"you're not getting these back\", shoved my licorice in the bed crack then promptly started lightly snoring again. Im baffled.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Creo que mi pareja sólo hizo s*xo conmigo sólo para evitar que comiera mi regaliz en la cama."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vf1kfh_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a72b01e3-1976-4dee-b721-814bc4b7cca7.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vf1kfh_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 32.4,
+      "sample_rate": 24000,
+      "blurred_words": 3,
+      "intro_sfx_at_sec": 5.443
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vf1kfh_es.ass",
+    "subtitles": {
+      "num_words": 107,
+      "num_cues": 30,
+      "num_masked": 3,
+      "banned_intervals": [
+        [
+          1.701,
+          2.161
+        ],
+        [
+          7.665,
+          8.125
+        ],
+        [
+          20.212,
+          20.953
+        ]
+      ],
+      "intro_end_sec": 5.443,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "a72b01e3-1976-4dee-b721-814bc4b7cca7",
+      "title": "On My Mind",
+      "artist": "No Hero",
+      "genre": "Hardstyle",
+      "moods": [
+        "energetic",
+        "powerful",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/OnMyMind",
+      "instrumental_url": "https://ncs.io/track/download/i_a72b01e3-1976-4dee-b721-814bc4b7cca7",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "landscape",
+      "image_id": 4484517,
+      "image_page_url": "https://pixabay.com/photos/prague-zoo-giraffe-animals-nature-4484517/",
+      "image_url": "https://pixabay.com/get/g9106af187c79fcbddc812b586475f8100831da3a3e44f33a2f4ddc92147c8683b376ee2d36f7be51065970c88139db93e2c8f9ae68e01a83ba53ee6112aac472_1280.jpg",
+      "title_rendered": "Creo que mi pareja sólo hizo s*xo conmigo sólo para evitar que comiera mi regaliz en la cama."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

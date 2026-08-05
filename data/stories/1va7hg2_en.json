@@ -1,0 +1,105 @@
+{
+  "id": "6eab8345fd594aa4ad4701838da0d7bd",
+  "created_at": 1785924668.9161549,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1va7hg2",
+    "url": "https://www.reddit.com/r/adultery/comments/1va7hg2/the_final_block/",
+    "author": "/u/isthismylife2024",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785355666.0,
+    "nsfw": null,
+    "variant_id": "1va7hg2_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "The final block",
+    "raw_body": "Took me long enough-the final block, the final delete...tired of checking and seeing your status but you're not talking to me, so you found someone else to scratch that itch, and good for you, but the realization you are so disposable. For someone who \"doesn't do this type of thing\" you sure are on a \"cheaters\" platform a lot. It is what it is, and the final block is done, the text string is gone. I.was.nothing. Time to move on.\n\n submitted by /u/isthismylife2024\n [link] [comments]",
+    "cleaned_body": "The final block\n\nTook me long enough-the final block, the final delete...tired of checking and seeing your status but you're not talking to me, so you found someone else to scratch that itch, and good for you, but the realization you are so disposable. For someone who \"doesn't do this type of thing\" you sure are on a \"cheaters\" platform a lot. It is what it is, and the final block is done, the text string is gone. I.was.nothing. Time to move on.",
+    "display_body": "The final block Took me long enough-the final block, the final delete...tired of checking and seeing your status but you're not talking to me, so you found someone else to scratch that itch, and good for you, but the realization you are so disposable. For someone who \"doesn't do this type of thing\" you sure are on a \"cheaters\" platform a lot. It is what it is, and the final block is done, the text string is gone. I.was.nothing. Time to move on.",
+    "word_count": 83,
+    "est_speech_seconds": 33.2,
+    "banned_words_masked": [],
+    "title_en": "The final block",
+    "body_en": "The final block\n\nTook me long enough-the final block, the final delete...tired of checking and seeing your status but you're not talking to me, so you found someone else to scratch that itch, and good for you, but the realization you are so disposable. For someone who \"doesn't do this type of thing\" you sure are on a \"cheaters\" platform a lot. It is what it is, and the final block is done, the text string is gone. I.was.nothing. Time to move on.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "The final block"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1va7hg2_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/041ce816-631e-4fc7-a403-35ff52bb0d6c.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1va7hg2_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 19.52,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.48
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1va7hg2_en.ass",
+    "subtitles": {
+      "num_words": 83,
+      "num_cues": 22,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.48,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "041ce816-631e-4fc7-a403-35ff52bb0d6c",
+      "title": "Lay Low",
+      "artist": "Zeli, Biometrix",
+      "genre": "Trap",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/LayLow",
+      "instrumental_url": "https://ncs.io/track/download/i_041ce816-631e-4fc7-a403-35ff52bb0d6c",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "real estate",
+      "image_id": 9011238,
+      "image_page_url": "https://pixabay.com/photos/bathroom-sink-house-apartment-9011238/",
+      "image_url": "https://pixabay.com/get/gac33ed0750010cbb3929777a962d04f9b551ad08988377a7ef8c35a0ef32486883ded3840d1f578507053375f413eca61ef7cbbfea0918b6d17427f286c443fe_1280.jpg",
+      "title_rendered": "The final block"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
