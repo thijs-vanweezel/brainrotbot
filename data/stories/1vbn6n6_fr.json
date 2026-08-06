@@ -1,0 +1,115 @@
+{
+  "id": "b6760537c9744034929062d406ce3011",
+  "created_at": 1786011134.7099774,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vbn6n6",
+    "url": "https://www.reddit.com/r/adultery/comments/1vbn6n6/cake_eaters_do_you_think_you_have_something_wrong/",
+    "author": "/u/Direct-Status-8944",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785493958.0,
+    "nsfw": null,
+    "variant_id": "1vbn6n6_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Les gourmands de gâteaux, vous croyez avoir un problème ?",
+    "raw_body": "This is aimed at the people in settled happy marriages with regular sex who still seek affairs.\n This is the position I find myself in. We have a great relationship and I would say a good sex life. We have had rough moments over the years but things always settle down. We have been together 14 years and it has only been the past year I have entered this lifestyle. I know it's wrong, but theirs just this part of me that is constantly seeking excitement even though it's wrong.\n For people in a similar situation, do you think you could potentially have something mentally wrong with you where you just can't be happy with what you have? If your relationship is as settled as mine, what do you think is the main reason that you do it?\n\n submitted by /u/Direct-Status-8944\n [link] [comments]",
+    "cleaned_body": "Les gourmands de gâteaux, vous croyez avoir un problème ?\n\nIl s'adresse aux personnes dans des mariages heureux établis avec des rapports sexuels réguliers qui cherchent encore des relations. C'est dans cette position que je me trouve. Nous avons une bonne relation et une bonne vie sexuelle. Nous avons eu des moments difficiles au fil des ans, mais les choses se calment toujours. Nous sommes ensemble depuis 14 ans et c'est seulement l'année dernière que je suis entré dans ce style de vie. Je sais que c'est mal, mais c'est juste cette partie de moi qui cherche constamment l'excitation même si c'est mal. Pour les personnes dans une situation similaire, pensez-vous que vous pourriez avoir quelque chose de mal avec vous mentalement où vous ne pouvez tout simplement pas être heureux de ce que vous avez? Si votre relation est aussi stable que la mienne, quelle est la principale raison pour laquelle vous le faites ?",
+    "display_body": "Les gourmands de gâteaux, vous croyez avoir un problème ? Il s'adresse aux personnes dans des mariages heureux établis avec des rapports sexuels réguliers qui cherchent encore des relations. C'est dans cette position que je me trouve. Nous avons une bonne relation et une bonne vie s*xuelle. Nous avons eu des moments difficiles au fil des ans, mais les choses se calment toujours. Nous sommes ensemble depuis 14 ans et c'est seulement l'année dernière que je suis entré dans ce style de vie. Je sais que c'est mal, mais c'est juste cette partie de moi qui cherche constamment l'excitation même si c'est mal. Pour les personnes dans une situation similaire, pensez-vous que vous pourriez avoir quelque chose de mal avec vous mentalement où vous ne pouvez tout simplement pas être heureux de ce que vous avez? Si votre relation est aussi stable que la mienne, quelle est la principale raison pour laquelle vous le faites ?",
+    "word_count": 156,
+    "est_speech_seconds": 62.4,
+    "banned_words_masked": [
+      {
+        "word": "sexuelle",
+        "count": 1
+      }
+    ],
+    "title_en": "Cake eaters - do you think you have something wrong with you?",
+    "body_en": "Cake eaters - do you think you have something wrong with you?\n\nThis is aimed at the people in settled happy marriages with regular sex who still seek affairs.\n This is the position I find myself in. We have a great relationship and I would say a good sex life. We have had rough moments over the years but things always settle down. We have been together 14 years and it has only been the past year I have entered this lifestyle. I know it's wrong, but theirs just this part of me that is constantly seeking excitement even though it's wrong.\n For people in a similar situation, do you think you could potentially have something mentally wrong with you where you just can't be happy with what you have? If your relationship is as settled as mine, what do you think is the main reason that you do it?",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Les gourmands de gâteaux, vous croyez avoir un problème ?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vbn6n6_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/9f776144-b763-4213-919c-8dbfeb16d282.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vbn6n6_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 45.0,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 3.682
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vbn6n6_fr.ass",
+    "subtitles": {
+      "num_words": 156,
+      "num_cues": 41,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          13.666,
+          14.386
+        ]
+      ],
+      "intro_end_sec": 3.682,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "9f776144-b763-4213-919c-8dbfeb16d282",
+      "title": "Move Like This",
+      "artist": "Bad Computer",
+      "genre": "House",
+      "moods": [
+        "energetic",
+        "exciting"
+      ],
+      "page_url": "https://ncs.io/MoveLikeThis",
+      "instrumental_url": "https://ncs.io/track/download/i_9f776144-b763-4213-919c-8dbfeb16d282",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 10074499,
+      "image_page_url": "https://pixabay.com/photos/parakeet-bird-animal-feathers-10074499/",
+      "image_url": "https://pixabay.com/get/g0ce11b31917d676082816bb53cdf46676c36a038be0044f822d6e9abb967ced77514f9ee73d0ffdc85394825de86407121e4b8f76cbb86063dfe945d5c3af5a6_1280.jpg",
+      "title_rendered": "Les gourmands de gâteaux, vous croyez avoir un problème ?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

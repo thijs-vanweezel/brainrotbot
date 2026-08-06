@@ -1,0 +1,123 @@
+{
+  "id": "6587b2a568154d03a59882cc313bddf2",
+  "created_at": 1786011177.5479054,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vbn6n6",
+    "url": "https://www.reddit.com/r/adultery/comments/1vbn6n6/cake_eaters_do_you_think_you_have_something_wrong/",
+    "author": "/u/Direct-Status-8944",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785493958.0,
+    "nsfw": null,
+    "variant_id": "1vbn6n6_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Comedores de pasteles - ¿Crees que hay algo malo contigo?",
+    "raw_body": "This is aimed at the people in settled happy marriages with regular sex who still seek affairs.\n This is the position I find myself in. We have a great relationship and I would say a good sex life. We have had rough moments over the years but things always settle down. We have been together 14 years and it has only been the past year I have entered this lifestyle. I know it's wrong, but theirs just this part of me that is constantly seeking excitement even though it's wrong.\n For people in a similar situation, do you think you could potentially have something mentally wrong with you where you just can't be happy with what you have? If your relationship is as settled as mine, what do you think is the main reason that you do it?\n\n submitted by /u/Direct-Status-8944\n [link] [comments]",
+    "cleaned_body": "Comedores de pasteles - ¿Crees que hay algo malo contigo?\n\nEsto está dirigido a las personas en matrimonios felices establecidos con sexo regular que todavía buscan relaciones. Esta es la posición en la que me encuentro. Tenemos una gran relación y diría que una buena vida sexual. Hemos tenido momentos difíciles a lo largo de los años pero las cosas siempre se calman. Hemos estado juntos 14 años y sólo ha sido el último año que he entrado en este estilo de vida. Sé que está mal, pero son sólo esta parte de mí que está constantemente buscando la emoción aunque es malo. Para las personas en una situación similar, ¿cree que podría tener algo mentalmente malo con usted en el que simplemente no puede ser feliz con lo que tiene? Si tu relación es tan estable como la mía, ¿cuál crees que es la razón principal por la que lo haces?",
+    "display_body": "Comedores de pasteles - ¿Crees que hay algo malo contigo? Esto está dirigido a las personas en matrimonios felices establecidos con s*xo regular que todavía buscan relaciones. Esta es la posición en la que me encuentro. Tenemos una gran relación y diría que una buena vida s*xual. Hemos tenido momentos difíciles a lo largo de los años pero las cosas siempre se calman. Hemos estado juntos 14 años y sólo ha sido el último año que he entrado en este estilo de vida. Sé que está mal, pero son sólo esta parte de mí que está constantemente buscando la emoción aunque es malo. Para las personas en una situación similar, ¿cree que podría tener algo mentalmente malo con usted en el que simplemente no puede ser feliz con lo que tiene? Si tu relación es tan estable como la mía, ¿cuál crees que es la razón principal por la que lo haces?",
+    "word_count": 152,
+    "est_speech_seconds": 60.8,
+    "banned_words_masked": [
+      {
+        "word": "sexo",
+        "count": 1
+      },
+      {
+        "word": "sexual",
+        "count": 1
+      }
+    ],
+    "title_en": "Cake eaters - do you think you have something wrong with you?",
+    "body_en": "Cake eaters - do you think you have something wrong with you?\n\nThis is aimed at the people in settled happy marriages with regular sex who still seek affairs.\n This is the position I find myself in. We have a great relationship and I would say a good sex life. We have had rough moments over the years but things always settle down. We have been together 14 years and it has only been the past year I have entered this lifestyle. I know it's wrong, but theirs just this part of me that is constantly seeking excitement even though it's wrong.\n For people in a similar situation, do you think you could potentially have something mentally wrong with you where you just can't be happy with what you have? If your relationship is as settled as mine, what do you think is the main reason that you do it?",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Comedores de pasteles - ¿Crees que hay algo malo contigo?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vbn6n6_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/9f776144-b763-4213-919c-8dbfeb16d282.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vbn6n6_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 43.75,
+      "sample_rate": 24000,
+      "blurred_words": 2,
+      "intro_sfx_at_sec": 3.341
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vbn6n6_es.ass",
+    "subtitles": {
+      "num_words": 152,
+      "num_cues": 41,
+      "num_masked": 2,
+      "banned_intervals": [
+        [
+          6.922,
+          7.222
+        ],
+        [
+          14.403,
+          15.283
+        ]
+      ],
+      "intro_end_sec": 3.341,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "9f776144-b763-4213-919c-8dbfeb16d282",
+      "title": "Move Like This",
+      "artist": "Bad Computer",
+      "genre": "House",
+      "moods": [
+        "energetic",
+        "exciting"
+      ],
+      "page_url": "https://ncs.io/MoveLikeThis",
+      "instrumental_url": "https://ncs.io/track/download/i_9f776144-b763-4213-919c-8dbfeb16d282",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 10074499,
+      "image_page_url": "https://pixabay.com/photos/parakeet-bird-animal-feathers-10074499/",
+      "image_url": "https://pixabay.com/get/g0ce11b31917d676082816bb53cdf46676c36a038be0044f822d6e9abb967ced77514f9ee73d0ffdc85394825de86407121e4b8f76cbb86063dfe945d5c3af5a6_1280.jpg",
+      "title_rendered": "Comedores de pasteles - ¿Crees que hay algo malo contigo?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

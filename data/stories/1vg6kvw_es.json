@@ -1,0 +1,110 @@
+{
+  "id": "b26369d6e1044776937413eb6d67394e",
+  "created_at": 1786010935.9376955,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1vg6kvw",
+    "url": "https://www.reddit.com/r/tifu/comments/1vg6kvw/tifu_by_not_realizing_the_baby_cam_can_see/",
+    "author": "/u/Physical_Leg2061",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1785934490.0,
+    "nsfw": null,
+    "variant_id": "1vg6kvw_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Hoy me he jodido por no darme cuenta de que la cámara del bebé puede ver a través de la ropa delgada.",
+    "raw_body": "It's hot and sticky where I'm at. I like going commando humid days for comfort. I also nanny.\n I went to work a few times wearing my Asian granny pants. Those dark colored, wide, airy ones. I was curious and decided to check the baby cam if my pants were see through because the baby's clothes are a bit see through and they're your usual materials. Behold, it is more than see through, it's like nonexistent. I'm just laughing now because how many times did the parents see my ass crack and my jungle.\n I'm never gona bring it up and I should probably always wear a second layer whenever I'm wearing my granny pants. I'm going to bury this embarrassment with me, I hope they do too and that we're all just gona tuck it away in a dark corner and never visit it again. Goodbye 👋\n TL;DR baby cam sees through thin clothes, I have thin clothes, I was butt ass naked in the baby cam.\n\n submitted by /u/Physical_Leg2061\n [link] [comments]",
+    "cleaned_body": "Hoy me he jodido por no darme cuenta de que la cámara del bebé puede ver a través de la ropa delgada.\n\nEs caliente y pegajoso donde estoy. Me gusta ir al comando en días húmedos por comodidad. También soy niñera. Fui al trabajo unas cuantas veces con mis pantalones asiáticos de abuela. Esos de color oscuro, anchos y aéreos. Tenía curiosidad y decidí revisar la cámara de bebé si mis pantalones eran transparentes porque la ropa del bebé es un poco transparente y son tus materiales habituales. Mira, es más que ver a través, es como si no existiera. Me estoy riendo ahora porque cuántas veces los padres han visto mi trasero roto y mi selva. Nunca voy a hablar de ello y probablemente siempre debería usar una segunda capa cada vez que llevo mis pantalones de abuela. Voy a enterrar esta vergüenza conmigo, espero que ellos también lo hagan y que todos vamos a escondernos en un rincón oscuro y nunca más la visitaremos. Adiós.",
+    "display_body": "Hoy me he jodido por no darme cuenta de que la cámara del bebé puede ver a través de la ropa delgada. Es caliente y pegajoso donde estoy. Me gusta ir al comando en días húmedos por comodidad. También soy niñera. Fui al trabajo unas cuantas veces con mis pantalones asiáticos de abuela. Esos de color oscuro, anchos y aéreos. Tenía curiosidad y decidí revisar la cámara de bebé si mis pantalones eran transparentes porque la ropa del bebé es un poco transparente y son tus materiales habituales. Mira, es más que ver a través, es como si no existiera. Me estoy riendo ahora porque cuántas veces los padres han visto mi trasero roto y mi selva. Nunca voy a hablar de ello y probablemente siempre debería usar una segunda capa cada vez que llevo mis pantalones de abuela. Voy a enterrar esta vergüenza conmigo, espero que ellos también lo hagan y que todos vamos a escondernos en un rincón oscuro y nunca más la visitaremos. Adiós.",
+    "word_count": 167,
+    "est_speech_seconds": 66.8,
+    "banned_words_masked": [],
+    "title_en": "TIFU by not realizing the baby cam can see through thin clothes.",
+    "body_en": "Today I fucked up by not realizing the baby cam can see through thin clothes.\n\nIt's hot and sticky where I'm at. I like going commando humid days for comfort. I also nanny.\n I went to work a few times wearing my Asian granny pants. Those dark colored, wide, airy ones. I was curious and decided to check the baby cam if my pants were see through because the baby's clothes are a bit see through and they're your usual materials. Behold, it is more than see through, it's like nonexistent. I'm just laughing now because how many times did the parents see my ass crack and my jungle.\n I'm never gona bring it up and I should probably always wear a second layer whenever I'm wearing my granny pants. I'm going to bury this embarrassment with me, I hope they do too and that we're all just gona tuck it away in a dark corner and never visit it again. Goodbye 👋",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Hoy me he jodido por no darme cuenta de que la cámara del bebé puede ver a través de la ropa delgada."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vg6kvw_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/aa10a463-431f-4669-9ec0-f42bdd267b7b.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vg6kvw_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 48.83,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 5.321
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vg6kvw_es.ass",
+    "subtitles": {
+      "num_words": 167,
+      "num_cues": 46,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 5.321,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "aa10a463-431f-4669-9ec0-f42bdd267b7b",
+      "title": "Silence",
+      "artist": "N3b, Extra Terra",
+      "genre": "Midtempo Bass",
+      "moods": [
+        "Chasing",
+        "Dark",
+        "Angry",
+        "Eccentric",
+        "Fear",
+        "Mysterious",
+        "Restless",
+        "Suspense"
+      ],
+      "page_url": "https://ncs.io/EN_Silence",
+      "instrumental_url": "https://ncs.io/track/download/i_aa10a463-431f-4669-9ec0-f42bdd267b7b",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "make-up woman",
+      "image_id": 2722636,
+      "image_page_url": "https://pixabay.com/photos/woman-dress-make-up-veil-portrait-2722636/",
+      "image_url": "https://pixabay.com/get/g346061746560918f0dd5796c5ed6e020dea304ff63480a6fd475462a2b7a76bb49f31db7abb3e4188cb4399129da73b20c3197ae4a34d1337346e18c00fc662f_1280.jpg",
+      "title_rendered": "Hoy me he jodido por no darme cuenta de que la cámara del bebé puede ver a través de la ropa delgada."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

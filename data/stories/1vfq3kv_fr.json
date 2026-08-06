@@ -1,0 +1,105 @@
+{
+  "id": "ae5ed290e910453fab9c17e832d46744",
+  "created_at": 1786011566.7832825,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vfq3kv",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vfq3kv/here_we_go_again/",
+    "author": "/u/HockeyPlayer-16",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1785884930.0,
+    "nsfw": null,
+    "variant_id": "1vfq3kv_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "On recommence .",
+    "raw_body": "I was at work disassembling a Lenovo laptop. The LCD screen on this particular device has three screws holding it in. There are also two more screws of the same size that hold down the LCD cover. In total we're talking about five screws.\n I always make sure that the magnetic tray is empty of screws when I finish working on a device, for obvious reasons. I took out the two screws for the LCD cover and put them in my magnetic tray, I then took the three screws out of the LCD screen, but felt four screws drop when I put them in the tray. I thought it was just my imagination.\n After putting the new LCD in, I replaced the three screws and then put the LCD cover on and replaced the two remaining screws so in reality there should've been no screws left but when I went to check the tray, there were still a screw in there...\n Once again, this was my first Computer of the day. I still can't figure it out.\n\n submitted by /u/HockeyPlayer-16\n [link] [comments]",
+    "cleaned_body": "On recommence .\n\nJ'étais au travail à démonter un ordinateur portable Lenovo. L'écran LCD de cet appareil a trois vis qui le tiennent. Il y a aussi deux autres vis de la même taille qui tiennent la couverture LCD. Au total, on parle de cinq vis. Je m'assure toujours que le plateau magnétique est vide de vis quand j'ai fini de travailler sur un appareil, pour des raisons évidentes. J'ai retiré les deux vis pour la couverture LCD et les ai mis dans mon plateau magnétique, puis j'ai retiré les trois vis de l'écran LCD, mais j'ai senti quatre vis tomber quand je les ai mis dans le plateau. Je pensais que c'était juste mon imagination. Après avoir installé le nouvel écran LCD, j'ai remplacé les trois vis, puis j'ai mis le couvercle LCD et j'ai remplacé les deux vis restants. En réalité, il n'aurait pas dû y avoir de vis, mais quand je suis allé vérifier le plateau, il y avait encore une vis là-dedans... Encore une fois, c'était mon premier ordinateur de la journée. Je n'arrive toujours pas à comprendre.",
+    "display_body": "On recommence . J'étais au travail à démonter un ordinateur portable Lenovo. L'écran LCD de cet appareil a trois vis qui le tiennent. Il y a aussi deux autres vis de la même taille qui tiennent la couverture LCD. Au total, on parle de cinq vis. Je m'assure toujours que le plateau magnétique est vide de vis quand j'ai fini de travailler sur un appareil, pour des raisons évidentes. J'ai retiré les deux vis pour la couverture LCD et les ai mis dans mon plateau magnétique, puis j'ai retiré les trois vis de l'écran LCD, mais j'ai senti quatre vis tomber quand je les ai mis dans le plateau. Je pensais que c'était juste mon imagination. Après avoir installé le nouvel écran LCD, j'ai remplacé les trois vis, puis j'ai mis le couvercle LCD et j'ai remplacé les deux vis restants. En réalité, il n'aurait pas dû y avoir de vis, mais quand je suis allé vérifier le plateau, il y avait encore une vis là-dedans... Encore une fois, c'était mon premier ordinateur de la journée. Je n'arrive toujours pas à comprendre.",
+    "word_count": 182,
+    "est_speech_seconds": 72.8,
+    "banned_words_masked": [],
+    "title_en": "Here we go again",
+    "body_en": "Here we go again\n\nI was at work disassembling a Lenovo laptop. The LCD screen on this particular device has three screws holding it in. There are also two more screws of the same size that hold down the LCD cover. In total we're talking about five screws.\n I always make sure that the magnetic tray is empty of screws when I finish working on a device, for obvious reasons. I took out the two screws for the LCD cover and put them in my magnetic tray, I then took the three screws out of the LCD screen, but felt four screws drop when I put them in the tray. I thought it was just my imagination.\n After putting the new LCD in, I replaced the three screws and then put the LCD cover on and replaced the two remaining screws so in reality there should've been no screws left but when I went to check the tray, there were still a screw in there...\n Once again, this was my first Computer of the day. I still can't figure it out.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "On recommence ."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vfq3kv_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/f4183b05-aa72-4f33-89ea-a58d98551d29.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vfq3kv_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 48.62,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.88
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vfq3kv_fr.ass",
+    "subtitles": {
+      "num_words": 182,
+      "num_cues": 50,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.88,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "f4183b05-aa72-4f33-89ea-a58d98551d29",
+      "title": "Lighthouse (feat. PhiloSofie)",
+      "artist": "PhiloSofie, Azertion, JJD",
+      "genre": "Future Bass",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/Lighthouse",
+      "instrumental_url": "https://ncs.io/track/download/i_f4183b05-aa72-4f33-89ea-a58d98551d29",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury car",
+      "image_id": 5911687,
+      "image_page_url": "https://pixabay.com/photos/audi-a4-car-luxury-car-vehicle-5911687/",
+      "image_url": "https://pixabay.com/get/ga1d49724189350502c4a38445caeca5b02ad09e0a4c43ccec0926e1152d3e984609ae42d881d31c8d038e7ae01344232d45d95d33e884d970d23185fe85fd542_1280.jpg",
+      "title_rendered": "On recommence ."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

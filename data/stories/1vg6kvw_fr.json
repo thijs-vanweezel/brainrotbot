@@ -1,0 +1,110 @@
+{
+  "id": "7929bde9840c468c8e071dcb2614a116",
+  "created_at": 1786010886.0447202,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1vg6kvw",
+    "url": "https://www.reddit.com/r/tifu/comments/1vg6kvw/tifu_by_not_realizing_the_baby_cam_can_see/",
+    "author": "/u/Physical_Leg2061",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1785934490.0,
+    "nsfw": null,
+    "variant_id": "1vg6kvw_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Aujourd'hui, j'ai foiré en ne réalisant pas que la caméra peut voir à travers des vêtements minces.",
+    "raw_body": "It's hot and sticky where I'm at. I like going commando humid days for comfort. I also nanny.\n I went to work a few times wearing my Asian granny pants. Those dark colored, wide, airy ones. I was curious and decided to check the baby cam if my pants were see through because the baby's clothes are a bit see through and they're your usual materials. Behold, it is more than see through, it's like nonexistent. I'm just laughing now because how many times did the parents see my ass crack and my jungle.\n I'm never gona bring it up and I should probably always wear a second layer whenever I'm wearing my granny pants. I'm going to bury this embarrassment with me, I hope they do too and that we're all just gona tuck it away in a dark corner and never visit it again. Goodbye 👋\n TL;DR baby cam sees through thin clothes, I have thin clothes, I was butt ass naked in the baby cam.\n\n submitted by /u/Physical_Leg2061\n [link] [comments]",
+    "cleaned_body": "Aujourd'hui, j'ai foiré en ne réalisant pas que la caméra peut voir à travers des vêtements minces.\n\nC'est chaud et collant là où je suis. J'aime aller commando les jours humides pour le confort. Je suis aussi nounou. Je suis allé au travail avec mes pantalons de grand-mère asiatique. Ces couleurs sombres, larges et aériennes. J'étais curieux et j'ai décidé de vérifier la caméra de bébé si mes pantalons étaient vus à travers parce que les vêtements du bébé sont un peu vus à travers et ce sont vos matériaux habituels. C'est plus qu'une vision, c'est comme si elle n'existait pas. Je rigole maintenant parce que combien de fois mes parents ont vu mon cul se fissurer et ma jungle. Je ne vais jamais en parler et je devrais probablement toujours porter une deuxième couche chaque fois que je porte mes pantalons de grand-mère. Je vais enterrer cette gêne avec moi, j'espère qu'ils le feront aussi et que nous allons tous la cacher dans un coin sombre et ne plus jamais la revoir. Au revoir",
+    "display_body": "Aujourd'hui, j'ai foiré en ne réalisant pas que la caméra peut voir à travers des vêtements minces. C'est chaud et collant là où je suis. J'aime aller commando les jours humides pour le confort. Je suis aussi nounou. Je suis allé au travail avec mes pantalons de grand-mère asiatique. Ces couleurs sombres, larges et aériennes. J'étais curieux et j'ai décidé de vérifier la caméra de bébé si mes pantalons étaient vus à travers parce que les vêtements du bébé sont un peu vus à travers et ce sont vos matériaux habituels. C'est plus qu'une vision, c'est comme si elle n'existait pas. Je rigole maintenant parce que combien de fois mes parents ont vu mon cul se fissurer et ma jungle. Je ne vais jamais en parler et je devrais probablement toujours porter une deuxième couche chaque fois que je porte mes pantalons de grand-mère. Je vais enterrer cette gêne avec moi, j'espère qu'ils le feront aussi et que nous allons tous la cacher dans un coin sombre et ne plus jamais la revoir. Au revoir",
+    "word_count": 175,
+    "est_speech_seconds": 70.0,
+    "banned_words_masked": [],
+    "title_en": "TIFU by not realizing the baby cam can see through thin clothes.",
+    "body_en": "Today I fucked up by not realizing the baby cam can see through thin clothes.\n\nIt's hot and sticky where I'm at. I like going commando humid days for comfort. I also nanny.\n I went to work a few times wearing my Asian granny pants. Those dark colored, wide, airy ones. I was curious and decided to check the baby cam if my pants were see through because the baby's clothes are a bit see through and they're your usual materials. Behold, it is more than see through, it's like nonexistent. I'm just laughing now because how many times did the parents see my ass crack and my jungle.\n I'm never gona bring it up and I should probably always wear a second layer whenever I'm wearing my granny pants. I'm going to bury this embarrassment with me, I hope they do too and that we're all just gona tuck it away in a dark corner and never visit it again. Goodbye 👋",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Aujourd'hui, j'ai foiré en ne réalisant pas que la caméra peut voir à travers des vêtements minces."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vg6kvw_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/aa10a463-431f-4669-9ec0-f42bdd267b7b.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vg6kvw_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 47.98,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 5.502
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vg6kvw_fr.ass",
+    "subtitles": {
+      "num_words": 175,
+      "num_cues": 48,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 5.502,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "aa10a463-431f-4669-9ec0-f42bdd267b7b",
+      "title": "Silence",
+      "artist": "N3b, Extra Terra",
+      "genre": "Midtempo Bass",
+      "moods": [
+        "Chasing",
+        "Dark",
+        "Angry",
+        "Eccentric",
+        "Fear",
+        "Mysterious",
+        "Restless",
+        "Suspense"
+      ],
+      "page_url": "https://ncs.io/EN_Silence",
+      "instrumental_url": "https://ncs.io/track/download/i_aa10a463-431f-4669-9ec0-f42bdd267b7b",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "make-up woman",
+      "image_id": 2722636,
+      "image_page_url": "https://pixabay.com/photos/woman-dress-make-up-veil-portrait-2722636/",
+      "image_url": "https://pixabay.com/get/g346061746560918f0dd5796c5ed6e020dea304ff63480a6fd475462a2b7a76bb49f31db7abb3e4188cb4399129da73b20c3197ae4a34d1337346e18c00fc662f_1280.jpg",
+      "title_rendered": "Aujourd'hui, j'ai foiré en ne réalisant pas que la caméra peut voir à travers des vêtements minces."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

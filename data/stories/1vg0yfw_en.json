@@ -1,0 +1,105 @@
+{
+  "id": "d5327699586047b3a68fff8a355b9058",
+  "created_at": 1786010985.117597,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vg0yfw",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vg0yfw/my_brain_has_developed_the_most_random_specific/",
+    "author": "/u/Disastrous-Fuel0",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1785916871.0,
+    "nsfw": null,
+    "variant_id": "1vg0yfw_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "My brain has developed the most random, specific kink",
+    "raw_body": "I've never admitted this to anyone before because it feels so oddly specific and a bit racist.\n I have a breeding kink, but it's more about the fantasy than reality. I don't actually want to get pregnant or have kids. It's just something that exists in my head.\n The part that's weird is that, for whatever reason, it's become very specifically centered around Mongolian men. I don't really know why. I don't even know any Mongolian dudes in real life, and I'm not posting this because I'm looking to meet anyone or receive DMs.\n I mostly wanted to get this off my chest because I've never told anyone and it feels too weird to explain to people I know.\n\n submitted by /u/Disastrous-Fuel0\n [link] [comments]",
+    "cleaned_body": "My brain has developed the most random, specific kink\n\nI've never admitted this to anyone before because it feels so oddly specific and a bit racist.\n I have a breeding kink, but it's more about the fantasy than reality. I don't actually want to get pregnant or have kids. It's just something that exists in my head.\n The part that's weird is that, for whatever reason, it's become very specifically centered around Mongolian men. I don't really know why. I don't even know any Mongolian dudes in real life, and I'm not posting this because I'm looking to meet anyone or receive DMs.\n I mostly wanted to get this off my chest because I've never told anyone and it feels too weird to explain to people I know.",
+    "display_body": "My brain has developed the most random, specific kink I've never admitted this to anyone before because it feels so oddly specific and a bit racist. I have a breeding kink, but it's more about the fantasy than reality. I don't actually want to get pregnant or have kids. It's just something that exists in my head. The part that's weird is that, for whatever reason, it's become very specifically centered around Mongolian men. I don't really know why. I don't even know any Mongolian dudes in real life, and I'm not posting this because I'm looking to meet anyone or receive DMs. I mostly wanted to get this off my chest because I've never told anyone and it feels too weird to explain to people I know.",
+    "word_count": 128,
+    "est_speech_seconds": 51.2,
+    "banned_words_masked": [],
+    "title_en": "My brain has developed the most random, specific kink",
+    "body_en": "My brain has developed the most random, specific kink\n\nI've never admitted this to anyone before because it feels so oddly specific and a bit racist.\n I have a breeding kink, but it's more about the fantasy than reality. I don't actually want to get pregnant or have kids. It's just something that exists in my head.\n The part that's weird is that, for whatever reason, it's become very specifically centered around Mongolian men. I don't really know why. I don't even know any Mongolian dudes in real life, and I'm not posting this because I'm looking to meet anyone or receive DMs.\n I mostly wanted to get this off my chest because I've never told anyone and it feels too weird to explain to people I know.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "My brain has developed the most random, specific kink"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vg0yfw_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/c65e1393-321c-4e3f-b4bb-b444043a6235.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vg0yfw_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 39.52,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.46
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vg0yfw_en.ass",
+    "subtitles": {
+      "num_words": 128,
+      "num_cues": 36,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.46,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "c65e1393-321c-4e3f-b4bb-b444043a6235",
+      "title": "Whiplash",
+      "artist": "Cartoon",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "exciting",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/Whiplash",
+      "instrumental_url": "https://ncs.io/track/download/i_c65e1393-321c-4e3f-b4bb-b444043a6235",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "gourmet burger",
+      "image_id": 7213383,
+      "image_page_url": "https://pixabay.com/photos/healthy-breakfast-food-dish-meal-7213383/",
+      "image_url": "https://pixabay.com/get/g445a88fa5519ba11d46e9f61633dfdab244be48ae8f098ba69bb3254c111d9ca777449cbb80ecc589dc02109c9bddc8d46f18dbede63471ade3686f342113f20_1280.jpg",
+      "title_rendered": "My brain has developed the most random, specific kink"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

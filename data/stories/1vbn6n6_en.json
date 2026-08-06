@@ -1,0 +1,119 @@
+{
+  "id": "e5c45d88d6234f89b84a9d969fa0f6f3",
+  "created_at": 1786011096.0572662,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vbn6n6",
+    "url": "https://www.reddit.com/r/adultery/comments/1vbn6n6/cake_eaters_do_you_think_you_have_something_wrong/",
+    "author": "/u/Direct-Status-8944",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785493958.0,
+    "nsfw": null,
+    "variant_id": "1vbn6n6_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Cake eaters - do you think you have something wrong with you?",
+    "raw_body": "This is aimed at the people in settled happy marriages with regular sex who still seek affairs.\n This is the position I find myself in. We have a great relationship and I would say a good sex life. We have had rough moments over the years but things always settle down. We have been together 14 years and it has only been the past year I have entered this lifestyle. I know it's wrong, but theirs just this part of me that is constantly seeking excitement even though it's wrong.\n For people in a similar situation, do you think you could potentially have something mentally wrong with you where you just can't be happy with what you have? If your relationship is as settled as mine, what do you think is the main reason that you do it?\n\n submitted by /u/Direct-Status-8944\n [link] [comments]",
+    "cleaned_body": "Cake eaters - do you think you have something wrong with you?\n\nThis is aimed at the people in settled happy marriages with regular sex who still seek affairs.\n This is the position I find myself in. We have a great relationship and I would say a good sex life. We have had rough moments over the years but things always settle down. We have been together 14 years and it has only been the past year I have entered this lifestyle. I know it's wrong, but theirs just this part of me that is constantly seeking excitement even though it's wrong.\n For people in a similar situation, do you think you could potentially have something mentally wrong with you where you just can't be happy with what you have? If your relationship is as settled as mine, what do you think is the main reason that you do it?",
+    "display_body": "Cake eaters - do you think you have something wrong with you? This is aimed at the people in settled happy marriages with regular s*x who still seek affairs. This is the position I find myself in. We have a great relationship and I would say a good s*x life. We have had rough moments over the years but things always settle down. We have been together 14 years and it has only been the past year I have entered this lifestyle. I know it's wrong, but theirs just this part of me that is constantly seeking excitement even though it's wrong. For people in a similar situation, do you think you could potentially have something mentally wrong with you where you just can't be happy with what you have? If your relationship is as settled as mine, what do you think is the main reason that you do it?",
+    "word_count": 150,
+    "est_speech_seconds": 60.0,
+    "banned_words_masked": [
+      {
+        "word": "sex",
+        "count": 2
+      }
+    ],
+    "title_en": "Cake eaters - do you think you have something wrong with you?",
+    "body_en": "Cake eaters - do you think you have something wrong with you?\n\nThis is aimed at the people in settled happy marriages with regular sex who still seek affairs.\n This is the position I find myself in. We have a great relationship and I would say a good sex life. We have had rough moments over the years but things always settle down. We have been together 14 years and it has only been the past year I have entered this lifestyle. I know it's wrong, but theirs just this part of me that is constantly seeking excitement even though it's wrong.\n For people in a similar situation, do you think you could potentially have something mentally wrong with you where you just can't be happy with what you have? If your relationship is as settled as mine, what do you think is the main reason that you do it?",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Cake eaters - do you think you have something wrong with you?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vbn6n6_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/9f776144-b763-4213-919c-8dbfeb16d282.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vbn6n6_en.png",
+    "audio": {
+      "voice": "af_heart",
+      "lang_code": "a",
+      "duration_sec": 42.17,
+      "sample_rate": 24000,
+      "blurred_words": 2,
+      "intro_sfx_at_sec": 3.361
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vbn6n6_en.ass",
+    "subtitles": {
+      "num_words": 150,
+      "num_cues": 40,
+      "num_masked": 2,
+      "banned_intervals": [
+        [
+          6.922,
+          7.223
+        ],
+        [
+          13.685,
+          13.965
+        ]
+      ],
+      "intro_end_sec": 3.361,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "9f776144-b763-4213-919c-8dbfeb16d282",
+      "title": "Move Like This",
+      "artist": "Bad Computer",
+      "genre": "House",
+      "moods": [
+        "energetic",
+        "exciting"
+      ],
+      "page_url": "https://ncs.io/MoveLikeThis",
+      "instrumental_url": "https://ncs.io/track/download/i_9f776144-b763-4213-919c-8dbfeb16d282",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 10074499,
+      "image_page_url": "https://pixabay.com/photos/parakeet-bird-animal-feathers-10074499/",
+      "image_url": "https://pixabay.com/get/g0ce11b31917d676082816bb53cdf46676c36a038be0044f822d6e9abb967ced77514f9ee73d0ffdc85394825de86407121e4b8f76cbb86063dfe945d5c3af5a6_1280.jpg",
+      "title_rendered": "Cake eaters - do you think you have something wrong with you?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

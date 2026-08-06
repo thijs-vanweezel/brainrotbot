@@ -1,0 +1,105 @@
+{
+  "id": "71acea7549f14fda966bbc48aad984a0",
+  "created_at": 1786011615.0118048,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vfq3kv",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vfq3kv/here_we_go_again/",
+    "author": "/u/HockeyPlayer-16",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1785884930.0,
+    "nsfw": null,
+    "variant_id": "1vfq3kv_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Aquí vamos otra vez",
+    "raw_body": "I was at work disassembling a Lenovo laptop. The LCD screen on this particular device has three screws holding it in. There are also two more screws of the same size that hold down the LCD cover. In total we're talking about five screws.\n I always make sure that the magnetic tray is empty of screws when I finish working on a device, for obvious reasons. I took out the two screws for the LCD cover and put them in my magnetic tray, I then took the three screws out of the LCD screen, but felt four screws drop when I put them in the tray. I thought it was just my imagination.\n After putting the new LCD in, I replaced the three screws and then put the LCD cover on and replaced the two remaining screws so in reality there should've been no screws left but when I went to check the tray, there were still a screw in there...\n Once again, this was my first Computer of the day. I still can't figure it out.\n\n submitted by /u/HockeyPlayer-16\n [link] [comments]",
+    "cleaned_body": "Aquí vamos otra vez\n\nEstaba trabajando desmontando una computadora portátil de Lenovo. La pantalla LCD de este dispositivo en particular tiene tres tornillos que lo sostienen. También hay otros dos tornillos del mismo tamaño que sostienen la cubierta LCD. En total estamos hablando de cinco tornillos. Siempre me aseguro de que la bandeja magnética esté vacía de tornillos cuando termine de trabajar en un dispositivo, por razones obvias. Saqué los dos tornillos para la tapa LCD y los puse en mi bandeja magnética, luego saqué los tres tornillos de la pantalla LCD, pero sentí que cuatro tornillos se caían cuando los puse en la bandeja. Pensé que era sólo mi imaginación. Después de poner el nuevo LCD, reemplacé los tres tornillos y luego puse la cubierta LCD y reemplacé los dos tornillos restantes así que en realidad no debería haber quedado tornillos pero cuando fui a comprobar la bandeja, todavía había un tornillo ahí dentro... Una vez más, esta fue mi primera computadora del día. Todavía no puedo averiguarlo.",
+    "display_body": "Aquí vamos otra vez Estaba trabajando desmontando una computadora portátil de Lenovo. La pantalla LCD de este dispositivo en particular tiene tres tornillos que lo sostienen. También hay otros dos tornillos del mismo tamaño que sostienen la cubierta LCD. En total estamos hablando de cinco tornillos. Siempre me aseguro de que la bandeja magnética esté vacía de tornillos cuando termine de trabajar en un dispositivo, por razones obvias. Saqué los dos tornillos para la tapa LCD y los puse en mi bandeja magnética, luego saqué los tres tornillos de la pantalla LCD, pero sentí que cuatro tornillos se caían cuando los puse en la bandeja. Pensé que era sólo mi imaginación. Después de poner el nuevo LCD, reemplacé los tres tornillos y luego puse la cubierta LCD y reemplacé los dos tornillos restantes así que en realidad no debería haber quedado tornillos pero cuando fui a comprobar la bandeja, todavía había un tornillo ahí dentro... Una vez más, esta fue mi primera computadora del día. Todavía no puedo averiguarlo.",
+    "word_count": 169,
+    "est_speech_seconds": 67.6,
+    "banned_words_masked": [],
+    "title_en": "Here we go again",
+    "body_en": "Here we go again\n\nI was at work disassembling a Lenovo laptop. The LCD screen on this particular device has three screws holding it in. There are also two more screws of the same size that hold down the LCD cover. In total we're talking about five screws.\n I always make sure that the magnetic tray is empty of screws when I finish working on a device, for obvious reasons. I took out the two screws for the LCD cover and put them in my magnetic tray, I then took the three screws out of the LCD screen, but felt four screws drop when I put them in the tray. I thought it was just my imagination.\n After putting the new LCD in, I replaced the three screws and then put the LCD cover on and replaced the two remaining screws so in reality there should've been no screws left but when I went to check the tray, there were still a screw in there...\n Once again, this was my first Computer of the day. I still can't figure it out.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Aquí vamos otra vez"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vfq3kv_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/f4183b05-aa72-4f33-89ea-a58d98551d29.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vfq3kv_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 54.05,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.6
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vfq3kv_es.ass",
+    "subtitles": {
+      "num_words": 169,
+      "num_cues": 46,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.6,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "f4183b05-aa72-4f33-89ea-a58d98551d29",
+      "title": "Lighthouse (feat. PhiloSofie)",
+      "artist": "PhiloSofie, Azertion, JJD",
+      "genre": "Future Bass",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/Lighthouse",
+      "instrumental_url": "https://ncs.io/track/download/i_f4183b05-aa72-4f33-89ea-a58d98551d29",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury car",
+      "image_id": 5911687,
+      "image_page_url": "https://pixabay.com/photos/audi-a4-car-luxury-car-vehicle-5911687/",
+      "image_url": "https://pixabay.com/get/ga1d49724189350502c4a38445caeca5b02ad09e0a4c43ccec0926e1152d3e984609ae42d881d31c8d038e7ae01344232d45d95d33e884d970d23185fe85fd542_1280.jpg",
+      "title_rendered": "Aquí vamos otra vez"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
