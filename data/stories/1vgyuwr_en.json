@@ -1,0 +1,105 @@
+{
+  "id": "3a88bea76c3c49c883c5d12ce1d8fe31",
+  "created_at": 1786095334.9175599,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vgyuwr",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vgyuwr/my_unsettling_lift_experience/",
+    "author": "/u/RicketyStupidity145",
+    "feed_rank": 1,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1786006742.0,
+    "nsfw": null,
+    "variant_id": "1vgyuwr_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "My Unsettling Lift Experience",
+    "raw_body": "I remember returning to my accommodation (which was a condominium at the time) and taking the lift to the 8th floor, which is where my unit was. The building has multiple towers, but I was certain I had entered the correct one. As usual, I stepped out of the lift and started walking towards my unit. Almost immediately, something felt wrong. When I reached the spot where my unit should have been, I was staring at what appeared to be someone else's unit instead.\n My first thought was that I must have accidentally gone to the wrong floor. I checked the floor number displayed beside the lift, but it clearly said I was on the 8th floor. That made no sense. Since the floor was correct, I convinced myself that I must have entered the wrong tower without realising it.\n At that point I genuinely didn't think much of it so I took the lift back down to the ground floor. As I stepped outside and looked around properly, I was surprised to see that I was actually in my own tower all along. At that point, I remember feeling genuinely unsettled because neither explanation I had come up with made sense anymore.\n I decided to go back up to the 8th floor one more time. This time, everything looked exactly as it should. I walked towards my unit, and it was there in its usual place, as if nothing had happened.\n\n submitted by /u/RicketyStupidity145\n [link] [comments]",
+    "cleaned_body": "My Unsettling Lift Experience\n\nI remember returning to my accommodation (which was a condominium at the time) and taking the lift to the 8th floor, which is where my unit was. The building has multiple towers, but I was certain I had entered the correct one. As usual, I stepped out of the lift and started walking towards my unit. Almost immediately, something felt wrong. When I reached the spot where my unit should have been, I was staring at what appeared to be someone else's unit instead.\n My first thought was that I must have accidentally gone to the wrong floor. I checked the floor number displayed beside the lift, but it clearly said I was on the 8th floor. That made no sense. Since the floor was correct, I convinced myself that I must have entered the wrong tower without realising it.\n At that point I genuinely didn't think much of it so I took the lift back down to the ground floor. As I stepped outside and looked around properly, I was surprised to see that I was actually in my own tower all along. At that point, I remember feeling genuinely unsettled because neither explanation I had come up with made sense anymore.\n I decided to go back up to the 8th floor one more time. This time, everything looked exactly as it should. I walked towards my unit, and it was there in its usual place, as if nothing had happened.",
+    "display_body": "My Unsettling Lift Experience I remember returning to my accommodation (which was a condominium at the time) and taking the lift to the 8th floor, which is where my unit was. The building has multiple towers, but I was certain I had entered the correct one. As usual, I stepped out of the lift and started walking towards my unit. Almost immediately, something felt wrong. When I reached the spot where my unit should have been, I was staring at what appeared to be someone else's unit instead. My first thought was that I must have accidentally gone to the wrong floor. I checked the floor number displayed beside the lift, but it clearly said I was on the 8th floor. That made no sense. Since the floor was correct, I convinced myself that I must have entered the wrong tower without realising it. At that point I genuinely didn't think much of it so I took the lift back down to the ground floor. As I stepped outside and looked around properly, I was surprised to see that I was actually in my own tower all along. At that point, I remember feeling genuinely unsettled because neither explanation I had come up with made sense anymore. I decided to go back up to the 8th floor one more time. This time, everything looked exactly as it should. I walked towards my unit, and it was there in its usual place, as if nothing had happened.",
+    "word_count": 246,
+    "est_speech_seconds": 98.4,
+    "banned_words_masked": [],
+    "title_en": "My Unsettling Lift Experience",
+    "body_en": "My Unsettling Lift Experience\n\nI remember returning to my accommodation (which was a condominium at the time) and taking the lift to the 8th floor, which is where my unit was. The building has multiple towers, but I was certain I had entered the correct one. As usual, I stepped out of the lift and started walking towards my unit. Almost immediately, something felt wrong. When I reached the spot where my unit should have been, I was staring at what appeared to be someone else's unit instead.\n My first thought was that I must have accidentally gone to the wrong floor. I checked the floor number displayed beside the lift, but it clearly said I was on the 8th floor. That made no sense. Since the floor was correct, I convinced myself that I must have entered the wrong tower without realising it.\n At that point I genuinely didn't think much of it so I took the lift back down to the ground floor. As I stepped outside and looked around properly, I was surprised to see that I was actually in my own tower all along. At that point, I remember feeling genuinely unsettled because neither explanation I had come up with made sense anymore.\n I decided to go back up to the 8th floor one more time. This time, everything looked exactly as it should. I walked towards my unit, and it was there in its usual place, as if nothing had happened.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "My Unsettling Lift Experience"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vgyuwr_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/1cbd5b81-7fb8-4b65-8925-694bc14f1ad4.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vgyuwr_en.png",
+    "audio": {
+      "voice": "am_michael",
+      "lang_code": "a",
+      "duration_sec": 78.62,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 2.94
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vgyuwr_en.ass",
+    "subtitles": {
+      "num_words": 246,
+      "num_cues": 67,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 2.94,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "1cbd5b81-7fb8-4b65-8925-694bc14f1ad4",
+      "title": "Hold It Up To The Light",
+      "artist": "Zeli",
+      "genre": "Dance-Pop",
+      "moods": [
+        "powerful",
+        "energetic",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/HIUTTL",
+      "instrumental_url": "https://ncs.io/track/download/i_1cbd5b81-7fb8-4b65-8925-694bc14f1ad4",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "dessert",
+      "image_id": 5581806,
+      "image_page_url": "https://pixabay.com/photos/tiramisu-strawberries-dessert-cream-5581806/",
+      "image_url": "https://pixabay.com/get/g15663979180bcd651973bad01838c301e285ebc9ca45eb83e9c4d000c643c7d8fdfb8af2c94998fea143cb478aedc0314f721186ebc2c4262ad1eddb38091626_1280.jpg",
+      "title_rendered": "My Unsettling Lift Experience"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
