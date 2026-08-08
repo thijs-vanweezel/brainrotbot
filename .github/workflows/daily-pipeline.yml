@@ -39,21 +39,34 @@ jobs:
           restore-keys: |
             brainrotbot-modelcache-
 
-      # Rolling cache for the REUSABLE download caches only -- deliberately not all of data/.
-      # Per-video media (final/audio/video/subtitles/thumbnail) is many GB per run and would blow
-      # through the 10 GB per-repo cache limit, evicting the caches we actually want to keep. It
-      # also doesn't need to survive: once a video is scheduled it lives on Litterbox, and reconcile
-      # only needs the story JSON. Losing this cache costs re-download time, not correctness.
+      # Caching is split by how often the content actually changes, because the per-repo budget is
+      # 10 GB and the model cache above alone is ~4 GB. The old "all of data/ under a per-run key"
+      # wrote a fresh 2 GB entry every run, which evicted the model cache every ~3 runs (observed:
+      # runs re-downloading Kokoro/MMS/NLLB from scratch). Per-video media is deliberately NOT
+      # cached at all -- it's many GB per run and needn't survive: once a video is scheduled it
+      # lives on Litterbox and reconcile only needs the story JSON.
+
+      # Background sources + the quantized NLLB model change only when settings.toml does, so key
+      # on it: steady state is a cache HIT that saves nothing, keeping the budget flat. The prefix
+      # restore-key means editing settings.toml reuses the old cache and re-fetches only what's new.
       - uses: actions/cache@v4
         with:
           path: |
             data/video_cache
+            data/translation_cache
+          key: brainrotbot-static-${{ hashFiles('config/settings.toml') }}
+          restore-keys: |
+            brainrotbot-static-
+
+      # Small and genuinely growing (new NCS tracks / Pixabay images each run) -> rolling key.
+      - uses: actions/cache@v4
+        with:
+          path: |
             data/music_cache
             data/thumbnail_cache
-            data/translation_cache
-          key: brainrotbot-caches-${{ github.run_id }}
+          key: brainrotbot-media-${{ github.run_id }}
           restore-keys: |
-            brainrotbot-caches-
+            brainrotbot-media-
 
       - name: Install
         run: pip install -e ".[tts,video,music,subtitles,translation,thumbnail]"
