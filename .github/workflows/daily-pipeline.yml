@@ -39,14 +39,21 @@ jobs:
           restore-keys: |
             brainrotbot-modelcache-
 
-      # Rolling cache for data/: reusable download caches plus not-yet-reconciled media.
-      # Losing it costs re-download time, not correctness -- the real state is committed below.
+      # Rolling cache for the REUSABLE download caches only -- deliberately not all of data/.
+      # Per-video media (final/audio/video/subtitles/thumbnail) is many GB per run and would blow
+      # through the 10 GB per-repo cache limit, evicting the caches we actually want to keep. It
+      # also doesn't need to survive: once a video is scheduled it lives on Litterbox, and reconcile
+      # only needs the story JSON. Losing this cache costs re-download time, not correctness.
       - uses: actions/cache@v4
         with:
-          path: data/
-          key: brainrotbot-data-${{ github.run_id }}
+          path: |
+            data/video_cache
+            data/music_cache
+            data/thumbnail_cache
+            data/translation_cache
+          key: brainrotbot-caches-${{ github.run_id }}
           restore-keys: |
-            brainrotbot-data-
+            brainrotbot-caches-
 
       - name: Install
         run: pip install -e ".[tts,video,music,subtitles,translation,thumbnail]"
@@ -72,4 +79,7 @@ jobs:
           [ -f data/ledger.jsonl ] && git add -f data/ledger.jsonl
           [ -d data/stories ] && git add -f data/stories/
           git diff --cached --quiet || git commit -m "chore: update ledger/story state [skip ci]"
+          # Rebase onto whatever landed while the run was going (it can take hours), else the push
+          # is rejected and a whole run's ledger progress is lost.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push
