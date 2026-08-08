@@ -1,0 +1,126 @@
+{
+  "id": "da067328a5554476ab8a4bf1e9e1183d",
+  "created_at": 1786187823.1058333,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vdno9y",
+    "url": "https://www.reddit.com/r/adultery/comments/1vdno9y/whats_your_all_time_favorite_memory_with_an_ap_or/",
+    "author": "/u/The_Cowboy9999",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785690912.0,
+    "nsfw": null,
+    "variant_id": "1vdno9y_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "What's your All Time Favorite Memory with an AP or exAP?",
+    "raw_body": "I've learned so much from this sub. Im at work on a Sunday and thought I'll ask the early Sunday morning crowd a fun question.\n For me.. always hated my birthday. Did not have many growing up. And as an adult I try to avoid all things birthday. Defensive mechanisms ya know.\n Birthday a few years ago exAP catered an entire day to celebrate me. Special gifts delivered to me safely, including favorite take out. Photoshoot in lingerie. And then after work she spent it making me melt over and over 💦.\n Maybe sounds simple to most but she spoke my love language in a way that was special.\n\n submitted by /u/The_Cowboy9999\n [link] [comments]",
+    "cleaned_body": "What's your All Time Favorite Memory with an affair partner or exAP?\n\nI've learned so much from this sub. Im at work on a Sunday and thought I'll ask the early Sunday morning crowd a fun question.\n For me.. always hated my birthday. Did not have many growing up. And as an adult I try to avoid all things birthday. Defensive mechanisms ya know.\n Birthday a few years ago exAP catered an entire day to celebrate me. Special gifts delivered to me safely, including favorite take out. Photoshoot in lingerie. And then after work she spent it making me melt over and over 💦.\n Maybe sounds simple to most but she spoke my love language in a way that was special.",
+    "display_body": "What's your All Time Favorite Memory with an affair partner or exAP? I've learned so much from this sub. Im at work on a Sunday and thought I'll ask the early Sunday morning crowd a fun question. For me.. always hated my birthday. Did not have many growing up. And as an adult I try to avoid all things birthday. Defensive mechanisms ya know. Birthday a few years ago exAP catered an entire day to celebrate me. Special gifts delivered to me safely, including favorite take out. Photoshoot in lingerie. And then after work she spent it making me melt over and over 💦. Maybe sounds simple to most but she spoke my love language in a way that was special.",
+    "word_count": 121,
+    "est_speech_seconds": 48.4,
+    "banned_words_masked": [],
+    "title_en": "What's your All Time Favorite Memory with an AP or exAP?",
+    "body_en": "What's your All Time Favorite Memory with an affair partner or exAP?\n\nI've learned so much from this sub. Im at work on a Sunday and thought I'll ask the early Sunday morning crowd a fun question.\n For me.. always hated my birthday. Did not have many growing up. And as an adult I try to avoid all things birthday. Defensive mechanisms ya know.\n Birthday a few years ago exAP catered an entire day to celebrate me. Special gifts delivered to me safely, including favorite take out. Photoshoot in lingerie. And then after work she spent it making me melt over and over 💦.\n Maybe sounds simple to most but she spoke my love language in a way that was special.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "What's your All Time Favorite Memory with an AP or exAP?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vdno9y_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vdno9y_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vdno9y_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/77d2619f-9986-4df3-a1b8-31dbb26918ea.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vdno9y_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 39.95,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.421
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vdno9y_en.ass",
+    "subtitles": {
+      "num_words": 121,
+      "num_cues": 35,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.421,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/train-3.mp4",
+      "source_id": "e006252fa427",
+      "start_sec": 302.5,
+      "duration_sec": 39.95,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "77d2619f-9986-4df3-a1b8-31dbb26918ea",
+      "title": "Dancefloor Dreamer",
+      "artist": "NIVIRO",
+      "genre": "Trance",
+      "moods": [
+        "energetic",
+        "exciting",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/DancefloorDreamer",
+      "instrumental_url": "https://ncs.io/track/download/i_77d2619f-9986-4df3-a1b8-31dbb26918ea",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 113.98
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 41.5,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "man portrait",
+      "image_id": 8329151,
+      "image_page_url": "https://pixabay.com/photos/man-wrinkles-jacket-hat-cold-old-8329151/",
+      "image_url": "https://pixabay.com/get/g1e561f4ea45ba5fd68f8b4aeb95c1f3b60ccb3d07cf41caa862dedc5ca538cdc97adb9c8c51f5229863ed00239d5b7e8e96d804d59a6bda92dfbbea0c0fb17eb_1280.jpg",
+      "title_rendered": "What's your All Time Favorite Memory with an AP or exAP?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "id": "517934c6789c4198a93d8993db70c29b",
+  "created_at": 1786189155.808376,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vhwft7",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vhwft7/lost_an_accessory_to_a_dollafter_looking_for/",
+    "author": "/u/_Ash3r",
+    "feed_rank": 5,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1786097075.0,
+    "nsfw": null,
+    "variant_id": "1vhwft7_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Perdí un accesorio a una muñeca, después de buscar horas mágicamente reaparece delante de mí",
+    "raw_body": "this happened about a week ago give or take. i collect monster high dolls,and they tend to come with a lot of small accessories that are easy to lose. as i was putting a doll on my shelf,her glasses fell off and onto the floor and seemingly disappeared. i tore up my room looking for it as no replacement accessories exist online besides spending hundreds for the doll brand new. i searched for about an hour tearing up my shelf looking before asking my mom for help looking for it. as she helps me look,she says something along the lines of \"if you concentrate on the thought of finding it enough,it'll reappear,it's somewhere in this room\" keep in mind i thoroughly looked EVERYWHERE at this point. as she's saying this,she glances over her shoulder at the shelf while talking to me and there the fucking glasses are,neatly on my shelf,like somebody placed them there. i already looked at that section of the shelf a million times at that point. it could be written off as a number of things but it really shocked me at the time lol.\n\n submitted by /u/_Ash3r\n [link] [comments]",
+    "cleaned_body": "Perdí un accesorio a una muñeca, después de buscar horas mágicamente reaparece delante de mí\n\nEsto ocurrió hace una semana. Yo coleccio muñecas de monstruos, y tienden a venir con un montón de pequeños accesorios que son fáciles de perder. Mientras ponía una muñeca en mi estante, sus gafas se cayeron al suelo y aparentemente desaparecieron. Destruí mi habitación buscando por él ya que no hay accesorios de reemplazo en línea además de gastar cientos por la muñeca nueva. Busqué durante una hora rasgando mi estante buscando antes de pedirle ayuda a mi madre para buscarlo. Mientras me ayuda a mirar, dice algo como \"si te concentras en encontrarlo lo suficiente, volverá a aparecer, está en algún lugar de esta habitación\". Mientras dice esto, mira por encima de su hombro a la estantería mientras me habla y ahí están los malditos gafas, directamente en mi estantería, como si alguien los hubiera colocado allí. Ya miré esa sección del estante un millón de veces en ese momento. Podría ser descartado como una serie de cosas pero realmente me sorprendió en el momento lol.",
+    "display_body": "Perdí un accesorio a una muñeca, después de buscar horas mágicamente reaparece delante de mí Esto ocurrió hace una semana. Yo coleccio muñecas de monstruos, y tienden a venir con un montón de pequeños accesorios que son fáciles de perder. Mientras ponía una muñeca en mi estante, sus gafas se cayeron al suelo y aparentemente desaparecieron. Destruí mi habitación buscando por él ya que no hay accesorios de reemplazo en línea además de gastar cientos por la muñeca nueva. Busqué durante una hora rasgando mi estante buscando antes de pedirle ayuda a mi madre para buscarlo. Mientras me ayuda a mirar, dice algo como \"si te concentras en encontrarlo lo suficiente, volverá a aparecer, está en algún lugar de esta habitación\". Mientras dice esto, mira por encima de su hombro a la estantería mientras me habla y ahí están los malditos gafas, directamente en mi estantería, como si alguien los hubiera colocado allí. Ya miré esa sección del estante un millón de veces en ese momento. Podría ser descartado como una serie de cosas pero realmente me sorprendió en el momento lol.",
+    "word_count": 182,
+    "est_speech_seconds": 72.8,
+    "banned_words_masked": [],
+    "title_en": "lost an accessory to a doll,after looking for hours magically reappears in front of me",
+    "body_en": "lost an accessory to a doll,after looking for hours magically reappears in front of me\n\nthis happened about a week ago give or take. i collect monster high dolls,and they tend to come with a lot of small accessories that are easy to lose. as i was putting a doll on my shelf,her glasses fell off and onto the floor and seemingly disappeared. i tore up my room looking for it as no replacement accessories exist online besides spending hundreds for the doll brand new. i searched for about an hour tearing up my shelf looking before asking my mom for help looking for it. as she helps me look,she says something along the lines of \"if you concentrate on the thought of finding it enough,it'll reappear,it's somewhere in this room\" keep in mind i thoroughly looked EVERYWHERE at this point. as she's saying this,she glances over her shoulder at the shelf while talking to me and there the fucking glasses are,neatly on my shelf,like somebody placed them there. i already looked at that section of the shelf a million times at that point. it could be written off as a number of things but it really shocked me at the time lol.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Perdí un accesorio a una muñeca, después de buscar horas mágicamente reaparece delante de mí"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vhwft7_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vhwft7_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vhwft7_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/25dc9e59-bfba-4f95-85bd-4f0eed6ea07e.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vhwft7_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 56.7,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 5.182
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vhwft7_es.ass",
+    "subtitles": {
+      "num_words": 182,
+      "num_cues": 48,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 5.182,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/minecraft-parkour-1.mp4",
+      "source_id": "007510aa797b",
+      "start_sec": 287.89,
+      "duration_sec": 56.7,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "25dc9e59-bfba-4f95-85bd-4f0eed6ea07e",
+      "title": "Euphoria",
+      "artist": "Cartoon, VALLO, KAZHI, Blooom",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "exciting",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/C_euphoria",
+      "instrumental_url": "https://ncs.io/track/download/i_25dc9e59-bfba-4f95-85bd-4f0eed6ea07e",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 93.39
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 58.23,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 4631573,
+      "image_page_url": "https://pixabay.com/photos/girl-asian-girl-asian-model-4631573/",
+      "image_url": "https://pixabay.com/get/g745e84397bc74b4c74994629406ac112b83e0d2b656be89b5c72d1b4f8360dfced24de424a54099b85a5e9d26232f3c98d1e42497f43de4ebb56c147b1c78e46_1280.jpg",
+      "title_rendered": "Perdí un accesorio a una muñeca, después de buscar horas mágicamente reaparece delante de mí"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

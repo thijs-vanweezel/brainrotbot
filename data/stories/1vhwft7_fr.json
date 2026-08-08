@@ -1,0 +1,126 @@
+{
+  "id": "c4a5e493eca94e8083a1e5d9624f1371",
+  "created_at": 1786189020.3057714,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vhwft7",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vhwft7/lost_an_accessory_to_a_dollafter_looking_for/",
+    "author": "/u/_Ash3r",
+    "feed_rank": 5,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1786097075.0,
+    "nsfw": null,
+    "variant_id": "1vhwft7_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "J'ai perdu un accessoire à une poupée, après avoir cherché pendant des heures, elle réapparaît magiquement devant moi.",
+    "raw_body": "this happened about a week ago give or take. i collect monster high dolls,and they tend to come with a lot of small accessories that are easy to lose. as i was putting a doll on my shelf,her glasses fell off and onto the floor and seemingly disappeared. i tore up my room looking for it as no replacement accessories exist online besides spending hundreds for the doll brand new. i searched for about an hour tearing up my shelf looking before asking my mom for help looking for it. as she helps me look,she says something along the lines of \"if you concentrate on the thought of finding it enough,it'll reappear,it's somewhere in this room\" keep in mind i thoroughly looked EVERYWHERE at this point. as she's saying this,she glances over her shoulder at the shelf while talking to me and there the fucking glasses are,neatly on my shelf,like somebody placed them there. i already looked at that section of the shelf a million times at that point. it could be written off as a number of things but it really shocked me at the time lol.\n\n submitted by /u/_Ash3r\n [link] [comments]",
+    "cleaned_body": "J'ai perdu un accessoire à une poupée, après avoir cherché pendant des heures, elle réapparaît magiquement devant moi.\n\nÇa s'est passé il y a une semaine. Je collectionne des poupées monstrueuses, et elles ont tendance à venir avec beaucoup de petits accessoires qui sont faciles à perdre. Alors que je mettais une poupée sur mon étagère, ses lunettes sont tombées et ont disparu. J'ai déchiré ma chambre en le cherchant car il n'y a pas d'accessoires de remplacement en ligne en plus de dépenser des centaines pour la poupée neuve. J'ai cherché pendant une heure en déchirant mon étagère avant de demander à ma mère de l'aider à la chercher. Comme elle m'aide à regarder, elle dit quelque chose comme \"si vous vous concentrez sur la pensée de la trouver suffisamment, elle réapparaîtra, elle est quelque part dans cette pièce\" Gardez à l'esprit que j'ai cherché partout à ce stade. Alors qu'elle dit ça, elle jette un coup d'œil sur l'étagère en me parlant et là, les lunettes sont sur mon étagère, comme si quelqu'un les avait placées là. J'ai déjà regardé cette section de l'étagère un million de fois à ce moment-là. Ça pourrait être écarté comme un certain nombre de choses mais ça m'a vraiment choqué à l'époque lol.",
+    "display_body": "J'ai perdu un accessoire à une poupée, après avoir cherché pendant des heures, elle réapparaît magiquement devant moi. Ça s'est passé il y a une semaine. Je collectionne des poupées monstrueuses, et elles ont tendance à venir avec beaucoup de petits accessoires qui sont faciles à perdre. Alors que je mettais une poupée sur mon étagère, ses lunettes sont tombées et ont disparu. J'ai déchiré ma chambre en le cherchant car il n'y a pas d'accessoires de remplacement en ligne en plus de dépenser des centaines pour la poupée neuve. J'ai cherché pendant une heure en déchirant mon étagère avant de demander à ma mère de l'aider à la chercher. Comme elle m'aide à regarder, elle dit quelque chose comme \"si vous vous concentrez sur la pensée de la trouver suffisamment, elle réapparaîtra, elle est quelque part dans cette pièce\" Gardez à l'esprit que j'ai cherché partout à ce stade. Alors qu'elle dit ça, elle jette un coup d'œil sur l'étagère en me parlant et là, les lunettes sont sur mon étagère, comme si quelqu'un les avait placées là. J'ai déjà regardé cette section de l'étagère un million de fois à ce moment-là. Ça pourrait être écarté comme un certain nombre de choses mais ça m'a vraiment choqué à l'époque lol.",
+    "word_count": 211,
+    "est_speech_seconds": 84.4,
+    "banned_words_masked": [],
+    "title_en": "lost an accessory to a doll,after looking for hours magically reappears in front of me",
+    "body_en": "lost an accessory to a doll,after looking for hours magically reappears in front of me\n\nthis happened about a week ago give or take. i collect monster high dolls,and they tend to come with a lot of small accessories that are easy to lose. as i was putting a doll on my shelf,her glasses fell off and onto the floor and seemingly disappeared. i tore up my room looking for it as no replacement accessories exist online besides spending hundreds for the doll brand new. i searched for about an hour tearing up my shelf looking before asking my mom for help looking for it. as she helps me look,she says something along the lines of \"if you concentrate on the thought of finding it enough,it'll reappear,it's somewhere in this room\" keep in mind i thoroughly looked EVERYWHERE at this point. as she's saying this,she glances over her shoulder at the shelf while talking to me and there the fucking glasses are,neatly on my shelf,like somebody placed them there. i already looked at that section of the shelf a million times at that point. it could be written off as a number of things but it really shocked me at the time lol.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "J'ai perdu un accessoire à une poupée, après avoir cherché pendant des heures, elle réapparaît magiquement devant moi."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vhwft7_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vhwft7_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vhwft7_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/25dc9e59-bfba-4f95-85bd-4f0eed6ea07e.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vhwft7_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 59.45,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 6.721
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vhwft7_fr.ass",
+    "subtitles": {
+      "num_words": 211,
+      "num_cues": 56,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 6.721,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/minecraft-parkour-1.mp4",
+      "source_id": "007510aa797b",
+      "start_sec": 212.51,
+      "duration_sec": 59.45,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "25dc9e59-bfba-4f95-85bd-4f0eed6ea07e",
+      "title": "Euphoria",
+      "artist": "Cartoon, VALLO, KAZHI, Blooom",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "exciting",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/C_euphoria",
+      "instrumental_url": "https://ncs.io/track/download/i_25dc9e59-bfba-4f95-85bd-4f0eed6ea07e",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 24.97
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 61.0,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 4631573,
+      "image_page_url": "https://pixabay.com/photos/girl-asian-girl-asian-model-4631573/",
+      "image_url": "https://pixabay.com/get/g745e84397bc74b4c74994629406ac112b83e0d2b656be89b5c72d1b4f8360dfced24de424a54099b85a5e9d26232f3c98d1e42497f43de4ebb56c147b1c78e46_1280.jpg",
+      "title_rendered": "J'ai perdu un accessoire à une poupée, après avoir cherché pendant des heures, elle réapparaît magiquement devant moi."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
