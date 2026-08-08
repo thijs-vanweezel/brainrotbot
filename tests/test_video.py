@@ -4,7 +4,41 @@ import pytest
 
 from brainrotbot.models import LedgerEntry, Story
 from brainrotbot.pipeline import _add_background_video
-from brainrotbot.video.background import pick_source
+from brainrotbot.video.background import _is_direct_media_url, ensure_cached, pick_source
+
+
+# --- direct-media sources: the yt-dlp-free path CI relies on ----------------------
+
+@pytest.mark.parametrize("url", [
+    "https://github.com/o/r/releases/download/sources-v1/subway-surfers-1.mp4",
+    "https://example.com/a.WEBM",                     # extension match is case-insensitive
+    "https://example.com/a.mkv?token=abc&x=1",        # query string is not part of the path
+])
+def test_is_direct_media_url_true(url):
+    assert _is_direct_media_url(url)
+
+
+@pytest.mark.parametrize("url", [
+    "https://www.youtube.com/watch?v=i0M4ARe9v0Y",    # the yt-dlp path
+    "https://youtu.be/i0M4ARe9v0Y",
+    "https://example.com/video",                      # no extension -> needs an extractor
+])
+def test_is_direct_media_url_false(url):
+    assert not _is_direct_media_url(url)
+
+
+def test_ensure_cached_downloads_direct_url_without_ytdlp(tmp_path, monkeypatch):
+    """A direct media URL is streamed straight to the cache -- yt-dlp is never resolved."""
+    monkeypatch.setattr("brainrotbot.video.background._download",
+                        lambda url, dest: dest.write_bytes(b"fake mp4"))
+    monkeypatch.setattr("brainrotbot.video.background._require",
+                        lambda b: pytest.fail(f"{b} must not be needed for a direct URL"))
+    got = ensure_cached("https://host/x/subway.mp4", tmp_path, max_height=1080)
+    assert got.read_bytes() == b"fake mp4" and got.suffix == ".mp4"
+    # A second call reuses the cached file rather than re-downloading.
+    monkeypatch.setattr("brainrotbot.video.background._download",
+                        lambda url, dest: pytest.fail("should have hit the cache"))
+    assert ensure_cached("https://host/x/subway.mp4", tmp_path, max_height=1080) == got
 
 
 # --- pick_source: uniform random pick over the source pool ------------------------

@@ -21,9 +21,31 @@ import re
 import shutil
 import subprocess
 from pathlib import Path
+from urllib.parse import urlsplit
+from urllib.request import Request, urlopen
 
 # ffmpeg's stderr banner line, e.g. "  Duration: 00:10:23.45, start: ...".
 _DURATION_RE = re.compile(r"Duration:\s*(\d+):(\d\d):(\d\d(?:\.\d+)?)")
+
+# Sources whose URL already points straight at a media file are fetched over plain HTTP instead of
+# through yt-dlp. This is what lets the bot run on GitHub Actions: YouTube blanket-blocks datacenter
+# IPs with its "confirm you're not a bot" gate (cookies don't clear it from those ranges), so the
+# curated pool is mirrored as GitHub Release assets and pulled from there.
+_DIRECT_SUFFIXES = (".mp4", ".webm", ".mkv", ".mov", ".m4v")
+
+
+def _is_direct_media_url(url: str) -> bool:
+    """True if `url` is a plain link to a media file (vs. a page yt-dlp must extract from)."""
+    return Path(urlsplit(url).path).suffix.lower() in _DIRECT_SUFFIXES
+
+
+def _download(url: str, dest: Path) -> None:
+    """Stream `url` to `dest`, via a .part file so an interrupted fetch is never seen as a cache hit."""
+    part = dest.with_suffix(dest.suffix + ".part")
+    req = Request(url, headers={"User-Agent": "brainrotbot"})  # bare urllib UA is 403'd by some hosts
+    with urlopen(req) as resp, part.open("wb") as fh:
+        shutil.copyfileobj(resp, fh, 1 << 20)
+    part.replace(dest)
 
 
 def pick_source(sources: list[str], rng: random.Random | None = None) -> str:
@@ -91,6 +113,12 @@ def ensure_cached(
     hit = [p for p in cache_dir.glob(f"{key}.*") if p.suffix != ".part"]
     if hit:
         return hit[0]
+    # A direct link to a media file needs no extractor -- just stream it. This is the path CI uses
+    # (the pool is mirrored as GitHub Release assets); yt-dlp is only for page URLs like YouTube.
+    if _is_direct_media_url(url):
+        dest = cache_dir / f"{key}{Path(urlsplit(url).path).suffix.lower()}"
+        _download(url, dest)
+        return dest
     ytdlp = _require("yt-dlp")
     # Prefer a single H.264 video-only stream: universally decodable and needs no ffmpeg merge
     # (we drop audio at render anyway). Fall back to any video-only, then a progressive stream.
