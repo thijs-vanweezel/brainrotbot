@@ -8,6 +8,7 @@ stands in for score. Parsed with stdlib `xml.etree` -- no extra dependency.
 
 from __future__ import annotations
 
+import random
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime
@@ -33,7 +34,10 @@ _BROWSER_UA = (
 def fetch_candidates(settings: Settings, sort: str = "top") -> list[Story]:
     headers = {"User-Agent": _BROWSER_UA, "Accept": "application/atom+xml, application/xml"}
     stories: list[Story] = []
-    for i, sub in enumerate(settings.subreddits):
+    # Shuffle so a rate-limit streak doesn't always starve the same tail-end subs.
+    subs = list(settings.subreddits)
+    random.shuffle(subs)
+    for i, sub in enumerate(subs):
         if i:
             time.sleep(_REQUEST_PAUSE_SECONDS)
         params = {"t": settings.time_filter, "limit": settings.limit_per_sub}
