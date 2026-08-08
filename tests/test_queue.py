@@ -28,6 +28,51 @@ def _entry(variant_id: str, *, status: str = "thumbnail_done", tiktok_id=None) -
     )
 
 
+# --- caption assembly: Wikipedia body + NCS credit + hashtags ---------------------
+
+_MUSIC = {"title": "Like Fire", "artist": "Apollo On The Run", "page_url": "https://ncs.io/LikeFire"}
+
+
+def _caption(entry, tags=("#fyp",), body="BODY", max_chars=2200):
+    return queue_mod._build_caption(
+        entry, list(tags), article={"extract": body},
+        fallback_template="{title}", max_chars=max_chars,
+    )
+
+
+def test_caption_includes_ncs_credit_when_music_present():
+    entry = _entry("abc_en")
+    entry.assets["music"] = dict(_MUSIC)
+    caption = _caption(entry)
+    # NCS licenses free of charge on condition of attribution, so all three lines must be present.
+    assert "Track: Like Fire — Apollo On The Run [NCS Release]" in caption
+    assert "Music provided by NoCopyrightSounds" in caption
+    assert "Free Download/Stream: https://ncs.io/LikeFire" in caption
+    # Order: body, then credit, then the hashtag block.
+    assert caption.index("BODY") < caption.index("Track:") < caption.index("#fyp")
+
+
+def test_caption_omits_credit_without_music():
+    caption = _caption(_entry("abc_en"))       # no assets["music"] -> --skip-music / failed download
+    assert "NoCopyrightSounds" not in caption
+    assert caption == "BODY\n\n#fyp"
+
+
+def test_caption_omits_credit_when_music_meta_incomplete():
+    entry = _entry("abc_en")
+    entry.assets["music"] = {"title": "Like Fire"}   # artist missing -> can't credit properly
+    assert "NCS Release" not in _caption(entry)
+
+
+def test_caption_truncates_body_but_keeps_credit_and_tags_whole():
+    entry = _entry("abc_en")
+    entry.assets["music"] = dict(_MUSIC)
+    credit = queue_mod._music_credit(entry)
+    caption = _caption(entry, body="word " * 400, max_chars=len(credit) + 60)
+    assert len(caption) <= len(credit) + 60
+    assert credit in caption and "#fyp" in caption   # only the body gave way
+
+
 def _settings(tmp_path):
     stories = tmp_path / "stories"
     stories.mkdir()

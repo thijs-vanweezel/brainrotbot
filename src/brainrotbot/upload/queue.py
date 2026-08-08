@@ -116,6 +116,23 @@ def _truncate(text: str, limit: int) -> str:
     return cut + "…"
 
 
+def _music_credit(entry: LedgerEntry) -> str:
+    """NCS attribution for the Step 5 background track, in NoCopyrightSounds' standard format.
+
+    NCS licenses their catalogue free of charge on the condition that the track is credited in the
+    description, so this is a licence obligation rather than a nicety -- it is always included when a
+    track was mixed in. Returns "" when the story has no music (--skip-music / a failed download).
+    """
+    music = entry.assets.get("music") or {}
+    title, artist = music.get("title"), music.get("artist")
+    if not title or not artist:
+        return ""
+    lines = [f"Track: {title} — {artist} [NCS Release]", "Music provided by NoCopyrightSounds"]
+    if music.get("page_url"):
+        lines.append(f"Free Download/Stream: {music['page_url']}")
+    return "\n".join(lines)
+
+
 def _build_caption(
     entry: LedgerEntry,
     hashtags: list[str],
@@ -124,21 +141,25 @@ def _build_caption(
     fallback_template: str,
     max_chars: int,
 ) -> str:
-    """Caption = a (random, unrelated) Wikipedia intro + the hashtag block, capped at `max_chars`.
+    """Caption = a (random, unrelated) Wikipedia intro + the NCS credit + hashtags, capped at `max_chars`.
 
-    The hashtag block drives reach, so it's built whole first; the body is then truncated at a
-    word boundary to fit. Degrades to the post title (via `fallback_template`) when no article
-    was fetched (e.g. Wikipedia outage).
+    The hashtag block drives reach and the music credit is a licence obligation, so both are built
+    whole first; only the body is truncated at a word boundary to fit whatever room is left.
+    Degrades to the post title (via `fallback_template`) when no article was fetched (e.g. Wikipedia
+    outage). Sections are joined by blank lines, skipping any that are empty.
     """
     body = (article or {}).get("extract") or fallback_template.format(title=entry.text.get("title", ""))
+    credit = _music_credit(entry)
     tags = " ".join(hashtags)
-    if not tags:
+    fixed = [s for s in (credit, tags) if s]
+    if not fixed:
         return _truncate(body, max_chars)
-    room = max_chars - len(tags) - 2           # reserve the tags + a blank-line separator
-    if room <= 0:                              # pathological: tags alone exceed the cap -> tags only
-        return tags[:max_chars].strip()
+    # Reserve the fixed sections plus the blank line separating each from what precedes it.
+    room = max_chars - sum(len(s) + 2 for s in fixed)
+    if room <= 0:                              # pathological: the fixed block alone exceeds the cap
+        return "\n\n".join(fixed)[:max_chars].strip()
     body = _truncate(body, room)
-    return f"{body}\n\n{tags}".strip() if body else tags
+    return "\n\n".join([s for s in (body, *fixed) if s]).strip()
 
 
 def _rewrite_story_file(settings, entry: LedgerEntry) -> None:
