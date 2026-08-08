@@ -106,8 +106,12 @@ sources = [
     "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/food-1.mp4",           # food-1, 2 min -- mirror of https://www.youtube.com/watch?v=ZJDn89O_dTI
     "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/food-2.mp4",           # food-2, 8 min -- mirror of https://www.youtube.com/watch?v=VAGmUv___iQ
     "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/smiling-people-1.mp4",  # smiling-people-1, 2 min -- mirror of https://www.youtube.com/watch?v=QbWStbEv4LU
-    "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-1.mp4",   # mickey-mouse-1, 4 min -- mirror of https://www.youtube.com/watch?v=asqjsMdpt08
-    "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-2.mp4",   # mickey-mouse-2, 6 min -- mirror of https://www.youtube.com/watch?v=8LdpvQHg3e0
+    "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-1.mp4",   # mickey-mouse-1, 4 min, 1.5x -- mirror of https://www.youtube.com/watch?v=8LdpvQHg3e0
+    "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-2.mp4",   # mickey-mouse-2, 4 min, 1.5x -- mirror of https://www.youtube.com/watch?v=eIv12pLu_zQ
+    "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-3.mp4",   # mickey-mouse-3, 4 min, 1.5x -- mirror of https://www.youtube.com/watch?v=8toW3eCN0Vg
+    "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-4.mp4",   # mickey-mouse-4, 3 min, 1.5x -- mirror of https://www.youtube.com/watch?v=M3qWdiqVBQY
+    "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-5.mp4",   # mickey-mouse-5, 3 min, 1.5x -- mirror of https://www.youtube.com/watch?v=i7WZMAeFaOc
+    "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-6.mp4",   # mickey-mouse-6, 3 min, 1.5x -- mirror of https://www.youtube.com/watch?v=asqjsMdpt08
 ]
 max_source_height = 1080   # cap download resolution (keeps cache small)
 width = 1080               # output frame -- TikTok vertical 9:16
