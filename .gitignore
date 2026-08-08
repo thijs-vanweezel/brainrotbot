@@ -1,11 +1,12 @@
 # Secrets
 .env
 
-# TikTok logged-in browser profile + imported session cookies (Step 7 upload)
+# Local notes (kept out of the public tree)
+CLAUDE.md
+
+# Browser profiles + exported session cookies
 config/tiktok_profile/
 config/tiktok_cookies.txt
-
-# YouTube logged-in session cookies (Step 3 background-video download)
 yt_cookies.txt
 
 # Runtime data / generated artifacts

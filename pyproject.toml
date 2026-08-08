@@ -5,11 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "brainrotbot"
 version = "0.1.0"
-description = "Automated TikTok brainrot content pipeline (Reddit -> TTS -> video -> upload)."
+description = "Personal media automation pipeline."
 requires-python = ">=3.11"
 dependencies = [
     "requests>=2.31",
-    "python-dotenv>=1.0",  # reserved for the future TikTok-secrets step
+    "python-dotenv>=1.0",  # loads .env secrets
 ]
 
 [project.optional-dependencies]
@@ -55,9 +55,8 @@ translation = [
 thumbnail = [
     "pillow>=10.0",
 ]
-# Step 7 (upload). Playwright drives the TikTok web Studio uploader (toggles subtitles, posts
-# public, sets the cover, reads back the video URL -- none of which the official API supports).
-# After install run once: `playwright install chromium`.
+# Optional browser-driven publishing fallback. After install run once:
+# `playwright install chromium`.
 upload = [
     "playwright>=1.40",
 ]

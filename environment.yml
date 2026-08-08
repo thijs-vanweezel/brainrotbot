@@ -1,7 +1,4 @@
-# Conda environment for brainrotbot.
-# The active dev env ("brainrotbot") runs Python 3.13; step-1 deps below are all 3.13-compatible.
-# Reddit retrieval uses RSS (requests + stdlib xml.etree) -- no API client needed.
-# Heavier deps (torch / TTS / yt-dlp) are intentionally deferred to later pipeline steps.
+# Base conda environment. Heavier optional deps are installed via the pyproject extras.
 name: brainrotbot
 channels:
   - conda-forge
@@ -9,6 +6,6 @@ dependencies:
   - python>=3.11
   - pip
   - requests>=2.31
-  - python-dotenv>=1.0   # reserved for the future TikTok-secrets step
+  - python-dotenv>=1.0
   - pip:
       - pytest>=8.0

@@ -1,9 +1,6 @@
-name: Daily brainrotbot run
+name: Daily run
 
-# Runs the full pipeline (Reddit -> TTS -> video -> edit -> captions -> music -> thumbnail ->
-# Zernio-scheduled TikTok upload) once a day, top_k=5. Upload goes through Zernio's REST API
-# (see src/brainrotbot/upload/zernio.py) -- no browser, no TikTok cookies, no bot-detection risk.
-# Background-video sourcing (yt-dlp against YouTube) still needs cookies + a JS runtime, see below.
+# Runs the pipeline once a day.
 on:
   schedule:
     - cron: "0 9 * * *"   # 09:00 UTC daily -- adjust to taste
@@ -27,8 +24,7 @@ jobs:
         with:
           python-version: "3.12"   # Kokoro TTS requires <3.13, same constraint as the conda env locally
 
-      # yt-dlp needs a JS runtime to clear YouTube's "confirm you're not a bot" challenge
-      # (locally this is conda-forge's Deno; CLAUDE.md Step 3 notes).
+      # JS runtime required by yt-dlp.
       - uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
@@ -43,11 +39,8 @@ jobs:
           restore-keys: |
             brainrotbot-modelcache-
 
-      # Rolling cache for data/: video_cache, music_cache, thumbnail_cache, translation_cache
-      # (pure reusable caches) plus any not-yet-reconciled media for videos Zernio has scheduled
-      # but not yet published (upload_scheduled keeps its final/audio/video files until the next
-      # run's reconcile confirms + deletes them). Losing this cache costs re-download time, not
-      # correctness -- data/ledger.jsonl + data/stories/ (the real state) are committed to git below.
+      # Rolling cache for data/: reusable download caches plus not-yet-reconciled media.
+      # Losing it costs re-download time, not correctness -- the real state is committed below.
       - uses: actions/cache@v4
         with:
           path: data/
@@ -55,22 +48,17 @@ jobs:
           restore-keys: |
             brainrotbot-data-
 
-      - name: Install brainrotbot
+      - name: Install
         run: pip install -e ".[tts,video,music,subtitles,translation,thumbnail]"
-        # NOT the "upload" extra: the default Zernio provider only needs `requests` (core);
-        # Playwright is only required for the legacy provider="playwright" fallback.
+        # The "upload" extra is intentionally omitted -- the default provider needs only `requests`.
 
-      - name: Write YouTube cookies
-        run: |
-          printf '%s' "${{ secrets.YT_COOKIES }}" > config/yt_cookies.txt
-          echo "config/yt_cookies.txt: $(wc -c < config/yt_cookies.txt) bytes, $(wc -l < config/yt_cookies.txt) lines, $(grep -c '\.youtube\.com' config/yt_cookies.txt || true) youtube.com cookie line(s)"
-        # [video].cookies_file = "./yt_cookies.txt" resolves relative to settings.toml's own
-        # directory (config/), NOT the repo root -- see Settings.video_cookies_file in config.py.
-        # Netscape cookies.txt exported from a logged-in browser (same file used locally),
-        # stored whole as the YT_COOKIES repo secret. Re-export + update the secret if
-        # background-video downloads start failing (YouTube cookies do expire over time).
+      - name: Write source cookies
+        run: printf '%s' "${{ secrets.YT_COOKIES }}" > config/yt_cookies.txt
+        # [video].cookies_file resolves relative to settings.toml's own directory (config/),
+        # NOT the repo root -- see Settings.video_cookies_file in config.py. Refresh the
+        # secret if downloads start failing; these cookies expire over time.
 
-      - name: Run pipeline (top_k=5)
+      - name: Run pipeline
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
