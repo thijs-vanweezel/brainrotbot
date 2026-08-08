@@ -1,0 +1,120 @@
+{
+  "id": "49adb070c8bf4bbf9bbca9a7cea543e4",
+  "created_at": 1786181669.7395732,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vhkk3d",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vhkk3d/you_disloyal_piece_of_shit/",
+    "author": "/u/fenrux_grey99",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1786059816.0,
+    "nsfw": null,
+    "variant_id": "1vhkk3d_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Tú desleal pedazo de mierda",
+    "raw_body": "I got you this job. I encouraged you to apply, told you what to say. I recommended you to the boss. When other people spoke up about why we shouldnt hire you, I defended you. You wouldnt be here if not for me. I gave you pointers and showed you the ropes. I helped guide you into a promotion. You were my little protégé.\n And now, when im frustrated with the district managers policies and how he constantly fucks with us, you rat me out because in a private conversation I said \"he can kiss my ass\"?\n Oh my friend you have no idea the mountain of shit you have stepped on. I am making it my personal mission now to rain down hell upon you.\n\n submitted by /u/fenrux_grey99\n [link] [comments]",
+    "cleaned_body": "Tú desleal pedazo de mierda\n\nTe he conseguido este trabajo. Te animé a postularte, te dije qué decir. Te recomendé al jefe. Cuando otras personas hablaron sobre por qué no deberíamos contratarte, yo te defendió. No estarías aquí si no fuera por mí. Te di consejos y te mostré las cuerdas. Te ayudé a guiarte a una promoción. Eras mi pequeño protegido. Y ahora, cuando estoy frustrado con las políticas de los gerentes del distrito y cómo nos jode constantemente, ¿me has echado porque en una conversación privada dije \"puede besarme el trasero\"? Oh, amigo mío, no tienes idea de la montaña de mierda que has pisado. Me estoy haciendo mi misión personal ahora para llover el infierno sobre ti.",
+    "display_body": "Tú desleal pedazo de m*erda Te he conseguido este trabajo. Te animé a postularte, te dije qué decir. Te recomendé al jefe. Cuando otras personas hablaron sobre por qué no deberíamos contratarte, yo te defendió. No estarías aquí si no fuera por mí. Te di consejos y te mostré las cuerdas. Te ayudé a guiarte a una promoción. Eras mi pequeño protegido. Y ahora, cuando estoy frustrado con las políticas de los gerentes del distrito y cómo nos jode constantemente, ¿me has echado porque en una conversación privada dije \"puede besarme el trasero\"? Oh, amigo mío, no tienes idea de la montaña de m*erda que has pisado. Me estoy haciendo mi misión personal ahora para llover el infierno sobre ti.",
+    "word_count": 120,
+    "est_speech_seconds": 48.0,
+    "banned_words_masked": [
+      {
+        "word": "mierda",
+        "count": 2
+      }
+    ],
+    "title_en": "You disloyal piece of shit",
+    "body_en": "You disloyal piece of shit\n\nI got you this job. I encouraged you to apply, told you what to say. I recommended you to the boss. When other people spoke up about why we shouldnt hire you, I defended you. You wouldnt be here if not for me. I gave you pointers and showed you the ropes. I helped guide you into a promotion. You were my little protégé.\n And now, when im frustrated with the district managers policies and how he constantly fucks with us, you rat me out because in a private conversation I said \"he can kiss my ass\"?\n Oh my friend you have no idea the mountain of shit you have stepped on. I am making it my personal mission now to rain down hell upon you.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Tú desleal pedazo de m*erda"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vhkk3d_es.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/3d87be35-7aba-4cb6-b69d-ad7d1dac3905.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vhkk3d_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 35.7,
+      "sample_rate": 24000,
+      "blurred_words": 2,
+      "intro_sfx_at_sec": 2.001
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vhkk3d_es.ass",
+    "subtitles": {
+      "num_words": 120,
+      "num_cues": 33,
+      "num_masked": 2,
+      "banned_intervals": [
+        [
+          1.321,
+          2.001
+        ],
+        [
+          30.437,
+          30.757
+        ]
+      ],
+      "intro_end_sec": 2.001,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "3d87be35-7aba-4cb6-b69d-ad7d1dac3905",
+      "title": "Bounce On Da Riddim (ft. Emily J)",
+      "artist": "Emily J, Cartoon, Southby, NCT",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "exciting",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/BounceOnDaRiddim",
+      "instrumental_url": "https://ncs.io/track/download/i_3d87be35-7aba-4cb6-b69d-ad7d1dac3905",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 4301176,
+      "image_page_url": "https://pixabay.com/photos/wallpaper-leaves-green-foliage-4301176/",
+      "image_url": "https://pixabay.com/get/gc6c0b7b2a8e07bd5b01b525348c6c2facf7becae80cae1d12be5179b19c1afefc51e30efa828427b4d273d5d668039d4828c673cef8245d5268754ebe55d6a4e_1280.jpg",
+      "title_rendered": "Tú desleal pedazo de m*erda"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

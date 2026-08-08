@@ -1,0 +1,136 @@
+{
+  "id": "42984d2c7e034bbc859e83b2e201b625",
+  "created_at": 1786181604.137842,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vhkk3d",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vhkk3d/you_disloyal_piece_of_shit/",
+    "author": "/u/fenrux_grey99",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1786059816.0,
+    "nsfw": null,
+    "variant_id": "1vhkk3d_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "You disloyal piece of shit",
+    "raw_body": "I got you this job. I encouraged you to apply, told you what to say. I recommended you to the boss. When other people spoke up about why we shouldnt hire you, I defended you. You wouldnt be here if not for me. I gave you pointers and showed you the ropes. I helped guide you into a promotion. You were my little protégé.\n And now, when im frustrated with the district managers policies and how he constantly fucks with us, you rat me out because in a private conversation I said \"he can kiss my ass\"?\n Oh my friend you have no idea the mountain of shit you have stepped on. I am making it my personal mission now to rain down hell upon you.\n\n submitted by /u/fenrux_grey99\n [link] [comments]",
+    "cleaned_body": "You disloyal piece of shit\n\nI got you this job. I encouraged you to apply, told you what to say. I recommended you to the boss. When other people spoke up about why we shouldnt hire you, I defended you. You wouldnt be here if not for me. I gave you pointers and showed you the ropes. I helped guide you into a promotion. You were my little protégé.\n And now, when im frustrated with the district managers policies and how he constantly fucks with us, you rat me out because in a private conversation I said \"he can kiss my ass\"?\n Oh my friend you have no idea the mountain of shit you have stepped on. I am making it my personal mission now to rain down hell upon you.",
+    "display_body": "You disloyal piece of sh*t I got you this job. I encouraged you to apply, told you what to say. I recommended you to the boss. When other people spoke up about why we shouldnt hire you, I defended you. You wouldnt be here if not for me. I gave you pointers and showed you the ropes. I helped guide you into a promotion. You were my little protégé. And now, when im frustrated with the district managers policies and how he constantly f*cks with us, you rat me out because in a private conversation I said \"he can kiss my *ss\"? Oh my friend you have no idea the mountain of sh*t you have stepped on. I am making it my personal mission now to rain down hell upon you.",
+    "word_count": 131,
+    "est_speech_seconds": 52.4,
+    "banned_words_masked": [
+      {
+        "word": "shit",
+        "count": 2
+      },
+      {
+        "word": "fucks",
+        "count": 1
+      },
+      {
+        "word": "ass",
+        "count": 1
+      }
+    ],
+    "title_en": "You disloyal piece of shit",
+    "body_en": "You disloyal piece of shit\n\nI got you this job. I encouraged you to apply, told you what to say. I recommended you to the boss. When other people spoke up about why we shouldnt hire you, I defended you. You wouldnt be here if not for me. I gave you pointers and showed you the ropes. I helped guide you into a promotion. You were my little protégé.\n And now, when im frustrated with the district managers policies and how he constantly fucks with us, you rat me out because in a private conversation I said \"he can kiss my ass\"?\n Oh my friend you have no idea the mountain of shit you have stepped on. I am making it my personal mission now to rain down hell upon you.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "You disloyal piece of sh*t"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vhkk3d_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/3d87be35-7aba-4cb6-b69d-ad7d1dac3905.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vhkk3d_en.png",
+    "audio": {
+      "voice": "af_bella",
+      "lang_code": "a",
+      "duration_sec": 38.38,
+      "sample_rate": 24000,
+      "blurred_words": 4,
+      "intro_sfx_at_sec": 2.421
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vhkk3d_en.ass",
+    "subtitles": {
+      "num_words": 131,
+      "num_cues": 38,
+      "num_masked": 4,
+      "banned_intervals": [
+        [
+          1.281,
+          2.421
+        ],
+        [
+          24.71,
+          24.97
+        ],
+        [
+          29.732,
+          30.972
+        ],
+        [
+          33.213,
+          33.433
+        ]
+      ],
+      "intro_end_sec": 2.421,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "3d87be35-7aba-4cb6-b69d-ad7d1dac3905",
+      "title": "Bounce On Da Riddim (ft. Emily J)",
+      "artist": "Emily J, Cartoon, Southby, NCT",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "exciting",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/BounceOnDaRiddim",
+      "instrumental_url": "https://ncs.io/track/download/i_3d87be35-7aba-4cb6-b69d-ad7d1dac3905",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 4301176,
+      "image_page_url": "https://pixabay.com/photos/wallpaper-leaves-green-foliage-4301176/",
+      "image_url": "https://pixabay.com/get/gc6c0b7b2a8e07bd5b01b525348c6c2facf7becae80cae1d12be5179b19c1afefc51e30efa828427b4d273d5d668039d4828c673cef8245d5268754ebe55d6a4e_1280.jpg",
+      "title_rendered": "You disloyal piece of sh*t"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

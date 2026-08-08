@@ -1,0 +1,105 @@
+{
+  "id": "38f7c248479f472d82a845b5bf013cd5",
+  "created_at": 1786181704.768841,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1veay25",
+    "url": "https://www.reddit.com/r/confession/comments/1veay25/ive_been_using_the_previous_owners_meta_quest/",
+    "author": "/u/Dizzy-Doctor6600",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1785757064.0,
+    "nsfw": null,
+    "variant_id": "1veay25_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "I've been using the previous owner's Meta Quest account for almost a year.",
+    "raw_body": "I (20M) bought a used Meta Quest 3 last year from an older guy (I'd guess he was around 50). I didn't realize until I got home that he was still logged into his Meta account.\n Well... I never logged him out.\n I've basically been working my way through his entire game library ever since. He owns something like 40-50 VR games, and considering how expensive VR games are, that's a pretty huge collection.\n I know I probably should have factory reset the headset or contacted him, but at this point it's been almost a year.\n Important:\n His PayPal account is still linked to the account.\n I have not bought any games or made any purchases using his account, and I never will.\n Edit: Since a lot of people are making assumptions and asking why I didn't remove his PayPal account:\n I only logged into his account once to enable app sharing. After that, I switched back to my own account and haven't touched his profile or account ever since. I haven't logged into it again, changed anything, or made any purchases.\n\n submitted by /u/Dizzy-Doctor6600\n [link] [comments]",
+    "cleaned_body": "I've been using the previous owner's Meta Quest account for almost a year.\n\nI 20 year old male bought a used Meta Quest 3 last year from an older guy (I'd guess he was around 50). I didn't realize until I got home that he was still logged into his Meta account.\n Well... I never logged him out.\n I've basically been working my way through his entire game library ever since. He owns something like 40-50 VR games, and considering how expensive VR games are, that's a pretty huge collection.\n I know I probably should have factory reset the headset or contacted him, but at this point it's been almost a year.\n Important:\n His PayPal account is still linked to the account.\n I have not bought any games or made any purchases using his account, and I never will.\n\n I only logged into his account once to enable app sharing. After that, I switched back to my own account and haven't touched his profile or account ever since. I haven't logged into it again, changed anything, or made any purchases.",
+    "display_body": "I've been using the previous owner's Meta Quest account for almost a year. I 20 year old male bought a used Meta Quest 3 last year from an older guy (I'd guess he was around 50). I didn't realize until I got home that he was still logged into his Meta account. Well... I never logged him out. I've basically been working my way through his entire game library ever since. He owns something like 40-50 VR games, and considering how expensive VR games are, that's a pretty huge collection. I know I probably should have factory reset the headset or contacted him, but at this point it's been almost a year. Important: His PayPal account is still linked to the account. I have not bought any games or made any purchases using his account, and I never will. I only logged into his account once to enable app sharing. After that, I switched back to my own account and haven't touched his profile or account ever since. I haven't logged into it again, changed anything, or made any purchases.",
+    "word_count": 180,
+    "est_speech_seconds": 72.0,
+    "banned_words_masked": [],
+    "title_en": "I've been using the previous owner's Meta Quest account for almost a year.",
+    "body_en": "I've been using the previous owner's Meta Quest account for almost a year.\n\nI 20 year old male bought a used Meta Quest 3 last year from an older guy (I'd guess he was around 50). I didn't realize until I got home that he was still logged into his Meta account.\n Well... I never logged him out.\n I've basically been working my way through his entire game library ever since. He owns something like 40-50 VR games, and considering how expensive VR games are, that's a pretty huge collection.\n I know I probably should have factory reset the headset or contacted him, but at this point it's been almost a year.\n Important:\n His PayPal account is still linked to the account.\n I have not bought any games or made any purchases using his account, and I never will.\n\n I only logged into his account once to enable app sharing. After that, I switched back to my own account and haven't touched his profile or account ever since. I haven't logged into it again, changed anything, or made any purchases.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "I've been using the previous owner's Meta Quest account for almost a year."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1veay25_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/17d5cee5-87dd-4edb-967c-4c6038a51fff.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1veay25_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 58.55,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.521
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1veay25_en.ass",
+    "subtitles": {
+      "num_words": 180,
+      "num_cues": 51,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.521,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "17d5cee5-87dd-4edb-967c-4c6038a51fff",
+      "title": "Skyline Pt. II",
+      "artist": "Electro-Light, Kovan",
+      "genre": "Future Bounce",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/Skyline_II",
+      "instrumental_url": "https://ncs.io/track/download/i_17d5cee5-87dd-4edb-967c-4c6038a51fff",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "snacks",
+      "image_id": 6979703,
+      "image_page_url": "https://pixabay.com/photos/fries-snack-meal-lumpia-food-6979703/",
+      "image_url": "https://pixabay.com/get/gcc85768f51724438d996710536928f73191a74b38c5ac3fb39d35a1fd8274df1f892a46adfe4aa823a8a4e4fbda13cfdfc9c73bcd7e83b898a41b33dbd82b88c_1280.jpg",
+      "title_rendered": "I've been using the previous owner's Meta Quest account for almost a year."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

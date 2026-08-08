@@ -1,0 +1,105 @@
+{
+  "id": "382828704abd4b53911f0b248340f76e",
+  "created_at": 1786181853.996198,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vfo8v3",
+    "url": "https://www.reddit.com/r/adultery/comments/1vfo8v3/seeing_ap_mentioned_casually_in_the_wild/",
+    "author": "/u/1800CollectCalls",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785880383.0,
+    "nsfw": null,
+    "variant_id": "1vfo8v3_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Seeing AP mentioned casually in the wild …",
+    "raw_body": "I'm always miffed when I see the 'AP' acronym mentioned in the wild.\n Like Disney fans (like I am) will mention AP as annual pass ...\n Then at home, my kid is taking AP Social Studies ... Advanced Placement.\n At work, our management is always looking to increase AP ... Accounts Payable\n So when anybody says AP, I end up pausing and wondering if I'd been caught.\n I can't be the only one here 😂\n\n submitted by /u/1800CollectCalls\n [link] [comments]",
+    "cleaned_body": "Seeing affair partner mentioned casually in the wild ...\n\nI'm always miffed when I see the 'affair partner' acronym mentioned in the wild.\n Like Disney fans (like I am) will mention affair partner as annual pass ...\n Then at home, my kid is taking affair partner Social Studies ... Advanced Placement.\n At work, our management is always looking to increase affair partner ... Accounts Payable\n So when anybody says affair partner, I end up pausing and wondering if I'd been caught.\n I can't be the only one here 😂",
+    "display_body": "Seeing affair partner mentioned casually in the wild ... I'm always miffed when I see the 'affair partner' acronym mentioned in the wild. Like Disney fans (like I am) will mention affair partner as annual pass ... Then at home, my kid is taking affair partner Social Studies ... Advanced Placement. At work, our management is always looking to increase affair partner ... Accounts Payable So when anybody says affair partner, I end up pausing and wondering if I'd been caught. I can't be the only one here 😂",
+    "word_count": 89,
+    "est_speech_seconds": 35.6,
+    "banned_words_masked": [],
+    "title_en": "Seeing AP mentioned casually in the wild …",
+    "body_en": "Seeing affair partner mentioned casually in the wild ...\n\nI'm always miffed when I see the 'affair partner' acronym mentioned in the wild.\n Like Disney fans (like I am) will mention affair partner as annual pass ...\n Then at home, my kid is taking affair partner Social Studies ... Advanced Placement.\n At work, our management is always looking to increase affair partner ... Accounts Payable\n So when anybody says affair partner, I end up pausing and wondering if I'd been caught.\n I can't be the only one here 😂",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Seeing AP mentioned casually in the wild …"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vfo8v3_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/1255c20b-843a-4add-bf68-7ab6c4f2497e.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vfo8v3_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 30.75,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.441
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vfo8v3_en.ass",
+    "subtitles": {
+      "num_words": 89,
+      "num_cues": 25,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.441,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "1255c20b-843a-4add-bf68-7ab6c4f2497e",
+      "title": "Carry On",
+      "artist": "Anna Yvette, Lost Sky",
+      "genre": "Trap",
+      "moods": [
+        "energetic",
+        "exciting",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/CarryOn",
+      "instrumental_url": "https://ncs.io/track/download/i_1255c20b-843a-4add-bf68-7ab6c4f2497e",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury watch",
+      "image_id": 5820467,
+      "image_page_url": "https://pixabay.com/photos/man-watch-pouch-elegance-suit-5820467/",
+      "image_url": "https://pixabay.com/get/gd63e0ae92ceeb8b724a8d0c191179a70121b5941e283c1f4e7bcc92bbf37a91b528b5d887763ed7d56c1ab629edcc7d78cb5c0f224e2935076b41ac846b8d2ce_1280.jpg",
+      "title_rendered": "Seeing AP mentioned casually in the wild …"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

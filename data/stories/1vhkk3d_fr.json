@@ -1,0 +1,120 @@
+{
+  "id": "d0a9ea619ed5411fb8f5c05442a256b3",
+  "created_at": 1786181637.2670033,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vhkk3d",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vhkk3d/you_disloyal_piece_of_shit/",
+    "author": "/u/fenrux_grey99",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1786059816.0,
+    "nsfw": null,
+    "variant_id": "1vhkk3d_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Espèce de merde déloyale !",
+    "raw_body": "I got you this job. I encouraged you to apply, told you what to say. I recommended you to the boss. When other people spoke up about why we shouldnt hire you, I defended you. You wouldnt be here if not for me. I gave you pointers and showed you the ropes. I helped guide you into a promotion. You were my little protégé.\n And now, when im frustrated with the district managers policies and how he constantly fucks with us, you rat me out because in a private conversation I said \"he can kiss my ass\"?\n Oh my friend you have no idea the mountain of shit you have stepped on. I am making it my personal mission now to rain down hell upon you.\n\n submitted by /u/fenrux_grey99\n [link] [comments]",
+    "cleaned_body": "Espèce de merde déloyale !\n\nJe t'ai trouvé ce boulot. Je t'ai encouragé à postuler, je t'ai dit quoi dire. Je vous ai recommandé au patron. Quand d'autres ont parlé de ne pas t'embaucher, je t'ai défendu. Vous n'auriez pas été ici si ce n'était pas pour moi. Je vous ai donné des conseils et je vous ai montré les cordes. Je t'ai aidé à te promouvoir. Tu étais mon petit protégé. Et maintenant, quand je suis frustré par la politique du directeur du district et comment il nous baise constamment, tu me fais baiser parce que dans une conversation privée j'ai dit \"il peut me baiser le cul\"? Mon ami, tu n'as aucune idée de la montagne de merde sur laquelle tu as mis les pieds. Je fais de ma mission personnelle de vous faire tomber l'enfer.",
+    "display_body": "Espèce de m*rde déloyale ! Je t'ai trouvé ce boulot. Je t'ai encouragé à postuler, je t'ai dit quoi dire. Je vous ai recommandé au patron. Quand d'autres ont parlé de ne pas t'embaucher, je t'ai défendu. Vous n'auriez pas été ici si ce n'était pas pour moi. Je vous ai donné des conseils et je vous ai montré les cordes. Je t'ai aidé à te promouvoir. Tu étais mon petit protégé. Et maintenant, quand je suis frustré par la politique du directeur du district et comment il nous baise constamment, tu me fais baiser parce que dans une conversation privée j'ai dit \"il peut me baiser le cul\"? Mon ami, tu n'as aucune idée de la montagne de m*rde sur laquelle tu as mis les pieds. Je fais de ma mission personnelle de vous faire tomber l'enfer.",
+    "word_count": 138,
+    "est_speech_seconds": 55.2,
+    "banned_words_masked": [
+      {
+        "word": "merde",
+        "count": 2
+      }
+    ],
+    "title_en": "You disloyal piece of shit",
+    "body_en": "You disloyal piece of shit\n\nI got you this job. I encouraged you to apply, told you what to say. I recommended you to the boss. When other people spoke up about why we shouldnt hire you, I defended you. You wouldnt be here if not for me. I gave you pointers and showed you the ropes. I helped guide you into a promotion. You were my little protégé.\n And now, when im frustrated with the district managers policies and how he constantly fucks with us, you rat me out because in a private conversation I said \"he can kiss my ass\"?\n Oh my friend you have no idea the mountain of shit you have stepped on. I am making it my personal mission now to rain down hell upon you.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Espèce de m*rde déloyale !"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vhkk3d_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/3d87be35-7aba-4cb6-b69d-ad7d1dac3905.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vhkk3d_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 35.58,
+      "sample_rate": 24000,
+      "blurred_words": 2,
+      "intro_sfx_at_sec": 2.421
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vhkk3d_fr.ass",
+    "subtitles": {
+      "num_words": 138,
+      "num_cues": 41,
+      "num_masked": 2,
+      "banned_intervals": [
+        [
+          0.84,
+          1.08
+        ],
+        [
+          30.933,
+          31.293
+        ]
+      ],
+      "intro_end_sec": 2.421,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "3d87be35-7aba-4cb6-b69d-ad7d1dac3905",
+      "title": "Bounce On Da Riddim (ft. Emily J)",
+      "artist": "Emily J, Cartoon, Southby, NCT",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "exciting",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/BounceOnDaRiddim",
+      "instrumental_url": "https://ncs.io/track/download/i_3d87be35-7aba-4cb6-b69d-ad7d1dac3905",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 4301176,
+      "image_page_url": "https://pixabay.com/photos/wallpaper-leaves-green-foliage-4301176/",
+      "image_url": "https://pixabay.com/get/gc6c0b7b2a8e07bd5b01b525348c6c2facf7becae80cae1d12be5179b19c1afefc51e30efa828427b4d273d5d668039d4828c673cef8245d5268754ebe55d6a4e_1280.jpg",
+      "title_rendered": "Espèce de m*rde déloyale !"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

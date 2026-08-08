@@ -1,0 +1,120 @@
+{
+  "id": "3e119a3cff57492ead6dcca92fcf1389",
+  "created_at": 1786181461.2731326,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vhpf8f",
+    "url": "https://www.reddit.com/r/adultery/comments/1vhpf8f/what_is_this/",
+    "author": "/u/Familiar_You_9329",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1786073338.0,
+    "nsfw": null,
+    "variant_id": "1vhpf8f_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "What is this?",
+    "raw_body": "I am 44f and been battling the urge to cheat. Been married 23 years and SO has cheated multpile times. he keeps denying it, I don't have much solid proof. on top of that, he's a flirt.\n Ive asked him to leave multiple times but we have such a great setup and 5 kids, it's really hard to leave but also I can't take it anymore. I've slowly lost hope that he's \"the one\".\n As time is going on, I've glowed up quite a bit and get a lot of attention, but still cannot cheat. until one day a man from my past came into my life. it's been 2 years and that's all I think about. he's never fully taken it to another level but I think hes opened this portal in me. it's triggered me to want someone soooo badly, friend, lover, support\n Bottom line, Im not leaving my husband but want to be ok with knowing im allowed to have more than one person. I've tried AM but all are just too horny.\n any advise? please be kind.\n\n submitted by /u/Familiar_You_9329\n [link] [comments]",
+    "cleaned_body": "What is this?\n\nI am 44f and been battling the urge to cheat. Been married 23 years and significant other has cheated multpile times. he keeps denying it, I don't have much solid proof. on top of that, he's a flirt.\n Ive asked him to leave multiple times but we have such a great setup and 5 kids, it's really hard to leave but also I can't take it anymore. I've slowly lost hope that he's \"the one\".\n As time is going on, I've glowed up quite a bit and get a lot of attention, but still cannot cheat. until one day a man from my past came into my life. it's been 2 years and that's all I think about. he's never fully taken it to another level but I think hes opened this portal in me. it's triggered me to want someone soooo badly, friend, lover, support\n Bottom line, Im not leaving my husband but want to be ok with knowing im allowed to have more than one person. I've tried AM but all are just too horny.\n any advise? please be kind.",
+    "display_body": "What is this? I am 44f and been battling the urge to cheat. Been married 23 years and significant other has cheated multpile times. he keeps denying it, I don't have much solid proof. on top of that, he's a flirt. Ive asked him to leave multiple times but we have such a great setup and 5 kids, it's really hard to leave but also I can't take it anymore. I've slowly lost hope that he's \"the one\". As time is going on, I've glowed up quite a bit and get a lot of attention, but still cannot cheat. until one day a man from my past came into my life. it's been 2 years and that's all I think about. he's never fully taken it to another level but I think hes opened this portal in me. it's triggered me to want someone soooo badly, friend, lover, support Bottom line, Im not leaving my husband but want to be ok with knowing im allowed to have more than one person. I've tried AM but all are just too h*rny. any advise? please be kind.",
+    "word_count": 185,
+    "est_speech_seconds": 74.0,
+    "banned_words_masked": [
+      {
+        "word": "horny",
+        "count": 1
+      }
+    ],
+    "title_en": "What is this?",
+    "body_en": "What is this?\n\nI am 44f and been battling the urge to cheat. Been married 23 years and significant other has cheated multpile times. he keeps denying it, I don't have much solid proof. on top of that, he's a flirt.\n Ive asked him to leave multiple times but we have such a great setup and 5 kids, it's really hard to leave but also I can't take it anymore. I've slowly lost hope that he's \"the one\".\n As time is going on, I've glowed up quite a bit and get a lot of attention, but still cannot cheat. until one day a man from my past came into my life. it's been 2 years and that's all I think about. he's never fully taken it to another level but I think hes opened this portal in me. it's triggered me to want someone soooo badly, friend, lover, support\n Bottom line, Im not leaving my husband but want to be ok with knowing im allowed to have more than one person. I've tried AM but all are just too horny.\n any advise? please be kind.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "What is this?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vhpf8f_en.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/da612e5c-1614-49be-9988-b7c2c6c64bf3.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vhpf8f_en.png",
+    "audio": {
+      "voice": "am_michael",
+      "lang_code": "a",
+      "duration_sec": 59.75,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 1.96
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vhpf8f_en.ass",
+    "subtitles": {
+      "num_words": 185,
+      "num_cues": 53,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          56.429,
+          57.71
+        ]
+      ],
+      "intro_end_sec": 1.96,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "da612e5c-1614-49be-9988-b7c2c6c64bf3",
+      "title": "Around Us (ft. Pasha & Carlos Ukareda)",
+      "artist": "Pasha, Carlos Ukareda, VALLO, NCT, Cartoon",
+      "genre": "Drum & Bass",
+      "moods": [
+        "exciting",
+        "positive",
+        "romantic",
+        "powerful",
+        "majestic",
+        "energetic",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/AroundUs",
+      "instrumental_url": "https://ncs.io/track/download/i_da612e5c-1614-49be-9988-b7c2c6c64bf3",
+      "volume_db": -25,
+      "ducked": true
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "dessert",
+      "image_id": 926642,
+      "image_page_url": "https://pixabay.com/photos/donuts-jelly-baking-dessert-sweets-926642/",
+      "image_url": "https://pixabay.com/get/g7dad314ea17e3a8a1509b533c49c6cebee1c740578a2108c709c0245a58172e06c989a101966036d80453acb7cba5e1f813c2f763d2b2fa8d1ed1ac0d0cae015_1280.jpg",
+      "title_rendered": "What is this?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

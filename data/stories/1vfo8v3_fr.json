@@ -1,0 +1,95 @@
+{
+  "id": "466222b416c0429dbc5ef88dae8f1c96",
+  "created_at": 1786181882.0751297,
+  "status": "tts_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vfo8v3",
+    "url": "https://www.reddit.com/r/adultery/comments/1vfo8v3/seeing_ap_mentioned_casually_in_the_wild/",
+    "author": "/u/1800CollectCalls",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785880383.0,
+    "nsfw": null,
+    "variant_id": "1vfo8v3_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "En voyant un partenaire mentionné à l' accident dans la nature ...",
+    "raw_body": "I'm always miffed when I see the 'AP' acronym mentioned in the wild.\n Like Disney fans (like I am) will mention AP as annual pass ...\n Then at home, my kid is taking AP Social Studies ... Advanced Placement.\n At work, our management is always looking to increase AP ... Accounts Payable\n So when anybody says AP, I end up pausing and wondering if I'd been caught.\n I can't be the only one here 😂\n\n submitted by /u/1800CollectCalls\n [link] [comments]",
+    "cleaned_body": "En voyant un partenaire mentionné à l' accident dans la nature ...\n\nJe suis toujours choqué quand je vois l'acronyme \" partenaire d'affaire \" mentionné dans la nature. Comme les fans de Disney (comme moi) mentionneront un partenaire d' aventure comme passe annuelle ... Puis à la maison, mon fils prend une partenaire de relations de recherche sociale... Placement avancé. Au travail, notre direction cherche toujours à augmenter les partenaires... Comptes à payer Alors quand quelqu'un dit que j'ai une liaison, je me pose la question de savoir si j'ai été attrapé. Je ne peux pas être le seul ici 😂",
+    "display_body": "En voyant un partenaire mentionné à l' accident dans la nature ... Je suis toujours choqué quand je vois l'acronyme \" partenaire d'affaire \" mentionné dans la nature. Comme les fans de Disney (comme moi) mentionneront un partenaire d' aventure comme passe annuelle ... Puis à la maison, mon fils prend une partenaire de relations de recherche sociale... Placement avancé. Au travail, notre direction cherche toujours à augmenter les partenaires... Comptes à payer Alors quand quelqu'un dit que j'ai une liaison, je me pose la question de savoir si j'ai été attrapé. Je ne peux pas être le seul ici 😂",
+    "word_count": 101,
+    "est_speech_seconds": 40.4,
+    "banned_words_masked": [],
+    "title_en": "Seeing AP mentioned casually in the wild …",
+    "body_en": "Seeing affair partner mentioned casually in the wild ...\n\nI'm always miffed when I see the 'affair partner' acronym mentioned in the wild.\n Like Disney fans (like I am) will mention affair partner as annual pass ...\n Then at home, my kid is taking affair partner Social Studies ... Advanced Placement.\n At work, our management is always looking to increase affair partner ... Accounts Payable\n So when anybody says affair partner, I end up pausing and wondering if I'd been caught.\n I can't be the only one here 😂",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "En voyant un partenaire mentionné à l' accident dans la nature ..."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vfo8v3_fr.wav",
+    "background_video": null,
+    "final_video": null,
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/1255c20b-843a-4add-bf68-7ab6c4f2497e.mp3",
+    "thumbnail_path": null,
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 29.8,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.223
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vfo8v3_fr.ass",
+    "subtitles": {
+      "num_words": 101,
+      "num_cues": 28,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.223,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "music": {
+      "track_id": "1255c20b-843a-4add-bf68-7ab6c4f2497e",
+      "title": "Carry On",
+      "artist": "Anna Yvette, Lost Sky",
+      "genre": "Trap",
+      "moods": [
+        "energetic",
+        "exciting",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/CarryOn",
+      "instrumental_url": "https://ncs.io/track/download/i_1255c20b-843a-4add-bf68-7ab6c4f2497e",
+      "volume_db": -25,
+      "ducked": true
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
