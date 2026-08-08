@@ -106,6 +106,8 @@ sources = [
     "https://www.youtube.com/watch?v=ZJDn89O_dTI",   # Food video, 4 mins
     "https://www.youtube.com/watch?v=VAGmUv___iQ",   # Food video, 10 mins
     "https://www.youtube.com/watch?v=QbWStbEv4LU",   # Smiling people, 4 mins
+    "https://www.youtube.com/watch?v=asqjsMdpt08",   # Classic Mickey Mouse cartoon, 6 mins
+    "https://www.youtube.com/watch?v=8LdpvQHg3e0",   # Classic Mickey Mouse cartoon, 8 mins
 ]
 max_source_height = 1080   # cap download resolution (keeps cache small)
 width = 1080               # output frame -- TikTok vertical 9:16
