@@ -1,0 +1,126 @@
+{
+  "id": "8133f7519b214e379190211d32fd8069",
+  "created_at": 1786268921.2340832,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vehzem",
+    "url": "https://www.reddit.com/r/adultery/comments/1vehzem/telegram/",
+    "author": "/u/Sneaky_Rockchick",
+    "feed_rank": 6,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1785773773.0,
+    "nsfw": null,
+    "variant_id": "1vehzem_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Telegram",
+    "raw_body": "I only have Telegram to communicate with AP and never used it with anyone else.\n Just received a message from someone saying\n Hi there, really random but I have your number saved on my phone but I don't know how I know you. Any ideas? So sorry about this but was just clearing my phone book and didn't want to delete in case I actually know you! Apologies if this is a bit weird?\n I don't have them saved as a contact. And I have the following privacy settings:\n Who can see my phone number: Nobody\n Who can find me by my phone number: My contacts\n So if they aren't in my contacts how are they contacting me??? I'm freaking out a little bit here.\n\n submitted by /u/Sneaky_Rockchick\n [link] [comments]",
+    "cleaned_body": "Telegram\n\nI only have Telegram to communicate with affair partner and never used it with anyone else.\n Just received a message from someone saying\n Hi there, really random but I have your number saved on my phone but I don't know how I know you. Any ideas? So sorry about this but was just clearing my phone book and didn't want to delete in case I actually know you! Apologies if this is a bit weird?\n I don't have them saved as a contact. And I have the following privacy settings:\n Who can see my phone number: Nobody\n Who can find me by my phone number: My contacts\n So if they aren't in my contacts how are they contacting me??? I'm freaking out a little bit here.",
+    "display_body": "Telegram I only have Telegram to communicate with affair partner and never used it with anyone else. Just received a message from someone saying Hi there, really random but I have your number saved on my phone but I don't know how I know you. Any ideas? So sorry about this but was just clearing my phone book and didn't want to delete in case I actually know you! Apologies if this is a bit weird? I don't have them saved as a contact. And I have the following privacy settings: Who can see my phone number: Nobody Who can find me by my phone number: My contacts So if they aren't in my contacts how are they contacting me??? I'm freaking out a little bit here.",
+    "word_count": 127,
+    "est_speech_seconds": 50.8,
+    "banned_words_masked": [],
+    "title_en": "Telegram",
+    "body_en": "Telegram\n\nI only have Telegram to communicate with affair partner and never used it with anyone else.\n Just received a message from someone saying\n Hi there, really random but I have your number saved on my phone but I don't know how I know you. Any ideas? So sorry about this but was just clearing my phone book and didn't want to delete in case I actually know you! Apologies if this is a bit weird?\n I don't have them saved as a contact. And I have the following privacy settings:\n Who can see my phone number: Nobody\n Who can find me by my phone number: My contacts\n So if they aren't in my contacts how are they contacting me??? I'm freaking out a little bit here.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Telegram"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vehzem_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vehzem_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vehzem_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/26ac29eb-d75b-4265-bafd-a5d2c240fa2a.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vehzem_en.png",
+    "audio": {
+      "voice": "af_heart",
+      "lang_code": "a",
+      "duration_sec": 38.5,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.701
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vehzem_en.ass",
+    "subtitles": {
+      "num_words": 127,
+      "num_cues": 34,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.701,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/smiling-people-1.mp4",
+      "source_id": "29c43a21c414",
+      "start_sec": 55.3,
+      "duration_sec": 38.5,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "26ac29eb-d75b-4265-bafd-a5d2c240fa2a",
+      "title": "Hinterlands",
+      "artist": "Everen Maxwell",
+      "genre": "Midtempo Bass",
+      "moods": [
+        "powerful",
+        "sad",
+        "negative"
+      ],
+      "page_url": "https://ncs.io/Hinterlands",
+      "instrumental_url": "https://ncs.io/track/download/i_26ac29eb-d75b-4265-bafd-a5d2c240fa2a",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 70.3
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 40.03,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "snacks",
+      "image_id": 6714974,
+      "image_page_url": "https://pixabay.com/photos/vegan-snack-egg-rolls-6714974/",
+      "image_url": "https://pixabay.com/get/g36a5f70e4b4ded40132354e68c7cb112b28909be559f9890cb4f2dfb31e13007a1f5dfade794cba6b74766a8228cf8936903bced22c93353f0a199cb8638373a_1280.jpg",
+      "title_rendered": "Telegram"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

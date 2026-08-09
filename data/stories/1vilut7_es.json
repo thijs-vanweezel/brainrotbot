@@ -1,0 +1,149 @@
+{
+  "id": "135c6d2a900849768efa40ee26f6e6c2",
+  "created_at": 1786267707.429127,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vilut7",
+    "url": "https://www.reddit.com/r/confession/comments/1vilut7/i_let_my_now_husbands_brother_eat_me_out_years_ago/",
+    "author": "/u/Leather-Collar-6108",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1786161785.0,
+    "nsfw": null,
+    "variant_id": "1vilut7_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Dejé que el hermano de mi ahora marido me comiera hace años.",
+    "raw_body": "Okay, so about 15 years ago, I was friends with my now husband and all his family members. My now brother-in-law would hang out with us a lot. He really wanted a relationship, but I didn't want to pursue it. Long story short, I let him go down on me. Honestly, it was the best head I've ever had in my life. then we proceeded to have sex, but his penis was too small, like a pinky. So, we kept hanging out as a group, and we never told anyone about it. My now husband doesn't know about it either. We go married 3 weeks ago g\n\n submitted by /u/Leather-Collar-6108\n [link] [comments]",
+    "cleaned_body": "Dejé que el hermano de mi ahora marido me comiera hace años.\n\nBueno, hace 15 años, era amiga de mi ahora marido y de todos los miembros de su familia. Mi ahora cuñado pasaría mucho tiempo con nosotros. Él realmente quería una relación, pero yo no quería perseguirla. En pocas palabras, lo dejé caer sobre mí. Honestamente, fue la mejor cabeza que he tenido en mi vida. Luego hicimos sexo, pero su pene era demasiado pequeño, como un pinky. Así que seguimos saliendo como grupo, y nunca le dijimos a nadie acerca de ello. Mi ahora marido tampoco lo sabe. Nos casamos hace 3 semanas.",
+    "display_body": "Dejé que el hermano de mi ahora marido me comiera hace años. Bueno, hace 15 años, era amiga de mi ahora marido y de todos los miembros de su familia. Mi ahora cuñado pasaría mucho tiempo con nosotros. Él realmente quería una relación, pero yo no quería perseguirla. En pocas palabras, lo dejé caer sobre mí. Honestamente, fue la mejor cabeza que he tenido en mi vida. Luego hicimos s*xo, pero su p*ne era demasiado pequeño, como un pinky. Así que seguimos saliendo como grupo, y nunca le dijimos a nadie acerca de ello. Mi ahora marido tampoco lo sabe. Nos casamos hace 3 semanas.",
+    "word_count": 105,
+    "est_speech_seconds": 42.0,
+    "banned_words_masked": [
+      {
+        "word": "sexo",
+        "count": 1
+      },
+      {
+        "word": "pene",
+        "count": 1
+      }
+    ],
+    "title_en": "I let my now husband’s brother eat me out years ago",
+    "body_en": "I let my now husband's brother eat me out years ago\n\nOkay, so about 15 years ago, I was friends with my now husband and all his family members. My now brother-in-law would hang out with us a lot. He really wanted a relationship, but I didn't want to pursue it. Long story short, I let him go down on me. Honestly, it was the best head I've ever had in my life. then we proceeded to have sex, but his penis was too small, like a pinky. So, we kept hanging out as a group, and we never told anyone about it. My now husband doesn't know about it either. We go married 3 weeks ago g",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Dejé que el hermano de mi ahora marido me comiera hace años."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vilut7_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vilut7_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vilut7_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/da612e5c-1614-49be-9988-b7c2c6c64bf3.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vilut7_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 30.65,
+      "sample_rate": 24000,
+      "blurred_words": 2,
+      "intro_sfx_at_sec": 3.481
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vilut7_es.ass",
+    "subtitles": {
+      "num_words": 105,
+      "num_cues": 29,
+      "num_masked": 2,
+      "banned_intervals": [
+        [
+          19.906,
+          20.367
+        ],
+        [
+          20.687,
+          20.927
+        ]
+      ],
+      "intro_end_sec": 3.481,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/train-1.mp4",
+      "source_id": "4f8391aae7a3",
+      "start_sec": 539.82,
+      "duration_sec": 30.65,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "da612e5c-1614-49be-9988-b7c2c6c64bf3",
+      "title": "Around Us (ft. Pasha & Carlos Ukareda)",
+      "artist": "Pasha, Carlos Ukareda, VALLO, NCT, Cartoon",
+      "genre": "Drum & Bass",
+      "moods": [
+        "exciting",
+        "positive",
+        "romantic",
+        "powerful",
+        "majestic",
+        "energetic",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/AroundUs",
+      "instrumental_url": "https://ncs.io/track/download/i_da612e5c-1614-49be-9988-b7c2c6c64bf3",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 57.49
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 32.2,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 8265114,
+      "image_page_url": "https://pixabay.com/photos/fish-clownfish-nature-beach-8265114/",
+      "image_url": "https://pixabay.com/get/g818c828514b17565bd5b7e734110eb702725611df89a37de96a9b4c9be9659ff55c77fa3998905591a7e78e474782348bdf2766f7f0121217da1b39ef4d9c677_1280.jpg",
+      "title_rendered": "Dejé que el hermano de mi ahora marido me comiera hace años."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
