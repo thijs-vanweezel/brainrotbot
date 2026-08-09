@@ -1,0 +1,181 @@
+{
+  "id": "f702951f140a458289fdeb549120b6de",
+  "created_at": 1786272476.6134486,
+  "status": "upload_scheduled",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vfd5ag",
+    "url": "https://www.reddit.com/r/confession/comments/1vfd5ag/i_write_bad_company_reviews_pretending_to_be/",
+    "author": "/u/juicydracula",
+    "feed_rank": 6,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1785856325.0,
+    "nsfw": null,
+    "variant_id": "1vfd5ag_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Escribo malas críticas de compañías fingiendo ser alguien más.",
+    "raw_body": "Whenever a coworker gets on my bad side, I would sometimes write a bad review of the company I'm working at and tailor it as if my coworker wrote it.\n I keep an arsenal of all the issues they are openly dealing with. I get excited when people overshare because that way I can use that information against them whenever they cross me.\n I've only ever done this two times. Can't say I'm proud of it. I'm not sure if anything ever came out of it because I never stay that long at jobs.\n\n submitted by /u/juicydracula\n [link] [comments]",
+    "cleaned_body": "Escribo malas críticas de compañías fingiendo ser alguien más.\n\nCada vez que un compañero de trabajo se pone en mi lado malo, a veces escribía una mala reseña de la empresa en la que trabajo y la adaptaba como si mi compañero de trabajo la hubiera escrito. Tengo un arsenal de todos los problemas con los que están tratando abiertamente. Me emociono cuando la gente comparte demasiado porque así puedo usar esa información contra ellos cada vez que me cruzan. Sólo lo he hecho dos veces. No puedo decir que estoy orgulloso de ello. No estoy seguro de si alguna vez salió algo porque nunca me quedo tanto tiempo en los trabajos.",
+    "display_body": "Escribo malas críticas de compañías fingiendo ser alguien más. Cada vez que un compañero de trabajo se pone en mi lado malo, a veces escribía una mala reseña de la empresa en la que trabajo y la adaptaba como si mi compañero de trabajo la hubiera escrito. Tengo un arsenal de todos los problemas con los que están tratando abiertamente. Me emociono cuando la gente comparte demasiado porque así puedo usar esa información contra ellos cada vez que me cruzan. Sólo lo he hecho dos veces. No puedo decir que estoy orgulloso de ello. No estoy seguro de si alguna vez salió algo porque nunca me quedo tanto tiempo en los trabajos.",
+    "word_count": 112,
+    "est_speech_seconds": 44.8,
+    "banned_words_masked": [],
+    "title_en": "I write bad company reviews pretending to be someone else",
+    "body_en": "I write bad company reviews pretending to be someone else\n\nWhenever a coworker gets on my bad side, I would sometimes write a bad review of the company I'm working at and tailor it as if my coworker wrote it.\n I keep an arsenal of all the issues they are openly dealing with. I get excited when people overshare because that way I can use that information against them whenever they cross me.\n I've only ever done this two times. Can't say I'm proud of it. I'm not sure if anything ever came out of it because I never stay that long at jobs.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Escribo malas críticas de compañías fingiendo ser alguien más."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vfd5ag_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vfd5ag_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vfd5ag_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/3155507d-ca4b-4239-9f64-88f6f7345e79.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vfd5ag_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 32.23,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.841
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vfd5ag_es.ass",
+    "subtitles": {
+      "num_words": 112,
+      "num_cues": 31,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.841,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-6.mp4",
+      "source_id": "dd66164bb1ad",
+      "start_sec": 20.39,
+      "duration_sec": 32.23,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "title": "akina",
+      "artist": "Ailow",
+      "genre": "Dubstep",
+      "moods": [
+        "Angry",
+        "Dark",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/akina",
+      "instrumental_url": "https://ncs.io/track/download/i_3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 45.47
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 33.77,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "fashion model",
+      "image_id": 6482214,
+      "image_page_url": "https://pixabay.com/photos/woman-model-portrait-pose-style-6482214/",
+      "image_url": "https://pixabay.com/get/ge00d19914a3e0f75d91a48597ee10b18bd9466a0739c797de1c78c80b09563999c68a22893627a3ec71bd530d9e8e45867ee7776f0f238d5607774dadddc192c_1280.jpg",
+      "title_rendered": "Escribo malas críticas de compañías fingiendo ser alguien más."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": "William Armstrong  (July 28, 1822 – June 9, 1914) was a Canadian artist and one of the early professional artists of Toronto, Ontario.\n\nTrack: akina — Ailow [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/akina\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot",
+    "hashtags": [
+      "#fyp",
+      "#foryou",
+      "#foryoupage",
+      "#fypシ",
+      "#viral",
+      "#viralvideo",
+      "#trending",
+      "#storytime",
+      "#stories",
+      "#story",
+      "#reddit",
+      "#redditstories",
+      "#redditstorytime",
+      "#askreddit",
+      "#drama",
+      "#tea",
+      "#confession",
+      "#relationship",
+      "#relationshipadvice",
+      "#aita",
+      "#scary",
+      "#creepy",
+      "#wholesome",
+      "#revenge",
+      "#pov",
+      "#fortnite",
+      "#minecraft",
+      "#asmr",
+      "#satisfying",
+      "#brainrot"
+    ],
+    "provider": "zernio",
+    "zernio_post_id": "6a78603c35758c21fc34b1b6",
+    "media_url": "https://litter.catbox.moe/xtrq5s.mp4",
+    "cover_url": "https://litter.catbox.moe/xfl3uz.png",
+    "cover_set": true,
+    "scheduled_for": 1786303359.328849,
+    "public": true,
+    "wikipedia": {
+      "title": "William Armstrong (Canadian artist)",
+      "url": "https://en.wikipedia.org/wiki/William_Armstrong_(Canadian_artist)",
+      "category": "1822 births",
+      "categories": [
+        "1822 births",
+        "1914 deaths",
+        "19th-century Canadian male painters",
+        "19th-century Canadian painters",
+        "20th-century Canadian male painters",
+        "20th-century Canadian painters",
+        "Canadian landscape painters",
+        "Immigrants to the Province of Canada",
+        "Irish emigrants to pre-Confederation Canada",
+        "Members of the Royal Canadian Academy of Arts"
+      ]
+    }
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

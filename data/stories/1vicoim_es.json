@@ -1,0 +1,178 @@
+{
+  "id": "4d7b02d9dac746d6a4a8777011cf08c1",
+  "created_at": 1786273267.3334348,
+  "status": "upload_scheduled",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "stories",
+    "post_id": "1vicoim",
+    "url": "https://www.reddit.com/r/stories/comments/1vicoim/ive_had_free_streaming_subscriptions_for_years_by/",
+    "author": "/u/Sad_Account2715",
+    "feed_rank": 6,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/stories",
+    "created_utc": 1786136474.0,
+    "nsfw": null,
+    "variant_id": "1vicoim_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "He tenido suscripciones gratuitas durante años escondido en la vista",
+    "raw_body": "For the last few years, I've had access to pretty much every major streaming service. No glitches, no promo codes, and no stolen passwords... well, kind of.\n Back in college (about four years ago now), a bunch of my friends shared their streaming accounts with me. Most of them let me create my own profile.\n Every single time, I named my profile \"Kids\" and picked one of the default kid profile pictures.\n That was it.\n For years, nobody noticed I was even on their account. Even after all the password-sharing crackdowns, location restrictions, and security updates, I've never been removed.\n Eventually, I told all of my friends what I'd been doing. Every single one thought it was hilarious. A couple of them even said they had been wondering why the \"Kids\" profile never showed any actual kids' content.\n They all told me to keep using the accounts, and I honestly think it's because of two things:\n Hiding in plain sight worked so well that nobody realized I had my own profile.\n\n Once they found out the joke, they thought it was funny enough that they didn't want to delete me.\n\n Has anyone else accidentally found a weird life hack like this that somehow kept working for years?\n\n submitted by /u/Sad_Account2715\n [link] [comments]",
+    "cleaned_body": "He tenido suscripciones gratuitas durante años escondido en la vista\n\nDurante los últimos años, he tenido acceso a casi todos los servicios de transmisión principales. Sin errores, sin códigos promocionales, y sin contraseñas robadas... Bueno, en cierto modo. De vuelta en la universidad (hace unos cuatro años), un grupo de mis amigos compartieron sus cuentas de transmisión conmigo. La mayoría me dejaba crear mi propio perfil. Cada vez, nombraba mi perfil \"Niños\" y escogía una de las fotos de perfil de niño predeterminadas. Eso fue todo. Durante años, nadie se dio cuenta de que estaba en su cuenta. Incluso después de todas las medidas de intercambio de contraseñas, restricciones de ubicación y actualizaciones de seguridad, nunca me han eliminado. Finalmente, le dije a todos mis amigos lo que había estado haciendo. Todos pensaron que era divertido. Un par de ellos incluso dijeron que se habían preguntado por qué el perfil de \"Kids\" nunca mostraba ningún contenido real de niños. Todos me dijeron que siguiera usando las cuentas, y honestamente creo que es por dos razones: Esconderme a la vista funcionó tan bien que nadie se dio cuenta de que tenía mi propio perfil. Una vez que descubrieron el chiste, pensaron que era lo suficientemente divertido que no querían borrarme. ¿Alguien más ha encontrado accidentalmente una extraña piratería de vida como esta que de alguna manera siguió funcionando durante años?",
+    "display_body": "He tenido suscripciones gratuitas durante años escondido en la vista Durante los últimos años, he tenido acceso a casi todos los servicios de transmisión principales. Sin errores, sin códigos promocionales, y sin contraseñas robadas... Bueno, en cierto modo. De vuelta en la universidad (hace unos cuatro años), un grupo de mis amigos compartieron sus cuentas de transmisión conmigo. La mayoría me dejaba crear mi propio perfil. Cada vez, nombraba mi perfil \"Niños\" y escogía una de las fotos de perfil de niño predeterminadas. Eso fue todo. Durante años, nadie se dio cuenta de que estaba en su cuenta. Incluso después de todas las medidas de intercambio de contraseñas, restricciones de ubicación y actualizaciones de seguridad, nunca me han eliminado. Finalmente, le dije a todos mis amigos lo que había estado haciendo. Todos pensaron que era divertido. Un par de ellos incluso dijeron que se habían preguntado por qué el perfil de \"Kids\" nunca mostraba ningún contenido real de niños. Todos me dijeron que siguiera usando las cuentas, y honestamente creo que es por dos razones: Esconderme a la vista funcionó tan bien que nadie se dio cuenta de que tenía mi propio perfil. Una vez que descubrieron el chiste, pensaron que era lo suficientemente divertido que no querían borrarme. ¿Alguien más ha encontrado accidentalmente una extraña piratería de vida como esta que de alguna manera siguió funcionando durante años?",
+    "word_count": 229,
+    "est_speech_seconds": 91.6,
+    "banned_words_masked": [],
+    "title_en": "I’ve Had Free Streaming Subscriptions for Years by Hiding in Plain Sight",
+    "body_en": "I've Had Free Streaming Subscriptions for Years by Hiding in Plain Sight\n\nFor the last few years, I've had access to pretty much every major streaming service. No glitches, no promo codes, and no stolen passwords... well, kind of.\n Back in college (about four years ago now), a bunch of my friends shared their streaming accounts with me. Most of them let me create my own profile.\n Every single time, I named my profile \"Kids\" and picked one of the default kid profile pictures.\n That was it.\n For years, nobody noticed I was even on their account. Even after all the password-sharing crackdowns, location restrictions, and security updates, I've never been removed.\n Eventually, I told all of my friends what I'd been doing. Every single one thought it was hilarious. A couple of them even said they had been wondering why the \"Kids\" profile never showed any actual kids' content.\n They all told me to keep using the accounts, and I honestly think it's because of two things:\n Hiding in plain sight worked so well that nobody realized I had my own profile.\n\n Once they found out the joke, they thought it was funny enough that they didn't want to delete me.\n\n Has anyone else accidentally found a weird life hack like this that somehow kept working for years?",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "He tenido suscripciones gratuitas durante años escondido en la vista"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vicoim_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vicoim_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vicoim_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/598a4b7b-7980-4d27-912e-81ca14fec7ca.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vicoim_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 73.67,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.141
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vicoim_es.ass",
+    "subtitles": {
+      "num_words": 229,
+      "num_cues": 62,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.141,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/train-3.mp4",
+      "source_id": "e006252fa427",
+      "start_sec": 124.87,
+      "duration_sec": 73.67,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "598a4b7b-7980-4d27-912e-81ca14fec7ca",
+      "title": "Strobe",
+      "artist": "NIVIRO",
+      "genre": "Techno",
+      "moods": [
+        "energetic",
+        "dark",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/Strobe",
+      "instrumental_url": "https://ncs.io/track/download/i_598a4b7b-7980-4d27-912e-81ca14fec7ca",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 29.99
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 75.2,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 6877311,
+      "image_page_url": "https://pixabay.com/photos/woman-handgun-weapon-crime-6877311/",
+      "image_url": "https://pixabay.com/get/gc72f60064512b256f04851afc0258e0b91a2acee4b693f1e0b5077c96a0b84e08eaa21693c5378558add5d722a37b91a0873f2a2ade18ee7ab6615ca8f8a8bf3_1280.jpg",
+      "title_rendered": "He tenido suscripciones gratuitas durante años escondido en la vista"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": "In Greek mythology, Peisander or Pisander (; Ancient Greek: Πείσανδρος Peisandros) may refer to the following characters:\n\nPisander, also called Isander, a Lycian prince as son of Bellerophon and Philonoe, daughter of King Iobates. In some accounts, his mother was known as Alkimedousa, Anticleia, Pasandra or Cassandra. Pisander's siblings were Hippolochus (father of Glaucus) and Laodamia (also called Deidamia or Hippodamia, mother of Sarpedon by Zeus). He was slain by Ares, as he fought against the Solymi, a Lycian tribe.\nPisander, an Achaean soldier commanded a company of Myrmidons. He was the son of Maemalus.\nPisander, a Trojan warrior and son of Antimachus. He was the brother of Hippolochus, Hippomachus, and Tisiphone. During the Trojan War, Pisander and Hippolochus asked Agamemnon for mercy and to be taken prisoner alive, saying that their rich father would pay a ransom for him. They were nevertheless slain by Agamemnon.\nPisander, another Trojan soldier who was killed by Menelaus.\nPisander, a native of Abydos in Troad and the father of Maenalus, a Trojan warrior.\nPisander, son of Polyctor and one of the suitors of Penelope from Same along with other 22 wooers. He was slain by Philoetius...\n\nTrack: Strobe — NIVIRO [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/Strobe\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot",
+    "hashtags": [
+      "#fyp",
+      "#foryou",
+      "#foryoupage",
+      "#fypシ",
+      "#viral",
+      "#viralvideo",
+      "#trending",
+      "#storytime",
+      "#stories",
+      "#story",
+      "#reddit",
+      "#redditstories",
+      "#redditstorytime",
+      "#askreddit",
+      "#drama",
+      "#tea",
+      "#confession",
+      "#relationship",
+      "#relationshipadvice",
+      "#aita",
+      "#scary",
+      "#creepy",
+      "#wholesome",
+      "#revenge",
+      "#pov",
+      "#fortnite",
+      "#minecraft",
+      "#asmr",
+      "#satisfying",
+      "#brainrot"
+    ],
+    "provider": "zernio",
+    "zernio_post_id": "6a786095a076895ac6a55191",
+    "media_url": "https://litter.catbox.moe/07olas.mp4",
+    "cover_url": "https://litter.catbox.moe/diymwn.png",
+    "cover_set": true,
+    "scheduled_for": 1786337919.328849,
+    "public": true,
+    "wikipedia": {
+      "title": "Peisander (mythology)",
+      "url": "https://en.wikipedia.org/wiki/Peisander_(mythology)",
+      "category": "Achaeans (Homer)",
+      "categories": [
+        "Achaeans (Homer)",
+        "Characters in the Odyssey",
+        "Mythological Lycians",
+        "Princes in Greek mythology",
+        "Set index articles on Greek mythology",
+        "Suitors of Penelope",
+        "Trojans"
+      ]
+    }
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

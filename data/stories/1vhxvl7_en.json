@@ -1,0 +1,181 @@
+{
+  "id": "65fe3ee9c859430e8398a8902c9fed0a",
+  "created_at": 1786273401.2819748,
+  "status": "upload_scheduled",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "relationship_advice",
+    "post_id": "1vhxvl7",
+    "url": "https://www.reddit.com/r/relationship_advice/comments/1vhxvl7/update_i_32f_think_my_husbands_40m_mistress_is/",
+    "author": "/u/Hefty_Sprinkles_5723",
+    "feed_rank": 7,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/relationship_advice",
+    "created_utc": 1786101725.0,
+    "nsfw": null,
+    "variant_id": "1vhxvl7_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Update - I 32F think my husband's (40M) mistress is stalking me.",
+    "raw_body": "We're getting a divorce. My lawyer assures me that the whole process shouldn't take more than a year.\n My husband's mistress has apparently been accepted into a graduate program in another country and my husband had been planning on relocating with her. She'll be leaving before the year ends and he was planning on closing his business, selling his assets and leaving with her. He was just going to leave under the guise of a job opportunity and after enough time had passed for separation, file for a divorce. At least we both get what we wanted this way.\n Our oldest daughter is very attached to him and I worry a lot about how she'll take the news. How do I explain to our kids that their dad is leaving the country and will possibly never return long term?\n\n submitted by /u/Hefty_Sprinkles_5723\n [link] [comments]",
+    "cleaned_body": "Update - I 32F think my husband's 40 year old male mistress is stalking me.\n\nWe're getting a divorce. My lawyer assures me that the whole process shouldn't take more than a year.\n My husband's mistress has apparently been accepted into a graduate program in another country and my husband had been planning on relocating with her. She'll be leaving before the year ends and he was planning on closing his business, selling his assets and leaving with her. He was just going to leave under the guise of a job opportunity and after enough time had passed for separation, file for a divorce. At least we both get what we wanted this way.\n Our oldest daughter is very attached to him and I worry a lot about how she'll take the news. How do I explain to our kids that their dad is leaving the country and will possibly never return long term?",
+    "display_body": "Update - I 32F think my husband's 40 year old male mistress is stalking me. We're getting a divorce. My lawyer assures me that the whole process shouldn't take more than a year. My husband's mistress has apparently been accepted into a graduate program in another country and my husband had been planning on relocating with her. She'll be leaving before the year ends and he was planning on closing his business, selling his assets and leaving with her. He was just going to leave under the guise of a job opportunity and after enough time had passed for separation, file for a divorce. At least we both get what we wanted this way. Our oldest daughter is very attached to him and I worry a lot about how she'll take the news. How do I explain to our kids that their dad is leaving the country and will possibly never return long term?",
+    "word_count": 154,
+    "est_speech_seconds": 61.6,
+    "banned_words_masked": [],
+    "title_en": "Update - I 32F think my husband's (40M) mistress is stalking me.",
+    "body_en": "Update - I 32F think my husband's 40 year old male mistress is stalking me.\n\nWe're getting a divorce. My lawyer assures me that the whole process shouldn't take more than a year.\n My husband's mistress has apparently been accepted into a graduate program in another country and my husband had been planning on relocating with her. She'll be leaving before the year ends and he was planning on closing his business, selling his assets and leaving with her. He was just going to leave under the guise of a job opportunity and after enough time had passed for separation, file for a divorce. At least we both get what we wanted this way.\n Our oldest daughter is very attached to him and I worry a lot about how she'll take the news. How do I explain to our kids that their dad is leaving the country and will possibly never return long term?",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Update - I 32F think my husband's (40M) mistress is stalking me."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vhxvl7_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vhxvl7_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vhxvl7_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/78400e46-00c6-4600-84a0-84049a99eb95.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vhxvl7_en.png",
+    "audio": {
+      "voice": "af_bella",
+      "lang_code": "a",
+      "duration_sec": 46.58,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 6.222
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vhxvl7_en.ass",
+    "subtitles": {
+      "num_words": 154,
+      "num_cues": 42,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 6.222,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-5.mp4",
+      "source_id": "a36519d90c2f",
+      "start_sec": 9.93,
+      "duration_sec": 46.58,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "78400e46-00c6-4600-84a0-84049a99eb95",
+      "title": "Severed Rose",
+      "artist": "SlidV, Clarx",
+      "genre": "Electronic Rock",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/SeveredRose",
+      "instrumental_url": "https://ncs.io/track/download/i_78400e46-00c6-4600-84a0-84049a99eb95",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 21.73
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 48.1,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "landscape",
+      "image_id": 9582608,
+      "image_page_url": "https://pixabay.com/photos/hut-meadow-nature-field-forest-9582608/",
+      "image_url": "https://pixabay.com/get/g539af415ca7dd0f9c7d6491fa12df49cdf03f09f0b9aac96a929bb2400afd12784fc0ac358be09d537c385567c7854667ab20fa406923a185d3c904402fdaab8_1280.jpg",
+      "title_rendered": "Update - I 32F think my husband's (40M) mistress is stalking me."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": "The River and Death (Spanish: El río y la muerte) is a 1954 Mexican film. It was written by Luis Alcoriza and directed by Luis Buñuel.\nThe film is an adaptation of Miguel Álvarez Acosta's 1952 novel Muro blanco en roca negra (White Wall on a Black Rock).\n\nTrack: Severed Rose — SlidV, Clarx [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/SeveredRose\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #relationship_advice",
+    "hashtags": [
+      "#fyp",
+      "#foryou",
+      "#foryoupage",
+      "#fypシ",
+      "#viral",
+      "#viralvideo",
+      "#trending",
+      "#storytime",
+      "#stories",
+      "#story",
+      "#reddit",
+      "#redditstories",
+      "#redditstorytime",
+      "#askreddit",
+      "#drama",
+      "#tea",
+      "#confession",
+      "#relationship",
+      "#relationshipadvice",
+      "#aita",
+      "#scary",
+      "#creepy",
+      "#wholesome",
+      "#revenge",
+      "#pov",
+      "#fortnite",
+      "#minecraft",
+      "#asmr",
+      "#satisfying",
+      "#brainrot",
+      "#relationship_advice"
+    ],
+    "provider": "zernio",
+    "zernio_post_id": "6a786099a076895ac6a55323",
+    "media_url": "https://litter.catbox.moe/7vxve9.mp4",
+    "cover_url": "https://litter.catbox.moe/rumk81.png",
+    "cover_set": true,
+    "scheduled_for": 1786343679.328849,
+    "public": true,
+    "wikipedia": {
+      "title": "The River and Death",
+      "url": "https://en.wikipedia.org/wiki/The_River_and_Death",
+      "category": "1950s Mexican film stubs",
+      "categories": [
+        "1950s Mexican film stubs",
+        "1954 Mexican films",
+        "1954 Spanish-language films",
+        "1954 films",
+        "1955 drama films",
+        "Films directed by Luis Buñuel",
+        "Films set in Mexico",
+        "Mexican black-and-white films",
+        "Mexican drama films"
+      ]
+    }
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
