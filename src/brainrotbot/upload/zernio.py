@@ -21,6 +21,12 @@ import requests
 
 ZERNIO_BASE = "https://zernio.com/api/v1"
 LITTERBOX_URL = "https://litterbox.catbox.moe/resources/internals/api.php"
+# Litterbox's nginx 412s requests' default `python-requests/x.y` UA (verified: same file, same IP,
+# browser UA -> 200). Every other outbound call in the project already sends a browser-like UA.
+_BROWSER_UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+)
 _TT_VIDEO_RE = re.compile(r"https?://[^\s\"']*tiktok\.com/[^\s\"']*?/video/\d+", re.I)
 
 
@@ -48,6 +54,7 @@ def upload_to_litterbox(path: Path, *, expiry: str = "72h", timeout: float = 600
             LITTERBOX_URL,
             data={"reqtype": "fileupload", "time": expiry},
             files={"fileToUpload": (path.name, f, "video/mp4")},
+            headers={"User-Agent": _BROWSER_UA},
             timeout=timeout,
         )
     resp.raise_for_status()
