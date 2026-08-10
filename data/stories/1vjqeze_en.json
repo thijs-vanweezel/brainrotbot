@@ -1,0 +1,137 @@
+{
+  "id": "d1b039662a0c43e5863fa38caab20fd1",
+  "created_at": 1786355117.7495275,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vjqeze",
+    "url": "https://www.reddit.com/r/adultery/comments/1vjqeze/cheating_doesnt_start_in_the_bedroom/",
+    "author": "/u/Maverick_3189",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1786283466.0,
+    "nsfw": null,
+    "variant_id": "1vjqeze_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Cheating doesn't start in the bedroom.",
+    "raw_body": "I used to think infidelity started with a kiss, a date, or sleeping with someone else.\n Now I think it starts much earlier.\n It starts when you find yourself hoping for that text. When a simple compliment from someone else stays in your head for hours.\n Nothing physical has to happen. Sometimes nothing inappropriate is even said. That's what makes it so easy to justify. You tell yourself it's harmless because no lines have technically been crosse.\n But emotional attachment rarely appears overnight. It grows in small, innocent-looking moments. You start looking forward to their attention. You enjoy how they make you feel.\n As a married man, that realization changed the way I think about infidelity. I don't think the biggest threat to a relationship is always another person. Sometimes it's becoming addicted to the feeling of being seen, validated, or excited by someone new.\n The physical affair is often just the last step. The emotional one usually starts long before anyone notices.\n I'm still here searching for someone..but the realization is very straightforward now.\n\n submitted by /u/Maverick_3189\n [link] [comments]",
+    "cleaned_body": "Cheating doesn't start in the bedroom.\n\nI used to think infidelity started with a kiss, a date, or sleeping with someone else.\n Now I think it starts much earlier.\n It starts when you find yourself hoping for that text. When a simple compliment from someone else stays in your head for hours.\n Nothing physical has to happen. Sometimes nothing inappropriate is even said. That's what makes it so easy to justify. You tell yourself it's harmless because no lines have technically been crosse.\n But emotional attachment rarely appears overnight. It grows in small, innocent-looking moments. You start looking forward to their attention. You enjoy how they make you feel.\n As a married man, that realization changed the way I think about infidelity. I don't think the biggest threat to a relationship is always another person. Sometimes it's becoming addicted to the feeling of being seen, validated, or excited by someone new.\n The physical affair is often just the last step. The emotional one usually starts long before anyone notices.\n I'm still here searching for someone..but the realization is very straightforward now.",
+    "display_body": "Cheating doesn't start in the bedroom. I used to think infidelity started with a kiss, a date, or sleeping with someone else. Now I think it starts much earlier. It starts when you find yourself hoping for that text. When a simple compliment from someone else stays in your head for hours. Nothing physical has to happen. Sometimes nothing inappropriate is even said. That's what makes it so easy to justify. You tell yourself it's harmless because no lines have technically been crosse. But emotional attachment rarely appears overnight. It grows in small, innocent-looking moments. You start looking forward to their attention. You enjoy how they make you feel. As a married man, that realization changed the way I think about infidelity. I don't think the biggest threat to a relationship is always another person. Sometimes it's becoming *ddicted to the feeling of being seen, validated, or excited by someone new. The physical affair is often just the last step. The emotional one usually starts long before anyone notices. I'm still here searching for someone..but the realization is very straightforward now.",
+    "word_count": 181,
+    "est_speech_seconds": 72.4,
+    "banned_words_masked": [
+      {
+        "word": "addicted",
+        "count": 1
+      }
+    ],
+    "title_en": "Cheating doesn't start in the bedroom.",
+    "body_en": "Cheating doesn't start in the bedroom.\n\nI used to think infidelity started with a kiss, a date, or sleeping with someone else.\n Now I think it starts much earlier.\n It starts when you find yourself hoping for that text. When a simple compliment from someone else stays in your head for hours.\n Nothing physical has to happen. Sometimes nothing inappropriate is even said. That's what makes it so easy to justify. You tell yourself it's harmless because no lines have technically been crosse.\n But emotional attachment rarely appears overnight. It grows in small, innocent-looking moments. You start looking forward to their attention. You enjoy how they make you feel.\n As a married man, that realization changed the way I think about infidelity. I don't think the biggest threat to a relationship is always another person. Sometimes it's becoming addicted to the feeling of being seen, validated, or excited by someone new.\n The physical affair is often just the last step. The emotional one usually starts long before anyone notices.\n I'm still here searching for someone..but the realization is very straightforward now.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Cheating doesn't start in the bedroom."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vjqeze_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vjqeze_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vjqeze_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/37f1a843-e931-4ffb-b3e5-7272fce44ad0.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vjqeze_en.png",
+    "audio": {
+      "voice": "af_bella",
+      "lang_code": "a",
+      "duration_sec": 67.03,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 2.8
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vjqeze_en.ass",
+    "subtitles": {
+      "num_words": 181,
+      "num_cues": 53,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          49.664,
+          50.104
+        ]
+      ],
+      "intro_end_sec": 2.8,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-2.mp4",
+      "source_id": "fbb120f23dbd",
+      "start_sec": 51.47,
+      "duration_sec": 67.03,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "37f1a843-e931-4ffb-b3e5-7272fce44ad0",
+      "title": "Just A Minute More (feat. Halvorsen)",
+      "artist": "Division One, Halvorsen, JJD",
+      "genre": "Future Bass",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/JAMM",
+      "instrumental_url": "https://ncs.io/track/download/i_37f1a843-e931-4ffb-b3e5-7272fce44ad0",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 93.23
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 68.57,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury watch",
+      "image_id": 7038132,
+      "image_page_url": "https://pixabay.com/photos/watch-brand-carrera-accessory-7038132/",
+      "image_url": "https://pixabay.com/get/gab0c7fe5eb5fce878db901f67a98ea5548e55c9307592d833df26c306932232df7034f5c3d2fe4f7a0af2968af3bf46a595611958bdd003068f7e2b7fad92765_1280.jpg",
+      "title_rendered": "Cheating doesn't start in the bedroom."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

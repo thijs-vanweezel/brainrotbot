@@ -1,0 +1,176 @@
+{
+  "id": "710a48c2a66e464d9a17b6ac88d46ff3",
+  "created_at": 1786355503.0305338,
+  "status": "upload_scheduled",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vje3br",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vje3br/big_water_droplet_out_of_nowhere/",
+    "author": "/u/ZookeepergameOdd6209",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1786242985.0,
+    "nsfw": null,
+    "variant_id": "1vje3br_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Big water droplet out of nowhere!?",
+    "raw_body": "So I was walking around my house, there's no water on the ceiling or roof as it's a summer night after a tough summer day. My AC wasn't even on! And out of nowhere a big water droplet fell on my palm. I see above there's nothing on the ceiling! Not one insect or anything. What could be it? The water was also a bit oily as the paper I used to wipe it showed, I straight away sanitized and washed my hands after it. What could be it? Anyone had this before.\n\n submitted by /u/ZookeepergameOdd6209\n [link] [comments]",
+    "cleaned_body": "Big water droplet out of nowhere!?\n\nSo I was walking around my house, there's no water on the ceiling or roof as it's a summer night after a tough summer day. My AC wasn't even on! And out of nowhere a big water droplet fell on my palm. I see above there's nothing on the ceiling! Not one insect or anything. What could be it? The water was also a bit oily as the paper I used to wipe it showed, I straight away sanitized and washed my hands after it. What could be it? Anyone had this before.",
+    "display_body": "Big water droplet out of nowhere!? So I was walking around my house, there's no water on the ceiling or roof as it's a summer night after a tough summer day. My AC wasn't even on! And out of nowhere a big water droplet fell on my palm. I see above there's nothing on the ceiling! Not one insect or anything. What could be it? The water was also a bit oily as the paper I used to wipe it showed, I straight away sanitized and washed my hands after it. What could be it? Anyone had this before.",
+    "word_count": 99,
+    "est_speech_seconds": 39.6,
+    "banned_words_masked": [],
+    "title_en": "Big water droplet out of nowhere!?",
+    "body_en": "Big water droplet out of nowhere!?\n\nSo I was walking around my house, there's no water on the ceiling or roof as it's a summer night after a tough summer day. My AC wasn't even on! And out of nowhere a big water droplet fell on my palm. I see above there's nothing on the ceiling! Not one insect or anything. What could be it? The water was also a bit oily as the paper I used to wipe it showed, I straight away sanitized and washed my hands after it. What could be it? Anyone had this before.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Big water droplet out of nowhere!?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vje3br_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vje3br_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vje3br_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/ca2b2c1e-17af-4420-b334-558e1e7a24ce.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vje3br_en.png",
+    "audio": {
+      "voice": "am_michael",
+      "lang_code": "a",
+      "duration_sec": 29.18,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 3.182
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vje3br_en.ass",
+    "subtitles": {
+      "num_words": 99,
+      "num_cues": 28,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 3.182,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/minecraft-parkour-2.mp4",
+      "source_id": "ca8fe8ebde69",
+      "start_sec": 106.27,
+      "duration_sec": 29.18,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "ca2b2c1e-17af-4420-b334-558e1e7a24ce",
+      "title": "Cyberblade",
+      "artist": "Extra Terra, Max Brhon",
+      "genre": "Midtempo Bass",
+      "moods": [
+        "powerful",
+        "angry",
+        "negative"
+      ],
+      "page_url": "https://ncs.io/Cyberblade",
+      "instrumental_url": "https://ncs.io/track/download/i_ca2b2c1e-17af-4420-b334-558e1e7a24ce",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 100.92
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 30.7,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 9841606,
+      "image_page_url": "https://pixabay.com/photos/woman-girl-portrait-sad-sadness-9841606/",
+      "image_url": "https://pixabay.com/get/gda77c466cee2edfbfeaa3e1b22b3e590ad991a41de5370de1d08a66f228d13a06c288eaf2e1207ac687465fc73898bff1bd60f095818e7397964fc76f61112cc_1280.jpg",
+      "title_rendered": "Big water droplet out of nowhere!?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": "Georgian secularism (Georgian: ქართული სეკულარიზმი, romanized: kartuli sek'ularizmi) refers to secularism in Georgia being most popular in the 20th century when the country was part of the Soviet Union. In the 21st century, secular and non-religious currents have seen a precipitous decline due to the rising number of people adhering to the Georgian Orthodox Church (GOC). Article 9 of the current Constitution of Georgia provides for complete freedom of belief and religion.  It also recognizes the \"special role ... in the history of Georgia\" of the Georgian Orthodox Church, but stipulates that the GOC shall be independent of the state.  A special Concordat (legal agreement) between the Georgian state and the GOC was ratified in 2002, giving the GOC a special legal status and rights not given to other religious groups—including legal immunity for the Georgian Orthodox Patriarch, exemption from military service for GOC clergy, and a consultative role in education and other aspects of the government.\n\nTrack: Cyberblade — Extra Terra, Max Brhon [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/Cyberblade\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #Glitch_in_the_Matrix",
+    "hashtags": [
+      "#fyp",
+      "#foryou",
+      "#foryoupage",
+      "#fypシ",
+      "#viral",
+      "#viralvideo",
+      "#trending",
+      "#storytime",
+      "#stories",
+      "#story",
+      "#reddit",
+      "#redditstories",
+      "#redditstorytime",
+      "#askreddit",
+      "#drama",
+      "#tea",
+      "#confession",
+      "#relationship",
+      "#relationshipadvice",
+      "#aita",
+      "#scary",
+      "#creepy",
+      "#wholesome",
+      "#revenge",
+      "#pov",
+      "#fortnite",
+      "#minecraft",
+      "#asmr",
+      "#satisfying",
+      "#brainrot",
+      "#Glitch_in_the_Matrix"
+    ],
+    "provider": "zernio",
+    "zernio_post_id": "6a79a2e9e8858ac43eeb07b6",
+    "media_url": "https://litter.catbox.moe/j06ki3.mp4",
+    "cover_url": "https://litter.catbox.moe/9xzgla.png",
+    "cover_set": true,
+    "scheduled_for": 1786374498.146572,
+    "public": true,
+    "wikipedia": {
+      "title": "Georgian secularism",
+      "url": "https://en.wikipedia.org/wiki/Georgian_secularism",
+      "category": "Demographics of Georgia (country)",
+      "categories": [
+        "Demographics of Georgia (country)",
+        "Religion in Georgia (country)",
+        "Secularism by country",
+        "Society of Georgia (country)"
+      ]
+    }
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

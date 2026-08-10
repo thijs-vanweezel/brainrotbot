@@ -1,7 +1,7 @@
 {
   "id": "65fe3ee9c859430e8398a8902c9fed0a",
   "created_at": 1786273401.2819748,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "relationship_advice",
@@ -112,7 +112,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786354574.0296915,
     "caption": "The River and Death (Spanish: El río y la muerte) is a 1954 Mexican film. It was written by Luis Alcoriza and directed by Luis Buñuel.\nThe film is an adaptation of Miguel Álvarez Acosta's 1952 novel Muro blanco en roca negra (White Wall on a Black Rock).\n\nTrack: Severed Rose — SlidV, Clarx [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/SeveredRose\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #relationship_advice",
     "hashtags": [
       "#fyp",
@@ -169,7 +169,9 @@
         "Mexican black-and-white films",
         "Mexican drama films"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672257551953693974",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

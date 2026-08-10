@@ -1,7 +1,7 @@
 {
   "id": "a4abb8d9e49a45ffae2f1266003c1ed7",
   "created_at": 1786273011.403993,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "stories",
@@ -112,7 +112,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786354575.1726968,
     "caption": "This is a list of the extreme points on land of Estonia: the points that are farther north, south, east or west than any other location.\n\nTrack: Strobe — NIVIRO [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/Strobe\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot",
     "hashtags": [
       "#fyp",
@@ -164,7 +164,9 @@
         "Extreme points of Estonia",
         "Extreme points of Europe"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672183697377922326",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

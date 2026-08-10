@@ -1,0 +1,196 @@
+{
+  "id": "7420fd1df31040cc880e22168cec1c19",
+  "created_at": 1786355909.9234662,
+  "status": "upload_scheduled",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vjxk2b",
+    "url": "https://www.reddit.com/r/adultery/comments/1vjxk2b/one_is_too_many_and_one_thousand_isnt_enough/",
+    "author": "/u/AlertAd3105",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1786300609.0,
+    "nsfw": null,
+    "variant_id": "1vjxk2b_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Un est trop et mille ne suffisent pas.",
+    "raw_body": "I have a question for the guys? I have been having an affair for 5 months. I really thought everything was amazing. Sex, connection, feelings, the I love you's.. all of it .. why is one woman never enough?\n Once again I have caught an AP posting on Reddit in the affairs page. I really just don't understand. I see post after post about the men to women ratio. Having and keeping one affair secret is a lot of work.\n\n submitted by /u/AlertAd3105\n [link] [comments]",
+    "cleaned_body": "Un est trop et mille ne suffisent pas.\n\nJ'ai une question pour les gars ? J'ai une liaison depuis 5 mois. Je pensais que tout était incroyable. Le sexe, la connexion, les sentiments, l'amour que tu as... Tout ça ... Pourquoi une femme n'est jamais suffisante ? Une fois de plus, j'ai attrapé un partenaire d'affaire qui publie sur Reddit sur la page des affaires. Je ne comprends pas vraiment. J'ai vu post après post sur le rapport homme-femme. Avoir et garder une relation secrète, c'est beaucoup de travail.",
+    "display_body": "Un est trop et mille ne suffisent pas. J'ai une question pour les gars ? J'ai une liaison depuis 5 mois. Je pensais que tout était incroyable. Le s*xe, la connexion, les sentiments, l'amour que tu as... Tout ça ... Pourquoi une femme n'est jamais suffisante ? Une fois de plus, j'ai attrapé un partenaire d'affaire qui publie sur Reddit sur la page des affaires. Je ne comprends pas vraiment. J'ai vu post après post sur le rapport homme-femme. Avoir et garder une relation secrète, c'est beaucoup de travail.",
+    "word_count": 89,
+    "est_speech_seconds": 35.6,
+    "banned_words_masked": [
+      {
+        "word": "sexe",
+        "count": 1
+      }
+    ],
+    "title_en": "One is too many and one thousand isn’t enough",
+    "body_en": "One is too many and one thousand isn't enough\n\nI have a question for the guys? I have been having an affair for 5 months. I really thought everything was amazing. Sex, connection, feelings, the I love you's.. all of it .. why is one woman never enough?\n Once again I have caught an affair partner posting on Reddit in the affairs page. I really just don't understand. I see post after post about the men to women ratio. Having and keeping one affair secret is a lot of work.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Un est trop et mille ne suffisent pas."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vjxk2b_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vjxk2b_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vjxk2b_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a51d80dc-ef37-4996-a021-5245f7965787.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vjxk2b_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 25.07,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 2.542
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vjxk2b_fr.ass",
+    "subtitles": {
+      "num_words": 89,
+      "num_cues": 27,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          7.384,
+          7.745
+        ]
+      ],
+      "intro_end_sec": 2.542,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/gta-megaramp-3.mp4",
+      "source_id": "17899adf96da",
+      "start_sec": 303.77,
+      "duration_sec": 25.07,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "a51d80dc-ef37-4996-a021-5245f7965787",
+      "title": "Call My Name",
+      "artist": "Robbie Hutton, Janji",
+      "genre": "Dance-Pop",
+      "moods": [
+        "romantic",
+        "powerful",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/CallMyName",
+      "instrumental_url": "https://ncs.io/track/download/i_a51d80dc-ef37-4996-a021-5245f7965787",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 38.6
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 26.6,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "fashion model",
+      "image_id": 7336161,
+      "image_page_url": "https://pixabay.com/photos/fashion-fashion-photography-7336161/",
+      "image_url": "https://pixabay.com/get/g352a8a87c5d91049fc10f61fb2063fdcf3438697577852853514d84d026682b0cfe6040a4cfd0a0c4b3eb0c99a76912629005c32353a12b4907897fe6c711cf7_1280.jpg",
+      "title_rendered": "Un est trop et mille ne suffisent pas."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": "Bailiaspis is a Middle Cambrian (Miaolingian) trilobite genus belonging to the family Conocoryphidae. Within the Acado-Baltic region, the genus ranges from Wuliuan into Guzhangian age strata (Ptychagnostus gibbus to Lejopyge laevigata Biozones in terms of Scandinavian biostratigraphic terminology).\n\nTrack: Call My Name — Robbie Hutton, Janji [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/CallMyName\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #adultery",
+    "hashtags": [
+      "#fyp",
+      "#foryou",
+      "#foryoupage",
+      "#fypシ",
+      "#viral",
+      "#viralvideo",
+      "#trending",
+      "#storytime",
+      "#stories",
+      "#story",
+      "#reddit",
+      "#redditstories",
+      "#redditstorytime",
+      "#askreddit",
+      "#drama",
+      "#tea",
+      "#confession",
+      "#relationship",
+      "#relationshipadvice",
+      "#aita",
+      "#scary",
+      "#creepy",
+      "#wholesome",
+      "#revenge",
+      "#pov",
+      "#fortnite",
+      "#minecraft",
+      "#asmr",
+      "#satisfying",
+      "#brainrot",
+      "#adultery"
+    ],
+    "provider": "zernio",
+    "zernio_post_id": "6a79a2fde8858ac43eeb0c44",
+    "media_url": "https://litter.catbox.moe/8g9t71.mp4",
+    "cover_url": "https://litter.catbox.moe/yam3q7.png",
+    "cover_set": true,
+    "scheduled_for": 1786414818.146572,
+    "public": true,
+    "wikipedia": {
+      "title": "Bailiaspis",
+      "url": "https://en.wikipedia.org/wiki/Bailiaspis",
+      "category": "Cambrian Alaska",
+      "categories": [
+        "Cambrian Alaska",
+        "Cambrian France",
+        "Cambrian genus extinctions",
+        "Cambrian trilobites of Asia",
+        "Cambrian trilobites of Europe",
+        "Cambrian trilobites of North America",
+        "Fossil taxa described in 1936",
+        "Fossils of France",
+        "Fossils of Russia",
+        "Paleozoic life of New Brunswick",
+        "Paleozoic life of Newfoundland and Labrador",
+        "Ptychopariida genera",
+        "Ptychoparioidea"
+      ]
+    }
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "id": "c9f44d296f94482fa3ac93f4fcf80a53",
+  "created_at": 1786355630.7844636,
+  "status": "upload_scheduled",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vje3br",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vje3br/big_water_droplet_out_of_nowhere/",
+    "author": "/u/ZookeepergameOdd6209",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1786242985.0,
+    "nsfw": null,
+    "variant_id": "1vje3br_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "¿Una gran gota de agua de la nada!?",
+    "raw_body": "So I was walking around my house, there's no water on the ceiling or roof as it's a summer night after a tough summer day. My AC wasn't even on! And out of nowhere a big water droplet fell on my palm. I see above there's nothing on the ceiling! Not one insect or anything. What could be it? The water was also a bit oily as the paper I used to wipe it showed, I straight away sanitized and washed my hands after it. What could be it? Anyone had this before.\n\n submitted by /u/ZookeepergameOdd6209\n [link] [comments]",
+    "cleaned_body": "¿Una gran gota de agua de la nada!?\n\nAsí que estaba caminando por mi casa, no hay agua en el techo ni en el techo ya que es una noche de verano después de un día de verano difícil. ¡Mi aire acondicionado ni siquiera estaba encendido! Y de la nada una gran gota de agua cayó en mi palma. Veo que arriba no hay nada en el techo! Ni un solo insecto ni nada. ¿Qué podría ser? El agua también era un poco grasa como lo mostraba el papel que solía limpiar, inmediatamente me desinfecté y me lavé las manos después. ¿Qué podría ser? Cualquiera ha tenido esto antes.",
+    "display_body": "¿Una gran gota de agua de la nada!? Así que estaba caminando por mi casa, no hay agua en el techo ni en el techo ya que es una noche de verano después de un día de verano difícil. ¡Mi aire acondicionado ni siquiera estaba encendido! Y de la nada una gran gota de agua cayó en mi palma. Veo que arriba no hay nada en el techo! Ni un solo insecto ni nada. ¿Qué podría ser? El agua también era un poco grasa como lo mostraba el papel que solía limpiar, inmediatamente me desinfecté y me lavé las manos después. ¿Qué podría ser? Cualquiera ha tenido esto antes.",
+    "word_count": 109,
+    "est_speech_seconds": 43.6,
+    "banned_words_masked": [],
+    "title_en": "Big water droplet out of nowhere!?",
+    "body_en": "Big water droplet out of nowhere!?\n\nSo I was walking around my house, there's no water on the ceiling or roof as it's a summer night after a tough summer day. My AC wasn't even on! And out of nowhere a big water droplet fell on my palm. I see above there's nothing on the ceiling! Not one insect or anything. What could be it? The water was also a bit oily as the paper I used to wipe it showed, I straight away sanitized and washed my hands after it. What could be it? Anyone had this before.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "¿Una gran gota de agua de la nada!?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vje3br_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vje3br_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vje3br_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/ca2b2c1e-17af-4420-b334-558e1e7a24ce.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vje3br_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 27.93,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.78
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vje3br_es.ass",
+    "subtitles": {
+      "num_words": 109,
+      "num_cues": 31,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.78,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/minecraft-parkour-2.mp4",
+      "source_id": "ca8fe8ebde69",
+      "start_sec": 234.42,
+      "duration_sec": 27.93,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "ca2b2c1e-17af-4420-b334-558e1e7a24ce",
+      "title": "Cyberblade",
+      "artist": "Extra Terra, Max Brhon",
+      "genre": "Midtempo Bass",
+      "moods": [
+        "powerful",
+        "angry",
+        "negative"
+      ],
+      "page_url": "https://ncs.io/Cyberblade",
+      "instrumental_url": "https://ncs.io/track/download/i_ca2b2c1e-17af-4420-b334-558e1e7a24ce",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 59.28
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 29.47,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "serious woman",
+      "image_id": 9841606,
+      "image_page_url": "https://pixabay.com/photos/woman-girl-portrait-sad-sadness-9841606/",
+      "image_url": "https://pixabay.com/get/gda77c466cee2edfbfeaa3e1b22b3e590ad991a41de5370de1d08a66f228d13a06c288eaf2e1207ac687465fc73898bff1bd60f095818e7397964fc76f61112cc_1280.jpg",
+      "title_rendered": "¿Una gran gota de agua de la nada!?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": "Bealeton is a census-designated place (CDP) in Fauquier County, Virginia, United States, at the intersection of U.S. Route 17 and State Route 28. The population was 5,882 at the 2020 census.\nPublic schools in Bealeton include Grace Miller Elementary, Cedar Lee Middle, and Liberty High School. Bealeton is home to its own post office, with ZIP code 22712.\n\nTrack: Cyberblade — Extra Terra, Max Brhon [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/Cyberblade\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #Glitch_in_the_Matrix",
+    "hashtags": [
+      "#fyp",
+      "#foryou",
+      "#foryoupage",
+      "#fypシ",
+      "#viral",
+      "#viralvideo",
+      "#trending",
+      "#storytime",
+      "#stories",
+      "#story",
+      "#reddit",
+      "#redditstories",
+      "#redditstorytime",
+      "#askreddit",
+      "#drama",
+      "#tea",
+      "#confession",
+      "#relationship",
+      "#relationshipadvice",
+      "#aita",
+      "#scary",
+      "#creepy",
+      "#wholesome",
+      "#revenge",
+      "#pov",
+      "#fortnite",
+      "#minecraft",
+      "#asmr",
+      "#satisfying",
+      "#brainrot",
+      "#Glitch_in_the_Matrix"
+    ],
+    "provider": "zernio",
+    "zernio_post_id": "6a79a2ef4cc9e822798a5974",
+    "media_url": "https://litter.catbox.moe/4o009q.mp4",
+    "cover_url": "https://litter.catbox.moe/3emuxt.png",
+    "cover_set": true,
+    "scheduled_for": 1786386018.146572,
+    "public": true,
+    "wikipedia": {
+      "title": "Bealeton, Virginia",
+      "url": "https://en.wikipedia.org/wiki/Bealeton,_Virginia",
+      "category": "Census-designated places in Fauquier County, Virginia",
+      "categories": [
+        "Census-designated places in Fauquier County, Virginia",
+        "Census-designated places in Virginia",
+        "Unincorporated communities in Fauquier County, Virginia",
+        "Unincorporated communities in Virginia"
+      ]
+    }
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

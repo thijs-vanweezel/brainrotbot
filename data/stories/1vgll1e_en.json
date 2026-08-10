@@ -1,7 +1,7 @@
 {
   "id": "447e380556a343628fbe2afa81a0f8da",
   "created_at": 1786272537.9478369,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "Glitch_in_the_Matrix",
@@ -116,7 +116,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786354573.0247326,
     "caption": "Yankelevich is a Russian-language patronymic surname derived from the Yiddish given name Yankel. Polish-language version is  Jankieliewicz.\n\nJaime Yankelevich\nOmer Yankelevich\nRomina Yankelevich\nTomás Yankelevich\nYuri Yankelevich\n\nTrack: Echo — Apollo On The Run [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/A_Echo\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #Glitch_in_the_Matrix",
     "hashtags": [
       "#fyp",
@@ -169,7 +169,9 @@
         "Surnames",
         "Surnames of Jewish origin"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672110369829145878",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

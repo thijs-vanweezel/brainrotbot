@@ -1,7 +1,7 @@
 {
   "id": "0acf762c1663495da50b0b0117ed3784",
   "created_at": 1786272408.951003,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "confession",
@@ -123,7 +123,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786354572.7223394,
     "caption": "The OU812 Tour was a concert tour by the American hard rock band Van Halen in support of their studio album OU812.\n\nTrack: akina — Ailow [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/akina\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot",
     "hashtags": [
       "#fyp",
@@ -173,7 +173,9 @@
         "1989 concert tours",
         "Van Halen concert tours"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672062621037776150",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

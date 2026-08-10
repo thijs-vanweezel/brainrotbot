@@ -1,7 +1,7 @@
 {
   "id": "365cada42be949f5bff2a92ab0c7fa81",
   "created_at": 1786272701.1937938,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "Glitch_in_the_Matrix",
@@ -116,7 +116,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786354573.647662,
     "caption": "Je crois que j'ai juste eu une petite erreur dans la Matrix avec un bonnet de teinture de cheveux...?\n\nTrack: Echo — Apollo On The Run [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/A_Echo\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #Glitch_in_the_Matrix",
     "hashtags": [
       "#fyp",
@@ -157,7 +157,9 @@
     "cover_url": "https://litter.catbox.moe/azc8is.png",
     "cover_set": true,
     "scheduled_for": 1786314879.328849,
-    "public": true
+    "public": true,
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672135057015917846",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

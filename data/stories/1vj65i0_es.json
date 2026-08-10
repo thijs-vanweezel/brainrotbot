@@ -1,0 +1,175 @@
+{
+  "id": "e95b63c588494946bc9769ba1669c9b3",
+  "created_at": 1786355795.4724262,
+  "status": "upload_scheduled",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vj65i0",
+    "url": "https://www.reddit.com/r/confession/comments/1vj65i0/i_always_suggest_customers_to_get_the_most/",
+    "author": "/u/juicydracula",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1786220760.0,
+    "nsfw": null,
+    "variant_id": "1vj65i0_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Siempre sugiero a los clientes que obtienen los artículos más caros en el menú",
+    "raw_body": "I used to be a server at a nice steak house. Whenever a customer asks me for recommendations, I always tell them to get the an item that's usually the most expensive on the menu, even though I've never tried it before.\n Most people came in for special occasions, so they loved to run up the bill.\n I tested this by doing honest recommendations and my tips were cut in half.\n I felt extremely guilty, but if I went back, I think I would continue doing it.\n\n submitted by /u/juicydracula\n [link] [comments]",
+    "cleaned_body": "Siempre sugiero a los clientes que obtienen los artículos más caros en el menú\n\nYo solía ser un servidor en una buena casa de filetes. Siempre que un cliente me pide recomendaciones, siempre les digo que obtengan el artículo que suele ser el más caro del menú, aunque nunca lo había intentado antes. La mayoría de la gente venía en ocasiones especiales, así que les encantaba pagar la factura. Probé esto haciendo recomendaciones honestas y mis propinas fueron cortadas a la mitad. Me sentía extremadamente culpable, pero si volviera, creo que seguiría haciéndolo.",
+    "display_body": "Siempre sugiero a los clientes que obtienen los artículos más caros en el menú Yo solía ser un servidor en una buena casa de filetes. Siempre que un cliente me pide recomendaciones, siempre les digo que obtengan el artículo que suele ser el más caro del menú, aunque nunca lo había intentado antes. La mayoría de la gente venía en ocasiones especiales, así que les encantaba pagar la factura. Probé esto haciendo recomendaciones honestas y mis propinas fueron cortadas a la mitad. Me sentía extremadamente culpable, pero si volviera, creo que seguiría haciéndolo.",
+    "word_count": 93,
+    "est_speech_seconds": 37.2,
+    "banned_words_masked": [],
+    "title_en": "I always suggest customers to get the most expensive items on the menu",
+    "body_en": "I always suggest customers to get the most expensive items on the menu\n\nI used to be a server at a nice steak house. Whenever a customer asks me for recommendations, I always tell them to get the an item that's usually the most expensive on the menu, even though I've never tried it before.\n Most people came in for special occasions, so they loved to run up the bill.\n I tested this by doing honest recommendations and my tips were cut in half.\n I felt extremely guilty, but if I went back, I think I would continue doing it.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Siempre sugiero a los clientes que obtienen los artículos más caros en el menú"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vj65i0_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vj65i0_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vj65i0_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/30cac217-543a-4dc2-abde-56a68a64e900.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vj65i0_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 29.95,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.502
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vj65i0_es.ass",
+    "subtitles": {
+      "num_words": 93,
+      "num_cues": 25,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.502,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/train-2.mp4",
+      "source_id": "4b79081ed8d2",
+      "start_sec": 106.77,
+      "duration_sec": 29.95,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "30cac217-543a-4dc2-abde-56a68a64e900",
+      "title": "Overdrive",
+      "artist": "Aspyer",
+      "genre": "Garage",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/A_Overdrive",
+      "instrumental_url": "https://ncs.io/track/download/i_30cac217-543a-4dc2-abde-56a68a64e900",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 40.02
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 31.5,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "private jet",
+      "image_id": 1929089,
+      "image_page_url": "https://pixabay.com/photos/lock-combination-security-safety-1929089/",
+      "image_url": "https://pixabay.com/get/g6f56985ad87061123b93d86aa7314ef2badb2987afc9c463b6a294152be38455fb53bcae2909905768cc8861bc0f745de34640f55fb5155d951f37bc406f20c2_1280.jpg",
+      "title_rendered": "Siempre sugiero a los clientes que obtienen los artículos más caros en el menú"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": "Mount Ethelbert is a 3,176-metre (10,420-foot) mountain summit in British Columbia, Canada.\n\nTrack: Overdrive — Aspyer [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/A_Overdrive\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot",
+    "hashtags": [
+      "#fyp",
+      "#foryou",
+      "#foryoupage",
+      "#fypシ",
+      "#viral",
+      "#viralvideo",
+      "#trending",
+      "#storytime",
+      "#stories",
+      "#story",
+      "#reddit",
+      "#redditstories",
+      "#redditstorytime",
+      "#askreddit",
+      "#drama",
+      "#tea",
+      "#confession",
+      "#relationship",
+      "#relationshipadvice",
+      "#aita",
+      "#scary",
+      "#creepy",
+      "#wholesome",
+      "#revenge",
+      "#pov",
+      "#fortnite",
+      "#minecraft",
+      "#asmr",
+      "#satisfying",
+      "#brainrot"
+    ],
+    "provider": "zernio",
+    "zernio_post_id": "6a79a2f73305d4d5d6b3987d",
+    "media_url": "https://litter.catbox.moe/en6zoo.mp4",
+    "cover_url": "https://litter.catbox.moe/irbdjo.png",
+    "cover_set": true,
+    "scheduled_for": 1786403298.146572,
+    "public": true,
+    "wikipedia": {
+      "title": "Mount Ethelbert",
+      "url": "https://en.wikipedia.org/wiki/Mount_Ethelbert",
+      "category": "Columbia Valley",
+      "categories": [
+        "Columbia Valley",
+        "Kootenay Land District",
+        "Purcell Mountains",
+        "Three-thousanders of British Columbia"
+      ]
+    }
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,7 +1,7 @@
 {
   "id": "191969b1f9e14f4e9b5548a385180f03",
   "created_at": 1786273494.0908995,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "relationship_advice",
@@ -112,7 +112,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786354574.8380585,
     "caption": "Royal Air Force Defford, or more simply RAF Defford, is a former Royal Air Force station located 1.1 miles (1.8 km) northwest of Defford, Worcestershire, England.\n\nTrack: Severed Rose — SlidV, Clarx [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/SeveredRose\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #relationship_advice",
     "hashtags": [
       "#fyp",
@@ -168,7 +168,9 @@
         "Space programme of the United Kingdom",
         "Telecommunications in World War II"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672284044138171670",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,
