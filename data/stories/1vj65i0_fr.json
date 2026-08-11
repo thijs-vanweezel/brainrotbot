@@ -1,7 +1,7 @@
 {
   "id": "3bc3bee36831421cb8139c6f9601ddbe",
   "created_at": 1786355743.5839014,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "confession",
@@ -112,7 +112,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786440293.899699,
     "caption": "The 2010 Team Speedway Junior World Championship was the sixth FIM Team Under-21 World Championship season. The final took place on 5 September, 2010 at Rye House Stadium in Rye House, England. It was the first final in Great Britain. The Championship was won by Denmark, who beat Sweden, the defending champions Poland and host team Great Britain. It was first championship not to be won by Poland.\n\nTrack: Overdrive — Aspyer [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/A_Overdrive\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot",
     "hashtags": [
       "#fyp",
@@ -161,7 +161,9 @@
         "2010 in speedway",
         "Team Speedway Junior World Championship"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672488958554606870",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

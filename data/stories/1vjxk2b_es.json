@@ -1,7 +1,7 @@
 {
   "id": "a8b1d2aae8644640bdc0478313316b2c",
   "created_at": 1786355965.4326835,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "adultery",
@@ -172,7 +172,8 @@
       "categories": [
         "Surnames"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a79a2ff3305d4d5d6b39b29', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': 'Grieder is a surname. Notable p"
   },
   "metrics": {
     "views": null,

@@ -1,7 +1,7 @@
 {
   "id": "c65a668e20a44359958c2f44d4861b5a",
   "created_at": 1786356023.148048,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "Glitch_in_the_Matrix",
@@ -112,7 +112,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786440292.4615285,
     "caption": "Greta Gray was an American architect, home economist, and academic. She was born September 30, 1880, in Covington, Kentucky and died January 18, 1961, in Cathedral City, California. She is noted as the most progressive early writer on the domestic environment.\n\nTrack: Real Good Liar — Nokae [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/RealGoodLiar\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #Glitch_in_the_Matrix",
     "hashtags": [
       "#fyp",
@@ -171,7 +171,9 @@
         "University of Nebraska–Lincoln faculty",
         "Yale University alumni"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672612902091689238",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

@@ -1,7 +1,7 @@
 {
   "id": "5a4ea3dd5f3c4a2eb19066b415ca6e92",
   "created_at": 1786355381.12377,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "adultery",
@@ -123,7 +123,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786440295.011817,
     "caption": "Alex Romero is a baseball outfielder.\nAlex Romero may also refer to:\n\nAlex Romero (American football)\nAlex Romero (choreographer)\nAlex Romero (character), a character from House of Cards\n\nTrack: Just A Minute More (feat. Halvorsen) — Division One, Halvorsen, JJD [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/JAMM\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #adultery",
     "hashtags": [
       "#fyp",
@@ -172,7 +172,9 @@
       "categories": [
         "Human name disambiguation pages"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672365654879587606",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,
