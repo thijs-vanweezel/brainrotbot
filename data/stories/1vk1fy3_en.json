@@ -1,7 +1,7 @@
 {
   "id": "1cf19191b09340738c18f1d12bcc6e24",
   "created_at": 1786441701.7255707,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "AmItheAsshole",
@@ -127,7 +127,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786526981.7426481,
     "caption": "Un Viaje is an 1840 book on travel and customs by Felipe Pardo y Aliaga. Pardo y Aliaga's travel writings introduced the satirical travel and customs genre to writing about the Andes.\nThis story has appeared from early on in all anthologies of Peruvian literature and in school textbooks. It is popularly known as \"El Nino Goyito's Journey\" or simply \"El Nino Goyito\".\n\nTrack: Sunrise (feat. fawlin) — Tatsunoshin, fawlin [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/TS_sunrise\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #AmItheAsshole",
     "hashtags": [
       "#fyp",
@@ -179,7 +179,9 @@
         "Travel book stubs",
         "Travel books"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672838306610089238",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

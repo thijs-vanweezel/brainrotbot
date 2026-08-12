@@ -1,7 +1,7 @@
 {
   "id": "64b95aeb2135423694171fb7066eeb18",
   "created_at": 1786442668.7981212,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "UnresolvedMysteries",
@@ -112,7 +112,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786526982.6208606,
     "caption": "Two Years Ago\n\n\"Two Years Ago\" by Ellie Goulding Composed by Ellie Goulding / Jim Eliot\n\"Two Years Ago\" by Norman Cook / Paul Oakenfold Composed by Norman Cook\n\"Two Years Ago\" by Nelo (band)\n\nTrack: Spicy — Cartoon [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/Spicy\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #UnresolvedMysteries",
     "hashtags": [
       "#fyp",
@@ -161,7 +161,9 @@
       "categories": [
         "Disambiguation pages"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672986450685676822",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

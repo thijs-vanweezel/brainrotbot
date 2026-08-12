@@ -1,0 +1,196 @@
+{
+  "id": "9100d4e4bee14e6a9c75ed61ebe5949d",
+  "created_at": 1786529045.3723464,
+  "status": "upload_scheduled",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vl5oq3",
+    "url": "https://www.reddit.com/r/adultery/comments/1vl5oq3/shes_leaving_i_can_feel_it/",
+    "author": "/u/adampaulatl",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1786417471.0,
+    "nsfw": null,
+    "variant_id": "1vl5oq3_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Elle part... Je peux le sentir.",
+    "raw_body": "AP is single and I'm the MM, so she dates. For the last few months, she has dated and it hasn't been an issue, until now. She met someone, someone she likes. They've chatted for a few weeks and he flew in to see her. I can tell how excited she was that he was coming and frankly our stolen time was getting more and more difficult to find. I want this for her, just not for me. I want her to find someone who makes her happy, but I don't want her to go.\n I recognize that two things can be true... I'm both jealous and happy for her. I want to text her constantly that I've missed her and want to give her the space to enjoy herself.\n She's leaving for all the right reasons and I'm going to celebrate her, but inside this is going to hurt more than it should.\n\n submitted by /u/adampaulatl\n [link] [comments]",
+    "cleaned_body": "Elle part... Je peux le sentir.\n\nLa partenaire est célibataire et je suis le MM, alors elle sort. Depuis quelques mois, elle sort avec quelqu'un et ça n'a pas été un problème, jusqu'à maintenant. Elle a rencontré quelqu'un, quelqu'un qu'elle aime. Ils discutent depuis quelques semaines et il est venu la voir. Je peux dire à quel point elle était excitée qu'il vienne et franchement notre temps volé devenait de plus en plus difficile à trouver. Je veux ça pour elle, mais pas pour moi. Je veux qu'elle trouve quelqu'un qui la rende heureuse, mais je ne veux pas qu'elle parte. Je reconnais que deux choses peuvent être vraies... Je suis jaloux et heureux pour elle. Je veux lui envoyer des messages constamment pour lui dire que j'ai manqué et que je veux lui donner le temps de s'amuser. Elle part pour toutes les bonnes raisons et je vais la célébrer, mais ça va faire plus mal qu'il ne devrait.",
+    "display_body": "Elle part... Je peux le sentir. La partenaire est célibataire et je suis le MM, alors elle sort. Depuis quelques mois, elle sort avec quelqu'un et ça n'a pas été un problème, jusqu'à maintenant. Elle a rencontré quelqu'un, quelqu'un qu'elle aime. Ils discutent depuis quelques semaines et il est venu la voir. Je peux dire à quel point elle était *xcitée qu'il vienne et franchement notre temps volé devenait de plus en plus difficile à trouver. Je veux ça pour elle, mais pas pour moi. Je veux qu'elle trouve quelqu'un qui la rende heureuse, mais je ne veux pas qu'elle parte. Je reconnais que deux choses peuvent être vraies... Je suis jaloux et heureux pour elle. Je veux lui envoyer des messages constamment pour lui dire que j'ai manqué et que je veux lui donner le temps de s'amuser. Elle part pour toutes les bonnes raisons et je vais la célébrer, mais ça va faire plus mal qu'il ne devrait.",
+    "word_count": 160,
+    "est_speech_seconds": 64.0,
+    "banned_words_masked": [
+      {
+        "word": "excitée",
+        "count": 1
+      }
+    ],
+    "title_en": "She's leaving... I can feel it.",
+    "body_en": "She's leaving... I can feel it.\n\naffair partner is single and I'm the MM, so she dates. For the last few months, she has dated and it hasn't been an issue, until now. She met someone, someone she likes. They've chatted for a few weeks and he flew in to see her. I can tell how excited she was that he was coming and frankly our stolen time was getting more and more difficult to find. I want this for her, just not for me. I want her to find someone who makes her happy, but I don't want her to go.\n I recognize that two things can be true... I'm both jealous and happy for her. I want to text her constantly that I've missed her and want to give her the space to enjoy herself.\n She's leaving for all the right reasons and I'm going to celebrate her, but inside this is going to hurt more than it should.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Elle part... Je peux le sentir."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vl5oq3_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vl5oq3_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vl5oq3_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/3155507d-ca4b-4239-9f64-88f6f7345e79.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vl5oq3_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 43.48,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 2.421
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vl5oq3_fr.ass",
+    "subtitles": {
+      "num_words": 160,
+      "num_cues": 43,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          18.226,
+          18.646
+        ]
+      ],
+      "intro_end_sec": 2.421,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-2.mp4",
+      "source_id": "fbb120f23dbd",
+      "start_sec": 172.01,
+      "duration_sec": 43.48,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "title": "akina",
+      "artist": "Ailow",
+      "genre": "Dubstep",
+      "moods": [
+        "Angry",
+        "Dark",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/akina",
+      "instrumental_url": "https://ncs.io/track/download/i_3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 34.05
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 45.0,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "portrait woman",
+      "image_id": 1721069,
+      "image_page_url": "https://pixabay.com/photos/woman-portrait-face-knitted-1721069/",
+      "image_url": "https://pixabay.com/get/ge9b23b47284f76dcdf3c9b9638b32a65f44243719bee353f1e9e0f2ae731ea20ef1375a3c1841c5be675a459d6ea0623de7ad9fbd817c77c7716ae9c20d78720_1280.jpg",
+      "title_rendered": "Elle part... Je peux le sentir."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": "Maxime Robert Lehmann (17 December 1906 – 24 April 2009) was a footballer who played in the late 1920s, the 1930s and the early 1940s as defensive midfielder. Born in Switzerland, he represented France internationally.\n\nTrack: akina — Ailow [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/akina\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #adultery",
+    "hashtags": [
+      "#fyp",
+      "#foryou",
+      "#foryoupage",
+      "#fypシ",
+      "#viral",
+      "#viralvideo",
+      "#trending",
+      "#storytime",
+      "#stories",
+      "#story",
+      "#reddit",
+      "#redditstories",
+      "#redditstorytime",
+      "#askreddit",
+      "#drama",
+      "#tea",
+      "#confession",
+      "#relationship",
+      "#relationshipadvice",
+      "#aita",
+      "#scary",
+      "#creepy",
+      "#wholesome",
+      "#revenge",
+      "#pov",
+      "#fortnite",
+      "#minecraft",
+      "#asmr",
+      "#satisfying",
+      "#brainrot",
+      "#adultery"
+    ],
+    "provider": "zernio",
+    "zernio_post_id": "6a7c47f79d4fe04a1ff4ebd3",
+    "media_url": "https://litter.catbox.moe/k2l1qd.mp4",
+    "cover_url": "https://litter.catbox.moe/p8jrw9.png",
+    "cover_set": true,
+    "scheduled_for": 1786588133.933229,
+    "public": true,
+    "wikipedia": {
+      "title": "Maxime Lehmann",
+      "url": "https://en.wikipedia.org/wiki/Maxime_Lehmann",
+      "category": "1906 births",
+      "categories": [
+        "1906 births",
+        "2009 deaths",
+        "20th-century French sportsmen",
+        "20th-century Swiss sportsmen",
+        "Footballers from Basel-Stadt",
+        "France men's international footballers",
+        "French football midfielder stubs",
+        "French men's footballers",
+        "French men centenarians",
+        "Men's association football midfielders",
+        "Naturalized citizens of France",
+        "Swiss emigrants to France",
+        "Swiss men's footballers"
+      ]
+    }
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

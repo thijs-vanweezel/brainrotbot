@@ -1,7 +1,7 @@
 {
   "id": "4ece28b8e96b4d86ba3b6aec2f4f7269",
   "created_at": 1786442295.3184404,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "adultery",
@@ -114,7 +114,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786526981.470512,
     "caption": "The Ambassador (Danish: Ambassadøren) is a 2011 Danish documentary film created and directed by Danish filmmaker and journalist Mads Brügger. The film was nominated for the Grand Jury Prize at the 2012 Sundance Film Festival, ultimately losing to The House I Live In.\n\nTrack: Party Pioneers — NOYSE, Rudeejay [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/PartyPioneers\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #adultery",
     "hashtags": [
       "#fyp",
@@ -183,7 +183,9 @@
         "Films shot in the Central African Republic",
         "Zentropa films"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672938307717795094",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

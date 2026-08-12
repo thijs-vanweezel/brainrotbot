@@ -1,7 +1,7 @@
 {
   "id": "2d50127868704a5bad180190d52918c6",
   "created_at": 1786442476.1199121,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "adultery",
@@ -163,7 +163,8 @@
       "categories": [
         "Carnatic music"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7af6951dcd07a95bb81990', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': 'Konnakol (also spelled Konokol,"
   },
   "metrics": {
     "views": null,

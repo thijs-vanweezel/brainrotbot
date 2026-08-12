@@ -1,7 +1,7 @@
 {
   "id": "78407da2c92346549d9977064740371e",
   "created_at": 1786441127.3116674,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "offmychest",
@@ -112,7 +112,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786526983.4784951,
     "caption": "Gerard Thomas Noel (1782–1851) was a Church of England cleric, known as a hymn writer.\n\nTrack: Skyline Pt. II — Electro-Light, Kovan [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/Skyline_II\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #offmychest",
     "hashtags": [
       "#fyp",
@@ -167,7 +167,9 @@
         "English hymnwriters",
         "Noel family"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7672739236466003222",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,
