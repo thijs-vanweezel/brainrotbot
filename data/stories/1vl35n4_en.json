@@ -1,7 +1,7 @@
 {
   "id": "e0b7057f5db046a2844a3618fce92071",
   "created_at": 1786528471.682604,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "confession",
@@ -172,7 +172,8 @@
         "Cereals",
         "Crops"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7c47ee9d4fe04a1ff4e81f', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': \"A cereal is a grass  (family Po"
   },
   "metrics": {
     "views": null,

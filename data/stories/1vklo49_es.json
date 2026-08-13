@@ -1,7 +1,7 @@
 {
   "id": "7e9a626b230d4282bcc2ef903ccf2a45",
   "created_at": 1786529494.729229,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "tifu",
@@ -166,7 +166,8 @@
         "Homeric scholarship",
         "Theology books"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7c47ff9d4fe04a1ff4eff5', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': \"The Homeric Gods: Spiritual Sig"
   },
   "metrics": {
     "views": null,

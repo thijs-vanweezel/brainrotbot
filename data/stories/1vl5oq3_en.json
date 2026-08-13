@@ -1,7 +1,7 @@
 {
   "id": "48b13abeca934eb6b65f86e6451c118f",
   "created_at": 1786528958.6721134,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "adultery",
@@ -166,7 +166,8 @@
         "Living people",
         "Principals of Dhaka Medical College and Hospital"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7c47f5663440911a4b786d', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': 'Khan Abul Kalam Azad is a Bangl"
   },
   "metrics": {
     "views": null,

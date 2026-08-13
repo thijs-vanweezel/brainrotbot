@@ -1,7 +1,7 @@
 {
   "id": "9100d4e4bee14e6a9c75ed61ebe5949d",
   "created_at": 1786529045.3723464,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "adultery",
@@ -184,7 +184,8 @@
         "Swiss emigrants to France",
         "Swiss men's footballers"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7c47f79d4fe04a1ff4ebd3', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': 'Maxime Robert Lehmann (17 Decem"
   },
   "metrics": {
     "views": null,

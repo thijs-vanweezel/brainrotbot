@@ -1,7 +1,7 @@
 {
   "id": "426db6c1452042db9c46bd485c632c57",
   "created_at": 1786528327.5819254,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "Glitch_in_the_Matrix",
@@ -112,7 +112,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786613413.8572583,
     "caption": "Erika Arnoldine Cornelia Thijs (16 May 1960 – 4 August 2011) was a Flemish politician and member of the Christian Democratic and Flemish party.\nThijs was born in Hasselt.  From 1988, she was a member of the Municipal Council of Bilzen, and, from 1995, she was a Senator directly elected by the Dutch language electoral college.\n\nTrack: Firestarter — Lack D, KDH, jeonghyeon [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/Firestarter\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #Glitch_in_the_Matrix",
     "hashtags": [
       "#fyp",
@@ -167,7 +167,9 @@
         "Flemish politician stubs",
         "People from Hasselt"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7673159518968122626",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

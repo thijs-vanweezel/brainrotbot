@@ -1,7 +1,7 @@
 {
   "id": "845e984d690d4129b9e93a666f9ea923",
   "created_at": 1786528025.8453748,
-  "status": "upload_scheduled",
+  "status": "upload_done",
   "source": {
     "platform": "reddit",
     "subreddit": "UnresolvedMysteries",
@@ -116,7 +116,7 @@
   },
   "upload": {
     "tiktok_id": null,
-    "posted_at": null,
+    "posted_at": 1786613414.2105625,
     "caption": "Frank Elmer Smith (October 28, 1879 – November 3, 1952) was a right-handed pitcher in Major League Baseball from 1904 to 1915. He played for the Chicago White Sox, Boston Red Sox, Cincinnati Reds, Baltimore Terrapins, and Brooklyn Tip-Tops. Nicknamed \"Piano Mover\" because that was his offseason job, Smith was a mainstay of the White Sox pitching staff during the early 20th century. He pitched two no-hitters and won over 20 games in two different seasons. He stood at 5' 10\" and weighed 194 lbs.\n\nTrack: Echo — Apollo On The Run [NCS Release]\nMusic provided by NoCopyrightSounds\nFree Download/Stream: https://ncs.io/A_Echo\n\n#fyp #foryou #foryoupage #fypシ #viral #viralvideo #trending #storytime #stories #story #reddit #redditstories #redditstorytime #askreddit #drama #tea #confession #relationship #relationshipadvice #aita #scary #creepy #wholesome #revenge #pov #fortnite #minecraft #asmr #satisfying #brainrot #UnresolvedMysteries",
     "hashtags": [
       "#fyp",
@@ -179,7 +179,9 @@
         "Montreal Royals players",
         "Raleigh Senators players"
       ]
-    }
+    },
+    "url": "https://www.tiktok.com/@every_story_is_true/video/7673111493520674051",
+    "assets_deleted": []
   },
   "metrics": {
     "views": null,

@@ -1,7 +1,7 @@
 {
   "id": "4a6aa0819af24cc8a1cc5e48c4a9ed27",
   "created_at": 1786528644.6339667,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "confession",
@@ -170,7 +170,8 @@
         "Sculptures in Athens",
         "Statues in Greece"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7c47f0fe02376a30096447', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': 'The Merenda Kouros (NAMA 4890) "
   },
   "metrics": {
     "views": null,

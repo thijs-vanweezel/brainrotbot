@@ -1,7 +1,7 @@
 {
   "id": "77661a534d664fadbf9f264f9ad4d3a7",
   "created_at": 1786529134.8039231,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "adultery",
@@ -202,7 +202,8 @@
         "Sony Pictures direct-to-video animated films",
         "Sony Pictures direct-to-video films"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7c47f9fe02376a30096526', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': 'Heavy Metal 2000, also known as"
   },
   "metrics": {
     "views": null,

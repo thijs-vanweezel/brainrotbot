@@ -1,7 +1,7 @@
 {
   "id": "a4ac4b53c5a94b54badbe111406add91",
   "created_at": 1786529223.020849,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "tifu",
@@ -173,7 +173,8 @@
         "18th century in chess",
         "Chess openings"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7c47fb1682bbe9c60b5f25', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': \"The Dutch Defence is a chess op"
   },
   "metrics": {
     "views": null,

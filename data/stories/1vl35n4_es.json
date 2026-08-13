@@ -1,7 +1,7 @@
 {
   "id": "7ba268c9e4d0462ea9efdcd6170043e5",
   "created_at": 1786528804.1209626,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "confession",
@@ -176,7 +176,8 @@
         "Standards of the United States",
         "Tools manufactured in the United States"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7c47f29d4fe04a1ff4e9c5', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': 'ASME B5 refers to a technical c"
   },
   "metrics": {
     "views": null,

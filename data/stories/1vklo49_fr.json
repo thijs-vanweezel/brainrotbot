@@ -1,7 +1,7 @@
 {
   "id": "bb4618ecc96140b5800c6ba34d7527d5",
   "created_at": 1786529378.9791007,
-  "status": "upload_scheduled",
+  "status": "upload_failed",
   "source": {
     "platform": "reddit",
     "subreddit": "tifu",
@@ -169,7 +169,8 @@
         "Uruguayan female swimmers",
         "Uruguayan sportspeople stubs"
       ]
-    }
+    },
+    "failed_reason": "{'post': {'recycling': {'enabled': False, 'gapFreq': 'month', 'recycleCount': 0, 'contentVariations': [], 'contentVariationIndex': 0}, '_id': '6a7c47fdfe02376a3009657c', 'userId': {'name': 'Thijs van Weezel', 'id': '6a26ca29b2cb614dd8a2e691'}, 'title': '', 'content': 'Felicia Ospitaletche (born 7 De"
   },
   "metrics": {
     "views": null,
