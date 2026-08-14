@@ -1,0 +1,137 @@
+{
+  "id": "e607e73e2ff44241aa3a8582b2e4a039",
+  "created_at": 1786701326.3311186,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vnl55s",
+    "url": "https://www.reddit.com/r/adultery/comments/1vnl55s/she_was_caught_by_a_pi/",
+    "author": "/u/Sufficient_Gas_6645",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1786650228.0,
+    "nsfw": null,
+    "variant_id": "1vnl55s_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "She was caught by a PI",
+    "raw_body": "I've been seeing my AP for about 6 months. Before we met she revealed that she was planning on separating and divorcing her husband within the next year. I have no plans to leave my marriage and made that clear to her. After a couple months of us seeing each other she moved out and initiated the divorce with her husband.\n Fast forward to now she goes to her divorce mediation where it is revealed that her husband hired a PI and has pictures of us kissing and also knows my name (I assume from my license plate?)\n How fucked am I? I would think the PI has no interest in outing me. However my APs husband could out me as a way to extract revenge? What should I do?\n\n submitted by /u/Sufficient_Gas_6645\n [link] [comments]",
+    "cleaned_body": "She was caught by a PI\n\nI've been seeing my affair partner for about 6 months. Before we met she revealed that she was planning on separating and divorcing her husband within the next year. I have no plans to leave my marriage and made that clear to her. After a couple months of us seeing each other she moved out and initiated the divorce with her husband.\n Fast forward to now she goes to her divorce mediation where it is revealed that her husband hired a PI and has pictures of us kissing and also knows my name (I assume from my license plate?)\n How fucked am I? I would think the PI has no interest in outing me. However my APs husband could out me as a way to extract revenge? What should I do?",
+    "display_body": "She was caught by a PI I've been seeing my affair partner for about 6 months. Before we met she revealed that she was planning on separating and divorcing her husband within the next year. I have no plans to leave my marriage and made that clear to her. After a couple months of us seeing each other she moved out and initiated the divorce with her husband. Fast forward to now she goes to her divorce mediation where it is revealed that her husband hired a PI and has pictures of us kissing and also knows my name (I assume from my license plate?) How f*cked am I? I would think the PI has no interest in outing me. However my APs husband could out me as a way to extract revenge? What should I do?",
+    "word_count": 137,
+    "est_speech_seconds": 54.8,
+    "banned_words_masked": [
+      {
+        "word": "fucked",
+        "count": 1
+      }
+    ],
+    "title_en": "She was caught by a PI",
+    "body_en": "She was caught by a PI\n\nI've been seeing my affair partner for about 6 months. Before we met she revealed that she was planning on separating and divorcing her husband within the next year. I have no plans to leave my marriage and made that clear to her. After a couple months of us seeing each other she moved out and initiated the divorce with her husband.\n Fast forward to now she goes to her divorce mediation where it is revealed that her husband hired a PI and has pictures of us kissing and also knows my name (I assume from my license plate?)\n How fucked am I? I would think the PI has no interest in outing me. However my APs husband could out me as a way to extract revenge? What should I do?",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "She was caught by a PI"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vnl55s_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vnl55s_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vnl55s_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/598a4b7b-7980-4d27-912e-81ca14fec7ca.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vnl55s_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 38.48,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 1.801
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vnl55s_en.ass",
+    "subtitles": {
+      "num_words": 137,
+      "num_cues": 37,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          29.872,
+          30.112
+        ]
+      ],
+      "intro_end_sec": 1.801,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/subway-surfers-3.mp4",
+      "source_id": "7fba6c7b31b9",
+      "start_sec": 599.06,
+      "duration_sec": 38.48,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "598a4b7b-7980-4d27-912e-81ca14fec7ca",
+      "title": "Strobe",
+      "artist": "NIVIRO",
+      "genre": "Techno",
+      "moods": [
+        "energetic",
+        "dark",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/Strobe",
+      "instrumental_url": "https://ncs.io/track/download/i_598a4b7b-7980-4d27-912e-81ca14fec7ca",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 16.28
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 40.0,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "sexy woman",
+      "image_id": 8818014,
+      "image_page_url": "https://pixabay.com/photos/goddess-cosplay-greek-aphrodite-8818014/",
+      "image_url": "https://pixabay.com/get/g0531d4d43de52dfb97f47bcc7b67ea4ee40ad43396beec95fa91437cc4f6fa372f49f266bb80b23c48ccd4d10241f666d5610599d0317cfd03bf261f3f7f2f57_1280.jpg",
+      "title_rendered": "She was caught by a PI"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

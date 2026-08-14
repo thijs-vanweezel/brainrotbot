@@ -1,0 +1,136 @@
+{
+  "id": "453b060891bc42d2adefb859dc79ec1a",
+  "created_at": 1786700465.5978308,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vmonqn",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vmonqn/i_am_just_hurt/",
+    "author": "/u/LunchNice4230",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1786564256.0,
+    "nsfw": null,
+    "variant_id": "1vmonqn_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Je suis blessé .",
+    "raw_body": "Today my period ended and wanted to get frisky with my bf since i felt like crap for 5 days . I got on top and started to give him head and little bit of hj in between , suddenly his phone vibrated and this guy legit started checking his phone , am i invisible? Am i a toy? Wtf???? I got off and laying here feeling worthless.... Am i ugly? Fat? What was that?\n Edit: well well well for the people who said talk to your bf he just now had a private convo with my girl downstairs , all good now , cant feel my legs 😂\n\n submitted by /u/LunchNice4230\n [link] [comments]",
+    "cleaned_body": "Je suis blessé .\n\nAujourd'hui , ma période s' est terminée et j' ai voulu me débrouiller avec mon BF puisque je me sentais comme une merde pendant 5 jours . Je suis monté au sommet et j'ai commencé à lui donner la tête et un peu d'HH entre les deux, soudain son téléphone a vibré et ce type légitime a commencé à vérifier son téléphone, suis-je invisible ? Je suis un jouet ? C'est quoi ? Je suis descendu et je me suis étendu ici sans valeur... Je suis laide ? Tu es grosse ? C'était quoi ?",
+    "display_body": "Je suis blessé . Aujourd'hui , ma période s' est terminée et j' ai voulu me débrouiller avec mon BF puisque je me sentais comme une m*rde pendant 5 jours . Je suis monté au sommet et j'ai commencé à lui donner la tête et un peu d'HH entre les deux, soudain son téléphone a vibré et ce type légitime a commencé à vérifier son téléphone, suis-je invisible ? Je suis un jouet ? C'est quoi ? Je suis descendu et je me suis étendu ici sans valeur... Je suis laide ? Tu es grosse ? C'était quoi ?",
+    "word_count": 99,
+    "est_speech_seconds": 39.6,
+    "banned_words_masked": [
+      {
+        "word": "merde",
+        "count": 1
+      }
+    ],
+    "title_en": "I am just hurt",
+    "body_en": "I am just hurt\n\nToday my period ended and wanted to get frisky with my bf since i felt like crap for 5 days . I got on top and started to give him head and little bit of hj in between , suddenly his phone vibrated and this guy legit started checking his phone , am i invisible? Am i a toy? Wtf???? I got off and laying here feeling worthless.... Am i ugly? Fat? What was that?",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Je suis blessé ."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vmonqn_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vmonqn_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vmonqn_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/35885353-1fc5-470b-9a72-7d3dde06d7d4.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vmonqn_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 23.95,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 1.861
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vmonqn_fr.ass",
+    "subtitles": {
+      "num_words": 99,
+      "num_cues": 27,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          6.763,
+          7.023
+        ]
+      ],
+      "intro_end_sec": 1.861,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-6.mp4",
+      "source_id": "dd66164bb1ad",
+      "start_sec": 77.49,
+      "duration_sec": 23.95,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "35885353-1fc5-470b-9a72-7d3dde06d7d4",
+      "title": "Alive",
+      "artist": "Tamlin",
+      "genre": "Disco",
+      "moods": [
+        "exciting",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/T_Alive",
+      "instrumental_url": "https://ncs.io/track/download/i_35885353-1fc5-470b-9a72-7d3dde06d7d4",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 140.39
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 25.5,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "dessert",
+      "image_id": 3389010,
+      "image_page_url": "https://pixabay.com/photos/ice-cream-dessert-calories-3389010/",
+      "image_url": "https://pixabay.com/get/gc5cc0fcd6d41e21198551cbaddb5c236524ed9099437f2ab7b20a929205331a23bac148d2e63d5da04dcea571dfeae81053b80a6b24a48d4d2c04dc148290bdf_1280.jpg",
+      "title_rendered": "Je suis blessé ."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

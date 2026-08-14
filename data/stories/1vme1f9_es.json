@@ -1,0 +1,125 @@
+{
+  "id": "a55c3766aecc4f7ea8a87826c02f8ac4",
+  "created_at": 1786700338.945223,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vme1f9",
+    "url": "https://www.reddit.com/r/adultery/comments/1vme1f9/i_think_im_done_here/",
+    "author": "/u/Sweet_Mud_8696",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1786540994.0,
+    "nsfw": null,
+    "variant_id": "1vme1f9_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Creo que he terminado aquí.",
+    "raw_body": "I had entered the world of adultery a couple years ago after a really hard marriage with my husband. I was desperate for happiness. And I found it in my affairs. In that time my husband got sick, and then sicker and sicker and sicker. This past weekend, he lost his 2 year battle with rectal cancer. I miss him terribly and cant imagine life without him but I feel peace knowing that I don't have to suffer in a miserable marriage anymore. And in due time I look forward to meeting someone new and have an honest and monogamous relationship with them. Good luck to all you adulters. I hope you find your happiness. As for me, I'm off to grief and find myself in my single mom era.\n\n submitted by /u/Sweet_Mud_8696\n [link] [comments]",
+    "cleaned_body": "Creo que he terminado aquí.\n\nHabía entrado en el mundo del adulterio hace un par de años después de un matrimonio muy difícil con mi marido. Estaba desesperado por la felicidad. Y lo encontré en mis asuntos. En ese tiempo mi marido enfermó, y luego enfermó cada vez más. El fin de semana pasado, perdió su batalla de 2 años contra el cáncer rectal. Lo extraño terriblemente y no puedo imaginarme la vida sin él pero siento paz sabiendo que ya no tengo que sufrir en un matrimonio miserable. Y en su debido tiempo espero conocer a alguien nuevo y tener una relación honesta y monógama con ellos. Buena suerte a todos los adúlteros. Espero que encuentres tu felicidad. En cuanto a mí, me voy a la pena y me encuentro en mi era de madre soltera.",
+    "display_body": "Creo que he terminado aquí. Había entrado en el mundo del adulterio hace un par de años después de un matrimonio muy difícil con mi marido. Estaba desesperado por la felicidad. Y lo encontré en mis asuntos. En ese tiempo mi marido enfermó, y luego enfermó cada vez más. El fin de semana pasado, perdió su batalla de 2 años contra el cáncer rectal. Lo extraño terriblemente y no puedo imaginarme la vida sin él pero siento paz sabiendo que ya no tengo que sufrir en un matrimonio miserable. Y en su debido tiempo espero conocer a alguien nuevo y tener una relación honesta y monógama con ellos. Buena suerte a todos los adúlteros. Espero que encuentres tu felicidad. En cuanto a mí, me voy a la pena y me encuentro en mi era de madre soltera.",
+    "word_count": 137,
+    "est_speech_seconds": 54.8,
+    "banned_words_masked": [],
+    "title_en": "I think I'm done here",
+    "body_en": "I think I'm done here\n\nI had entered the world of adultery a couple years ago after a really hard marriage with my husband. I was desperate for happiness. And I found it in my affairs. In that time my husband got sick, and then sicker and sicker and sicker. This past weekend, he lost his 2 year battle with rectal cancer. I miss him terribly and cant imagine life without him but I feel peace knowing that I don't have to suffer in a miserable marriage anymore. And in due time I look forward to meeting someone new and have an honest and monogamous relationship with them. Good luck to all you adulters. I hope you find your happiness. As for me, I'm off to grief and find myself in my single mom era.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Creo que he terminado aquí."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vme1f9_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vme1f9_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vme1f9_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/dc7edbe0-3848-4746-b54c-02579dc269bd.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vme1f9_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 38.08,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.981
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vme1f9_es.ass",
+    "subtitles": {
+      "num_words": 137,
+      "num_cues": 40,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.981,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/train-1.mp4",
+      "source_id": "4f8391aae7a3",
+      "start_sec": 213.82,
+      "duration_sec": 38.08,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "dc7edbe0-3848-4746-b54c-02579dc269bd",
+      "title": "Notice That",
+      "artist": "Zaug",
+      "genre": "Electronic Rock",
+      "moods": [
+        "powerful",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/NoticeThat",
+      "instrumental_url": "https://ncs.io/track/download/i_dc7edbe0-3848-4746-b54c-02579dc269bd",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 5.76
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 39.6,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "man portrait",
+      "image_id": 1283235,
+      "image_page_url": "https://pixabay.com/photos/man-portrait-old-elderly-1283235/",
+      "image_url": "https://pixabay.com/get/gd95add5256f9ea4d803c77e7f46a66a261502aa6ce20e46b20844e003ea48cd74f7568845a1c12eebb9f8a9e34ddbd9ef9a62cc2cf187f955a70d854487df8ae_1280.jpg",
+      "title_rendered": "Creo que he terminado aquí."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

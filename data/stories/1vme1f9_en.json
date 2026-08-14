@@ -1,0 +1,125 @@
+{
+  "id": "584d2d1bdce2436cbcbc5fb09b2b2fb6",
+  "created_at": 1786700167.732005,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vme1f9",
+    "url": "https://www.reddit.com/r/adultery/comments/1vme1f9/i_think_im_done_here/",
+    "author": "/u/Sweet_Mud_8696",
+    "feed_rank": 2,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1786540994.0,
+    "nsfw": null,
+    "variant_id": "1vme1f9_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "I think I'm done here",
+    "raw_body": "I had entered the world of adultery a couple years ago after a really hard marriage with my husband. I was desperate for happiness. And I found it in my affairs. In that time my husband got sick, and then sicker and sicker and sicker. This past weekend, he lost his 2 year battle with rectal cancer. I miss him terribly and cant imagine life without him but I feel peace knowing that I don't have to suffer in a miserable marriage anymore. And in due time I look forward to meeting someone new and have an honest and monogamous relationship with them. Good luck to all you adulters. I hope you find your happiness. As for me, I'm off to grief and find myself in my single mom era.\n\n submitted by /u/Sweet_Mud_8696\n [link] [comments]",
+    "cleaned_body": "I think I'm done here\n\nI had entered the world of adultery a couple years ago after a really hard marriage with my husband. I was desperate for happiness. And I found it in my affairs. In that time my husband got sick, and then sicker and sicker and sicker. This past weekend, he lost his 2 year battle with rectal cancer. I miss him terribly and cant imagine life without him but I feel peace knowing that I don't have to suffer in a miserable marriage anymore. And in due time I look forward to meeting someone new and have an honest and monogamous relationship with them. Good luck to all you adulters. I hope you find your happiness. As for me, I'm off to grief and find myself in my single mom era.",
+    "display_body": "I think I'm done here I had entered the world of adultery a couple years ago after a really hard marriage with my husband. I was desperate for happiness. And I found it in my affairs. In that time my husband got sick, and then sicker and sicker and sicker. This past weekend, he lost his 2 year battle with rectal cancer. I miss him terribly and cant imagine life without him but I feel peace knowing that I don't have to suffer in a miserable marriage anymore. And in due time I look forward to meeting someone new and have an honest and monogamous relationship with them. Good luck to all you adulters. I hope you find your happiness. As for me, I'm off to grief and find myself in my single mom era.",
+    "word_count": 135,
+    "est_speech_seconds": 54.0,
+    "banned_words_masked": [],
+    "title_en": "I think I'm done here",
+    "body_en": "I think I'm done here\n\nI had entered the world of adultery a couple years ago after a really hard marriage with my husband. I was desperate for happiness. And I found it in my affairs. In that time my husband got sick, and then sicker and sicker and sicker. This past weekend, he lost his 2 year battle with rectal cancer. I miss him terribly and cant imagine life without him but I feel peace knowing that I don't have to suffer in a miserable marriage anymore. And in due time I look forward to meeting someone new and have an honest and monogamous relationship with them. Good luck to all you adulters. I hope you find your happiness. As for me, I'm off to grief and find myself in my single mom era.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "I think I'm done here"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vme1f9_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vme1f9_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vme1f9_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/dc7edbe0-3848-4746-b54c-02579dc269bd.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vme1f9_en.png",
+    "audio": {
+      "voice": "af_heart",
+      "lang_code": "a",
+      "duration_sec": 39.0,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.881
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vme1f9_en.ass",
+    "subtitles": {
+      "num_words": 135,
+      "num_cues": 37,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.881,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/train-1.mp4",
+      "source_id": "4f8391aae7a3",
+      "start_sec": 770.89,
+      "duration_sec": 39.0,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "dc7edbe0-3848-4746-b54c-02579dc269bd",
+      "title": "Notice That",
+      "artist": "Zaug",
+      "genre": "Electronic Rock",
+      "moods": [
+        "powerful",
+        "neutral"
+      ],
+      "page_url": "https://ncs.io/NoticeThat",
+      "instrumental_url": "https://ncs.io/track/download/i_dc7edbe0-3848-4746-b54c-02579dc269bd",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 58.46
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 40.53,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "man portrait",
+      "image_id": 1283235,
+      "image_page_url": "https://pixabay.com/photos/man-portrait-old-elderly-1283235/",
+      "image_url": "https://pixabay.com/get/gd95add5256f9ea4d803c77e7f46a66a261502aa6ce20e46b20844e003ea48cd74f7568845a1c12eebb9f8a9e34ddbd9ef9a62cc2cf187f955a70d854487df8ae_1280.jpg",
+      "title_rendered": "I think I'm done here"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
