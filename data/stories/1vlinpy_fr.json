@@ -1,0 +1,126 @@
+{
+  "id": "2d73a0180cc24333b315e2208af74277",
+  "created_at": 1786786025.4381642,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vlinpy",
+    "url": "https://www.reddit.com/r/confession/comments/1vlinpy/i_gave_a_coworker_the_weed_she_wanted_so_badly/",
+    "author": "/u/No-Ad-3635",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1786457697.0,
+    "nsfw": null,
+    "variant_id": "1vlinpy_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "J' ai donné à une collègue de travail l' herbe qu' elle désirait tant , mais pas comme elle voulait la trouver .",
+    "raw_body": "Years ago i worked the solo over night shift. the day crew would come in in the morning to relieve me . this one older lady always accused me of smoking weed on my overnight shift.\n she'd listen to the calls i took overnight to try and find proof i was smoking weed . it was weird and annoying to get called into the owners office once a month to explain a weird cough or something i said that \"kinda sounded like i said pot\"\n so one day i brought a very stinky roach with me and went to great lengths to conceal the smell . then when we switched shifts i went into the coat room and stuck the roach in the treads of her shoes and came out and said \"wow one of you reek of weed\" and left .\n she never mentioned weed again\n\n submitted by /u/No-Ad-3635\n [link] [comments]",
+    "cleaned_body": "J' ai donné à une collègue de travail l' herbe qu' elle désirait tant , mais pas comme elle voulait la trouver .\n\nIl y a des années, j'ai travaillé en solo pendant le quart de nuit. L' équipage du jour venait me soulager le matin . Une dame plus âgée m'accusait toujours de fumer de l'herbe pendant mon quart de nuit. Elle écoutait les appels que je prenais la nuit pour essayer de trouver des preuves que je fumais de l' herbe . C'était bizarre et ennuyeux d'être appelé au bureau des propriétaires une fois par mois pour expliquer une toux bizarre ou quelque chose. Alors un jour , j' ai emporté un cafard très puissant et j' ai fait de grands efforts pour cacher l' odeur . Puis quand nous avons changé de poste , je suis allée dans la chambre à couvertures , j' ai mis la cafardelle dans ses chaussures et je suis sortie et j' ai dit \" Wow , l' une d'entre vous sent l' herbe \" et je suis partie . Elle n'a jamais parlé de l'herbe.",
+    "display_body": "J' ai donné à une collègue de travail l' herbe qu' elle désirait tant , mais pas comme elle voulait la trouver . Il y a des années, j'ai travaillé en solo pendant le quart de nuit. L' équipage du jour venait me soulager le matin . Une dame plus âgée m'accusait toujours de fumer de l'herbe pendant mon quart de nuit. Elle écoutait les appels que je prenais la nuit pour essayer de trouver des preuves que je fumais de l' herbe . C'était bizarre et ennuyeux d'être appelé au bureau des propriétaires une fois par mois pour expliquer une toux bizarre ou quelque chose. Alors un jour , j' ai emporté un cafard très puissant et j' ai fait de grands efforts pour cacher l' odeur . Puis quand nous avons changé de poste , je suis allée dans la chambre à couvertures , j' ai mis la cafardelle dans ses chaussures et je suis sortie et j' ai dit \" Wow , l' une d'entre vous sent l' herbe \" et je suis partie . Elle n'a jamais parlé de l'herbe.",
+    "word_count": 184,
+    "est_speech_seconds": 73.6,
+    "banned_words_masked": [],
+    "title_en": "I gave a co-worker the weed she wanted so badly , just not the way ahe wanted to find it",
+    "body_en": "I gave a co-worker the weed she wanted so badly , just not the way ahe wanted to find it\n\nYears ago i worked the solo over night shift. the day crew would come in in the morning to relieve me . this one older lady always accused me of smoking weed on my overnight shift.\n she'd listen to the calls i took overnight to try and find proof i was smoking weed . it was weird and annoying to get called into the owners office once a month to explain a weird cough or something i said that \"kinda sounded like i said pot\"\n so one day i brought a very stinky roach with me and went to great lengths to conceal the smell . then when we switched shifts i went into the coat room and stuck the roach in the treads of her shoes and came out and said \"wow one of you reek of weed\" and left .\n she never mentioned weed again",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "J' ai donné à une collègue de travail l' herbe qu' elle désirait tant , mais pas comme elle voulait la trouver ."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vlinpy_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vlinpy_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vlinpy_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a855a35f-489d-4575-b4f4-4e4070d1bf47.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vlinpy_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 45.42,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 6.061
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vlinpy_fr.ass",
+    "subtitles": {
+      "num_words": 184,
+      "num_cues": 50,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 6.061,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/subway-surfers-2.mp4",
+      "source_id": "d740c6b07db0",
+      "start_sec": 422.12,
+      "duration_sec": 45.42,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "title": "Mortals (TOKYO MACHINE & Boom Kitty Remix)",
+      "artist": "Boom Kitty, TOKYO MACHINE, Warriyo",
+      "genre": "Dubstep",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/Mortals_TMBK",
+      "instrumental_url": "https://ncs.io/track/download/i_a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 58.24
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 46.97,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "money",
+      "image_id": 665613,
+      "image_page_url": "https://pixabay.com/photos/mac-money-keyboard-665613/",
+      "image_url": "https://pixabay.com/get/g19453b2c814aad079e42cd1b8e09d51f3cda95d0f34b703c60e078a1e796a30c897edd2df8f66f446bc6338927898f568014fd694ae001bdfd6d1d4710d3a19d_1280.jpg",
+      "title_rendered": "J' ai donné à une collègue de travail l' herbe qu' elle désirait tant , mais pas comme elle voulait la trouver ."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

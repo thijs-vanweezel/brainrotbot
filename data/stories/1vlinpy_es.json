@@ -1,0 +1,141 @@
+{
+  "id": "e80b68423e8349c9a165b145223acddf",
+  "created_at": 1786786131.6856074,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vlinpy",
+    "url": "https://www.reddit.com/r/confession/comments/1vlinpy/i_gave_a_coworker_the_weed_she_wanted_so_badly/",
+    "author": "/u/No-Ad-3635",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1786457697.0,
+    "nsfw": null,
+    "variant_id": "1vlinpy_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Le di a una compañera de trabajo la hierba que tanto quería , pero no de la manera que ella quería encontrarla .",
+    "raw_body": "Years ago i worked the solo over night shift. the day crew would come in in the morning to relieve me . this one older lady always accused me of smoking weed on my overnight shift.\n she'd listen to the calls i took overnight to try and find proof i was smoking weed . it was weird and annoying to get called into the owners office once a month to explain a weird cough or something i said that \"kinda sounded like i said pot\"\n so one day i brought a very stinky roach with me and went to great lengths to conceal the smell . then when we switched shifts i went into the coat room and stuck the roach in the treads of her shoes and came out and said \"wow one of you reek of weed\" and left .\n she never mentioned weed again\n\n submitted by /u/No-Ad-3635\n [link] [comments]",
+    "cleaned_body": "Le di a una compañera de trabajo la hierba que tanto quería , pero no de la manera que ella quería encontrarla .\n\nHace años trabajaba en solitario durante el turno nocturno. La tripulación del día vendría por la mañana para aliviarme . Una mujer mayor siempre me acusó de fumar marihuana en mi turno nocturno. Ella escuchaba las llamadas que tomaba durante la noche para tratar de encontrar pruebas de que fumaba marihuana . Fue raro y molesto ser llamado a la oficina de los propietarios una vez al mes para explicar una tos extraña o algo así. Así que un día traje una cucaracha muy apestosa conmigo y hice todo lo posible para ocultar el olor . Luego cuando cambiamos de turno fui a la sala de abrigo y metié la cucaracha en las ramas de sus zapatos y salí y dije \"Wow uno de ustedes huele a hierba\" y me fui . Nunca más mencionó la hierba.",
+    "display_body": "Le di a una compañera de trabajo la hierba que tanto quería , pero no de la manera que ella quería encontrarla . Hace años trabajaba en solitario durante el turno nocturno. La tripulación del día vendría por la mañana para aliviarme . Una mujer mayor siempre me acusó de fumar m*rihuana en mi turno nocturno. Ella escuchaba las llamadas que tomaba durante la noche para tratar de encontrar pruebas de que fumaba m*rihuana . Fue raro y molesto ser llamado a la oficina de los propietarios una vez al mes para explicar una tos extraña o algo así. Así que un día traje una cucaracha muy apestosa conmigo y hice todo lo posible para ocultar el olor . Luego cuando cambiamos de turno fui a la sala de abrigo y metié la cucaracha en las ramas de sus zapatos y salí y dije \"Wow uno de ustedes huele a hierba\" y me fui . Nunca más mencionó la hierba.",
+    "word_count": 160,
+    "est_speech_seconds": 64.0,
+    "banned_words_masked": [
+      {
+        "word": "marihuana",
+        "count": 2
+      }
+    ],
+    "title_en": "I gave a co-worker the weed she wanted so badly , just not the way ahe wanted to find it",
+    "body_en": "I gave a co-worker the weed she wanted so badly , just not the way ahe wanted to find it\n\nYears ago i worked the solo over night shift. the day crew would come in in the morning to relieve me . this one older lady always accused me of smoking weed on my overnight shift.\n she'd listen to the calls i took overnight to try and find proof i was smoking weed . it was weird and annoying to get called into the owners office once a month to explain a weird cough or something i said that \"kinda sounded like i said pot\"\n so one day i brought a very stinky roach with me and went to great lengths to conceal the smell . then when we switched shifts i went into the coat room and stuck the roach in the treads of her shoes and came out and said \"wow one of you reek of weed\" and left .\n she never mentioned weed again",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Le di a una compañera de trabajo la hierba que tanto quería , pero no de la manera que ella quería encontrarla ."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vlinpy_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vlinpy_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vlinpy_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/a855a35f-489d-4575-b4f4-4e4070d1bf47.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vlinpy_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 43.38,
+      "sample_rate": 24000,
+      "blurred_words": 2,
+      "intro_sfx_at_sec": 6.082
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vlinpy_es.ass",
+    "subtitles": {
+      "num_words": 160,
+      "num_cues": 43,
+      "num_masked": 2,
+      "banned_intervals": [
+        [
+          14.505,
+          15.045
+        ],
+        [
+          21.147,
+          21.948
+        ]
+      ],
+      "intro_end_sec": 6.082,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/subway-surfers-2.mp4",
+      "source_id": "d740c6b07db0",
+      "start_sec": 341.01,
+      "duration_sec": 43.38,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "title": "Mortals (TOKYO MACHINE & Boom Kitty Remix)",
+      "artist": "Boom Kitty, TOKYO MACHINE, Warriyo",
+      "genre": "Dubstep",
+      "moods": [
+        "dramatic",
+        "energetic",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/Mortals_TMBK",
+      "instrumental_url": "https://ncs.io/track/download/i_a855a35f-489d-4575-b4f4-4e4070d1bf47",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 56.07
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 44.9,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "money",
+      "image_id": 665613,
+      "image_page_url": "https://pixabay.com/photos/mac-money-keyboard-665613/",
+      "image_url": "https://pixabay.com/get/g19453b2c814aad079e42cd1b8e09d51f3cda95d0f34b703c60e078a1e796a30c897edd2df8f66f446bc6338927898f568014fd694ae001bdfd6d1d4710d3a19d_1280.jpg",
+      "title_rendered": "Le di a una compañera de trabajo la hierba que tanto quería , pero no de la manera que ella quería encontrarla ."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

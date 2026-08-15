@@ -1,0 +1,126 @@
+{
+  "id": "97548dd0512e4af081e37d4b78e0f7e4",
+  "created_at": 1786785801.885822,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1vltm9m",
+    "url": "https://www.reddit.com/r/tifu/comments/1vltm9m/tifu_by_leaving_my_apartment_for_10_minutes_while/",
+    "author": "/u/MediocreTask6079",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1786481407.0,
+    "nsfw": null,
+    "variant_id": "1vltm9m_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Hoy me he jodido dejando mi apartamento durante 10 minutos mientras cocinaba.",
+    "raw_body": "Was making dinner last night and realized halfway through that I forgot to buy parmesan.\n The grocery store is literally across the street, so instead of turning everything off like a normal person I lowered the heat, left the sauce simmering, put Ѕtake on autospin and ran over there.\n I was gone maybe 10 minutes.\n Came back to the fire alarm going insane and two of my neighbors standing in the hallway because my apartment was full of smoke.\n Apparently the sauce had boiled over, hit the burner and started smoking like crazy. Nothing actually caught fire thankfully, but the entire place smelled awful and the building manager had to come up because someone called him.\n Now I have a nice warning about leaving cooking unattended and I'm probably gonna have to replace the pan.\n Setting my kitchen on fire over a $5 block of parmesan feels especially stupid.\n The parmesan wasn't even worth it.\n TL;DR left a sauce simmering while I ran across the street, came back to smoke alarms, angry neighbors and my building manager at my door.\n\n submitted by /u/MediocreTask6079\n [link] [comments]",
+    "cleaned_body": "Hoy me he jodido dejando mi apartamento durante 10 minutos mientras cocinaba.\n\nEstaba preparando la cena anoche y me di cuenta a mitad de camino que me olvidé de comprar parmesán. La tienda de comestibles está literalmente al otro lado de la calle, así que en lugar de apagarlo todo como una persona normal bajé el calor, dejé la salsa horneando, puse Ѕtake en auto-spin y corrí hacia allí. Me fui por 10 minutos. Volví a la alarma de incendio volviéndome loco y dos de mis vecinos parados en el pasillo porque mi apartamento estaba lleno de humo. Aparentemente la salsa se había hervido, golpeó el quemador y comenzó a fumar como loco. Afortunadamente, nada se incendió, pero todo el lugar olía mal y el gerente del edificio tuvo que subir porque alguien lo llamó. Ahora tengo una buena advertencia sobre dejar la cocina desatendida y probablemente tendré que reemplazar la sartén. Arder mi cocina por un bloque de parmesán de 5 dólares me parece especialmente estúpido. El parmesán ni siquiera valía la pena.",
+    "display_body": "Hoy me he jodido dejando mi apartamento durante 10 minutos mientras cocinaba. Estaba preparando la cena anoche y me di cuenta a mitad de camino que me olvidé de comprar parmesán. La tienda de comestibles está literalmente al otro lado de la calle, así que en lugar de apagarlo todo como una persona normal bajé el calor, dejé la salsa horneando, puse Ѕtake en auto-spin y corrí hacia allí. Me fui por 10 minutos. Volví a la alarma de incendio volviéndome loco y dos de mis vecinos parados en el pasillo porque mi apartamento estaba lleno de humo. Aparentemente la salsa se había hervido, golpeó el quemador y comenzó a fumar como loco. Afortunadamente, nada se incendió, pero todo el lugar olía mal y el gerente del edificio tuvo que subir porque alguien lo llamó. Ahora tengo una buena advertencia sobre dejar la cocina desatendida y probablemente tendré que reemplazar la sartén. Arder mi cocina por un bloque de parmesán de 5 dólares me parece especialmente estúpido. El parmesán ni siquiera valía la pena.",
+    "word_count": 174,
+    "est_speech_seconds": 69.6,
+    "banned_words_masked": [],
+    "title_en": "TIFU by leaving my apartment for 10 minutes while cooking",
+    "body_en": "Today I fucked up by leaving my apartment for 10 minutes while cooking\n\nWas making dinner last night and realized halfway through that I forgot to buy parmesan.\n The grocery store is literally across the street, so instead of turning everything off like a normal person I lowered the heat, left the sauce simmering, put Ѕtake on autospin and ran over there.\n I was gone maybe 10 minutes.\n Came back to the fire alarm going insane and two of my neighbors standing in the hallway because my apartment was full of smoke.\n Apparently the sauce had boiled over, hit the burner and started smoking like crazy. Nothing actually caught fire thankfully, but the entire place smelled awful and the building manager had to come up because someone called him.\n Now I have a nice warning about leaving cooking unattended and I'm probably gonna have to replace the pan.\n Setting my kitchen on fire over a $5 block of parmesan feels especially stupid.\n The parmesan wasn't even worth it.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Hoy me he jodido dejando mi apartamento durante 10 minutos mientras cocinaba."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vltm9m_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vltm9m_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vltm9m_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/5998b3bf-56b4-47e5-9502-a0dc5f84bb8f.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vltm9m_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 55.08,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.741
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vltm9m_es.ass",
+    "subtitles": {
+      "num_words": 174,
+      "num_cues": 47,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.741,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-4.mp4",
+      "source_id": "f9a1f86fe4a7",
+      "start_sec": 5.69,
+      "duration_sec": 55.08,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "5998b3bf-56b4-47e5-9502-a0dc5f84bb8f",
+      "title": "Muscle Up (feat. Drama B & Ryo)",
+      "artist": "Drama B, SKAN",
+      "genre": "Trap",
+      "moods": [
+        "powerful",
+        "angry",
+        "negative"
+      ],
+      "page_url": "https://ncs.io/MuscleUp",
+      "instrumental_url": "https://ncs.io/track/download/i_5998b3bf-56b4-47e5-9502-a0dc5f84bb8f",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 94.15
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 56.6,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 7438928,
+      "image_page_url": "https://pixabay.com/photos/ferns-foliage-plants-forest-macro-7438928/",
+      "image_url": "https://pixabay.com/get/g83a522e103ceaba10000b38738395ac0ecd046ffc998e83bff03b499e9e97dfe0407a1e84b7b1e3d405217ae32db87f4fa7a87c68cf19ef6cae20a1b46ac5ca3_1280.jpg",
+      "title_rendered": "Hoy me he jodido dejando mi apartamento durante 10 minutos mientras cocinaba."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

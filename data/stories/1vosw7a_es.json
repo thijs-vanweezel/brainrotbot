@@ -1,0 +1,126 @@
+{
+  "id": "b04df98399cb4ddabd15e63bbb423c26",
+  "created_at": 1786786855.9354928,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vosw7a",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vosw7a/duplicate_journals/",
+    "author": "/u/The_Veil_Has_Lifted",
+    "feed_rank": 5,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1786767251.0,
+    "nsfw": null,
+    "variant_id": "1vosw7a_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Diarios duplicados",
+    "raw_body": "Months and months ago now my mom purchased a journal for me that she found on clearance at Michael's craft supply store. The journal has a lavender leather-like cover with bat type wings on the front. She gifted me said journal and I had placed it on my bookshelf. Today I was giving my bookshelf a much needed dusting. I removed each item one by one and dusted it off and replaced it on the bookshelf. I discovered that journal once again on my bookshelf. The only problem? I have been using that journal for the last month to keep notes in and it is currently residing on my nightstand.\n My mom and I only ever go to Michael's together (kind of a special bonding thing between us, I guess) so we both feel like we would have remembered one of us buying the same journal twice. In my memory, she purchased and brought me home this one journal and I never purchased a duplicate myself. Her memory matches my own. I have a photo of both journals side by side. I am stumped.\n\n submitted by /u/The_Veil_Has_Lifted\n [link] [comments]",
+    "cleaned_body": "Diarios duplicados\n\nHace meses y meses mi mamá me compró un diario que encontró en la tienda de artículos de artesanía de Michael. El diario tiene una cubierta de cuero de lavanda con alas de tipo murciélago en el frente. Me regaló ese diario y lo había puesto en mi estante. Hoy estaba limpiando mi estante de libros. Retiré cada artículo uno por uno y lo retiré y lo reemplacé en el estante. Descubrí ese diario una vez más en mi estante. ¿El único problema? He estado usando ese diario durante el último mes para guardar notas y actualmente está residiendo en mi mesa de noche. Mi mamá y yo sólo vamos a Michael's juntos (una especie de vínculo especial entre nosotros, supongo) así que ambos sentimos como si hubiéramos recordado que uno de nosotros había comprado el mismo diario dos veces. En mi memoria, ella compró y me trajo a casa este diario y yo nunca compré un duplicado. Su memoria coincide con la mía. Tengo una foto de ambos diarios uno al lado del otro. Estoy asombrado.",
+    "display_body": "Diarios duplicados Hace meses y meses mi mamá me compró un diario que encontró en la tienda de artículos de artesanía de Michael. El diario tiene una cubierta de cuero de lavanda con alas de tipo murciélago en el frente. Me regaló ese diario y lo había puesto en mi estante. Hoy estaba limpiando mi estante de libros. Retiré cada artículo uno por uno y lo retiré y lo reemplacé en el estante. Descubrí ese diario una vez más en mi estante. ¿El único problema? He estado usando ese diario durante el último mes para guardar notas y actualmente está residiendo en mi mesa de noche. Mi mamá y yo sólo vamos a Michael's juntos (una especie de vínculo especial entre nosotros, supongo) así que ambos sentimos como si hubiéramos recordado que uno de nosotros había comprado el mismo diario dos veces. En mi memoria, ella compró y me trajo a casa este diario y yo nunca compré un duplicado. Su memoria coincide con la mía. Tengo una foto de ambos diarios uno al lado del otro. Estoy asombrado.",
+    "word_count": 179,
+    "est_speech_seconds": 71.6,
+    "banned_words_masked": [],
+    "title_en": "Duplicate Journals",
+    "body_en": "Duplicate Journals\n\nMonths and months ago now my mom purchased a journal for me that she found on clearance at Michael's craft supply store. The journal has a lavender leather-like cover with bat type wings on the front. She gifted me said journal and I had placed it on my bookshelf. Today I was giving my bookshelf a much needed dusting. I removed each item one by one and dusted it off and replaced it on the bookshelf. I discovered that journal once again on my bookshelf. The only problem? I have been using that journal for the last month to keep notes in and it is currently residing on my nightstand.\n My mom and I only ever go to Michael's together (kind of a special bonding thing between us, I guess) so we both feel like we would have remembered one of us buying the same journal twice. In my memory, she purchased and brought me home this one journal and I never purchased a duplicate myself. Her memory matches my own. I have a photo of both journals side by side. I am stumped.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Diarios duplicados"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vosw7a_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vosw7a_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vosw7a_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/0efe5667-67dc-4d74-8d40-3b0319354c75.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vosw7a_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 51.65,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 1.22
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vosw7a_es.ass",
+    "subtitles": {
+      "num_words": 179,
+      "num_cues": 50,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 1.22,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/subway-surfers-2.mp4",
+      "source_id": "d740c6b07db0",
+      "start_sec": 102.42,
+      "duration_sec": 51.65,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "0efe5667-67dc-4d74-8d40-3b0319354c75",
+      "title": "On The Break Of Dawn",
+      "artist": "Nordic Pulse, Kitty Florentine, Kristjan Järvi, Cartoon",
+      "genre": "Dance-Pop",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/OTBOD",
+      "instrumental_url": "https://ncs.io/track/download/i_0efe5667-67dc-4d74-8d40-3b0319354c75",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 108.39
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 53.2,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "sexy woman",
+      "image_id": 7082359,
+      "image_page_url": "https://pixabay.com/photos/woman-beauty-fashion-makeup-7082359/",
+      "image_url": "https://pixabay.com/get/g47c169a76dc811aaafa6eb07d187873ba9ccec4acf56bebf97a78ab09a68b0b6e75a7c95d7c362d26c80d569c13756c35beebc17d31ce8820137eba1c4b36ae2_1280.jpg",
+      "title_rendered": "Diarios duplicados"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
