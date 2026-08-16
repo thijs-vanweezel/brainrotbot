@@ -1,0 +1,141 @@
+{
+  "id": "dcbb773812a84248be3d5b278f33035c",
+  "created_at": 1786873149.1921518,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vo2jyd",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vo2jyd/dumbassmaxxing_has_helped_cure_my_depression/",
+    "author": "/u/New-Elk2781",
+    "feed_rank": 5,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1786699949.0,
+    "nsfw": null,
+    "variant_id": "1vo2jyd_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "El maxilar a un tonto me ha ayudado a curar mi depresión",
+    "raw_body": "The most efficient cure I've found so far is just being a dumb fuck. A while ago, I watched a video about monks practicing head emptying or something like that, where they would achieve inner peace by removing their thoughts. Maybe I took it too literally but I noticed that I could have an empty head for about 2 seconds before my thoughts came back. It took a lot of training but now I can comfortably have 0 thoughts in my head for longer, and I do feel more inner peace without the depressive thoughts\n These days, I live like a dumb fuck. I walk around with my head empty and 0 thoughts running through my brain. I noticed people with the lowest IQs are the happiest, and now, I'm happier. I can't be depressed if there's nothing to think about, and even though I probably look like a drooling fool, I actually can't even be sad about it if I just don't think about it. I'm dumb as fuck\n\n submitted by /u/New-Elk2781\n [link] [comments]",
+    "cleaned_body": "El maxilar a un tonto me ha ayudado a curar mi depresión\n\nLa cura más eficiente que he encontrado hasta ahora es ser un idiota. Hace un tiempo, vi un video sobre monjes practicando el vaciamiento de la cabeza o algo así, donde lograrían paz interior eliminando sus pensamientos. Tal vez lo tomé demasiado literalmente pero me di cuenta de que podía tener una cabeza vacía durante unos 2 segundos antes de que mis pensamientos volvieran. Me tomó mucho entrenamiento, pero ahora puedo tener comodamente 0 pensamientos en mi cabeza por más tiempo, y siento más paz interior sin los pensamientos depresivos Hoy en día, vivo como un idiota. Camino por ahí con la cabeza vacía y los pensamientos corriendo por mi cerebro. Noté que las personas con el coeficiente intelectual más bajo son las más felices, y ahora, estoy más feliz. No puedo estar deprimida si no hay nada en lo que pensar, y aunque probablemente parezca un tonto saliente, en realidad ni siquiera puedo estar triste por ello si no pienso en ello. Soy un tonto como una mierda.",
+    "display_body": "El maxilar a un tonto me ha ayudado a curar mi depresión La cura más eficiente que he encontrado hasta ahora es ser un idiota. Hace un tiempo, vi un video sobre monjes practicando el vaciamiento de la cabeza o algo así, donde lograrían paz interior eliminando sus pensamientos. Tal vez lo tomé demasiado literalmente pero me di cuenta de que podía tener una cabeza vacía durante unos 2 segundos antes de que mis pensamientos volvieran. Me tomó mucho entrenamiento, pero ahora puedo tener comodamente 0 pensamientos en mi cabeza por más tiempo, y siento más paz interior sin los pensamientos depresivos Hoy en día, vivo como un idiota. Camino por ahí con la cabeza vacía y los pensamientos corriendo por mi cerebro. Noté que las personas con el coeficiente intelectual más bajo son las más felices, y ahora, estoy más feliz. No puedo estar deprimida si no hay nada en lo que pensar, y aunque probablemente parezca un tonto saliente, en realidad ni siquiera puedo estar triste por ello si no pienso en ello. Soy un tonto como una m*erda.",
+    "word_count": 181,
+    "est_speech_seconds": 72.4,
+    "banned_words_masked": [
+      {
+        "word": "mierda",
+        "count": 1
+      }
+    ],
+    "title_en": "Dumbass-maxxing has helped cure my depression",
+    "body_en": "Dumbass-maxxing has helped cure my depression\n\nThe most efficient cure I've found so far is just being a dumb fuck. A while ago, I watched a video about monks practicing head emptying or something like that, where they would achieve inner peace by removing their thoughts. Maybe I took it too literally but I noticed that I could have an empty head for about 2 seconds before my thoughts came back. It took a lot of training but now I can comfortably have 0 thoughts in my head for longer, and I do feel more inner peace without the depressive thoughts\n These days, I live like a dumb fuck. I walk around with my head empty and 0 thoughts running through my brain. I noticed people with the lowest IQs are the happiest, and now, I'm happier. I can't be depressed if there's nothing to think about, and even though I probably look like a drooling fool, I actually can't even be sad about it if I just don't think about it. I'm dumb as fuck",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "El maxilar a un tonto me ha ayudado a curar mi depresión"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vo2jyd_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vo2jyd_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vo2jyd_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/dfad6b7f-ef19-4dee-b97d-3a2026b61ed2.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vo2jyd_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 53.67,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 3.441
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vo2jyd_es.ass",
+    "subtitles": {
+      "num_words": 181,
+      "num_cues": 49,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          53.155,
+          53.655
+        ]
+      ],
+      "intro_end_sec": 3.441,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/train-3.mp4",
+      "source_id": "e006252fa427",
+      "start_sec": 430.89,
+      "duration_sec": 53.67,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "dfad6b7f-ef19-4dee-b97d-3a2026b61ed2",
+      "title": "Echo",
+      "artist": "Apollo On The Run",
+      "genre": "Alternative Pop",
+      "moods": [
+        "Dark",
+        "Dreamy",
+        "Epic",
+        "Hopeful",
+        "Mysterious",
+        "Restless",
+        "Suspense"
+      ],
+      "page_url": "https://ncs.io/A_Echo",
+      "instrumental_url": "https://ncs.io/track/download/i_dfad6b7f-ef19-4dee-b97d-3a2026b61ed2",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 24.1
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 55.2,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "sexy woman",
+      "image_id": 3431063,
+      "image_page_url": "https://pixabay.com/photos/sexy-model-fashion-model-woman-3431063/",
+      "image_url": "https://pixabay.com/get/g88ed83c9d3eee8089b94a7f8426915da0de26e1cc6e7a6bfe3fee204abd4dcf33ff2a1fee5459613c2ea76a5d5cd70f61738adbc13ba8bef9184cc6cc84ae2de_1280.jpg",
+      "title_rendered": "El maxilar a un tonto me ha ayudado a curar mi depresión"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "id": "61f04b5b5e3043daaa2a3e474c4bb6c7",
+  "created_at": 1786872601.0333326,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "tifu",
+    "post_id": "1vozman",
+    "url": "https://www.reddit.com/r/tifu/comments/1vozman/tifu_laughing_at_a_deaf_person_in_front_of_a_dead/",
+    "author": "/u/ItCumsAtNoon",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/tifu",
+    "created_utc": 1786790649.0,
+    "nsfw": null,
+    "variant_id": "1vozman_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "TIFU laughing at a Deaf person in front of a dead person",
+    "raw_body": "I was at a funeral a couple of years ago. A distant family member passed away. One of the people who approached the podium to say something in remembrance was Deaf. No one was with him to do an interpretation. I understood some sign language because of an ex gf who knew how to sign, but I was not on the level of being an interpreter. So just like everyone else, I just sat there and watched this guy communicate in silence. I didn't understand 70% of what he was signing, but the 30% I did understand was actually funny. The guy was telling a story about how his coworker, aka the person who passed, accidentally farting in front of one of their VIP clients during a meeting. I laughed out loud, which prompted the lady behind me to say \"don't be rude.\" I looked over my shoulder to make eye contact with this woman, but before I could explain my reaction, she shushed me. I turned back and realised people were staring at me like the funeral was my fault. I had a lot of explaining to do afterwards.\n Anyway, it's an old story that I remembered when I bumped into the Deaf guy recently. He wanted to know if everyone still hated me lol.\n Tl:dr Laughed at a Deaf guy's sign language speech during a funeral and made everyone hate me who didn't understand sign language.\n\n submitted by /u/ItCumsAtNoon\n [link] [comments]",
+    "cleaned_body": "Today I fucked up laughing at a Deaf person in front of a dead person\n\nI was at a funeral a couple of years ago. A distant family member passed away. One of the people who approached the podium to say something in remembrance was Deaf. No one was with him to do an interpretation. I understood some sign language because of an ex gf who knew how to sign, but I was not on the level of being an interpreter. So just like everyone else, I just sat there and watched this guy communicate in silence. I didn't understand 70% of what he was signing, but the 30% I did understand was actually funny. The guy was telling a story about how his coworker, aka the person who passed, accidentally farting in front of one of their VIP clients during a meeting. I laughed out loud, which prompted the lady behind me to say \"don't be rude.\" I looked over my shoulder to make eye contact with this woman, but before I could explain my reaction, she shushed me. I turned back and realised people were staring at me like the funeral was my fault. I had a lot of explaining to do afterwards.\n Anyway, it's an old story that I remembered when I bumped into the Deaf guy recently. He wanted to know if everyone still hated me lol.\n Tl:dr Laughed at a Deaf guy's sign language speech during a funeral and made everyone hate me who didn't understand sign language.",
+    "display_body": "Today I f*cked up laughing at a Deaf person in front of a d*ad person I was at a funeral a couple of years ago. A distant family member passed away. One of the people who approached the podium to say something in remembrance was Deaf. No one was with him to do an interpretation. I understood some sign language because of an ex gf who knew how to sign, but I was not on the level of being an interpreter. So just like everyone else, I just sat there and watched this guy communicate in silence. I didn't understand 70% of what he was signing, but the 30% I did understand was actually funny. The guy was telling a story about how his coworker, aka the person who passed, accidentally farting in front of one of their VIP clients during a meeting. I laughed out loud, which prompted the lady behind me to say \"don't be rude.\" I looked over my shoulder to make eye contact with this woman, but before I could explain my reaction, she shushed me. I turned back and realised people were staring at me like the funeral was my fault. I had a lot of explaining to do afterwards. Anyway, it's an old story that I remembered when I bumped into the Deaf guy recently. He wanted to know if everyone still hated me lol. Tl:dr Laughed at a Deaf guy's sign language speech during a funeral and made everyone hate me who didn't understand sign language.",
+    "word_count": 253,
+    "est_speech_seconds": 101.2,
+    "banned_words_masked": [
+      {
+        "word": "fucked",
+        "count": 1
+      },
+      {
+        "word": "dead",
+        "count": 1
+      }
+    ],
+    "title_en": "TIFU laughing at a Deaf person in front of a dead person",
+    "body_en": "Today I fucked up laughing at a Deaf person in front of a dead person\n\nI was at a funeral a couple of years ago. A distant family member passed away. One of the people who approached the podium to say something in remembrance was Deaf. No one was with him to do an interpretation. I understood some sign language because of an ex gf who knew how to sign, but I was not on the level of being an interpreter. So just like everyone else, I just sat there and watched this guy communicate in silence. I didn't understand 70% of what he was signing, but the 30% I did understand was actually funny. The guy was telling a story about how his coworker, aka the person who passed, accidentally farting in front of one of their VIP clients during a meeting. I laughed out loud, which prompted the lady behind me to say \"don't be rude.\" I looked over my shoulder to make eye contact with this woman, but before I could explain my reaction, she shushed me. I turned back and realised people were staring at me like the funeral was my fault. I had a lot of explaining to do afterwards.\n Anyway, it's an old story that I remembered when I bumped into the Deaf guy recently. He wanted to know if everyone still hated me lol.\n Tl:dr Laughed at a Deaf guy's sign language speech during a funeral and made everyone hate me who didn't understand sign language.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "TIFU laughing at a Deaf person in front of a d*ad person"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vozman_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vozman_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vozman_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/3155507d-ca4b-4239-9f64-88f6f7345e79.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vozman_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 65.67,
+      "sample_rate": 24000,
+      "blurred_words": 2,
+      "intro_sfx_at_sec": 4.341
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vozman_en.ass",
+    "subtitles": {
+      "num_words": 253,
+      "num_cues": 69,
+      "num_masked": 2,
+      "banned_intervals": [
+        [
+          0.74,
+          0.98
+        ],
+        [
+          2.981,
+          3.201
+        ]
+      ],
+      "intro_end_sec": 4.341,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/food-1.mp4",
+      "source_id": "e26487964458",
+      "start_sec": 26.63,
+      "duration_sec": 65.67,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "title": "akina",
+      "artist": "Ailow",
+      "genre": "Dubstep",
+      "moods": [
+        "Angry",
+        "Dark",
+        "dramatic"
+      ],
+      "page_url": "https://ncs.io/akina",
+      "instrumental_url": "https://ncs.io/track/download/i_3155507d-ca4b-4239-9f64-88f6f7345e79",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 63.97
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 67.2,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 5234306,
+      "image_page_url": "https://pixabay.com/photos/beach-sea-ocean-shore-waves-5234306/",
+      "image_url": "https://pixabay.com/get/g3f0a50eba71eccdfa2b1ea6a1c59e94186cc1702378aaff4aadfdcd034dc39dc967a2182284314bf1507f9db709579bb6b90fcbc411fdf1bb7390b86899bcdbb_1280.jpg",
+      "title_rendered": "TIFU laughing at a Deaf person in front of a d*ad person"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

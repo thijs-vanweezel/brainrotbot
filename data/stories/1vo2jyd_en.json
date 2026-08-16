@@ -1,0 +1,149 @@
+{
+  "id": "6834de0163b24a958974f822b4ee433d",
+  "created_at": 1786873002.8865104,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vo2jyd",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vo2jyd/dumbassmaxxing_has_helped_cure_my_depression/",
+    "author": "/u/New-Elk2781",
+    "feed_rank": 5,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1786699949.0,
+    "nsfw": null,
+    "variant_id": "1vo2jyd_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Dumbass-maxxing has helped cure my depression",
+    "raw_body": "The most efficient cure I've found so far is just being a dumb fuck. A while ago, I watched a video about monks practicing head emptying or something like that, where they would achieve inner peace by removing their thoughts. Maybe I took it too literally but I noticed that I could have an empty head for about 2 seconds before my thoughts came back. It took a lot of training but now I can comfortably have 0 thoughts in my head for longer, and I do feel more inner peace without the depressive thoughts\n These days, I live like a dumb fuck. I walk around with my head empty and 0 thoughts running through my brain. I noticed people with the lowest IQs are the happiest, and now, I'm happier. I can't be depressed if there's nothing to think about, and even though I probably look like a drooling fool, I actually can't even be sad about it if I just don't think about it. I'm dumb as fuck\n\n submitted by /u/New-Elk2781\n [link] [comments]",
+    "cleaned_body": "Dumbass-maxxing has helped cure my depression\n\nThe most efficient cure I've found so far is just being a dumb fuck. A while ago, I watched a video about monks practicing head emptying or something like that, where they would achieve inner peace by removing their thoughts. Maybe I took it too literally but I noticed that I could have an empty head for about 2 seconds before my thoughts came back. It took a lot of training but now I can comfortably have 0 thoughts in my head for longer, and I do feel more inner peace without the depressive thoughts\n These days, I live like a dumb fuck. I walk around with my head empty and 0 thoughts running through my brain. I noticed people with the lowest IQs are the happiest, and now, I'm happier. I can't be depressed if there's nothing to think about, and even though I probably look like a drooling fool, I actually can't even be sad about it if I just don't think about it. I'm dumb as fuck",
+    "display_body": "Dumbass-maxxing has helped cure my depression The most efficient cure I've found so far is just being a dumb f*ck. A while ago, I watched a video about monks practicing head emptying or something like that, where they would achieve inner peace by removing their thoughts. Maybe I took it too literally but I noticed that I could have an empty head for about 2 seconds before my thoughts came back. It took a lot of training but now I can comfortably have 0 thoughts in my head for longer, and I do feel more inner peace without the depressive thoughts These days, I live like a dumb f*ck. I walk around with my head empty and 0 thoughts running through my brain. I noticed people with the lowest IQs are the happiest, and now, I'm happier. I can't be depressed if there's nothing to think about, and even though I probably look like a drooling fool, I actually can't even be sad about it if I just don't think about it. I'm dumb as f*ck",
+    "word_count": 176,
+    "est_speech_seconds": 70.4,
+    "banned_words_masked": [
+      {
+        "word": "fuck",
+        "count": 3
+      }
+    ],
+    "title_en": "Dumbass-maxxing has helped cure my depression",
+    "body_en": "Dumbass-maxxing has helped cure my depression\n\nThe most efficient cure I've found so far is just being a dumb fuck. A while ago, I watched a video about monks practicing head emptying or something like that, where they would achieve inner peace by removing their thoughts. Maybe I took it too literally but I noticed that I could have an empty head for about 2 seconds before my thoughts came back. It took a lot of training but now I can comfortably have 0 thoughts in my head for longer, and I do feel more inner peace without the depressive thoughts\n These days, I live like a dumb fuck. I walk around with my head empty and 0 thoughts running through my brain. I noticed people with the lowest IQs are the happiest, and now, I'm happier. I can't be depressed if there's nothing to think about, and even though I probably look like a drooling fool, I actually can't even be sad about it if I just don't think about it. I'm dumb as fuck",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Dumbass-maxxing has helped cure my depression"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vo2jyd_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vo2jyd_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vo2jyd_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/dfad6b7f-ef19-4dee-b97d-3a2026b61ed2.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vo2jyd_en.png",
+    "audio": {
+      "voice": "am_fenrir",
+      "lang_code": "a",
+      "duration_sec": 39.55,
+      "sample_rate": 24000,
+      "blurred_words": 3,
+      "intro_sfx_at_sec": 2.581
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vo2jyd_en.ass",
+    "subtitles": {
+      "num_words": 176,
+      "num_cues": 47,
+      "num_masked": 3,
+      "banned_intervals": [
+        [
+          4.801,
+          5.381
+        ],
+        [
+          23.766,
+          24.346
+        ],
+        [
+          38.83,
+          39.53
+        ]
+      ],
+      "intro_end_sec": 2.581,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/train-3.mp4",
+      "source_id": "e006252fa427",
+      "start_sec": 36.17,
+      "duration_sec": 39.55,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "dfad6b7f-ef19-4dee-b97d-3a2026b61ed2",
+      "title": "Echo",
+      "artist": "Apollo On The Run",
+      "genre": "Alternative Pop",
+      "moods": [
+        "Dark",
+        "Dreamy",
+        "Epic",
+        "Hopeful",
+        "Mysterious",
+        "Restless",
+        "Suspense"
+      ],
+      "page_url": "https://ncs.io/A_Echo",
+      "instrumental_url": "https://ncs.io/track/download/i_dfad6b7f-ef19-4dee-b97d-3a2026b61ed2",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 115.85
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 41.1,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "sexy woman",
+      "image_id": 3431063,
+      "image_page_url": "https://pixabay.com/photos/sexy-model-fashion-model-woman-3431063/",
+      "image_url": "https://pixabay.com/get/g88ed83c9d3eee8089b94a7f8426915da0de26e1cc6e7a6bfe3fee204abd4dcf33ff2a1fee5459613c2ea76a5d5cd70f61738adbc13ba8bef9184cc6cc84ae2de_1280.jpg",
+      "title_rendered": "Dumbass-maxxing has helped cure my depression"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

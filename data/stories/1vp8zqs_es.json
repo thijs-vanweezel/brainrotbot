@@ -1,0 +1,127 @@
+{
+  "id": "38e239a2e836472899268f6ac874718e",
+  "created_at": 1786872510.474513,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "adultery",
+    "post_id": "1vp8zqs",
+    "url": "https://www.reddit.com/r/adultery/comments/1vp8zqs/i_did_it/",
+    "author": "/u/FinallyContentChoice",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/adultery",
+    "created_utc": 1786815500.0,
+    "nsfw": null,
+    "variant_id": "1vp8zqs_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Lo hice...",
+    "raw_body": "I met him last night. Dinner went well, we went to a hotel for a few hours- and regardless on how good or bad he was, it felt I was finally getting what I needed. I just lay there after... content. Maybe a bit confused why? It was overwhelming, and so good. I'm in my late 40's. I still look amazing, and I've felt like I've had to make myself mediocre to make my SO and family not 'feel dumb' or... I don't know... I just had to be smaller. Don't know where this will lead. Honestly ok if it doesn't go anywhere with this guy- but I know it's out there, and unless my SO decides he can fill that part of me, we will be fine in our life, and I'll be fine in the side life I'll build. Just needed to tell someone- and as we know, it's not something we can openly discuss.\n\n submitted by /u/FinallyContentChoice\n [link] [comments]",
+    "cleaned_body": "Lo hice...\n\nLo conocí anoche. La cena fue bien, fuimos a un hotel por unas horas... y sin importar lo bueno o malo que era, sentía que finalmente estaba consiguiendo lo que necesitaba. Sólo estaba acostado allí después de... contenido. Quizás un poco confundido por qué? Fue abrumador, y tan bueno. Tengo más de 40 años. Todavía me veo increíble, y he sentido que tuve que hacerme mediocre para que mi pareja y mi familia no se sientan estúpidos o... No lo sé. Sólo tenía que ser más pequeño. No sé a dónde nos llevará esto. Honestamente, está bien si no va a ninguna parte con este tipo pero sé que está ahí afuera, y a menos que mi pareja decida que puede llenar esa parte de mí, estaremos bien en nuestra vida, y estaré bien en la vida secundaria que construiré. Sólo necesitaba decirle a alguien y como sabemos, no es algo que podamos discutir abiertamente.",
+    "display_body": "Lo hice... Lo conocí anoche. La cena fue bien, fuimos a un hotel por unas horas... y sin importar lo bueno o malo que era, sentía que finalmente estaba consiguiendo lo que necesitaba. Sólo estaba acostado allí después de... contenido. Quizás un poco confundido por qué? Fue abrumador, y tan bueno. Tengo más de 40 años. Todavía me veo increíble, y he sentido que tuve que hacerme mediocre para que mi pareja y mi familia no se sientan estúpidos o... No lo sé. Sólo tenía que ser más pequeño. No sé a dónde nos llevará esto. Honestamente, está bien si no va a ninguna parte con este tipo pero sé que está ahí afuera, y a menos que mi pareja decida que puede llenar esa parte de mí, estaremos bien en nuestra vida, y estaré bien en la vida secundaria que construiré. Sólo necesitaba decirle a alguien y como sabemos, no es algo que podamos discutir abiertamente.",
+    "word_count": 157,
+    "est_speech_seconds": 62.8,
+    "banned_words_masked": [],
+    "title_en": "I did it…",
+    "body_en": "I did it...\n\nI met him last night. Dinner went well, we went to a hotel for a few hours- and regardless on how good or bad he was, it felt I was finally getting what I needed. I just lay there after... content. Maybe a bit confused why? It was overwhelming, and so good. I'm in my late 40's. I still look amazing, and I've felt like I've had to make myself mediocre to make my significant other and family not 'feel dumb' or... I don't know... I just had to be smaller. Don't know where this will lead. Honestly ok if it doesn't go anywhere with this guy- but I know it's out there, and unless my significant other decides he can fill that part of me, we will be fine in our life, and I'll be fine in the side life I'll build. Just needed to tell someone- and as we know, it's not something we can openly discuss.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Lo hice..."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vp8zqs_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vp8zqs_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vp8zqs_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/e107e1b8-d869-4742-a649-8a18a5027c2e.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vp8zqs_es.png",
+    "audio": {
+      "voice": "ef_dora",
+      "lang_code": "e",
+      "duration_sec": 44.55,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 0.92
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vp8zqs_es.ass",
+    "subtitles": {
+      "num_words": 157,
+      "num_cues": 46,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 0.92,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-6.mp4",
+      "source_id": "dd66164bb1ad",
+      "start_sec": 34.37,
+      "duration_sec": 44.55,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "e107e1b8-d869-4742-a649-8a18a5027c2e",
+      "title": "On and On",
+      "artist": "Sayfro, BAYZY",
+      "genre": "House",
+      "moods": [
+        "Epic",
+        "Euphoric",
+        "Happy",
+        "Restless"
+      ],
+      "page_url": "https://ncs.io/BS_OnandOn",
+      "instrumental_url": "https://ncs.io/track/download/i_e107e1b8-d869-4742-a649-8a18a5027c2e",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 37.46
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 46.1,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "sushi",
+      "image_id": 2436928,
+      "image_page_url": "https://pixabay.com/photos/sushi-vegan-fresh-asia-asian-2436928/",
+      "image_url": "https://pixabay.com/get/g03df47bddc483e7328ff4f48b39007681cb0ff74e300de56b62ef9c873ff32296042c43698cfab595df9f84e81bd8bdcc4ede82681e377f0affe95c9fe4ef079_1280.jpg",
+      "title_rendered": "Lo hice..."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
