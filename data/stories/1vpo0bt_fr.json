@@ -1,0 +1,125 @@
+{
+  "id": "9748271b79174e4bb26a0c7b5f79f203",
+  "created_at": 1786960549.759302,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vpo0bt",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vpo0bt/told_my_best_friend_im_dying_and_she_just_asked/",
+    "author": "/u/PuzzleQueen408",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1786856578.0,
+    "nsfw": null,
+    "variant_id": "1vpo0bt_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "J'ai dit à ma meilleure amie que je mourrais et elle m'a demandé mes sacs à main.",
+    "raw_body": "We were best friends for over 20 years and I told her that I have a terminal illness. I thought she would make plans to see me, but she just started calling dibs on various belongings, mostly nicer gifts from my husband. I was already planning on letting her pick out some of my things that my sisters don't want, but now I don't want to leave anything behind for her. Maybe she's in denial and she has a weird way of coping, but it hurts feeling like our friendship is meaningless to her.\n\n submitted by /u/PuzzleQueen408\n [link] [comments]",
+    "cleaned_body": "J'ai dit à ma meilleure amie que je mourrais et elle m'a demandé mes sacs à main.\n\nNous étions meilleures amies depuis plus de 20 ans et je lui ai dit que j'avais une maladie mortelle. Je pensais qu'elle ferait des plans pour me voir, mais elle a commencé à critiquer divers objets, principalement de plus beaux cadeaux de mon mari. J'avais déjà l'intention de la laisser choisir certaines de mes choses que mes sœurs ne veulent pas, mais maintenant je ne veux pas lui laisser quoi que ce soit. Peut-être qu'elle est dans le déni et qu'elle a une façon étrange de faire face, mais ça fait mal de se sentir comme si notre amitié n'avait aucun sens pour elle.",
+    "display_body": "J'ai dit à ma meilleure amie que je mourrais et elle m'a demandé mes sacs à main. Nous étions meilleures amies depuis plus de 20 ans et je lui ai dit que j'avais une maladie mortelle. Je pensais qu'elle ferait des plans pour me voir, mais elle a commencé à critiquer divers objets, principalement de plus beaux cadeaux de mon mari. J'avais déjà l'intention de la laisser choisir certaines de mes choses que mes sœurs ne veulent pas, mais maintenant je ne veux pas lui laisser quoi que ce soit. Peut-être qu'elle est dans le déni et qu'elle a une façon étrange de faire face, mais ça fait mal de se sentir comme si notre amitié n'avait aucun sens pour elle.",
+    "word_count": 121,
+    "est_speech_seconds": 48.4,
+    "banned_words_masked": [],
+    "title_en": "Told my best friend I’m dying and she just asked for my handbags",
+    "body_en": "Told my best friend I'm dying and she just asked for my handbags\n\nWe were best friends for over 20 years and I told her that I have a terminal illness. I thought she would make plans to see me, but she just started calling dibs on various belongings, mostly nicer gifts from my husband. I was already planning on letting her pick out some of my things that my sisters don't want, but now I don't want to leave anything behind for her. Maybe she's in denial and she has a weird way of coping, but it hurts feeling like our friendship is meaningless to her.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "J'ai dit à ma meilleure amie que je mourrais et elle m'a demandé mes sacs à main."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vpo0bt_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vpo0bt_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vpo0bt_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/35885353-1fc5-470b-9a72-7d3dde06d7d4.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vpo0bt_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 31.6,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.523
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vpo0bt_fr.ass",
+    "subtitles": {
+      "num_words": 121,
+      "num_cues": 33,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.523,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-6.mp4",
+      "source_id": "dd66164bb1ad",
+      "start_sec": 117.55,
+      "duration_sec": 31.6,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "35885353-1fc5-470b-9a72-7d3dde06d7d4",
+      "title": "Alive",
+      "artist": "Tamlin",
+      "genre": "Disco",
+      "moods": [
+        "exciting",
+        "positive"
+      ],
+      "page_url": "https://ncs.io/T_Alive",
+      "instrumental_url": "https://ncs.io/track/download/i_35885353-1fc5-470b-9a72-7d3dde06d7d4",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 82.17
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 33.13,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "luxury",
+      "search_term": "luxury watch",
+      "image_id": 2571416,
+      "image_page_url": "https://pixabay.com/photos/accessories-purse-bag-watch-gadget-2571416/",
+      "image_url": "https://pixabay.com/get/gb91949ecb2b153892e75a542430d8a5b784369e5fd222d5419f2f8d67fd2356b0c608205bab969e999af7bba538f3717d5a8c3f23659124ec12fd8716a4674ac_1280.jpg",
+      "title_rendered": "J'ai dit à ma meilleure amie que je mourrais et elle m'a demandé mes sacs à main."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "id": "4ed54787724548278544e59a09ed02b6",
+  "created_at": 1786958904.2473416,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "stories",
+    "post_id": "1vpu4g3",
+    "url": "https://www.reddit.com/r/stories/comments/1vpu4g3/the_time_i_watched_an_artist_refuse_to_do/",
+    "author": "/u/No-Ad-3635",
+    "feed_rank": 1,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/stories",
+    "created_utc": 1786878084.0,
+    "nsfw": null,
+    "variant_id": "1vpu4g3_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "The time I watched an artist refuse to do someones tattoo.",
+    "raw_body": "A friend of a friend owned a tattoo shop and we would occasionally go hangout there. (Shout out to Shawn at Syk Liquid (?) )\n one day while we were smoking cigs outside, 2 people pull up on a bike . the man was shirtless and the woman had a low cut tank top .\n they approach and the owner and him start talking . owner ends up asking what he wanted done and he says \"i want my name right here - bitch pull your tit out\" and woman proceeds to expose her large breast on the street .\n Owner tells them to \"get the fuck out of here with that shit \"\n An argument insues where he tell us that it's his woman and he can have whatever he wants tattooed on her body .\n she never said a word . just quietly looking grateful that he refused to it.\n this was 17 years ago now (2009) and she still randomly crosses my mind . I hope she's ok .\n\n submitted by /u/No-Ad-3635\n [link] [comments]",
+    "cleaned_body": "The time I watched an artist refuse to do someones tattoo.\n\nA friend of a friend owned a tattoo shop and we would occasionally go hangout there. (Shout out to Shawn at Syk Liquid (?) )\n one day while we were smoking cigs outside, 2 people pull up on a bike . the man was shirtless and the woman had a low cut tank top .\n they approach and the owner and him start talking . owner ends up asking what he wanted done and he says \"i want my name right here - bitch pull your tit out\" and woman proceeds to expose her large breast on the street .\n Owner tells them to \"get the fuck out of here with that shit \"\n An argument insues where he tell us that it's his woman and he can have whatever he wants tattooed on her body .\n she never said a word . just quietly looking grateful that he refused to it.\n this was 17 years ago now (2009) and she still randomly crosses my mind . I hope she's ok .",
+    "display_body": "The time I watched an artist refuse to do someones tattoo. A friend of a friend owned a tattoo shop and we would occasionally go hangout there. (Shout out to Shawn at Syk Liquid (?) ) one day while we were smoking cigs outside, 2 people pull up on a bike . the man was shirtless and the woman had a low cut tank top . they approach and the owner and him start talking . owner ends up asking what he wanted done and he says \"i want my name right here - b*tch pull your t*t out\" and woman proceeds to expose her large breast on the street . Owner tells them to \"get the f*ck out of here with that sh*t \" An argument insues where he tell us that it's his woman and he can have whatever he wants tattooed on her body . she never said a word . just quietly looking grateful that he refused to it. this was 17 years ago now (2009) and she still randomly crosses my mind . I hope she's ok .",
+    "word_count": 183,
+    "est_speech_seconds": 73.2,
+    "banned_words_masked": [
+      {
+        "word": "bitch",
+        "count": 1
+      },
+      {
+        "word": "tit",
+        "count": 1
+      },
+      {
+        "word": "fuck",
+        "count": 1
+      },
+      {
+        "word": "shit",
+        "count": 1
+      }
+    ],
+    "title_en": "The time I watched an artist refuse to do someones tattoo.",
+    "body_en": "The time I watched an artist refuse to do someones tattoo.\n\nA friend of a friend owned a tattoo shop and we would occasionally go hangout there. (Shout out to Shawn at Syk Liquid (?) )\n one day while we were smoking cigs outside, 2 people pull up on a bike . the man was shirtless and the woman had a low cut tank top .\n they approach and the owner and him start talking . owner ends up asking what he wanted done and he says \"i want my name right here - bitch pull your tit out\" and woman proceeds to expose her large breast on the street .\n Owner tells them to \"get the fuck out of here with that shit \"\n An argument insues where he tell us that it's his woman and he can have whatever he wants tattooed on her body .\n she never said a word . just quietly looking grateful that he refused to it.\n this was 17 years ago now (2009) and she still randomly crosses my mind . I hope she's ok .",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "The time I watched an artist refuse to do someones tattoo."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vpu4g3_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vpu4g3_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vpu4g3_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/0f42c347-dce4-4173-9d61-4ec44d8a5c51.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vpu4g3_en.png",
+    "audio": {
+      "voice": "af_heart",
+      "lang_code": "a",
+      "duration_sec": 49.98,
+      "sample_rate": 24000,
+      "blurred_words": 4,
+      "intro_sfx_at_sec": 3.781
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vpu4g3_en.ass",
+    "subtitles": {
+      "num_words": 183,
+      "num_cues": 51,
+      "num_masked": 4,
+      "banned_intervals": [
+        [
+          25.188,
+          25.448
+        ],
+        [
+          25.788,
+          25.968
+        ],
+        [
+          31.329,
+          31.589
+        ],
+        [
+          32.37,
+          33.33
+        ]
+      ],
+      "intro_end_sec": 3.781,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/minecraft-parkour-3.mp4",
+      "source_id": "84e40948d71d",
+      "start_sec": 177.83,
+      "duration_sec": 49.98,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "title": "Your Poison",
+      "artist": "ROY KNOX",
+      "genre": "Dubstep",
+      "moods": [
+        "Epic",
+        "Euphoric",
+        "Glamorous",
+        "Heavy",
+        "Restless",
+        "Hopeful"
+      ],
+      "page_url": "https://ncs.io/YourPoison",
+      "instrumental_url": "https://ncs.io/track/download/i_0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 76.66
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 51.5,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "beach sunset",
+      "image_id": 5515141,
+      "image_page_url": "https://pixabay.com/photos/couple-engagement-sunset-wedding-5515141/",
+      "image_url": "https://pixabay.com/get/g3c9d56b55180994e7e9b4fcee0ebefe29411fcda38b90c033871d5ee209722eb6eaa643a2c6103accdfc3440a058d438c99c91c48306667a0eb6276d5ab5bebc_1280.jpg",
+      "title_rendered": "The time I watched an artist refuse to do someones tattoo."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
