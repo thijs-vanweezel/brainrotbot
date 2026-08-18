@@ -1,0 +1,126 @@
+{
+  "id": "894c4e1ef9cd44299607dc258a1ab9bd",
+  "created_at": 1787045820.6379027,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vq85r4",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vq85r4/my_dad_read_my_mind/",
+    "author": "/u/Lopsided_Fold4813",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1786913184.0,
+    "nsfw": null,
+    "variant_id": "1vq85r4_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Mon père me lisait les pensées.",
+    "raw_body": "The story occured yesterday, it is just related to something that happened when I was younger. Again, the story occured yesterday.\n We were walking at night as he was returning me from a friend's house. We were talking about anything and nothing, and some kid walks past us with his dad. All of a sudden I got these flashbacks from two kids I used to play tennis with when I was 10 at some park. And I was like \"hey dad you know who I just thought about\" and he was like \"name and name\"\n This is incredible odd to me. We had only played like three times and then we lost touch. Mind you I haven't seen them for six years? Like I thought that was insane. I still can't believe this happened gng.\n glitchinthematrix\n\n submitted by /u/Lopsided_Fold4813\n [link] [comments]",
+    "cleaned_body": "Mon père me lisait les pensées.\n\nL'histoire s'est produite hier, elle est juste liée à quelque chose qui s'est passé quand j'étais plus jeune. Encore une fois, l'histoire est arrivée hier. On marchait la nuit alors qu'il me ramenait de la maison d'un ami. On parlait de n'importe quoi et de rien, et un gamin nous passe avec son père. Tout à coup, j'ai eu ces flashbacks de deux enfants avec qui je jouais au tennis quand j'avais 10 ans dans un parc. Et j'ai dit \" papa tu sais à qui je pensais \" et il a dit \" nom et nom \" C'est incroyablement bizarre pour moi. On n'avait joué qu'à trois reprises et on a perdu le contact. Je ne les ai pas vus depuis six ans. Comme si j'avais pensé que c'était fou. Je n'arrive toujours pas à croire que ça soit arrivé. la glitchinthematrix",
+    "display_body": "Mon père me lisait les pensées. L'histoire s'est produite hier, elle est juste liée à quelque chose qui s'est passé quand j'étais plus jeune. Encore une fois, l'histoire est arrivée hier. On marchait la nuit alors qu'il me ramenait de la maison d'un ami. On parlait de n'importe quoi et de rien, et un gamin nous passe avec son père. Tout à coup, j'ai eu ces flashbacks de deux enfants avec qui je jouais au tennis quand j'avais 10 ans dans un parc. Et j'ai dit \" papa tu sais à qui je pensais \" et il a dit \" nom et nom \" C'est incroyablement bizarre pour moi. On n'avait joué qu'à trois reprises et on a perdu le contact. Je ne les ai pas vus depuis six ans. Comme si j'avais pensé que c'était fou. Je n'arrive toujours pas à croire que ça soit arrivé. la glitchinthematrix",
+    "word_count": 149,
+    "est_speech_seconds": 59.6,
+    "banned_words_masked": [],
+    "title_en": "My dad read my mind",
+    "body_en": "My dad read my mind\n\nThe story occured yesterday, it is just related to something that happened when I was younger. Again, the story occured yesterday.\n We were walking at night as he was returning me from a friend's house. We were talking about anything and nothing, and some kid walks past us with his dad. All of a sudden I got these flashbacks from two kids I used to play tennis with when I was 10 at some park. And I was like \"hey dad you know who I just thought about\" and he was like \"name and name\"\n This is incredible odd to me. We had only played like three times and then we lost touch. Mind you I haven't seen them for six years? Like I thought that was insane. I still can't believe this happened gng.\n glitchinthematrix",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Mon père me lisait les pensées."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vq85r4_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vq85r4_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vq85r4_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/df9f697c-2fd3-44bc-bb83-8a46f883d280.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vq85r4_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 36.7,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 2.281
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vq85r4_fr.ass",
+    "subtitles": {
+      "num_words": 149,
+      "num_cues": 42,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 2.281,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/minecraft-parkour-3.mp4",
+      "source_id": "84e40948d71d",
+      "start_sec": 16.49,
+      "duration_sec": 36.7,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "df9f697c-2fd3-44bc-bb83-8a46f883d280",
+      "title": "All We've Ever Known (ft. Fred V & Immy Odon)",
+      "artist": "Cartoon, Fred V, Immy Odon",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "majestic",
+        "exciting"
+      ],
+      "page_url": "https://ncs.io/allweveeverknown",
+      "instrumental_url": "https://ncs.io/track/download/i_df9f697c-2fd3-44bc-bb83-8a46f883d280",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 78.3
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 38.23,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "make-up woman",
+      "image_id": 2181973,
+      "image_page_url": "https://pixabay.com/photos/eye-colour-green-face-bright-2181973/",
+      "image_url": "https://pixabay.com/get/gdc71d2c806bce90a59acc2a0027541ece7882527413d1254f56e834733d1ff6f9b43924abc5e38a8ad496276f82452ab6b32cd114cba86fdb3393d1655b507bb_1280.jpg",
+      "title_rendered": "Mon père me lisait les pensées."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
