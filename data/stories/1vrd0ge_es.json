@@ -1,0 +1,141 @@
+{
+  "id": "a03a13a56df74b43bd4afa250aabf00a",
+  "created_at": 1787132081.393343,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vrd0ge",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vrd0ge/i_flashed_a_friend_for_a_cigarette/",
+    "author": "/u/koussi-koussa",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1787021544.0,
+    "nsfw": null,
+    "variant_id": "1vrd0ge_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Le pedí a un amigo un cigarrillo.",
+    "raw_body": "So, guy friend and I were at a small party with friends, and at some points we both went out to get some fresh air. We were both just standing outside talking shit, and he pulled out a cigarette. I don't really smoke but I kinda wanted to take a hit of it, but he was being annoying and wouldn't let me. Some shit about not corrupting me. Also I kinda already owed him for something so he held that over my head.\n I was in a playful mood and I just jumped to the nuclear option. I pulled my shirt up for a few seconds, then back down, held out my hand and smiled. Worked like a charm, we laughed, he handed me the cigarette and we shared it until we went back inside.\n Honestly I've pulled that before, even with him, so on paper it wasn't so crazy, but I kinda have a weird feeling about it looking back. I'd never really done it to get something you know? And for something as dumb as a cigarette. I don't feel gross necessarily, just.. weird\n\n submitted by /u/koussi-koussa\n [link] [comments]",
+    "cleaned_body": "Le pedí a un amigo un cigarrillo.\n\nMi amigo y yo estábamos en una pequeña fiesta con amigos, y en algún momento ambos salimos a tomar un poco de aire fresco. Ambos estábamos hablando mierda afuera, y él sacó un cigarrillo. No fumo en realidad pero quería tomar un golpe de él, pero él estaba siendo molesto y no me dejaba. Qué mierda de no corromperme. Además, ya le debía algo así que me lo dejó en la cabeza. Estaba de humor juguetón y acabo de saltar a la opción nuclear. Me levanté la camisa por unos segundos, luego me bajé, le tendí la mano y sonreí. Funcionó como un encanto, nos reímos, me entregó el cigarrillo y lo compartimos hasta que volvimos adentro. Honestamente, lo he hecho antes, incluso con él, así que en el papel no fue tan loco, pero tengo un presentimiento raro al mirar hacia atrás. Nunca lo había hecho para conseguir algo, ¿sabes? Y por algo tan estúpido como un cigarrillo. No me siento necesariamente desagradable, sólo... extraño",
+    "display_body": "Le pedí a un amigo un cigarrillo. Mi amigo y yo estábamos en una pequeña fiesta con amigos, y en algún momento ambos salimos a tomar un poco de aire fresco. Ambos estábamos hablando m*erda afuera, y él sacó un cigarrillo. No fumo en realidad pero quería tomar un golpe de él, pero él estaba siendo molesto y no me dejaba. Qué m*erda de no corromperme. Además, ya le debía algo así que me lo dejó en la cabeza. Estaba de humor juguetón y acabo de saltar a la opción nuclear. Me levanté la camisa por unos segundos, luego me bajé, le tendí la mano y sonreí. Funcionó como un encanto, nos reímos, me entregó el cigarrillo y lo compartimos hasta que volvimos adentro. Honestamente, lo he hecho antes, incluso con él, así que en el papel no fue tan loco, pero tengo un presentimiento raro al mirar hacia atrás. Nunca lo había hecho para conseguir algo, ¿sabes? Y por algo tan estúpido como un cigarrillo. No me siento necesariamente desagradable, sólo... extraño",
+    "word_count": 173,
+    "est_speech_seconds": 69.2,
+    "banned_words_masked": [
+      {
+        "word": "mierda",
+        "count": 2
+      }
+    ],
+    "title_en": "I flashed a friend for a cigarette",
+    "body_en": "I flashed a friend for a cigarette\n\nSo, guy friend and I were at a small party with friends, and at some points we both went out to get some fresh air. We were both just standing outside talking shit, and he pulled out a cigarette. I don't really smoke but I kinda wanted to take a hit of it, but he was being annoying and wouldn't let me. Some shit about not corrupting me. Also I kinda already owed him for something so he held that over my head.\n I was in a playful mood and I just jumped to the nuclear option. I pulled my shirt up for a few seconds, then back down, held out my hand and smiled. Worked like a charm, we laughed, he handed me the cigarette and we shared it until we went back inside.\n Honestly I've pulled that before, even with him, so on paper it wasn't so crazy, but I kinda have a weird feeling about it looking back. I'd never really done it to get something you know? And for something as dumb as a cigarette. I don't feel gross necessarily, just.. weird",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Le pedí a un amigo un cigarrillo."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vrd0ge_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vrd0ge_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vrd0ge_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/2dff700f-41e1-4539-87cb-e87495502c42.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vrd0ge_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 48.45,
+      "sample_rate": 24000,
+      "blurred_words": 2,
+      "intro_sfx_at_sec": 2.32
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vrd0ge_es.ass",
+    "subtitles": {
+      "num_words": 173,
+      "num_cues": 48,
+      "num_masked": 2,
+      "banned_intervals": [
+        [
+          9.622,
+          9.842
+        ],
+        [
+          16.663,
+          16.964
+        ]
+      ],
+      "intro_end_sec": 2.32,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-2.mp4",
+      "source_id": "fbb120f23dbd",
+      "start_sec": 69.08,
+      "duration_sec": 48.45,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "2dff700f-41e1-4539-87cb-e87495502c42",
+      "title": "Feelings Fade",
+      "artist": "Wwings, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/FeelingsFade",
+      "instrumental_url": "https://ncs.io/track/download/i_2dff700f-41e1-4539-87cb-e87495502c42",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 94.93
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 50.0,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "beautiful face",
+      "image_id": 6588614,
+      "image_page_url": "https://pixabay.com/photos/woman-butterflies-fashion-people-6588614/",
+      "image_url": "https://pixabay.com/get/g176f93aada30a546e8c8e6a5e5f0196bf6a61ecfc30ddf747382fa35f8630d8fc6d0b4b919f2c4e735a8c9810e37cf3ec37119b3e9ad058b3812845a6bbbc69c_1280.jpg",
+      "title_rendered": "Le pedí a un amigo un cigarrillo."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

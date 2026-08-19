@@ -1,0 +1,137 @@
+{
+  "id": "f26533dd7fac44b1813368c207b0d460",
+  "created_at": 1787132020.707351,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "offmychest",
+    "post_id": "1vrd0ge",
+    "url": "https://www.reddit.com/r/offmychest/comments/1vrd0ge/i_flashed_a_friend_for_a_cigarette/",
+    "author": "/u/koussi-koussa",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/offmychest",
+    "created_utc": 1787021544.0,
+    "nsfw": null,
+    "variant_id": "1vrd0ge_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "J'ai demandé une cigarette à un ami.",
+    "raw_body": "So, guy friend and I were at a small party with friends, and at some points we both went out to get some fresh air. We were both just standing outside talking shit, and he pulled out a cigarette. I don't really smoke but I kinda wanted to take a hit of it, but he was being annoying and wouldn't let me. Some shit about not corrupting me. Also I kinda already owed him for something so he held that over my head.\n I was in a playful mood and I just jumped to the nuclear option. I pulled my shirt up for a few seconds, then back down, held out my hand and smiled. Worked like a charm, we laughed, he handed me the cigarette and we shared it until we went back inside.\n Honestly I've pulled that before, even with him, so on paper it wasn't so crazy, but I kinda have a weird feeling about it looking back. I'd never really done it to get something you know? And for something as dumb as a cigarette. I don't feel gross necessarily, just.. weird\n\n submitted by /u/koussi-koussa\n [link] [comments]",
+    "cleaned_body": "J'ai demandé une cigarette à un ami.\n\nMon ami et moi étions à une petite fête avec des amis, et à un moment donné, nous sommes tous les deux sortis prendre de l'air frais. Nous étions tous les deux dehors en train de dire des conneries, et il a tiré une cigarette. Je ne fume pas vraiment, mais je voulais en prendre un coup, mais il était ennuyeux et ne me laissait pas fumer. C'est une merde de ne pas me corrompre. Et je lui étais déjà redevable pour quelque chose, alors il m'a fait oublier ça. J'étais d'humeur ludique et j'ai décidé d'adopter l'option nucléaire. J'ai levé ma chemise pendant quelques secondes, puis je me suis baissée, j'ai tendu la main et souri. On a ri, il m'a remis la cigarette et on l'a partagée jusqu'à ce qu'on rentre. Honnêtement, je l'ai déjà fait, même avec lui, donc sur le papier, ce n'était pas si fou, mais j'ai un sentiment étrange à ce sujet en regardant en arrière. Je n'ai jamais vraiment fait ça pour obtenir quelque chose tu sais? Et pour quelque chose de aussi stupide qu'une cigarette. Je ne me sens pas forcément dégoûtée, juste... bizarre",
+    "display_body": "J'ai demandé une cigarette à un ami. Mon ami et moi étions à une petite fête avec des amis, et à un moment donné, nous sommes tous les deux sortis prendre de l'air frais. Nous étions tous les deux dehors en train de dire des conneries, et il a tiré une cigarette. Je ne fume pas vraiment, mais je voulais en prendre un coup, mais il était ennuyeux et ne me laissait pas fumer. C'est une m*rde de ne pas me corrompre. Et je lui étais déjà redevable pour quelque chose, alors il m'a fait oublier ça. J'étais d'humeur ludique et j'ai décidé d'adopter l'option nucléaire. J'ai levé ma chemise pendant quelques secondes, puis je me suis baissée, j'ai tendu la main et souri. On a ri, il m'a remis la cigarette et on l'a partagée jusqu'à ce qu'on rentre. Honnêtement, je l'ai déjà fait, même avec lui, donc sur le papier, ce n'était pas si fou, mais j'ai un sentiment étrange à ce sujet en regardant en arrière. Je n'ai jamais vraiment fait ça pour obtenir quelque chose tu sais? Et pour quelque chose de aussi stupide qu'une cigarette. Je ne me sens pas forcément dégoûtée, juste... bizarre",
+    "word_count": 199,
+    "est_speech_seconds": 79.6,
+    "banned_words_masked": [
+      {
+        "word": "merde",
+        "count": 1
+      }
+    ],
+    "title_en": "I flashed a friend for a cigarette",
+    "body_en": "I flashed a friend for a cigarette\n\nSo, guy friend and I were at a small party with friends, and at some points we both went out to get some fresh air. We were both just standing outside talking shit, and he pulled out a cigarette. I don't really smoke but I kinda wanted to take a hit of it, but he was being annoying and wouldn't let me. Some shit about not corrupting me. Also I kinda already owed him for something so he held that over my head.\n I was in a playful mood and I just jumped to the nuclear option. I pulled my shirt up for a few seconds, then back down, held out my hand and smiled. Worked like a charm, we laughed, he handed me the cigarette and we shared it until we went back inside.\n Honestly I've pulled that before, even with him, so on paper it wasn't so crazy, but I kinda have a weird feeling about it looking back. I'd never really done it to get something you know? And for something as dumb as a cigarette. I don't feel gross necessarily, just.. weird",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "J'ai demandé une cigarette à un ami."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vrd0ge_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vrd0ge_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vrd0ge_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/2dff700f-41e1-4539-87cb-e87495502c42.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vrd0ge_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 51.02,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 2.74
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vrd0ge_fr.ass",
+    "subtitles": {
+      "num_words": 199,
+      "num_cues": 55,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          17.562,
+          17.902
+        ]
+      ],
+      "intro_end_sec": 2.74,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-2.mp4",
+      "source_id": "fbb120f23dbd",
+      "start_sec": 76.35,
+      "duration_sec": 51.02,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "2dff700f-41e1-4539-87cb-e87495502c42",
+      "title": "Feelings Fade",
+      "artist": "Wwings, jeonghyeon",
+      "genre": "Future House",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/FeelingsFade",
+      "instrumental_url": "https://ncs.io/track/download/i_2dff700f-41e1-4539-87cb-e87495502c42",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 32.57
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 52.57,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "beautiful face",
+      "image_id": 6588614,
+      "image_page_url": "https://pixabay.com/photos/woman-butterflies-fashion-people-6588614/",
+      "image_url": "https://pixabay.com/get/g176f93aada30a546e8c8e6a5e5f0196bf6a61ecfc30ddf747382fa35f8630d8fc6d0b4b919f2c4e735a8c9810e37cf3ec37119b3e9ad058b3812845a6bbbc69c_1280.jpg",
+      "title_rendered": "J'ai demandé une cigarette à un ami."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
