@@ -1,0 +1,126 @@
+{
+  "id": "620693352e6b4751bdd5ddedf1483b86",
+  "created_at": 1787217954.728336,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vsjox0",
+    "url": "https://www.reddit.com/r/confession/comments/1vsjox0/i_havent_paid_an_electricity_bill_an_almost_2/",
+    "author": "/u/Healthy-Wolf-701",
+    "feed_rank": 0,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1787138811.0,
+    "nsfw": null,
+    "variant_id": "1vsjox0_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Je n'ai pas payé une facture d'électricité depuis presque 2 ans.",
+    "raw_body": "I don't know how I've gotten away with it but about 2 years ago I moved into a new rental. After a couple of months I realised I had completely forgotten to switch my electricity over, but the power was still on. I thought to myself, why not just leave it that way till the inevitable day that it gets shut off.\n Well it's been almost 2 years and nothing. No letters or anything. From my research either the account holder, the homeowner, or the electricity company are responsible, although it's hard to be sure. I know that the day I come home to my fridge defrosting in a dark house will suck but at this point it's worth it for the money I've saved.\n\n submitted by /u/Healthy-Wolf-701\n [link] [comments]",
+    "cleaned_body": "Je n'ai pas payé une facture d'électricité depuis presque 2 ans.\n\nJe ne sais pas comment j'ai réussi à m'en sortir mais il y a environ 2 ans, j'ai déménagé dans une nouvelle location. Après quelques mois, j'ai réalisé que j'avais complètement oublié de changer l'électricité, mais l'électricité était toujours allumée. Je me suis dit: \"Pourquoi ne pas le laisser comme ça jusqu'au jour inévitable où il sera fermé\". Ça fait presque 2 ans et rien. Pas de lettres ou quoi que ce soit. D'après mes recherches, soit le titulaire du compte, soit le propriétaire de la maison, soit la compagnie d'électricité sont responsables, même si c'est difficile d'en être sûr. Je sais que le jour où je rentrerai à la maison dans mon réfrigérateur, la défrosture dans une maison sombre sera nulle, mais à ce stade, ça en vaut la peine pour l'argent que j'ai économisé.",
+    "display_body": "Je n'ai pas payé une facture d'électricité depuis presque 2 ans. Je ne sais pas comment j'ai réussi à m'en sortir mais il y a environ 2 ans, j'ai déménagé dans une nouvelle location. Après quelques mois, j'ai réalisé que j'avais complètement oublié de changer l'électricité, mais l'électricité était toujours allumée. Je me suis dit: \"Pourquoi ne pas le laisser comme ça jusqu'au jour inévitable où il sera fermé\". Ça fait presque 2 ans et rien. Pas de lettres ou quoi que ce soit. D'après mes recherches, soit le titulaire du compte, soit le propriétaire de la maison, soit la compagnie d'électricité sont responsables, même si c'est difficile d'en être sûr. Je sais que le jour où je rentrerai à la maison dans mon réfrigérateur, la défrosture dans une maison sombre sera nulle, mais à ce stade, ça en vaut la peine pour l'argent que j'ai économisé.",
+    "word_count": 147,
+    "est_speech_seconds": 58.8,
+    "banned_words_masked": [],
+    "title_en": "I haven't paid an electricity bill an almost 2 years",
+    "body_en": "I haven't paid an electricity bill an almost 2 years\n\nI don't know how I've gotten away with it but about 2 years ago I moved into a new rental. After a couple of months I realised I had completely forgotten to switch my electricity over, but the power was still on. I thought to myself, why not just leave it that way till the inevitable day that it gets shut off.\n Well it's been almost 2 years and nothing. No letters or anything. From my research either the account holder, the homeowner, or the electricity company are responsible, although it's hard to be sure. I know that the day I come home to my fridge defrosting in a dark house will suck but at this point it's worth it for the money I've saved.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Je n'ai pas payé une facture d'électricité depuis presque 2 ans."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vsjox0_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vsjox0_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vsjox0_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/5998b3bf-56b4-47e5-9502-a0dc5f84bb8f.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vsjox0_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 43.23,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.341
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vsjox0_fr.ass",
+    "subtitles": {
+      "num_words": 147,
+      "num_cues": 39,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.341,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/mickey-mouse-5.mp4",
+      "source_id": "a36519d90c2f",
+      "start_sec": 73.2,
+      "duration_sec": 43.23,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "5998b3bf-56b4-47e5-9502-a0dc5f84bb8f",
+      "title": "Muscle Up (feat. Drama B & Ryo)",
+      "artist": "Drama B, SKAN",
+      "genre": "Trap",
+      "moods": [
+        "powerful",
+        "angry",
+        "negative"
+      ],
+      "page_url": "https://ncs.io/MuscleUp",
+      "instrumental_url": "https://ncs.io/track/download/i_5998b3bf-56b4-47e5-9502-a0dc5f84bb8f",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 132.92
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 44.77,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "beautiful face",
+      "image_id": 2395953,
+      "image_page_url": "https://pixabay.com/photos/beautiful-girl-face-beautiful-2395953/",
+      "image_url": "https://pixabay.com/get/g285851a737ef73c0bd75f1487ce8aa9de9a04b18cafad744b453cddde584039c981fe607ea998d49eac28939cec98d49c928114e3ddcf491ca0a05a15c04a305_1280.jpg",
+      "title_rendered": "Je n'ai pas payé une facture d'électricité depuis presque 2 ans."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

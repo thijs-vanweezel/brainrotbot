@@ -1,0 +1,140 @@
+{
+  "id": "a6a9c7b20a5441b09436c99de9a1b0e2",
+  "created_at": 1787218315.7999587,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "confession",
+    "post_id": "1vrfeqr",
+    "url": "https://www.reddit.com/r/confession/comments/1vrfeqr/i_used_to_sell_videos_of_me_pumping_breast_milk/",
+    "author": "/u/Lemonkaybee2",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/confession",
+    "created_utc": 1787028709.0,
+    "nsfw": null,
+    "variant_id": "1vrfeqr_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "Solía vender videos de mí bombeando leche materna a mi ex, ambos estamos casados con otras personas.",
+    "raw_body": "At first he was asking because his wife was allegedly having a hard time pumping herself, so I filmed a how to with my own pump. Then he would ask for more and more and I said I'd do if he sent me $50 as a joke. When he actually venmoed me I felt bad and did send him a video of me pumping. After that, it just kind of kept happening. He would send me money, I'd send a video.\n I do feel really guilty about doing it, because I don't know what he's doing with the videos I send, and I haven't told my husband. It's been nice to have extra money with a new baby but I had to stop because I did feel so bad for both of our spouses. He recently sent money again but I sent it back and haven't responded to his messages since.\n\n submitted by /u/Lemonkaybee2\n [link] [comments]",
+    "cleaned_body": "Solía vender videos de mí bombeando leche materna a mi ex, ambos estamos casados con otras personas.\n\nAl principio me preguntaba porque su esposa supuestamente estaba teniendo dificultades para bombearse, así que filmé cómo hacerlo con mi propia bomba. Luego me pedía más y más y le dije que lo haría si me enviara 50 dólares como broma. Cuando en realidad me venenó me sentí mal y le envié un video de mí bombeando. Después de eso, continuó sucediendo. Él me envíaba dinero, yo envíaba un video. Me siento muy culpable de hacerlo, porque no sé qué está haciendo con los videos que envío, y no se lo he dicho a mi marido. Ha sido bueno tener dinero extra con un nuevo bebé pero tuve que dejar porque me sentía tan mal por nuestros dos cónyuges. Recientemente envió dinero de nuevo pero yo lo devolví y no he respondido a sus mensajes desde entonces.",
+    "display_body": "Solía vender videos de mí bombeando leche materna a mi ex, ambos estamos casados con otras personas. Al principio me preguntaba porque su esposa supuestamente estaba teniendo dificultades para bombearse, así que filmé cómo hacerlo con mi propia b*mba. Luego me pedía más y más y le dije que lo haría si me enviara 50 dólares como broma. Cuando en realidad me venenó me sentí mal y le envié un video de mí bombeando. Después de eso, continuó sucediendo. Él me envíaba dinero, yo envíaba un video. Me siento muy culpable de hacerlo, porque no sé qué está haciendo con los videos que envío, y no se lo he dicho a mi marido. Ha sido bueno tener dinero extra con un nuevo bebé pero tuve que dejar porque me sentía tan mal por nuestros dos cónyuges. Recientemente envió dinero de nuevo pero yo lo devolví y no he respondido a sus mensajes desde entonces.",
+    "word_count": 154,
+    "est_speech_seconds": 61.6,
+    "banned_words_masked": [
+      {
+        "word": "bomba",
+        "count": 1
+      }
+    ],
+    "title_en": "I used to sell videos of me pumping breast milk to my ex, we are both married to other people.",
+    "body_en": "I used to sell videos of me pumping breast milk to my ex, we are both married to other people.\n\nAt first he was asking because his wife was allegedly having a hard time pumping herself, so I filmed a how to with my own pump. Then he would ask for more and more and I said I'd do if he sent me $50 as a joke. When he actually venmoed me I felt bad and did send him a video of me pumping. After that, it just kind of kept happening. He would send me money, I'd send a video.\n I do feel really guilty about doing it, because I don't know what he's doing with the videos I send, and I haven't told my husband. It's been nice to have extra money with a new baby but I had to stop because I did feel so bad for both of our spouses. He recently sent money again but I sent it back and haven't responded to his messages since.",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Solía vender videos de mí bombeando leche materna a mi ex, ambos estamos casados con otras personas."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vrfeqr_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vrfeqr_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vrfeqr_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/13cc39ff-e9eb-4842-b5ae-fc29c8622de6.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vrfeqr_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 43.52,
+      "sample_rate": 24000,
+      "blurred_words": 1,
+      "intro_sfx_at_sec": 6.101
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vrfeqr_es.ass",
+    "subtitles": {
+      "num_words": 154,
+      "num_cues": 42,
+      "num_masked": 1,
+      "banned_intervals": [
+        [
+          12.881,
+          13.482
+        ]
+      ],
+      "intro_end_sec": 6.101,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/gta-megaramp-2.mp4",
+      "source_id": "1595cbfc4283",
+      "start_sec": 27.01,
+      "duration_sec": 43.52,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "13cc39ff-e9eb-4842-b5ae-fc29c8622de6",
+      "title": "The Riot",
+      "artist": "NIVIRO",
+      "genre": "Midtempo Bass",
+      "moods": [
+        "Angry",
+        "Chasing",
+        "Fear",
+        "Heavy",
+        "Restless",
+        "Suspense"
+      ],
+      "page_url": "https://ncs.io/TheRiot",
+      "instrumental_url": "https://ncs.io/track/download/i_13cc39ff-e9eb-4842-b5ae-fc29c8622de6",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 62.55
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 45.07,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "beautiful face",
+      "image_id": 6577025,
+      "image_page_url": "https://pixabay.com/photos/woman-beautiful-portrait-model-6577025/",
+      "image_url": "https://pixabay.com/get/g256e25ab89469b8028974bcda639993fe106f06214b37d052634e19b2603b77786a69882bdfc765277e8e0fc349e610795c499006271485a5455b45facc45e95_1280.jpg",
+      "title_rendered": "Solía vender videos de mí bombeando leche materna a mi ex, ambos estamos casados con otras personas."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
