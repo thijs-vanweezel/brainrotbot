@@ -1,0 +1,126 @@
+{
+  "id": "5dc5621d23dc4110b7da7147019842ca",
+  "created_at": 1787306645.0688474,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vtaxyd",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vtaxyd/knocked_something_off_of_a_shelf_and_its_like_it/",
+    "author": "/u/skoogytheseconf",
+    "feed_rank": 3,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1787205293.0,
+    "nsfw": null,
+    "variant_id": "1vtaxyd_fr",
+    "lang": "fr"
+  },
+  "text": {
+    "title": "Il a renversé quelque chose d'une étagère et c'est comme s'il avait disparu dès qu'il a touché le sol.",
+    "raw_body": "This isn't really that interesting, but I think about it from time to time and when I found this subreddit I thought, \"Hey, might be kinda fun to share!\"\n A couple of years ago, I was in my kitchen looking through one of our cabinets when I accidentally knocked this petri-dish looking thing off of one of the shelves. I heard it hit the floor, but when I went to pick it up I couldn't find it anywhere. Our kitchen is separate from our dining room, so there's no furniture it could've gone under. The only places it could've gone where I wouldn't have seen it would've been under our fridge or our stove, but we've had both of those replaced since it happened and it wasn't under either of them when we moved them. It also couldn't have rolled out of the kitchen because at the time we had one of those baby gates in the doorway.\n If I ever find it, I will eat a shoe.\n\n submitted by /u/skoogytheseconf\n [link] [comments]",
+    "cleaned_body": "Il a renversé quelque chose d'une étagère et c'est comme s'il avait disparu dès qu'il a touché le sol.\n\nCe n'est pas vraiment si intéressant, mais je pense à ça de temps en temps et quand j'ai trouvé ce subreddit, je me suis dit: \" Je suis là . \" Il y a quelques années, j'étais dans ma cuisine en train de regarder dans un de nos armoires quand j'ai accidentellement renversé cette chose qui ressemblait à un plat de Petri de l'une des étagères. Je l'ai entendu tomber, mais quand je suis allé le chercher, je ne l'ai pas trouvé. Notre cuisine est séparée de notre salle à manger, donc il n'y a pas de meubles qui pourraient être sous. Les seuls endroits où il aurait pu aller où je ne l'aurais pas vu auraient été sous notre réfrigérateur ou notre poêle, mais on a remplacé les deux depuis qu'il s'est passé et il n'était pas sous aucun d'eux quand on les a déplacés. Il ne pouvait pas non plus sortir de la cuisine parce qu'à l'époque, nous avions une de ces portes de bébé dans la porte. Si je le trouve, je mangerai une chaussure.",
+    "display_body": "Il a renversé quelque chose d'une étagère et c'est comme s'il avait disparu dès qu'il a touché le sol. Ce n'est pas vraiment si intéressant, mais je pense à ça de temps en temps et quand j'ai trouvé ce subreddit, je me suis dit: \" Je suis là . \" Il y a quelques années, j'étais dans ma cuisine en train de regarder dans un de nos armoires quand j'ai accidentellement renversé cette chose qui ressemblait à un plat de Petri de l'une des étagères. Je l'ai entendu tomber, mais quand je suis allé le chercher, je ne l'ai pas trouvé. Notre cuisine est séparée de notre salle à manger, donc il n'y a pas de meubles qui pourraient être sous. Les seuls endroits où il aurait pu aller où je ne l'aurais pas vu auraient été sous notre réfrigérateur ou notre poêle, mais on a remplacé les deux depuis qu'il s'est passé et il n'était pas sous aucun d'eux quand on les a déplacés. Il ne pouvait pas non plus sortir de la cuisine parce qu'à l'époque, nous avions une de ces portes de bébé dans la porte. Si je le trouve, je mangerai une chaussure.",
+    "word_count": 197,
+    "est_speech_seconds": 78.8,
+    "banned_words_masked": [],
+    "title_en": "Knocked something off of a shelf and it’s like it vanished as soon as it hit the floor",
+    "body_en": "Knocked something off of a shelf and it's like it vanished as soon as it hit the floor\n\nThis isn't really that interesting, but I think about it from time to time and when I found this subreddit I thought, \"Hey, might be kinda fun to share!\"\n A couple of years ago, I was in my kitchen looking through one of our cabinets when I accidentally knocked this petri-dish looking thing off of one of the shelves. I heard it hit the floor, but when I went to pick it up I couldn't find it anywhere. Our kitchen is separate from our dining room, so there's no furniture it could've gone under. The only places it could've gone where I wouldn't have seen it would've been under our fridge or our stove, but we've had both of those replaced since it happened and it wasn't under either of them when we moved them. It also couldn't have rolled out of the kitchen because at the time we had one of those baby gates in the doorway.\n If I ever find it, I will eat a shoe.",
+    "lang": "fr",
+    "lang_code": "f",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "Il a renversé quelque chose d'une étagère et c'est comme s'il avait disparu dès qu'il a touché le sol."
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vtaxyd_fr.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vtaxyd_fr.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vtaxyd_fr.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/0efe5667-67dc-4d74-8d40-3b0319354c75.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vtaxyd_fr.png",
+    "audio": {
+      "voice": "ff_siwis",
+      "lang_code": "f",
+      "duration_sec": 47.83,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 5.781
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vtaxyd_fr.ass",
+    "subtitles": {
+      "num_words": 197,
+      "num_cues": 50,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 5.781,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/minecraft-parkour-1.mp4",
+      "source_id": "007510aa797b",
+      "start_sec": 294.08,
+      "duration_sec": 47.83,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "0efe5667-67dc-4d74-8d40-3b0319354c75",
+      "title": "On The Break Of Dawn",
+      "artist": "Nordic Pulse, Kitty Florentine, Kristjan Järvi, Cartoon",
+      "genre": "Dance-Pop",
+      "moods": [
+        "energetic",
+        "positive",
+        "powerful"
+      ],
+      "page_url": "https://ncs.io/OTBOD",
+      "instrumental_url": "https://ncs.io/track/download/i_0efe5667-67dc-4d74-8d40-3b0319354c75",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 52.28
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 49.37,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "nature",
+      "search_term": "tropical",
+      "image_id": 7721323,
+      "image_page_url": "https://pixabay.com/photos/fern-nature-flower-botanical-green-7721323/",
+      "image_url": "https://pixabay.com/get/gea11374b36733ee6a80e0fb0d450e8aef1b5b47b1789d6699a02f18c8ba21782f6637a5a7a3fc22a959deb930f3878d685b22cdddd32206ecd4512516a56b733_1280.jpg",
+      "title_rendered": "Il a renversé quelque chose d'une étagère et c'est comme s'il avait disparu dès qu'il a touché le sol."
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
