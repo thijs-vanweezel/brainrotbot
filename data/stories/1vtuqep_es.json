@@ -1,0 +1,125 @@
+{
+  "id": "120a80835a12442fa1a7a43e1d870e1b",
+  "created_at": 1787391526.3552992,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "AmItheAsshole",
+    "post_id": "1vtuqep",
+    "url": "https://www.reddit.com/r/AmItheAsshole/comments/1vtuqep/aita_for_uninviting_my_best_friend_from_my/",
+    "author": "/u/Murky-Pool1563",
+    "feed_rank": 4,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/AmItheAsshole",
+    "created_utc": 1787256979.0,
+    "nsfw": null,
+    "variant_id": "1vtuqep_es",
+    "lang": "es"
+  },
+  "text": {
+    "title": "¿Soy el imbécil por no invitar a mi mejor amigo de mi viaje de cumpleaños después de averiguar que invitaron a alguien que específicamente dije que no quería?",
+    "raw_body": "I planned a 4-day birthday trip with 5 of my closest friends and paid for the Airbnb months in advance. I told everyone from the beginning that I wanted it to be a small group because I didn't want the trip to become chaotic.\n About two weeks before the trip, I found out my best friend had invited another person without telling me. I've met this person several times, but we've never really gotten along. I asked my friend why they invited them, and they said, \"It's not a big deal, there's enough space.\"\n I told them I wasn't comfortable with it and reminded them that I was paying for most of the Airbnb and that this was supposed to be my birthday trip.\n They got angry and said I was being controlling and that I was trying to decide who they could be friends with.\n I eventually told them that if they brought the person anyway, I would rather they not come at all.\n They said I was ruining our friendship over something \"stupid.\"\n Now two of our other friends think I went too far, while the others agree with me\n\n submitted by /u/Murky-Pool1563\n [link] [comments]",
+    "cleaned_body": "¿Soy el imbécil por no invitar a mi mejor amigo de mi viaje de cumpleaños después de averiguar que invitaron a alguien que específicamente dije que no quería?\n\nPlaneé un viaje de cumpleaños de 4 días con 5 de mis amigos más cercanos y pagé el Airbnb meses antes. Le dije a todos desde el principio que quería que fuera un grupo pequeño porque no quería que el viaje se volviera caótico. Alrededor de dos semanas antes del viaje, me enteré de que mi mejor amigo había invitado a otra persona sin avisarme. He conocido a esta persona varias veces, pero nunca nos hemos llevado bien. Le pregunté a mi amigo por qué los invitaron, y me dijeron: \"No es gran cosa, hay suficiente espacio. ¿ Qué es eso ? Les dije que no me sentía cómodo con eso y les recordé que estaba pagando la mayor parte del Airbnb y que se suponía que era mi viaje de cumpleaños. Se enfadaron y dijeron que estaba controlando y que estaba tratando de decidir con quién podrían ser amigos. Eventualmente les dije que si de todos modos traían a la persona, preferiría que no vinieran en absoluto. Dijeron que estaba arruinando nuestra amistad por algo estúpido. ¿ Qué es eso ? Ahora dos de nuestros otros amigos piensan que fui demasiado lejos, mientras que los demás están de acuerdo conmigo",
+    "display_body": "¿Soy el imbécil por no invitar a mi mejor amigo de mi viaje de cumpleaños después de averiguar que invitaron a alguien que específicamente dije que no quería? Planeé un viaje de cumpleaños de 4 días con 5 de mis amigos más cercanos y pagé el Airbnb meses antes. Le dije a todos desde el principio que quería que fuera un grupo pequeño porque no quería que el viaje se volviera caótico. Alrededor de dos semanas antes del viaje, me enteré de que mi mejor amigo había invitado a otra persona sin avisarme. He conocido a esta persona varias veces, pero nunca nos hemos llevado bien. Le pregunté a mi amigo por qué los invitaron, y me dijeron: \"No es gran cosa, hay suficiente espacio. ¿ Qué es eso ? Les dije que no me sentía cómodo con eso y les recordé que estaba pagando la mayor parte del Airbnb y que se suponía que era mi viaje de cumpleaños. Se enfadaron y dijeron que estaba controlando y que estaba tratando de decidir con quién podrían ser amigos. Eventualmente les dije que si de todos modos traían a la persona, preferiría que no vinieran en absoluto. Dijeron que estaba arruinando nuestra amistad por algo estúpido. ¿ Qué es eso ? Ahora dos de nuestros otros amigos piensan que fui demasiado lejos, mientras que los demás están de acuerdo conmigo",
+    "word_count": 229,
+    "est_speech_seconds": 91.6,
+    "banned_words_masked": [],
+    "title_en": "AITA for uninviting my best friend from my birthday trip after finding out they invited someone I specifically said I didn’t want there?",
+    "body_en": "Am I the asshole for uninviting my best friend from my birthday trip after finding out they invited someone I specifically said I didn't want there?\n\nI planned a 4-day birthday trip with 5 of my closest friends and paid for the Airbnb months in advance. I told everyone from the beginning that I wanted it to be a small group because I didn't want the trip to become chaotic.\n About two weeks before the trip, I found out my best friend had invited another person without telling me. I've met this person several times, but we've never really gotten along. I asked my friend why they invited them, and they said, \"It's not a big deal, there's enough space.\"\n I told them I wasn't comfortable with it and reminded them that I was paying for most of the Airbnb and that this was supposed to be my birthday trip.\n They got angry and said I was being controlling and that I was trying to decide who they could be friends with.\n I eventually told them that if they brought the person anyway, I would rather they not come at all.\n They said I was ruining our friendship over something \"stupid.\"\n Now two of our other friends think I went too far, while the others agree with me",
+    "lang": "es",
+    "lang_code": "e",
+    "translation_model": "nllb-200-distilled-600M/int8",
+    "display_title": "¿Soy el imbécil por no invitar a mi mejor amigo de mi viaje de cumpleaños después de averiguar que invitaron a alguien que específicamente dije que no quería?"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vtuqep_es.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vtuqep_es.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vtuqep_es.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/69e45a8d-c36f-4449-9846-f66cea255898.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vtuqep_es.png",
+    "audio": {
+      "voice": "em_alex",
+      "lang_code": "e",
+      "duration_sec": 65.7,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 8.563
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vtuqep_es.ass",
+    "subtitles": {
+      "num_words": 229,
+      "num_cues": 64,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 8.563,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/subway-surfers-2.mp4",
+      "source_id": "d740c6b07db0",
+      "start_sec": 28.45,
+      "duration_sec": 65.7,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "69e45a8d-c36f-4449-9846-f66cea255898",
+      "title": "So Good",
+      "artist": "More Plastic",
+      "genre": "Drum & Bass",
+      "moods": [
+        "energetic",
+        "exciting"
+      ],
+      "page_url": "https://ncs.io/SoGood",
+      "instrumental_url": "https://ncs.io/track/download/i_69e45a8d-c36f-4449-9846-f66cea255898",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 64.16
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 67.23,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "food",
+      "search_term": "sushi",
+      "image_id": 6194527,
+      "image_page_url": "https://pixabay.com/photos/sushi-bamboo-rolling-mat-preparation-6194527/",
+      "image_url": "https://pixabay.com/get/g34e546d77e95b027f38b5d44448cad15c01628688bcf687af1f2264cde2d5018e6bc3071aec5862a033f457bd9fdf706b2bae7da459aed153b36559e87929439_1280.jpg",
+      "title_rendered": "¿Soy el imbécil por no invitar a mi mejor amigo de mi viaje de cumpleaños después de averiguar que invitaron a alguien que específicamente dije que no quería?"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "id": "00632e1652c243a7804cea9ffe2686e2",
+  "created_at": 1787392214.6237278,
+  "status": "thumbnail_done",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "Glitch_in_the_Matrix",
+    "post_id": "1vuwfgn",
+    "url": "https://www.reddit.com/r/Glitch_in_the_Matrix/comments/1vuwfgn/expiration_date_seemingly_changed_in_front_of_my/",
+    "author": "/u/LFuculokinase",
+    "feed_rank": 5,
+    "score": null,
+    "upvote_ratio": null,
+    "num_comments": null,
+    "flair": "r/Glitch_in_the_Matrix",
+    "created_utc": 1787355681.0,
+    "nsfw": null,
+    "variant_id": "1vuwfgn_en",
+    "lang": "en"
+  },
+  "text": {
+    "title": "Expiration date seemingly changed in front of my face",
+    "raw_body": "I went to a bodega today that sells local yogurt. I picked one up and saw it expires on 9/5, and double-checked the nearby yogurts, which all expire either 8/29 or 9/5. Great. The cashier scanned it, and I was just about to shove it into my bag when I noticed it actually expired yesterday on 8/20. I told the cashier, who stared at it in confusion and said she aways double-checks the date when scanning and just saw that it expired 9/5. The store also apparently checks the milk products every evening. I know this is not a life-altering or terrifying \"glitch,\" and we both sat there for a bit laughing about it, but I was so thrown off by this.\n\n submitted by /u/LFuculokinase\n [link] [comments]",
+    "cleaned_body": "Expiration date seemingly changed in front of my face\n\nI went to a bodega today that sells local yogurt. I picked one up and saw it expires on 9/5, and double-checked the nearby yogurts, which all expire either 8/29 or 9/5. Great. The cashier scanned it, and I was just about to shove it into my bag when I noticed it actually expired yesterday on 8/20. I told the cashier, who stared at it in confusion and said she aways double-checks the date when scanning and just saw that it expired 9/5. The store also apparently checks the milk products every evening. I know this is not a life-altering or terrifying \"glitch,\" and we both sat there for a bit laughing about it, but I was so thrown off by this.",
+    "display_body": "Expiration date seemingly changed in front of my face I went to a bodega today that sells local yogurt. I picked one up and saw it expires on 9/5, and double-checked the nearby yogurts, which all expire either 8/29 or 9/5. Great. The cashier scanned it, and I was just about to shove it into my bag when I noticed it actually expired yesterday on 8/20. I told the cashier, who stared at it in confusion and said she aways double-checks the date when scanning and just saw that it expired 9/5. The store also apparently checks the milk products every evening. I know this is not a life-altering or terrifying \"glitch,\" and we both sat there for a bit laughing about it, but I was so thrown off by this.",
+    "word_count": 131,
+    "est_speech_seconds": 52.4,
+    "banned_words_masked": [],
+    "title_en": "Expiration date seemingly changed in front of my face",
+    "body_en": "Expiration date seemingly changed in front of my face\n\nI went to a bodega today that sells local yogurt. I picked one up and saw it expires on 9/5, and double-checked the nearby yogurts, which all expire either 8/29 or 9/5. Great. The cashier scanned it, and I was just about to shove it into my bag when I noticed it actually expired yesterday on 8/20. I told the cashier, who stared at it in confusion and said she aways double-checks the date when scanning and just saw that it expired 9/5. The store also apparently checks the milk products every evening. I know this is not a life-altering or terrifying \"glitch,\" and we both sat there for a bit laughing about it, but I was so thrown off by this.",
+    "lang": "en",
+    "lang_code": "a",
+    "translation_model": null,
+    "display_title": "Expiration date seemingly changed in front of my face"
+  },
+  "content_analysis": {
+    "topic": null,
+    "style": null,
+    "tone": null,
+    "hook_type": null
+  },
+  "assets": {
+    "audio_path": "/home/runner/work/brainrotbot/brainrotbot/data/audio/1vuwfgn_en.wav",
+    "background_video": "/home/runner/work/brainrotbot/brainrotbot/data/video/1vuwfgn_en.mp4",
+    "final_video": "/home/runner/work/brainrotbot/brainrotbot/data/final/1vuwfgn_en.mp4",
+    "music_path": "/home/runner/work/brainrotbot/brainrotbot/data/music_cache/0f42c347-dce4-4173-9d61-4ec44d8a5c51.mp3",
+    "thumbnail_path": "/home/runner/work/brainrotbot/brainrotbot/data/thumbnail/1vuwfgn_en.png",
+    "audio": {
+      "voice": "af_bella",
+      "lang_code": "a",
+      "duration_sec": 41.0,
+      "sample_rate": 24000,
+      "intro_sfx_at_sec": 4.002
+    },
+    "subtitles_path": "/home/runner/work/brainrotbot/brainrotbot/data/subtitles/1vuwfgn_en.ass",
+    "subtitles": {
+      "num_words": 131,
+      "num_cues": 36,
+      "num_masked": 0,
+      "banned_intervals": [],
+      "intro_end_sec": 4.002,
+      "backend": "ctc-forced-align",
+      "model": "MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "language": "eng"
+    },
+    "background": {
+      "source_url": "https://github.com/thijs-vanweezel/brainrotbot/releases/download/sources-v1/gta-megaramp-2.mp4",
+      "source_id": "1595cbfc4283",
+      "start_sec": 106.93,
+      "duration_sec": 41.0,
+      "looped": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "music": {
+      "track_id": "0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "title": "Your Poison",
+      "artist": "ROY KNOX",
+      "genre": "Dubstep",
+      "moods": [
+        "Epic",
+        "Euphoric",
+        "Glamorous",
+        "Heavy",
+        "Restless",
+        "Hopeful"
+      ],
+      "page_url": "https://ncs.io/YourPoison",
+      "instrumental_url": "https://ncs.io/track/download/i_0f42c347-dce4-4173-9d61-4ec44d8a5c51",
+      "volume_db": -25,
+      "ducked": true,
+      "start_sec": 31.17
+    },
+    "edit": {
+      "has_outro": true,
+      "has_music": true,
+      "has_subtitles": true,
+      "outro_file": "/home/runner/work/brainrotbot/brainrotbot/resources/outro.png",
+      "duration_sec": 42.53,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "search_category": "people",
+      "search_term": "make-up woman",
+      "image_id": 7921622,
+      "image_page_url": "https://pixabay.com/photos/woman-model-dress-make-up-fashion-7921622/",
+      "image_url": "https://pixabay.com/get/gadc57bd3b98b6d970777368b1d1455113dba93e509ec3ae47ed58e383ad51938270be724b88e27f74641afa9a95c95bf806ee9df12f973bf423cb511d2b2f271_1280.jpg",
+      "title_rendered": "Expiration date seemingly changed in front of my face"
+    }
+  },
+  "upload": {
+    "tiktok_id": null,
+    "posted_at": null,
+    "caption": null,
+    "hashtags": null
+  },
+  "metrics": {
+    "views": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "retention": null
+  }
+}
